@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Button from '@/components/button'
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       </Head>
 
       <h1>Catamyst</h1>
+      <Button>Click</Button>
     </main>
   )
 }
