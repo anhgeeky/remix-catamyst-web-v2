@@ -1,10 +1,10 @@
-import { Button } from '@chakra-ui/react'
-import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { IconButton } from '@chakra-ui/react'
+import { FaTimes, FaGripLines } from 'react-icons/fa'
 
-export default function MenuToggle({ handleMenuToggle, isMenuOpen = false }) {
+export default function MenuToggle({ openMenu, isMenuOpen = false }) {
   return (
-    <Button onClick={handleMenuToggle} variant="ghost">
-      {isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
-    </Button>
+    <IconButton aria-label="Toggle menu" variant="ghost" onClick={openMenu}>
+      {isMenuOpen ? <FaTimes /> : <FaGripLines />}
+    </IconButton>
   )
 }

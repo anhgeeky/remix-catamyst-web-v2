@@ -10,9 +10,17 @@ export default function Footer() {
   const API_URL = process.env.NEXT_PUBLIC_API_URL
 
   return (
-    <VStack as="footer" mt={10} py={10} px={5} bg={bg} color={color}>
+    <VStack
+      as="footer"
+      mt={10}
+      py={10}
+      px={5}
+      bg={bg}
+      color={color}
+      textAlign="center"
+    >
       <Text>
-        Copyright © {year} <b>Catamyst</b>. All rights reserved.
+        Copyright © {year} <b>Catamyst</b>
       </Text>
       <VStack opacity={0.5} fontSize={12} spacing={0}>
         <Text>A Worldwide Remote Company</Text>

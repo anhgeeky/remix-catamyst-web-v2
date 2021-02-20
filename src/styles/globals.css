@@ -11,13 +11,17 @@ a {
   outline-color: var(--color-secondary);
 }
 
-.navlink {
+.nav-link {
   padding: 6px;
-  color: #888;
-  transition: color 0.2s ease;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 }
 
-.navlink:hover,
-.navlink:focus {
-  color: #000;
+.nav-link:hover,
+.nav-link:focus {
+  opacity: 1;
+}
+
+.menu-link {
+  padding: 8px;
 }
