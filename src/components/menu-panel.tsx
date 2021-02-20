@@ -7,8 +7,8 @@ import {
   Stack,
   StackDivider,
   useColorModeValue,
-  VStack,
 } from '@chakra-ui/react'
+import { useSelector } from 'react-redux'
 import { RemoveScroll } from 'react-remove-scroll'
 import { FaTimes } from 'react-icons/fa'
 import { ColorModeToggle } from '@/components'
@@ -18,6 +18,7 @@ import publicPages from '@/data/public-pages.json'
 import React from 'react'
 
 export default function MenuPanel({ closeMenu, isMenuOpen }) {
+  const auth = useSelector((state) => state.auth)
   const bg = useColorModeValue('white', 'gray.900')
   const dividerBorderColor = useColorModeValue('gray.200', 'gray.700')
 
@@ -69,16 +70,22 @@ export default function MenuPanel({ closeMenu, isMenuOpen }) {
                   )
                 })}
 
-                <Stack align="stretch" justify="" direction={['column', 'row']}>
-                  <NextLink href="/signup">
-                    <Button flex={[null, 1]}>Sign up</Button>
-                  </NextLink>
-                  <NextLink href="/signin">
-                    <Button flex={[null, 1]} colorScheme="teal">
-                      Sign in
-                    </Button>
-                  </NextLink>
-                </Stack>
+                {!auth.isAuthenticated && (
+                  <Stack
+                    align="stretch"
+                    justify=""
+                    direction={['column', 'row']}
+                  >
+                    <NextLink href="/signup">
+                      <Button flex={[null, 1]}>Sign up</Button>
+                    </NextLink>
+                    <NextLink href="/signin">
+                      <Button flex={[null, 1]} colorScheme="teal">
+                        Sign in
+                      </Button>
+                    </NextLink>
+                  </Stack>
+                )}
               </Stack>
             </Stack>
           </Flex>

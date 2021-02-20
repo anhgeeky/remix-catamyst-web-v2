@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import NextLink from 'next/link'
-import { useColorModeValue, Box, Button, Flex, HStack } from '@chakra-ui/react'
+import { useColorModeValue, Box, Flex, HStack } from '@chakra-ui/react'
 import {
   ColorModeToggle,
   Logo,
   NavLink,
   MenuToggle,
   MenuPanel,
+  HeaderUser,
 } from '@/components'
 import publicPages from '@/data/public-pages.json'
 
@@ -17,6 +18,7 @@ export default function Header() {
   function openMenu() {
     setMenuOpen(true)
   }
+
   function closeMenu() {
     setMenuOpen(false)
   }
@@ -69,17 +71,7 @@ export default function Header() {
 
           <Flex flex={1} justify="flex-end">
             <HStack spacing={2}>
-              <Box display={{ base: 'none', md: 'block' }}>
-                <NextLink href="/signup">
-                  <Button variant="ghost">Sign up</Button>
-                </NextLink>
-              </Box>
-
-              <Box>
-                <NextLink href="/signin">
-                  <Button colorScheme="teal">Sign in</Button>
-                </NextLink>
-              </Box>
+              <HeaderUser />
 
               <Box display={{ base: 'block', md: 'none' }}>
                 <MenuToggle openMenu={openMenu} isMenuOpen={isMenuOpen} />
@@ -89,7 +81,9 @@ export default function Header() {
         </Flex>
       </Flex>
 
-      <MenuPanel closeMenu={closeMenu} isMenuOpen={isMenuOpen} />
+      {isMenuOpen && (
+        <MenuPanel closeMenu={closeMenu} isMenuOpen={isMenuOpen} />
+      )}
     </>
   )
 }

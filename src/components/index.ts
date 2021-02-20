@@ -3,6 +3,7 @@ import ColorModeToggle from '@/components/color-mode-toggle'
 import Fonts from '@/components/fonts'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
+import HeaderUser from '@/components/header-user'
 import HeroHome from '@/components/hero-home'
 import Logo from '@/components/logo'
 import MenuPanel from '@/components/menu-panel'
@@ -17,6 +18,7 @@ export {
   Fonts,
   Footer,
   Header,
+  HeaderUser,
   HeroHome,
   Logo,
   MenuPanel,
