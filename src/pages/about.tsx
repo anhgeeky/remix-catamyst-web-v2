@@ -1,13 +1,13 @@
 import { Heading, Text } from '@chakra-ui/react'
 import { LayoutDefault } from '@/layouts'
 
-export default function Forum() {
+export default function About() {
   return (
-    <LayoutDefault title="Forum · Catamyst">
+    <LayoutDefault title="About Catamyst">
       <Heading as="h1" size="xl">
-        Forum
+        On helping people with their career
       </Heading>
-      <Text>Discuss ideas, ask questions, and contribute answers.</Text>
+      <Text>A quick story about Catamyst.</Text>
     </LayoutDefault>
   )
 }

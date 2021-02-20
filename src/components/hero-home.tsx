@@ -23,7 +23,7 @@ export default function HeroHome() {
         <Text size="2xl">
           Learn coding and design from the very beginning. Build and showcase
           your projects as portfolio. Discuss ideas and ask questions with the
-          community. Discover and post job opportunities.
+          community. Explore and post job opportunities.
         </Text>
 
         <QuickSignUpForm />

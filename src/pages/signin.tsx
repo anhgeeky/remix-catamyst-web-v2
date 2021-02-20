@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import { Heading } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 import { LayoutDefault } from '@/layouts'
 
 export default function SignIn() {
@@ -8,6 +7,7 @@ export default function SignIn() {
       <Heading as="h1" size="xl">
         Sign in
       </Heading>
+      <Text>Use your Catamyst account</Text>
     </LayoutDefault>
   )
 }

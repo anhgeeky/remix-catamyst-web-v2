@@ -1,13 +1,13 @@
-import Head from 'next/head'
-import { Heading } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 import { LayoutDefault } from '@/layouts'
 
 export default function Jobs() {
   return (
-    <LayoutDefault title="Job vacancies">
+    <LayoutDefault title="Search and post jobs on Catamyst">
       <Heading as="h1" size="xl">
         Jobs
       </Heading>
+      <Text>Search your next opportunities and post job vacancies.</Text>
     </LayoutDefault>
   )
 }

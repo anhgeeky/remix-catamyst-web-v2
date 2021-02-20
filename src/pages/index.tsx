@@ -4,7 +4,7 @@ import { HeroHome, PreviewDashboard } from '@/components'
 
 export default function Home() {
   return (
-    <LayoutDefault title="Catamyst">
+    <LayoutDefault title="Catamyst · All-in-one platform to learn software development">
       <VStack spacing={20}>
         <HeroHome />
         <PreviewDashboard />
