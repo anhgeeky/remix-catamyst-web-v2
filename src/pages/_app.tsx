@@ -3,6 +3,7 @@ import Head from 'next/head'
 import type { AppProps } from 'next/app'
 import { Provider as ReduxProvider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
+
 import { Fonts } from '@/components'
 import theme from '@/theme/index'
 import reduxStore from '@/features/store'

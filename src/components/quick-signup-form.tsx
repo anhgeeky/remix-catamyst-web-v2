@@ -1,8 +1,18 @@
 import { useState } from 'react'
-import { Button, Input, Stack } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import {
+  Box,
+  VisuallyHidden,
+  FormControl,
+  FormLabel,
+  Button,
+  Input,
+  Stack,
+} from '@chakra-ui/react'
 
 export default function QuickSignUpForm() {
   const [email, setEmail] = useState('')
+  const router = useRouter()
 
   function handleChange(event) {
     setEmail(event.target.value)
@@ -10,25 +20,30 @@ export default function QuickSignUpForm() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    if (email) {
-      alert(`Hey, let's sign up ${email}`)
-    }
+    router.push('/signup')
   }
 
   return (
     <Stack
+      id="quick-signup-form"
       as="form"
       maxW="30rem"
       direction={['column', 'row']}
       onSubmit={handleSubmit}
     >
-      <Input
-        type="email"
-        placeholder="yourname@mail.com"
-        onChange={handleChange}
-        value={email}
-      />
-      <Button type="submit" colorScheme="teal" px={10}>
+      <Box>
+        <VisuallyHidden>
+          <FormLabel>Email address</FormLabel>
+        </VisuallyHidden>
+        <Input
+          type="email"
+          placeholder="yourname@mail.com"
+          onChange={handleChange}
+          value={email}
+          minW="300px"
+        />
+      </Box>
+      <Button type="submit" colorScheme="teal" px={5}>
         Get started
       </Button>
     </Stack>

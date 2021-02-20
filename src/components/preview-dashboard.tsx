@@ -1,4 +1,3 @@
-import NextImage from 'next/image'
 import { Flex, VStack, Heading, Box } from '@chakra-ui/react'
 
 export default function PreviewDashboard() {

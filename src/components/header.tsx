@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import NextLink from 'next/link'
 import { useColorModeValue, Box, Flex, HStack } from '@chakra-ui/react'
+import { SkipNavLink } from '@chakra-ui/skip-nav'
+
 import {
   ColorModeToggle,
   Logo,
@@ -36,6 +38,7 @@ export default function Header() {
         width="100%"
         zIndex="3"
       >
+        <SkipNavLink>Skip to content</SkipNavLink>
         <Flex
           as="nav"
           maxW={1200}
