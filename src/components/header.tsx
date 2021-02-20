@@ -1,25 +1,17 @@
 import NextLink from 'next/link'
 import {
-  useColorModeValue,
-  Flex,
-  Image,
-  HStack,
-  Link,
   Button,
+  Flex,
+  HStack,
+  Image,
+  Link,
+  useColorModeValue,
 } from '@chakra-ui/react'
-import { ColorModeToggle } from '@/components'
+import { ColorModeToggle, Logo, NavLink, MenuToggle } from '@/components'
+import publicPages from '@/data/public-pages.json'
 
 export default function Header() {
   const bg = useColorModeValue('white', 'gray.900')
-
-  const publicPages = [
-    { href: '/learn', text: 'Learn' },
-    { href: '/discover', text: 'Discover' },
-    { href: '/forum', text: 'Forum' },
-    { href: '/jobs', text: 'Jobs' },
-    { href: '/pricing', text: 'Pricing' },
-    { href: '/help', text: 'Help' },
-  ]
 
   return (
     <Flex
@@ -37,13 +29,7 @@ export default function Header() {
           <HStack spacing={2}>
             <NextLink href="/">
               <a aria-label="Catamyst, back to homepage">
-                <Image
-                  src="/images/catamyst-logo.png"
-                  alt="Catamyst logo"
-                  height={30}
-                  width={150}
-                  objectFit="contain"
-                />
+                <Logo />
               </a>
             </NextLink>
             <ColorModeToggle display={{ base: 'none', md: 'flex' }} />
@@ -51,13 +37,9 @@ export default function Header() {
         </Flex>
 
         <Flex flex={1} justify="center" display={{ base: 'none', md: 'flex' }}>
-          <HStack spacing={4}>
+          <HStack spacing={1}>
             {publicPages.map((page, index) => {
-              return (
-                <NextLink href={page.href} key={index}>
-                  <Link aria-label={page.text}>{page.text}</Link>
-                </NextLink>
-              )
+              return <NavLink key={index} page={page} />
             })}
           </HStack>
         </Flex>

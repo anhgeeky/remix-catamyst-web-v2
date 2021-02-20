@@ -12,7 +12,7 @@ export default function ColorModeToggle({ display }) {
       aria-label={`Switch to ${text} mode`}
       color="current"
       display={display}
-      icon={<SwitchIcon />}
+      icon={<SwitchIcon opacity={0.5} />}
       variant="ghost"
     >
       {colorMode === 'light' ? '🌙' : '☀️'}

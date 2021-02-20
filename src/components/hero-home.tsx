@@ -22,8 +22,8 @@ export default function HeroHome() {
         </Heading>
         <Text size="2xl">
           Learn coding and design from the very beginning. Build and showcase
-          your projects as portfolio. Discuss with the community. Discover job
-          opportunities.
+          your projects as portfolio. Discuss ideas and ask questions with the
+          community. Discover and post job opportunities.
         </Text>
 
         <QuickSignUpForm />

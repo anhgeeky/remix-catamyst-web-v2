@@ -25,7 +25,6 @@ export default function QuickSignUpForm() {
       <Input
         type="email"
         placeholder="yourname@mail.com"
-        focusBorderColor="brand.secondary"
         onChange={handleChange}
         value={email}
       />

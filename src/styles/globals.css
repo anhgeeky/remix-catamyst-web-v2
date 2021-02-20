@@ -6,3 +6,18 @@
 ::selection {
   background: hsla(180, 100%, 33%, 0.5);
 }
+
+a {
+  outline-color: var(--color-secondary);
+}
+
+.navlink {
+  padding: 6px;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+.navlink:hover,
+.navlink:focus {
+  color: #000;
+}

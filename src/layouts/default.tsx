@@ -11,7 +11,7 @@ export default function LayoutDefault({ title, children }) {
       </Head>
 
       <Header />
-      <Container maxW="1200px" minH="80vh">
+      <Container id="main-container" as="main" maxW="1200px" minH="80vh">
         {children}
       </Container>
       <Footer />
