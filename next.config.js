@@ -5,6 +5,8 @@ module.exports = {
       'api.catamyst.com',
       'storage.catamyst.com',
       'res.cloudinary.com',
+      'amazonaws.com',
+      'bit.ly',
     ],
   },
   webpack(config) {

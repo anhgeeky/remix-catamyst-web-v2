@@ -8,20 +8,23 @@
     "blocks": [
       {
         "component": "image",
-        "imageName": "Cat sitting in front of artworks",
-        "imageUrl": "https://bit.ly/cat-with-artworks",
-        "imageSize": "320px",
+        "name": "Cat sitting in front of artworks",
+        "src": "https://bit.ly/cat-with-artworks",
+        "width": "300px",
+        "height": "250px",
         "sourceUrl": "https://catamyst.com"
       },
       {
         "component": "text",
-        "contentHtml": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly?</p><p>B. Publish the artworks on a website?</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
+        "html": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly?</p><p>B. Publish the artworks on a website?</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
       },
       {
         "component": "image",
-        "imageName": "Google Arts & Culture website - Cats in culture",
-        "imageUrl": "https://bit.ly/google-arts-cats",
-        "imageSize": "100%",
+        "type": "screenshot",
+        "name": "Google Arts & Culture website - Cats in culture",
+        "src": "https://bit.ly/google-arts-cats",
+        "width": "1440px",
+        "height": "900px",
         "sourceUrl": "https://artsandculture.google.com"
       }
     ]

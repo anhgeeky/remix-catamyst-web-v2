@@ -1,5 +1,5 @@
+import Image from 'next/image'
 import {
-  Image,
   Flex,
   Box,
   HStack,
@@ -8,20 +8,27 @@ import {
   Stack,
   Text,
   Link,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
 export default function LessonBlock({ block }) {
   if (block.component === 'image') {
+    const bg = useColorModeValue('gray.100', 'gray.800')
     return (
       <Stack align="center">
-        <Image
-          src={block.imageUrl}
-          alt={block.imageName}
-          maxW={block.imageSize}
-        />
+        <Box bg={block.type === 'screenshot' && bg}>
+          <Image
+            src={block.src}
+            alt={block.name}
+            width={block.width}
+            height={block.height}
+            layout="intrinsic"
+            objectFit="contain"
+          />
+        </Box>
         <Stack opacity={0.5} align="center" spacing={0}>
-          <Text>{block.imageName}</Text>
+          <Text>{block.name}</Text>
           <Link fontSize="sm" href={block.sourceUrl}>
             {block.sourceUrl}
           </Link>
@@ -31,7 +38,7 @@ export default function LessonBlock({ block }) {
   } else if (block.component === 'text') {
     return (
       <Box className="text-block" maxW="680px" p={5}>
-        <Text>{ReactHtmlParser(block.contentHtml)}</Text>
+        <Text>{ReactHtmlParser(block.html)}</Text>
       </Box>
     )
   } else {
