@@ -25,3 +25,7 @@ a {
 .menu-link {
   padding: 8px;
 }
+
+.text-block p {
+  margin: 12px 0;
+}

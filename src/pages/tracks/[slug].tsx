@@ -17,7 +17,7 @@ import { Hero, CollectionTopics } from '@/components'
 import dataTracks from '@/data/tracks.json'
 import dataTopics from '@/data/topics.json'
 
-export default function Track() {
+export default function TrackBySlug() {
   const router = useRouter()
   const { slug } = router.query
   const [topics, setTopics] = useState([])
@@ -40,7 +40,7 @@ export default function Track() {
       {slug && track && topics && (
         <>
           <Head>
-            <title>{track.title} Track · Catamyst</title>
+            <title>{track.title} · Track · Catamyst</title>
           </Head>
 
           <Hero>
@@ -59,7 +59,6 @@ export default function Track() {
                   {track.title}
                 </Heading>
                 <Text maxW="680px">{track.description}</Text>
-                <Button disabled>You're joined</Button>
               </WrapItem>
             </Wrap>
           </Hero>

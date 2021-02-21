@@ -5,7 +5,7 @@ import { Layout } from '@/layouts'
 import { Hero, Content, SectionLessons } from '@/components'
 import dataTopics from '@/data/topics.json'
 
-export default function Topic() {
+export default function TopicBySlug() {
   const router = useRouter()
   const { slug } = router.query
 
@@ -18,7 +18,7 @@ export default function Topic() {
       {slug && topic && (
         <>
           <Head>
-            <title>{topic.title} · Catamyst</title>
+            <title>{topic.title} · Topic · Catamyst</title>
           </Head>
 
           <Hero>

@@ -1,25 +1,27 @@
 [
   {
     "id": 1,
-    "slug": "web-development-introduction",
     "title": "Web development introduction",
+    "slug": "web-development-introduction",
     "level": "newbie",
     "type": "fundamental",
     "blocks": [
       {
         "component": "image",
-        "name": "Cat sitting in front of artworks",
+        "imageName": "Cat sitting in front of artworks",
         "imageUrl": "https://bit.ly/cat-with-artworks",
+        "imageSize": "320px",
         "sourceUrl": "https://catamyst.com"
       },
       {
         "component": "text",
-        "contentHtml": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world.</p><p>What do you think is the best way for Neko to share them?</p>"
+        "contentHtml": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly?</p><p>B. Publish the artworks on a website?</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
       },
       {
         "component": "image",
-        "name": "Google Arts & Culture website at ",
+        "imageName": "Google Arts & Culture website - Cats in culture",
         "imageUrl": "https://bit.ly/google-arts-cats",
+        "imageSize": "100%",
         "sourceUrl": "https://artsandculture.google.com"
       }
     ]
@@ -27,6 +29,7 @@
   {
     "id": 2,
     "title": "Activities overview",
+    "slug": "activities-overview",
     "level": "newbie",
     "type": "fundamental",
     "blocks": []
@@ -34,6 +37,7 @@
   {
     "id": 3,
     "title": "Time duration to complete",
+    "slug": "time-duration-to-complete",
     "level": "newbie",
     "type": "fundamental",
     "blocks": []
@@ -41,6 +45,7 @@
   {
     "id": 4,
     "title": "Device requirements",
+    "slug": "device-requirements",
     "level": "newbie",
     "type": "specific",
     "blocks": []
@@ -48,6 +53,7 @@
   {
     "id": 5,
     "title": "Essential software tools",
+    "slug": "essential-software-tools",
     "level": "newbie",
     "type": "specific",
     "blocks": []
@@ -55,6 +61,7 @@
   {
     "id": 6,
     "title": "Other software tools",
+    "slug": "other-software-tools",
     "level": "newbie",
     "type": "specific",
     "blocks": []
@@ -62,6 +69,7 @@
   {
     "id": 7,
     "title": "Managing your tasks",
+    "slug": "managing-your-tasks",
     "level": "newbie",
     "type": "project",
     "blocks": []

@@ -49,13 +49,13 @@ export default function CollectionTracks({ data }) {
               <Button
                 size="lg"
                 colorScheme="teal"
-                aria-label={`Join ${track.title} track`}
+                aria-label={`Choose ${track.title} track`}
                 onClick={() => router.push(`/tracks/${track.slug}`)}
               >
-                Join Track
+                Choose Track
               </Button>
               <Stack opacity={0.5} fontSize="sm" spacing={0}>
-                <Text>Newbie to Advanced</Text>
+                <Text>Newbie to Advanced level</Text>
                 <Text>
                   <b>20</b> members joined
                 </Text>

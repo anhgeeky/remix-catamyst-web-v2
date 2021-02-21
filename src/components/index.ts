@@ -9,6 +9,8 @@ import Header from '@/components/header'
 import HeaderUser from '@/components/header-user'
 import Hero from '@/components/hero'
 import HeroHome from '@/components/hero-home'
+import LessonBlock from '@/components/lesson-block'
+import LessonIcon from '@/components/lesson-icon'
 import Logo from '@/components/logo'
 import MenuPanel from '@/components/menu-panel'
 import MenuToggle from '@/components/menu-toggle'
@@ -29,6 +31,8 @@ export {
   HeaderUser,
   Hero,
   HeroHome,
+  LessonBlock,
+  LessonIcon,
   Logo,
   MenuPanel,
   MenuToggle,
