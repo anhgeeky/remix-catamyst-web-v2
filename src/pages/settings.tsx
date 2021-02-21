@@ -2,7 +2,8 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { Heading, Text } from '@chakra-ui/react'
-import { LayoutDefault } from '@/layouts'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
 
 export default function Settings() {
   const auth = useSelector((state) => state.auth)
@@ -14,15 +15,20 @@ export default function Settings() {
   }, [])
 
   return (
-    <LayoutDefault title="Settings · Catamyst">
+    <Layout title="Settings · Catamyst">
       {isAuthorized && (
         <>
-          <Heading as="h1" size="xl">
-            Settings
-          </Heading>
-          <Text>Your account settings.</Text>
+          <Hero>
+            <Heading as="h1" size="xl">
+              Settings
+            </Heading>
+            <Text>Your account settings.</Text>
+          </Hero>
+          <Content>
+            <Text>(Settings form)</Text>
+          </Content>
         </>
       )}
-    </LayoutDefault>
+    </Layout>
   )
 }

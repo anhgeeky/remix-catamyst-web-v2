@@ -1,22 +1,22 @@
 import Head from 'next/head'
-import { Box, Container } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
 import { Header, Footer } from '@/components'
 
-export default function LayoutDefault({ title, children }) {
+export default function Layout({ title, children }) {
+  const bg = useColorModeValue('gray.50', 'gray.900')
+
   return (
-    <Box pt={20}>
+    <Box bg={bg}>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
-      <SkipNavContent>
-        <Container id="main-container" as="main" maxW="1200px" minH="80vh">
-          {children}
-        </Container>
-      </SkipNavContent>
+      <Box as="main" pt="56px" minH="80vh">
+        <SkipNavContent>{children}</SkipNavContent>
+      </Box>
       <Footer />
     </Box>
   )

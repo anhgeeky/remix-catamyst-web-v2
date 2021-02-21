@@ -3,22 +3,14 @@ import { useColorModeValue, Code, VStack, Text, Box } from '@chakra-ui/react'
 export default function Footer() {
   const date = new Date()
   const year = date.getFullYear()
-  const bg = useColorModeValue('teal.100', 'teal.900')
-  const color = useColorModeValue('teal.600', 'teal.100')
+  const bg = useColorModeValue('gray.100', 'gray.800')
+  const color = useColorModeValue('gray.600', 'gray.100')
 
   const NODE_ENV = process.env.NODE_ENV
   const API_URL = process.env.NEXT_PUBLIC_API_URL
 
   return (
-    <VStack
-      as="footer"
-      mt={10}
-      py={10}
-      px={5}
-      bg={bg}
-      color={color}
-      textAlign="center"
-    >
+    <VStack as="footer" mt={20} p={5} bg={bg} color={color} textAlign="center">
       <Text>
         Copyright © {year} <b>Catamyst</b>
       </Text>
@@ -27,7 +19,7 @@ export default function Footer() {
         <Text>Catamyst OÜ (Reg. No. 12345678)</Text>
       </VStack>
       {NODE_ENV !== 'production' && (
-        <Code colorScheme="teal" fontWeight="bold">
+        <Code colorScheme="gray" fontWeight="bold">
           {NODE_ENV} && {API_URL}
         </Code>
       )}

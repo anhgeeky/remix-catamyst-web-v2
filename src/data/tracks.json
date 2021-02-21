@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "slug": "web",
+    "title": "Website Development",
+    "description": "Learn and practice the fundamental concepts and specific tools you can use to build basic websites. This track focuses only on the frontend, or what your website visitor would see.",
+    "levels": ["newbie"],
+    "topics": [1, 2, 3]
+  },
+  {
+    "id": 1,
+    "slug": "web-app",
+    "title": "Web Application Development",
+    "description": "Learn and practice the fundamental concepts and specific tools you can use to build high-quality websites and web applications. This cover everything from the frontend (what users see and use) to the backend (data of the users). Master your strengths in problem-solving and build projects that could leverage you to land a decent job, get a freelance offer, or build your own software business.",
+    "levels": ["newbie", "beginner", "intermediate", "advanced"],
+    "topics": [1, 2, 3, 4, 5, 6]
+  }
+]

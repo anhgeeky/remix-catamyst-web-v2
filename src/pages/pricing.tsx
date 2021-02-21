@@ -1,13 +1,20 @@
 import { Heading, Text } from '@chakra-ui/react'
-import { LayoutDefault } from '@/layouts'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
 
 export default function Pricing() {
   return (
-    <LayoutDefault title="Pricing · Catamyst">
-      <Heading as="h1" size="xl">
-        Pricing
-      </Heading>
-      <Text>Different plans based on your goals, budget, and timeline.</Text>
-    </LayoutDefault>
+    <Layout title="Pricing · Catamyst">
+      <Hero>
+        <Heading as="h1" size="xl">
+          Pricing
+        </Heading>
+        <Text>Different plans based on your goals, budget, and timeline.</Text>
+      </Hero>
+
+      <Content>
+        <Text>(Pricing plan table)</Text>
+      </Content>
+    </Layout>
   )
 }

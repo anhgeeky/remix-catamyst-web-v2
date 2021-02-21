@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "slug": "web-development-introduction",
+    "title": "Web development introduction",
+    "level": "newbie",
+    "type": "fundamental",
+    "blocks": [
+      {
+        "component": "image",
+        "name": "Cat sitting in front of artworks",
+        "imageUrl": "https://bit.ly/cat-with-artworks",
+        "sourceUrl": "https://catamyst.com"
+      },
+      {
+        "component": "text",
+        "contentHtml": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world.</p><p>What do you think is the best way for Neko to share them?</p>"
+      },
+      {
+        "component": "image",
+        "name": "Google Arts & Culture website at ",
+        "imageUrl": "https://bit.ly/google-arts-cats",
+        "sourceUrl": "https://artsandculture.google.com"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Activities overview",
+    "level": "newbie",
+    "type": "fundamental",
+    "blocks": []
+  },
+  {
+    "id": 3,
+    "title": "Time duration to complete",
+    "level": "newbie",
+    "type": "fundamental",
+    "blocks": []
+  },
+  {
+    "id": 4,
+    "title": "Device requirements",
+    "level": "newbie",
+    "type": "specific",
+    "blocks": []
+  },
+  {
+    "id": 5,
+    "title": "Essential software tools",
+    "level": "newbie",
+    "type": "specific",
+    "blocks": []
+  },
+  {
+    "id": 6,
+    "title": "Other software tools",
+    "level": "newbie",
+    "type": "specific",
+    "blocks": []
+  },
+  {
+    "id": 7,
+    "title": "Managing your tasks",
+    "level": "newbie",
+    "type": "project",
+    "blocks": []
+  }
+]

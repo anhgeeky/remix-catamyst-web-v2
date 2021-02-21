@@ -22,7 +22,7 @@ export default function authReducer(state = initialState, action) {
       return { ...state, isLoading: true }
     }
     case SIGN_IN_ERROR: {
-      return { ...state, isLoading: false, isAuthenticated: false }
+      return { ...state, isLoading: false, isAuthenticated: false, user: {} }
     }
     case SIGN_IN_SUCCESS: {
       return {

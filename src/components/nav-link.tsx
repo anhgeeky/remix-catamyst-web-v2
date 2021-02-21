@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { chakra, Link, Text } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/react'
 
 export default function NavLink({ page }) {
   return (

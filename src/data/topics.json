@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "slug": "getting-started",
+    "title": "Getting started",
+    "description": "Let's start by understand everything you have to prepare.",
+    "category": "preparation",
+    "iconEmoji": "⭐",
+    "sections": [
+      {
+        "title": "Let's start from here",
+        "lessons": [1, 2, 3]
+      },
+      {
+        "title": "Hardware and software requirements",
+        "lessons": [4, 5, 6, 7]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "skills-and-principles",
+    "title": "Skills and principles",
+    "description": "Learn the essential skills and principles for professional work.",
+    "category": "preparation",
+    "iconEmoji": "⚙️",
+    "sections": [
+      {
+        "title": "Learning principles",
+        "lessons": [8, 9, 10, 11]
+      },
+      {
+        "title": "Work and collaboration skills",
+        "lessons": [12, 13]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "website-and-web-application-ideas",
+    "title": "Website and web application ideas",
+    "description": "Get some inspirations to spark your ideas by real-worl examples.",
+    "category": "preparation",
+    "iconEmoji": "💡",
+    "sections": [
+      {
+        "title": "Getting inspired",
+        "lessons": [14]
+      },
+      {
+        "title": "Website examples",
+        "lessons": [15, 16, 17, 18, 19, 20]
+      },
+      {
+        "title": "Web application examples",
+        "lessons": [21, 22]
+      }
+    ]
+  }
+]

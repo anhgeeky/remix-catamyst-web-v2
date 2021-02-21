@@ -3,44 +3,56 @@ import {
   useColorModeValue,
   Text,
   Stack,
+  HStack,
   Box,
   Heading,
   StackDivider,
 } from '@chakra-ui/react'
-import { LayoutDefault } from '@/layouts'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
 import topUsers from '@/data/top-users.json'
 
 export default function Discover() {
   const dividerBorderColor = useColorModeValue('gray.200', 'gray.700')
 
   return (
-    <LayoutDefault title="Discover members and projects on Catamyst">
-      <Heading as="h1" size="xl">
-        Discover members and projects
-      </Heading>
-      <Text>
-        Connect with learners, developers, and designers on Catamyst. Check out
-        their showcase projects!
-      </Text>
+    <Layout title="Discover members and projects on Catamyst">
+      <Hero>
+        <Heading as="h1" size="xl">
+          Discover members and projects
+        </Heading>
+        <Text>
+          Connect with learners, developers, and designers on Catamyst. Check
+          out their showcase projects!
+        </Text>
+      </Hero>
 
-      <Stack
-        my={10}
-        divider={<StackDivider borderColor={dividerBorderColor} />}
-      >
-        {topUsers.map((user) => {
-          return (
-            <Box py={5}>
-              <Heading as="h4" size="md">
+      <Content>
+        <Stack divider={<StackDivider borderColor={dividerBorderColor} />}>
+          {topUsers.map((user, index) => {
+            return (
+              <Stack key={user.id} py={5}>
                 <NextLink href={user.handle}>
                   <a>
-                    {user.name} (@{user.handle})
+                    <HStack>
+                      <Box
+                        data-id="placeholder-image"
+                        borderRadius="full"
+                        bg="black"
+                        width="50px"
+                        height="50px"
+                      />
+                      <Heading as="h4" size="md">
+                        {user.name} (@{user.handle})
+                      </Heading>
+                    </HStack>
                   </a>
                 </NextLink>
-              </Heading>
-            </Box>
-          )
-        })}
-      </Stack>
-    </LayoutDefault>
+              </Stack>
+            )
+          })}
+        </Stack>
+      </Content>
+    </Layout>
   )
 }

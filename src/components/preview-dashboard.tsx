@@ -8,7 +8,13 @@ export default function PreviewDashboard() {
           Your dashboard at a glance
         </Heading>
         <Flex boxShadow="base" borderRadius={5} p={2}>
-          <Box bg="gray.500" height="250px" width="250px" maxW="1000px" />
+          <Box
+            data-id="placeholder-image"
+            bg="black"
+            height="250px"
+            width="250px"
+            maxW="1000px"
+          />
         </Flex>
       </VStack>
     </Flex>

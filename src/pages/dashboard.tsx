@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
-import { Heading, Text, Box, Button } from '@chakra-ui/react'
-import { LayoutDefault } from '@/layouts'
+import { Heading, Text, Stack, Container } from '@chakra-ui/react'
+import { Layout } from '@/layouts'
+import { Hero, Content, CollectionTracks } from '@/components'
+import dataTracks from '@/data/tracks.json'
 
 export default function Dashboard() {
   const auth = useSelector((state) => state.auth)
@@ -14,20 +16,32 @@ export default function Dashboard() {
   }, [])
 
   return (
-    <LayoutDefault title="Dashboard · Catamyst">
+    <Layout title="Dashboard · Catamyst">
       {isAuthorized && (
         <>
-          <Heading as="h1" size="xl">
-            Dashboard
-          </Heading>
-          <Text>Welcome back! Let's learn, discuss, and explore.</Text>
-          <Box py={5}>
-            <Button onClick={() => router.push(`/${auth.user.handle}`)}>
-              Go to my profile @{auth.user.handle}
-            </Button>
-          </Box>
+          <Hero>
+            <Heading as="h1" size="xl">
+              Dashboard
+            </Heading>
+            <Text>Welcome back, {auth.user.name}!</Text>
+          </Hero>
+
+          <Container maxW="1200px" pt={10}>
+            <Stack spacing={5}>
+              <Heading
+                as="h2"
+                fontFamily="body"
+                opacity={0.5}
+                size="sm"
+                textTransform="uppercase"
+              >
+                Available Tracks
+              </Heading>
+              <CollectionTracks data={dataTracks} />
+            </Stack>
+          </Container>
         </>
       )}
-    </LayoutDefault>
+    </Layout>
   )
 }

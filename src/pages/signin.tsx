@@ -1,8 +1,16 @@
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
-import { useToast, Heading, Text, HStack, Button } from '@chakra-ui/react'
-import { LayoutDefault } from '@/layouts'
-
+import {
+  useToast,
+  Flex,
+  Heading,
+  Box,
+  Text,
+  Container,
+  Button,
+} from '@chakra-ui/react'
+import { Layout } from '@/layouts'
+import { Hero } from '@/components'
 import { signIn } from '@/features/auth/actions'
 
 export default function SignIn() {
@@ -23,17 +31,19 @@ export default function SignIn() {
   }
 
   return (
-    <LayoutDefault title="Sign in to your Catamyst account">
-      <Heading as="h1" size="xl">
-        Sign in
-      </Heading>
-      <Text>Use your Catamyst account</Text>
+    <Layout title="Sign in to your Catamyst account">
+      <Hero>
+        <Heading as="h1" size="xl">
+          Sign in
+        </Heading>
+        <Text>Use your Catamyst account</Text>
+      </Hero>
 
-      <HStack py={5} spacing={2}>
+      <Container maxW="1200px" pt={5}>
         <Button colorScheme="teal" onClick={handleSignIn}>
-          Next
+          Instant sign in
         </Button>
-      </HStack>
-    </LayoutDefault>
+      </Container>
+    </Layout>
   )
 }
