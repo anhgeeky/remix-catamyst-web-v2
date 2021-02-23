@@ -16,7 +16,7 @@
       },
       {
         "component": "text",
-        "html": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly?</p><p>B. Publish the artworks on a website?</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
+        "html": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly.</p><p>B. Publish the artworks on a website.</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
       },
       {
         "component": "image",
@@ -26,6 +26,21 @@
         "width": "1440px",
         "height": "900px",
         "sourceUrl": "https://artsandculture.google.com"
+      },
+      {
+        "component": "text",
+        "html": "<h1 id='what-is-web-development'>What is web development?</h1><p>Web development is the process of building websites that run in a web browser. Web development powers popular sites like Google, Wikipedia, Twitter, YouTube, Facebook, Instagram, LinkedIn, Airbnb, and more. Even systems on software from Apple and Microsoft. And obviously, your favorite websites included!</p><p>In this learning track, you will obtain fundamental concepts and specific tools to build high-quality websites and web applications. Ultimately, you will be able to master your strengths in problem-solving and showcasing a portfolio that could leverage you to land a decent job or a freelance offer. You can even build your own tech business using the knowledge and skillset you obtain here.</p><h1 id='who-is-a-web-developer'>Who is a web developer?</h1><p>A web developer is the one who builds and maintains websites or web applications. They are also sometimes responsible to design how you would see and experience a website. Although, the work for the design can also be given to the dedicated web designers instead.</p><h1 id='who-can-learn-web-development'>Who can learn web development?</h1><p>Even though Neko is a painter, Neko can learn web development and build a website. So, no matter what your education and career background are, you can learn to build your own websites and web applications as long as you make the effort.</p>"
+      },
+      {
+        "component": "references",
+        "items": [
+          {
+            "title": "Web development",
+            "source": "Wikipedia",
+            "type": "article",
+            "url": "https://en.wikipedia.org/wiki/Web_development"
+          }
+        ]
       }
     ]
   },

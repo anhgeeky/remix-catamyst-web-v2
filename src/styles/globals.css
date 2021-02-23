@@ -1,6 +1,10 @@
 :root {
   --color-primary: #0aa;
   --color-secondary: #aca;
+  --color-tertiary: #555;
+  --color-teal: #319795;
+  --color-green: #48bb78;
+  --color-blue: #4299e1;
 }
 
 ::selection {
@@ -24,8 +28,4 @@ a {
 
 .menu-link {
   padding: 8px;
-}
-
-.text-block p {
-  margin: 12px 0;
 }

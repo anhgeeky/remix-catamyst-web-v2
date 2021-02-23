@@ -50,7 +50,7 @@ export default function LessonBySlug() {
           <Container maxW="1200px" px={0} py={10}>
             <Stack align="center" spacing={5}>
               {lesson.blocks.map((block, index) => {
-                return <LessonBlock block={block} />
+                return <LessonBlock key={index} block={block} />
               })}
             </Stack>
           </Container>

@@ -17,8 +17,8 @@ import MenuToggle from '@/components/menu-toggle'
 import NavLink from '@/components/nav-link'
 import PreviewDashboard from '@/components/preview-dashboard'
 import QuickSignUpForm from '@/components/quick-signup-form'
+import ReferenceIcon from '@/components/reference-icon'
 import SectionLessons from '@/components/section-lessons'
-
 export {
   Button,
   CollectionTopics,
@@ -39,5 +39,6 @@ export {
   NavLink,
   PreviewDashboard,
   QuickSignUpForm,
+  ReferenceIcon,
   SectionLessons,
 }
