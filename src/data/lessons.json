@@ -9,7 +9,7 @@
       {
         "component": "image",
         "name": "Cat sitting in front of artworks",
-        "src": "https://bit.ly/cat-with-artworks",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
         "width": "300px",
         "height": "250px",
         "sourceUrl": "https://catamyst.com"
@@ -22,7 +22,7 @@
         "component": "image",
         "type": "screenshot",
         "name": "Google Arts & Culture website - Cats in culture",
-        "src": "https://bit.ly/google-arts-cats",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
         "width": "1440px",
         "height": "900px",
         "sourceUrl": "https://artsandculture.google.com"

@@ -29,7 +29,7 @@ export default function TrackBySlug() {
   useEffect(() => {
     if (track) {
       const selectedTopics = dataTopics.filter((topic) => {
-        return topic
+        return track.topics.includes(topic.id)
       })
       setTopics(selectedTopics)
     }

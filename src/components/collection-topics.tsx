@@ -32,7 +32,13 @@ export default function CollectionTopics({ data }) {
                 {topic.iconEmoji} {topic.title}
               </Heading>
               <Box>
-                <Badge variant="solid">{topic.category}</Badge>
+                <Badge
+                  colorScheme={
+                    topic.category === 'frontend' ? 'yellow' : 'gray'
+                  }
+                >
+                  {topic.category}
+                </Badge>
               </Box>
             </Flex>
           </NextLink>

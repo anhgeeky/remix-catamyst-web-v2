@@ -36,7 +36,7 @@ export default function SectionLessons({ data }) {
                 })
 
                 if (!selectedLesson) {
-                  return <Link key={index}>Missing lesson</Link>
+                  return <Link key={index}>Lesson {index + 1} hidden</Link>
                 } else {
                   return (
                     <NextLink

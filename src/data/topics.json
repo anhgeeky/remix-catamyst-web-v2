@@ -37,9 +37,9 @@
   },
   {
     "id": 3,
-    "slug": "website-and-web-application-ideas",
-    "title": "Website and web application ideas",
-    "description": "Get some inspirations to spark your ideas by real-worl examples.",
+    "slug": "website-ideas",
+    "title": "Website ideas",
+    "description": "Get inspirations real-world websites.",
     "category": "preparation",
     "iconEmoji": "💡",
     "sections": [
@@ -49,12 +49,48 @@
       },
       {
         "title": "Website examples",
-        "lessons": [15, 16, 17, 18, 19, 20]
+        "lessons": [15, 16, 17]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "website-and-web-application-ideas",
+    "title": "Website and web application ideas",
+    "description": "Get inspirations to spark your website and web application ideas by real-world examples.",
+    "category": "preparation",
+    "iconEmoji": "💡",
+    "sections": [
+      {
+        "title": "Getting inspired",
+        "lessons": [14]
+      },
+      {
+        "title": "Website examples",
+        "lessons": [15, 16, 17]
       },
       {
         "title": "Web application examples",
-        "lessons": [21, 22]
+        "lessons": [18, 19, 20]
       }
     ]
+  },
+  {
+    "id": 5,
+    "slug": "features-and-projects",
+    "title": "Features and projects",
+    "description": "Understand the possibilities and functionalities of your projects.",
+    "category": "preparation",
+    "iconEmoji": "🧩",
+    "sections": []
+  },
+  {
+    "id": 6,
+    "slug": "design-with-interface-and-experience",
+    "title": "Design with interface and experience",
+    "description": "Plan and design the user interface and experience of a website or web app.",
+    "category": "frontend",
+    "iconEmoji": "🎨",
+    "sections": []
   }
 ]
