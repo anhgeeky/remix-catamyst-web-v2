@@ -1,6 +1,7 @@
 import Button from '@/components/button'
 import CollectionTopics from '@/components/collection-topics'
 import CollectionTracks from '@/components/collection-tracks'
+import CollectionUsers from '@/components/collection-users'
 import ColorModeToggle from '@/components/color-mode-toggle'
 import Content from '@/components/content'
 import Fonts from '@/components/fonts'
@@ -19,10 +20,12 @@ import PreviewDashboard from '@/components/preview-dashboard'
 import QuickSignUpForm from '@/components/quick-signup-form'
 import ReferenceIcon from '@/components/reference-icon'
 import SectionLessons from '@/components/section-lessons'
+
 export {
   Button,
   CollectionTopics,
   CollectionTracks,
+  CollectionUsers,
   ColorModeToggle,
   Content,
   Fonts,

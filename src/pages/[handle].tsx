@@ -3,16 +3,21 @@ import { useRouter } from 'next/router'
 import { Stack, Avatar, Heading, Text, Box } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
 import { Hero, Content } from '@/components'
+import users from '@/data/users.json'
+
+export async function getServerSideProps(context) {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
 
 export default function UserProfile() {
   const router = useRouter()
   const { handle } = router.query
 
-  const user = {
-    handle,
-    name: String(handle),
-    bio: `Bio of ${handle}.`,
-  }
+  const user = users.find((user, index) => {
+    return user.handle === handle
+  })
 
   return (
     <Layout title={`Loading user profile...`}>

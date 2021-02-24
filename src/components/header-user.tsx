@@ -39,7 +39,7 @@ export default function HeaderUser() {
         <Box>
           <Menu>
             <MenuButton aria-label="User menu button" cursor="pointer">
-              <Avatar name={auth.user.handle} size="sm" />
+              <Avatar name={auth.user.name} size="sm" />
             </MenuButton>
             <MenuList>
               <MenuGroup title={`@${auth.user.handle}`}>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Catamyst",
+    "handle": "catamyst",
+    "bio": "Administrator of Catamyst"
+  },
+  {
+    "id": 2,
+    "name": "M Haidar Hanif",
+    "handle": "haidar",
+    "bio": "Founder, Educator, and Developer of Catamyst"
+  },
+  {
+    "id": 3,
+    "name": "Maya Asmara",
+    "handle": "maya",
+    "bio": "Writer of Catamyst"
+  },
+  {
+    "id": 4,
+    "name": "Latifah",
+    "handle": "latifah",
+    "bio": "Illustrator of Catamyst"
+  }
+]
