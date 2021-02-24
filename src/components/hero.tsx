@@ -1,11 +1,11 @@
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 
-export default function Hero({ children }) {
-  const color = useColorModeValue('cyan.900', 'cyan.100')
-  const bg = useColorModeValue('cyan.100', 'cyan.900')
+export default function Hero({ color = 'cyan', children }) {
+  const textColor = useColorModeValue(`${color}.900`, `${color}.100`)
+  const bg = useColorModeValue(`${color}.100`, `${color}.900`)
 
   return (
-    <Flex py={10} color={color} bg={bg} justify="center">
+    <Flex py={10} color={textColor} bg={bg} justify="center">
       <Box px={5} width="1200px">
         {children}
       </Box>

@@ -6,22 +6,23 @@ import { Hero, Content } from '@/components'
 import users from '@/data/users.json'
 
 export async function getServerSideProps(context) {
-  return {
-    props: {}, // will be passed to the page component as props
-  }
-}
-
-export default function UserProfile() {
-  const router = useRouter()
-  const { handle } = router.query
-
+  const { handle } = context.params
   const user = users.find((user, index) => {
     return user.handle === handle
   })
 
+  return {
+    props: {
+      handle,
+      user,
+    },
+  }
+}
+
+export default function UserProfile({ handle, user }) {
   return (
     <Layout title={`Loading user profile...`}>
-      {user.handle && (
+      {handle && user.handle && (
         <>
           <Head>
             <title>
