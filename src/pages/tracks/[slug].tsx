@@ -58,7 +58,7 @@ export default function TrackBySlug() {
                 <Heading as="h1" size="lg">
                   {track.title}
                 </Heading>
-                <Text maxW="680px">{track.description}</Text>
+                <Text maxW="60ch">{track.description}</Text>
               </WrapItem>
             </Wrap>
           </Hero>

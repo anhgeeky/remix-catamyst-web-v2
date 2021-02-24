@@ -16,7 +16,15 @@ export default function BlockReferences({ block }) {
   return (
     <Stack maxW="720px" p={5} spacing={5} width="100%">
       <hr />
-      <Heading fontFamily="body">References</Heading>
+      <Heading
+        fontFamily="body"
+        textTransform="uppercase"
+        textAlign="center"
+        fontSize="xl"
+        letterSpacing={0.5}
+      >
+        References
+      </Heading>
       <Stack>
         {Array.isArray(block.items) &&
           block.items.map((item, index) => {
@@ -27,25 +35,28 @@ export default function BlockReferences({ block }) {
                 href={item.url}
                 _hover={{ textDecoration: 'none' }}
               >
-                <Box
+                <Stack
                   key={index}
                   bg={bg}
                   boxShadow="base"
                   cursor="pointer"
                   p={3}
+                  spacing={1}
                   _hover={{ boxShadow: 'outline' }}
                 >
                   <HStack>
-                    <ReferenceIcon type={item.type} />
+                    {item.type && <ReferenceIcon type={item.type} />}
                     <Heading as="h4" fontFamily="body" size="sm">
                       {item.title}
                     </Heading>
                   </HStack>
-                  <Text fontSize="sm">{item.source || 'Unknown'}</Text>
-                  <Text fontSize="xs" color="gray.500">
-                    {item.url}
-                  </Text>
-                </Box>
+                  {item.source && <Text fontSize="sm">{item.source}</Text>}
+                  {item.url && (
+                    <Text fontSize="xs" color="gray.500">
+                      {item.url}
+                    </Text>
+                  )}
+                </Stack>
               </Link>
             )
           })}

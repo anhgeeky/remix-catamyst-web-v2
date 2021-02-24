@@ -14,7 +14,7 @@ import { Hero, LessonBlock } from '@/components'
 import dataLessons from '@/data/lessons.json'
 
 /**
- * The full content of each lesson
+ * The full content page of each lesson
  * There are lesson blocks which use different component types such as:
  * text, image, video, link, code, etc
  */
@@ -48,11 +48,13 @@ export default function LessonBySlug() {
           </Hero>
 
           <Container maxW="1200px" px={0} py={10}>
-            <Stack align="center" spacing={5}>
-              {lesson.blocks.map((block, index) => {
-                return <LessonBlock key={index} block={block} />
-              })}
-            </Stack>
+            {Array.isArray(lesson.blocks) && (
+              <Stack align="center" spacing={5}>
+                {(lesson.blocks as any[]).map((block, index) => {
+                  return <LessonBlock key={index} block={block} />
+                })}
+              </Stack>
+            )}
           </Container>
         </>
       )}

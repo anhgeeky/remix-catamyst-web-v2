@@ -4,7 +4,7 @@ import transform from './tranform'
 
 export default function BlockTexts({ block }) {
   return (
-    <Box maxW="720px" p={5}>
+    <Box maxW="720px" px={5}>
       {ReactHtmlParser(block.html, { transform })}
     </Box>
   )

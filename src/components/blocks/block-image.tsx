@@ -8,18 +8,20 @@ export default function BlockImage({ block }) {
       <Box bg={block.type === 'screenshot' && bg}>
         <Image
           src={block.src}
-          alt={block.name}
-          width={block.width}
-          height={block.height}
+          alt={block.name || 'Unknown'}
+          width={block.width || '100%'}
+          height={block.height || '100%'}
           layout="intrinsic"
           objectFit="contain"
         />
       </Box>
       <Stack opacity={0.5} align="center" spacing={0}>
         <Text>{block.name}</Text>
-        <Link fontSize="sm" href={block.sourceUrl}>
-          {block.sourceUrl}
-        </Link>
+        {block.sourceUrl && (
+          <Link fontSize="sm" href={block.sourceUrl}>
+            {block.sourceUrl}
+          </Link>
+        )}
       </Stack>
     </Box>
   )

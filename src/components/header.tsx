@@ -15,6 +15,7 @@ import publicPages from '@/data/public-pages.json'
 
 export default function Header() {
   const bg = useColorModeValue('white', 'gray.900')
+  const borderBg = useColorModeValue('white', 'gray.700')
   const [isMenuOpen, setMenuOpen] = useState(false)
 
   function openMenu() {
@@ -32,11 +33,13 @@ export default function Header() {
         bg={bg}
         boxShadow="md"
         justify="center"
-        left={0}
         pos="fixed"
+        left={0}
         top={0}
         width="100%"
         zIndex="3"
+        borderBottom="1px"
+        borderBottomColor={borderBg}
       >
         <SkipNavLink>Skip to content</SkipNavLink>
         <Flex

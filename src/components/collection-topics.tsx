@@ -17,9 +17,8 @@ export default function CollectionTopics({ data }) {
     <Stack spacing={5}>
       {data.map((topic, index) => {
         return (
-          <NextLink href={`/topics/${topic.slug}`}>
+          <NextLink key={topic.id} href={`/topics/${topic.slug}`}>
             <Flex
-              key={topic.id}
               bg={bg}
               boxShadow="xs"
               cursor="pointer"
