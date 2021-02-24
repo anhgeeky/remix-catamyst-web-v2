@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import slugify from 'slugify'
 import { Heading, Text } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
 import { Hero, Content, SectionLessons } from '@/components'
@@ -10,7 +11,11 @@ export default function TopicBySlug() {
   const { slug } = router.query
 
   const topic = dataTopics.find((topic) => {
-    return topic.slug === slug
+    if (topic.slug) {
+      return slug === topic.slug
+    } else {
+      return slug === slugify(topic.title, { lower: true })
+    }
   })
 
   return (
@@ -29,7 +34,7 @@ export default function TopicBySlug() {
           </Hero>
 
           <Content>
-            <SectionLessons data={topic.sections} />
+            {topic.sections && <SectionLessons data={topic.sections} />}
           </Content>
         </>
       )}

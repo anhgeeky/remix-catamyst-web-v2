@@ -4,11 +4,10 @@ import {
   Box,
   Flex,
   Heading,
-  HStack,
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react'
-import React from 'react'
+import slugify from 'slugify'
 
 export default function CollectionTopics({ data }) {
   const bg = useColorModeValue('white', 'gray.800')
@@ -16,8 +15,10 @@ export default function CollectionTopics({ data }) {
   return (
     <Stack spacing={5}>
       {data.map((topic, index) => {
+        const slug = topic.slug || slugify(topic.title, { lower: true })
+
         return (
-          <NextLink key={topic.id} href={`/topics/${topic.slug}`}>
+          <NextLink key={topic.id} href={`/topics/${slug}`}>
             <Flex
               bg={bg}
               boxShadow="xs"
@@ -33,7 +34,15 @@ export default function CollectionTopics({ data }) {
               <Box>
                 <Badge
                   colorScheme={
-                    topic.category === 'frontend' ? 'yellow' : 'gray'
+                    topic.category === 'general'
+                      ? 'red'
+                      : topic.category === 'preparation'
+                      ? 'blue'
+                      : topic.category === 'frontend'
+                      ? 'yellow'
+                      : topic.category === 'backend'
+                      ? 'green'
+                      : 'gray'
                   }
                 >
                   {topic.category}

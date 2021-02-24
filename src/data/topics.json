@@ -7,14 +7,8 @@
     "category": "preparation",
     "iconEmoji": "⭐",
     "sections": [
-      {
-        "title": "Let's start from here",
-        "lessons": [1, 2, 3]
-      },
-      {
-        "title": "Hardware and software requirements",
-        "lessons": [4, 5, 6, 7]
-      }
+      { "title": "Let's start from here", "lessons": [1, 2, 3] },
+      { "title": "Hardware and software requirements", "lessons": [4, 5, 6, 7] }
     ]
   },
   {
@@ -25,14 +19,8 @@
     "category": "preparation",
     "iconEmoji": "⚙️",
     "sections": [
-      {
-        "title": "Learning principles",
-        "lessons": [8, 9, 10, 11]
-      },
-      {
-        "title": "Work and collaboration skills",
-        "lessons": [12, 13]
-      }
+      { "title": "Learning principles", "lessons": [8, 9, 10, 11] },
+      { "title": "Work and collaboration skills", "lessons": [12, 13] }
     ]
   },
   {
@@ -43,14 +31,8 @@
     "category": "preparation",
     "iconEmoji": "💡",
     "sections": [
-      {
-        "title": "Getting inspired",
-        "lessons": [14]
-      },
-      {
-        "title": "Website examples",
-        "lessons": [15, 16, 17]
-      }
+      { "title": "Getting inspired", "lessons": [14] },
+      { "title": "Website examples", "lessons": [15, 16, 17] }
     ]
   },
   {
@@ -61,36 +43,388 @@
     "category": "preparation",
     "iconEmoji": "💡",
     "sections": [
-      {
-        "title": "Getting inspired",
-        "lessons": [14]
-      },
-      {
-        "title": "Website examples",
-        "lessons": [15, 16, 17]
-      },
-      {
-        "title": "Web application examples",
-        "lessons": [18, 19, 20]
-      }
+      { "title": "Getting inspired", "lessons": [14] },
+      { "title": "Website examples", "lessons": [15, 16, 17] },
+      { "title": "Web application examples", "lessons": [18, 19, 20] }
     ]
   },
   {
     "id": 5,
-    "slug": "features-and-projects",
-    "title": "Features and projects",
-    "description": "Understand the possibilities and functionalities of your projects.",
+    "slug": "website-projects",
+    "title": "Website projects",
+    "description": "Understand the possibilities of your website projects.",
     "category": "preparation",
     "iconEmoji": "🧩",
     "sections": []
   },
   {
     "id": 6,
+    "slug": "application-features-and-projects",
+    "title": "Application features and projects",
+    "description": "Understand the possibilities and functionalities of your website and application projects.",
+    "category": "preparation",
+    "iconEmoji": "🧩",
+    "sections": []
+  },
+  {
+    "id": 7,
     "slug": "design-with-interface-and-experience",
     "title": "Design with interface and experience",
     "description": "Plan and design the user interface and experience of a website or web app.",
     "category": "frontend",
     "iconEmoji": "🎨",
     "sections": []
+  },
+  {
+    "id": 8,
+    "title": "Laptop setup",
+    "category": "preparation",
+    "iconEmoji": "🏕️"
+  },
+  {
+    "id": 9,
+    "title": "Web development knowledge",
+    "category": "preparation",
+    "iconEmoji": "🕸️"
+  },
+  {
+    "id": 10,
+    "title": "Development with code editor",
+    "category": "general",
+    "iconEmoji": "📝"
+  },
+  {
+    "id": 11,
+    "title": "Documentation with markdown",
+    "category": "general",
+    "iconEmoji": "📜"
+  },
+  {
+    "id": 12,
+    "title": "Computer navigation with terminal",
+    "category": "general",
+    "iconEmoji": "🪑"
+  },
+  {
+    "id": 13,
+    "title": "Version control with Git",
+    "category": "general",
+    "iconEmoji": "⏳"
+  },
+  {
+    "id": 14,
+    "title": "Website content with HTML",
+    "category": "frontend",
+    "iconEmoji": "🦴"
+  },
+  {
+    "id": 15,
+    "title": "Simple frontend website deployment",
+    "category": "frontend",
+    "iconEmoji": "🏝️"
+  },
+  {
+    "id": 16,
+    "title": "Website style with CSS",
+    "category": "frontend",
+    "iconEmoji": "🍖"
+  },
+  {
+    "id": 17,
+    "title": "Browser and developer tools",
+    "category": "frontend",
+    "iconEmoji": "🍱"
+  },
+  {
+    "id": 18,
+    "title": "Website basic layout with CSS",
+    "category": "frontend",
+    "iconEmoji": "🥓"
+  },
+  {
+    "id": 19,
+    "title": "Website responsive layout with CSS",
+    "category": "frontend",
+    "iconEmoji": "🥩"
+  },
+  {
+    "id": 20,
+    "title": "Web networking and domain",
+    "category": "general",
+    "iconEmoji": "🗺️"
+  },
+  {
+    "id": 21,
+    "title": "Software engineering knowledge",
+    "category": "general",
+    "iconEmoji": "🛠️"
+  },
+  {
+    "id": 22,
+    "title": "Logic and programming",
+    "category": "general",
+    "iconEmoji": "🤖"
+  },
+  {
+    "id": 23,
+    "title": "Web programming with JavaScript",
+    "category": "general",
+    "iconEmoji": "🤠"
+  },
+  {
+    "id": 24,
+    "title": "JavaScript data operation",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 25,
+    "title": "JavaScript function",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 26,
+    "title": "JavaScript error handling",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 27,
+    "title": "JavaScript global objects",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 28,
+    "title": "JavaScript browser storage",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 29,
+    "title": "JavaScript modules",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 30,
+    "title": "JavaScript asynchronicity",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 31,
+    "title": "JavaScript DOM",
+    "category": "frontend",
+    "iconEmoji": ""
+  },
+  {
+    "id": 32,
+    "title": "JavaScript with regex",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 33,
+    "title": "REST API",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 34,
+    "title": "Other API",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 35,
+    "title": "REST API with JavaScript",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 36,
+    "title": "JavaScript runtime and Node.js",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 37,
+    "title": "Node.js with npm",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 38,
+    "title": "CSS library and framework",
+    "category": "frontend",
+    "iconEmoji": ""
+  },
+  {
+    "id": 39,
+    "title": "JavaScript library and framework",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 40,
+    "title": "JavaScript code quality",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 41,
+    "title": "Programming paradigms",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 42,
+    "title": "JavaScript OOP and FP",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 43,
+    "title": "JavaScript transpiler and bundler",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 44,
+    "title": "Software design and architecture",
+    "category": "general",
+    "iconEmoji": ""
+  },
+  {
+    "id": 45,
+    "title": "React library",
+    "category": "frontend"
+  },
+  {
+    "id": 46,
+    "title": "React data",
+    "category": "frontend"
+  },
+  {
+    "id": 47,
+    "title": "React form",
+    "category": "frontend"
+  },
+  {
+    "id": 48,
+    "title": "React routing",
+    "category": "frontend"
+  },
+  {
+    "id": 49,
+    "title": "React styling",
+    "category": "frontend"
+  },
+  {
+    "id": 50,
+    "title": "React with REST API",
+    "category": "frontend"
+  },
+  {
+    "id": 51,
+    "title": "React extras",
+    "category": "frontend"
+  },
+  {
+    "id": 52,
+    "title": "Redux as state management",
+    "category": "general"
+  },
+  {
+    "id": 53,
+    "title": "React with Redux",
+    "category": "frontend"
+  },
+  {
+    "id": 54,
+    "title": "Node.js with Express",
+    "category": "backend"
+  },
+  {
+    "id": 55,
+    "title": "Simple backend app deployment",
+    "category": "backend"
+  },
+  {
+    "id": 56,
+    "title": "Database management system",
+    "category": "backend"
+  },
+  {
+    "id": 57,
+    "title": "Non-relational database",
+    "category": "backend"
+  },
+  {
+    "id": 58,
+    "title": "Relational database",
+    "category": "backend"
+  },
+  {
+    "id": 59,
+    "title": "Web security",
+    "category": "general"
+  },
+  {
+    "id": 60,
+    "title": "Testing and automation",
+    "category": "general"
+  },
+  {
+    "id": 61,
+    "title": "Containerization",
+    "category": "general"
+  },
+  {
+    "id": 62,
+    "title": "Advanced deployment infrastructure",
+    "category": "general"
+  },
+  {
+    "id": 63,
+    "title": "Additional application features",
+    "category": "general"
+  },
+  {
+    "id": 64,
+    "title": "Advanced algorithm and data structure",
+    "category": "general"
+  },
+  {
+    "id": 65,
+    "title": "Project development and management",
+    "category": "general"
+  },
+  {
+    "id": 66,
+    "title": "Special resources",
+    "category": "special"
+  },
+  {
+    "id": 67,
+    "title": "Large-scale project",
+    "category": "special"
+  },
+  {
+    "id": 68,
+    "title": "Professional work",
+    "category": "career"
+  },
+  {
+    "id": 69,
+    "title": "Business and startup",
+    "category": "career"
+  },
+  {
+    "id": 70,
+    "title": "Consultation and discussion",
+    "category": "career"
   }
 ]
