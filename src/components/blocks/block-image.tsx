@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { Box, Stack, Text, Link, useColorModeValue } from '@chakra-ui/react'
 export default function BlockImage({ block }) {
   const bg = useColorModeValue('gray.100', 'gray.800')
+  const width = block.type === 'screenshot' ? '1440px' : block.width || '100%'
+  const height = block.type === 'screenshot' ? '900px' : block.height || '100%'
 
   return (
     <Box align="center">
@@ -9,8 +11,8 @@ export default function BlockImage({ block }) {
         <Image
           src={block.src}
           alt={block.name || 'Unknown'}
-          width={block.width || '100%'}
-          height={block.height || '100%'}
+          width={width}
+          height={height}
           layout="intrinsic"
           objectFit="contain"
         />

@@ -20,9 +20,9 @@
       },
       {
         "component": "image",
-        "type": "screenshot",
         "name": "Google Arts & Culture website - Cats in culture",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
+        "type": "screenshot",
         "width": "1440px",
         "height": "900px",
         "sourceUrl": "https://artsandculture.google.com"
@@ -166,7 +166,230 @@
     "blocks": [
       {
         "component": "texts",
-        "html": "<p>Paragraph</p>"
+        "html": "<p>There are 5 essential software tools you can prepare:</p><ol><li>Web browser</li><li>Password manager</li><li>Task manager</li><li>Note taker</li><li>Grammar checker</li></ol>"
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "texts",
+        "html": "<h1>Web browser</h1><p>With web browser, you can access websites and web applications via the Internet. Here are the recommended web browsers you can use:</p><ul><li>Google Chrome</li><li>Mozilla Firefox</li><li>Brave Browser</li></ul><p>All of these browsers are available on desktop and mobile.</p>"
+      },
+      {
+        "component": "texts",
+        "html": "<h2>Google Chrome</h2><p>Google Chrome is a fast and secure web browser developed by Google. It uses Chromium project under the hood.</p>"
+      },
+      {
+        "component": "links",
+        "items": [
+          {
+            "title": "Google Chrome",
+            "source": "Google",
+            "type": "web",
+            "url": "https://google.com/chrome",
+            "color": "blue.500"
+          },
+          {
+            "title": "Google Chrome for Android",
+            "type": "app",
+            "url": "https://play.google.com/store/apps/details?id=com.android.chrome"
+          },
+          {
+            "title": "Google Chrome for iOS",
+            "type": "app",
+            "url": "https://apps.apple.com/us/app/google-chrome/id535886823"
+          }
+        ]
+      },
+      {
+        "component": "texts",
+        "html": "<h2>Mozilla Firefox</h2><p>Firefox is a free web browser backed by Mozilla, dedicated to internet health and privacy.</p>"
+      },
+      {
+        "component": "links",
+        "items": [
+          {
+            "title": "Mozilla Firefox",
+            "source": "Mozilla",
+            "type": "web",
+            "url": "https://mozilla.org/firefox",
+            "color": "purple.500"
+          },
+          {
+            "title": "Mozilla Firefox for Android",
+            "type": "app",
+            "url": "https://play.google.com/store/apps/details?id=org.mozilla.firefox"
+          },
+          {
+            "title": "Mozilla Firefox for iOS",
+            "type": "app",
+            "url": "https://apps.apple.com/us/app/firefox-private-safe-browser/id989804926"
+          }
+        ]
+      },
+      {
+        "component": "texts",
+        "html": "<h2>Brave Browser</h2><p>Brave allows you to browse or loads content 3x faster than Chrome, while stops online surveillance and uses less battery. Despite its difference with Google Chrome, Brave uses Chromium as well.</p>"
+      },
+      {
+        "component": "links",
+        "items": [
+          {
+            "title": "Brave Browser",
+            "source": "Brave",
+            "type": "web",
+            "url": "https://brave.com",
+            "color": "red.500"
+          },
+          {
+            "title": "Brave for Android",
+            "type": "app",
+            "url": "https://play.google.com/store/apps/details?id=com.brave.browser"
+          },
+          {
+            "title": "Brave for iOS",
+            "type": "app",
+            "url": "https://apps.apple.com/us/app/brave-private-browser-vpn/id1052879175"
+          }
+        ]
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "texts",
+        "html": "<h1>Password manager</h1><p>During your learning, you will use various tools online. To use those tools, most of the time you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it&#39;s free, safe, and easier to use than other alternatives.</p>"
+      },
+      {
+        "component": "texts",
+        "html": "<h2>Bitwarden</h2><p>Bitwarden makes it easy to generate and store unique passwords. As you can see on its homepage, it is available for any browser or device.</p>"
+      },
+      {
+        "component": "image",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
+        "type": "screenshot"
+      },
+      {
+        "component": "links",
+        "items": [
+          {
+            "title": "Bitwarden",
+            "type": "app",
+            "url": "https://bitwarden.com",
+            "color": "blue.400"
+          },
+          {
+            "title": "Bitwarden for Chrome",
+            "type": "extension",
+            "url": "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb"
+          },
+          {
+            "title": "Bitwarden for Firefox",
+            "type": "extension",
+            "url": "https://addons.mozilla.org/firefox/addon/bitwarden-password-manager"
+          }
+        ]
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "texts",
+        "html": "<h1>Task manager</h1><p>A task manager is essential to keep you on track and productive. Task management helps you to manage your projects so much easier. There are many task management apps you can use, but we recommend you to use Trello.</p>"
+      },
+      {
+        "component": "texts",
+        "html": "<h2>Trello</h2><p>Trello is the most popular task management app, owned by Atlassian. You can use Trello to track your tasks and activities, for personal or work, both on desktop and mobile.</p>"
+      },
+      {
+        "component": "links",
+        "items": [
+          {
+            "title": "Trello",
+            "type": "web",
+            "url": "https://trello.com",
+            "color": "blue.600"
+          },
+          {
+            "title": "Trello for Android",
+            "type": "app",
+            "url": "https://play.google.com/store/apps/details?id=com.trello"
+          },
+          {
+            "title": "Trello for iOS",
+            "type": "app",
+            "url": "https://apps.apple.com/app/trello-organize-anything/id461504587"
+          },
+          {
+            "title": "Trello for Mac",
+            "type": "app",
+            "url": "https://apps.apple.com/app/trello/id1278508951?ls=1&mt=12"
+          },
+          {
+            "title": "Trello for Windows",
+            "type": "app",
+            "url": " https://microsoft.com/en-us/p/trello/9nblggh4xxvw"
+          }
+        ]
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "texts",
+        "html": "<h1>Note taker</h1><p>Note taker or note-taking app helps you to record your own information over time while learning. There are also many note-taking apps, but we recommend you to use Notion if you want more capabilities.</p>"
+      },
+      {
+        "component": "texts",
+        "html": "<h2>Notion</h2><p>Notion is an all-in-one workspace for your notes, tasks, wikis, and databases. It is a new kind of tool that blends your everyday apps into one. Available on web, desktop, and mobile.</p>"
+      },
+      {
+        "component": "links",
+        "items": [
+          {
+            "title": "Notion",
+            "type": "web",
+            "url": "https://notion.so",
+            "color": "black"
+          }
+        ]
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "texts",
+        "html": "<h1>Grammar checker</h1><p>To learn anything these days, you are also required to write a lot in English within various tools and media. While writing, a grammar checker helps you to write flawlessly. We recommend you to use Grammarly.</p>"
+      },
+      {
+        "component": "texts",
+        "html": "<h2>Grammarly</h2><p>Grammarly is a free online writing assistant that powered with AI. Available on desktop and mobile, also as browser extension.</p>"
+      },
+      {
+        "component": "links",
+        "items": [
+          {
+            "title": "Grammarly",
+            "type": "web",
+            "url": "https://grammarly.com",
+            "color": "green.500"
+          },
+          {
+            "title": "Grammarly for Chrome",
+            "type": "extension",
+            "url": "https://chrome.google.com/webstore/detail/grammarly-for-chrome/kbfnbcaeplbcioakkpcpgfkobkghlhen"
+          },
+          {
+            "title": "Grammarly for Firefox",
+            "type": "extension",
+            "url": "https://addons.mozilla.org/en-US/firefox/addon/grammarly-1"
+          },
+          {
+            "title": "Grammarly for Mac",
+            "type": "app",
+            "url": "https://grammarly.com/native/mac"
+          }
+        ]
       }
     ]
   },
