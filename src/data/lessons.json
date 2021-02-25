@@ -98,14 +98,14 @@
             "title": "The 10,000 Hour Rule Is Wrong: How to Really Master a Skill",
             "source": "MakeUseOf",
             "author": "Rob Nightingale",
-            "url": "https://makeuseof.com/tag/10000-hour-rule-wrong-really-master-skill"
+            "url": "https://makeuseof.com/tag/10000-hour-rule-wrong-really-master-skill/"
           },
           {
             "type": "article",
             "title": "The Great Practice Myth: Debunking the 10,000 Hour Rule",
             "author": "Michael Miller",
             "source": "Six Seconds",
-            "url": "https://6seconds.org/2018/02/09/the-great-practice-myth-debunking-the-10000-hour-rule-and-what-you-actually-need-to-know-about-practice"
+            "url": "https://6seconds.org/2018/02/09/the-great-practice-myth-debunking-the-10000-hour-rule-and-what-you-actually-need-to-know-about-practice/"
           }
         ]
       }
@@ -119,8 +119,41 @@
     "type": "specific",
     "blocks": [
       {
+        "component": "image",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614258939/cat-typing-laptop.gif",
+        "width": "300px",
+        "height": "250px",
+        "name": "Cat typing laptop",
+        "sourceUrl": "https://catamyst.com"
+      },
+      {
         "component": "texts",
-        "html": "<p>Paragraph</p>"
+        "html": "<h1>Laptop requirements</h1><p>Every laptop need an Operating System (OS), the system that being used to run your computer.</p><h2>If using Linux</h2><p>If you have a laptop with Linux OS like Ubuntu, it should be enough. Preferably using Ubuntu version 20.04 or later.</p><h2>If using Mac</h2><p>If you have a MacBook with macOS, it should be enough. Preferably bought on year 2015 or above, and using macOS Catalina or later.</p><h2>If using Windows</h2><p>If you have a laptop with Windows OS:</p><ul><li>Preferably bought on year 2015 or above, and using Windows 10.</li><li>Processor at least Intel Core i3 or AMD.</li><li>RAM at least 4 GB.</li><li>Hard drive at least 100 GB of space.</li></ul><h1>Mobile requirements</h1><p>Every mobile phone or tablet usually already comes with their OS too.</p><ul><li>If you have an iPhone or iPad, it should be enough.</li><li>If you have an Android phone or tablet, it should have minimum Android version 4.0 or above.</li></ul>"
+      },
+      {
+        "component": "references",
+        "items": [
+          {
+            "type": "article",
+            "title": "How to choose a laptop for programming",
+            "source": "freeCodeCamp",
+            "author": "Ayo Isaiah",
+            "date": "2017-07-25",
+            "url": "https://freecodecamp.org/news/how-to-choose-a-laptop-for-programming-a9e36f8b4cfe"
+          },
+          {
+            "type": "article",
+            "title": "Computer Basics: Understanding Operating Systems",
+            "source": "GCFGlobal (Goodwill Community Foundation)",
+            "url": "https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1"
+          },
+          {
+            "type": "article",
+            "title": "Free Computer Basics Tutorial",
+            "source": "GCFGlobal (Goodwill Community Foundation)",
+            "url": "https://edu.gcfglobal.org/en/computerbasics"
+          }
+        ]
       }
     ]
   },

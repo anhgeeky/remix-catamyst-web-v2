@@ -15,14 +15,16 @@ export default function BlockImage({ block }) {
           objectFit="contain"
         />
       </Box>
-      <Stack opacity={0.5} align="center" spacing={0}>
-        <Text>{block.name}</Text>
-        {block.sourceUrl && (
-          <Link fontSize="sm" href={block.sourceUrl}>
-            {block.sourceUrl}
-          </Link>
-        )}
-      </Stack>
+      {block.type === 'screenshot' && (
+        <Stack opacity={0.5} align="center" spacing={0}>
+          <Text>{block.name}</Text>
+          {block.sourceUrl && (
+            <Link fontSize="sm" href={block.sourceUrl}>
+              {block.sourceUrl}
+            </Link>
+          )}
+        </Stack>
+      )}
     </Box>
   )
 }

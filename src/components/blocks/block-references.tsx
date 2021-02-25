@@ -14,7 +14,7 @@ export default function BlockReferences({ block }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   return (
-    <Stack maxW="720px" p={5} spacing={5} width="100%">
+    <Stack maxW="720px" p={5} pt={10} spacing={5} width="100%">
       <hr />
       <Heading
         fontFamily="body"
@@ -50,7 +50,10 @@ export default function BlockReferences({ block }) {
                       {item.title}
                     </Heading>
                   </HStack>
-                  {item.source && <Text fontSize="sm">{item.source}</Text>}
+                  <Text fontSize="sm">
+                    {item.source && <Text as="span">{item.source}</Text>}
+                    {item.author && <Text as="span"> · {item.author}</Text>}
+                  </Text>
                   {item.url && (
                     <Text fontSize="xs" color="gray.500">
                       {item.url}
