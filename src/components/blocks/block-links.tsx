@@ -1,9 +1,10 @@
 import {
   Box,
-  Link,
+  Flex,
   Heading,
-  Stack,
   HStack,
+  Link,
+  Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -23,8 +24,9 @@ export default function BlockLinks({ block }) {
               href={item.url}
               _hover={{ textDecoration: 'none' }}
             >
-              <HStack
+              <Flex
                 bg={bg}
+                flexWrap="wrap"
                 boxShadow="base"
                 cursor="pointer"
                 align="stretch"
@@ -44,12 +46,16 @@ export default function BlockLinks({ block }) {
                     {item.author && <Text as="span"> · {item.author}</Text>}
                   </Text>
                   {item.url && (
-                    <Text fontSize="xs" color="gray.500">
+                    <Text
+                      color="gray.500"
+                      fontSize="xs"
+                      overflowWrap="anywhere"
+                    >
                       {item.url}
                     </Text>
                   )}
                 </Stack>
-              </HStack>
+              </Flex>
             </Link>
           )
         })}

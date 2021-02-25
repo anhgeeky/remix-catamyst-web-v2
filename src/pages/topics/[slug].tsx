@@ -34,7 +34,7 @@ export default function TopicBySlug() {
           </Hero>
 
           <Content>
-            {topic.sections && <SectionLessons data={topic.sections} />}
+            {topic.sections && <SectionLessons sections={topic.sections} />}
           </Content>
         </>
       )}

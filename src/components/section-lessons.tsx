@@ -10,12 +10,12 @@ import {
 import { LessonIcon } from '@/components'
 import dataLessons from '@/data/lessons.json'
 
-export default function SectionLessons({ data }) {
+export default function SectionLessons({ sections }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   return (
     <Stack spacing={5}>
-      {data.map((section, index) => {
+      {sections.map((section, index) => {
         return (
           <Box
             key={index}
@@ -34,22 +34,23 @@ export default function SectionLessons({ data }) {
                 const selectedLesson = dataLessons.find((lesson, index) => {
                   return lesson.id === lessonId
                 })
-
                 if (!selectedLesson) {
                   return <Link key={index}>Lesson {index + 1} hidden</Link>
-                } else {
-                  return (
-                    <NextLink
-                      key={selectedLesson.slug}
-                      href={`/lessons/${selectedLesson.slug}`}
-                    >
-                      <Flex align="center" cursor="pointer">
-                        <LessonIcon type={selectedLesson.type} />
-                        <Link ml={2}>{selectedLesson.title}</Link>
-                      </Flex>
-                    </NextLink>
-                  )
                 }
+                if (selectedLesson.isPublished === false) {
+                  return null
+                }
+                return (
+                  <NextLink
+                    key={selectedLesson.slug}
+                    href={`/lessons/${selectedLesson.slug}`}
+                  >
+                    <Flex align="center" cursor="pointer">
+                      <LessonIcon type={selectedLesson.type} />
+                      <Link ml={2}>{selectedLesson.title}</Link>
+                    </Flex>
+                  </NextLink>
+                )
               })}
             </Stack>
           </Box>

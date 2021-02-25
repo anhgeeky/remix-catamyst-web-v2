@@ -5,6 +5,7 @@
     "slug": "web-development-introduction",
     "level": "newbie",
     "type": "fundamental",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
@@ -50,6 +51,7 @@
     "slug": "activities-overview",
     "level": "newbie",
     "type": "fundamental",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
@@ -71,6 +73,7 @@
     "slug": "time-duration-to-complete",
     "level": "newbie",
     "type": "fundamental",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
@@ -91,7 +94,8 @@
             "type": "video",
             "title": "Sal Khan: Let's teach for mastery -- not test scores",
             "source": "TED Talk",
-            "url": "https://ted.com/talks/sal_khan_let_s_teach_for_mastery_not_test_scores"
+            "url": "https://ted.com/talks/sal_khan_let_s_teach_for_mastery_not_test_scores",
+            "color": "red.500"
           },
           {
             "type": "article",
@@ -117,6 +121,7 @@
     "slug": "device-requirements",
     "level": "newbie",
     "type": "specific",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
@@ -163,6 +168,7 @@
     "slug": "essential-software-tools",
     "level": "newbie",
     "type": "specific",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -323,7 +329,7 @@
           {
             "title": "Trello for Mac",
             "type": "app",
-            "url": "https://apps.apple.com/app/trello/id1278508951?ls=1&mt=12"
+            "url": "https://apps.apple.com/app/trello/id1278508951"
           },
           {
             "title": "Trello for Windows",
@@ -351,6 +357,11 @@
             "type": "web",
             "url": "https://notion.so",
             "color": "black"
+          },
+          {
+            "title": "Notion for Mac and Windows",
+            "type": "app",
+            "url": "https://notion.so/desktop"
           }
         ]
       },
@@ -397,8 +408,9 @@
     "id": 6,
     "title": "Other software tools",
     "slug": "other-software-tools",
-    "level": "newbie",
     "type": "specific",
+    "level": "newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -410,8 +422,9 @@
     "id": 7,
     "title": "Managing your tasks",
     "slug": "managing-your-tasks",
-    "level": "newbie",
     "type": "project",
+    "level": "newbie",
+    "isPublished": false,
     "blocks": [
       {
         "component": "texts",
