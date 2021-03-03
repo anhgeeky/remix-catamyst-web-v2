@@ -1,60 +1,63 @@
+import NextImage from 'next/image'
 import { useRouter } from 'next/router'
 import {
   Box,
   Button,
   Heading,
   Stack,
+  HStack,
+  Flex,
   Text,
+  VStack,
+  Wrap,
+  WrapItem,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { v4 as uuidv4 } from 'uuid'
 
-export default function CollectionTracks({ data }) {
+export default function CollectionTracks({ tracks }) {
   const router = useRouter()
   const bg = useColorModeValue('white', 'gray.800')
 
   return (
-    <Stack spacing={5} align="flex-start">
-      {data.map((track, index) => {
+    <VStack spacing={5} align="stretch">
+      {tracks.map((track, index) => {
         const uuid = uuidv4()
         return (
-          <Stack
-            key={uuid}
-            borderRadius="md"
-            boxShadow="base"
-            bg={bg}
-            p={5}
-            spacing={5}
-            align="flex-start"
-            direction={{ base: 'column', lg: 'row' }}
-          >
-            <Box
-              data-id="placeholder-image"
-              borderRadius="md"
-              bg="black"
-              width="100px"
-              height="100px"
-            />
-            <Stack>
-              <Heading as="h2" size="xl">
-                {track.title}
-              </Heading>
-              <Text maxW="xl" fontSize={['sm', 'md', 'lg']}>
-                {track.description}
-              </Text>
-            </Stack>
-            <Button
-              size="lg"
-              // maxW="360px"
-              colorScheme="teal"
-              aria-label={`Choose ${track.title} track`}
-              onClick={() => router.push(`/tracks/${track.slug}`)}
+          <Box key={uuid} rounded="md" boxShadow="base" bg={bg} p={5}>
+            <Wrap
+              as={HStack}
+              spacing={5}
+              direction={{ base: 'column', lg: 'row' }}
             >
-              Choose Track
-            </Button>
-          </Stack>
+              <WrapItem>
+                <NextImage
+                  alt={`Icon of ${track.title}`}
+                  src="/assets/logos/catamyst-avatar.png"
+                  width={100}
+                  height={100}
+                  layout="fixed"
+                />
+              </WrapItem>
+              <WrapItem>
+                <Stack align="flex-start">
+                  <Heading as="h2" size="xl">
+                    {track.title}
+                  </Heading>
+                  <Button
+                    size="lg"
+                    colorScheme="teal"
+                    aria-label={`Choose ${track.title} track`}
+                    onClick={() => router.push(`/tracks/${track.slug}`)}
+                  >
+                    Choose Track
+                  </Button>
+                </Stack>
+              </WrapItem>
+            </Wrap>
+          </Box>
         )
       })}
-    </Stack>
+    </VStack>
   )
 }

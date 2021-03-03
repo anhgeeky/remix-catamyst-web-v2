@@ -9,13 +9,14 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ReferenceIcon } from '@/components'
+import theme from '@/theme/theme.json'
 
 export default function BlockLinks({ block }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   if (Array.isArray(block.items)) {
     return (
-      <Stack maxW="720px" width="100%" px={5} spacing={2}>
+      <Stack maxW={theme.maxContentWidth} width="100%" px={5} spacing={2}>
         {block.items.map((item, index) => {
           return (
             <Link

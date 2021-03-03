@@ -1,11 +1,13 @@
 import { Box } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
-import transform from './tranform'
+
+import theme from '@/theme/theme.json'
+import options from '@/components/blocks/options'
 
 export default function BlockTexts({ block }) {
   return (
-    <Box maxW="720px" width="100%" px={5}>
-      {ReactHtmlParser(block.html, { transform })}
+    <Box maxW={theme.maxContentWidth} width="100%" px={5}>
+      {ReactHtmlParser(block.html, options)}
     </Box>
   )
 }

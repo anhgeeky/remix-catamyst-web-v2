@@ -23,7 +23,7 @@ export default function Tracks() {
           >
             Available Tracks
           </Heading>
-          <CollectionTracks data={dataTracks} />
+          <CollectionTracks tracks={dataTracks} />
         </Stack>
       </Container>
     </Layout>

@@ -63,12 +63,12 @@ export default function HeaderUser() {
       {!auth.isAuthenticated && (
         <>
           <Box display={{ base: 'none', md: 'block' }}>
-            <NextLink href="/signup">
+            <NextLink href="/signup" passHref>
               <Button variant="ghost">Sign up</Button>
             </NextLink>
           </Box>
           <Box>
-            <NextLink href="/signin">
+            <NextLink href="/signin" passHref>
               <Button colorScheme="teal">Sign in</Button>
             </NextLink>
           </Box>

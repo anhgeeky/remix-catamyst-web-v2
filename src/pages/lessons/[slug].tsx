@@ -1,17 +1,19 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import {
+  Badge,
   Box,
-  Stack,
-  HStack,
+  Container,
   Flex,
   Heading,
-  Badge,
-  Container,
+  HStack,
+  Stack,
+  VStack,
 } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
-import { Hero, LessonBlock } from '@/components'
+import { Hero, Content, LessonBlock, PaginationLessons } from '@/components'
 import dataLessons from '@/data/lessons.json'
+import React from 'react'
 
 /**
  * The full content page of each lesson
@@ -34,30 +36,39 @@ export default function LessonBySlug() {
           <Head>
             <title>{lesson.title} · Lesson · Catamyst</title>
           </Head>
-
-          <Hero>
-            <Stack align="center">
-              <Heading as="h1" size="xl" textAlign="center">
-                {lesson.title}
-              </Heading>
-              <HStack>
-                <Badge>Level: {lesson.level}</Badge>
-                <Badge>Type: {lesson.type}</Badge>
-              </HStack>
-            </Stack>
-          </Hero>
-
-          <Container maxW="1200px" px={0} py={10}>
+          <LessonHero lesson={lesson} />
+          <Container width="100%" maxW="1440px" px={0} py={5}>
             {Array.isArray(lesson.blocks) && (
               <Stack align="center" spacing={5}>
                 {(lesson.blocks as any[]).map((block, index) => {
                   return <LessonBlock key={index} block={block} />
                 })}
+                <PaginationLessons mode="full" />
               </Stack>
             )}
           </Container>
         </>
       )}
     </Layout>
+  )
+}
+
+function LessonHero({ lesson }) {
+  return (
+    <Hero>
+      <Box align="center" py={5}>
+        <PaginationLessons mode="minimal">
+          <VStack>
+            <Heading as="h1" size="xl" textAlign="center">
+              {lesson.title}
+            </Heading>
+            <HStack>
+              <Badge>Level: {lesson.level}</Badge>
+              <Badge>Type: {lesson.type}</Badge>
+            </HStack>
+          </VStack>
+        </PaginationLessons>
+      </Box>
+    </Hero>
   )
 }

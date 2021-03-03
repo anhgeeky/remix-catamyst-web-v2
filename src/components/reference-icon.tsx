@@ -5,7 +5,7 @@ import {
   FaVideo as VideoIcon,
   FaGlobe as WebIcon,
   FaCube as AppIcon,
-  FaPuzzlePiece as ExtensionIcon,
+  FaPuzzlePiece as PluginIcon,
 } from 'react-icons/fa'
 
 export default function ReferenceIcon({ type, size = 4 }) {
@@ -26,14 +26,8 @@ export default function ReferenceIcon({ type, size = 4 }) {
       <Icon aria-label="Application reference" as={AppIcon} boxSize={size} />
     )
   }
-  if (type === 'extension') {
-    return (
-      <Icon
-        aria-label="Extension reference"
-        as={ExtensionIcon}
-        boxSize={size}
-      />
-    )
+  if (type === 'plugin') {
+    return <Icon aria-label="Plugin reference" as={PluginIcon} boxSize={size} />
   }
   return null
 }

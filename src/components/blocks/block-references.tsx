@@ -1,12 +1,10 @@
 import { Heading, Stack, Divider } from '@chakra-ui/react'
-import BlockLinks from './block-links'
+import BlockLinks from '@/components/blocks/block-links'
+import theme from '@/theme/theme.json'
 
 export default function BlockReferences({ block }) {
   return (
-    <Stack maxW="720px" width="100%" spacing={5}>
-      <Stack px={5} pt={10}>
-        <Divider opacity={1} />
-      </Stack>
+    <Stack maxW={theme.maxContentWidth} width="100%" spacing={5} pt={10}>
       <Heading
         fontFamily="body"
         textTransform="uppercase"

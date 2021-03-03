@@ -17,7 +17,7 @@
       },
       {
         "component": "texts",
-        "html": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at his home, Neko wants to share his artworks with many people around the world, beyond just Japan.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly.</p><p>B. Publish the artworks on a website.</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
+        "html": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at home, Neko wants to share his artworks with many people around the world, beyond just Japan.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly.</p><p>B. Publish the artworks on a website.</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
       },
       {
         "component": "image",
@@ -268,13 +268,9 @@
       },
       {
         "component": "texts",
-        "html": "<h2>Bitwarden</h2><p>Bitwarden makes it easy to generate and store unique passwords. As you can see on its homepage, it is available for any browser or device.</p>"
+        "html": "<h2>Bitwarden</h2><p>Bitwarden makes it easy to generate and store unique passwords. It is available for any browser or device.</p>"
       },
-      {
-        "component": "image",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
-        "type": "screenshot"
-      },
+
       {
         "component": "links",
         "items": [
@@ -286,15 +282,20 @@
           },
           {
             "title": "Bitwarden for Chrome",
-            "type": "extension",
+            "type": "plugin",
             "url": "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb"
           },
           {
             "title": "Bitwarden for Firefox",
-            "type": "extension",
+            "type": "plugin",
             "url": "https://addons.mozilla.org/firefox/addon/bitwarden-password-manager"
           }
         ]
+      },
+      {
+        "component": "image",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
+        "type": "screenshot"
       },
       {
         "component": "divider"
@@ -374,7 +375,7 @@
       },
       {
         "component": "texts",
-        "html": "<h2>Grammarly</h2><p>Grammarly is a free online writing assistant that powered with AI. Available on desktop and mobile, also as browser extension.</p>"
+        "html": "<h2>Grammarly</h2><p>Grammarly is a free online writing assistant that powered with AI. Available on desktop and mobile, also as browser plugin.</p>"
       },
       {
         "component": "links",
@@ -387,12 +388,12 @@
           },
           {
             "title": "Grammarly for Chrome",
-            "type": "extension",
+            "type": "plugin",
             "url": "https://chrome.google.com/webstore/detail/grammarly-for-chrome/kbfnbcaeplbcioakkpcpgfkobkghlhen"
           },
           {
             "title": "Grammarly for Firefox",
-            "type": "extension",
+            "type": "plugin",
             "url": "https://addons.mozilla.org/en-US/firefox/addon/grammarly-1"
           },
           {

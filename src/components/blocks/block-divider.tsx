@@ -1,8 +1,9 @@
 import { Stack, Divider } from '@chakra-ui/react'
+import theme from '@/theme/theme.json'
 
 export default function BlockDivider() {
   return (
-    <Stack maxW="720px" width="100%" px={5} pt={10}>
+    <Stack maxW={theme.maxContentWidth} width="100%" px={5} pt={10}>
       <Divider opacity={1} />
     </Stack>
   )

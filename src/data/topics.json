@@ -6,6 +6,8 @@
     "description": "Let's start by understand everything you have to prepare.",
     "category": "preparation",
     "iconEmoji": "⭐",
+    "count_lessons": 7,
+    "count_hours": 2,
     "sections": [
       { "title": "Let's start from here", "lessons": [1, 2, 3] },
       { "title": "Hardware and software requirements", "lessons": [4, 5, 6, 7] }
@@ -18,6 +20,8 @@
     "description": "Learn the essential skills and principles for professional work.",
     "category": "preparation",
     "iconEmoji": "⚙️",
+    "count_lessons": 6,
+    "count_hours": 3,
     "sections": [
       { "title": "Learning principles", "lessons": [8, 9, 10, 11] },
       { "title": "Work and collaboration skills", "lessons": [12, 13] }
@@ -30,6 +34,8 @@
     "description": "Get inspirations real-world websites.",
     "category": "preparation",
     "iconEmoji": "💡",
+    "count_lessons": 6,
+    "count_hours": 3,
     "sections": [
       { "title": "Getting inspired", "lessons": [14] },
       { "title": "Website examples", "lessons": [15, 16, 17] }
@@ -42,6 +48,8 @@
     "description": "Get inspirations to spark your website and web application ideas by real-world examples.",
     "category": "preparation",
     "iconEmoji": "💡",
+    "count_lessons": 6,
+    "count_hours": 3,
     "sections": [
       { "title": "Getting inspired", "lessons": [14] },
       { "title": "Website examples", "lessons": [15, 16, 17] },
@@ -55,6 +63,8 @@
     "description": "Understand the possibilities of your website projects.",
     "category": "preparation",
     "iconEmoji": "🧩",
+    "count_lessons": 6,
+    "count_hours": 3,
     "sections": []
   },
   {
@@ -64,6 +74,8 @@
     "description": "Understand the possibilities and functionalities of your website and application projects.",
     "category": "preparation",
     "iconEmoji": "🧩",
+    "count_lessons": 6,
+    "count_hours": 3,
     "sections": []
   },
   {
@@ -73,6 +85,8 @@
     "description": "Plan and design the user interface and experience of a website or web app.",
     "category": "frontend",
     "iconEmoji": "🎨",
+    "count_lessons": 6,
+    "count_hours": 3,
     "sections": []
   },
   {

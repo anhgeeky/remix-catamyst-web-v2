@@ -17,7 +17,7 @@ export default function CollectionUsers({ users }) {
       {users.map((user, index) => {
         return (
           <Stack key={user.id} py={5}>
-            <NextLink href={user.handle}>
+            <NextLink href={user.handle} passHref>
               <a>
                 <HStack>
                   <Avatar name={user.name} width="50px" height="50px" />

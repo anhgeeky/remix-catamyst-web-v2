@@ -5,26 +5,24 @@ import {
   Stack,
   Flex,
   Link,
+  Text,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { LessonIcon } from '@/components'
+
+import { AlertSoon, LessonIcon, PaginationTopics } from '@/components'
 import dataLessons from '@/data/lessons.json'
 
-export default function SectionLessons({ sections }) {
+export default function SectionsLessons({ sections }) {
   const bg = useColorModeValue('white', 'gray.800')
 
+  if (!sections || sections.length === 0) {
+    return <AlertSoon text="No lessons here yet. Coming soon!" />
+  }
   return (
-    <Stack spacing={5}>
+    <Stack spacing={5} width="100%">
       {sections.map((section, index) => {
         return (
-          <Box
-            key={index}
-            bg={bg}
-            boxShadow="xs"
-            data-id="placeholder-image"
-            p={5}
-            spacing={5}
-          >
+          <Box key={index} bg={bg} boxShadow="xs" p={5} spacing={5}>
             <Heading as="h3" size="md">
               {section.title}
             </Heading>
@@ -56,6 +54,7 @@ export default function SectionLessons({ sections }) {
           </Box>
         )
       })}
+      <PaginationTopics />
     </Stack>
   )
 }
