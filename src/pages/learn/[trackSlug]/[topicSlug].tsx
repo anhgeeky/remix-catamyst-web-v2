@@ -1,6 +1,5 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
-import slugify from 'slugify'
 import { Heading, Text, Stack } from '@chakra-ui/react'
 
 import { Layout } from '@/layouts'
@@ -10,30 +9,15 @@ import {
   SectionsLessons,
   PaginationTopics,
 } from '@/components'
-
-import dataTracks from '@/data/tracks.json'
-import dataTopics from '@/data/topics.json'
+import { usePaginationTopics } from '@/hooks'
 
 export default function TopicBySlug() {
   const router = useRouter()
   const { trackSlug, topicSlug } = router.query
-
-  const track = dataTracks.find((track) => trackSlug === track.slug)
-  const topic = dataTopics.find((topic) => {
-    if (topic.slug) return topicSlug === topic.slug
-    else return topicSlug === slugify(topic.title, { lower: true })
+  const { track, topic, prev, next } = usePaginationTopics({
+    trackSlug,
+    topicSlug,
   })
-
-  const topicIndex = track?.topics.findIndex((topicId) => topicId === topic.id)
-  const prevId = topicIndex > -1 ? track?.topics[topicIndex - 1] : undefined
-  const nextId = topicIndex > -1 ? track?.topics[topicIndex + 1] : undefined
-
-  const prev = prevId
-    ? dataTopics.find((topic) => topic.id === prevId)
-    : undefined
-  const next = nextId
-    ? dataTopics.find((topic) => topic.id === nextId)
-    : undefined
 
   return (
     <Layout title={`Loading topic...`}>
