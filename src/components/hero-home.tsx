@@ -6,7 +6,7 @@ export default function HeroHome() {
   return (
     <Flex px={5} justify="center">
       <Stack
-        id="hero"
+        id="hero-home"
         align="center"
         width="1200px"
         direction={{ base: 'column', lg: 'row' }}

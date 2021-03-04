@@ -3,7 +3,7 @@ import theme from '@/theme/theme.json'
 
 export default function BlockDivider() {
   return (
-    <Stack maxW={theme.maxContentWidth} width="100%" pt={10}>
+    <Stack pt={5}>
       <Divider opacity={1} />
     </Stack>
   )

@@ -21,11 +21,9 @@
       },
       {
         "component": "image",
-        "name": "Google Arts & Culture website - Cats in culture",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
         "type": "screenshot",
-        "width": "1440px",
-        "height": "900px",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
+        "name": "Google Arts & Culture website - Cats in culture",
         "sourceUrl": "https://artsandculture.google.com"
       },
       {
@@ -281,6 +279,22 @@
             "url": "https://bitwarden.com",
             "color": "blue.400"
           },
+
+          {
+            "title": "Bitwarden for Desktop (Windows, macOS, Linux)",
+            "type": "app",
+            "url": "https://bitwarden.com/download"
+          },
+          {
+            "title": "Bitwarden for Android",
+            "type": "app",
+            "url": "https://play.google.com/store/apps/details?id=com.x8bit.bitwarden"
+          },
+          {
+            "title": "Bitwarden for iOS",
+            "type": "app",
+            "url": "https://apps.apple.com/us/app/bitwarden-password-manager/id1137397744"
+          },
           {
             "title": "Bitwarden for Chrome",
             "type": "plugin",
@@ -295,8 +309,10 @@
       },
       {
         "component": "image",
+        "type": "screenshot",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
-        "type": "screenshot"
+        "name": "Bitwarden website",
+        "sourceUrl": "https://bitwarden.com"
       },
       {
         "component": "divider"
@@ -430,6 +446,37 @@
       {
         "component": "texts",
         "html": "<p>Paragraph</p>"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "learning-process",
+    "title": "Learning process",
+    "type": "fundamental",
+    "level": "newbie",
+    "blocks": [
+      {
+        "component": "paragraph",
+        "html": "Learning things like technology, design, web development, and software engineering are rarely a linear process. There is actually no 1-2-3 order like a formal educational stage such as elementary school, middle school, high school, then university."
+      },
+      {
+        "component": "paragraph",
+        "html": "In real life, the actual learning itself has no beginning, a middle, and an end. Sometimes you have to go back and forth from concept to concept to understand something. It's obviously impossible to know everything perfectly, but you should embrace that imperfection."
+      },
+      {
+        "component": "paragraph",
+        "html": "There is no need to memorize everything too, as you can look up the information you need again and again whenever you need them. Even if you already learned about something some time ago, you can still re-learn it today."
+      },
+      {
+        "component": "image",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
+        "width": "1250px",
+        "height": "475px"
+      },
+      {
+        "component": "paragraph",
+        "html": "Even in the industry itself, sometimes there is actually no absolute answer that tells the correct and wrong way to learn and do things. However, there are always recommended theories and practices you can follow."
       }
     ]
   }

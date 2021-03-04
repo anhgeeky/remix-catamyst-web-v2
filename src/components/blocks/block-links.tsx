@@ -9,20 +9,19 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ReferenceIcon } from '@/components'
-import theme from '@/theme/theme.json'
 
 export default function BlockLinks({ block }) {
   const bg = useColorModeValue('white', 'gray.800')
 
-  if (Array.isArray(block.items)) {
-    return (
-      <Stack maxW={theme.maxContentWidth} width="100%" spacing={3}>
-        {block.items.map((item, index) => {
+  return (
+    <Stack spacing={2} px={5}>
+      {Array.isArray(block.items) &&
+        block.items.map((item, index) => {
           return (
             <Flex
               isExternal
-              align="stretch"
               as={Link}
+              align="stretch"
               bg={bg}
               boxShadow="base"
               cursor="pointer"
@@ -59,9 +58,6 @@ export default function BlockLinks({ block }) {
             </Flex>
           )
         })}
-      </Stack>
-    )
-  }
-
-  return null
+    </Stack>
+  )
 }

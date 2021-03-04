@@ -29,3 +29,7 @@ a {
 .menu-link {
   padding: 8px;
 }
+
+.next-image-container > div {
+  display: block !important;
+}

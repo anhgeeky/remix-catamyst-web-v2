@@ -6,6 +6,7 @@ import {
   SimpleGrid,
   Text,
   useColorModeValue,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import {
   ArrowUpIcon as UpIcon,
@@ -23,7 +24,16 @@ export default function PaginationLessons({
   next,
   children = undefined,
 }) {
-  if (mode === 'minimal') {
+  const [isMobile] = useMediaQuery('(max-width: 425px)')
+
+  /**
+   * Only render top/minimal lessons pagination
+   * above mobile size to avoid shifted hero layout
+   */
+  if (mode === 'minimal' && isMobile) {
+    return <>{children}</>
+  }
+  if (mode === 'minimal' && !isMobile) {
     return (
       <PaginationLessonsMinimal
         track={track}
@@ -31,7 +41,7 @@ export default function PaginationLessons({
         prev={prev}
         next={next}
       >
-        {children}
+        <>{children}</>
       </PaginationLessonsMinimal>
     )
   }
@@ -118,7 +128,8 @@ function PaginationLessonsFull({ track, topic, prev, next }) {
       as="nav"
       aria-label="Pagination lesson"
       width="100%"
-      spacing={5}
+      px={3}
+      spacing={2}
       columns={2}
       maxW={theme.maxContentWidth}
     >
@@ -168,8 +179,7 @@ function PaginationLinkFull({ label, href, textAlign, children }) {
         label={label}
         textAlign={textAlign}
         rounded="md"
-        px={2}
-        py={5}
+        p={3}
         _hover={{
           textDecoration: 'none',
           bg: useColorModeValue('gray.100', 'gray.800'),

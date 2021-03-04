@@ -41,7 +41,7 @@ export default function LessonBySlug() {
           </NextHead>
 
           <Hero>
-            <Box align="center" py={5}>
+            <Box id="lesson-hero" align="center" py={5}>
               <PaginationLessons
                 mode="minimal"
                 track={track}
@@ -61,9 +61,16 @@ export default function LessonBySlug() {
               </PaginationLessons>
             </Box>
           </Hero>
-          <Container id="content-lesson" width="100%" maxW="1440px" pt={5}>
+
+          <Container
+            id="lesson-content"
+            width="100%"
+            maxW="1500px"
+            pt={5}
+            px={0}
+          >
             <Stack align="center" spacing={10}>
-              <Stack align="center" spacing={5}>
+              <Stack id="lesson-blocks" align="center" spacing={5}>
                 {(lesson?.blocks as any[]).map((block, index) => {
                   return <Block key={index} block={block} />
                 })}

@@ -5,8 +5,8 @@ export default function Hero({ color = 'cyan', children }) {
   const bg = useColorModeValue(`${color}.100`, `${color}.900`)
 
   return (
-    <Flex py={5} color={textColor} bg={bg} justify="center">
-      <Box p={5} width="1200px">
+    <Flex py={10} color={textColor} bg={bg} justify="center">
+      <Box px={{ base: 2, sm: 4 }} width="1200px">
         {children}
       </Box>
     </Flex>

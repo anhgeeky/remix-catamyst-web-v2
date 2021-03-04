@@ -4,7 +4,7 @@ import theme from '@/theme/theme.json'
 
 export default function BlockReferences({ block }) {
   return (
-    <Stack maxW={theme.maxContentWidth} width="100%" spacing={5} pt={10}>
+    <Stack spacing={5} pt={10}>
       <Heading
         as="h1"
         color="gray.500"

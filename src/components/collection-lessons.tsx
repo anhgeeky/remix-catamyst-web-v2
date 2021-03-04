@@ -47,7 +47,7 @@ export default function CollectionLessons({ trackSlug, topicSlug, sections }) {
                     const lessonHref = `/learn/${trackSlug}/${topicSlug}/${lesson.slug}`
                     return (
                       <NextLink key={lesson.slug} href={lessonHref} passHref>
-                        <Link rounded="md" p={1}>
+                        <Link rounded="md">
                           <Flex align="center" cursor="pointer">
                             <LessonIcon type={lesson.type} />
                             <Text ml={2}>{lesson.title}</Text>

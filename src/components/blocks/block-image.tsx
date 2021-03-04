@@ -1,31 +1,36 @@
 import NextImage from 'next/image'
 import { Box, Stack, Text, Link, useColorModeValue } from '@chakra-ui/react'
-export default function BlockImage({ block }) {
-  const bg = useColorModeValue('gray.100', 'gray.800')
-  const width = block.type === 'screenshot' ? '1440px' : block.width || '100%'
-  const height = block.type === 'screenshot' ? '900px' : block.height || '100%'
 
+export default function BlockImage({ block }) {
   return (
-    <Box align="center">
-      <Box bg={block.type === 'screenshot' && bg}>
+    <Box align="center" py={5}>
+      <Box
+        className="next-image-container"
+        bg={
+          block.type === 'screenshot' &&
+          useColorModeValue('gray.100', 'gray.500')
+        }
+      >
         <NextImage
-          src={block.src}
+          className="next-image"
+          src={block.imageUrl || block.src}
           alt={block.name || 'Unknown'}
-          width={width}
-          height={height}
+          width={block.type === 'screenshot' ? '1440px' : block.width}
+          height={block.type === 'screenshot' ? '900px' : block.height}
           layout="intrinsic"
           objectFit="contain"
         />
       </Box>
+
       {block.type === 'screenshot' && (
-        <Stack opacity={0.5} align="center" spacing={0}>
+        <Box opacity={0.5} align="center" mt={3}>
           <Text>{block.name}</Text>
           {block.sourceUrl && (
             <Link fontSize="sm" href={block.sourceUrl}>
               {block.sourceUrl}
             </Link>
           )}
-        </Stack>
+        </Box>
       )}
     </Box>
   )
