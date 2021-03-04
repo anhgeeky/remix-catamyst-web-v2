@@ -9,7 +9,7 @@
     "blocks": [
       {
         "component": "image",
-        "name": "Cat sitting in front of artworks",
+        "caption": "Cat sitting in front of artworks",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
         "width": "300px",
         "height": "250px",
@@ -23,7 +23,7 @@
         "component": "image",
         "type": "screenshot",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
-        "name": "Google Arts & Culture website - Cats in culture",
+        "caption": "Google Arts & Culture website · Cats in culture",
         "sourceUrl": "https://artsandculture.google.com"
       },
       {
@@ -53,7 +53,7 @@
     "blocks": [
       {
         "component": "image",
-        "name": "Cat reading a book",
+        "caption": "Cat reading a book",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
         "width": "250px",
         "height": "237px",
@@ -75,7 +75,7 @@
     "blocks": [
       {
         "component": "image",
-        "name": "Hour glass",
+        "caption": "Hour glass",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
         "width": "125px",
         "height": "150px",
@@ -126,7 +126,7 @@
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614258939/cat-typing-laptop.gif",
         "width": "300px",
         "height": "250px",
-        "name": "Cat typing laptop",
+        "caption": "Cat typing laptop",
         "sourceUrl": "https://catamyst.com"
       },
       {
@@ -311,7 +311,7 @@
         "component": "image",
         "type": "screenshot",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
-        "name": "Bitwarden website",
+        "caption": "Bitwarden website",
         "sourceUrl": "https://bitwarden.com"
       },
       {
@@ -471,12 +471,122 @@
       {
         "component": "image",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
+        "caption": " Linear vs Non-linear learning · Inspired by Visual Thinkery",
+        "sourceUrl": "https://visualthinkery.com",
         "width": "1250px",
         "height": "475px"
       },
       {
         "component": "paragraph",
         "html": "Even in the industry itself, sometimes there is actually no absolute answer that tells the correct and wrong way to learn and do things. However, there are always recommended theories and practices you can follow."
+      },
+      {
+        "component": "paragraph",
+        "html": "Just like painting, you can try different shapes and colors. There is no correct or wrong, they just look different."
+      },
+      {
+        "component": "heading",
+        "as": "h1",
+        "html": "Why you need to learn the fundamentals"
+      },
+      {
+        "component": "paragraph",
+        "html": "Most beginners could fall into unpreparedness, learning something briefly without strong fundamentals. Moreover, they don't know which fundamentals to learn first. Without having strong fundamentals, it will make learning advanced lessons difficult in the future."
+      },
+      {
+        "component": "paragraph",
+        "html": "Make sure you are ready first before going to the next lesson. We encourage you to go back to the basics if you already learn it before but you don't understand it fully or already forget about the basic concepts."
+      },
+      {
+        "component": "paragraph",
+        "html": "With Catamyst, we set the recommended order for you from the very beginning more efficiently and effectively, rather than having to figure out what to learn by yourself."
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "references",
+        "items": [
+          {
+            "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
+            "title": "Linear vs Non-linear learning",
+            "source": "Bryan Mathers",
+            "type": "article",
+            "date": "2015-05-11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "learning-with-first-principles-thinking",
+    "title": "Learning with first principles thinking",
+    "type": "fundamental",
+    "level": "newbie",
+    "blocks": [
+      {
+        "html": "Suppose that you see a painting and then you say, \"Wow! Look at how beautiful that is! I'll never draw anything like that\"."
+      },
+      {
+        "html": "Painting itself is built out of fundamental shapes. Painters start drawing by drafting shapes and add more details to make something outstanding. Anyone can become a painter, but you need to start from the very basic principles."
+      },
+      {
+        "html": "If you memorized how to paint a natural landscape, you might only able to paint that sole painting. Since painting is made out of basic shapes, you can paint endless possibilities."
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "heading",
+        "as": "h1",
+        "html": "Why first principles thinking"
+      },
+      {
+        "html": "First principles refer to the fundamental concepts or assumptions on which a theory, system, or method is based. Over 2000 years ago, Aristotle defined the first principle as “the first basis from which a thing is known.”"
+      },
+      {
+        "html": "You have to learn by understanding the basic principles or concepts first before going to a more advanced level. For example, you have to learn about <i>alphabets</i>, the first principles to learn before you can even read and write."
+      },
+      {
+        "html": "With \"first principles thinking\", or sometimes called \"reasoning from first principles\", you can get the most effective strategies you can employ for breaking down complicated problems and generating original solutions."
+      },
+      {
+        "html": "Simply by asking \"why\" and questioning everything, you can remove assumptions to deal with a problem in its most fundamental form. By questioning, you can get a basic assumption that cannot be deduced or break down any further."
+      },
+      {
+        "html": "First principles thinking is a fancy way of saying “think like a scientist.” True scientists don't assume anything. They start with questions like, \"Why is that happening? What has been proven?\""
+      },
+      {
+        "html": "It helps you to learn how to think for yourself, unlock your creative potential, and move from linear to non-linear results."
+      },
+      {
+        "component": "quote",
+        "html": "If I had an hour to solve a problem, I’d spend 55 minutes thinking about the problem and 5 minutes thinking about solutions.",
+        "author": "Albert Einstein"
+      },
+      {
+        "component": "divider"
+      },
+      {
+        "component": "heading",
+        "as": "h1",
+        "html": "Tips to do first principles thinking"
+      },
+      {
+        "html": "Here are the tips on how to apply first principles thinking to solve problems:"
+      },
+      {
+        "component": "references",
+        "items": [
+          {
+            "url": "https://www.youtube.com/watch?v=ZqhN2YWTw0M",
+            "title": "Reasoning from First Principles",
+            "source": "YouTube",
+            "author": "iluli by Mike Lamb",
+            "type": "video"
+          }
+        ]
       }
     ]
   }

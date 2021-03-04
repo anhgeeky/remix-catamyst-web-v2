@@ -14,7 +14,7 @@ export default function BlockImage({ block }) {
         <NextImage
           className="next-image"
           src={block.imageUrl || block.src}
-          alt={block.name || 'Unknown'}
+          alt={block.caption || 'Unknown'}
           width={block.type === 'screenshot' ? '1440px' : block.width}
           height={block.type === 'screenshot' ? '900px' : block.height}
           layout="intrinsic"
@@ -22,9 +22,9 @@ export default function BlockImage({ block }) {
         />
       </Box>
 
-      {block.type === 'screenshot' && (
+      {block.caption && (
         <Box opacity={0.5} align="center" mt={3}>
-          <Text>{block.name}</Text>
+          <Text>{block.caption}</Text>
           {block.sourceUrl && (
             <Link fontSize="sm" href={block.sourceUrl}>
               {block.sourceUrl}

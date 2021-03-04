@@ -1,7 +1,5 @@
 import ReactHtmlParser from 'react-html-parser'
-import { Box, Text } from '@chakra-ui/react'
-
-import theme from '@/theme/theme.json'
+import { Text } from '@chakra-ui/react'
 
 export default function BlockParagraph({ block }) {
   return <Text fontSize={['md', 'lg']}>{ReactHtmlParser(block.html)}</Text>
