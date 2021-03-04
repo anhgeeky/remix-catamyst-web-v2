@@ -1,41 +1,40 @@
-import { Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { Heading, Stack, Text } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
 import {
   Card,
-  CollectionTracks,
   ContentWithSidebar,
   DashboardSidebar,
   HeadingStack,
   Hero,
 } from '@/components'
 import { useAuth, useAuthorized } from '@/hooks'
-import dataTracks from '@/data/tracks.json'
 
-export default function Dashboard() {
-  const bg = useColorModeValue('white', 'gray.800')
-  const { auth, isAuthorized } = useAuth()
+export default function DashboardProjects() {
+  const { isAuthorized } = useAuth()
   useAuthorized(isAuthorized)
 
   return (
-    <Layout title="Dashboard · Catamyst">
+    <Layout title="Posts Dashboard · Catamyst">
       {isAuthorized && (
         <>
           <Hero>
             <Heading as="h1" size="xl">
-              Dashboard
+              Posts Dashboard
             </Heading>
-            <Text>Welcome back, {auth.user.name}!</Text>
+            <Text>
+              Your published and draft posts. Can be for blog, notes, or news.
+            </Text>
           </Hero>
           <ContentWithSidebar>
             <DashboardSidebar />
             <Stack spacing={5} width="100%">
               <Stack>
-                <HeadingStack>Enrolled tracks:</HeadingStack>
-                <Card>You haven't enrolled in a track yet.</Card>
+                <HeadingStack>Published Posts:</HeadingStack>
+                <Card>You don't have any published posts yet.</Card>
               </Stack>
               <Stack>
-                <HeadingStack>Available tracks:</HeadingStack>
-                <CollectionTracks tracks={dataTracks} />
+                <HeadingStack>Draft Posts:</HeadingStack>
+                <Card>You don't have any draft posts yet.</Card>
               </Stack>
             </Stack>
           </ContentWithSidebar>

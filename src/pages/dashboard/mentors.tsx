@@ -9,30 +9,26 @@ import {
 } from '@/components'
 import { useAuth, useAuthorized } from '@/hooks'
 
-export default function DashboardTracks() {
+export default function DashboardMentors() {
   const { isAuthorized } = useAuth()
   useAuthorized(isAuthorized)
 
   return (
-    <Layout title="Tracks Dashboard · Catamyst">
+    <Layout title="Mentors Dashboard · Catamyst">
       {isAuthorized && (
         <>
           <Hero>
             <Heading as="h1" size="xl">
-              Tracks Dashboard
+              Mentors Dashboard
             </Heading>
-            <Text>Your current and available tracks</Text>
+            <Text>Your assigned mentors from Catamyst.</Text>
           </Hero>
           <ContentWithSidebar>
             <DashboardSidebar />
             <Stack spacing={5} width="100%">
               <Stack>
-                <HeadingStack>Enrolled Tracks:</HeadingStack>
-                <Card>You haven't enrolled in any track yet.</Card>
-              </Stack>
-              <Stack>
-                <HeadingStack>Completed Tracks:</HeadingStack>
-                <Card>You haven't completed any track yet.</Card>
+                <HeadingStack>Mentors:</HeadingStack>
+                <Card>You don't have any mentors yet.</Card>
               </Stack>
             </Stack>
           </ContentWithSidebar>

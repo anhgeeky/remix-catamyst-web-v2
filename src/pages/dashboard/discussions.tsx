@@ -9,30 +9,26 @@ import {
 } from '@/components'
 import { useAuth, useAuthorized } from '@/hooks'
 
-export default function DashboardTracks() {
+export default function DashboardJobs() {
   const { isAuthorized } = useAuth()
   useAuthorized(isAuthorized)
 
   return (
-    <Layout title="Tracks Dashboard · Catamyst">
+    <Layout title="Discussions Dashboard · Catamyst">
       {isAuthorized && (
         <>
           <Hero>
             <Heading as="h1" size="xl">
-              Tracks Dashboard
+              Discussions Dashboard
             </Heading>
-            <Text>Your current and available tracks</Text>
+            <Text>Your discussions in forum.</Text>
           </Hero>
           <ContentWithSidebar>
             <DashboardSidebar />
             <Stack spacing={5} width="100%">
               <Stack>
-                <HeadingStack>Enrolled Tracks:</HeadingStack>
-                <Card>You haven't enrolled in any track yet.</Card>
-              </Stack>
-              <Stack>
-                <HeadingStack>Completed Tracks:</HeadingStack>
-                <Card>You haven't completed any track yet.</Card>
+                <HeadingStack>Involved discussions:</HeadingStack>
+                <Card>You haven't involved in any discussions yet.</Card>
               </Stack>
             </Stack>
           </ContentWithSidebar>

@@ -27,9 +27,11 @@ import QuickSignUpForm from '@/components/quick-signup-form'
 import ReferenceIcon from '@/components/reference-icon'
 import SectionsLessons from '@/components/sections-lessons'
 import DashboardSidebar from '@/components/dashboard/dashboard-sidebar'
+import Card from '@/components/card'
 
 export {
   AlertSoon,
+  Card,
   DashboardSidebar,
   CategoryBadge,
   CollectionTopics,
