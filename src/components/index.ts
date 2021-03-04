@@ -26,9 +26,11 @@ import PreviewDashboard from '@/components/preview-dashboard'
 import QuickSignUpForm from '@/components/quick-signup-form'
 import ReferenceIcon from '@/components/reference-icon'
 import SectionsLessons from '@/components/sections-lessons'
+import DashboardSidebar from '@/components/dashboard/dashboard-sidebar'
 
 export {
   AlertSoon,
+  DashboardSidebar,
   CategoryBadge,
   CollectionTopics,
   CollectionTracks,

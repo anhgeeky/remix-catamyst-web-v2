@@ -16,7 +16,7 @@ export default function BlockLinks({ block }) {
 
   if (Array.isArray(block.items)) {
     return (
-      <Stack maxW={theme.maxContentWidth} width="100%" px={5} spacing={2}>
+      <Stack maxW={theme.maxContentWidth} width="100%" px={5} spacing={3}>
         {block.items.map((item, index) => {
           return (
             <Flex
@@ -33,7 +33,12 @@ export default function BlockLinks({ block }) {
               spacing={0}
               _hover={{ textDecoration: 'none', boxShadow: 'outline' }}
             >
-              <Box bg={item.color || 'transparent'} width="5px" />
+              <Box
+                bg={item.color || 'transparent'}
+                width="5px"
+                borderTopLeftRadius="md"
+                borderBottomLeftRadius="md"
+              />
               <Stack p={3} spacing={1}>
                 <HStack>
                   {item.type && <ReferenceIcon type={item.type} />}
