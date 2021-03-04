@@ -1,30 +1,23 @@
 import NextHead from 'next/head'
+import { useRouter } from 'next/router'
 import { Stack, Avatar, Heading, Text, Box } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
-import { Hero, Content } from '@/components'
-import users from '@/data/users.json'
+import { Content } from '@/components'
 
-export async function getServerSideProps(context) {
-  const { handle } = context.params
-  const user = users.find((user) => {
-    return user.handle === handle
-  })
-  return {
-    props: {
-      handle,
-      user,
-    },
-  }
-}
+import dataUsers from '@/data/users.json'
 
-export default function UserProfile({ handle, user }) {
+export default function UserProfile() {
+  const router = useRouter()
+  const { userHandle } = router.query
+  const user = dataUsers.find((user) => user.handle === userHandle)
+
   return (
     <Layout title={`Loading user profile...`}>
-      {handle && user.handle && (
+      {user && (
         <>
           <NextHead>
             <title>
-              {user.name} (@{handle}) · Catamyst
+              {user.name} (@{user.handle}) · Catamyst
             </title>
           </NextHead>
 
