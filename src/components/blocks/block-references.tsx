@@ -6,10 +6,12 @@ export default function BlockReferences({ block }) {
   return (
     <Stack maxW={theme.maxContentWidth} width="100%" spacing={5} pt={10}>
       <Heading
+        as="h1"
+        color="gray.500"
         fontFamily="body"
-        textTransform="uppercase"
-        textAlign="center"
         fontSize="xl"
+        textAlign="center"
+        textTransform="uppercase"
         letterSpacing={0.5}
       >
         References

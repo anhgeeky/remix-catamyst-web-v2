@@ -11,15 +11,12 @@ export default function usePaginationTopics({ trackSlug, topicSlug }) {
   })
 
   const topicIndex = track?.topics.findIndex((topicId) => topicId === topic.id)
+
   const prevId = topicIndex > -1 ? track?.topics[topicIndex - 1] : undefined
   const nextId = topicIndex > -1 ? track?.topics[topicIndex + 1] : undefined
 
-  const prev = prevId
-    ? dataTopics.find((topic) => topic.id === prevId)
-    : undefined
-  const next = nextId
-    ? dataTopics.find((topic) => topic.id === nextId)
-    : undefined
+  const prev = prevId && dataTopics.find((topic) => topic.id === prevId)
+  const next = nextId && dataTopics.find((topic) => topic.id === nextId)
 
   return {
     track,

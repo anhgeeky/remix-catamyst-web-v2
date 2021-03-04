@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import {
+  ArrowUpIcon as UpIcon,
   ArrowBackIcon as PreviousIcon,
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
@@ -15,34 +16,43 @@ import theme from '@/theme/theme.json'
 import React from 'react'
 
 export default function PaginationLessons({
-  mode = 'full',
-  prev = {
-    slug: 'other-lesson',
-    title: 'Other lesson title',
-  },
-  next = {
-    slug: 'another-lesson',
-    title: 'Another lesson title',
-  },
+  mode,
+  track,
+  topic,
+  prev,
+  next,
   children = undefined,
 }) {
   if (mode === 'minimal') {
     return (
-      <PaginationLessonsMinimal prev={prev} next={next}>
+      <PaginationLessonsMinimal
+        track={track}
+        topic={topic}
+        prev={prev}
+        next={next}
+      >
         {children}
       </PaginationLessonsMinimal>
     )
   }
   if (mode === 'full') {
-    return <PaginationLessonsFull prev={prev} next={next} />
+    return (
+      <PaginationLessonsFull
+        track={track}
+        topic={topic}
+        prev={prev}
+        next={next}
+      />
+    )
   }
   return null
 }
 
-function PaginationLessonsMinimal({ prev, next, children }) {
-  const previousLessonHref = `/learn/track/topic/${prev.slug}`
-  const nextLessonHref = `/learn/track/topic/${next.slug}`
+/**
+ * Pagination lessons mode minimal
+ */
 
+function PaginationLessonsMinimal({ track, topic, prev, next, children }) {
   return (
     <HStack
       as="nav"
@@ -51,66 +61,118 @@ function PaginationLessonsMinimal({ prev, next, children }) {
       justify="space-between"
       maxW={theme.maxContentWidth}
     >
-      <PaginationLinkMinimal label="Previous" href={previousLessonHref} />
+      {prev?.slug ? (
+        <PaginationLinkMinimal
+          label="Previous"
+          href={`/learn/${track.slug}/${topic.slug}/${prev.slug}`}
+          icon={<PreviousIcon />}
+        />
+      ) : (
+        <PaginationLinkMinimal
+          label="Up"
+          href={`/learn/${track.slug}/${topic.slug}`}
+          icon={<UpIcon />}
+        />
+      )}
+
       {children}
-      <PaginationLinkMinimal label="Next" href={nextLessonHref} />
+
+      {next?.slug ? (
+        <PaginationLinkMinimal
+          label="Next"
+          href={`/learn/${track.slug}/${topic.slug}/${next.slug}`}
+          icon={<NextIcon />}
+        />
+      ) : (
+        <PaginationLinkMinimal
+          label="Up"
+          href={`/learn/${track.slug}/${topic.slug}`}
+          icon={<UpIcon />}
+        />
+      )}
     </HStack>
   )
 }
 
-function PaginationLinkMinimal({ label, href }) {
+function PaginationLinkMinimal({ label, href, icon }) {
   return (
     <NextLink href={href} passHref>
       <IconButton
+        as={Link}
         aria-label={label}
-        label={label}
+        icon={icon}
         rounded="md"
         variant="ghost"
-        rel={label === 'Next' ? 'Next' : 'Previous'}
-        textAlign={label === 'Next' ? 'right' : 'left'}
-        icon={label === 'Next' ? <NextIcon /> : <PreviousIcon />}
       />
     </NextLink>
   )
 }
 
-function PaginationLessonsFull({ prev, next }) {
-  const previousLessonHref = `/learn/track/topic/${prev.slug}`
-  const nextLessonHref = `/learn/track/topic/${next.slug}`
+/**
+ * Pagination lessons mode full
+ */
 
+function PaginationLessonsFull({ track, topic, prev, next }) {
   return (
     <SimpleGrid
       as="nav"
       aria-label="Pagination lesson"
-      px={5}
       width="100%"
+      spacing={5}
       columns={2}
       maxW={theme.maxContentWidth}
     >
-      <PaginationLinkFull label="Previous" href={previousLessonHref}>
-        <PreviousIcon /> {prev.title}
-      </PaginationLinkFull>
-      <PaginationLinkFull label="Next" href={nextLessonHref}>
-        {next.title} <NextIcon />
-      </PaginationLinkFull>
+      {prev?.slug ? (
+        <PaginationLinkFull
+          label="Previous"
+          textAlign="left"
+          href={`/learn/${track.slug}/${topic.slug}/${prev.slug}`}
+        >
+          <PreviousIcon /> {prev.title}
+        </PaginationLinkFull>
+      ) : (
+        <PaginationLinkFull
+          label="Up"
+          textAlign="left"
+          href={`/learn/${track.slug}/${topic.slug}`}
+        >
+          <UpIcon /> {topic.title}
+        </PaginationLinkFull>
+      )}
+
+      {next?.slug ? (
+        <PaginationLinkFull
+          label="Next"
+          textAlign="right"
+          href={`/learn/${track.slug}/${topic.slug}/${next.slug}`}
+        >
+          {next.title} <NextIcon />
+        </PaginationLinkFull>
+      ) : (
+        <PaginationLinkFull
+          label="Up"
+          textAlign="right"
+          href={`/learn/${track.slug}/${topic.slug}`}
+        >
+          {topic.title} <UpIcon />
+        </PaginationLinkFull>
+      )}
     </SimpleGrid>
   )
 }
 
-function PaginationLinkFull({ label, href, children }) {
-  const bg = useColorModeValue('gray.100', 'gray.800')
-
+function PaginationLinkFull({ label, href, textAlign, children }) {
   return (
     <NextLink href={href} passHref>
       <Link
         label={label}
-        p={2}
-        rel={label === 'Next' ? 'next' : 'previous'}
+        textAlign={textAlign}
         rounded="md"
-        textAlign={label === 'Next' ? 'right' : 'left'}
+        px={2}
+        py={5}
         _hover={{
           textDecor: 'none',
-          bg,
+          bg: useColorModeValue('gray.100', 'gray.800'),
         }}
       >
         <Text fontSize="sm">{label}</Text>

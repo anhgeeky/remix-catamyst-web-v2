@@ -11,8 +11,10 @@ import {
 import { FaAngleRight } from 'react-icons/fa'
 
 /**
- * Options to transform with react-html-parser
+ * Options to transform with `react-html-parser`
+ * Used within `block-texts`
  */
+
 export default {
   decodeEntities: true,
   transform: function transform(node, index) {
@@ -41,7 +43,7 @@ export default {
     }
     if (node.type === 'tag' && node.name === 'p') {
       return (
-        <Text key={index} fontSize={fontSizes} pt={5}>
+        <Text key={index} fontSize={fontSizes} pt={3}>
           {node.children[0].data}
         </Text>
       )

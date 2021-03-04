@@ -16,7 +16,7 @@ export default function BlockLinks({ block }) {
 
   if (Array.isArray(block.items)) {
     return (
-      <Stack maxW={theme.maxContentWidth} width="100%" px={5} spacing={3}>
+      <Stack maxW={theme.maxContentWidth} width="100%" spacing={3}>
         {block.items.map((item, index) => {
           return (
             <Flex
@@ -42,7 +42,7 @@ export default function BlockLinks({ block }) {
               <Stack p={3} spacing={1}>
                 <HStack>
                   {item.type && <ReferenceIcon type={item.type} />}
-                  <Heading as="h4" fontFamily="body" size="sm">
+                  <Heading as="h2" fontFamily="body" size="sm">
                     {item.title}
                   </Heading>
                 </HStack>

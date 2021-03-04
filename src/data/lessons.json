@@ -426,7 +426,6 @@
     "slug": "managing-your-tasks",
     "type": "project",
     "level": "newbie",
-    "isPublished": false,
     "blocks": [
       {
         "component": "texts",

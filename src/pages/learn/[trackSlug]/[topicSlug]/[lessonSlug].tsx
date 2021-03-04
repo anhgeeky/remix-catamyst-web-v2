@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import {
@@ -9,10 +10,12 @@ import {
   Stack,
   VStack,
 } from '@chakra-ui/react'
+
 import { Layout } from '@/layouts'
-import { Hero, Content, LessonBlock, PaginationLessons } from '@/components'
-import dataLessons from '@/data/lessons.json'
-import React from 'react'
+import { Hero, Block, PaginationLessons } from '@/components'
+import { usePaginationLessons } from '@/hooks'
+import dataTracks from '@/data/tracks.json'
+import dataTopics from '@/data/topics.json'
 
 /**
  * The full content page of each lesson
@@ -22,50 +25,60 @@ import React from 'react'
 
 export default function LessonBySlug() {
   const router = useRouter()
-  const lesson = dataLessons.find((lesson) => {
-    return lesson.slug === router.query.lessonSlug
+  const { trackSlug, topicSlug, lessonSlug } = router.query
+  const { track, topic, lesson, prev, next } = usePaginationLessons({
+    trackSlug,
+    topicSlug,
+    lessonSlug,
   })
 
   return (
     <Layout title={`Loading lesson...`}>
-      {lesson && (
+      {track && topic && lesson && (
         <>
           <NextHead>
             <title>{lesson.title} · Lesson · Catamyst</title>
           </NextHead>
-          <LessonHero lesson={lesson} />
-          <Container width="100%" maxW="1440px" px={0} py={5}>
-            {Array.isArray(lesson.blocks) && (
+
+          <Hero>
+            <Box align="center" py={5}>
+              <PaginationLessons
+                mode="minimal"
+                track={track}
+                topic={topic}
+                prev={prev}
+                next={next}
+              >
+                <VStack>
+                  <Heading as="h1" size="xl" textAlign="center">
+                    {lesson.title}
+                  </Heading>
+                  <HStack>
+                    <Badge>Level: {lesson.level}</Badge>
+                    <Badge>Type: {lesson.type}</Badge>
+                  </HStack>
+                </VStack>
+              </PaginationLessons>
+            </Box>
+          </Hero>
+          <Container id="content-lesson" width="100%" maxW="1440px" pt={5}>
+            <Stack align="center" spacing={10}>
               <Stack align="center" spacing={5}>
-                {(lesson.blocks as any[]).map((block, index) => {
-                  return <LessonBlock key={index} block={block} />
+                {(lesson?.blocks as any[]).map((block, index) => {
+                  return <Block key={index} block={block} />
                 })}
-                <PaginationLessons mode="full" />
               </Stack>
-            )}
+              <PaginationLessons
+                mode="full"
+                track={track}
+                topic={topic}
+                prev={prev}
+                next={next}
+              />
+            </Stack>
           </Container>
         </>
       )}
     </Layout>
-  )
-}
-
-function LessonHero({ lesson }) {
-  return (
-    <Hero>
-      <Box align="center" py={5}>
-        <PaginationLessons mode="minimal">
-          <VStack>
-            <Heading as="h1" size="xl" textAlign="center">
-              {lesson.title}
-            </Heading>
-            <HStack>
-              <Badge>Level: {lesson.level}</Badge>
-              <Badge>Type: {lesson.type}</Badge>
-            </HStack>
-          </VStack>
-        </PaginationLessons>
-      </Box>
-    </Hero>
   )
 }

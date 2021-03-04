@@ -4,7 +4,7 @@ import BlockLinks from './blocks/block-links'
 import BlockDivider from './blocks/block-divider'
 import BlockReferences from './blocks/block-references'
 
-export default function LessonBlock({ block }) {
+export default function Block({ block }) {
   if (block.component === 'image' && block.src) {
     return <BlockImage block={block} />
   }

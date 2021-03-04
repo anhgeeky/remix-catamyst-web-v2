@@ -21,7 +21,7 @@ export default function CollectionUsers({ users }) {
               <a>
                 <HStack>
                   <Avatar name={user.name} width="50px" height="50px" />
-                  <Heading as="h4" size="md">
+                  <Heading as="h3" size="md">
                     {user.name} (@{user.handle})
                   </Heading>
                 </HStack>
