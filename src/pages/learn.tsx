@@ -1,20 +1,21 @@
 import { Heading, Text } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
-import { Hero, Content } from '@/components'
+import { Hero, Content, CollectionTracks } from '@/components'
+import dataTracks from '@/data/tracks.json'
 
 export default function Learn() {
   return (
-    <Layout title="Learn coding and design on Catamyst">
+    <Layout title="Learn with tracks on Catamyst">
       <Hero>
         <Heading as="h1" size="xl">
-          Learn coding and design
+          Learn with guided tracks
         </Heading>
-        <Text>Tracks with variety of levels, topics, and projects.</Text>
+        <Text>
+          Tracks with variety of levels, topics, lessons, and projects.
+        </Text>
       </Hero>
-
       <Content>
-        <Text>(Collection of tracks)</Text>
-        <Text>(Collection of projects)</Text>
+        <CollectionTracks tracks={dataTracks} />
       </Content>
     </Layout>
   )

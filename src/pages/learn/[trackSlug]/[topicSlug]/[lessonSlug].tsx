@@ -1,10 +1,9 @@
-import Head from 'next/head'
+import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import {
   Badge,
   Box,
   Container,
-  Flex,
   Heading,
   HStack,
   Stack,
@@ -23,19 +22,17 @@ import React from 'react'
 
 export default function LessonBySlug() {
   const router = useRouter()
-  const { slug } = router.query
-
   const lesson = dataLessons.find((lesson) => {
-    return lesson.slug === slug
+    return lesson.slug === router.query.lessonSlug
   })
 
   return (
     <Layout title={`Loading lesson...`}>
-      {slug && lesson && (
+      {lesson && (
         <>
-          <Head>
+          <NextHead>
             <title>{lesson.title} · Lesson · Catamyst</title>
-          </Head>
+          </NextHead>
           <LessonHero lesson={lesson} />
           <Container width="100%" maxW="1440px" px={0} py={5}>
             {Array.isArray(lesson.blocks) && (

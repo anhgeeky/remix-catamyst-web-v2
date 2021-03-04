@@ -1,9 +1,9 @@
 import NextLink from 'next/link'
 import {
   Box,
-  Flex,
   Heading,
   Stack,
+  Link,
   HStack,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -11,7 +11,7 @@ import slugify from 'slugify'
 
 import { AlertSoon, CategoryBadge } from '@/components'
 
-export default function CollectionTopics({ topics }) {
+export default function CollectionTopics({ trackSlug, topics }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   if (!topics || topics.length === 0) {
@@ -19,31 +19,34 @@ export default function CollectionTopics({ topics }) {
   }
   return (
     <Stack spacing={5} width="100%">
-      {topics.map((topic, index) => {
-        const slug = topic.slug || slugify(topic.title, { lower: true })
+      {topics &&
+        topics.map((topic) => {
+          const topicSlug = topic.slug || slugify(topic.title, { lower: true })
+          const topicHref = `${trackSlug}/${topicSlug}`
 
-        return (
-          <NextLink key={topic.id} href={`/topics/${slug}`} passHref>
-            <HStack
-              bg={bg}
-              boxShadow="xs"
-              cursor="pointer"
-              direction={{ base: 'column', sm: 'row' }}
-              justify="space-between"
-              p={5}
-              rounded="md"
-              _hover={{ boxShadow: 'outline' }}
-            >
-              <Heading as="h3" size="md">
-                {topic.iconEmoji} {topic.title}
-              </Heading>
-              <Box>
-                <CategoryBadge category={topic.category} />
-              </Box>
-            </HStack>
-          </NextLink>
-        )
-      })}
+          return (
+            <NextLink key={topic.id} href={topicHref} passHref>
+              <HStack
+                as={Link}
+                bg={bg}
+                boxShadow="xs"
+                cursor="pointer"
+                direction={{ base: 'column', sm: 'row' }}
+                justify="space-between"
+                rounded="md"
+                p={5}
+                _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+              >
+                <Heading as="h3" size="md">
+                  {topic.iconEmoji} {topic.title}
+                </Heading>
+                <Box>
+                  <CategoryBadge category={topic.category} />
+                </Box>
+              </HStack>
+            </NextLink>
+          )
+        })}
     </Stack>
   )
 }

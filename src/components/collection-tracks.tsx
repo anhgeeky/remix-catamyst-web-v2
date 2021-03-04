@@ -1,13 +1,13 @@
+import NextLink from 'next/link'
 import NextImage from 'next/image'
 import { useRouter } from 'next/router'
 import {
   Box,
   Button,
   Heading,
-  Stack,
   HStack,
-  Flex,
-  Text,
+  Link,
+  Stack,
   VStack,
   Wrap,
   WrapItem,
@@ -23,6 +23,8 @@ export default function CollectionTracks({ tracks }) {
     <VStack spacing={5} align="stretch">
       {tracks.map((track, index) => {
         const uuid = uuidv4()
+        const trackHref = `/learn/${track.slug}`
+
         return (
           <Box key={uuid} rounded="md" boxShadow="base" bg={bg} p={5}>
             <Wrap
@@ -44,14 +46,16 @@ export default function CollectionTracks({ tracks }) {
                   <Heading as="h2" size="xl">
                     {track.title}
                   </Heading>
-                  <Button
-                    size="lg"
-                    colorScheme="teal"
-                    aria-label={`Choose ${track.title} track`}
-                    onClick={() => router.push(`/tracks/${track.slug}`)}
-                  >
-                    Choose Track
-                  </Button>
+                  <NextLink href={trackHref} passHref>
+                    <Button
+                      as={Link}
+                      colorScheme="teal"
+                      aria-label={`Choose ${track.title} track`}
+                      _hover={{ textDecoration: 'none' }}
+                    >
+                      Choose Track
+                    </Button>
+                  </NextLink>
                 </Stack>
               </WrapItem>
             </Wrap>

@@ -3,11 +3,12 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import {
-  chakra,
   Box,
+  chakra,
   Heading,
-  Text,
+  Link,
   Stack,
+  Text,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
@@ -88,18 +89,27 @@ function DashboardSidebar() {
 }
 
 function SidebarLink({ href, isActive = false, children }) {
+  const bgColor = {
+    bg: useColorModeValue('gray.100', 'gray.800'),
+    color: useColorModeValue('teal.500', 'teal.200'),
+  }
+
   return (
     <NextLink href={href} passHref>
-      <chakra.a
+      <Box
+        as={Link}
         aria-current={isActive ? 'page' : undefined}
         width="100%"
         p={2}
         rounded="md"
         fontWeight="500"
         color={useColorModeValue('black', 'white')}
+        _focus={{
+          ...bgColor,
+        }}
         _hover={{
-          bg: useColorModeValue('gray.100', 'gray.800'),
-          color: useColorModeValue('teal.500', 'teal.200'),
+          textDecoration: 'none',
+          ...bgColor,
         }}
         _activeLink={{
           bg: useColorModeValue('gray.200', 'black'),
@@ -107,7 +117,7 @@ function SidebarLink({ href, isActive = false, children }) {
         }}
       >
         {children}
-      </chakra.a>
+      </Box>
     </NextLink>
   )
 }

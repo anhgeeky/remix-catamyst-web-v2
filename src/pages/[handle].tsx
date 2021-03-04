@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import { useRouter } from 'next/router'
+import NextHead from 'next/head'
 import { Stack, Avatar, Heading, Text, Box } from '@chakra-ui/react'
 import { Layout } from '@/layouts'
 import { Hero, Content } from '@/components'
@@ -7,10 +6,9 @@ import users from '@/data/users.json'
 
 export async function getServerSideProps(context) {
   const { handle } = context.params
-  const user = users.find((user, index) => {
+  const user = users.find((user) => {
     return user.handle === handle
   })
-
   return {
     props: {
       handle,
@@ -24,11 +22,11 @@ export default function UserProfile({ handle, user }) {
     <Layout title={`Loading user profile...`}>
       {handle && user.handle && (
         <>
-          <Head>
+          <NextHead>
             <title>
               {user.name} (@{handle}) · Catamyst
             </title>
-          </Head>
+          </NextHead>
 
           <Content>
             <Stack maxW="600px">

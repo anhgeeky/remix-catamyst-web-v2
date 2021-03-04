@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { Box, Stack, Text, Link, useColorModeValue } from '@chakra-ui/react'
 export default function BlockImage({ block }) {
   const bg = useColorModeValue('gray.100', 'gray.800')
@@ -8,7 +8,7 @@ export default function BlockImage({ block }) {
   return (
     <Box align="center">
       <Box bg={block.type === 'screenshot' && bg}>
-        <Image
+        <NextImage
           src={block.src}
           alt={block.name || 'Unknown'}
           width={width}

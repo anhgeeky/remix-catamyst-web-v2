@@ -12,7 +12,7 @@ import {
 import { AlertSoon, LessonIcon, PaginationTopics } from '@/components'
 import dataLessons from '@/data/lessons.json'
 
-export default function SectionsLessons({ sections }) {
+export default function SectionsLessons({ trackSlug, topicSlug, sections }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   if (!sections || sections.length === 0) {
@@ -20,40 +20,48 @@ export default function SectionsLessons({ sections }) {
   }
   return (
     <Stack spacing={5} width="100%">
-      {sections.map((section, index) => {
-        return (
-          <Box key={index} bg={bg} boxShadow="xs" p={5} spacing={5}>
-            <Heading as="h3" size="md">
-              {section.title}
-            </Heading>
+      {sections &&
+        sections.map((section, index) => {
+          return (
+            <Box
+              as="section"
+              key={index}
+              bg={bg}
+              rounded="md"
+              boxShadow="xs"
+              p={5}
+            >
+              <Heading as="h3" size="md">
+                {section.title}
+              </Heading>
 
-            <Stack mt={5}>
-              {section.lessons.map((lessonId, index) => {
-                const selectedLesson = dataLessons.find((lesson, index) => {
-                  return lesson.id === lessonId
-                })
-                if (!selectedLesson) {
-                  return <Link key={index}>Lesson {index + 1} hidden</Link>
-                }
-                if (selectedLesson.isPublished === false) {
+              <Stack mt={5}>
+                {section.lessons.map((lessonId, index) => {
+                  const lesson = dataLessons.find((lesson, index) => {
+                    return lesson.id === lessonId
+                  })
+                  if (!lesson) {
+                    return <Text key={index}>Lesson {index + 1} hidden</Text>
+                  }
+                  if (lesson) {
+                    const lessonHref = `/learn/${trackSlug}/${topicSlug}/${lesson.slug}`
+                    return (
+                      <NextLink key={lesson.slug} href={lessonHref} passHref>
+                        <Link>
+                          <Flex align="center" cursor="pointer">
+                            <LessonIcon type={lesson.type} />
+                            <Text ml={2}>{lesson.title}</Text>
+                          </Flex>
+                        </Link>
+                      </NextLink>
+                    )
+                  }
                   return null
-                }
-                return (
-                  <NextLink
-                    key={selectedLesson.slug}
-                    href={`/lessons/${selectedLesson.slug}`}
-                  >
-                    <Flex align="center" cursor="pointer">
-                      <LessonIcon type={selectedLesson.type} />
-                      <Link ml={2}>{selectedLesson.title}</Link>
-                    </Flex>
-                  </NextLink>
-                )
-              })}
-            </Stack>
-          </Box>
-        )
-      })}
+                })}
+              </Stack>
+            </Box>
+          )
+        })}
       <PaginationTopics />
     </Stack>
   )

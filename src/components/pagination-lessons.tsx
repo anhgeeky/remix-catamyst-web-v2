@@ -40,6 +40,9 @@ export default function PaginationLessons({
 }
 
 function PaginationLessonsMinimal({ previous, next, children }) {
+  const previousLessonHref = `/lessons/${previous.slug}`
+  const nextLessonHref = `/lessons/${next.slug}`
+
   return (
     <HStack
       as="nav"
@@ -48,12 +51,9 @@ function PaginationLessonsMinimal({ previous, next, children }) {
       justify="space-between"
       maxW={theme.maxContentWidth}
     >
-      <PaginationLinkMinimal
-        label="Previous"
-        href={`/lessons/${previous.slug}`}
-      />
+      <PaginationLinkMinimal label="Previous" href={previousLessonHref} />
       {children}
-      <PaginationLinkMinimal label="Next" href={`/lessons/${next.slug}`} />
+      <PaginationLinkMinimal label="Next" href={nextLessonHref} />
     </HStack>
   )
 }
@@ -75,6 +75,9 @@ function PaginationLinkMinimal({ label, href }) {
 }
 
 function PaginationLessonsFull({ previous, next }) {
+  const previousLessonHref = `/lessons/${previous.slug}`
+  const nextLessonHref = `/lessons/${next.slug}`
+
   return (
     <SimpleGrid
       as="nav"
@@ -84,10 +87,10 @@ function PaginationLessonsFull({ previous, next }) {
       columns={2}
       maxW={theme.maxContentWidth}
     >
-      <PaginationLinkFull label="Previous" href={`/lessons/${previous.slug}`}>
+      <PaginationLinkFull label="Previous" href={previousLessonHref}>
         <PreviousIcon /> {previous.title}
       </PaginationLinkFull>
-      <PaginationLinkFull label="Next" href={`/lessons/${next.slug}`}>
+      <PaginationLinkFull label="Next" href={nextLessonHref}>
         {next.title} <NextIcon />
       </PaginationLinkFull>
     </SimpleGrid>

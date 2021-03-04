@@ -1,8 +1,7 @@
-import Head from 'next/head'
+import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import slugify from 'slugify'
 import { Heading, Text, Stack } from '@chakra-ui/react'
-import { useSelector } from 'react-redux'
 
 import { Layout } from '@/layouts'
 import { Hero, ContentWithSidebar, SectionsLessons } from '@/components'
@@ -10,27 +9,33 @@ import dataTopics from '@/data/topics.json'
 
 export default function TopicBySlug() {
   const router = useRouter()
-  const { slug } = router.query
+  const { trackSlug, topicSlug } = router.query
 
   const topic = dataTopics.find((topic) => {
     if (topic.slug) {
-      return slug === topic.slug
+      return topicSlug === topic.slug
     } else {
-      return slug === slugify(topic.title, { lower: true })
+      return topicSlug === slugify(topic.title, { lower: true })
     }
   })
 
   return (
     <Layout title={`Loading topic...`}>
-      {slug && topic && (
+      {topic && (
         <>
-          <Head>
-            <title>{topic.title} · Topic · Catamyst</title>
-          </Head>
+          <NextHead>
+            <title>
+              {topic.title} · {trackSlug} · Catamyst
+            </title>
+          </NextHead>
           <TopicHero topic={topic} />
           <ContentWithSidebar>
             <TopicSidebar topic={topic} />
-            <SectionsLessons sections={topic.sections} />
+            <SectionsLessons
+              trackSlug={trackSlug}
+              topicSlug={topicSlug}
+              sections={topic.sections}
+            />
           </ContentWithSidebar>
         </>
       )}
@@ -52,9 +57,6 @@ function TopicHero({ topic }) {
 function TopicSidebar({ topic }) {
   return (
     <Stack maxW="280px" width="100%" spacing={2}>
-      <Heading as="h2" size="sm">
-        Topic contains:
-      </Heading>
       {topic.count_lessons && (
         <Text>
           <b>{topic.count_lessons}</b> lessons

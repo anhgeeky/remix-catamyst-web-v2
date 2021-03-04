@@ -1,5 +1,4 @@
 import AlertSoon from '@/components/alert-soon'
-import Button from '@/components/button'
 import CategoryBadge from '@/components/category-badge'
 import CollectionTopics from '@/components/collection-topics'
 import CollectionTracks from '@/components/collection-tracks'
@@ -16,6 +15,7 @@ import Hero from '@/components/hero'
 import HeroHome from '@/components/hero-home'
 import LessonBlock from '@/components/lesson-block'
 import LessonIcon from '@/components/lesson-icon'
+import LinkButton from '@/components/link-button'
 import Logo from '@/components/logo'
 import MenuPanel from '@/components/menu-panel'
 import MenuToggle from '@/components/menu-toggle'
@@ -29,7 +29,6 @@ import SectionsLessons from '@/components/sections-lessons'
 
 export {
   AlertSoon,
-  Button,
   CategoryBadge,
   CollectionTopics,
   CollectionTracks,
@@ -46,6 +45,7 @@ export {
   HeroHome,
   LessonBlock,
   LessonIcon,
+  LinkButton,
   Logo,
   MenuPanel,
   MenuToggle,
