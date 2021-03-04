@@ -16,7 +16,7 @@ import React from 'react'
 
 export default function PaginationLessons({
   mode = 'full',
-  previous = {
+  prev = {
     slug: 'other-lesson',
     title: 'Other lesson title',
   },
@@ -28,20 +28,20 @@ export default function PaginationLessons({
 }) {
   if (mode === 'minimal') {
     return (
-      <PaginationLessonsMinimal previous={previous} next={next}>
+      <PaginationLessonsMinimal prev={prev} next={next}>
         {children}
       </PaginationLessonsMinimal>
     )
   }
   if (mode === 'full') {
-    return <PaginationLessonsFull previous={previous} next={next} />
+    return <PaginationLessonsFull prev={prev} next={next} />
   }
   return null
 }
 
-function PaginationLessonsMinimal({ previous, next, children }) {
-  const previousLessonHref = `/lessons/${previous.slug}`
-  const nextLessonHref = `/lessons/${next.slug}`
+function PaginationLessonsMinimal({ prev, next, children }) {
+  const previousLessonHref = `/learn/track/topic/${prev.slug}`
+  const nextLessonHref = `/learn/track/topic/${next.slug}`
 
   return (
     <HStack
@@ -64,19 +64,19 @@ function PaginationLinkMinimal({ label, href }) {
       <IconButton
         aria-label={label}
         label={label}
-        rel={label === 'Next' ? 'next' : 'previous'}
         rounded="md"
-        textAlign={label === 'Next' ? 'right' : 'left'}
         variant="ghost"
+        rel={label === 'Next' ? 'Next' : 'Previous'}
+        textAlign={label === 'Next' ? 'right' : 'left'}
         icon={label === 'Next' ? <NextIcon /> : <PreviousIcon />}
       />
     </NextLink>
   )
 }
 
-function PaginationLessonsFull({ previous, next }) {
-  const previousLessonHref = `/lessons/${previous.slug}`
-  const nextLessonHref = `/lessons/${next.slug}`
+function PaginationLessonsFull({ prev, next }) {
+  const previousLessonHref = `/learn/track/topic/${prev.slug}`
+  const nextLessonHref = `/learn/track/topic/${next.slug}`
 
   return (
     <SimpleGrid
@@ -88,7 +88,7 @@ function PaginationLessonsFull({ previous, next }) {
       maxW={theme.maxContentWidth}
     >
       <PaginationLinkFull label="Previous" href={previousLessonHref}>
-        <PreviousIcon /> {previous.title}
+        <PreviousIcon /> {prev.title}
       </PaginationLinkFull>
       <PaginationLinkFull label="Next" href={nextLessonHref}>
         {next.title} <NextIcon />

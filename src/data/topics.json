@@ -91,353 +91,416 @@
   },
   {
     "id": 8,
+    "slug": "laptop-setup",
     "title": "Laptop setup",
     "category": "preparation",
     "iconEmoji": "🏕️"
   },
   {
     "id": 9,
+    "slug": "web-development-knowledge",
     "title": "Web development knowledge",
     "category": "preparation",
     "iconEmoji": "🕸️"
   },
   {
     "id": 10,
+    "slug": "development-with-code-editor",
     "title": "Development with code editor",
     "category": "general",
     "iconEmoji": "📝"
   },
   {
     "id": 11,
+    "slug": "documentation-with-markdown",
     "title": "Documentation with markdown",
     "category": "general",
     "iconEmoji": "📜"
   },
   {
     "id": 12,
+    "slug": "computer-navigation-with-terminal",
     "title": "Computer navigation with terminal",
     "category": "general",
     "iconEmoji": "🪑"
   },
   {
     "id": 13,
+    "slug": "version-control-with-git",
     "title": "Version control with Git",
     "category": "general",
     "iconEmoji": "⏳"
   },
   {
     "id": 14,
+    "slug": "website-content-with-html",
     "title": "Website content with HTML",
     "category": "frontend",
     "iconEmoji": "🦴"
   },
   {
     "id": 15,
+    "slug": "simple-frontend-website-deployment",
     "title": "Simple frontend website deployment",
     "category": "frontend",
     "iconEmoji": "🏝️"
   },
   {
     "id": 16,
+    "slug": "website-style-with-css",
     "title": "Website style with CSS",
     "category": "frontend",
     "iconEmoji": "🍖"
   },
   {
     "id": 17,
+    "slug": "browser-and-developer-tools",
     "title": "Browser and developer tools",
     "category": "frontend",
     "iconEmoji": "🍱"
   },
   {
     "id": 18,
+    "slug": "website-basic-layout-with-css",
     "title": "Website basic layout with CSS",
     "category": "frontend",
     "iconEmoji": "🥓"
   },
   {
     "id": 19,
+    "slug": "website-responsive-layout-with-css",
     "title": "Website responsive layout with CSS",
     "category": "frontend",
     "iconEmoji": "🥩"
   },
   {
     "id": 20,
+    "slug": "web-networking-and-domain",
     "title": "Web networking and domain",
     "category": "general",
     "iconEmoji": "🗺️"
   },
   {
     "id": 21,
+    "slug": "software-engineering-knowledge",
     "title": "Software engineering knowledge",
     "category": "general",
     "iconEmoji": "🛠️"
   },
   {
     "id": 22,
+    "slug": "",
     "title": "Logic and programming",
     "category": "general",
     "iconEmoji": "🤖"
   },
   {
     "id": 23,
+    "slug": "",
     "title": "Web programming with JavaScript",
     "category": "general",
     "iconEmoji": "🤠"
   },
   {
     "id": 24,
+    "slug": "",
     "title": "JavaScript data operation",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 25,
+    "slug": "",
     "title": "JavaScript function",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 26,
+    "slug": "",
     "title": "JavaScript error handling",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 27,
+    "slug": "",
     "title": "JavaScript global objects",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 28,
+    "slug": "",
     "title": "JavaScript browser storage",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 29,
+    "slug": "",
     "title": "JavaScript modules",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 30,
+    "slug": "",
     "title": "JavaScript asynchronicity",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 31,
+    "slug": "",
     "title": "JavaScript DOM",
     "category": "frontend",
     "iconEmoji": ""
   },
   {
     "id": 32,
+    "slug": "",
     "title": "JavaScript with regex",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 33,
+    "slug": "",
     "title": "REST API",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 34,
+    "slug": "",
     "title": "Other API",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 35,
+    "slug": "",
     "title": "REST API with JavaScript",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 36,
+    "slug": "",
     "title": "JavaScript runtime and Node.js",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 37,
+    "slug": "",
     "title": "Node.js with npm",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 38,
+    "slug": "",
     "title": "CSS library and framework",
     "category": "frontend",
     "iconEmoji": ""
   },
   {
     "id": 39,
+    "slug": "",
     "title": "JavaScript library and framework",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 40,
+    "slug": "",
     "title": "JavaScript code quality",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 41,
+    "slug": "",
     "title": "Programming paradigms",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 42,
+    "slug": "",
     "title": "JavaScript OOP and FP",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 43,
+    "slug": "",
     "title": "JavaScript transpiler and bundler",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 44,
+    "slug": "",
     "title": "Software design and architecture",
     "category": "general",
     "iconEmoji": ""
   },
   {
     "id": 45,
+    "slug": "",
     "title": "React library",
     "category": "frontend"
   },
   {
     "id": 46,
+    "slug": "",
     "title": "React data",
     "category": "frontend"
   },
   {
     "id": 47,
+    "slug": "",
     "title": "React form",
     "category": "frontend"
   },
   {
     "id": 48,
+    "slug": "",
     "title": "React routing",
     "category": "frontend"
   },
   {
     "id": 49,
+    "slug": "",
     "title": "React styling",
     "category": "frontend"
   },
   {
     "id": 50,
+    "slug": "",
     "title": "React with REST API",
     "category": "frontend"
   },
   {
     "id": 51,
+    "slug": "",
     "title": "React extras",
     "category": "frontend"
   },
   {
     "id": 52,
+    "slug": "",
     "title": "Redux as state management",
     "category": "general"
   },
   {
     "id": 53,
+    "slug": "",
     "title": "React with Redux",
     "category": "frontend"
   },
   {
     "id": 54,
+    "slug": "",
     "title": "Node.js with Express",
     "category": "backend"
   },
   {
     "id": 55,
+    "slug": "",
     "title": "Simple backend app deployment",
     "category": "backend"
   },
   {
     "id": 56,
+    "slug": "",
     "title": "Database management system",
     "category": "backend"
   },
   {
     "id": 57,
+    "slug": "",
     "title": "Non-relational database",
     "category": "backend"
   },
   {
     "id": 58,
+    "slug": "",
     "title": "Relational database",
     "category": "backend"
   },
   {
     "id": 59,
+    "slug": "",
     "title": "Web security",
     "category": "general"
   },
   {
     "id": 60,
+    "slug": "",
     "title": "Testing and automation",
     "category": "general"
   },
   {
     "id": 61,
+    "slug": "",
     "title": "Containerization",
     "category": "general"
   },
   {
     "id": 62,
+    "slug": "",
     "title": "Advanced deployment infrastructure",
     "category": "general"
   },
   {
     "id": 63,
+    "slug": "",
     "title": "Additional application features",
     "category": "general"
   },
   {
     "id": 64,
+    "slug": "",
     "title": "Advanced algorithm and data structure",
     "category": "general"
   },
   {
     "id": 65,
+    "slug": "",
     "title": "Project development and management",
     "category": "general"
   },
   {
     "id": 66,
+    "slug": "",
     "title": "Special resources",
     "category": "special"
   },
   {
     "id": 67,
+    "slug": "",
     "title": "Large-scale project",
     "category": "special"
   },
   {
     "id": 68,
+    "slug": "",
     "title": "Professional work",
     "category": "career"
   },
   {
     "id": 69,
+    "slug": "",
     "title": "Business and startup",
     "category": "career"
   },
   {
     "id": 70,
+    "slug": "",
     "title": "Consultation and discussion",
     "category": "career"
   }

@@ -4,24 +4,40 @@ import slugify from 'slugify'
 import { Heading, Text, Stack } from '@chakra-ui/react'
 
 import { Layout } from '@/layouts'
-import { Hero, ContentWithSidebar, SectionsLessons } from '@/components'
+import {
+  Hero,
+  ContentWithSidebar,
+  SectionsLessons,
+  PaginationTopics,
+} from '@/components'
+
+import dataTracks from '@/data/tracks.json'
 import dataTopics from '@/data/topics.json'
 
 export default function TopicBySlug() {
   const router = useRouter()
   const { trackSlug, topicSlug } = router.query
 
+  const track = dataTracks.find((track) => trackSlug === track.slug)
   const topic = dataTopics.find((topic) => {
-    if (topic.slug) {
-      return topicSlug === topic.slug
-    } else {
-      return topicSlug === slugify(topic.title, { lower: true })
-    }
+    if (topic.slug) return topicSlug === topic.slug
+    else return topicSlug === slugify(topic.title, { lower: true })
   })
+
+  const topicIndex = track?.topics.findIndex((topicId) => topicId === topic.id)
+  const prevId = topicIndex > -1 ? track?.topics[topicIndex - 1] : undefined
+  const nextId = topicIndex > -1 ? track?.topics[topicIndex + 1] : undefined
+
+  const prev = prevId
+    ? dataTopics.find((topic) => topic.id === prevId)
+    : undefined
+  const next = nextId
+    ? dataTopics.find((topic) => topic.id === nextId)
+    : undefined
 
   return (
     <Layout title={`Loading topic...`}>
-      {topic && (
+      {track && topic && (
         <>
           <NextHead>
             <title>
@@ -31,11 +47,14 @@ export default function TopicBySlug() {
           <TopicHero topic={topic} />
           <ContentWithSidebar>
             <TopicSidebar topic={topic} />
-            <SectionsLessons
-              trackSlug={trackSlug}
-              topicSlug={topicSlug}
-              sections={topic.sections}
-            />
+            <Stack spacing={5} width="100%">
+              <SectionsLessons
+                trackSlug={trackSlug}
+                topicSlug={topicSlug}
+                sections={topic.sections}
+              />
+              <PaginationTopics track={track} prev={prev} next={next} />
+            </Stack>
           </ContentWithSidebar>
         </>
       )}

@@ -1,31 +1,50 @@
 import { Flex } from '@chakra-ui/react'
 import {
+  ArrowUpIcon as UpIcon,
   ArrowBackIcon as PreviousIcon,
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
 
 import { LinkButton } from '@/components'
 
-export default function PaginationTopics({
-  prevSlug = 'previous-topic',
-  nextSlug = 'next-topic',
-}) {
-  const previousTopicHref = `/learn/trackSlug/topics/${prevSlug}`
-  const nextTopicHref = `/learn/trackSlug/topics/${nextSlug}`
-
+export default function PaginationTopics({ track, prev, next }) {
   return (
     <Flex as="nav" justify="space-between" my={5}>
-      <LinkButton
-        href={previousTopicHref}
-        variant="ghost"
-        leftIcon={<PreviousIcon />}
-      >
-        Previous Topic
-      </LinkButton>
+      {prev?.slug ? (
+        <LinkButton
+          href={`/learn/${track.slug}/${prev.slug}`}
+          variant="ghost"
+          leftIcon={<PreviousIcon />}
+        >
+          {prev.iconEmoji} {prev.title}
+        </LinkButton>
+      ) : (
+        <LinkButton
+          href={`/learn/${track.slug}`}
+          variant="ghost"
+          leftIcon={<UpIcon />}
+        >
+          {track.title}
+        </LinkButton>
+      )}
 
-      <LinkButton href={nextTopicHref} variant="ghost" rightIcon={<NextIcon />}>
-        Next Topic
-      </LinkButton>
+      {next?.slug ? (
+        <LinkButton
+          href={`/learn/${track.slug}/${next.slug}`}
+          variant="ghost"
+          rightIcon={<NextIcon />}
+        >
+          {next.iconEmoji} {next.title}
+        </LinkButton>
+      ) : (
+        <LinkButton
+          href={`/learn/${track.slug}`}
+          variant="ghost"
+          rightIcon={<UpIcon />}
+        >
+          {track.title}
+        </LinkButton>
+      )}
     </Flex>
   )
 }

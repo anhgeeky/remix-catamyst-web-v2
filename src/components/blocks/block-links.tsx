@@ -19,45 +19,39 @@ export default function BlockLinks({ block }) {
       <Stack maxW={theme.maxContentWidth} width="100%" px={5} spacing={2}>
         {block.items.map((item, index) => {
           return (
-            <Link
+            <Flex
               isExternal
-              key={index}
+              align="stretch"
+              as={Link}
+              bg={bg}
+              boxShadow="base"
+              cursor="pointer"
+              flexWrap="wrap"
               href={item.url}
-              _hover={{ textDecoration: 'none' }}
+              key={index}
+              rounded="md"
+              spacing={0}
+              _hover={{ textDecoration: 'none', boxShadow: 'outline' }}
             >
-              <Flex
-                bg={bg}
-                flexWrap="wrap"
-                boxShadow="base"
-                cursor="pointer"
-                align="stretch"
-                spacing={0}
-                _hover={{ boxShadow: 'outline' }}
-              >
-                <Box bg={item.color || 'transparent'} width="5px" />
-                <Stack p={3} spacing={1}>
-                  <HStack>
-                    {item.type && <ReferenceIcon type={item.type} />}
-                    <Heading as="h4" fontFamily="body" size="sm">
-                      {item.title}
-                    </Heading>
-                  </HStack>
-                  <Text fontSize="sm">
-                    {item.source && <Text as="span">{item.source}</Text>}
-                    {item.author && <Text as="span"> · {item.author}</Text>}
+              <Box bg={item.color || 'transparent'} width="5px" />
+              <Stack p={3} spacing={1}>
+                <HStack>
+                  {item.type && <ReferenceIcon type={item.type} />}
+                  <Heading as="h4" fontFamily="body" size="sm">
+                    {item.title}
+                  </Heading>
+                </HStack>
+                <Text fontSize="sm">
+                  {item.source && <Text as="span">{item.source}</Text>}
+                  {item.author && <Text as="span"> · {item.author}</Text>}
+                </Text>
+                {item.url && (
+                  <Text color="gray.500" fontSize="xs" overflowWrap="anywhere">
+                    {item.url}
                   </Text>
-                  {item.url && (
-                    <Text
-                      color="gray.500"
-                      fontSize="xs"
-                      overflowWrap="anywhere"
-                    >
-                      {item.url}
-                    </Text>
-                  )}
-                </Stack>
-              </Flex>
-            </Link>
+                )}
+              </Stack>
+            </Flex>
           )
         })}
       </Stack>

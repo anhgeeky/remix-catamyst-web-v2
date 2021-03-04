@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { AlertSoon, LessonIcon, PaginationTopics } from '@/components'
+import { AlertSoon, LessonIcon } from '@/components'
 import dataLessons from '@/data/lessons.json'
 
 export default function SectionsLessons({ trackSlug, topicSlug, sections }) {
@@ -62,7 +62,6 @@ export default function SectionsLessons({ trackSlug, topicSlug, sections }) {
             </Box>
           )
         })}
-      <PaginationTopics />
     </Stack>
   )
 }

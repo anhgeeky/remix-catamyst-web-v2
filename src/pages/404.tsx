@@ -13,9 +13,9 @@ export default function Forum() {
       </Hero>
 
       <Content>
-        <Link as={NextLink} href="/">
-          <Button>Back to home</Button>
-        </Link>
+        <NextLink href="/">
+          <Button as={Link}>Back to home</Button>
+        </NextLink>
       </Content>
     </Layout>
   )
