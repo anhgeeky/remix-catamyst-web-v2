@@ -6,7 +6,7 @@ import { Layout } from '@/layouts'
 import {
   Hero,
   ContentWithSidebar,
-  SectionsLessons,
+  CollectionLessons,
   PaginationTopics,
 } from '@/components'
 import { usePaginationTopics } from '@/hooks'
@@ -32,7 +32,7 @@ export default function TopicBySlug() {
           <ContentWithSidebar>
             <TopicSidebar topic={topic} />
             <Stack spacing={5} width="100%">
-              <SectionsLessons
+              <CollectionLessons
                 trackSlug={trackSlug}
                 topicSlug={topicSlug}
                 sections={topic.sections}
@@ -52,7 +52,7 @@ function TopicHero({ topic }) {
       <Heading as="h1" size="xl">
         {topic.iconEmoji} {topic.title}
       </Heading>
-      <Text>{topic.description}</Text>
+      <Text>{topic.description || 'No topic description yet.'}</Text>
     </Hero>
   )
 }
@@ -60,6 +60,9 @@ function TopicHero({ topic }) {
 function TopicSidebar({ topic }) {
   return (
     <Stack maxW="280px" width="100%" spacing={2}>
+      <Heading as="h2" size="sm">
+        About this topic
+      </Heading>
       {topic.count_lessons && (
         <Text>
           <b>{topic.count_lessons}</b> lessons

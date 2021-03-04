@@ -35,7 +35,10 @@ export default function CollectionTopics({ trackSlug, topics }) {
                 justify="space-between"
                 rounded="md"
                 p={5}
-                _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+                _hover={{
+                  boxShadow: 'outline',
+                  textDecoration: 'none',
+                }}
               >
                 <Heading as="h3" size="md">
                   {topic.iconEmoji} {topic.title}

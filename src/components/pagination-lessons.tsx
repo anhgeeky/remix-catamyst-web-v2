@@ -171,7 +171,7 @@ function PaginationLinkFull({ label, href, textAlign, children }) {
         px={2}
         py={5}
         _hover={{
-          textDecor: 'none',
+          textDecoration: 'none',
           bg: useColorModeValue('gray.100', 'gray.800'),
         }}
       >

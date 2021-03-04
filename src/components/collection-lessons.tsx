@@ -12,7 +12,7 @@ import {
 import { AlertSoon, LessonIcon } from '@/components'
 import dataLessons from '@/data/lessons.json'
 
-export default function SectionsLessons({ trackSlug, topicSlug, sections }) {
+export default function CollectionLessons({ trackSlug, topicSlug, sections }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   if (!sections || sections.length === 0) {
@@ -47,7 +47,7 @@ export default function SectionsLessons({ trackSlug, topicSlug, sections }) {
                     const lessonHref = `/learn/${trackSlug}/${topicSlug}/${lesson.slug}`
                     return (
                       <NextLink key={lesson.slug} href={lessonHref} passHref>
-                        <Link>
+                        <Link rounded="md" p={1}>
                           <Flex align="center" cursor="pointer">
                             <LessonIcon type={lesson.type} />
                             <Text ml={2}>{lesson.title}</Text>

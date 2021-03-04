@@ -27,7 +27,7 @@ import PaginationTopics from '@/components/pagination-topics'
 import PreviewDashboard from '@/components/preview-dashboard'
 import QuickSignUpForm from '@/components/quick-signup-form'
 import ReferenceIcon from '@/components/reference-icon'
-import SectionsLessons from '@/components/sections-lessons'
+import CollectionLessons from '@/components/collection-lessons'
 
 export {
   AlertSoon,
@@ -59,5 +59,5 @@ export {
   PreviewDashboard,
   QuickSignUpForm,
   ReferenceIcon,
-  SectionsLessons,
+  CollectionLessons,
 }

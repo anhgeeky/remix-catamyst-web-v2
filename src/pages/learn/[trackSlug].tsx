@@ -82,6 +82,9 @@ function TrackHero({ track }) {
 function TrackSideBar({ track }) {
   return (
     <Stack maxW={{ lg: '280px' }} width="100%" spacing={2}>
+      <Heading as="h2" size="sm">
+        About this track
+      </Heading>
       <Text>
         {track.levels.map((level, index) => {
           if (index === track.levels.length - 1) {

@@ -6,13 +6,14 @@ export default function HeroHome() {
   return (
     <Flex px={5} justify="center">
       <Stack
-        id="Hero"
+        id="hero"
         align="center"
         width="1200px"
         direction={{ base: 'column', lg: 'row' }}
+        px={{ base: 0, lg: 5 }}
         py={{ base: '10', md: '20', lg: '30' }}
       >
-        <Stack maxW="41rem" spacing={5}>
+        <Stack maxW="40rem" spacing={5}>
           <Heading
             as="h1"
             fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '6xl' }}
@@ -22,7 +23,7 @@ export default function HeroHome() {
           >
             All-in-one platform to learn software development
           </Heading>
-          <Text size="2xl">
+          <Text fontSize="xl">
             Learn coding and design from the very beginning. Build and showcase
             your projects as portfolio. Discuss ideas and ask questions with the
             community. Explore and post job opportunities.

@@ -1,50 +1,76 @@
-import { Flex } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { Flex, Stack, Link, Text, useColorModeValue } from '@chakra-ui/react'
 import {
   ArrowUpIcon as UpIcon,
   ArrowBackIcon as PreviousIcon,
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
 
-import { LinkButton } from '@/components'
-
 export default function PaginationTopics({ track, prev, next }) {
   return (
-    <Flex as="nav" justify="space-between" my={5}>
+    <Stack
+      as="nav"
+      my={5}
+      spacing={0}
+      justify="space-between"
+      direction={['column', 'row']}
+    >
       {prev?.slug ? (
-        <LinkButton
+        <PaginationLink
+          label="Previous"
+          textAlign="left"
           href={`/learn/${track.slug}/${prev.slug}`}
-          variant="ghost"
-          leftIcon={<PreviousIcon />}
         >
-          {prev.iconEmoji} {prev.title}
-        </LinkButton>
+          <PreviousIcon /> {prev.iconEmoji} {prev.title}
+        </PaginationLink>
       ) : (
-        <LinkButton
+        <PaginationLink
+          label="Up"
+          textAlign="left"
           href={`/learn/${track.slug}`}
-          variant="ghost"
-          leftIcon={<UpIcon />}
         >
-          {track.title}
-        </LinkButton>
+          <UpIcon /> {track.title}
+        </PaginationLink>
       )}
 
       {next?.slug ? (
-        <LinkButton
+        <PaginationLink
+          label="Next"
+          textAlign="right"
           href={`/learn/${track.slug}/${next.slug}`}
-          variant="ghost"
-          rightIcon={<NextIcon />}
         >
-          {next.iconEmoji} {next.title}
-        </LinkButton>
+          {next.iconEmoji} {next.title} <NextIcon />
+        </PaginationLink>
       ) : (
-        <LinkButton
+        <PaginationLink
+          label="Up"
+          textAlign="right"
           href={`/learn/${track.slug}`}
-          variant="ghost"
-          rightIcon={<UpIcon />}
         >
-          {track.title}
-        </LinkButton>
+          {track.title} <UpIcon />
+        </PaginationLink>
       )}
-    </Flex>
+    </Stack>
+  )
+}
+
+function PaginationLink({ label, href, textAlign, children }) {
+  return (
+    <NextLink href={href} passHref>
+      <Link
+        label={label}
+        textAlign={textAlign}
+        rounded="md"
+        p={2}
+        _hover={{
+          textDecoration: 'none',
+          bg: useColorModeValue('gray.100', 'gray.800'),
+        }}
+      >
+        <Text fontSize="md" fontWeight="bold" color="teal.400">
+          {children}
+        </Text>
+      </Link>
+    </NextLink>
   )
 }
