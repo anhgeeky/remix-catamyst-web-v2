@@ -15,8 +15,8 @@ export default function BlockLinks({ block }) {
 
   return (
     <Stack spacing={2} px={5}>
-      {Array.isArray(block.items) &&
-        block.items.map((item, index) => {
+      {Array.isArray(block.links) &&
+        block.links.map((item, index) => {
           return (
             <Flex
               isExternal

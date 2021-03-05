@@ -33,14 +33,14 @@ export default function Block({ block }) {
       </Wrapper>
     )
   }
-  if (block.component === 'links' && block.items) {
+  if (block.component === 'links' && block.links) {
     return (
       <Wrapper>
         <BlockLinks block={block} />
       </Wrapper>
     )
   }
-  if (block.component === 'references' && block.items) {
+  if (block.component === 'references' && block.links) {
     return (
       <Wrapper>
         <BlockReferences block={block} />

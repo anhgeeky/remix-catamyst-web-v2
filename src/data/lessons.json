@@ -32,7 +32,7 @@
       },
       {
         "component": "references",
-        "items": [
+        "links": [
           {
             "title": "Web development",
             "source": "Wikipedia",
@@ -87,7 +87,7 @@
       },
       {
         "component": "references",
-        "items": [
+        "links": [
           {
             "type": "video",
             "title": "Sal Khan: Let's teach for mastery -- not test scores",
@@ -135,7 +135,7 @@
       },
       {
         "component": "references",
-        "items": [
+        "links": [
           {
             "type": "article",
             "title": "How to choose a laptop for programming",
@@ -186,7 +186,7 @@
       },
       {
         "component": "links",
-        "items": [
+        "links": [
           {
             "title": "Google Chrome",
             "source": "Google",
@@ -212,7 +212,7 @@
       },
       {
         "component": "links",
-        "items": [
+        "links": [
           {
             "title": "Mozilla Firefox",
             "source": "Mozilla",
@@ -238,7 +238,7 @@
       },
       {
         "component": "links",
-        "items": [
+        "links": [
           {
             "title": "Brave Browser",
             "source": "Brave",
@@ -272,7 +272,7 @@
 
       {
         "component": "links",
-        "items": [
+        "links": [
           {
             "title": "Bitwarden",
             "type": "app",
@@ -327,7 +327,7 @@
       },
       {
         "component": "links",
-        "items": [
+        "links": [
           {
             "title": "Trello",
             "type": "web",
@@ -369,7 +369,7 @@
       },
       {
         "component": "links",
-        "items": [
+        "links": [
           {
             "title": "Notion",
             "type": "web",
@@ -396,7 +396,7 @@
       },
       {
         "component": "links",
-        "items": [
+        "links": [
           {
             "title": "Grammarly",
             "type": "web",
@@ -506,7 +506,7 @@
       },
       {
         "component": "references",
-        "items": [
+        "links": [
           {
             "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
             "title": "Linear vs Non-linear learning",
@@ -582,7 +582,7 @@
       },
       {
         "component": "references",
-        "items": [
+        "links": [
           {
             "url": "https://www.youtube.com/watch?v=ZqhN2YWTw0M",
             "title": "Reasoning from First Principles",
