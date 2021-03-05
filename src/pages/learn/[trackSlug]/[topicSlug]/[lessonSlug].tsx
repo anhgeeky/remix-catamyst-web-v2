@@ -34,7 +34,7 @@ export default function LessonBySlug() {
 
   return (
     <Layout title={`Loading lesson...`}>
-      {track && topic && lesson && (
+      {track && topic && lesson.title && (
         <>
           <NextHead>
             <title>{lesson.title} · Lesson · Catamyst</title>
