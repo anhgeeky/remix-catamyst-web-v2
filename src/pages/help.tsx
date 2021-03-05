@@ -1,6 +1,6 @@
 import { Heading, Text } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
-import { Hero, Content } from '@/components'
+import { Layout } from '@layouts'
+import { Hero, Content } from '@components'
 
 export default function Help() {
   return (

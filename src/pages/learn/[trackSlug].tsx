@@ -13,10 +13,10 @@ import {
   WrapItem,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
-import { Hero, ContentWithSidebar, CollectionTopics } from '@/components'
-import dataTracks from '@/data/tracks.json'
-import dataTopics from '@/data/topics.json'
+import { Layout } from '@layouts'
+import { Hero, ContentWithSidebar, CollectionTopics } from '@components'
+import dataTracks from '@data/tracks.json'
+import dataTopics from '@data/topics.json'
 
 export default function TrackBySlug() {
   const router = useRouter()

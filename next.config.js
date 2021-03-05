@@ -7,6 +7,8 @@ module.exports = {
       'res.cloudinary.com',
       'amazonaws.com',
       'bit.ly',
+      'datocms-assets.com',
+      'a.storyblok.com',
     ],
   },
   webpack(config) {

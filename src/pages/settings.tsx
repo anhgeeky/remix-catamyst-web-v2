@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/router'
 import { Heading, Text } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
-import { Hero, Content } from '@/components'
+import { Layout } from '@layouts'
+import { Hero, Content } from '@components'
 
 export default function Settings() {
   const auth = useSelector((state) => state.auth)

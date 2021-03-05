@@ -9,9 +9,9 @@ import {
   Container,
   Button,
 } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
-import { Hero } from '@/components'
-import { signIn } from '@/features/auth/actions'
+import { Layout } from '@layouts'
+import { Hero } from '@components'
+import { signIn } from '@features/auth/actions'
 
 export default function SignIn() {
   const router = useRouter()

@@ -1,5 +1,5 @@
 import { Heading, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
+import { Layout } from '@layouts'
 import {
   Card,
   CollectionTracks,
@@ -7,9 +7,9 @@ import {
   DashboardSidebar,
   HeadingStack,
   Hero,
-} from '@/components'
-import { useAuth, useAuthorized } from '@/hooks'
-import dataTracks from '@/data/tracks.json'
+} from '@components'
+import { useAuth, useAuthorized } from '@hooks'
+import dataTracks from '@data/tracks.json'
 
 export default function Dashboard() {
   const bg = useColorModeValue('white', 'gray.800')

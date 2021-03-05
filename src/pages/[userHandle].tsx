@@ -1,10 +1,10 @@
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { Stack, Avatar, Heading, Text, Box } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
-import { Content } from '@/components'
+import { Layout } from '@layouts'
+import { Content } from '@components'
 
-import dataUsers from '@/data/users.json'
+import dataUsers from '@data/users.json'
 
 export default function UserProfile() {
   const router = useRouter()

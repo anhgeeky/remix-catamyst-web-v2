@@ -1,7 +1,7 @@
 import { Heading, Text } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
-import { Hero, Content, CollectionTracks } from '@/components'
-import dataTracks from '@/data/tracks.json'
+import { Layout } from '@layouts'
+import { Hero, Content, CollectionTracks } from '@components'
+import dataTracks from '@data/tracks.json'
 
 export default function Learn() {
   return (

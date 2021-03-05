@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import slugify from 'slugify'
 
-import { AlertSoon, CategoryBadge } from '@/components'
+import { AlertSoon, CategoryBadge } from '@components'
 
 export default function CollectionTopics({ trackSlug, topics }) {
   const bg = useColorModeValue('white', 'gray.800')

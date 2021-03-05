@@ -8,7 +8,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { ReferenceIcon } from '@/components'
+import { ReferenceIcon } from '@components'
 
 export default function BlockLinks({ block }) {
   const bg = useColorModeValue('white', 'gray.800')

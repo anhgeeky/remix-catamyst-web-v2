@@ -1,7 +1,7 @@
 import NextHead from 'next/head'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
-import { Header, Footer } from '@/components'
+import { Header, Footer } from '@components'
 
 export default function Layout({ title, children }) {
   const bg = useColorModeValue('gray.50', 'gray.900')

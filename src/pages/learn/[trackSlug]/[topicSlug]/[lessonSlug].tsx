@@ -11,11 +11,11 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-import { Layout } from '@/layouts'
-import { Hero, Block, PaginationLessons } from '@/components'
-import { usePaginationLessons } from '@/hooks'
-import dataTracks from '@/data/tracks.json'
-import dataTopics from '@/data/topics.json'
+import { Layout } from '@layouts'
+import { Hero, Block, PaginationLessons } from '@components'
+import { usePaginationLessons } from '@hooks'
+import dataTracks from '@data/tracks.json'
+import dataTopics from '@data/topics.json'
 
 /**
  * The full content page of each lesson

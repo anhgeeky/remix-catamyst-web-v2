@@ -11,10 +11,10 @@ import {
 import { useSelector } from 'react-redux'
 import { RemoveScroll } from 'react-remove-scroll'
 import { FaTimes } from 'react-icons/fa'
-import { ColorModeToggle } from '@/components'
-import useRouteChanged from '@/hooks/use-route-changed'
+import { ColorModeToggle } from '@components'
+import useRouteChanged from '@hooks/use-route-changed'
 
-import publicPages from '@/data/public-pages.json'
+import publicPages from '@data/public-pages.json'
 import React from 'react'
 
 export default function MenuPanel({ closeMenu, isMenuOpen }) {

@@ -1,8 +1,8 @@
 import NextLink from 'next/link'
 import { Text, Heading } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
-import { Hero, Content, CollectionUsers } from '@/components'
-import users from '@/data/users.json'
+import { Layout } from '@layouts'
+import { Hero, Content, CollectionUsers } from '@components'
+import users from '@data/users.json'
 
 export default function Discover() {
   return (

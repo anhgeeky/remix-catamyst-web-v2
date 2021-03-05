@@ -1,13 +1,13 @@
 import { Heading, Stack, Text } from '@chakra-ui/react'
-import { Layout } from '@/layouts'
+import { Layout } from '@layouts'
 import {
   Card,
   ContentWithSidebar,
   DashboardSidebar,
   HeadingStack,
   Hero,
-} from '@/components'
-import { useAuth, useAuthorized } from '@/hooks'
+} from '@components'
+import { useAuth, useAuthorized } from '@hooks'
 
 export default function DashboardJobs() {
   const { isAuthorized } = useAuth()

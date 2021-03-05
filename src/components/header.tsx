@@ -10,8 +10,8 @@ import {
   MenuToggle,
   MenuPanel,
   HeaderUser,
-} from '@/components'
-import publicPages from '@/data/public-pages.json'
+} from '@components'
+import publicPages from '@data/public-pages.json'
 
 export default function Header() {
   const bg = useColorModeValue('white', 'gray.900')

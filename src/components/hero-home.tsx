@@ -1,6 +1,6 @@
 import NextImage from 'next/image'
 import { Heading, Stack, Flex, Text } from '@chakra-ui/react'
-import { QuickSignUpForm } from '@/components'
+import { QuickSignUpForm } from '@components'
 
 export default function HeroHome() {
   return (

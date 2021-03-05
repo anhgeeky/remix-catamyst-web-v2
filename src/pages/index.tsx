@@ -1,5 +1,5 @@
-import { Layout } from '@/layouts'
-import { Hero, HeroHome } from '@/components'
+import { Layout } from '@layouts'
+import { Hero, HeroHome } from '@components'
 
 export default function Home() {
   return (

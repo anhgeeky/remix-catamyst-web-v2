@@ -2,14 +2,14 @@ import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { Heading, Text, Stack } from '@chakra-ui/react'
 
-import { Layout } from '@/layouts'
+import { Layout } from '@layouts'
 import {
   Hero,
   ContentWithSidebar,
   CollectionLessons,
   PaginationTopics,
-} from '@/components'
-import { usePaginationTopics } from '@/hooks'
+} from '@components'
+import { usePaginationTopics } from '@hooks'
 
 export default function TopicBySlug() {
   const router = useRouter()

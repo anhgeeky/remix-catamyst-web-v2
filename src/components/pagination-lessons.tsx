@@ -13,7 +13,7 @@ import {
   ArrowBackIcon as PreviousIcon,
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
-import theme from '@/theme/theme.json'
+import theme from '@theme/theme.json'
 import React from 'react'
 
 export default function PaginationLessons({

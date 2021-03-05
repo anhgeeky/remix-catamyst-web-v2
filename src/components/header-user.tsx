@@ -14,7 +14,7 @@ import {
   MenuList,
   useToast,
 } from '@chakra-ui/react'
-import { signOut } from '@/features/auth/actions'
+import { signOut } from '@features/auth/actions'
 
 export default function HeaderUser() {
   const auth = useSelector((state) => state.auth)
