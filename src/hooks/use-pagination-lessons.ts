@@ -29,6 +29,7 @@ export default function usePaginationLessons({
 
   /**
    * Check whether the flatten process is finished
+   * Alternative to useEffect if-condition handler like [trackSlug]
    */
   if (!topicLessons) {
     return { track, topic, lesson, prev: {}, next: {} }

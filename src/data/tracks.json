@@ -5,9 +5,9 @@
     "title": "Website Development",
     "description": "Learn and practice the fundamental concepts and specific tools you can use to build basic websites. This track focuses only on the design and frontend (what your website visitor would see).",
     "levels": ["Newbie"],
-    "count_topics": 10,
-    "count_lessons": 131,
-    "count_hours": 28,
+    "totalTopics": 10,
+    "totalLessons": 131,
+    "totalHours": 28,
     "topics": [1, 2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
   },
   {
@@ -17,9 +17,9 @@
     "description": "Learn and practice the fundamental concepts and specific tools you can use to build high-quality websites and web applications. This cover everything from the design and frontend (what users would see and use) to the backend (where data of the users are managed). Combining both frontend and backend mostly called full stack web application development.",
     "goal": "Master your strengths in problem-solving and build projects that could leverage you to land a decent job, get a freelance offer, or build your own software business.",
     "levels": ["Newbie", "Beginner", "Intermediate", "Advanced"],
-    "count_topics": 68,
-    "count_lessons": 383,
-    "count_hours": 150,
+    "totalTopics": 68,
+    "totalLessons": 383,
+    "totalHours": 150,
     "topics": [
       1,
       2,
@@ -97,9 +97,9 @@
     "title": "Mobile Android Development",
     "description": "Learn and practice the fundamental concepts and Android-specific tools you can use to build mobile apps for Android. This track focuses on the design and app implementation.",
     "levels": ["Newbie", "Beginner", "Intermediate"],
-    "count_topics": 3,
-    "count_lessons": 9,
-    "count_hours": 18,
+    "totalTopics": 3,
+    "totalLessons": 9,
+    "totalHours": 18,
     "topics": []
   },
   {
@@ -108,9 +108,9 @@
     "title": "Mobile iOS Development",
     "description": "Learn and practice the fundamental concepts and Apple-specific tools you can use to build mobile apps for iOS such as iPhone and iPad. This track focuses on the design and app implementation.",
     "levels": ["Newbie", "Beginner", "Intermediate", "Advanced"],
-    "count_topics": 3,
-    "count_lessons": 9,
-    "count_hours": 18,
+    "totalTopics": 3,
+    "totalLessons": 9,
+    "totalHours": 18,
     "topics": []
   }
 ]

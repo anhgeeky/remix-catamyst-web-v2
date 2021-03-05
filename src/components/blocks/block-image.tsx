@@ -15,8 +15,12 @@ export default function BlockImage({ block }) {
           className="next-image"
           src={block.imageUrl || block.src}
           alt={block.caption || 'Unknown'}
-          width={block.type === 'screenshot' ? '1440px' : block.width}
-          height={block.type === 'screenshot' ? '900px' : block.height}
+          width={
+            block.type === 'screenshot' ? '1440px' : block.width || '250px'
+          }
+          height={
+            block.type === 'screenshot' ? '900px' : block.height || '250px'
+          }
           layout="intrinsic"
           objectFit="contain"
         />

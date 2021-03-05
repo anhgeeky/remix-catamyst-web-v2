@@ -5,7 +5,7 @@
     "slug": "web-development-introduction",
     "level": "newbie",
     "type": "fundamental",
-    "isPublished": true,
+    "_status": "published",
     "blocks": [
       {
         "component": "image",
@@ -49,7 +49,7 @@
     "slug": "activities-overview",
     "level": "newbie",
     "type": "fundamental",
-    "isPublished": true,
+    "_status": "published",
     "blocks": [
       {
         "component": "image",
@@ -71,7 +71,7 @@
     "slug": "time-duration-to-complete",
     "level": "newbie",
     "type": "fundamental",
-    "isPublished": true,
+    "_status": "published",
     "blocks": [
       {
         "component": "image",
@@ -119,7 +119,7 @@
     "slug": "device-requirements",
     "level": "newbie",
     "type": "specific",
-    "isPublished": true,
+    "_status": "published",
     "blocks": [
       {
         "component": "image",
@@ -167,7 +167,7 @@
     "slug": "essential-software-tools",
     "level": "newbie",
     "type": "specific",
-    "isPublished": true,
+    "_status": "published",
     "blocks": [
       {
         "component": "texts",
@@ -428,7 +428,7 @@
     "slug": "other-software-tools",
     "type": "specific",
     "level": "newbie",
-    "isPublished": true,
+    "_status": "published",
     "blocks": [
       {
         "component": "texts",
@@ -525,6 +525,10 @@
     "type": "fundamental",
     "level": "newbie",
     "blocks": [
+      {
+        "component": "image",
+        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614961932/cat-painting-shapes.png"
+      },
       {
         "html": "Suppose that you see a painting and then you say, \"Wow! Look at how beautiful that is! I'll never draw anything like that\"."
       },

@@ -63,14 +63,14 @@ function TopicSidebar({ topic }) {
       <Heading as="h2" size="sm">
         About this topic
       </Heading>
-      {topic.count_lessons && (
+      {topic.totalLessons && (
         <Text>
-          <b>{topic.count_lessons}</b> lessons
+          <b>{topic.totalLessons}</b> lessons
         </Text>
       )}
-      {topic.count_hours && (
+      {topic.totalHours && (
         <Text>
-          <b>{topic.count_hours}</b> hours (estimated)
+          <b>{topic.totalHours}</b> hours (estimated)
         </Text>
       )}
     </Stack>

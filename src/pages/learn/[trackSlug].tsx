@@ -2,17 +2,8 @@ import NextHead from 'next/head'
 import NextImage from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import {
-  Avatar,
-  AvatarGroup,
-  Flex,
-  Heading,
-  Stack,
-  Text,
-  Wrap,
-  WrapItem,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Flex, Heading, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
+
 import { Layout } from '@layouts'
 import { Hero, ContentWithSidebar, CollectionTopics } from '@components'
 import dataTracks from '@data/tracks.json'
@@ -21,16 +12,20 @@ import dataTopics from '@data/topics.json'
 export default function TrackBySlug() {
   const router = useRouter()
   const [topics, setTopics] = useState([])
-  const track = dataTracks.find((track) => {
-    return track.slug === router.query.trackSlug
-  })
 
+  const track = dataTracks.find(
+    (track) => track.slug === router.query.trackSlug
+  )
+
+  /**
+   * Alternative to hook with if-condition handler like use-pagination-lessons
+   */
   useEffect(() => {
     if (track) {
-      const selectedTopics = dataTopics.filter((topic) => {
+      const topics = dataTopics.filter((topic) => {
         return track.topics.includes(topic.id)
       })
-      setTopics(selectedTopics)
+      setTopics(topics)
     }
   }, [track])
 
@@ -95,13 +90,13 @@ function TrackSideBar({ track }) {
         })}
       </Text>
       <Text>
-        <b>{track.count_topics}</b> topics
+        <b>{track.totalTopics}</b> topics
       </Text>
       <Text>
-        <b>{track.count_lessons}</b> lessons
+        <b>{track.totalLessons}</b> lessons
       </Text>
       <Text>
-        <b>{track.count_hours}</b> hours (estimated)
+        <b>{track.totalHours}</b> hours (estimated)
       </Text>
     </Stack>
   )

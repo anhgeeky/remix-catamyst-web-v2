@@ -1,4 +1,4 @@
-import { Heading, Text, Stack, Container } from '@chakra-ui/react'
+import { Heading, Stack, Container } from '@chakra-ui/react'
 import { Hero, CollectionTracks } from '@components'
 import { Layout } from '@layouts'
 import dataTracks from '@data/tracks.json'

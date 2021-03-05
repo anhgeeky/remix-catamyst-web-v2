@@ -8,10 +8,11 @@ export default function HeroHome() {
       <Stack
         id="hero-home"
         align="center"
-        width="1200px"
-        direction={{ base: 'column', lg: 'row' }}
-        px={{ base: 0, lg: 5 }}
+        width="100%"
+        maxW="1200px"
+        // px={{ base: 0, lg: 5 }}
         py={{ base: '10', md: '20', lg: '30' }}
+        direction={{ base: 'column', lg: 'row' }}
       >
         <Stack maxW="40rem" spacing={5}>
           <Heading
@@ -23,12 +24,11 @@ export default function HeroHome() {
           >
             All-in-one platform to learn software development
           </Heading>
-          <Text fontSize="xl">
+          <Text fontSize={['md', 'lg']}>
             Learn coding and design from the very beginning. Build and showcase
             your projects as portfolio. Discuss ideas and ask questions with the
             community. Explore and post job opportunities.
           </Text>
-
           <QuickSignUpForm />
         </Stack>
 

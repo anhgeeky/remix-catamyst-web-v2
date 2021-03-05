@@ -6,7 +6,7 @@ export default function Hero({ color = 'cyan', children }) {
 
   return (
     <Flex py={10} color={textColor} bg={bg} justify="center">
-      <Box px={{ base: 2, sm: 4 }} width="1200px">
+      <Box px={5} width="1200px">
         {children}
       </Box>
     </Flex>

@@ -40,7 +40,7 @@ export default function QuickSignUpForm() {
           placeholder="yourname@mail.com"
           onChange={handleChange}
           value={email}
-          minW="300px"
+          minW="280px"
         />
       </Box>
       <Button type="submit" colorScheme="teal" px={5}>

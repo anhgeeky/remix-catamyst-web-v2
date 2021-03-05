@@ -128,7 +128,7 @@ function PaginationLessonsFull({ track, topic, prev, next }) {
       as="nav"
       aria-label="Pagination lesson"
       width="100%"
-      px={3}
+      px={5}
       spacing={2}
       columns={2}
       maxW={theme.maxContentWidth}
