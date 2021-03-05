@@ -8,26 +8,26 @@ import {
   FaPuzzlePiece as PluginIcon,
 } from 'react-icons/fa'
 
-export default function ReferenceIcon({ type, size = 4 }) {
-  if (type === 'book') {
+export default function ReferenceIcon({ category, size = 4 }) {
+  if (category === 'Book') {
     return <Icon aria-label="Article reference" as={BookIcon} boxSize={size} />
   }
-  if (type === 'article') {
+  if (category === 'Article') {
     return <Icon aria-label="Book reference" as={FileIcon} boxSize={size} />
   }
-  if (type === 'video') {
+  if (category === 'Video') {
     return <Icon aria-label="Video reference" as={VideoIcon} boxSize={size} />
   }
-  if (type === 'web') {
+  if (category === 'Website') {
     return <Icon aria-label="Website reference" as={WebIcon} boxSize={size} />
   }
-  if (type === 'app') {
+  if (category === 'Plugin') {
+    return <Icon aria-label="Plugin reference" as={PluginIcon} boxSize={size} />
+  }
+  if (category === 'App') {
     return (
       <Icon aria-label="Application reference" as={AppIcon} boxSize={size} />
     )
-  }
-  if (type === 'plugin') {
-    return <Icon aria-label="Plugin reference" as={PluginIcon} boxSize={size} />
   }
   return null
 }

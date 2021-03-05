@@ -1,5 +1,5 @@
 import NextImage from 'next/image'
-import { Box, Stack, Text, Link, useColorModeValue } from '@chakra-ui/react'
+import { Box, Text, Link, useColorModeValue } from '@chakra-ui/react'
 
 export default function BlockImage({ block }) {
   return (
@@ -7,7 +7,7 @@ export default function BlockImage({ block }) {
       <Box
         className="next-image-container"
         bg={
-          block.type === 'screenshot' &&
+          block.category === 'screenshot' &&
           useColorModeValue('gray.100', 'gray.500')
         }
       >
@@ -16,10 +16,10 @@ export default function BlockImage({ block }) {
           src={block.imageUrl || block.src}
           alt={block.caption || 'Unknown'}
           width={
-            block.type === 'screenshot' ? '1440px' : block.width || '250px'
+            block.category === 'screenshot' ? '1440px' : block.width || '250px'
           }
           height={
-            block.type === 'screenshot' ? '900px' : block.height || '250px'
+            block.category === 'screenshot' ? '900px' : block.height || '250px'
           }
           layout="intrinsic"
           objectFit="contain"

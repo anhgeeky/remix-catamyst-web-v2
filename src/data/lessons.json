@@ -4,16 +4,18 @@
     "title": "Web development introduction",
     "slug": "web-development-introduction",
     "level": "newbie",
-    "type": "fundamental",
+    "category": "fundamental",
     "_status": "published",
     "blocks": [
       {
         "component": "image",
-        "caption": "Cat sitting in front of artworks",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
         "width": "300px",
         "height": "250px",
-        "sourceUrl": "https://catamyst.com"
+        "caption": "Cat sitting in front of artworks",
+        "sourceUrl": "https://catamyst.com",
+        "showCaption": false,
+        "showSource": false
       },
       {
         "component": "texts",
@@ -21,7 +23,7 @@
       },
       {
         "component": "image",
-        "type": "screenshot",
+        "category": "screenshot",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
         "caption": "Google Arts & Culture website · Cats in culture",
         "sourceUrl": "https://artsandculture.google.com"
@@ -36,7 +38,7 @@
           {
             "title": "Web development",
             "source": "Wikipedia",
-            "type": "article",
+            "category": "Article",
             "url": "https://en.wikipedia.org/wiki/Web_development"
           }
         ]
@@ -48,7 +50,7 @@
     "title": "Activities overview",
     "slug": "activities-overview",
     "level": "newbie",
-    "type": "fundamental",
+    "category": "fundamental",
     "_status": "published",
     "blocks": [
       {
@@ -70,7 +72,7 @@
     "title": "Time duration to complete",
     "slug": "time-duration-to-complete",
     "level": "newbie",
-    "type": "fundamental",
+    "category": "fundamental",
     "_status": "published",
     "blocks": [
       {
@@ -89,21 +91,21 @@
         "component": "references",
         "links": [
           {
-            "type": "video",
+            "category": "Video",
             "title": "Sal Khan: Let's teach for mastery -- not test scores",
             "source": "TED Talk",
             "url": "https://ted.com/talks/sal_khan_let_s_teach_for_mastery_not_test_scores",
             "color": "red.500"
           },
           {
-            "type": "article",
+            "category": "Article",
             "title": "The 10,000 Hour Rule Is Wrong: How to Really Master a Skill",
             "source": "MakeUseOf",
             "author": "Rob Nightingale",
             "url": "https://makeuseof.com/tag/10000-hour-rule-wrong-really-master-skill/"
           },
           {
-            "type": "article",
+            "category": "Article",
             "title": "The Great Practice Myth: Debunking the 10,000 Hour Rule",
             "author": "Michael Miller",
             "source": "Six Seconds",
@@ -118,7 +120,7 @@
     "title": "Device requirements",
     "slug": "device-requirements",
     "level": "newbie",
-    "type": "specific",
+    "category": "specific",
     "_status": "published",
     "blocks": [
       {
@@ -137,7 +139,7 @@
         "component": "references",
         "links": [
           {
-            "type": "article",
+            "category": "Article",
             "title": "How to choose a laptop for programming",
             "source": "freeCodeCamp",
             "author": "Ayo Isaiah",
@@ -146,13 +148,13 @@
             "color": "green.700"
           },
           {
-            "type": "article",
+            "category": "Article",
             "title": "Computer Basics: Understanding Operating Systems",
             "source": "GCFGlobal (Goodwill Community Foundation)",
             "url": "https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1"
           },
           {
-            "type": "article",
+            "category": "Article",
             "title": "Free Computer Basics Tutorial",
             "source": "GCFGlobal (Goodwill Community Foundation)",
             "url": "https://edu.gcfglobal.org/en/computerbasics"
@@ -166,7 +168,7 @@
     "title": "Essential software tools",
     "slug": "essential-software-tools",
     "level": "newbie",
-    "type": "specific",
+    "category": "specific",
     "_status": "published",
     "blocks": [
       {
@@ -190,18 +192,18 @@
           {
             "title": "Google Chrome",
             "source": "Google",
-            "type": "web",
+            "category": "Website",
             "url": "https://google.com/chrome",
             "color": "blue.500"
           },
           {
             "title": "Google Chrome for Android",
-            "type": "app",
+            "category": "App",
             "url": "https://play.google.com/store/apps/details?id=com.android.chrome"
           },
           {
             "title": "Google Chrome for iOS",
-            "type": "app",
+            "category": "App",
             "url": "https://apps.apple.com/us/app/google-chrome/id535886823"
           }
         ]
@@ -216,18 +218,18 @@
           {
             "title": "Mozilla Firefox",
             "source": "Mozilla",
-            "type": "web",
+            "category": "Website",
             "url": "https://mozilla.org/firefox",
             "color": "purple.500"
           },
           {
             "title": "Mozilla Firefox for Android",
-            "type": "app",
+            "category": "App",
             "url": "https://play.google.com/store/apps/details?id=org.mozilla.firefox"
           },
           {
             "title": "Mozilla Firefox for iOS",
-            "type": "app",
+            "category": "App",
             "url": "https://apps.apple.com/us/app/firefox-private-safe-browser/id989804926"
           }
         ]
@@ -242,18 +244,18 @@
           {
             "title": "Brave Browser",
             "source": "Brave",
-            "type": "web",
+            "category": "Website",
             "url": "https://brave.com",
             "color": "red.500"
           },
           {
             "title": "Brave for Android",
-            "type": "app",
+            "category": "App",
             "url": "https://play.google.com/store/apps/details?id=com.brave.browser"
           },
           {
             "title": "Brave for iOS",
-            "type": "app",
+            "category": "App",
             "url": "https://apps.apple.com/us/app/brave-private-browser-vpn/id1052879175"
           }
         ]
@@ -275,41 +277,41 @@
         "links": [
           {
             "title": "Bitwarden",
-            "type": "app",
+            "category": "App",
             "url": "https://bitwarden.com",
             "color": "blue.400"
           },
 
           {
             "title": "Bitwarden for Desktop (Windows, macOS, Linux)",
-            "type": "app",
+            "category": "App",
             "url": "https://bitwarden.com/download"
           },
           {
             "title": "Bitwarden for Android",
-            "type": "app",
+            "category": "App",
             "url": "https://play.google.com/store/apps/details?id=com.x8bit.bitwarden"
           },
           {
             "title": "Bitwarden for iOS",
-            "type": "app",
+            "category": "App",
             "url": "https://apps.apple.com/us/app/bitwarden-password-manager/id1137397744"
           },
           {
             "title": "Bitwarden for Chrome",
-            "type": "plugin",
+            "category": "Plugin",
             "url": "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb"
           },
           {
             "title": "Bitwarden for Firefox",
-            "type": "plugin",
+            "category": "Plugin",
             "url": "https://addons.mozilla.org/firefox/addon/bitwarden-password-manager"
           }
         ]
       },
       {
         "component": "image",
-        "type": "screenshot",
+        "category": "screenshot",
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
         "caption": "Bitwarden website",
         "sourceUrl": "https://bitwarden.com"
@@ -330,28 +332,28 @@
         "links": [
           {
             "title": "Trello",
-            "type": "web",
+            "category": "Website",
             "url": "https://trello.com",
             "color": "blue.600"
           },
           {
             "title": "Trello for Android",
-            "type": "app",
+            "category": "App",
             "url": "https://play.google.com/store/apps/details?id=com.trello"
           },
           {
             "title": "Trello for iOS",
-            "type": "app",
+            "category": "App",
             "url": "https://apps.apple.com/app/trello-organize-anything/id461504587"
           },
           {
             "title": "Trello for Mac",
-            "type": "app",
+            "category": "App",
             "url": "https://apps.apple.com/app/trello/id1278508951"
           },
           {
             "title": "Trello for Windows",
-            "type": "app",
+            "category": "App",
             "url": " https://microsoft.com/en-us/p/trello/9nblggh4xxvw"
           }
         ]
@@ -372,13 +374,13 @@
         "links": [
           {
             "title": "Notion",
-            "type": "web",
+            "category": "Website",
             "url": "https://notion.so",
             "color": "black"
           },
           {
             "title": "Notion for Mac and Windows",
-            "type": "app",
+            "category": "App",
             "url": "https://notion.so/desktop"
           }
         ]
@@ -399,23 +401,23 @@
         "links": [
           {
             "title": "Grammarly",
-            "type": "web",
+            "category": "Website",
             "url": "https://grammarly.com",
             "color": "green.500"
           },
           {
             "title": "Grammarly for Chrome",
-            "type": "plugin",
+            "category": "Plugin",
             "url": "https://chrome.google.com/webstore/detail/grammarly-for-chrome/kbfnbcaeplbcioakkpcpgfkobkghlhen"
           },
           {
             "title": "Grammarly for Firefox",
-            "type": "plugin",
+            "category": "Plugin",
             "url": "https://addons.mozilla.org/en-US/firefox/addon/grammarly-1"
           },
           {
             "title": "Grammarly for Mac",
-            "type": "app",
+            "category": "App",
             "url": "https://grammarly.com/native/mac"
           }
         ]
@@ -426,7 +428,7 @@
     "id": 6,
     "title": "Other software tools",
     "slug": "other-software-tools",
-    "type": "specific",
+    "category": "specific",
     "level": "newbie",
     "_status": "published",
     "blocks": [
@@ -440,7 +442,7 @@
     "id": 7,
     "title": "Managing your tasks",
     "slug": "managing-your-tasks",
-    "type": "project",
+    "category": "project",
     "level": "newbie",
     "blocks": [
       {
@@ -453,7 +455,7 @@
     "id": 8,
     "slug": "learning-process",
     "title": "Learning process",
-    "type": "fundamental",
+    "category": "fundamental",
     "level": "newbie",
     "blocks": [
       {
@@ -511,7 +513,7 @@
             "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
             "title": "Linear vs Non-linear learning",
             "source": "Bryan Mathers",
-            "type": "article",
+            "category": "Article",
             "date": "2015-05-11"
           }
         ]
@@ -522,7 +524,7 @@
     "id": 9,
     "slug": "learning-with-first-principles-thinking",
     "title": "Learning with first principles thinking",
-    "type": "fundamental",
+    "category": "fundamental",
     "level": "newbie",
     "blocks": [
       {
@@ -588,7 +590,7 @@
             "title": "Reasoning from First Principles",
             "source": "YouTube",
             "author": "iluli by Mike Lamb",
-            "type": "video"
+            "category": "Video"
           }
         ]
       }

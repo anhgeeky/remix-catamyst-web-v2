@@ -49,7 +49,7 @@ export default function CollectionLessons({ trackSlug, topicSlug, sections }) {
                       <NextLink key={lesson.slug} href={lessonHref} passHref>
                         <Link rounded="md">
                           <Flex align="center" cursor="pointer">
-                            <LessonIcon type={lesson.type} />
+                            <LessonIcon type={lesson.category} />
                             <Text ml={2}>{lesson.title}</Text>
                           </Flex>
                         </Link>

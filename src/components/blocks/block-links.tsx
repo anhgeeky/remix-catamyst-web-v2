@@ -40,7 +40,7 @@ export default function BlockLinks({ block }) {
               />
               <Stack p={3} spacing={1}>
                 <HStack>
-                  {item.type && <ReferenceIcon type={item.type} />}
+                  {item.category && <ReferenceIcon category={item.category} />}
                   <Heading as="h2" fontFamily="body" size="sm">
                     {item.title}
                   </Heading>
