@@ -54,8 +54,9 @@ export default function LessonBySlug() {
                     {lesson.title}
                   </Heading>
                   <HStack>
-                    <Badge>Level: {lesson.level}</Badge>
-                    <Badge>Type: {lesson.type}</Badge>
+                    <Badge color="teal.300">
+                      {lesson.category} {lesson.level} Lesson
+                    </Badge>
                   </HStack>
                 </VStack>
               </PaginationLessons>

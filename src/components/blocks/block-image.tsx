@@ -26,7 +26,7 @@ export default function BlockImage({ block }) {
         />
       </Box>
 
-      {block.caption && (
+      {block.showMeta !== false && block.caption && (
         <Box opacity={0.5} align="center" mt={3}>
           <Text>{block.caption}</Text>
           {block.sourceUrl && (

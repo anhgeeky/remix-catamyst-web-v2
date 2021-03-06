@@ -14,8 +14,7 @@
         "height": "250px",
         "caption": "Cat sitting in front of artworks",
         "sourceUrl": "https://catamyst.com",
-        "showCaption": false,
-        "showSource": false
+        "showMeta": false
       },
       {
         "component": "texts",
@@ -59,7 +58,8 @@
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
         "width": "250px",
         "height": "237px",
-        "sourceUrl": "https://catamyst.com"
+        "sourceUrl": "https://catamyst.com",
+        "showMeta": false
       },
       {
         "component": "texts",
@@ -81,7 +81,8 @@
         "src": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
         "width": "125px",
         "height": "150px",
-        "sourceUrl": "https://catamyst.com"
+        "sourceUrl": "https://catamyst.com",
+        "showMeta": false
       },
       {
         "component": "texts",
@@ -129,7 +130,8 @@
         "width": "300px",
         "height": "250px",
         "caption": "Cat typing laptop",
-        "sourceUrl": "https://catamyst.com"
+        "sourceUrl": "https://catamyst.com",
+        "showMeta": false
       },
       {
         "component": "texts",
