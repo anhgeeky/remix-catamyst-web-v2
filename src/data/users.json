@@ -3,24 +3,30 @@
     "id": 1,
     "name": "Catamyst",
     "handle": "catamyst",
-    "bio": "Administrator of Catamyst"
+    "bio": "Administrator of Catamyst."
   },
   {
     "id": 2,
-    "name": "M Haidar Hanif",
-    "handle": "haidar",
-    "bio": "Founder, Educator, and Developer of Catamyst"
+    "name": "Guest",
+    "handle": "guest",
+    "bio": "Visitor account for Catamyst."
   },
   {
     "id": 3,
-    "name": "Maya Asmara",
-    "handle": "maya",
-    "bio": "Writer of Catamyst"
+    "name": "M Haidar Hanif",
+    "handle": "haidar",
+    "bio": "Founder, Educator, and Developer of Catamyst."
   },
   {
     "id": 4,
+    "name": "Maya Asmara",
+    "handle": "maya",
+    "bio": "Writer of Catamyst."
+  },
+  {
+    "id": 5,
     "name": "Latifah",
     "handle": "latifah",
-    "bio": "Illustrator of Catamyst"
+    "bio": "Illustrator of Catamyst."
   }
 ]

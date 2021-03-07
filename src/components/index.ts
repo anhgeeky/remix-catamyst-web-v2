@@ -2,13 +2,13 @@ import AlertSoon from '@components/alert-soon'
 import Block from '@components/block'
 import Card from '@components/card'
 import CategoryBadge from '@components/category-badge'
+import CollectionLessons from '@components/collection-lessons'
 import CollectionTopics from '@components/collection-topics'
 import CollectionTracks from '@components/collection-tracks'
 import CollectionUsers from '@components/collection-users'
 import ColorModeToggle from '@components/color-mode-toggle'
 import Content from '@components/content'
 import ContentWithSidebar from '@components/content-with-sidebar'
-import DashboardSidebar from '@components/dashboard/dashboard-sidebar'
 import Fonts from '@components/fonts'
 import Footer from '@components/footer'
 import Header from '@components/header'
@@ -27,7 +27,6 @@ import PaginationTopics from '@components/pagination-topics'
 import PreviewDashboard from '@components/preview-dashboard'
 import QuickSignUpForm from '@components/quick-signup-form'
 import ReferenceIcon from '@components/reference-icon'
-import CollectionLessons from '@components/collection-lessons'
 
 export {
   AlertSoon,
@@ -40,7 +39,6 @@ export {
   ColorModeToggle,
   Content,
   ContentWithSidebar,
-  DashboardSidebar,
   Fonts,
   Footer,
   Header,

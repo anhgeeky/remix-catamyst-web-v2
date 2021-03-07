@@ -30,7 +30,7 @@ export default function TrackBySlug() {
   }, [track])
 
   return (
-    <Layout title={`Loading track...`}>
+    <Layout title={`Loading track... · Catamyst`}>
       {track && topics && (
         <>
           <NextHead>

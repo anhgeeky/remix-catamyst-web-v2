@@ -20,7 +20,7 @@ export default function TopicBySlug() {
   })
 
   return (
-    <Layout title={`Loading topic...`}>
+    <Layout title={`Loading topic... · Catamyst`}>
       {track && topic && (
         <>
           <NextHead>

@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import NextLink from 'next/link'
 import {
   Box,
@@ -7,30 +8,26 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react'
+import dataDashboardLinks from '@data/dashboard-links.json'
 
 export default function DashboardSidebar() {
-  const links = [
-    { text: 'Overview', href: '/dashboard', isActive: true },
-    { text: 'Tracks', href: '/dashboard/tracks' },
-    { text: 'Projects', href: '/dashboard/projects' },
-    { text: 'Posts', href: '/dashboard/posts' },
-    { text: 'Mentors', href: '/dashboard/mentors' },
-    { text: 'Jobs', href: '/dashboard/jobs' },
-    { text: 'Discussions', href: '/dashboard/discussions' },
-  ]
+  const router = useRouter()
 
   return (
     <Wrap
       as={Stack}
+      role="tablist"
       width="100%"
       spacing={{ base: 0, sm: 2, lg: 0 }}
       direction={{ base: 'row', lg: 'column' }}
       maxW={{ base: '100%', lg: '240px' }}
     >
-      {links.map((link, index) => {
+      {dataDashboardLinks.map((link, index) => {
+        const isActive = router.asPath === link.href
+
         return (
-          <WrapItem key={index}>
-            <SidebarLink href={link.href} isActive={link.isActive}>
+          <WrapItem key={index} role="tab">
+            <SidebarLink href={link.href} isActive={isActive}>
               {link.text}
             </SidebarLink>
           </WrapItem>

@@ -12,7 +12,13 @@ export default function UserProfile() {
   const user = dataUsers.find((user) => user.handle === userHandle)
 
   return (
-    <Layout title={`Loading user profile...`}>
+    <Layout title={`Loading user profile... · Catamyst`}>
+      {!user && (
+        <div>
+          <h1>@{userHandle}</h1>
+          <p>This account doesn’t exist.</p>
+        </div>
+      )}
       {user && (
         <>
           <NextHead>
@@ -22,10 +28,10 @@ export default function UserProfile() {
           </NextHead>
 
           <Content>
-            <Stack maxW="600px">
+            <Stack maxW="1200px" align="center">
               <Avatar name={user.name} size="xl" />
 
-              <Box>
+              <Box textAlign="center">
                 <Heading as="h1" size="lg">
                   {user.name}
                 </Heading>

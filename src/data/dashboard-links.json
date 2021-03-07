@@ -1,0 +1,30 @@
+[
+  {
+    "text": "Overview",
+    "href": "/dashboard/overview"
+  },
+  {
+    "text": "Tracks",
+    "href": "/dashboard/tracks"
+  },
+  {
+    "text": "Projects",
+    "href": "/dashboard/projects"
+  },
+  {
+    "text": "Posts",
+    "href": "/dashboard/posts"
+  },
+  {
+    "text": "Mentors",
+    "href": "/dashboard/mentors"
+  },
+  {
+    "text": "Jobs",
+    "href": "/dashboard/jobs"
+  },
+  {
+    "text": "Discussions",
+    "href": "/dashboard/discussions"
+  }
+]
