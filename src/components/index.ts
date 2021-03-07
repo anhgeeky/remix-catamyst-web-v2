@@ -13,6 +13,7 @@ import Fonts from '@components/fonts'
 import Footer from '@components/footer'
 import Header from '@components/header'
 import HeaderUser from '@components/header-user'
+import HeaderTabs from '@components/header-tabs'
 import HeadingStack from '@components/heading-stack'
 import Hero from '@components/hero'
 import HeroHome from '@components/hero-home'
@@ -43,6 +44,7 @@ export {
   Footer,
   Header,
   HeaderUser,
+  HeaderTabs,
   HeadingStack,
   Hero,
   HeroHome,

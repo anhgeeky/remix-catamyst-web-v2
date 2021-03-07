@@ -24,7 +24,7 @@ export default function DashboardOverview({ auth }) {
       <Content>
         <Stack spacing={5} width="100%">
           <Stack>
-            <HeadingStack>Available tracks:</HeadingStack>
+            <HeadingStack>Tracks:</HeadingStack>
             <CollectionTracks tracks={dataTracks} />
           </Stack>
         </Stack>

@@ -6,7 +6,6 @@ import DashboardOverview from '@components/dashboard/overview'
 import DashboardPosts from '@/components/dashboard/posts'
 import DashboardProjects from '@/components/dashboard/projects'
 import DashboardSidebar from '@components/dashboard/sidebar'
-import DashboardTabs from '@components/dashboard/tabs'
 import DashboardTracks from '@components/dashboard/tracks'
 
 export {
@@ -18,6 +17,5 @@ export {
   DashboardPosts,
   DashboardProjects,
   DashboardSidebar,
-  DashboardTabs,
   DashboardTracks,
 }

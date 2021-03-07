@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { Layout } from '@layouts'
+import { HeaderTabs } from '@components'
 import {
   DashboardDiscussions,
   DashboardJobs,
@@ -7,10 +8,10 @@ import {
   DashboardOverview,
   DashboardPosts,
   DashboardProjects,
-  DashboardTabs,
   DashboardTracks,
 } from '@components/dashboard'
-import { useAuth, useRedirectSignIn } from '@hooks'
+import { useRedirectSignIn } from '@hooks'
+import dataDashboardLinks from '@data/dashboard-links.json'
 
 export default function DashboardSlug() {
   const router = useRouter()
@@ -21,7 +22,7 @@ export default function DashboardSlug() {
     <Layout>
       {dashboardSlug && isAuthorized && auth && (
         <>
-          <DashboardTabs />
+          <HeaderTabs links={dataDashboardLinks} />
           {dashboardSlug === 'overview' && <DashboardOverview auth={auth} />}
           {dashboardSlug === 'tracks' && <DashboardTracks auth={auth} />}
           {dashboardSlug === 'projects' && <DashboardProjects auth={auth} />}

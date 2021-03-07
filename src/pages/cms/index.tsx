@@ -1,35 +1,16 @@
-import { Heading, Stack, Text } from '@chakra-ui/react'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { Layout } from '@layouts'
-import { Card, ContentWithSidebar, HeadingStack, Hero } from '@components'
-import { useRedirectSignIn } from '@hooks'
+import { useAuth } from '@hooks'
 
 export default function CMS() {
-  const { auth, isAuthorized } = useRedirectSignIn()
+  const router = useRouter()
+  const { auth, isAuthorized } = useAuth()
 
-  return (
-    <Layout title="Dashboard · Catamyst">
-      {isAuthorized && (
-        <>
-          <Hero>
-            <Heading as="h1" size="xl">
-              CMS
-            </Heading>
-            <Text>Let's get editing!</Text>
-          </Hero>
-          <ContentWithSidebar>
-            <Stack spacing={5} width="100%">
-              <Stack>
-                <HeadingStack>Heading</HeadingStack>
-                <Card>Card</Card>
-              </Stack>
-              <Stack>
-                <HeadingStack>Heading</HeadingStack>
-                <Card>Card</Card>
-              </Stack>
-            </Stack>
-          </ContentWithSidebar>
-        </>
-      )}
-    </Layout>
-  )
+  useEffect(() => {
+    if (isAuthorized) router.replace('/cms/stats')
+    else router.replace('/signin')
+  }, [isAuthorized])
+
+  return <Layout>{auth.isLoading && <p>Loading...</p>}</Layout>
 }

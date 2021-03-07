@@ -1,21 +1,9 @@
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
-import {
-  Box,
-  Flex,
-  Wrap,
-  WrapItem,
-  Link,
-  HStack,
-  Stack,
-  useColorModeValue,
-} from '@chakra-ui/react'
-import dataDashboardLinks from '@data/dashboard-links.json'
-import React from 'react'
+import { Box, Flex, Link, HStack, useColorModeValue } from '@chakra-ui/react'
 
-export default function DashboardTabs() {
+export default function HeaderTabs({ links }) {
   const router = useRouter()
-
   return (
     <Flex
       px={{ base: 3, md: 5 }}
@@ -25,13 +13,13 @@ export default function DashboardTabs() {
       <HStack
         role="tablist"
         className="tab-list"
-        spacing={1}
+        spacing={{ base: 1, md: 3 }}
         width="1200px"
         px={{ base: 1, lg: 4 }}
         py={2}
         overflow="scroll"
       >
-        {dataDashboardLinks.map((link, index) => {
+        {links.map((link) => {
           const isActive = router.asPath === link.href
 
           return (

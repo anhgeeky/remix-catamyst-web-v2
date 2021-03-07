@@ -10,7 +10,7 @@ export default function HeroHome() {
         align="center"
         width="100%"
         maxW="1200px"
-        // px={{ base: 0, lg: 5 }}
+        px={{ base: 0, lg: 5 }}
         py={{ base: '10', md: '20', lg: '30' }}
         direction={{ base: 'column', lg: 'row' }}
       >

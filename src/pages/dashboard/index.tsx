@@ -9,7 +9,7 @@ export default function Dashboard() {
   const { auth, isAuthorized } = useAuth()
 
   useEffect(() => {
-    if (isAuthorized) router.push('/dashboard/overview')
+    if (isAuthorized) router.replace('/dashboard/overview')
     else router.replace('/signin')
   }, [isAuthorized])
 
