@@ -18,11 +18,19 @@ export default function DashboardTabs() {
 
   return (
     <Flex
-      px={5}
+      px={{ base: 3, md: 5 }}
       py={{ base: 3, md: 5 }}
       justify={{ base: 'flex-start', md: 'center' }}
     >
-      <HStack role="tablist" spacing={2} width="1200px" px={{ base: 0, lg: 4 }}>
+      <HStack
+        role="tablist"
+        className="tab-list"
+        spacing={1}
+        width="1200px"
+        px={{ base: 1, lg: 4 }}
+        py={2}
+        overflow="scroll"
+      >
         {dataDashboardLinks.map((link, index) => {
           const isActive = router.asPath === link.href
 

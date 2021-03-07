@@ -5,7 +5,7 @@ import {
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
-} from './types'
+} from '@features/auth/types'
 
 const initialState = {
   isAuthenticated: false,

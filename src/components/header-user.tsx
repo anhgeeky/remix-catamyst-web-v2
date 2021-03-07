@@ -3,13 +3,13 @@ import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   Avatar,
+  Flex,
   Box,
   Button,
   Link,
   Menu,
   MenuButton,
   MenuDivider,
-  MenuGroup,
   MenuItem,
   MenuList,
   useToast,
@@ -19,10 +19,17 @@ import { signOut } from '@features/auth/actions'
 export default function HeaderUser() {
   const auth = useSelector((state) => state.auth)
 
+  /**
+   * The UserMenuButton has issue with SSR
+   * because auth.isAuthenticated condition
+   */
   return (
     <>
-      {auth.isAuthenticated && auth.user && <UserMenuButton auth={auth} />}
-      {!auth.isAuthenticated && <UserAuthButtons />}
+      {auth.isAuthenticated ? (
+        <UserMenuButton auth={auth} />
+      ) : (
+        <UserAuthButtons />
+      )}
     </>
   )
 }
@@ -34,7 +41,6 @@ function UserMenuButton({ auth }) {
 
   async function handleSignOut() {
     dispatch(signOut())
-    await router.replace('/')
     toast({
       title: 'Signed out. Bye!',
       status: 'warning',
@@ -54,20 +60,25 @@ function UserMenuButton({ auth }) {
         >
           <Avatar name={auth.user.name} size="sm" />
         </MenuButton>
-        <MenuList>
-          <MenuGroup title={`@${auth.user.handle}`}>
-            <MenuItem onClick={() => router.push('/dashboard')}>
-              Dashboard
-            </MenuItem>
-            <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
-              Profile
-            </MenuItem>
-            <MenuItem onClick={() => router.push('/settings')}>
-              Settings
-            </MenuItem>
-          </MenuGroup>
+
+        <MenuList boxShadow="lg">
+          <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
+            <Flex direction="column">
+              Signed in as <b>@{auth.user.handle}</b>
+            </Flex>
+          </MenuItem>
           <MenuDivider />
-          <MenuItem onClick={handleSignOut}>Sign out</MenuItem>
+          <MenuItem onClick={() => router.push('/dashboard')}>
+            Dashboard
+          </MenuItem>
+          <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
+            Profile
+          </MenuItem>
+          <MenuItem onClick={() => router.push('/settings')}>Settings</MenuItem>
+          <MenuDivider />
+          <MenuItem onClick={handleSignOut} color="red.500">
+            Sign out
+          </MenuItem>
         </MenuList>
       </Menu>
     </Box>

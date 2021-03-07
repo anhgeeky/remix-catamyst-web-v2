@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "isAvailable": true,
     "slug": "web",
     "title": "Website Development",
     "description": "Learn and practice the fundamental concepts and specific tools you can use to build basic websites. This track focuses only on the design and frontend (what your website visitor would see).",
@@ -12,6 +13,7 @@
   },
   {
     "id": 1,
+    "isAvailable": true,
     "slug": "web-app",
     "title": "Web Application Development",
     "description": "Learn and practice the fundamental concepts and specific tools you can use to build high-quality websites and web applications. This cover everything from the design and frontend (what users would see and use) to the backend (where data of the users are managed). Combining both frontend and backend mostly called full stack web application development.",
@@ -93,6 +95,7 @@
   },
   {
     "id": 3,
+    "isAvailable": false,
     "slug": "mobile-android",
     "title": "Mobile Android Development",
     "description": "Learn and practice the fundamental concepts and Android-specific tools you can use to build mobile apps for Android. This track focuses on the design and app implementation.",
@@ -104,6 +107,7 @@
   },
   {
     "id": 3,
+    "isAvailable": false,
     "slug": "mobile-ios",
     "title": "Mobile iOS Development",
     "description": "Learn and practice the fundamental concepts and Apple-specific tools you can use to build mobile apps for iOS such as iPhone and iPad. This track focuses on the design and app implementation.",

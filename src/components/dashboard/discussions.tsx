@@ -11,9 +11,9 @@ export default function DashboardDiscussions({ auth }) {
       </NextHead>
       <DashboardHero>
         <Heading as="h1" size="xl">
-          Discussions Dashboard
+          Discussions
         </Heading>
-        <Text>Your discussions in forum.</Text>
+        <Text>Your discussions in the forum.</Text>
       </DashboardHero>
       <Content>
         <Stack spacing={5} width="100%">

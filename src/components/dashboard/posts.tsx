@@ -14,7 +14,8 @@ export default function DashboardPosts({ auth }) {
           Posts
         </Heading>
         <Text>
-          Your published and draft posts. Can be for blog, notes, or news.
+          Your published and draft posts. Can be used for a blog, notes, or
+          news.
         </Text>
       </DashboardHero>
       <Content>

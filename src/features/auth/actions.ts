@@ -5,7 +5,8 @@ import {
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
-} from './types'
+} from '@features/auth/types'
+import dataDefaultUser from '@data/user.json'
 
 export const signIn = () => {
   return async (dispatch) => {
@@ -17,10 +18,7 @@ export const signIn = () => {
       dispatch({
         type: SIGN_IN_SUCCESS,
         payload: {
-          user: {
-            name: 'Catamyst',
-            handle: 'catamyst',
-          },
+          user: dataDefaultUser,
         },
       })
     }

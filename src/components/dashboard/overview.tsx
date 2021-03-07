@@ -1,5 +1,5 @@
 import NextHead from 'next/head'
-import { Heading, Stack, Text, Badge } from '@chakra-ui/react'
+import { Heading, Stack, HStack, Text, Badge } from '@chakra-ui/react'
 import { CollectionTracks, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
 import dataTracks from '@data/tracks.json'
@@ -14,9 +14,12 @@ export default function DashboardOverview({ auth }) {
         <Heading as="h1" size="xl">
           Overview
         </Heading>
-        <Text>
-          Welcome back, {auth.user.name}! <Badge>{auth.user.plan}</Badge>
-        </Text>
+        <HStack>
+          <Text>Welcome back, {auth.user.name}! </Text>
+          <Badge variant="solid" colorScheme="blue">
+            {auth.user.plan}
+          </Badge>
+        </HStack>
       </DashboardHero>
       <Content>
         <Stack spacing={5} width="100%">

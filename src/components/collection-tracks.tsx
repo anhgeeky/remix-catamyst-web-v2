@@ -46,16 +46,27 @@ export default function CollectionTracks({ tracks }) {
                   <Heading as="h2" size="xl">
                     {track.title}
                   </Heading>
-                  <NextLink href={trackHref} passHref>
+                  {track.isAvailable && (
+                    <NextLink href={trackHref} passHref>
+                      <Button
+                        as={Link}
+                        colorScheme="teal"
+                        aria-label={`Choose ${track.title} track`}
+                        _hover={{ textDecoration: 'none' }}
+                      >
+                        Choose Track
+                      </Button>
+                    </NextLink>
+                  )}
+                  {!track.isAvailable && (
                     <Button
-                      as={Link}
+                      disabled
                       colorScheme="teal"
-                      aria-label={`Choose ${track.title} track`}
-                      _hover={{ textDecoration: 'none' }}
+                      aria-label={`${track.title} is coming soon`}
                     >
-                      Choose Track
+                      Coming Soon
                     </Button>
-                  </NextLink>
+                  )}
                 </Stack>
               </WrapItem>
             </Wrap>

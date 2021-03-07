@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import NextLink from 'next/link'
-import { useColorModeValue, Box, Flex, HStack } from '@chakra-ui/react'
+import {
+  useColorModeValue,
+  Box,
+  Flex,
+  HStack,
+  useMediaQuery,
+} from '@chakra-ui/react'
 import { SkipNavLink } from '@chakra-ui/skip-nav'
 
 import {
@@ -17,6 +23,7 @@ export default function Header() {
   const bg = useColorModeValue('white', 'gray.900')
   const borderBg = useColorModeValue('white', 'gray.700')
   const [isMenuOpen, setMenuOpen] = useState(false)
+  const [isTablet] = useMediaQuery('(max-width: 768px)')
 
   function openMenu() {
     setMenuOpen(true)
@@ -76,12 +83,11 @@ export default function Header() {
           </Flex>
 
           <Flex flex={1} justify="flex-end">
-            <HStack spacing={2}>
+            <HStack spacing={1}>
               <HeaderUser />
-
-              <Box display={{ base: 'block', md: 'none' }}>
+              {isTablet && (
                 <MenuToggle openMenu={openMenu} isMenuOpen={isMenuOpen} />
-              </Box>
+              )}
             </HStack>
           </Flex>
         </Flex>

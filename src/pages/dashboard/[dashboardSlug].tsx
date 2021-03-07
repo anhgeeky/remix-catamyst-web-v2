@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import { Layout } from '@layouts'
-import { useAuth, useAuthorized } from '@hooks'
 import {
   DashboardDiscussions,
   DashboardJobs,
@@ -11,14 +10,12 @@ import {
   DashboardTabs,
   DashboardTracks,
 } from '@components/dashboard'
-import React from 'react'
+import { useAuth, useRedirectSignIn } from '@hooks'
 
 export default function DashboardSlug() {
   const router = useRouter()
   const { dashboardSlug } = router.query
-
-  const { auth, isAuthorized } = useAuth()
-  useAuthorized(isAuthorized)
+  const { auth, isAuthorized } = useRedirectSignIn()
 
   return (
     <Layout>
