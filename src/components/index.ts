@@ -12,8 +12,9 @@ import ContentWithSidebar from '@components/content-with-sidebar'
 import Fonts from '@components/fonts'
 import Footer from '@components/footer'
 import Header from '@components/header'
-import HeaderUser from '@components/header-user'
+import HeaderEditor from '@components/header-editor'
 import HeaderTabs from '@components/header-tabs'
+import HeaderUser from '@components/header-user'
 import HeadingStack from '@components/heading-stack'
 import Hero from '@components/hero'
 import HeroHome from '@components/hero-home'
@@ -34,6 +35,7 @@ export {
   Block,
   Card,
   CategoryBadge,
+  CollectionLessons,
   CollectionTopics,
   CollectionTracks,
   CollectionUsers,
@@ -43,8 +45,9 @@ export {
   Fonts,
   Footer,
   Header,
-  HeaderUser,
+  HeaderEditor,
   HeaderTabs,
+  HeaderUser,
   HeadingStack,
   Hero,
   HeroHome,
@@ -59,5 +62,4 @@ export {
   PreviewDashboard,
   QuickSignUpForm,
   ReferenceIcon,
-  CollectionLessons,
 }

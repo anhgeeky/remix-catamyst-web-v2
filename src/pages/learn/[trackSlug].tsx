@@ -6,6 +6,7 @@ import { Flex, Heading, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { Hero, ContentWithSidebar, CollectionTopics } from '@components'
+
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
 

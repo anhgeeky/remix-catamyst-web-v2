@@ -4,22 +4,22 @@ import { Box, Flex, Link, HStack, useColorModeValue } from '@chakra-ui/react'
 
 export default function HeaderTabs({ links }) {
   const router = useRouter()
+
   return (
-    <Flex
-      px={{ base: 3, md: 5 }}
-      py={{ base: 3, md: 5 }}
-      justify={{ base: 'flex-start', md: 'center' }}
-    >
+    <Flex py={3} justify={{ base: 'flex-start', md: 'center' }}>
       <HStack
         role="tablist"
         className="tab-list"
-        spacing={{ base: 1, md: 3 }}
         width="1200px"
-        px={{ base: 1, lg: 4 }}
+        spacing={3}
+        px={3}
         py={2}
         overflow="scroll"
       >
         {links.map((link) => {
+          /**
+           * If the current page contains the pathname
+           */
           const isActive = router.asPath === link.href
 
           return (

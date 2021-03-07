@@ -1,7 +1,9 @@
+import NextLink from 'next/link'
 import NextHead from 'next/head'
-import { Heading, Stack, Text } from '@chakra-ui/react'
-import { Card, Content, HeadingStack } from '@components'
+import { Content } from '@components'
 import { CMSHero } from '@components/cms'
+import { Heading, Box, HStack, Text, useColorModeValue } from '@chakra-ui/react'
+import dataTracks from '@data/tracks.json'
 
 export default function CMSTracks() {
   return (
@@ -9,19 +11,60 @@ export default function CMSTracks() {
       <NextHead>
         <title>Tracks · CMS · Catamyst</title>
       </NextHead>
+
       <CMSHero>
         <Heading as="h1" size="xl">
           Tracks CMS
         </Heading>
         <Text>Available and hidden tracks.</Text>
       </CMSHero>
+
       <Content>
-        <Stack spacing={5} width="100%">
-          <Stack>
-            <HeadingStack>Editable Tracks:</HeadingStack>
-            <Card>Tracks list</Card>
-          </Stack>
-        </Stack>
+        <Box>
+          <HStack p={3} fontWeight="700">
+            <Text flex="1">ID</Text>
+            <Text flex="6">Title</Text>
+            <Text flex="2">Slug</Text>
+            <Text flex="1" textAlign="right">
+              Topics
+            </Text>
+            <Text flex="1" textAlign="right">
+              Lessons
+            </Text>
+            <Text flex="1" textAlign="right">
+              Hours
+            </Text>
+          </HStack>
+          {dataTracks.map((track) => {
+            return (
+              <NextLink
+                key={track.slug}
+                href={`/cms/tracks/${track.id}`}
+                passHref
+              >
+                <a>
+                  <HStack
+                    p={3}
+                    _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
+                  >
+                    <Text flex="1">{track.id}</Text>
+                    <Text flex="6">{track.title}</Text>
+                    <Text flex="2">{track.slug}</Text>
+                    <Text flex="1" textAlign="right">
+                      {track.totalTopics}
+                    </Text>
+                    <Text flex="1" textAlign="right">
+                      {track.totalLessons}
+                    </Text>
+                    <Text flex="1" textAlign="right">
+                      {track.totalHours}
+                    </Text>
+                  </HStack>
+                </a>
+              </NextLink>
+            )
+          })}
+        </Box>
       </Content>
     </>
   )

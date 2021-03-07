@@ -1,15 +1,7 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
-import {
-  useToast,
-  Flex,
-  Heading,
-  Box,
-  Text,
-  Container,
-  Button,
-} from '@chakra-ui/react'
+import { useToast, Heading, Text, Container, Button } from '@chakra-ui/react'
 import { Layout } from '@layouts'
 import { Hero } from '@components'
 import { signIn } from '@features/auth/actions'

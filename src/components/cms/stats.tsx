@@ -1,5 +1,18 @@
 import NextHead from 'next/head'
-import { Heading, Stack, HStack, Text, Badge } from '@chakra-ui/react'
+import {
+  Heading,
+  Flex,
+  Stack,
+  HStack,
+  Text,
+  Badge,
+  Stat,
+  StatLabel,
+  StatNumber,
+  StatHelpText,
+  StatArrow,
+  StatGroup,
+} from '@chakra-ui/react'
 import { Content, HeadingStack, LinkButton, Card } from '@components'
 import { CMSHero } from '@components/cms'
 
@@ -7,29 +20,14 @@ import dataUsers from '@data/users.json'
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
 import dataLessons from '@data/lessons.json'
+import { FaVrCardboard } from 'react-icons/fa'
 
 export default function CMSStats() {
   const dataStats = [
-    {
-      heading: 'Users',
-      subHeading: `${dataUsers.length} users`,
-      href: '/cms',
-    },
-    {
-      heading: 'Tracks',
-      subHeading: `${dataTracks.length} tracks`,
-      href: '/cms/tracks',
-    },
-    {
-      heading: 'Topics',
-      subHeading: `${dataTopics.length} topics`,
-      href: '/cms/topics',
-    },
-    {
-      heading: 'Lessons',
-      subHeading: `${dataLessons.length} lessons`,
-      href: '/cms/lessons',
-    },
+    { label: 'Users', total: dataUsers.length, href: '/cms' },
+    { label: 'Tracks', total: dataTracks.length, href: '/cms/tracks' },
+    { label: 'Topics', total: dataTopics.length, href: '/cms/topics' },
+    { label: 'Lessons', total: dataLessons.length, href: '/cms/lessons' },
   ]
 
   return (
@@ -49,16 +47,26 @@ export default function CMSStats() {
         </HStack>
       </CMSHero>
       <Content>
-        <Stack spacing={5} direction={{ base: 'column', lg: 'row' }}>
+        <Stack as={Flex} spacing={5} direction={{ base: 'column', sm: 'row' }}>
           {dataStats.map((stat) => {
             return (
-              <Card key={stat.heading} minW="200px" maxW="400px">
-                <Stack>
-                  <HeadingStack>{stat.heading}</HeadingStack>
-                  <Heading as="h2">{stat.subHeading}</Heading>
-                  <LinkButton href={stat.href}>Edit</LinkButton>
-                </Stack>
-              </Card>
+              <Stat
+                as={Card}
+                key={stat.label}
+                width={{ base: '100%', sm: '200px' }}
+              >
+                <StatLabel>{stat.label}</StatLabel>
+                <StatNumber>
+                  <Heading>{stat.total}</Heading>
+                </StatNumber>
+                <StatHelpText>
+                  <StatArrow type="increase" />
+                  3%
+                </StatHelpText>
+                <LinkButton href={stat.href} size="sm">
+                  Edit
+                </LinkButton>
+              </Stat>
             )
           })}
         </Stack>

@@ -56,7 +56,10 @@ function UserMenuButton({ auth }) {
         <MenuButton
           aria-label="User menu button"
           cursor="pointer"
-          _focus={{ boxShadow: '0 0 0 3px #aca', borderRadius: 'full' }}
+          _focus={{
+            boxShadow: '0 0 0 3px var(--color-secondary)',
+            borderRadius: 'full',
+          }}
         >
           <Avatar name={auth.user.name} size="sm" />
         </MenuButton>
