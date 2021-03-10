@@ -58,13 +58,12 @@ export default function CMSTrackId() {
     position: 'bottom-left',
     duration: 1000,
   })
+  const { trackId } = router.query
 
   /**
    * Should be from API later
    */
-  const track = dataTracks.find(
-    (track) => track.id === Number(router.query.trackId)
-  )
+  const track = dataTracks.find((track) => track.id === Number(trackId))
 
   /**
    * Set default form value type based on data
@@ -102,6 +101,11 @@ export default function CMSTrackId() {
 
   return (
     <Layout>
+      {!formTrack && (
+        <>
+          <Text>Sorry, track with id #{trackId} is not found.</Text>
+        </>
+      )}
       {isAuthorized && formTrack && formTopics && (
         <>
           <NextHead>

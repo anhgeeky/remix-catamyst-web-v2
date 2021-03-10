@@ -58,7 +58,7 @@ function TrackHero({ track }) {
         <WrapItem>
           <NextImage
             alt={`Icon of ${track.title}`}
-            src="/assets/logos/catamyst-avatar.png"
+            src={track.iconUrl}
             width={100}
             height={100}
             layout="fixed"
