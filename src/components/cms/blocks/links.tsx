@@ -1,21 +1,32 @@
 import {
   Box,
-  Stack,
-  HStack,
+  Badge,
+  Button,
+  ButtonGroup,
+  Flex,
   FormControl,
   FormLabel,
-  Select,
-  InputGroup,
+  HStack,
+  IconButton,
   Input,
+  Select,
+  Stack,
+  Text,
   Textarea,
-  Flex,
   VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
+import {
+  ChevronDownIcon as DownIcon,
+  ChevronUpIcon as UpIcon,
+  DeleteIcon,
+} from '@chakra-ui/icons'
 
 import { Card, ReferenceIcon } from '@components'
-import dataTheme from '@theme/theme.json'
 
+/**
+ * Block only can be used for CMS
+ */
 export function CMSBlockLinks({ links }) {
   return (
     <Stack maxW="800px" width="100%" py={3}>
@@ -38,6 +49,19 @@ export function CMSBlockLinks({ links }) {
             />
 
             <Stack spacing={1} p={2} width="98%">
+              <HStack p={2} justify="space-between">
+                <Badge colorScheme="teal">Link</Badge>
+                <ButtonGroup size="xs">
+                  <IconButton aria-label="Move up" icon={<UpIcon />} />
+                  <IconButton aria-label="Move down" icon={<DownIcon />} />
+                  <IconButton
+                    aria-label="Delete link block"
+                    colorScheme="red"
+                    icon={<DeleteIcon />}
+                  />
+                </ButtonGroup>
+              </HStack>
+
               <FormControl as={HStack}>
                 <VisuallyHidden>
                   <FormLabel>Title:</FormLabel>

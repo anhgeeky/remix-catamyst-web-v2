@@ -1,4 +1,4 @@
-import { Heading, Stack, Divider } from '@chakra-ui/react'
+import { Heading, Stack } from '@chakra-ui/react'
 import BlockLinks from '@components/blocks/block-links'
 import dataTheme from '@theme/theme.json'
 

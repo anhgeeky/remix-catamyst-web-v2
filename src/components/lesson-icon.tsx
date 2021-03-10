@@ -7,7 +7,7 @@ import {
 } from 'react-icons/fa'
 
 export default function LessonIcon({ type, size = 4 }) {
-  if (type === 'fundamental') {
+  if (type === 'Fundamental') {
     return (
       <Icon
         aria-label="Fundamental lesson"
@@ -16,12 +16,12 @@ export default function LessonIcon({ type, size = 4 }) {
       />
     )
   }
-  if (type === 'specific') {
+  if (type === 'Specific') {
     return (
       <Icon aria-label="Specific lesson" as={SpecificIcon} boxSize={size} />
     )
   }
-  if (type === 'project') {
+  if (type === 'Project') {
     return <Icon aria-label="Project lesson" as={ProjectIcon} boxSize={size} />
   }
   return <Icon aria-label="Unknown category" as={UnknownIcon} boxSize={size} />

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import {
@@ -7,6 +7,7 @@ import {
   ButtonGroup,
   Checkbox,
   CheckboxGroup,
+  Container,
   Heading,
   HStack,
   IconButton,
@@ -19,13 +20,17 @@ import {
   Stack,
   Text,
   Textarea,
+  Tooltip,
+  useToast,
   VStack,
   Wrap,
   WrapItem,
-  useToast,
-  Container,
 } from '@chakra-ui/react'
-import { DeleteIcon, RepeatIcon as GenerateIcon } from '@chakra-ui/icons'
+import {
+  AddIcon,
+  DeleteIcon,
+  RepeatIcon as GenerateIcon,
+} from '@chakra-ui/icons'
 
 import { Layout } from '@layouts'
 import {
@@ -36,7 +41,7 @@ import {
   Hero,
 } from '@components'
 import { CMSViewJSON } from '@components/cms'
-import { CMSBlock, CMSBlockLinks } from '@components/cms/blocks'
+import { CMSBlock, CMSBlockLinks, AdderButtons } from '@components/cms/blocks'
 import { useRedirectSignIn } from '@hooks'
 import { slugify } from '@utils'
 
@@ -74,8 +79,12 @@ export default function CMSLessonId() {
     setFormLesson({ ...formLesson, [event.target.name]: event.target.value })
   }
 
-  const handleChangeRadio = (event) => {
-    toast({ title: JSON.stringify(event.target, null, 2) })
+  const handleChangeCategory = (event) => {
+    setFormLesson({ ...formLesson, category: event })
+  }
+
+  const handleChangeLevel = (event) => {
+    setFormLesson({ ...formLesson, level: event })
   }
 
   const handleReset = () => {
@@ -130,7 +139,8 @@ export default function CMSLessonId() {
             <CMSViewResultLesson
               formLesson={formLesson}
               handleChange={handleChange}
-              handleChangeRadio={handleChangeRadio}
+              handleChangeCategory={handleChangeCategory}
+              handleChangeLevel={handleChangeLevel}
               handleGenerateSlug={handleGenerateSlug}
             />
           )}
@@ -143,8 +153,9 @@ export default function CMSLessonId() {
 function CMSViewResultLesson({
   formLesson,
   handleChange,
-  handleChangeRadio,
   handleGenerateSlug,
+  handleChangeCategory,
+  handleChangeLevel,
 }) {
   /**
    * Formik can be used here to reduce handle change
@@ -168,14 +179,16 @@ function CMSViewResultLesson({
                 value={slugify(formLesson.slug) || slugify(formLesson.title)}
                 onChange={handleChange}
               />
-              <InputRightAddon
-                as={IconButton}
-                px={2}
-                size="xs"
-                aria-label="Generate slug"
-                onClick={handleGenerateSlug}
-                icon={<GenerateIcon />}
-              />
+              <Tooltip label="Generate slug" fontSize="xs">
+                <InputRightAddon
+                  as={IconButton}
+                  px={2}
+                  size="xs"
+                  aria-label="Generate slug"
+                  onClick={handleGenerateSlug}
+                  icon={<GenerateIcon />}
+                />
+              </Tooltip>
             </InputGroup>
             <Input
               isRequired
@@ -192,7 +205,7 @@ function CMSViewResultLesson({
             <RadioGroup
               colorScheme="teal"
               name="category"
-              onChange={handleChangeRadio}
+              onChange={handleChangeCategory}
               value={formLesson.category}
             >
               <Stack direction="row">
@@ -211,7 +224,7 @@ function CMSViewResultLesson({
             <RadioGroup
               colorScheme="teal"
               name="level"
-              onChange={handleChangeRadio}
+              onChange={handleChangeLevel}
               value={formLesson.level}
             >
               <Stack direction="row">
@@ -227,19 +240,33 @@ function CMSViewResultLesson({
       </Hero>
 
       <Container width="100%" maxW="1500px" pt={5} px={0}>
-        <Stack align="center" spacing={10}>
-          <HeadingStack>Content Blocks</HeadingStack>
-          <Stack id="form-lesson-blocks" align="center" spacing={5}>
-            {formLesson?.blocks &&
-              (formLesson.blocks as any[]).map((block, index) => {
-                return <CMSBlock key={index} block={block} />
-              })}
+        <Stack spacing={10}>
+          <Stack align="center">
+            <HeadingStack>Content Blocks</HeadingStack>
+            <Stack id="form-lesson-blocks" align="center" spacing={5}>
+              {!formLesson?.blocks && <AdderButtons />}
+              {formLesson?.blocks &&
+                (formLesson.blocks as any[]).map((block, index) => {
+                  return (
+                    <Fragment key={index}>
+                      <CMSBlock block={block} />
+                      <AdderButtons />
+                    </Fragment>
+                  )
+                })}
+            </Stack>
           </Stack>
 
-          <HeadingStack>References</HeadingStack>
-          {formLesson?.references && (
-            <CMSBlockLinks links={formLesson.references} />
-          )}
+          <Stack align="center">
+            <HeadingStack>References</HeadingStack>
+            {!formLesson?.references && <AdderButtons />}
+            {formLesson?.references && (
+              <Fragment>
+                <CMSBlockLinks links={formLesson.references} />
+                <AdderButtons />
+              </Fragment>
+            )}
+          </Stack>
         </Stack>
       </Container>
     </>

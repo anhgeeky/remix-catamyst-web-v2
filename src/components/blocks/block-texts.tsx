@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 import {
   Heading,

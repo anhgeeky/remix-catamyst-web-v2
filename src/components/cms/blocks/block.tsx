@@ -2,6 +2,7 @@ import {
   CMSBlockImage,
   CMSBlockTexts,
   CMSBlockLinks,
+  CMSBlockDivider,
 } from '@components/cms/blocks'
 
 /**
@@ -17,5 +18,8 @@ export function CMSBlock({ block }) {
   if (block.component === 'links' && block.links) {
     return <CMSBlockLinks links={block.links} />
   }
-  return null
+  if (block.component === 'divider') {
+    return <CMSBlockDivider block={block} />
+  }
+  return <p>{block.component}</p>
 }

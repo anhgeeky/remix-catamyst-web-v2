@@ -6,7 +6,7 @@ export default function HeadingStack({ children }) {
       as="h2"
       fontFamily="body"
       opacity={0.5}
-      size="sm"
+      size="md"
       textTransform="uppercase"
       textAlign={{ base: 'center', lg: 'left' }}
     >

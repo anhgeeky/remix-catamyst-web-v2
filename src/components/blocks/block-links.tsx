@@ -10,6 +10,10 @@ import {
 } from '@chakra-ui/react'
 import { ReferenceIcon } from '@components'
 
+/**
+ * Block only can be used for actual content
+ * Because the CMS need combined control with the preview
+ */
 export default function BlockLinks({ block }) {
   const bg = useColorModeValue('white', 'gray.800')
 
