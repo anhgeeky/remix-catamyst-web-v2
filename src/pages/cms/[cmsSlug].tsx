@@ -9,6 +9,10 @@ export default function CMSSlug() {
   const router = useRouter()
   const { cmsSlug } = router.query
   const { auth, isAuthorized } = useRedirectSignIn()
+
+  /**
+   * This pattern is used so the header tabs navigation seamless
+   */
   return (
     <Layout>
       {cmsSlug && isAuthorized && auth && (

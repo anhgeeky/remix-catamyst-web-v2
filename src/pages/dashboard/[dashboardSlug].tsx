@@ -18,6 +18,9 @@ export default function DashboardSlug() {
   const { dashboardSlug } = router.query
   const { auth, isAuthorized } = useRedirectSignIn()
 
+  /**
+   * This pattern is used so the header tabs navigation seamless
+   */
   return (
     <Layout>
       {dashboardSlug && isAuthorized && auth && (

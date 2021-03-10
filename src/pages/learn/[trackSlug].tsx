@@ -13,10 +13,9 @@ import dataTopics from '@data/topics.json'
 export default function TrackBySlug() {
   const router = useRouter()
   const [topics, setTopics] = useState([])
+  const { trackSlug } = router.query
 
-  const track = dataTracks.find(
-    (track) => track.slug === router.query.trackSlug
-  )
+  const track = dataTracks.find((track) => track.slug === trackSlug)
 
   /**
    * Alternative to hook with if-condition handler like use-pagination-lessons
@@ -40,10 +39,7 @@ export default function TrackBySlug() {
           <TrackHero track={track} />
           <ContentWithSidebar>
             <TrackSideBar track={track} />
-            <CollectionTopics
-              trackSlug={router.query.trackSlug}
-              topics={topics}
-            />
+            <CollectionTopics trackSlug={trackSlug} topics={topics} />
           </ContentWithSidebar>
         </>
       )}
