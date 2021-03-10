@@ -30,6 +30,8 @@ import PreviewDashboard from '@components/preview-dashboard'
 import QuickSignUpForm from '@components/quick-signup-form'
 import ReferenceIcon from '@components/reference-icon'
 
+export { CodeHighlight } from '@components/code-highlight'
+
 export {
   AlertSoon,
   Block,

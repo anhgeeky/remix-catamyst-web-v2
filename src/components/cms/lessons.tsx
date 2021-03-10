@@ -61,7 +61,7 @@ export default function CMSLessons() {
             return (
               <NextLink
                 key={lesson.slug}
-                href={`/cms/topics/${lesson.id}`}
+                href={`/cms/lessons/${lesson.id}`}
                 passHref
               >
                 <a>
@@ -82,7 +82,7 @@ export default function CMSLessons() {
                       <CategoryBadge category={lesson.level} />
                     </Text>
                     <Text flex={1} textAlign="center">
-                      {lesson._status === 'published' ? (
+                      {lesson.isPublished ? (
                         <ViewIcon color="green.500" />
                       ) : (
                         <ViewOffIcon color="red.500" />

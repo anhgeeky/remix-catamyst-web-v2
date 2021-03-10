@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
+import NextHead from 'next/head'
 import NextImage from 'next/image'
 import { useRouter } from 'next/router'
-import NextHead from 'next/head'
 import {
   Button,
   ButtonGroup,
   Checkbox,
   CheckboxGroup,
-  Code,
-  Flex,
   Heading,
   HStack,
   IconButton,
@@ -36,28 +34,22 @@ import { Layout } from '@layouts'
 import {
   Card,
   CategoryBadge,
-  Content,
   ContentWithSidebar,
   HeaderEditor,
-  HeadingStack,
   Hero,
 } from '@components'
+import { CMSViewJSON } from '@components/cms'
 import { useRedirectSignIn } from '@hooks'
+import { slugify } from '@utils'
 
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
-
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { okaidia as style } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 export default function CMSTrackId() {
   const router = useRouter()
   const { isAuthorized } = useRedirectSignIn()
   const [viewMode, setViewMode] = useState('result')
-  const toast = useToast({
-    position: 'bottom-left',
-    duration: 1000,
-  })
+  const toast = useToast({ duration: 1000, position: 'bottom-left' })
   const { trackId } = router.query
 
   /**
@@ -72,15 +64,21 @@ export default function CMSTrackId() {
   const [formTrack, setFormTrack] = useState(track)
   const [formTopics, setFormTopics] = useState([])
 
+  /**
+   * There is a bug of race condition that should be solved with API
+   */
   useEffect(() => {
     setFormTrack(track)
-    if (formTrack) {
+  }, [track])
+
+  useEffect(() => {
+    if (track) {
       const topics = dataTopics.filter((topic) => {
         return formTrack.topics.includes(topic.id)
       })
       setFormTopics(topics)
     }
-  }, [track])
+  }, [])
 
   /**
    * Handle form's value local changes (state) and handle save (API request)
@@ -90,14 +88,8 @@ export default function CMSTrackId() {
     setFormTrack({ ...formTrack, [event.target.name]: event.target.value })
   }
   const handleSave = () => {
-    toast({ title: 'Track saved!', status: 'success', isClosable: true })
+    toast({ title: 'Track saved!', status: 'success' })
   }
-
-  /**
-   * Handle view result and JSON for inspecting or debugging purpose
-   */
-  const handleViewResult = () => setViewMode('result')
-  const handleViewJSON = () => setViewMode('json')
 
   return (
     <Layout>
@@ -115,11 +107,12 @@ export default function CMSTrackId() {
             name="track"
             item={formTrack}
             handleSave={handleSave}
-            handleViewResult={handleViewResult}
-            handleViewJSON={handleViewJSON}
+            handleReset={() => console.log('Reset')}
+            handleViewResult={() => setViewMode('result')}
+            handleViewJSON={() => setViewMode('json')}
           />
           {viewMode === 'json' && (
-            <ViewJSON
+            <CMSViewJSON
               name="Track and Topics"
               codeString={{
                 track: formTrack,
@@ -138,26 +131,6 @@ export default function CMSTrackId() {
         </>
       )}
     </Layout>
-  )
-}
-
-function ViewJSON({ name, codeString }) {
-  return (
-    <Content>
-      <Stack spacing={5} width="100%">
-        <HeadingStack>{name}:</HeadingStack>
-        <SyntaxHighlighter
-          language="json"
-          style={style}
-          wrapLines
-          wrapLongLines
-          showLineNumbers
-          // showInlineLineNumbers
-        >
-          {JSON.stringify(codeString, null, 2)}
-        </SyntaxHighlighter>
-      </Stack>
-    </Content>
   )
 }
 
@@ -183,7 +156,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
                 name="slug"
                 rounded="md"
                 placeholder="track-slug"
-                value={formTrack.slug}
+                value={slugify(formTrack.slug) || slugify(formTrack.title)}
                 onChange={handleChange}
               />
             </InputGroup>
@@ -275,7 +248,9 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
               Add Topic
             </Button>
           </HStack>
+
           {formTopics.length < 1 && <Text>No topics yet.</Text>}
+
           {formTopics.map((topic) => {
             return (
               <Card p={2} key={topic.id}>

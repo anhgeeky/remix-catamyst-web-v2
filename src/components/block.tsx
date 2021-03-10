@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
 
-import theme from '@theme/theme.json'
+import dataTheme from '@theme/theme.json'
 import BlockTexts from '@components/blocks/block-texts'
 import BlockLinks from '@components/blocks/block-links'
 import BlockDivider from '@components/blocks/block-divider'
@@ -47,7 +47,7 @@ export default function Block({ block }) {
       </Wrapper>
     )
   }
-  if (block.component === 'image' && block.src) {
+  if (block.component === 'image' && block.url) {
     return <BlockImage block={block} />
   }
 
@@ -81,7 +81,7 @@ export default function Block({ block }) {
 
 function Wrapper({ children, isPadded = false }) {
   return (
-    <Box maxW={theme.maxContentWidth} width="100%" px={isPadded && 5}>
+    <Box maxW={dataTheme.maxContentWidth} width="100%" px={isPadded && 5}>
       {children}
     </Box>
   )

@@ -1,4 +1,4 @@
-export const Input = {
+export const Select = {
   defaultProps: {
     focusBorderColor: 'brand.secondary',
   },

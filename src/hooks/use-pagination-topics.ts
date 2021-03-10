@@ -7,7 +7,7 @@ export default function usePaginationTopics({ trackSlug, topicSlug }) {
   const track = dataTracks.find((track) => trackSlug === track.slug)
   const topic = dataTopics.find((topic) => {
     if (topic.slug) return topicSlug === topic.slug
-    else return topicSlug === slugify(topic.title, { lower: true })
+    else return topicSlug === slugify(topic.title || '', { lower: true })
   })
 
   const topicIndex = track?.topics.findIndex((topicId) => topicId === topic.id)

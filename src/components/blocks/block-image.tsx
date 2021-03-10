@@ -13,7 +13,7 @@ export default function BlockImage({ block }) {
       >
         <NextImage
           className="next-image"
-          src={block.imageUrl || block.src}
+          src={block.url || 'https://placekitten.com/g/500/500'}
           alt={block.caption || 'Unknown'}
           width={
             block.category === 'screenshot' ? '1440px' : block.width || '250px'

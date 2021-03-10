@@ -3,13 +3,13 @@
     "id": 1,
     "title": "Web development introduction",
     "slug": "web-development-introduction",
-    "level": "newbie",
-    "category": "fundamental",
-    "_status": "published",
+    "level": "Newbie",
+    "category": "Fundamental",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
         "width": "300px",
         "height": "250px",
         "caption": "Cat sitting in front of artworks",
@@ -23,24 +23,21 @@
       {
         "component": "image",
         "category": "screenshot",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
         "caption": "Google Arts & Culture website · Cats in culture",
         "sourceUrl": "https://artsandculture.google.com"
       },
       {
         "component": "texts",
         "html": "<h1>What is web development?</h1><p>Web development is the process of building websites that run in a web browser. Web development powers popular sites like Google, Wikipedia, Twitter, YouTube, Facebook, Instagram, LinkedIn, Airbnb, and more. Even systems on software from Apple and Microsoft. And obviously, your favorite websites included!</p><p>In this learning track, you will obtain fundamental concepts and specific tools to build high-quality websites and web applications. Ultimately, you will be able to master your strengths in problem-solving and showcasing a portfolio that could leverage you to land a decent job or a freelance offer. You can even build your own tech business using the knowledge and skillset you obtain here.</p><h1>Who is a web developer?</h1><p>A web developer is the one who builds and maintains websites or web applications. They are also sometimes responsible to design how you would see and experience a website. Although, the work for the design can also be given to the dedicated web designers instead.</p><h1>Who can learn web development?</h1><p>Even though Neko is a painter, Neko can learn web development and build a website. So, no matter what your education and career background are, you can learn to build your own websites and web applications as long as you make the effort.</p>"
-      },
+      }
+    ],
+    "references": [
       {
-        "component": "references",
-        "links": [
-          {
-            "title": "Web development",
-            "source": "Wikipedia",
-            "category": "Article",
-            "url": "https://en.wikipedia.org/wiki/Web_development"
-          }
-        ]
+        "title": "Web development",
+        "source": "Wikipedia",
+        "category": "Article",
+        "url": "https://en.wikipedia.org/wiki/Web_development"
       }
     ]
   },
@@ -48,14 +45,14 @@
     "id": 2,
     "title": "Activities overview",
     "slug": "activities-overview",
-    "level": "newbie",
-    "category": "fundamental",
-    "_status": "published",
+    "level": "Newbie",
+    "category": "Fundamental",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
         "caption": "Cat reading a book",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
         "width": "250px",
         "height": "237px",
         "sourceUrl": "https://catamyst.com",
@@ -71,14 +68,14 @@
     "id": 3,
     "title": "Time duration to complete",
     "slug": "time-duration-to-complete",
-    "level": "newbie",
-    "category": "fundamental",
-    "_status": "published",
+    "level": "Newbie",
+    "category": "Fundamental",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
         "caption": "Hour glass",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
         "width": "125px",
         "height": "150px",
         "sourceUrl": "https://catamyst.com",
@@ -87,32 +84,29 @@
       {
         "component": "texts",
         "html": "<h1>Time expectation</h1><p>All of the activities are expected to be completed within 3 to 6 months, depending on your learning pace and effort. You can finish earlier in 2 months or longer in 1 year.</p><p>If you decide to spend at least 1 to 3 hours on weekdays and 5 to 8 hours on weekends, we can assume that you can finish them in 3 to 6 months. Of course, it would be more efficient if you spend more time per day.</p><h1>Faster is not always better</h1><p>To finish faster, some people might skip learning the knowledge and doing the projects directly. We do not recommend this way as each of them will give you the proper foundation to go to the next lessons. However, it is okay to skip some parts only if you already master them. Remember, the journey could take a while. Even after you have done them, you are still required to &quot;do the work&quot; because you need to always keep practicing.</p>"
+      }
+    ],
+    "references": [
+      {
+        "category": "Video",
+        "title": "Sal Khan: Let's teach for mastery -- not test scores",
+        "source": "TED Talk",
+        "url": "https://ted.com/talks/sal_khan_let_s_teach_for_mastery_not_test_scores",
+        "color": "red.500"
       },
       {
-        "component": "references",
-        "links": [
-          {
-            "category": "Video",
-            "title": "Sal Khan: Let's teach for mastery -- not test scores",
-            "source": "TED Talk",
-            "url": "https://ted.com/talks/sal_khan_let_s_teach_for_mastery_not_test_scores",
-            "color": "red.500"
-          },
-          {
-            "category": "Article",
-            "title": "The 10,000 Hour Rule Is Wrong: How to Really Master a Skill",
-            "source": "MakeUseOf",
-            "author": "Rob Nightingale",
-            "url": "https://makeuseof.com/tag/10000-hour-rule-wrong-really-master-skill/"
-          },
-          {
-            "category": "Article",
-            "title": "The Great Practice Myth: Debunking the 10,000 Hour Rule",
-            "author": "Michael Miller",
-            "source": "Six Seconds",
-            "url": "https://6seconds.org/2018/02/09/the-great-practice-myth-debunking-the-10000-hour-rule-and-what-you-actually-need-to-know-about-practice/"
-          }
-        ]
+        "category": "Article",
+        "title": "The 10,000 Hour Rule Is Wrong: How to Really Master a Skill",
+        "source": "MakeUseOf",
+        "author": "Rob Nightingale",
+        "url": "https://makeuseof.com/tag/10000-hour-rule-wrong-really-master-skill/"
+      },
+      {
+        "category": "Article",
+        "title": "The Great Practice Myth: Debunking the 10,000 Hour Rule",
+        "author": "Michael Miller",
+        "source": "Six Seconds",
+        "url": "https://6seconds.org/2018/02/09/the-great-practice-myth-debunking-the-10000-hour-rule-and-what-you-actually-need-to-know-about-practice/"
       }
     ]
   },
@@ -120,13 +114,13 @@
     "id": 4,
     "title": "Device requirements",
     "slug": "device-requirements",
-    "level": "newbie",
-    "category": "specific",
-    "_status": "published",
+    "level": "Newbie",
+    "category": "Specific",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614258939/cat-typing-laptop.gif",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614258939/cat-typing-laptop.gif",
         "width": "300px",
         "height": "250px",
         "caption": "Cat typing laptop",
@@ -136,32 +130,29 @@
       {
         "component": "texts",
         "html": "<h1>Laptop requirements</h1><p>Every laptop need an Operating System (OS), the system that being used to run your computer.</p><h2>If using Linux</h2><p>If you have a laptop with Linux OS like Ubuntu, it should be enough. Preferably using Ubuntu version 20.04 or later.</p><h2>If using Mac</h2><p>If you have a MacBook with macOS, it should be enough. Preferably bought on year 2015 or above, and using macOS Catalina or later.</p><h2>If using Windows</h2><p>If you have a laptop with Windows OS:</p><ul><li>Preferably bought on year 2015 or above, and using Windows 10.</li><li>Processor at least Intel Core i3 or AMD.</li><li>RAM at least 4 GB.</li><li>Hard drive at least 100 GB of space.</li></ul><h1>Mobile requirements</h1><p>Every mobile phone or tablet usually already comes with their OS too.</p><ul><li>If you have an iPhone or iPad, it should be enough.</li><li>If you have an Android phone or tablet, it should have minimum Android version 4.0 or above.</li></ul>"
+      }
+    ],
+    "references": [
+      {
+        "category": "Article",
+        "title": "How to choose a laptop for programming",
+        "source": "freeCodeCamp",
+        "author": "Ayo Isaiah",
+        "date": "2017-07-25",
+        "url": "https://freecodecamp.org/news/how-to-choose-a-laptop-for-programming-a9e36f8b4cfe",
+        "color": "green.700"
       },
       {
-        "component": "references",
-        "links": [
-          {
-            "category": "Article",
-            "title": "How to choose a laptop for programming",
-            "source": "freeCodeCamp",
-            "author": "Ayo Isaiah",
-            "date": "2017-07-25",
-            "url": "https://freecodecamp.org/news/how-to-choose-a-laptop-for-programming-a9e36f8b4cfe",
-            "color": "green.700"
-          },
-          {
-            "category": "Article",
-            "title": "Computer Basics: Understanding Operating Systems",
-            "source": "GCFGlobal (Goodwill Community Foundation)",
-            "url": "https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1"
-          },
-          {
-            "category": "Article",
-            "title": "Free Computer Basics Tutorial",
-            "source": "GCFGlobal (Goodwill Community Foundation)",
-            "url": "https://edu.gcfglobal.org/en/computerbasics"
-          }
-        ]
+        "category": "Article",
+        "title": "Computer Basics: Understanding Operating Systems",
+        "source": "GCFGlobal (Goodwill Community Foundation)",
+        "url": "https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1"
+      },
+      {
+        "category": "Article",
+        "title": "Free Computer Basics Tutorial",
+        "source": "GCFGlobal (Goodwill Community Foundation)",
+        "url": "https://edu.gcfglobal.org/en/computerbasics"
       }
     ]
   },
@@ -169,9 +160,9 @@
     "id": 5,
     "title": "Essential software tools",
     "slug": "essential-software-tools",
-    "level": "newbie",
-    "category": "specific",
-    "_status": "published",
+    "level": "Newbie",
+    "category": "Specific",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -314,7 +305,7 @@
       {
         "component": "image",
         "category": "screenshot",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
         "caption": "Bitwarden website",
         "sourceUrl": "https://bitwarden.com"
       },
@@ -430,9 +421,9 @@
     "id": 6,
     "title": "Other software tools",
     "slug": "other-software-tools",
-    "category": "specific",
-    "level": "newbie",
-    "_status": "published",
+    "category": "Specific",
+    "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -444,8 +435,8 @@
     "id": 7,
     "title": "Managing your tasks",
     "slug": "managing-your-tasks",
-    "category": "project",
-    "level": "newbie",
+    "category": "Project",
+    "level": "Newbie",
     "blocks": [
       {
         "component": "texts",
@@ -457,8 +448,8 @@
     "id": 8,
     "slug": "learning-process",
     "title": "Learning process",
-    "category": "fundamental",
-    "level": "newbie",
+    "category": "Fundamental",
+    "level": "Newbie",
     "blocks": [
       {
         "component": "paragraph",
@@ -474,7 +465,7 @@
       },
       {
         "component": "image",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
         "caption": " Linear vs Non-linear learning · Inspired by Visual Thinkery",
         "sourceUrl": "https://visualthinkery.com",
         "width": "1250px",
@@ -507,18 +498,15 @@
       },
       {
         "component": "divider"
-      },
+      }
+    ],
+    "references": [
       {
-        "component": "references",
-        "links": [
-          {
-            "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
-            "title": "Linear vs Non-linear learning",
-            "source": "Bryan Mathers",
-            "category": "Article",
-            "date": "2015-05-11"
-          }
-        ]
+        "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
+        "title": "Linear vs Non-linear learning",
+        "source": "Bryan Mathers",
+        "category": "Article",
+        "date": "2015-05-11"
       }
     ]
   },
@@ -526,12 +514,12 @@
     "id": 9,
     "slug": "learning-with-first-principles-thinking",
     "title": "Learning with first principles thinking",
-    "category": "fundamental",
-    "level": "newbie",
+    "category": "Fundamental",
+    "level": "Newbie",
     "blocks": [
       {
         "component": "image",
-        "src": "https://res.cloudinary.com/catamyst/image/upload/v1614961932/cat-painting-shapes.png"
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614961932/cat-painting-shapes.png"
       },
       {
         "html": "Suppose that you see a painting and then you say, \"Wow! Look at how beautiful that is! I'll never draw anything like that\"."
@@ -583,18 +571,15 @@
       },
       {
         "html": "Here are the tips on how to apply first principles thinking to solve problems:"
-      },
+      }
+    ],
+    "references": [
       {
-        "component": "references",
-        "links": [
-          {
-            "url": "https://www.youtube.com/watch?v=ZqhN2YWTw0M",
-            "title": "Reasoning from First Principles",
-            "source": "YouTube",
-            "author": "iluli by Mike Lamb",
-            "category": "Video"
-          }
-        ]
+        "url": "https://youtube.com/watch?v=ZqhN2YWTw0M",
+        "title": "Reasoning from First Principles",
+        "source": "YouTube",
+        "author": "iluli by Mike Lamb",
+        "category": "Video"
       }
     ]
   },
@@ -602,42 +587,42 @@
     "id": 10,
     "slug": "learning-ways-and-mediums",
     "title": "Learning ways and mediums",
-    "category": "fundamental",
-    "level": "newbie"
+    "category": "Fundamental",
+    "level": "Newbie"
   },
   {
     "id": 11,
     "slug": "fixed-vs-growth-mindset",
     "title": "Fixed vs growth mindset",
-    "category": "fundamental",
-    "level": "newbie"
+    "category": "Fundamental",
+    "level": "Newbie"
   },
   {
     "id": 12,
     "slug": "good-communication-skills",
     "title": "Good communication skills",
-    "category": "fundamental",
-    "level": "newbie"
+    "category": "Fundamental",
+    "level": "Newbie"
   },
   {
     "id": 13,
     "slug": "technical-writing-skills",
     "title": "Technical writing skills",
-    "category": "fundamental",
-    "level": "newbie"
+    "category": "Fundamental",
+    "level": "Newbie"
   },
   {
     "id": 14,
     "slug": "website-vs-web-application",
     "title": "Website vs web application",
-    "category": "fundamental",
-    "level": "newbie"
+    "category": "Fundamental",
+    "level": "Newbie"
   },
   {
     "id": 15,
     "slug": "personal-websites",
     "title": "Personal websites",
-    "category": "fundamental",
-    "level": "newbie"
+    "category": "Fundamental",
+    "level": "Newbie"
   }
 ]

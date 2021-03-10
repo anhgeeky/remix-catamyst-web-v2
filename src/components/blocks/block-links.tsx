@@ -16,7 +16,7 @@ export default function BlockLinks({ block }) {
   return (
     <Stack spacing={2} px={5}>
       {Array.isArray(block.links) &&
-        block.links.map((item, index) => {
+        block.links.map((link, index) => {
           return (
             <Flex
               isExternal
@@ -26,32 +26,32 @@ export default function BlockLinks({ block }) {
               boxShadow="base"
               cursor="pointer"
               flexWrap="wrap"
-              href={item.url}
+              href={link.url}
               key={index}
               rounded="md"
               spacing={0}
               _hover={{ textDecoration: 'none', boxShadow: 'outline' }}
             >
               <Box
-                bg={item.color || 'transparent'}
+                bg={link.color || 'transparent'}
                 width="5px"
                 borderTopLeftRadius="md"
                 borderBottomLeftRadius="md"
               />
               <Stack p={3} spacing={1}>
                 <HStack>
-                  {item.category && <ReferenceIcon category={item.category} />}
+                  {link.category && <ReferenceIcon category={link.category} />}
                   <Heading as="h2" fontFamily="body" size="sm">
-                    {item.title}
+                    {link.title}
                   </Heading>
                 </HStack>
                 <Text fontSize="sm">
-                  {item.source && <Text as="span">{item.source}</Text>}
-                  {item.author && <Text as="span"> · {item.author}</Text>}
+                  {link.source && <Text as="span">{link.source}</Text>}
+                  {link.author && <Text as="span"> · {link.author}</Text>}
                 </Text>
-                {item.url && (
+                {link.url && (
                   <Text color="gray.500" fontSize="xs" overflowWrap="anywhere">
-                    {item.url}
+                    {link.url}
                   </Text>
                 )}
               </Stack>

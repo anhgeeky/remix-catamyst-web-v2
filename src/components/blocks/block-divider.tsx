@@ -1,5 +1,5 @@
 import { Stack, Divider } from '@chakra-ui/react'
-import theme from '@theme/theme.json'
+import dataTheme from '@theme/theme.json'
 
 export default function BlockDivider() {
   return (

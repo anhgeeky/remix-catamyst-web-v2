@@ -1,7 +1,5 @@
-const Textarea = {
+export const Textarea = {
   defaultProps: {
     focusBorderColor: 'brand.secondary',
   },
 }
-
-export default Textarea

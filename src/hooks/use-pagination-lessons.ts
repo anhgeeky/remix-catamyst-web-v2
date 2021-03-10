@@ -12,11 +12,11 @@ export default function usePaginationLessons({
   const track = dataTracks.find((track) => trackSlug === track.slug)
   const topic = dataTopics.find((topic) => {
     if (topic.slug) return topicSlug === topic.slug
-    else return topicSlug === slugify(topic.title, { lower: true })
+    else return topicSlug === slugify(topic.title || '', { lower: true })
   })
   const lesson = dataLessons.find((lesson) => {
     if (lesson.slug) return lessonSlug === lesson.slug
-    else return lessonSlug === slugify(lesson.title, { lower: true })
+    else return lessonSlug === slugify(lesson.title || '', { lower: true })
   })
 
   /**

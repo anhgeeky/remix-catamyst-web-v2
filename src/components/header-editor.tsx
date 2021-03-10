@@ -15,11 +15,12 @@ import {
  */
 
 export default function HeaderEditor({
-  name,
+  name = 'Unknown',
   item,
-  handleSave,
-  handleViewResult,
-  handleViewJSON,
+  handleReset = () => {},
+  handleSave = () => {},
+  handleViewResult = () => {},
+  handleViewJSON = () => {},
 }) {
   const router = useRouter()
 
@@ -29,6 +30,9 @@ export default function HeaderEditor({
         <ButtonGroup as={HStack} spacing={2}>
           <Button leftIcon={<BackIcon />} onClick={() => router.back()}>
             Back
+          </Button>
+          <Button leftIcon={<SaveIcon />} onClick={() => handleReset()}>
+            Reset
           </Button>
           <Button
             leftIcon={<SaveIcon />}
@@ -41,11 +45,15 @@ export default function HeaderEditor({
         <ButtonGroup
           as={HStack}
           spacing={2}
+          size="sm"
+          variant="outline"
           display={{ base: 'none', md: 'flex' }}
         >
-          <Text>
-            Editing {name} #{item.id}
-          </Text>
+          {item.id && (
+            <Text>
+              Editing {name} #{item.id}
+            </Text>
+          )}
           <Button leftIcon={<ResultIcon />} onClick={() => handleViewResult()}>
             View Result
           </Button>
