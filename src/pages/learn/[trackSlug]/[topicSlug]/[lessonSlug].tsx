@@ -32,6 +32,9 @@ export default function LessonBySlug() {
     lessonSlug,
   })
 
+  /**
+   * Also handle when there is no `blocks`
+   */
   return (
     <Layout title={`Loading lesson... · Catamyst`}>
       {track && topic && lesson.title && (
@@ -53,11 +56,11 @@ export default function LessonBySlug() {
                   <Heading as="h1" size="xl" textAlign="center">
                     {lesson.title}
                   </Heading>
-                  <HStack>
+                  {(lesson.category || lesson.level) && (
                     <Badge color="teal.300">
                       {lesson.category} {lesson.level} Lesson
                     </Badge>
-                  </HStack>
+                  )}
                 </VStack>
               </PaginationLessons>
             </Box>
@@ -72,9 +75,10 @@ export default function LessonBySlug() {
           >
             <Stack align="center" spacing={10}>
               <Stack id="lesson-blocks" align="center" spacing={5}>
-                {(lesson?.blocks as any[]).map((block, index) => {
-                  return <Block key={index} block={block} />
-                })}
+                {lesson?.blocks &&
+                  (lesson.blocks as any[]).map((block, index) => {
+                    return <Block key={index} block={block} />
+                  })}
               </Stack>
               <PaginationLessons
                 mode="full"

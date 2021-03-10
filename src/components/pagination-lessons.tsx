@@ -73,13 +73,13 @@ function PaginationLessonsMinimal({ track, topic, prev, next, children }) {
     >
       {prev?.slug ? (
         <PaginationLinkMinimal
-          label="Previous"
+          label="Previous Lesson"
           href={`/learn/${track.slug}/${topic.slug}/${prev.slug}`}
           icon={<PreviousIcon />}
         />
       ) : (
         <PaginationLinkMinimal
-          label="Up"
+          label="Up to Topic"
           href={`/learn/${track.slug}/${topic.slug}`}
           icon={<UpIcon />}
         />
@@ -89,13 +89,13 @@ function PaginationLessonsMinimal({ track, topic, prev, next, children }) {
 
       {next?.slug ? (
         <PaginationLinkMinimal
-          label="Next"
+          label="Next Lesson"
           href={`/learn/${track.slug}/${topic.slug}/${next.slug}`}
           icon={<NextIcon />}
         />
       ) : (
         <PaginationLinkMinimal
-          label="Up"
+          label="Up to Topic"
           href={`/learn/${track.slug}/${topic.slug}`}
           icon={<UpIcon />}
         />
@@ -135,7 +135,7 @@ function PaginationLessonsFull({ track, topic, prev, next }) {
     >
       {prev?.slug ? (
         <PaginationLinkFull
-          label="Previous"
+          label="Previous Lesson"
           textAlign="left"
           href={`/learn/${track.slug}/${topic.slug}/${prev.slug}`}
         >
@@ -143,17 +143,17 @@ function PaginationLessonsFull({ track, topic, prev, next }) {
         </PaginationLinkFull>
       ) : (
         <PaginationLinkFull
-          label="Up"
+          label="Up to Topic"
           textAlign="left"
           href={`/learn/${track.slug}/${topic.slug}`}
         >
-          <UpIcon /> {topic.title}
+          <UpIcon /> {topic.iconEmoji} {topic.title}
         </PaginationLinkFull>
       )}
 
       {next?.slug ? (
         <PaginationLinkFull
-          label="Next"
+          label="Next Lesson"
           textAlign="right"
           href={`/learn/${track.slug}/${topic.slug}/${next.slug}`}
         >
@@ -161,11 +161,11 @@ function PaginationLessonsFull({ track, topic, prev, next }) {
         </PaginationLinkFull>
       ) : (
         <PaginationLinkFull
-          label="Up"
+          label="Up to Topic"
           textAlign="right"
           href={`/learn/${track.slug}/${topic.slug}`}
         >
-          {topic.title} <UpIcon />
+          {topic.iconEmoji} {topic.title} <UpIcon />
         </PaginationLinkFull>
       )}
     </SimpleGrid>

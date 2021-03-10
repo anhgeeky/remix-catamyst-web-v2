@@ -23,7 +23,7 @@ export default function CMSTracks() {
         <Heading as="h1" size="xl">
           Tracks CMS
         </Heading>
-        <Text>All tracks.</Text>
+        <Text>All {dataTracks.length} tracks.</Text>
       </CMSHero>
 
       <Content>
@@ -70,13 +70,13 @@ export default function CMSTracks() {
                     <Text flex={6}>{track.title}</Text>
                     <Text flex={2}>{track.slug}</Text>
                     <Text flex={1} textAlign="right">
-                      {track.totalTopics}
+                      {track.totalTopics || '-'}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {track.totalLessons}
+                      {track.totalLessons || '-'}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {track.totalHours}
+                      {track.totalHours || '-'}
                     </Text>
                   </HStack>
                 </a>

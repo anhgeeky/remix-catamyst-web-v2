@@ -597,5 +597,47 @@
         ]
       }
     ]
+  },
+  {
+    "id": 10,
+    "slug": "learning-ways-and-mediums",
+    "title": "Learning ways and mediums",
+    "category": "fundamental",
+    "level": "newbie"
+  },
+  {
+    "id": 11,
+    "slug": "fixed-vs-growth-mindset",
+    "title": "Fixed vs growth mindset",
+    "category": "fundamental",
+    "level": "newbie"
+  },
+  {
+    "id": 12,
+    "slug": "good-communication-skills",
+    "title": "Good communication skills",
+    "category": "fundamental",
+    "level": "newbie"
+  },
+  {
+    "id": 13,
+    "slug": "technical-writing-skills",
+    "title": "Technical writing skills",
+    "category": "fundamental",
+    "level": "newbie"
+  },
+  {
+    "id": 14,
+    "slug": "website-vs-web-application",
+    "title": "Website vs web application",
+    "category": "fundamental",
+    "level": "newbie"
+  },
+  {
+    "id": 15,
+    "slug": "personal-websites",
+    "title": "Personal websites",
+    "category": "fundamental",
+    "level": "newbie"
   }
 ]

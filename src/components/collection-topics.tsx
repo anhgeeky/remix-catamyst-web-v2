@@ -41,7 +41,7 @@ export default function CollectionTopics({ trackSlug, topics }) {
                 }}
               >
                 <Heading as="h3" size="md">
-                  {topic.iconEmoji} {topic.title}
+                  {topic.iconEmoji || '🐈'} {topic.title}
                 </Heading>
                 <Box>
                   <CategoryBadge category={topic.category} />

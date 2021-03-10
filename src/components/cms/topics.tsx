@@ -20,7 +20,7 @@ import { CMSHero } from '@components/cms'
 
 import dataTopics from '@data/topics.json'
 
-export default function CMSTracks() {
+export default function CMSTopics() {
   return (
     <>
       <NextHead>
@@ -31,15 +31,21 @@ export default function CMSTracks() {
         <Heading as="h1" size="xl">
           Topics CMS
         </Heading>
-        <Text>All topics.</Text>
+        <Text>All {dataTopics.length} topics.</Text>
       </CMSHero>
 
       <Content>
-        <FormControl id="email" mb={5}>
+        <FormControl id="search-track" mb={5}>
           <FormLabel>Search track by name</FormLabel>
           <Input type="text" placeholder="Search for tracks..." />
         </FormControl>
-        <Stack divider={<StackDivider borderColor="gray.200" />}>
+        <Stack
+          divider={
+            <StackDivider
+              borderColor={useColorModeValue('gray.200', 'gray.700')}
+            />
+          }
+        >
           <HStack p={3} fontWeight="700">
             <Text flex={1}>ID</Text>
             <Text flex={1}>Emoji</Text>
@@ -71,7 +77,7 @@ export default function CMSTracks() {
                     _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
                   >
                     <Text flex={1}>{topic.id}</Text>
-                    <Text flex={1}>{topic.iconEmoji}</Text>
+                    <Text flex={1}>{topic.iconEmoji || '🐈'}</Text>
                     <Box flex={1}>
                       <Image
                         src="/assets/logos/catamyst-avatar.svg"
@@ -90,13 +96,13 @@ export default function CMSTracks() {
                       <CategoryBadge category={topic.category} />
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {topic.sections?.length}
+                      {topic.sections?.length || '-'}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {topic.totalLessons}
+                      {topic.totalLessons || '-'}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {topic.totalHours}
+                      {topic.totalHours || '-'}
                     </Text>
                   </HStack>
                 </a>

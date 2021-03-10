@@ -13,6 +13,12 @@ export default function CategoryBadge({ category }) {
           ? 'yellow'
           : category === 'backend'
           ? 'green'
+          : category === 'fundamental'
+          ? 'purple'
+          : category === 'specific'
+          ? 'pink'
+          : category === 'project'
+          ? 'cyan'
           : 'gray'
       }
     >
