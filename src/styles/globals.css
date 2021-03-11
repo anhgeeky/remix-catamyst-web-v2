@@ -20,6 +20,12 @@ a {
   outline-color: var(--color-secondary);
 }
 
+p code {
+  font-size: 0.8em;
+}
+
+/* Style overrides */
+
 .nav-link {
   padding: 6px;
   opacity: 0.5;

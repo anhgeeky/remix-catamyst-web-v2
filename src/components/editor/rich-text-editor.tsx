@@ -2,7 +2,7 @@ import { Box, ButtonGroup, Button } from '@chakra-ui/react'
 import { ColorModeToggle, EditorSlate } from '@components'
 
 export function RichTextEditor({ htmlString }) {
-  const handleSerialize = () => {
+  const handleSerialize = (value) => {
     console.log('Serialize')
   }
 
@@ -19,7 +19,7 @@ export function RichTextEditor({ htmlString }) {
       </ButtonGroup>
 
       <Box>
-        <EditorSlate />
+        <EditorSlate handleSerialize={handleSerialize} />
       </Box>
     </Box>
   )
