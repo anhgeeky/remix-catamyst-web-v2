@@ -6,10 +6,10 @@ const dataBlockquote = {
   html: 'The best way to learn is to <i>teach</i>.',
 }
 
-export default function Blockquote() {
+export function BlockQuote() {
   return (
     <div>
-      <p>Blockquote</p>
+      <p>Block Quote</p>
     </div>
   )
 }

@@ -10,10 +10,25 @@ import {
 } from '@chakra-ui/react'
 import { FaAngleRight } from 'react-icons/fa'
 
-export default function BlockTexts({ block }) {
+/**
+ * The actual block is very simple
+ */
+export function BlockTexts({ block }) {
   return ReactHtmlParser(block.html, options)
 }
 
+/**
+ * The options are the complex part
+ *
+ * Because it needs to transform:
+ * h1, h2, h3, p, a, ul, ol, li
+ *
+ * It might transform:
+ * kbd, code
+ *
+ * It won't transform:
+ * h4, h5, h6, quote
+ */
 const options = {
   decodeEntities: true,
   transform: function transform(node, index) {

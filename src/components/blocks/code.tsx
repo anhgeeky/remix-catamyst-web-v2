@@ -7,7 +7,7 @@ const dataCode = {
   highlight: [0, 2],
 }
 
-export default function Code() {
+export function BlockCode() {
   return (
     <div>
       <pre></pre>Code
