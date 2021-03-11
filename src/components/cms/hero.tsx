@@ -1,6 +1,6 @@
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 
-export default function CMSHero({ children }) {
+export function CMSHero({ children }) {
   return (
     <Flex
       pb={5}

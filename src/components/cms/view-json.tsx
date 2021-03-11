@@ -7,7 +7,7 @@ import {
 
 import { Content, HeadingStack } from '@components'
 
-export default function CMSViewJSON({ name, codeString }) {
+export function CMSViewJSON({ name, codeString }) {
   const { colorMode } = useColorMode()
 
   return (

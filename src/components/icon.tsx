@@ -1,12 +1,11 @@
 import {
   AddIcon,
+  ArrowBackIcon as BackIcon,
   ChevronDownIcon as DownIcon,
   ChevronUpIcon as UpIcon,
-  PhoneIcon,
   DeleteIcon,
+  PhoneIcon,
   RepeatIcon as GenerateIcon,
-  ArrowBackIcon as BackIcon,
-  EditIcon as SaveIcon,
 } from '@chakra-ui/icons'
 import {
   FaCircle as CircleIcon,
@@ -26,6 +25,7 @@ import {
   FaPalette as ColorIcon,
   FaQuestionCircle as AltIcon,
   FaQuoteRight as QuoteIcon,
+  FaSave as SaveIcon,
   FaUserAlt as AuthorIcon,
 } from 'react-icons/fa'
 import { RiRefreshLine as ResetIcon } from 'react-icons/ri'

@@ -20,7 +20,7 @@ import { CMSHero } from '@components/cms'
 
 import dataTopics from '@data/topics.json'
 
-export default function CMSTopics() {
+export function CMSTopics() {
   return (
     <>
       <NextHead>

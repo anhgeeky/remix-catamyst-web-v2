@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import dataTracks from '@data/tracks.json'
 
-export default function CMSTracks() {
+export function CMSTracks() {
   return (
     <>
       <NextHead>

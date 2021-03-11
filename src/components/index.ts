@@ -30,9 +30,10 @@ import PreviewDashboard from '@components/preview-dashboard'
 import QuickSignUpForm from '@components/quick-signup-form'
 import ReferenceIcon from '@components/reference-icon'
 
+export { CardArea } from '@components/card-area'
 export { CodeHighlight } from '@components/code-highlight'
 export { Icon } from '@components/icon'
-export { CardArea } from '@components/card-area'
+export { RichTextEditor } from '@components/rich-text-editor'
 
 export {
   AlertSoon,

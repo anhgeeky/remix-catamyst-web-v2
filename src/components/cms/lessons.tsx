@@ -21,7 +21,7 @@ import { CMSHero } from '@components/cms'
 
 import dataLessons from '@data/lessons.json'
 
-export default function CMSLessons() {
+export function CMSLessons() {
   return (
     <>
       <NextHead>

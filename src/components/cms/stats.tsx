@@ -22,7 +22,7 @@ import dataTopics from '@data/topics.json'
 import dataLessons from '@data/lessons.json'
 import { FaVrCardboard } from 'react-icons/fa'
 
-export default function CMSStats() {
+export function CMSStats() {
   const dataStats = [
     { label: 'Users', total: dataUsers.length, href: '/cms' },
     { label: 'Tracks', total: dataTracks.length, href: '/cms/tracks' },
