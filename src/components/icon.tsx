@@ -7,6 +7,7 @@ import {
   PhoneIcon,
   RepeatIcon as GenerateIcon,
 } from '@chakra-ui/icons'
+import React from 'react'
 import {
   FaCircle as CircleIcon,
   FaCode as CodeIcon,
@@ -27,6 +28,12 @@ import {
   FaQuoteRight as QuoteIcon,
   FaSave as SaveIcon,
   FaUserAlt as AuthorIcon,
+  FaBold as BoldIcon,
+  FaItalic as ItalicIcon,
+  FaUnderline as UnderlineIcon,
+  FaListOl as ListOrderedIcon,
+  FaListUl as ListUnorderedIcon,
+  FaAngleRight as BulletIcon,
 } from 'react-icons/fa'
 import { RiRefreshLine as ResetIcon } from 'react-icons/ri'
 
@@ -84,6 +91,32 @@ export function Icon({ name }) {
       return <UpIcon />
     case 'url':
       return <UrlIcon />
+    /**
+     * Editor button icons
+     */
+    case 'bold':
+      return <BoldIcon />
+    case 'italic':
+      return <ItalicIcon />
+    case 'underlined':
+      return <UnderlineIcon />
+    case 'heading-one':
+      return <span>1</span>
+    case 'heading-two':
+      return <span>2</span>
+    case 'heading-three':
+      return <span>3</span>
+    case 'block-quote':
+      return <QuoteIcon />
+    case 'list-ordered':
+      return <ListOrderedIcon />
+    case 'list-unordered':
+      return <ListUnorderedIcon />
+    case 'bullet':
+      return <BulletIcon />
+    /**
+     * When nothing found
+     */
     default:
       return <CircleIcon />
   }
