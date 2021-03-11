@@ -107,8 +107,11 @@ export default function CMSLessonId() {
       {isAuthorized && formLesson && (
         <>
           <NextHead>
-            <title>Editing lesson #{formLesson.id} · Catamyst</title>
+            <title>
+              #{formLesson.id} {formLesson.title} · Catamyst
+            </title>
           </NextHead>
+
           <HeaderEditor
             name="lesson"
             item={formLesson}
@@ -117,9 +120,11 @@ export default function CMSLessonId() {
             handleViewResult={() => setViewMode('result')}
             handleViewJSON={() => setViewMode('json')}
           />
+
           {viewMode === 'json' && (
-            <CMSViewJSON name="Lesson" codeString={{ lesson: formLesson }} />
+            <CMSViewJSON name="Lesson" codeString={formLesson} />
           )}
+
           {viewMode === 'result' && (
             <CMSViewResultLesson
               formLesson={formLesson}
@@ -151,15 +156,14 @@ function CMSViewResultLesson({
       <Hero>
         <Box id="lesson-hero" align="center" pb={5}>
           <Stack maxW={dataTheme.maxContentWidth}>
-            <InputGroup size="sm">
+            <InputGroup size="sm" variant="unstyled">
               <InputLeftAddon
-                rounded="md"
+                opacity={0.5}
                 children={`catamyst.com/learn/track/topic/`}
               />
               <Input
                 isRequired
                 name="slug"
-                rounded="md"
                 placeholder="lesson-slug"
                 value={slugify(formLesson.slug) || slugify(formLesson.title)}
                 onChange={handleChange}
@@ -183,6 +187,8 @@ function CMSViewResultLesson({
               fontWeight="bold"
               fontSize="3xl"
               textAlign="center"
+              p={3}
+              variant="unstyled"
               placeholder="Lesson Title"
               value={formLesson.title || ''}
               onChange={handleChange}
@@ -225,20 +231,17 @@ function CMSViewResultLesson({
       </Hero>
 
       <Container width="100%" maxW="1500px" pt={5} px={0}>
-        <Stack align="center">
-          <HeadingStack>Content Blocks</HeadingStack>
-          <Stack id="form-lesson-blocks" align="center" spacing={5}>
-            {!formLesson?.blocks && <CMSBlockAdderButtons />}
-            {formLesson?.blocks &&
-              (formLesson.blocks as any[]).map((block, index) => {
-                return (
-                  <Fragment key={index}>
-                    <CMSBlock block={block} />
-                    <CMSBlockAdderButtons />
-                  </Fragment>
-                )
-              })}
-          </Stack>
+        <Stack id="form-lesson-blocks" align="center" spacing={5}>
+          {!formLesson?.blocks && <CMSBlockAdderButtons />}
+          {formLesson?.blocks &&
+            (formLesson.blocks as any[]).map((block, index) => {
+              return (
+                <Fragment key={index}>
+                  <CMSBlock block={block} />
+                  <CMSBlockAdderButtons />
+                </Fragment>
+              )
+            })}
         </Stack>
       </Container>
     </>

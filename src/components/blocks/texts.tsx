@@ -1,5 +1,5 @@
-import ReactHtmlParser from 'react-html-parser'
 import {
+  Box,
   Heading,
   Text,
   List,
@@ -9,12 +9,19 @@ import {
   Link,
 } from '@chakra-ui/react'
 import { FaAngleRight } from 'react-icons/fa'
+import ReactHtmlParser from 'react-html-parser'
+
+import dataTheme from '@theme/theme.json'
 
 /**
  * The actual block is very simple
  */
 export function BlockTexts({ block }) {
-  return ReactHtmlParser(block.html, options)
+  return (
+    <Box maxW={dataTheme.maxContentWidth} width="100%" px={5}>
+      {ReactHtmlParser(block.html, options)}
+    </Box>
+  )
 }
 
 /**
@@ -36,7 +43,7 @@ const options = {
 
     if (node.type === 'tag' && node.name === 'h1') {
       return (
-        <Heading key={index} as="h1" fontFamily="body" size="xl" pt={10}>
+        <Heading key={index} as="h1" fontFamily="body" size="xl" pt={5}>
           {node.children[0].data}
         </Heading>
       )

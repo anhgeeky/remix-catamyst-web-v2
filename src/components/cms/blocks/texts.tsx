@@ -1,13 +1,19 @@
-import prettyjson from 'prettyjson'
-import { Text } from '@chakra-ui/react'
-import { Card } from '@components'
+import { Switch, Box, Button } from '@chakra-ui/react'
+
+import { CardArea, Icon } from '@components'
+import { BlockTexts } from '@components/blocks'
+import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
 export function CMSBlockTexts({ block }) {
   return (
-    <Card>
-      <Text as="pre" fontSize="xs" width="760px" overflow="scroll">
-        {prettyjson.render(block)}
-      </Text>
-    </Card>
+    <CardArea>
+      <CMSBlockModifierButtons name="Texts">
+        <Switch size="sm" name="isPublished" value={block.isPublished} />
+        <Button size="xs" leftIcon={<Icon name="edit" />}>
+          Edit Texts
+        </Button>
+      </CMSBlockModifierButtons>
+      <BlockTexts block={block} />
+    </CardArea>
   )
 }

@@ -23,7 +23,6 @@ import {
   WrapItem,
 } from '@chakra-ui/react'
 import {
-  AddIcon,
   ChevronDownIcon as DownIcon,
   ChevronUpIcon as UpIcon,
   DeleteIcon,
@@ -37,6 +36,7 @@ import {
   ContentWithSidebar,
   HeaderEditor,
   Hero,
+  Icon,
 } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { useRedirectSignIn } from '@hooks'
@@ -101,7 +101,9 @@ export default function CMSTrackId() {
       {isAuthorized && formTrack && formTopics && (
         <>
           <NextHead>
-            <title>Editing track #{formTrack.id} · Catamyst</title>
+            <title>
+              #{formTrack.id} {formTrack.title} · Catamyst
+            </title>
           </NextHead>
           <HeaderEditor
             name="track"
@@ -239,7 +241,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
         <Stack width="100%">
           <HStack>
             <Button
-              leftIcon={<AddIcon />}
+              leftIcon={<Icon name="add" />}
               colorScheme="teal"
               onClick={() =>
                 toast({ title: 'Added a topic', status: 'success' })

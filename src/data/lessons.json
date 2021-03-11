@@ -38,7 +38,7 @@
       },
       {
         "component": "links",
-        "category": "References",
+        "isReferences": true,
         "links": [
           {
             "title": "Web development",
@@ -60,9 +60,9 @@
     "blocks": [
       {
         "component": "image",
-        "title": "Cat reading a book",
-        "size": "Small",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
+        "size": "Small",
+        "title": "Cat reading a book",
         "source": "https://catamyst.com",
         "showMeta": false
       },
@@ -94,7 +94,7 @@
       },
       {
         "component": "links",
-        "category": "References",
+        "isReferences": true,
         "links": [
           {
             "category": "Video",
@@ -146,7 +146,7 @@
       },
       {
         "component": "links",
-        "category": "References",
+        "isReferences": true,
         "links": [
           {
             "category": "Article",
@@ -455,6 +455,7 @@
     "slug": "managing-your-tasks",
     "category": "Project",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -468,10 +469,12 @@
     "title": "Learning process",
     "category": "Fundamental",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
-        "html": "Learning things like technology, design, web development, and software engineering are rarely a linear process. There is actually no 1-2-3 order like a formal educational stage such as elementary school, middle school, high school, then university."
+        "isPublished": true,
+        "html": "<p>Learning things like technology, design, web development, and software engineering are rarely a linear process. There is actually no 1-2-3 order like a formal educational stage such as elementary school, middle school, high school, then university.</p><p>In real life, the actual learning itself has no beginning, a middle, and an end. Sometimes you have to go back and forth from concept to concept to understand something. It&#39;s obviously impossible to know everything perfectly, but you should embrace that imperfection.</p><p>There is no need to memorize everything too, as you can look up the information you need again and again whenever you need them. Even if you already learned about something some time ago, you can still re-learn it today.</p>"
       },
       {
         "component": "image",
@@ -504,6 +507,7 @@
     "title": "Learning with first principles thinking",
     "category": "Fundamental",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "image",
@@ -565,7 +569,7 @@
       },
       {
         "component": "links",
-        "category": "References",
+        "isReferences": true,
         "links": [
           {
             "url": "https://youtube.com/watch?v=ZqhN2YWTw0M",
@@ -584,6 +588,7 @@
     "title": "Learning ways and mediums",
     "category": "Fundamental",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -597,6 +602,7 @@
     "title": "Fixed vs growth mindset",
     "category": "Fundamental",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -617,6 +623,7 @@
     "title": "Technical writing skills",
     "category": "Fundamental",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -630,6 +637,7 @@
     "title": "Website vs web application",
     "category": "Fundamental",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",
@@ -643,6 +651,7 @@
     "title": "Personal websites",
     "category": "Fundamental",
     "level": "Newbie",
+    "isPublished": true,
     "blocks": [
       {
         "component": "texts",

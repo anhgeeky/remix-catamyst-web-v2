@@ -1,22 +1,18 @@
 import { useState } from 'react'
 import {
-  Badge,
-  ButtonGroup,
   Flex,
   FormControl,
   FormLabel,
   HStack,
-  IconButton,
   Input,
   Select,
   Stack,
   Switch,
-  Textarea,
   VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon } from '@components'
+import { Icon, CardArea } from '@components'
 import { BlockImage } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
@@ -39,7 +35,9 @@ export function CMSBlockImage({ block }) {
   }
   if (formBlock) {
     return (
-      <>
+      <CardArea>
+        <CMSBlockModifierButtons name="Image" />
+
         <BlockImage block={formBlock} />
 
         <Flex
@@ -52,24 +50,24 @@ export function CMSBlockImage({ block }) {
           width="100%"
         >
           <Stack spacing={1} p={2} width="100%">
-            <CMSBlockModifierButtons name="Image" />
-
-            <FormControl as={HStack}>
-              <VisuallyHidden>
-                <FormLabel>URL:</FormLabel>
-              </VisuallyHidden>
-              <Icon name="link" />
-              <Textarea
-                name="url"
-                size="sm"
-                type="text"
-                variant="unstyled"
-                resize="none"
-                placeholder="https://example.com"
-                onChange={handleChange}
-                value={formBlock.url}
-              />
-            </FormControl>
+            <HStack>
+              <FormControl as={HStack}>
+                <VisuallyHidden>
+                  <FormLabel>URL:</FormLabel>
+                </VisuallyHidden>
+                <Icon name="link" />
+                <Input
+                  name="url"
+                  size="sm"
+                  type="text"
+                  variant="flushed"
+                  resize="none"
+                  placeholder="https://example.com"
+                  onChange={handleChange}
+                  value={formBlock.url}
+                />
+              </FormControl>
+            </HStack>
 
             <HStack spacing={3}>
               <FormControl as={HStack}>
@@ -81,7 +79,7 @@ export function CMSBlockImage({ block }) {
                   name="title"
                   size="sm"
                   type="text"
-                  variant="unstyled"
+                  variant="flushed"
                   fontWeight="700"
                   defaultValue={formBlock.title}
                   placeholder="Image Title"
@@ -97,7 +95,7 @@ export function CMSBlockImage({ block }) {
                   name="alt"
                   size="sm"
                   type="text"
-                  variant="unstyled"
+                  variant="flushed"
                   defaultValue={formBlock.alt}
                   placeholder="Alt Text"
                 />
@@ -114,7 +112,7 @@ export function CMSBlockImage({ block }) {
                   name="author"
                   size="sm"
                   type="text"
-                  variant="unstyled"
+                  variant="flushed"
                   defaultValue={formBlock.author}
                   placeholder="Author Name"
                 />
@@ -129,7 +127,7 @@ export function CMSBlockImage({ block }) {
                   name="copyright"
                   size="sm"
                   type="text"
-                  variant="unstyled"
+                  variant="flushed"
                   defaultValue={formBlock.copyright}
                   placeholder="Copyright"
                 />
@@ -143,7 +141,7 @@ export function CMSBlockImage({ block }) {
                 <Select
                   name="size"
                   size="sm"
-                  variant="unstyled"
+                  variant="flushed"
                   defaultValue={formBlock.size || 'Small'}
                   placeholder="Select size"
                 >
@@ -173,14 +171,14 @@ export function CMSBlockImage({ block }) {
                 name="source"
                 size="sm"
                 type="text"
-                variant="unstyled"
+                variant="flushed"
                 defaultValue={formBlock.source}
                 placeholder="Source name or URL"
               />
             </FormControl>
           </Stack>
         </Flex>
-      </>
+      </CardArea>
     )
   }
   return null

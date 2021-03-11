@@ -32,6 +32,7 @@ import ReferenceIcon from '@components/reference-icon'
 
 export { CodeHighlight } from '@components/code-highlight'
 export { Icon } from '@components/icon'
+export { CardArea } from '@components/card-area'
 
 export {
   AlertSoon,

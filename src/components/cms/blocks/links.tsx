@@ -2,18 +2,18 @@ import {
   Box,
   Flex,
   FormControl,
+  Switch,
   FormLabel,
   HStack,
+  Button,
   Input,
   Select,
   Stack,
-  Heading,
-  Textarea,
   VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon, ReferenceIcon } from '@components'
+import { Icon, CardArea, ReferenceIcon } from '@components'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
 /**
@@ -21,20 +21,17 @@ import { CMSBlockModifierButtons } from '@components/cms/blocks'
  */
 export function CMSBlockLinks({ block }) {
   return (
-    <Stack maxW="800px" width="100%" py={3}>
-      {block.category === 'References' && (
-        <Heading
-          as="h1"
-          color="gray.500"
-          fontFamily="body"
-          fontSize="xl"
-          textAlign="center"
-          textTransform="uppercase"
-          letterSpacing={0.5}
-        >
-          References
-        </Heading>
-      )}
+    <CardArea>
+      {block.isReferences && 'hello'}
+      <CMSBlockModifierButtons
+        name={block.isReferences ? 'References' : 'Links'}
+      >
+        <Switch size="sm" name="isReferences" value={block.isReferences} />
+        <Button size="xs" leftIcon={<Icon name="add" />}>
+          Add new link
+        </Button>
+      </CMSBlockModifierButtons>
+
       {block.links.map((link, index) => {
         return (
           <Flex
@@ -61,11 +58,11 @@ export function CMSBlockLinks({ block }) {
                   <FormLabel>URL:</FormLabel>
                 </VisuallyHidden>
                 <Icon name="link" />
-                <Textarea
+                <Input
                   name="url"
                   size="sm"
                   type="text"
-                  variant="unstyled"
+                  variant="flushed"
                   resize="none"
                   defaultValue={link.url}
                   placeholder="https://example.com"
@@ -81,7 +78,7 @@ export function CMSBlockLinks({ block }) {
                   name="title"
                   size="sm"
                   type="text"
-                  variant="unstyled"
+                  variant="flushed"
                   fontWeight="700"
                   defaultValue={link.title}
                   placeholder="Link Title"
@@ -97,7 +94,7 @@ export function CMSBlockLinks({ block }) {
                   <Select
                     name="category"
                     size="sm"
-                    variant="unstyled"
+                    variant="flushed"
                     placeholder="Select category"
                     defaultValue={link.category}
                   >
@@ -120,7 +117,7 @@ export function CMSBlockLinks({ block }) {
                     name="source"
                     size="sm"
                     type="text"
-                    variant="unstyled"
+                    variant="flushed"
                     defaultValue={link.source}
                     placeholder="Source Name"
                   />
@@ -135,7 +132,7 @@ export function CMSBlockLinks({ block }) {
                     name="author"
                     size="sm"
                     type="text"
-                    variant="unstyled"
+                    variant="flushed"
                     defaultValue={link.author}
                     placeholder="Author Name"
                   />
@@ -150,7 +147,7 @@ export function CMSBlockLinks({ block }) {
                     name="title"
                     size="sm"
                     type="text"
-                    variant="unstyled"
+                    variant="flushed"
                     defaultValue={link.color}
                     placeholder="color.500"
                   />
@@ -160,6 +157,6 @@ export function CMSBlockLinks({ block }) {
           </Flex>
         )
       })}
-    </Stack>
+    </CardArea>
   )
 }

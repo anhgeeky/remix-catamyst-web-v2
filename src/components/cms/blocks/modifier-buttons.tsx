@@ -1,24 +1,17 @@
-import {
-  Flex,
-  Tooltip,
-  ButtonGroup,
-  IconButton,
-  useToast,
-  HStack,
-  Badge,
-} from '@chakra-ui/react'
+import { ButtonGroup, IconButton, HStack, Badge } from '@chakra-ui/react'
 import { Card, Icon } from '@components'
 
 /**
  * CMS Adder Buttons to add more block into CMS lesson editor
  * CMS Modifier Buttons for naming, moving, and deleting block
  */
-export function CMSBlockModifierButtons({ name }) {
-  const toast = useToast({ duration: 1000, position: 'bottom' })
-
+export function CMSBlockModifierButtons({ name, children = null }) {
   return (
     <HStack justify="space-between">
-      <Badge colorScheme="teal">{name}</Badge>
+      <HStack>
+        <Badge colorScheme="teal">{name}</Badge>
+        {children}
+      </HStack>
       <ButtonGroup size="xs">
         <IconButton aria-label="Move up" icon={<Icon name="up" />} />
         <IconButton aria-label="Move down" icon={<Icon name="down" />} />
