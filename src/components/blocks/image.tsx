@@ -31,6 +31,7 @@ export function BlockImage({ block }) {
     <Box>
       <Box
         className="next-image-container"
+        rounded="md"
         bg={block.size === 'Huge' && useColorModeValue('gray.100', 'gray.500')}
       >
         <NextImage

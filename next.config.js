@@ -10,6 +10,7 @@ module.exports = {
       'datocms-assets.com',
       'example.com',
       'google.com',
+      'google.com',
       'placekitten.com',
       'res.cloudinary.com',
     ],
