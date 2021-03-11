@@ -12,6 +12,7 @@ import {
   ModalOverlay,
   Switch,
   Text,
+  useColorModeValue,
   useDisclosure,
   useToast,
 } from '@chakra-ui/react'
@@ -41,12 +42,11 @@ export function CMSBlockTexts({ block }) {
 }
 
 function CMSBlockModal({ block, isOpen, onClose }) {
-  const toast = useToast()
+  const toast = useToast({ position: 'top', duration: 300 })
   const handleSave = () => {
     toast({
       title: 'Texts are saved!',
       status: 'success',
-      position: 'top',
     })
   }
 
@@ -54,18 +54,22 @@ function CMSBlockModal({ block, isOpen, onClose }) {
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      motionPreset="slideInBottom"
-      scrollBehavior="inside"
       size="full"
+      scrollBehavior="inside"
+      motionPreset="slideInBottom"
     >
       <ModalOverlay />
 
-      <ModalContent maxH="100%" margin={0}>
-        <ModalHeader>
+      <ModalContent
+        margin={0}
+        maxH="100%"
+        bg={useColorModeValue('white', 'gray.900')}
+      >
+        <ModalHeader pt={1} px={2} pb={2}>
           <HStack>
             <Badge colorScheme="teal">Texts Editor</Badge>
             <Button
-              size="sm"
+              size="xs"
               colorScheme="teal"
               leftIcon={<Icon name="save" />}
               onClick={handleSave}
@@ -73,12 +77,11 @@ function CMSBlockModal({ block, isOpen, onClose }) {
               Save
             </Button>
           </HStack>
+          <ModalCloseButton />
         </ModalHeader>
 
-        <ModalCloseButton />
-
-        <ModalBody align="center">
-          <Box maxW="760px" width="100%" px={5}>
+        <ModalBody align="center" p={0}>
+          <Box maxW="760px" width="100%">
             <RichTextEditor htmlString={block.html} />
           </Box>
         </ModalBody>

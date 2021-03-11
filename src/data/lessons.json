@@ -517,55 +517,7 @@
         "size": "Small"
       },
       {
-        "html": "Suppose that you see a painting and then you say, \"Wow! Look at how beautiful that is! I'll never draw anything like that\"."
-      },
-      {
-        "html": "Painting itself is built out of fundamental shapes. Painters start drawing by drafting shapes and add more details to make something outstanding. Anyone can become a painter, but you need to start from the very basic principles."
-      },
-      {
-        "html": "If you memorized how to paint a natural landscape, you might only able to paint that sole painting. Since painting is made out of basic shapes, you can paint endless possibilities."
-      },
-      {
         "component": "divider"
-      },
-      {
-        "component": "heading",
-        "as": "h1",
-        "html": "Why first principles thinking"
-      },
-      {
-        "html": "First principles refer to the fundamental concepts or assumptions on which a theory, system, or method is based. Over 2000 years ago, Aristotle defined the first principle as “the first basis from which a thing is known.”"
-      },
-      {
-        "html": "You have to learn by understanding the basic principles or concepts first before going to a more advanced level. For example, you have to learn about <i>alphabets</i>, the first principles to learn before you can even read and write."
-      },
-      {
-        "html": "With \"first principles thinking\", or sometimes called \"reasoning from first principles\", you can get the most effective strategies you can employ for breaking down complicated problems and generating original solutions."
-      },
-      {
-        "html": "Simply by asking \"why\" and questioning everything, you can remove assumptions to deal with a problem in its most fundamental form. By questioning, you can get a basic assumption that cannot be deduced or break down any further."
-      },
-      {
-        "html": "First principles thinking is a fancy way of saying “think like a scientist.” True scientists don't assume anything. They start with questions like, \"Why is that happening? What has been proven?\""
-      },
-      {
-        "html": "It helps you to learn how to think for yourself, unlock your creative potential, and move from linear to non-linear results."
-      },
-      {
-        "component": "quote",
-        "html": "If I had an hour to solve a problem, I’d spend 55 minutes thinking about the problem and 5 minutes thinking about solutions.",
-        "author": "Albert Einstein"
-      },
-      {
-        "component": "divider"
-      },
-      {
-        "component": "heading",
-        "as": "h1",
-        "html": "Tips to do first principles thinking"
-      },
-      {
-        "html": "Here are the tips on how to apply first principles thinking to solve problems:"
       },
       {
         "component": "links",

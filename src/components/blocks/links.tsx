@@ -21,7 +21,7 @@ export function BlockLinks({ block }) {
 
   return (
     <Box maxW={dataTheme.maxContentWidth} width="100%" px={5}>
-      <Stack spacing={2} px={5}>
+      <Stack spacing={2}>
         {block.isReferences && (
           <Heading
             as="h1"

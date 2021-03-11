@@ -33,7 +33,8 @@ import ReferenceIcon from '@components/reference-icon'
 export { CardArea } from '@components/card-area'
 export { CodeHighlight } from '@components/code-highlight'
 export { Icon } from '@components/icon'
-export { RichTextEditor } from '@components/rich-text-editor'
+export { RichTextEditor } from '@components/editor/rich-text-editor'
+export { EditorSlate } from '@components/editor/slate'
 
 export {
   AlertSoon,

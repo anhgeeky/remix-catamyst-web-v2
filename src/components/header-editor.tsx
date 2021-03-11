@@ -24,7 +24,7 @@ export default function HeaderEditor({
   return (
     <Flex justify={{ base: 'flex-start', md: 'center' }} py={2} pt={3}>
       <Flex width="1200px" justify="space-between" px={5}>
-        <ButtonGroup as={HStack} spacing={2}>
+        <ButtonGroup as={HStack} size="sm" spacing={2}>
           <Button leftIcon={<Icon name="back" />} onClick={() => router.back()}>
             Back
           </Button>
