@@ -19,6 +19,20 @@ export default function BlockLinks({ block }) {
 
   return (
     <Stack spacing={2} px={5}>
+      {block.category === 'References' && (
+        <Heading
+          as="h1"
+          pt={10}
+          color="gray.500"
+          fontFamily="body"
+          fontSize="xl"
+          textAlign="center"
+          textTransform="uppercase"
+          letterSpacing={0.5}
+        >
+          References
+        </Heading>
+      )}
       {Array.isArray(block.links) &&
         block.links.map((link, index) => {
           return (

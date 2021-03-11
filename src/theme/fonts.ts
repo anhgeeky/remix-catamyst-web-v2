@@ -1,5 +1,5 @@
 const fonts = {
-  heading: 'Epilogue',
+  heading: 'Epilogue, sans-serif',
 }
 
 export default fonts

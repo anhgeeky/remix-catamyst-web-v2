@@ -39,13 +39,6 @@ export default function Block({ block }) {
       </Wrapper>
     )
   }
-  if (block.component === 'references' && block.links) {
-    return (
-      <Wrapper>
-        <BlockReferences block={block} />
-      </Wrapper>
-    )
-  }
   if (block.component === 'image' && block.url) {
     return <BlockImage block={block} />
   }

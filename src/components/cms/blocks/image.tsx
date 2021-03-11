@@ -83,7 +83,7 @@ export function CMSBlockImage({ block }) {
                 name="url"
                 size="md"
                 type="text"
-                variant="flushed"
+                variant="unstyled"
                 resize="none"
                 placeholder="https://website.com"
                 onChange={handleChange}
@@ -99,7 +99,7 @@ export function CMSBlockImage({ block }) {
                 <Select
                   name="size"
                   size="md"
-                  variant="flushed"
+                  variant="unstyled"
                   maxW={200}
                   defaultValue={formBlock.size || 'Small'}
                   placeholder="Select size"
@@ -120,7 +120,7 @@ export function CMSBlockImage({ block }) {
                   name="author"
                   size="md"
                   type="text"
-                  variant="flushed"
+                  variant="unstyled"
                   defaultValue={formBlock.author}
                   placeholder="Author Name"
                 />
@@ -146,7 +146,7 @@ export function CMSBlockImage({ block }) {
                   name="title"
                   size="md"
                   type="text"
-                  variant="flushed"
+                  variant="unstyled"
                   fontWeight="700"
                   defaultValue={formBlock.title}
                   placeholder="Image Title"
@@ -161,7 +161,7 @@ export function CMSBlockImage({ block }) {
                   name="alt"
                   size="md"
                   type="text"
-                  variant="flushed"
+                  variant="unstyled"
                   defaultValue={formBlock.alt}
                   placeholder="Alt Text"
                 />
@@ -176,7 +176,7 @@ export function CMSBlockImage({ block }) {
                 name="sourceUrl"
                 size="md"
                 type="text"
-                variant="flushed"
+                variant="unstyled"
                 defaultValue={formBlock.sourceUrl}
                 placeholder="Source URL"
               />

@@ -35,14 +35,18 @@
       {
         "component": "texts",
         "html": "<h1>What is web development?</h1><p>Web development is the process of building websites that run in a web browser. Web development powers popular sites like Google, Wikipedia, Twitter, YouTube, Facebook, Instagram, LinkedIn, Airbnb, and more. Even systems on software from Apple and Microsoft. And obviously, your favorite websites included!</p><p>In this learning track, you will obtain fundamental concepts and specific tools to build high-quality websites and web applications. Ultimately, you will be able to master your strengths in problem-solving and showcasing a portfolio that could leverage you to land a decent job or a freelance offer. You can even build your own tech business using the knowledge and skillset you obtain here.</p><h1>Who is a web developer?</h1><p>A web developer is the one who builds and maintains websites or web applications. They are also sometimes responsible to design how you would see and experience a website. Although, the work for the design can also be given to the dedicated web designers instead.</p><h1>Who can learn web development?</h1><p>Even though Neko is a painter, Neko can learn web development and build a website. So, no matter what your education and career background are, you can learn to build your own websites and web applications as long as you make the effort.</p>"
-      }
-    ],
-    "references": [
+      },
       {
-        "title": "Web development",
-        "source": "Wikipedia",
-        "category": "Article",
-        "url": "https://en.wikipedia.org/wiki/Web_development"
+        "component": "links",
+        "category": "References",
+        "links": [
+          {
+            "title": "Web development",
+            "source": "Wikipedia",
+            "category": "Article",
+            "url": "https://en.wikipedia.org/wiki/Web_development"
+          }
+        ]
       }
     ]
   },
@@ -87,29 +91,33 @@
       {
         "component": "texts",
         "html": "<h1>Time expectation</h1><p>All of the activities are expected to be completed within 3 to 6 months, depending on your learning pace and effort. You can finish earlier in 2 months or longer in 1 year.</p><p>If you decide to spend at least 1 to 3 hours on weekdays and 5 to 8 hours on weekends, we can assume that you can finish them in 3 to 6 months. Of course, it would be more efficient if you spend more time per day.</p><h1>Faster is not always better</h1><p>To finish faster, some people might skip learning the knowledge and doing the projects directly. We do not recommend this way as each of them will give you the proper foundation to go to the next lessons. However, it is okay to skip some parts only if you already master them. Remember, the journey could take a while. Even after you have done them, you are still required to &quot;do the work&quot; because you need to always keep practicing.</p>"
-      }
-    ],
-    "references": [
-      {
-        "category": "Video",
-        "title": "Sal Khan: Let's teach for mastery -- not test scores",
-        "source": "TED Talk",
-        "url": "https://ted.com/talks/sal_khan_let_s_teach_for_mastery_not_test_scores",
-        "color": "red.500"
       },
       {
-        "category": "Article",
-        "title": "The 10,000 Hour Rule Is Wrong: How to Really Master a Skill",
-        "source": "MakeUseOf",
-        "author": "Rob Nightingale",
-        "url": "https://makeuseof.com/tag/10000-hour-rule-wrong-really-master-skill"
-      },
-      {
-        "category": "Article",
-        "title": "The Great Practice Myth: Debunking the 10,000 Hour Rule",
-        "author": "Michael Miller",
-        "source": "Six Seconds",
-        "url": "https://6seconds.org/2018/02/09/the-great-practice-myth-debunking-the-10000-hour-rule-and-what-you-actually-need-to-know-about-practice"
+        "component": "links",
+        "category": "References",
+        "links": [
+          {
+            "category": "Video",
+            "title": "Sal Khan: Let's teach for mastery -- not test scores",
+            "source": "TED Talk",
+            "url": "https://ted.com/talks/sal_khan_let_s_teach_for_mastery_not_test_scores",
+            "color": "red.500"
+          },
+          {
+            "category": "Article",
+            "title": "The 10,000 Hour Rule Is Wrong: How to Really Master a Skill",
+            "source": "MakeUseOf",
+            "author": "Rob Nightingale",
+            "url": "https://makeuseof.com/tag/10000-hour-rule-wrong-really-master-skill"
+          },
+          {
+            "category": "Article",
+            "title": "The Great Practice Myth: Debunking the 10,000 Hour Rule",
+            "author": "Michael Miller",
+            "source": "Six Seconds",
+            "url": "https://6seconds.org/2018/02/09/the-great-practice-myth-debunking-the-10000-hour-rule-and-what-you-actually-need-to-know-about-practice"
+          }
+        ]
       }
     ]
   },
@@ -135,29 +143,33 @@
       {
         "component": "texts",
         "html": "<h1>Laptop requirements</h1><p>Every laptop need an Operating System (OS), the system that being used to run your computer.</p><h2>If using Linux</h2><p>If you have a laptop with Linux OS like Ubuntu, it should be enough. Preferably using Ubuntu version 20.04 or later.</p><h2>If using Mac</h2><p>If you have a MacBook with macOS, it should be enough. Preferably bought on year 2015 or above, and using macOS Catalina or later.</p><h2>If using Windows</h2><p>If you have a laptop with Windows OS:</p><ul><li>Preferably bought on year 2015 or above, and using Windows 10.</li><li>Processor at least Intel Core i3 or AMD.</li><li>RAM at least 4 GB.</li><li>Hard drive at least 100 GB of space.</li></ul><h1>Mobile requirements</h1><p>Every mobile phone or tablet usually already comes with their OS too.</p><ul><li>If you have an iPhone or iPad, it should be enough.</li><li>If you have an Android phone or tablet, it should have minimum Android version 4.0 or above.</li></ul>"
-      }
-    ],
-    "references": [
-      {
-        "category": "Article",
-        "title": "How to choose a laptop for programming",
-        "source": "freeCodeCamp",
-        "author": "Ayo Isaiah",
-        "date": "2017-07-25",
-        "url": "https://freecodecamp.org/news/how-to-choose-a-laptop-for-programming-a9e36f8b4cfe",
-        "color": "green.700"
       },
       {
-        "category": "Article",
-        "title": "Computer Basics: Understanding Operating Systems",
-        "source": "GCFGlobal (Goodwill Community Foundation)",
-        "url": "https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1"
-      },
-      {
-        "category": "Article",
-        "title": "Free Computer Basics Tutorial",
-        "source": "GCFGlobal (Goodwill Community Foundation)",
-        "url": "https://edu.gcfglobal.org/en/computerbasics"
+        "component": "links",
+        "category": "References",
+        "links": [
+          {
+            "category": "Article",
+            "title": "How to choose a laptop for programming",
+            "source": "freeCodeCamp",
+            "author": "Ayo Isaiah",
+            "date": "2017-07-25",
+            "url": "https://freecodecamp.org/news/how-to-choose-a-laptop-for-programming-a9e36f8b4cfe",
+            "color": "green.700"
+          },
+          {
+            "category": "Article",
+            "title": "Computer Basics: Understanding Operating Systems",
+            "source": "GCFGlobal (Goodwill Community Foundation)",
+            "url": "https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1"
+          },
+          {
+            "category": "Article",
+            "title": "Free Computer Basics Tutorial",
+            "source": "GCFGlobal (Goodwill Community Foundation)",
+            "url": "https://edu.gcfglobal.org/en/computerbasics"
+          }
+        ]
       }
     ]
   },
@@ -471,15 +483,18 @@
       },
       {
         "component": "divider"
-      }
-    ],
-    "references": [
+      },
       {
-        "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
-        "title": "Linear vs Non-linear learning",
-        "source": "Bryan Mathers",
-        "category": "Article",
-        "date": "2015-05-11"
+        "component": "links",
+        "links": [
+          {
+            "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
+            "title": "Linear vs Non-linear learning",
+            "source": "Bryan Mathers",
+            "category": "Article",
+            "date": "2015-05-11"
+          }
+        ]
       }
     ]
   },
@@ -547,15 +562,19 @@
       },
       {
         "html": "Here are the tips on how to apply first principles thinking to solve problems:"
-      }
-    ],
-    "references": [
+      },
       {
-        "url": "https://youtube.com/watch?v=ZqhN2YWTw0M",
-        "title": "Reasoning from First Principles",
-        "source": "YouTube",
-        "author": "iluli by Mike Lamb",
-        "category": "Video"
+        "component": "links",
+        "category": "References",
+        "links": [
+          {
+            "url": "https://youtube.com/watch?v=ZqhN2YWTw0M",
+            "title": "Reasoning from First Principles",
+            "source": "YouTube",
+            "author": "iluli by Mike Lamb",
+            "category": "Video"
+          }
+        ]
       }
     ]
   },

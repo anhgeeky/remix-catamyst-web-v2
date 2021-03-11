@@ -11,6 +11,11 @@
   background: hsla(180, 100%, 33%, 0.5);
 }
 
+html,
+body {
+  font-family: sans-serif;
+}
+
 a {
   outline-color: var(--color-secondary);
 }
