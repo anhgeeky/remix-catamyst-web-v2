@@ -19,7 +19,7 @@ import {
 /**
  * CMS Adder Buttons to add more block into CMS lesson editor
  */
-export function AdderButtons() {
+export function CMSBlockAdderButtons() {
   const toast = useToast({ duration: 1000, position: 'bottom' })
 
   const addBlockImage = () => {

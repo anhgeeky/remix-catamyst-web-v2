@@ -16,7 +16,7 @@ export function CMSBlock({ block }) {
     return <CMSBlockTexts block={block} />
   }
   if (block.component === 'links' && block.links) {
-    return <CMSBlockLinks links={block.links} />
+    return <CMSBlockLinks block={block} />
   }
   if (block.component === 'divider') {
     return <CMSBlockDivider block={block} />

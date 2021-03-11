@@ -1,14 +1,11 @@
 import { useRouter } from 'next/router'
 import { ButtonGroup, Button, Flex, HStack, Box, Text } from '@chakra-ui/react'
-import React from 'react'
-import {
-  ArrowBackIcon as BackIcon,
-  EditIcon as SaveIcon,
-} from '@chakra-ui/icons'
 import {
   FaCode as CodeIcon,
   FaWindowMaximize as ResultIcon,
 } from 'react-icons/fa'
+
+import { Icon } from '@components'
 
 /**
  * This editor should work with generic data
@@ -28,14 +25,17 @@ export default function HeaderEditor({
     <Flex justify={{ base: 'flex-start', md: 'center' }} py={2} pt={3}>
       <Flex width="1200px" justify="space-between" px={5}>
         <ButtonGroup as={HStack} spacing={2}>
-          <Button leftIcon={<BackIcon />} onClick={() => router.back()}>
+          <Button leftIcon={<Icon name="back" />} onClick={() => router.back()}>
             Back
           </Button>
-          <Button leftIcon={<SaveIcon />} onClick={() => handleReset()}>
+          <Button
+            leftIcon={<Icon name="reset" />}
+            onClick={() => handleReset()}
+          >
             Reset
           </Button>
           <Button
-            leftIcon={<SaveIcon />}
+            leftIcon={<Icon name="save" />}
             colorScheme="teal"
             onClick={() => handleSave()}
           >

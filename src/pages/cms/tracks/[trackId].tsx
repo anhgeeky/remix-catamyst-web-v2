@@ -82,7 +82,7 @@ export default function CMSTrackId() {
 
   /**
    * Handle form's value local changes (state) and handle save (API request)
-   * Should be using Formik later
+   * Should be using RHF later
    */
   const handleChange = (event) => {
     setFormTrack({ ...formTrack, [event.target.name]: event.target.value })

@@ -2,15 +2,16 @@ module.exports = {
   images: {
     domains: [
       'localhost',
+      'api.catamyst.com',
+      'storage.catamyst.com',
       'a.storyblok.com',
       'amazonaws.com',
-      'api.catamyst.com',
       'bit.ly',
       'datocms-assets.com',
+      'example.com',
       'google.com',
       'placekitten.com',
       'res.cloudinary.com',
-      'storage.catamyst.com',
     ],
   },
   webpack(config) {

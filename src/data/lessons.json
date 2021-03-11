@@ -14,7 +14,7 @@
         "alt": "Cat sitting in front of artworks",
         "title": "Neko the painter",
         "author": "Latifah Dhia",
-        "sourceUrl": "https://catamyst.com",
+        "source": "https://catamyst.com",
         "width": 300,
         "height": 300,
         "showMeta": false
@@ -29,7 +29,7 @@
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
         "alt": "Artworks with cats on Google Arts & Culture website",
         "title": "Google Arts & Culture website · Cats in culture",
-        "sourceUrl": "https://artsandculture.google.com",
+        "source": "https://artsandculture.google.com",
         "showMeta": true
       },
       {
@@ -63,7 +63,7 @@
         "title": "Cat reading a book",
         "size": "Small",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
-        "sourceUrl": "https://catamyst.com",
+        "source": "https://catamyst.com",
         "showMeta": false
       },
       {
@@ -85,7 +85,7 @@
         "title": "Hour glass",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
         "size": "Tiny",
-        "sourceUrl": "https://catamyst.com",
+        "source": "https://catamyst.com",
         "showMeta": false
       },
       {
@@ -137,7 +137,7 @@
         "size": "Small",
         "author": "Latifah Dhia",
         "copyright": "Catamyst",
-        "sourceUrl": "https://catamyst.com",
+        "source": "https://catamyst.com",
         "showMeta": false
       },
       {
@@ -324,7 +324,7 @@
         "size": "Huge",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
         "title": "Bitwarden website",
-        "sourceUrl": "https://bitwarden.com",
+        "source": "https://bitwarden.com",
         "showMeta": true
       },
       {
@@ -477,7 +477,7 @@
         "component": "image",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
         "title": " Linear vs Non-linear learning · Inspired by Visual Thinkery",
-        "sourceUrl": "https://visualthinkery.com",
+        "source": "https://visualthinkery.com",
         "size": "Large",
         "showMeta": true
       },

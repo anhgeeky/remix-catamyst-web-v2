@@ -35,7 +35,7 @@ export function BlockImage({ block }) {
       >
         <NextImage
           className="next-image"
-          src={block.url || `https://placekitten.com/g/${width}/${height}`}
+          src={block.url || `https://example.com`}
           alt={block.alt || block.title || 'Unknown'}
           width={width}
           height={height}
@@ -47,9 +47,9 @@ export function BlockImage({ block }) {
       {block.showMeta !== false && block.title && (
         <Box opacity={0.5} align="center" mt={2}>
           <Text>{block.title}</Text>
-          {block.sourceUrl && (
-            <Link fontSize="sm" href={block.sourceUrl}>
-              {block.sourceUrl}
+          {block.source && (
+            <Link fontSize="sm" href={block.source}>
+              {block.source}
             </Link>
           )}
         </Box>

@@ -1,33 +1,24 @@
 import { useState } from 'react'
 import {
-  Box,
-  Button,
   Badge,
   ButtonGroup,
   Flex,
   FormControl,
   FormLabel,
-  Heading,
   HStack,
   IconButton,
-  Image,
   Input,
-  Link,
   Select,
   Stack,
   Switch,
-  Text,
   Textarea,
   VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
-import {
-  ChevronDownIcon as DownIcon,
-  ChevronUpIcon as UpIcon,
-  DeleteIcon,
-} from '@chakra-ui/icons'
 
+import { Icon } from '@components'
 import { BlockImage } from '@components/blocks'
+import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
 /**
  * Block only can be used for CMS
@@ -35,7 +26,7 @@ import { BlockImage } from '@components/blocks'
  */
 export function CMSBlockImage({ block }) {
   /**
-   * Need to use Formik
+   * Need to use RHF
    */
   const [formBlock, setFormBlock] = useState(block)
 
@@ -52,40 +43,29 @@ export function CMSBlockImage({ block }) {
         <BlockImage block={formBlock} />
 
         <Flex
-          width="100%"
-          maxW="800px"
-          align="stretch"
           bg={useColorModeValue('white', 'gray.800')}
+          align="stretch"
           boxShadow="base"
           flexWrap="wrap"
-          p={0}
-          rounded="md"
+          maxW="800px"
+          rounded="sm"
+          width="100%"
         >
           <Stack spacing={1} p={2} width="100%">
-            <HStack p={2} justify="space-between">
-              <Badge colorScheme="teal">Image</Badge>
-              <ButtonGroup size="xs">
-                <IconButton aria-label="Move up" icon={<UpIcon />} />
-                <IconButton aria-label="Move down" icon={<DownIcon />} />
-                <IconButton
-                  aria-label="Delete image block"
-                  colorScheme="red"
-                  icon={<DeleteIcon />}
-                />
-              </ButtonGroup>
-            </HStack>
+            <CMSBlockModifierButtons name="Image" />
 
             <FormControl as={HStack}>
               <VisuallyHidden>
                 <FormLabel>URL:</FormLabel>
               </VisuallyHidden>
+              <Icon name="link" />
               <Textarea
                 name="url"
-                size="md"
+                size="sm"
                 type="text"
                 variant="unstyled"
                 resize="none"
-                placeholder="https://website.com"
+                placeholder="https://example.com"
                 onChange={handleChange}
                 value={formBlock.url}
               />
@@ -94,13 +74,76 @@ export function CMSBlockImage({ block }) {
             <HStack spacing={3}>
               <FormControl as={HStack}>
                 <VisuallyHidden>
+                  <FormLabel>Title:</FormLabel>
+                </VisuallyHidden>
+                <Icon name="title" />
+                <Input
+                  name="title"
+                  size="sm"
+                  type="text"
+                  variant="unstyled"
+                  fontWeight="700"
+                  defaultValue={formBlock.title}
+                  placeholder="Image Title"
+                />
+              </FormControl>
+
+              <FormControl as={HStack}>
+                <VisuallyHidden>
+                  <FormLabel>Alt Text:</FormLabel>
+                </VisuallyHidden>
+                <Icon name="alt" />
+                <Input
+                  name="alt"
+                  size="sm"
+                  type="text"
+                  variant="unstyled"
+                  defaultValue={formBlock.alt}
+                  placeholder="Alt Text"
+                />
+              </FormControl>
+            </HStack>
+
+            <HStack spacing={3}>
+              <FormControl as={HStack}>
+                <VisuallyHidden>
+                  <FormLabel>Author:</FormLabel>
+                </VisuallyHidden>
+                <Icon name="author" />
+                <Input
+                  name="author"
+                  size="sm"
+                  type="text"
+                  variant="unstyled"
+                  defaultValue={formBlock.author}
+                  placeholder="Author Name"
+                />
+              </FormControl>
+
+              <FormControl as={HStack}>
+                <VisuallyHidden>
+                  <FormLabel>Copyright:</FormLabel>
+                </VisuallyHidden>
+                <Icon name="copyright" />
+                <Input
+                  name="copyright"
+                  size="sm"
+                  type="text"
+                  variant="unstyled"
+                  defaultValue={formBlock.copyright}
+                  placeholder="Copyright"
+                />
+              </FormControl>
+
+              <FormControl as={HStack}>
+                <VisuallyHidden>
                   <FormLabel>Size:</FormLabel>
                 </VisuallyHidden>
+                <Icon name="size" />
                 <Select
                   name="size"
-                  size="md"
+                  size="sm"
                   variant="unstyled"
-                  maxW={200}
                   defaultValue={formBlock.size || 'Small'}
                   placeholder="Select size"
                 >
@@ -114,71 +157,25 @@ export function CMSBlockImage({ block }) {
 
               <FormControl as={HStack}>
                 <VisuallyHidden>
-                  <FormLabel>Author:</FormLabel>
+                  <FormLabel>Meta</FormLabel>
                 </VisuallyHidden>
-                <Input
-                  name="author"
-                  size="md"
-                  type="text"
-                  variant="unstyled"
-                  defaultValue={formBlock.author}
-                  placeholder="Author Name"
-                />
-
-                <FormControl as={HStack}>
-                  <FormLabel htmlFor="block-image-meta" mb="0">
-                    Show Meta?
-                  </FormLabel>
-                  <Switch
-                    name="block-image-meta"
-                    defaultValue={block.showMeta}
-                  />
-                </FormControl>
-              </FormControl>
-            </HStack>
-
-            <HStack spacing={3}>
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Title:</FormLabel>
-                </VisuallyHidden>
-                <Input
-                  name="title"
-                  size="md"
-                  type="text"
-                  variant="unstyled"
-                  fontWeight="700"
-                  defaultValue={formBlock.title}
-                  placeholder="Image Title"
-                />
-              </FormControl>
-
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Alt Text:</FormLabel>
-                </VisuallyHidden>
-                <Input
-                  name="alt"
-                  size="md"
-                  type="text"
-                  variant="unstyled"
-                  defaultValue={formBlock.alt}
-                  placeholder="Alt Text"
-                />
+                <Icon name="meta" />
+                <Switch name="showMeta" defaultValue={block.showMeta} />
               </FormControl>
             </HStack>
 
             <FormControl as={HStack}>
               <VisuallyHidden>
-                <FormLabel>Source URL:</FormLabel>
+                <FormLabel>Source:</FormLabel>
               </VisuallyHidden>
+              <Icon name="url" />
               <Input
-                name="sourceUrl"
-                size="md"
+                name="source"
+                size="sm"
                 type="text"
                 variant="unstyled"
-                defaultValue={formBlock.sourceUrl}
-                placeholder="Source URL"
+                defaultValue={formBlock.source}
+                placeholder="Source name or URL"
               />
             </FormControl>
           </Stack>

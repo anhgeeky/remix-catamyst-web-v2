@@ -1,36 +1,41 @@
 import {
   Box,
-  Badge,
-  Button,
-  ButtonGroup,
   Flex,
   FormControl,
   FormLabel,
   HStack,
-  IconButton,
   Input,
   Select,
   Stack,
-  Text,
+  Heading,
   Textarea,
   VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
-import {
-  ChevronDownIcon as DownIcon,
-  ChevronUpIcon as UpIcon,
-  DeleteIcon,
-} from '@chakra-ui/icons'
 
-import { Card, ReferenceIcon } from '@components'
+import { Icon, ReferenceIcon } from '@components'
+import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
 /**
  * Block only can be used for CMS
  */
-export function CMSBlockLinks({ links }) {
+export function CMSBlockLinks({ block }) {
   return (
     <Stack maxW="800px" width="100%" py={3}>
-      {links.map((link, index) => {
+      {block.category === 'References' && (
+        <Heading
+          as="h1"
+          color="gray.500"
+          fontFamily="body"
+          fontSize="xl"
+          textAlign="center"
+          textTransform="uppercase"
+          letterSpacing={0.5}
+        >
+          References
+        </Heading>
+      )}
+      {block.links.map((link, index) => {
         return (
           <Flex
             key={index}
@@ -43,34 +48,40 @@ export function CMSBlockLinks({ links }) {
           >
             <Box
               bg={link.color || useColorModeValue('gray.100', 'gray.700')}
-              width="10px"
+              width="5px"
               borderTopLeftRadius="md"
               borderBottomLeftRadius="md"
             />
 
-            <Stack spacing={1} p={2} width="98%">
-              <HStack p={2} justify="space-between">
-                <Badge colorScheme="teal">Link</Badge>
-                <ButtonGroup size="xs">
-                  <IconButton aria-label="Move up" icon={<UpIcon />} />
-                  <IconButton aria-label="Move down" icon={<DownIcon />} />
-                  <IconButton
-                    aria-label="Delete link block"
-                    colorScheme="red"
-                    icon={<DeleteIcon />}
-                  />
-                </ButtonGroup>
-              </HStack>
+            <Stack spacing={1} p={2} width="99%">
+              <CMSBlockModifierButtons name="Link" />
+
+              <FormControl as={HStack}>
+                <VisuallyHidden>
+                  <FormLabel>URL:</FormLabel>
+                </VisuallyHidden>
+                <Icon name="link" />
+                <Textarea
+                  name="url"
+                  size="sm"
+                  type="text"
+                  variant="unstyled"
+                  resize="none"
+                  defaultValue={link.url}
+                  placeholder="https://example.com"
+                />
+              </FormControl>
 
               <FormControl as={HStack}>
                 <VisuallyHidden>
                   <FormLabel>Title:</FormLabel>
                 </VisuallyHidden>
+                <Icon name="title" />
                 <Input
                   name="title"
-                  size="md"
+                  size="sm"
                   type="text"
-                  variant="flushed"
+                  variant="unstyled"
                   fontWeight="700"
                   defaultValue={link.title}
                   placeholder="Link Title"
@@ -82,12 +93,12 @@ export function CMSBlockLinks({ links }) {
                   <VisuallyHidden>
                     <FormLabel>Category:</FormLabel>
                   </VisuallyHidden>
-                  <ReferenceIcon category={link.category} />
+                  <ReferenceIcon name={link.category} />
                   <Select
                     name="category"
-                    size="md"
-                    variant="flushed"
-                    placeholder="Select option"
+                    size="sm"
+                    variant="unstyled"
+                    placeholder="Select category"
                     defaultValue={link.category}
                   >
                     <option value="App">App</option>
@@ -104,11 +115,12 @@ export function CMSBlockLinks({ links }) {
                   <VisuallyHidden>
                     <FormLabel>Source:</FormLabel>
                   </VisuallyHidden>
+                  <Icon name="url" />
                   <Input
                     name="source"
-                    size="md"
+                    size="sm"
                     type="text"
-                    variant="flushed"
+                    variant="unstyled"
                     defaultValue={link.source}
                     placeholder="Source Name"
                   />
@@ -118,11 +130,12 @@ export function CMSBlockLinks({ links }) {
                   <VisuallyHidden>
                     <FormLabel>Author:</FormLabel>
                   </VisuallyHidden>
+                  <Icon name="author" />
                   <Input
                     name="author"
-                    size="md"
+                    size="sm"
                     type="text"
-                    variant="flushed"
+                    variant="unstyled"
                     defaultValue={link.author}
                     placeholder="Author Name"
                   />
@@ -132,31 +145,17 @@ export function CMSBlockLinks({ links }) {
                   <VisuallyHidden>
                     <FormLabel>Color:</FormLabel>
                   </VisuallyHidden>
+                  <Icon name="color" />
                   <Input
                     name="title"
-                    size="md"
+                    size="sm"
                     type="text"
-                    variant="flushed"
+                    variant="unstyled"
                     defaultValue={link.color}
                     placeholder="color.500"
                   />
                 </FormControl>
               </HStack>
-
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>URL:</FormLabel>
-                </VisuallyHidden>
-                <Textarea
-                  name="url"
-                  size="md"
-                  type="text"
-                  variant="flushed"
-                  resize="none"
-                  defaultValue={link.url}
-                  placeholder="https://website.com"
-                />
-              </FormControl>
             </Stack>
           </Flex>
         )

@@ -1,4 +1,4 @@
-import { Icon } from '@chakra-ui/react'
+import { Icon as ChakraIcon } from '@chakra-ui/react'
 import {
   FaBook as BookIcon,
   FaFileAlt as FileIcon,
@@ -7,27 +7,46 @@ import {
   FaCube as AppIcon,
   FaPuzzlePiece as PluginIcon,
 } from 'react-icons/fa'
+import { Icon } from '@components'
 
-export default function ReferenceIcon({ category, size = 4 }) {
-  if (category === 'Book') {
-    return <Icon aria-label="Article reference" as={BookIcon} boxSize={size} />
-  }
-  if (category === 'Article') {
-    return <Icon aria-label="Book reference" as={FileIcon} boxSize={size} />
-  }
-  if (category === 'Video') {
-    return <Icon aria-label="Video reference" as={VideoIcon} boxSize={size} />
-  }
-  if (category === 'Website') {
-    return <Icon aria-label="Website reference" as={WebIcon} boxSize={size} />
-  }
-  if (category === 'Plugin') {
-    return <Icon aria-label="Plugin reference" as={PluginIcon} boxSize={size} />
-  }
-  if (category === 'App') {
+export default function ReferenceIcon({ name, size = 4 }) {
+  if (name === 'Book') {
     return (
-      <Icon aria-label="Application reference" as={AppIcon} boxSize={size} />
+      <ChakraIcon aria-label="Article reference" as={BookIcon} boxSize={size} />
     )
   }
-  return null
+  if (name === 'Article') {
+    return (
+      <ChakraIcon aria-label="Book reference" as={FileIcon} boxSize={size} />
+    )
+  }
+  if (name === 'Video') {
+    return (
+      <ChakraIcon aria-label="Video reference" as={VideoIcon} boxSize={size} />
+    )
+  }
+  if (name === 'Website') {
+    return (
+      <ChakraIcon aria-label="Website reference" as={WebIcon} boxSize={size} />
+    )
+  }
+  if (name === 'Plugin') {
+    return (
+      <ChakraIcon
+        aria-label="Plugin reference"
+        as={PluginIcon}
+        boxSize={size}
+      />
+    )
+  }
+  if (name === 'App') {
+    return (
+      <ChakraIcon
+        aria-label="Application reference"
+        as={AppIcon}
+        boxSize={size}
+      />
+    )
+  }
+  return <Icon name="name" />
 }
