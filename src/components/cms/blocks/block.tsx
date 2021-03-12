@@ -19,7 +19,7 @@ export function CMSBlock({ block }) {
     return <CMSBlockLinks block={block} />
   }
   if (block.component === 'divider') {
-    return <CMSBlockDivider />
+    return <CMSBlockDivider block={block} />
   }
-  return <p>{block.component}</p>
+  return null
 }

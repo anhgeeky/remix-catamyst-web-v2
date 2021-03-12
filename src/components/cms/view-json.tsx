@@ -7,13 +7,13 @@ import {
 
 import { Content, HeadingStack } from '@components'
 
-export function CMSViewJSON({ name, codeString }) {
+export function CMSViewJSON({ name = '', codeString }) {
   const { colorMode } = useColorMode()
 
   return (
     <Content>
       <Stack spacing={5} width="100%">
-        <HeadingStack>{name}:</HeadingStack>
+        {name && <HeadingStack>{name}:</HeadingStack>}
         <SyntaxHighlighter
           language="json"
           style={colorMode === 'light' ? lightStyle : darkStyle}

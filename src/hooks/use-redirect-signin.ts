@@ -10,5 +10,9 @@ export default function useRedirectSignIn() {
     if (!isAuthorized) router.replace('/signin')
   }, [isAuthorized])
 
-  return { auth, isAuthorized }
+  return {
+    router,
+    auth,
+    isAuthorized,
+  }
 }

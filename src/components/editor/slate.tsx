@@ -35,6 +35,9 @@ const HOTKEYS = {
   'mod+i': 'italic',
   'mod+u': 'underline',
   'ctrl+`': 'code',
+  // 'mod+1': 'heading-one',
+  // 'mod+2': 'heading-two',
+  // 'mod+3': 'heading-three',
 }
 
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
@@ -214,7 +217,7 @@ const Element = ({ attributes, children, element }) => {
     case 'link':
       return (
         <Tooltip hasArrow placement="top" aria-label="Link" label={element.url}>
-          <Link color="teal.500" href={element.url} {...attributes}>
+          <Link isExternal color="teal.500" href={element.url} {...attributes}>
             {children}
           </Link>
         </Tooltip>
@@ -299,7 +302,7 @@ const LinkButton = () => {
       active={isLinkActive(editor)}
       onMouseDown={(event) => {
         event.preventDefault()
-        const url = window.prompt('Enter the URL of the link:')
+        const url = window.prompt('Enter URL with https://')
         if (!url) return
         insertLink(editor, url)
       }}

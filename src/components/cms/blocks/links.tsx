@@ -8,6 +8,7 @@ import {
   Button,
   Input,
   Select,
+  Text,
   Stack,
   VisuallyHidden,
   useColorModeValue,
@@ -24,10 +25,14 @@ export function CMSBlockLinks({ block }) {
     <CardArea>
       {block.isReferences && 'hello'}
       <CMSBlockModifierButtons
+        block={block}
         name={block.isReferences ? 'References' : 'Links'}
       >
-        <Switch size="sm" name="isReferences" value={block.isReferences} />
-        <Button size="xs" leftIcon={<Icon name="add" />}>
+        <Button
+          size="xs"
+          leftIcon={<Icon name="add" />}
+          onClick={() => console.log('Added new link')}
+        >
           Add new link
         </Button>
       </CMSBlockModifierButtons>
@@ -51,7 +56,7 @@ export function CMSBlockLinks({ block }) {
             />
 
             <Stack spacing={1} p={2} width="99%">
-              <CMSBlockModifierButtons name="Link" />
+              <CMSBlockModifierButtons block={link} name="Link" />
 
               <FormControl as={HStack}>
                 <VisuallyHidden>

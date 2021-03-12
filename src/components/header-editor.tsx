@@ -12,36 +12,46 @@ import { Icon } from '@components'
  */
 
 export default function HeaderEditor({
-  name = 'Unknown',
+  name,
   item,
-  handleReset = () => {},
-  handleSave = () => {},
-  handleViewResult = () => {},
-  handleViewJSON = () => {},
+  handleBack,
+  handleDelete,
+  handleReset,
+  handleSave,
+  handleSubmit,
+  handleViewResult,
+  handleViewJSON,
 }) {
-  const router = useRouter()
-
   return (
     <Flex justify={{ base: 'flex-start', md: 'center' }} py={2} pt={3}>
       <Flex width="1200px" justify="space-between" px={5}>
         <ButtonGroup as={HStack} size="sm" spacing={2}>
-          <Button leftIcon={<Icon name="back" />} onClick={() => router.back()}>
+          <Button leftIcon={<Icon name="back" />} onClick={handleBack}>
             Back
           </Button>
           <Button
+            colorScheme="red"
+            leftIcon={<Icon name="delete" />}
+            onClick={handleDelete}
+          >
+            Delete
+          </Button>
+          <Button
+            colorScheme="yellow"
             leftIcon={<Icon name="reset" />}
-            onClick={() => handleReset()}
+            onClick={handleReset}
           >
             Reset
           </Button>
           <Button
-            leftIcon={<Icon name="save" />}
             colorScheme="teal"
-            onClick={() => handleSave()}
+            leftIcon={<Icon name="save" />}
+            onClick={handleSubmit(handleSave)}
           >
             Save Changes
           </Button>
         </ButtonGroup>
+
         <ButtonGroup
           as={HStack}
           spacing={2}
@@ -57,9 +67,9 @@ export default function HeaderEditor({
           <Button leftIcon={<ResultIcon />} onClick={() => handleViewResult()}>
             View Result
           </Button>
-          <Button leftIcon={<CodeIcon />} onClick={() => handleViewJSON()}>
+          {/* <Button leftIcon={<CodeIcon />} onClick={() => handleViewJSON()}>
             View JSON
-          </Button>
+          </Button> */}
         </ButtonGroup>
       </Flex>
     </Flex>

@@ -36,7 +36,7 @@ export function CMSBlockImage({ block }) {
   if (formBlock) {
     return (
       <CardArea>
-        <CMSBlockModifierButtons name="Image" />
+        <CMSBlockModifierButtons block={formBlock} name="Image" />
 
         <BlockImage block={formBlock} />
 

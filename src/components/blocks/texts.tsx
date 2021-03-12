@@ -70,7 +70,7 @@ const options = {
       )
     }
     if (node.type === 'tag' && node.name === 'a') {
-      node.attribs.target = '_blank'
+      // node.attribs.target = '_blank'
       return (
         <Link key={index} href={node.attribs.href} color="teal.500" isExternal>
           {node.children[0].data}

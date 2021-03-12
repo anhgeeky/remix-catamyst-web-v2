@@ -27,8 +27,7 @@ export function CMSBlockTexts({ block }) {
   return (
     <>
       <CardArea>
-        <CMSBlockModifierButtons name="Texts">
-          <Switch size="sm" name="isPublished" value={block.isPublished} />
+        <CMSBlockModifierButtons block={block} name="Texts">
           <Button size="xs" leftIcon={<Icon name="edit" />} onClick={onOpen}>
             Open Editor
           </Button>

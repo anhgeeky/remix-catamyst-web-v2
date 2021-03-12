@@ -1,9 +1,12 @@
 import { Fragment, useState, useEffect } from 'react'
 import NextHead from 'next/head'
-import { useRouter } from 'next/router'
+import { useForm } from 'react-hook-form'
+import { DevTool } from '@hookform/devtools'
 import {
   Box,
+  Button,
   Container,
+  Heading,
   IconButton,
   Input,
   InputGroup,
@@ -34,106 +37,111 @@ import dataTheme from '@theme/theme.json'
 import dataLessons from '@data/lessons.json'
 
 export default function CMSLessonId() {
-  const router = useRouter()
-  const { isAuthorized } = useRedirectSignIn()
-  const [viewMode, setViewMode] = useState('result')
-  const toast = useToast({ duration: 1000, position: 'bottom-left' })
+  const { router, isAuthorized } = useRedirectSignIn()
   const { lessonId } = router.query
+  const toast = useToast({ duration: 1000, position: 'bottom-left' })
 
   /**
-   * Should be from API later
-   * Only used once to populate the initial state data
+   * State to change UI view mode
    */
-  const lesson = dataLessons.find((lesson) => lesson.id === Number(lessonId))
+  const [viewMode, setViewMode] = useState('result')
 
   /**
-   * Set state data with initial data
-   * Used frequently when editing the lesson content
+   * Should be from API. Used once to populate the initial state data
+   * Wait until lesson data is ready
    */
-  const [formLesson, setFormLesson] = useState(lesson)
+  const lessonInitialValues = dataLessons.find(
+    (lesson) => lesson.id === Number(lessonId)
+  )
 
   useEffect(() => {
-    setFormLesson(lesson)
-  }, [lesson])
+    if (lessonInitialValues) {
+      // setValue('lesson', lessonInitialValues)
+      reset({ lesson: lessonInitialValues })
+    }
+  }, [lessonInitialValues])
 
   /**
-   * Handle form's value local changes (state), reset, and save (API request)
-   * Should be using RHF later
+   * React Hook Form
    */
-  const handleChange = (event) => {
-    setFormLesson({ ...formLesson, [event.target.name]: event.target.value })
+  const {
+    control,
+    errors,
+    getValues,
+    handleSubmit,
+    register,
+    reset,
+    setValue,
+    watch,
+  } = useForm({
+    mode: 'onSubmit',
+  })
+
+  const handleSave = (data) => {
+    toast({ status: 'success', title: 'Saved lesson data!' })
+    // console.log(JSON.stringify({ type: 'SAVE_LESSON', payload: data }, null, 2))
   }
 
-  const handleChangeCategory = (event) => {
-    setFormLesson({ ...formLesson, category: event })
-  }
-
-  const handleChangeLevel = (event) => {
-    setFormLesson({ ...formLesson, level: event })
+  const handleDelete = () => {
+    toast({ status: 'error', title: 'Deleted lesson data!' })
   }
 
   const handleReset = () => {
-    setFormLesson(lesson)
-    toast({ title: 'Lesson data resetted!', status: 'info' })
+    toast({ status: 'info', title: 'Resetted lesson data!' })
+    reset({ lesson: lessonInitialValues })
   }
 
-  const handleSave = () => {
-    toast({ title: 'Lesson data saved!', status: 'success' })
+  const handleBack = () => {
+    router.push('/cms/lessons')
   }
 
   const handleGenerateSlug = () => {
     try {
-      const generatedSlug = slugify(formLesson.title)
+      const values = getValues()
+      const generatedSlug = slugify(values.lesson.title)
       if (generatedSlug) {
-        setFormLesson({ ...formLesson, slug: generatedSlug || '' })
+        setValue('lesson.slug', generatedSlug)
         toast({
-          description: generatedSlug,
-          title: 'Slug generated!',
           status: 'success',
+          title: 'Slug generated!',
+          description: generatedSlug,
         })
       }
     } catch (error) {
-      toast({ title: 'Slug error to generate!', status: 'error' })
+      toast({ status: 'error', title: 'Slug error to generate!' })
     }
   }
 
   return (
     <Layout>
-      {!formLesson && (
-        <>
-          <Text>Sorry, lesson with id #{lessonId} is not found.</Text>
-        </>
-      )}
-      {isAuthorized && formLesson && (
+      {isAuthorized && lessonInitialValues && getValues() && (
         <>
           <NextHead>
             <title>
-              #{formLesson.id} {formLesson.title} · Catamyst
+              #{lessonInitialValues.id} {lessonInitialValues.title} · Catamyst
             </title>
           </NextHead>
-
           <HeaderEditor
             name="lesson"
-            item={formLesson}
+            item={lessonInitialValues}
+            handleBack={handleBack}
+            handleDelete={handleDelete}
             handleReset={handleReset}
             handleSave={handleSave}
+            handleSubmit={handleSubmit}
             handleViewResult={() => setViewMode('result')}
             handleViewJSON={() => setViewMode('json')}
           />
-
-          {viewMode === 'json' && (
-            <CMSViewJSON name="Lesson" codeString={formLesson} />
-          )}
-
           {viewMode === 'result' && (
             <CMSViewResultLesson
-              formLesson={formLesson}
-              handleChange={handleChange}
-              handleChangeCategory={handleChangeCategory}
-              handleChangeLevel={handleChangeLevel}
+              register={register}
+              getValues={getValues}
               handleGenerateSlug={handleGenerateSlug}
+              lessonInitialValues={lessonInitialValues}
             />
           )}
+          {viewMode === 'json' && <CMSViewJSON codeString={getValues()} />}
+          <DevTool control={control} />
         </>
       )}
     </Layout>
@@ -141,11 +149,10 @@ export default function CMSLessonId() {
 }
 
 function CMSViewResultLesson({
-  formLesson,
-  handleChange,
+  register,
+  getValues,
   handleGenerateSlug,
-  handleChangeCategory,
-  handleChangeLevel,
+  lessonInitialValues,
 }) {
   /**
    * RHF can be used here to reduce handle change
@@ -154,7 +161,7 @@ function CMSViewResultLesson({
   return (
     <>
       <Hero>
-        <Box id="lesson-hero" align="center" pb={5}>
+        <Box align="center" pb={5}>
           <Stack maxW={dataTheme.maxContentWidth}>
             <InputGroup size="sm" variant="unstyled">
               <InputLeftAddon
@@ -162,11 +169,10 @@ function CMSViewResultLesson({
                 children={`catamyst.com/learn/track/topic/`}
               />
               <Input
-                isRequired
-                name="slug"
+                ref={register}
+                name="lesson.slug"
                 placeholder="lesson-slug"
-                value={slugify(formLesson.slug) || slugify(formLesson.title)}
-                onChange={handleChange}
+                isRequired
               />
               <Tooltip label="Generate slug" fontSize="xs">
                 <InputRightAddon
@@ -174,14 +180,15 @@ function CMSViewResultLesson({
                   px={2}
                   size="xs"
                   aria-label="Generate slug"
-                  onClick={handleGenerateSlug}
                   icon={<Icon name="generate" />}
+                  onClick={handleGenerateSlug}
                 />
               </Tooltip>
             </InputGroup>
+
             <Input
-              isRequired
-              name="title"
+              ref={register}
+              name="lesson.title"
               size="lg"
               fontFamily="heading"
               fontWeight="bold"
@@ -190,40 +197,76 @@ function CMSViewResultLesson({
               p={3}
               variant="unstyled"
               placeholder="Lesson Title"
-              value={formLesson.title || ''}
-              onChange={handleChange}
+              isRequired
             />
-            <RadioGroup
-              colorScheme="teal"
-              name="category"
-              onChange={handleChangeCategory}
-              value={formLesson.category}
-            >
+
+            <RadioGroup colorScheme="teal">
               <Stack direction="row">
                 <Text fontWeight="bold">Category:</Text>
-                <Radio value="Fundamental">
+                <Radio
+                  ref={register}
+                  name="lesson.category"
+                  value="Fundamental"
+                  defaultChecked={
+                    lessonInitialValues.category === 'Fundamental'
+                  }
+                >
                   <CategoryBadge category="Fundamental" />
                 </Radio>
-                <Radio value="Specific">
+                <Radio
+                  ref={register}
+                  name="lesson.category"
+                  value="Specific"
+                  defaultChecked={lessonInitialValues.category === 'Specific'}
+                >
                   <CategoryBadge category="Specific" />
                 </Radio>
-                <Radio value="Project">
+                <Radio
+                  ref={register}
+                  name="lesson.category"
+                  value="Project"
+                  defaultChecked={lessonInitialValues.category === 'Project'}
+                >
                   <CategoryBadge category="Project" />
                 </Radio>
               </Stack>
             </RadioGroup>
-            <RadioGroup
-              colorScheme="teal"
-              name="level"
-              onChange={handleChangeLevel}
-              value={formLesson.level}
-            >
+
+            <RadioGroup colorScheme="teal">
               <Stack direction="row">
                 <Text fontWeight="bold">Level:</Text>
-                <Radio value="Newbie">Newbie</Radio>
-                <Radio value="Beginner">Beginner</Radio>
-                <Radio value="Intermediate">Intermediate</Radio>
-                <Radio value="Advanced">Advanced</Radio>
+                <Radio
+                  ref={register}
+                  name="lesson.level"
+                  value="Newbie"
+                  defaultChecked={lessonInitialValues.level === 'Newbie'}
+                >
+                  Newbie
+                </Radio>
+                <Radio
+                  ref={register}
+                  name="lesson.level"
+                  value="Beginner"
+                  defaultChecked={lessonInitialValues.level === 'Beginner'}
+                >
+                  Beginner
+                </Radio>
+                <Radio
+                  ref={register}
+                  name="lesson.level"
+                  value="Intermediate"
+                  defaultChecked={lessonInitialValues.level === 'Intermediate'}
+                >
+                  Intermediate
+                </Radio>
+                <Radio
+                  ref={register}
+                  name="lesson.level"
+                  value="Advanced"
+                  defaultChecked={lessonInitialValues.level === 'Advanced'}
+                >
+                  Advanced
+                </Radio>
               </Stack>
             </RadioGroup>
           </Stack>
@@ -232,12 +275,16 @@ function CMSViewResultLesson({
 
       <Container width="100%" maxW="1500px" pt={5} px={0}>
         <Stack id="form-lesson-blocks" align="center" spacing={5}>
-          {!formLesson?.blocks && <CMSBlockAdderButtons />}
-          {formLesson?.blocks &&
-            (formLesson.blocks as any[]).map((block, index) => {
+          {JSON.stringify(getValues(), null, 2)}
+          {!lessonInitialValues?.blocks && <CMSBlockAdderButtons />}
+          {lessonInitialValues?.blocks &&
+            lessonInitialValues?.blocks.map((block, index) => {
               return (
                 <Fragment key={index}>
-                  <CMSBlock block={block} />
+                  <CMSBlock
+                    block={block}
+                    // setValue={setValue}
+                  />
                   <CMSBlockAdderButtons />
                 </Fragment>
               )
