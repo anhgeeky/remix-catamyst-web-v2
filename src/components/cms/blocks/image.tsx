@@ -20,7 +20,7 @@ import { CMSBlockModifierButtons } from '@components/cms/blocks'
  * Block only can be used for CMS
  * But combines block for CMS and actual content as preview
  */
-export function CMSBlockImage({ block, actions }) {
+export function CMSBlockImage({ index, block, actions }) {
   /**
    * Need to use RHF
    */
@@ -38,6 +38,7 @@ export function CMSBlockImage({ block, actions }) {
       <CardArea>
         <CMSBlockModifierButtons
           name="Image"
+          index={index}
           block={formBlock}
           actions={actions}
         />

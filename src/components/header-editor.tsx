@@ -64,9 +64,9 @@ export default function HeaderEditor({
               Editing {name} #{item.id}
             </Text>
           )}
-          <Button leftIcon={<ResultIcon />} onClick={() => handleViewResult()}>
+          {/* <Button leftIcon={<ResultIcon />} onClick={() => handleViewResult()}>
             View Result
-          </Button>
+          </Button> */}
           {/* <Button leftIcon={<CodeIcon />} onClick={() => handleViewJSON()}>
             View JSON
           </Button> */}

@@ -31,11 +31,13 @@ import {
 import { CMSViewJSON } from '@components/cms'
 import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
 import { useRedirectSignIn } from '@hooks'
-import { slugify } from '@utils'
+import { slugify, initBlock } from '@utils'
 
-import dataTheme from '@theme/theme.json'
 import dataLessons from '@data/lessons.json'
 
+/**-----------------------------------------------------------------------------
+ * CMS Lesson editor, with UI and logic
+ -----------------------------------------------------------------------------*/
 export default function CMSLessonId() {
   const NODE_ENV = process.env.NODE_ENV
   const { router, isAuthorized } = useRedirectSignIn()
@@ -44,17 +46,21 @@ export default function CMSLessonId() {
 
   /**
    * State to change UI view mode.
+   * Might not work well yet with RHF.
    */
   const [viewMode, setViewMode] = useState('result')
 
   /**
-   * Should be from API. Used once to populate the initial state data.
-   * But wait until lesson data is ready.
+   * Data that should be from API. Used once to populate the initial state data.
+   * But need to wait until lesson data is ready to be used in UI.
    */
   const lessonInitialValues = dataLessons.find(
     (lesson) => lesson.id === Number(lessonId)
   )
 
+  /**
+   * Initialize RHF values with data from API.
+   */
   useEffect(() => {
     if (lessonInitialValues) {
       // setValue('lesson', lessonInitialValues)
@@ -88,7 +94,7 @@ export default function CMSLessonId() {
   }
 
   const handleReset = () => {
-    toast({ status: 'info', title: 'Resetted lesson data!' })
+    toast({ title: 'Resetted lesson data!', status: 'warning' })
     reset({ ...lessonInitialValues })
   }
 
@@ -103,13 +109,13 @@ export default function CMSLessonId() {
       if (generatedSlug) {
         setValue('slug', generatedSlug)
         toast({
-          status: 'success',
-          title: 'Slug generated!',
+          title: 'Generated slug!',
           description: generatedSlug,
+          status: 'info',
         })
       }
     } catch (error) {
-      toast({ status: 'error', title: 'Slug error to generate!' })
+      toast({ title: 'Failed to generate slug!', status: 'error' })
     }
   }
 
@@ -121,9 +127,7 @@ export default function CMSLessonId() {
       {isAuthorized && lessonInitialValues && getValues() && (
         <>
           <NextHead>
-            <title>
-              #{lessonInitialValues.id} {lessonInitialValues.title} · Catamyst
-            </title>
+            <title>Lesson #{lessonInitialValues.id} · Catamyst</title>
           </NextHead>
           <HeaderEditor
             name="lesson"
@@ -138,7 +142,6 @@ export default function CMSLessonId() {
           />
           {viewMode === 'result' && (
             <CMSViewResultLesson
-              getValues={getValues}
               control={control}
               register={register}
               handleGenerateSlug={handleGenerateSlug}
@@ -153,183 +156,244 @@ export default function CMSLessonId() {
   )
 }
 
+/**-----------------------------------------------------------------------------
+ * The actual lesson content that utilize RHF field array helpers.
+ -----------------------------------------------------------------------------*/
 function CMSViewResultLesson({
-  getValues,
   control,
   register,
   handleGenerateSlug,
   lessonInitialValues,
 }) {
-  const toast = useToast({ duration: 1000, position: 'bottom-right' })
+  const toast = useToast({ duration: 1000, position: 'bottom-left' })
 
   /**
-   * RHF (React Hook Form) field array
+   * RHF (React Hook Form) field array with helpers.
+   * Get control from instantiated useForm from parent component.
    */
   const { append, fields, insert, move, prepend, remove } = useFieldArray({
     control,
     name: 'blocks',
   })
+  console.log(fields)
 
-  const appendBlock = () => {
-    toast({ title: 'Appended below' })
+  /**
+   * Toggle block by index to change isPublished true or false
+   */
+  const togglePublishBlock = (event) => {
+    if (event.target.checked) {
+      toast({ title: 'Published block', status: 'success' })
+    } else {
+      toast({ title: 'Unpublished block', status: 'warning' })
+    }
   }
-  const insertBlock = () => {
-    toast({ title: 'Inserted here' })
+
+  /**
+   * Add block to the first index.
+   */
+  const prependBlock = (index, type) => {
+    prepend(initBlock(type))
+    toast({ title: 'Prepended block above' })
   }
+
+  /**
+   * Add block to the selected index.
+   */
+  const insertBlock = (index, type) => {
+    insert(index + 1, initBlock(type))
+    toast({ title: 'Inserted block here' })
+  }
+
+  /**
+   * Add block to the last index.
+   */
+  const appendBlock = (index, type) => {
+    append(initBlock(type))
+    toast({ title: 'Appended block below' })
+  }
+
+  /**
+   * Move block to previous index or next index.
+   */
   const moveBlock = (direction) => {
-    toast({ title: `Moved ${direction}` })
-  }
-  const prependBlock = () => {
-    toast({ title: 'Prepended above' })
-  }
-  const removeBlock = () => {
-    toast({ title: 'Removed', status: 'error' })
+    toast({ title: `Moved block ${direction}` })
   }
 
+  /**
+   * Remove block by index that passed down into each CMS Block.
+   */
+  const removeBlock = (index) => {
+    toast({ title: 'Removed block', status: 'error' })
+    remove(index) //
+  }
+
+  /**
+   * UI for lesson meta and blocks.
+   */
   return (
     <>
-      <Hero>
-        <Box align="center" pb={5}>
-          <Stack maxW={760}>
-            <InputGroup size="sm" variant="unstyled">
-              <InputLeftAddon
-                opacity={0.5}
-                children={`catamyst.com/learn/track/topic/`}
-              />
-              <Input
-                ref={register}
-                name="slug"
-                placeholder="lesson-slug"
-                isRequired
-              />
-              <Tooltip label="Generate slug" fontSize="xs">
-                <InputRightAddon
-                  as={IconButton}
-                  px={2}
-                  size="xs"
-                  aria-label="Generate slug"
-                  icon={<Icon name="generate" />}
-                  onClick={handleGenerateSlug}
-                />
-              </Tooltip>
-            </InputGroup>
-
-            <Input
-              ref={register}
-              name="title"
-              size="lg"
-              fontFamily="heading"
-              fontWeight="bold"
-              fontSize="3xl"
-              textAlign="center"
-              p={3}
-              variant="unstyled"
-              placeholder="Lesson Title"
-              isRequired
-            />
-
-            <RadioGroup colorScheme="teal">
-              <Stack direction="row">
-                <Text fontWeight="bold">Category:</Text>
-                <Radio
-                  ref={register}
-                  name="category"
-                  value="Fundamental"
-                  defaultChecked={
-                    lessonInitialValues.category === 'Fundamental'
-                  }
-                >
-                  <CategoryBadge category="Fundamental" />
-                </Radio>
-                <Radio
-                  ref={register}
-                  name="category"
-                  value="Specific"
-                  defaultChecked={lessonInitialValues.category === 'Specific'}
-                >
-                  <CategoryBadge category="Specific" />
-                </Radio>
-                <Radio
-                  ref={register}
-                  name="category"
-                  value="Project"
-                  defaultChecked={lessonInitialValues.category === 'Project'}
-                >
-                  <CategoryBadge category="Project" />
-                </Radio>
-              </Stack>
-            </RadioGroup>
-
-            <RadioGroup colorScheme="teal">
-              <Stack direction="row">
-                <Text fontWeight="bold">Level:</Text>
-                <Radio
-                  ref={register}
-                  name="level"
-                  value="Newbie"
-                  defaultChecked={lessonInitialValues.level === 'Newbie'}
-                >
-                  Newbie
-                </Radio>
-                <Radio
-                  ref={register}
-                  name="level"
-                  value="Beginner"
-                  defaultChecked={lessonInitialValues.level === 'Beginner'}
-                >
-                  Beginner
-                </Radio>
-                <Radio
-                  ref={register}
-                  name="level"
-                  value="Intermediate"
-                  defaultChecked={lessonInitialValues.level === 'Intermediate'}
-                >
-                  Intermediate
-                </Radio>
-                <Radio
-                  ref={register}
-                  name="level"
-                  value="Advanced"
-                  defaultChecked={lessonInitialValues.level === 'Advanced'}
-                >
-                  Advanced
-                </Radio>
-              </Stack>
-            </RadioGroup>
-          </Stack>
-        </Box>
-      </Hero>
+      <CMSLessonHero
+        register={register}
+        lessonInitialValues={lessonInitialValues}
+        handleGenerateSlug={handleGenerateSlug}
+      />
 
       <Container width="100%" maxW="1500px" pt={5} px={0}>
         <Stack id="form-lesson-blocks" align="center" spacing={5}>
-          <CMSBlockAdderButtons name="prepend" actions={{ prependBlock }} />
-          {fields &&
-            fields.map((block, index) => {
-              return (
-                <Fragment key={block.id}>
-                  {/* Each CMSBlock type contains CMSBlockModifierButtons */}
-                  <CMSBlock
-                    block={{ ...block, index }}
-                    actions={{
-                      register,
-                      appendBlock,
-                      insertBlock,
-                      moveBlock,
-                      prependBlock,
-                      removeBlock,
-                    }}
-                  />
-                  <CMSBlockAdderButtons
-                    name="insert"
-                    actions={{ insertBlock }}
-                  />
-                </Fragment>
-              )
-            })}
-          <CMSBlockAdderButtons name="append" actions={{ appendBlock }} />
+          {/* Actions alias prependBlock/appendBlock/insertBlock as addBlock */}
+          <CMSBlockAdderButtons
+            name="prepend"
+            index={0}
+            actions={{ addBlock: prependBlock }}
+          />
+          {fields.map((block, index) => {
+            return (
+              <Fragment key={block.id}>
+                {/* Each CMSBlock type contains CMSBlockModifierButtons */}
+                <CMSBlock
+                  index={index}
+                  block={block}
+                  actions={{
+                    register,
+                    togglePublishBlock,
+                    moveBlock,
+                    removeBlock,
+                  }}
+                />
+                <CMSBlockAdderButtons
+                  name="insert"
+                  index={index}
+                  actions={{ addBlock: insertBlock }}
+                />
+              </Fragment>
+            )
+          })}
+          <CMSBlockAdderButtons
+            name="append"
+            index={fields.length}
+            actions={{ addBlock: appendBlock }}
+          />
         </Stack>
       </Container>
     </>
+  )
+}
+
+/**-----------------------------------------------------------------------------
+ * UI for lesson meta only, placed inside hero.
+ * Contains slug, title, category, level.
+ -----------------------------------------------------------------------------*/
+function CMSLessonHero({ register, lessonInitialValues, handleGenerateSlug }) {
+  return (
+    <Hero>
+      <Box align="center" pb={5}>
+        <Stack maxW={760}>
+          <InputGroup size="sm" variant="unstyled">
+            <InputLeftAddon
+              opacity={0.5}
+              children={`catamyst.com/learn/track/topic/`}
+            />
+            <Input
+              ref={register}
+              name="slug"
+              placeholder="lesson-slug"
+              isRequired
+            />
+            <Tooltip label="Generate slug" fontSize="xs">
+              <InputRightAddon
+                as={IconButton}
+                px={2}
+                size="xs"
+                aria-label="Generate slug"
+                icon={<Icon name="generate" />}
+                onClick={handleGenerateSlug}
+              />
+            </Tooltip>
+          </InputGroup>
+
+          <Input
+            ref={register}
+            name="title"
+            size="lg"
+            fontFamily="heading"
+            fontWeight="bold"
+            fontSize="3xl"
+            textAlign="center"
+            p={3}
+            variant="unstyled"
+            placeholder="Lesson Title"
+            isRequired
+          />
+
+          <RadioGroup colorScheme="teal">
+            <Stack direction="row">
+              <Text fontWeight="bold">Category:</Text>
+              <Radio
+                ref={register}
+                name="category"
+                value="Fundamental"
+                defaultChecked={lessonInitialValues.category === 'Fundamental'}
+              >
+                <CategoryBadge category="Fundamental" />
+              </Radio>
+              <Radio
+                ref={register}
+                name="category"
+                value="Specific"
+                defaultChecked={lessonInitialValues.category === 'Specific'}
+              >
+                <CategoryBadge category="Specific" />
+              </Radio>
+              <Radio
+                ref={register}
+                name="category"
+                value="Project"
+                defaultChecked={lessonInitialValues.category === 'Project'}
+              >
+                <CategoryBadge category="Project" />
+              </Radio>
+            </Stack>
+          </RadioGroup>
+
+          <RadioGroup colorScheme="teal">
+            <Stack direction="row">
+              <Text fontWeight="bold">Level:</Text>
+              <Radio
+                ref={register}
+                name="level"
+                value="Newbie"
+                defaultChecked={lessonInitialValues.level === 'Newbie'}
+              >
+                Newbie
+              </Radio>
+              <Radio
+                ref={register}
+                name="level"
+                value="Beginner"
+                defaultChecked={lessonInitialValues.level === 'Beginner'}
+              >
+                Beginner
+              </Radio>
+              <Radio
+                ref={register}
+                name="level"
+                value="Intermediate"
+                defaultChecked={lessonInitialValues.level === 'Intermediate'}
+              >
+                Intermediate
+              </Radio>
+              <Radio
+                ref={register}
+                name="level"
+                value="Advanced"
+                defaultChecked={lessonInitialValues.level === 'Advanced'}
+              >
+                Advanced
+              </Radio>
+            </Stack>
+          </RadioGroup>
+        </Stack>
+      </Box>
+    </Hero>
   )
 }

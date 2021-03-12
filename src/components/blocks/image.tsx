@@ -34,6 +34,7 @@ export function BlockImage({ block }) {
         rounded="md"
         bg={block.size === 'Huge' && useColorModeValue('gray.100', 'gray.500')}
       >
+        {/* Need URL validaton later */}
         <NextImage
           className="next-image"
           src={block.url || `https://example.com`}

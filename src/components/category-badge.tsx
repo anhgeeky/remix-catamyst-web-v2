@@ -1,8 +1,8 @@
-import { Badge } from '@chakra-ui/react'
+import { Tag } from '@chakra-ui/react'
 
 export default function CategoryBadge({ category }) {
   return (
-    <Badge
+    <Tag
       variant="solid"
       colorScheme={
         category === 'general'
@@ -23,6 +23,6 @@ export default function CategoryBadge({ category }) {
       }
     >
       {category}
-    </Badge>
+    </Tag>
   )
 }

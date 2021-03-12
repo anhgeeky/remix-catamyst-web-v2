@@ -2,7 +2,7 @@ import {
   ButtonGroup,
   IconButton,
   HStack,
-  Badge,
+  Tag,
   Switch,
   Text,
 } from '@chakra-ui/react'
@@ -13,20 +13,26 @@ import { Card, Icon } from '@components'
  * CMS Modifier Buttons for naming, moving, and deleting block
  */
 export function CMSBlockModifierButtons({
+  index,
   name,
   block,
   actions,
   children = null,
 }) {
   return (
-    <HStack justify="space-between">
+    <HStack
+      justify="space-between"
+      // opacity={0.1}
+      // _hover={{ opacity: 1 }}
+      // _focus={{ opacity: 1 }}
+    >
       <HStack>
-        <Badge colorScheme="teal">{name}</Badge>
+        <Tag colorScheme="teal">{name}</Tag>
         <Switch
           size="sm"
           name={`blocks[${block.index}].isPublished`}
-          // ref={actions.register}
           defaultChecked={block.isPublished}
+          onChange={actions.togglePublishBlock}
         />
         <Text fontSize="xs">{block.isPublished ? 'Publish' : 'Unpublish'}</Text>
         {children}
@@ -34,20 +40,20 @@ export function CMSBlockModifierButtons({
 
       <ButtonGroup size="xs">
         <IconButton
-          aria-label="Move up"
+          aria-label="Move block up"
           icon={<Icon name="up" />}
           onClick={() => actions.moveBlock('up')}
         />
         <IconButton
-          aria-label="Move down"
+          aria-label="Move block down"
           icon={<Icon name="down" />}
           onClick={() => actions.moveBlock('down')}
         />
         <IconButton
-          aria-label="Delete link block"
+          aria-label="Delete block"
           colorScheme="red"
           icon={<Icon name="delete" />}
-          onClick={() => actions.removeBlock()}
+          onClick={() => actions.removeBlock(index)}
         />
       </ButtonGroup>
     </HStack>

@@ -22,13 +22,18 @@ import { ColorModeToggle, CardArea, Icon, RichTextEditor } from '@components'
 import { BlockTexts } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
-export function CMSBlockTexts({ block, actions }) {
+export function CMSBlockTexts({ index, block, actions }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
       <CardArea>
-        <CMSBlockModifierButtons name="Texts" block={block} actions={actions}>
+        <CMSBlockModifierButtons
+          index={index}
+          name="Texts"
+          block={block}
+          actions={actions}
+        >
           <Button size="xs" leftIcon={<Icon name="edit" />} onClick={onOpen}>
             Open Editor
           </Button>

@@ -1,6 +1,6 @@
 import slugify from 'slugify'
 
-export function utilSlugify(text) {
+export function createSlug(text) {
   const options = {
     lower: true,
     strict: true,
@@ -12,16 +12,16 @@ export function utilSlugify(text) {
 
 export function generateSlug({ text, state, setState, toast }) {
   try {
-    const generatedSlug = utilSlugify(text)
+    const generatedSlug = createSlug(text)
     if (generatedSlug) {
       setState({ ...state, slug: generatedSlug || '' })
       toast({
+        title: 'Generated slug!',
         description: generatedSlug,
-        title: 'Slug generated!',
-        status: 'success',
+        status: 'info',
       })
     }
   } catch (error) {
-    toast({ title: 'Slug error to generate!', status: 'error' })
+    toast({ title: 'Failed to generate slug!', status: 'error' })
   }
 }

@@ -306,7 +306,6 @@
         "isPublished": true,
         "html": "<h2>Bitwarden</h2><p>Bitwarden makes it easy to generate and store unique passwords. It is available for any browser or device.</p>"
       },
-
       {
         "type": "Links",
         "isPublished": true,
@@ -317,7 +316,6 @@
             "url": "https://bitwarden.com",
             "color": "blue.400"
           },
-
           {
             "title": "Bitwarden for Desktop (Windows, macOS, Linux)",
             "category": "App",

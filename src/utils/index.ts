@@ -1,1 +1,2 @@
-export { utilSlugify as slugify } from '@utils/slugify'
+export { createSlug as slugify } from '@utils/slugify'
+export { initBlock } from '@utils/blocks'

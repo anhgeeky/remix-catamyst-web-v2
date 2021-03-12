@@ -8,18 +8,22 @@ import {
 /**
  * CMS Block to choose which block to be displayed for CMS lesson blocks editor
  */
-export function CMSBlock({ block, actions }) {
-  if (block.type === 'Image' && block.url) {
-    return <CMSBlockImage block={block} actions={actions} />
+export function CMSBlock(props) {
+  if (props.block.type === 'Image' && props.block.url) {
+    return <CMSBlockImage {...props} />
   }
-  if (block.type === 'Texts' && block.html) {
-    return <CMSBlockTexts block={block} actions={actions} />
+  if (props.block.type === 'Texts' && props.block.html) {
+    return <CMSBlockTexts {...props} />
   }
-  if (block.type === 'Links' && block.links) {
-    return <CMSBlockLinks block={block} actions={actions} />
+  if (props.block.type === 'Links' && props.block.links) {
+    return <CMSBlockLinks {...props} />
   }
-  if (block.type === 'Divider') {
-    return <CMSBlockDivider block={block} actions={actions} />
+  if (props.block.type === 'Divider') {
+    return <CMSBlockDivider {...props} />
   }
-  return null
+  return (
+    <div>
+      <p>Block {props.block.type} is unavailable</p>
+    </div>
+  )
 }

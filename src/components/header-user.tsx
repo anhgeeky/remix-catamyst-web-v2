@@ -46,7 +46,7 @@ function UserMenuButton({ auth }) {
       status: 'warning',
       duration: 3000,
       isClosable: true,
-      position: 'bottom-left',
+      position: 'bottom-right',
     })
   }
 

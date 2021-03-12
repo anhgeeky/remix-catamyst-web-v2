@@ -22,7 +22,7 @@ export default function SignIn() {
       status: 'success',
       duration: 3000,
       isClosable: true,
-      position: 'bottom-left',
+      position: 'bottom-right',
     })
   }
 

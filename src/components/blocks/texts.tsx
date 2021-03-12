@@ -7,6 +7,9 @@ import {
   ListIcon,
   OrderedList,
   Link,
+  Kbd,
+  Code,
+  chakra,
 } from '@chakra-ui/react'
 import { FaAngleRight } from 'react-icons/fa'
 import ReactHtmlParser from 'react-html-parser'
@@ -41,6 +44,9 @@ const options = {
   transform: function transform(node, index) {
     const fontSizes = ['md', 'lg']
 
+    /**
+     * HTML block elements
+     */
     if (node.type === 'tag' && node.name === 'h1') {
       return (
         <Heading key={index} as="h1" fontFamily="body" size="xl" pt={5}>
@@ -69,14 +75,6 @@ const options = {
         </Text>
       )
     }
-    if (node.type === 'tag' && node.name === 'a') {
-      // node.attribs.target = '_blank'
-      return (
-        <Link key={index} href={node.attribs.href} color="teal.500" isExternal>
-          {node.children[0].data}
-        </Link>
-      )
-    }
     if (node.type === 'tag' && node.name === 'ul') {
       return (
         <List key={index} fontSize={fontSizes} spacing={1} pt={3}>
@@ -100,5 +98,62 @@ const options = {
         </OrderedList>
       )
     }
+
+    /**
+     * HTML inline elements such as: span, b, strong, i, em, code, kbd.
+     */
+    if (node.type === 'tag' && node.name === 'span') {
+      return (
+        <Text as="span" key={index}>
+          {node.children[0].data}
+        </Text>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'b') {
+      return (
+        <Text as="b" key={index}>
+          {node.children[0].data}
+        </Text>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'strong') {
+      return (
+        <Text as="strong" key={index}>
+          {node.children[0].data}
+        </Text>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'i') {
+      return (
+        <Text as="i" key={index}>
+          {node.children[0].data}
+        </Text>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'em') {
+      return (
+        <Text as="em" key={index}>
+          {node.children[0].data}
+        </Text>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'a') {
+      return (
+        <Link key={index} href={node.attribs.href} color="teal.500" isExternal>
+          {node.children[0].data}
+        </Link>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'code') {
+      return <Code key={index}>{node.children[0].data}</Code>
+    }
+    if (node.type === 'tag' && node.name === 'lbd') {
+      return <Kbd key={index}>{node.children[0].data}</Kbd>
+    }
+
+    /**
+     * Return nothing if no element found.
+     */
+    return null
   },
 }
