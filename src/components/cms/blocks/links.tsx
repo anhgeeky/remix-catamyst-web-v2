@@ -20,14 +20,11 @@ import { CMSBlockModifierButtons } from '@components/cms/blocks'
 /**
  * Block only can be used for CMS
  */
-export function CMSBlockLinks({ block }) {
+export function CMSBlockLinks({ block, actions }) {
   return (
     <CardArea>
       {block.isReferences && 'hello'}
-      <CMSBlockModifierButtons
-        block={block}
-        name={block.isReferences ? 'References' : 'Links'}
-      >
+      <CMSBlockModifierButtons name="Links" block={block} actions={actions}>
         <Button
           size="xs"
           leftIcon={<Icon name="add" />}
@@ -56,7 +53,8 @@ export function CMSBlockLinks({ block }) {
             />
 
             <Stack spacing={1} p={2} width="99%">
-              <CMSBlockModifierButtons block={link} name="Link" />
+              {/* Need Link-specific modifer buttons without isPublished */}
+              {/* <CMSBlockModifierButtons block={link} name="Link" /> */}
 
               <FormControl as={HStack}>
                 <VisuallyHidden>

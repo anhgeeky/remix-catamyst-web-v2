@@ -42,7 +42,7 @@ const HOTKEYS = {
 
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
 
-export const EditorSlate = ({ handleSerialize }) => {
+export const EditorSlate = ({ handleSave }) => {
   const [value, setValue] = useState<Descendant[]>(initialValue)
   const renderElement = useCallback((props) => <Element {...props} />, [])
   const renderLeaf = useCallback((props) => <Leaf {...props} />, [])
@@ -69,7 +69,6 @@ export const EditorSlate = ({ handleSerialize }) => {
         value={value}
         onChange={(value) => {
           setValue(value)
-          handleSerialize(value)
         }}
       >
         <ButtonGroup size="sm" spacing={2}>

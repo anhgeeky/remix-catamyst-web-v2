@@ -88,7 +88,13 @@ export default function CMSTrackId() {
     setFormTrack({ ...formTrack, [event.target.name]: event.target.value })
   }
   const handleSave = () => {
-    toast({ title: 'Track saved!', status: 'success' })
+    toast({ title: 'Saved track!', status: 'success' })
+  }
+  const handleBack = () => {
+    router.push('/cms/tracks')
+  }
+  const handleDelete = () => {
+    toast({ title: 'Deleted track!', status: 'error' })
   }
 
   return (
@@ -108,8 +114,11 @@ export default function CMSTrackId() {
           <HeaderEditor
             name="track"
             item={formTrack}
-            handleSave={handleSave}
+            handleBack={handleBack}
+            handleDelete={handleDelete}
             handleReset={() => console.log('Reset')}
+            handleSave={handleSave}
+            handleSubmit={() => {}}
             handleViewResult={() => setViewMode('result')}
             handleViewJSON={() => setViewMode('json')}
           />

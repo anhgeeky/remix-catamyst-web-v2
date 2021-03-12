@@ -1,7 +1,3 @@
-import { Fragment, useState, useEffect } from 'react'
-import NextHead from 'next/head'
-import { useForm } from 'react-hook-form'
-import { DevTool } from '@hookform/devtools'
 import {
   Box,
   Button,
@@ -19,6 +15,10 @@ import {
   Tooltip,
   useToast,
 } from '@chakra-ui/react'
+import { Fragment, useState, useEffect } from 'react'
+import NextHead from 'next/head'
+import { useForm, useFieldArray } from 'react-hook-form'
+import { DevTool } from '@hookform/devtools'
 
 import { Layout } from '@layouts'
 import {
@@ -37,18 +37,19 @@ import dataTheme from '@theme/theme.json'
 import dataLessons from '@data/lessons.json'
 
 export default function CMSLessonId() {
+  const NODE_ENV = process.env.NODE_ENV
   const { router, isAuthorized } = useRedirectSignIn()
   const { lessonId } = router.query
   const toast = useToast({ duration: 1000, position: 'bottom-left' })
 
   /**
-   * State to change UI view mode
+   * State to change UI view mode.
    */
   const [viewMode, setViewMode] = useState('result')
 
   /**
-   * Should be from API. Used once to populate the initial state data
-   * Wait until lesson data is ready
+   * Should be from API. Used once to populate the initial state data.
+   * But wait until lesson data is ready.
    */
   const lessonInitialValues = dataLessons.find(
     (lesson) => lesson.id === Number(lessonId)
@@ -57,12 +58,12 @@ export default function CMSLessonId() {
   useEffect(() => {
     if (lessonInitialValues) {
       // setValue('lesson', lessonInitialValues)
-      reset({ lesson: lessonInitialValues })
+      reset({ ...lessonInitialValues })
     }
   }, [lessonInitialValues])
 
   /**
-   * React Hook Form
+   * RHF (React Hook Form)
    */
   const {
     control,
@@ -79,7 +80,7 @@ export default function CMSLessonId() {
 
   const handleSave = (data) => {
     toast({ status: 'success', title: 'Saved lesson data!' })
-    // console.log(JSON.stringify({ type: 'SAVE_LESSON', payload: data }, null, 2))
+    console.log(JSON.stringify({ type: 'SAVE_LESSON', payload: data }, null, 2))
   }
 
   const handleDelete = () => {
@@ -88,7 +89,7 @@ export default function CMSLessonId() {
 
   const handleReset = () => {
     toast({ status: 'info', title: 'Resetted lesson data!' })
-    reset({ lesson: lessonInitialValues })
+    reset({ ...lessonInitialValues })
   }
 
   const handleBack = () => {
@@ -98,9 +99,9 @@ export default function CMSLessonId() {
   const handleGenerateSlug = () => {
     try {
       const values = getValues()
-      const generatedSlug = slugify(values.lesson.title)
+      const generatedSlug = slugify(values.title)
       if (generatedSlug) {
-        setValue('lesson.slug', generatedSlug)
+        setValue('slug', generatedSlug)
         toast({
           status: 'success',
           title: 'Slug generated!',
@@ -112,6 +113,9 @@ export default function CMSLessonId() {
     }
   }
 
+  /**
+   * User interface
+   */
   return (
     <Layout>
       {isAuthorized && lessonInitialValues && getValues() && (
@@ -134,14 +138,15 @@ export default function CMSLessonId() {
           />
           {viewMode === 'result' && (
             <CMSViewResultLesson
-              register={register}
               getValues={getValues}
+              control={control}
+              register={register}
               handleGenerateSlug={handleGenerateSlug}
               lessonInitialValues={lessonInitialValues}
             />
           )}
           {viewMode === 'json' && <CMSViewJSON codeString={getValues()} />}
-          <DevTool control={control} />
+          {NODE_ENV !== 'production' && <DevTool control={control} />}
         </>
       )}
     </Layout>
@@ -149,20 +154,43 @@ export default function CMSLessonId() {
 }
 
 function CMSViewResultLesson({
-  register,
   getValues,
+  control,
+  register,
   handleGenerateSlug,
   lessonInitialValues,
 }) {
+  const toast = useToast({ duration: 1000, position: 'bottom-right' })
+
   /**
-   * RHF can be used here to reduce handle change
+   * RHF (React Hook Form) field array
    */
+  const { append, fields, insert, move, prepend, remove } = useFieldArray({
+    control,
+    name: 'blocks',
+  })
+
+  const appendBlock = () => {
+    toast({ title: 'Appended below' })
+  }
+  const insertBlock = () => {
+    toast({ title: 'Inserted here' })
+  }
+  const moveBlock = (direction) => {
+    toast({ title: `Moved ${direction}` })
+  }
+  const prependBlock = () => {
+    toast({ title: 'Prepended above' })
+  }
+  const removeBlock = () => {
+    toast({ title: 'Removed', status: 'error' })
+  }
 
   return (
     <>
       <Hero>
         <Box align="center" pb={5}>
-          <Stack maxW={dataTheme.maxContentWidth}>
+          <Stack maxW={760}>
             <InputGroup size="sm" variant="unstyled">
               <InputLeftAddon
                 opacity={0.5}
@@ -170,7 +198,7 @@ function CMSViewResultLesson({
               />
               <Input
                 ref={register}
-                name="lesson.slug"
+                name="slug"
                 placeholder="lesson-slug"
                 isRequired
               />
@@ -188,7 +216,7 @@ function CMSViewResultLesson({
 
             <Input
               ref={register}
-              name="lesson.title"
+              name="title"
               size="lg"
               fontFamily="heading"
               fontWeight="bold"
@@ -205,7 +233,7 @@ function CMSViewResultLesson({
                 <Text fontWeight="bold">Category:</Text>
                 <Radio
                   ref={register}
-                  name="lesson.category"
+                  name="category"
                   value="Fundamental"
                   defaultChecked={
                     lessonInitialValues.category === 'Fundamental'
@@ -215,7 +243,7 @@ function CMSViewResultLesson({
                 </Radio>
                 <Radio
                   ref={register}
-                  name="lesson.category"
+                  name="category"
                   value="Specific"
                   defaultChecked={lessonInitialValues.category === 'Specific'}
                 >
@@ -223,7 +251,7 @@ function CMSViewResultLesson({
                 </Radio>
                 <Radio
                   ref={register}
-                  name="lesson.category"
+                  name="category"
                   value="Project"
                   defaultChecked={lessonInitialValues.category === 'Project'}
                 >
@@ -237,7 +265,7 @@ function CMSViewResultLesson({
                 <Text fontWeight="bold">Level:</Text>
                 <Radio
                   ref={register}
-                  name="lesson.level"
+                  name="level"
                   value="Newbie"
                   defaultChecked={lessonInitialValues.level === 'Newbie'}
                 >
@@ -245,7 +273,7 @@ function CMSViewResultLesson({
                 </Radio>
                 <Radio
                   ref={register}
-                  name="lesson.level"
+                  name="level"
                   value="Beginner"
                   defaultChecked={lessonInitialValues.level === 'Beginner'}
                 >
@@ -253,7 +281,7 @@ function CMSViewResultLesson({
                 </Radio>
                 <Radio
                   ref={register}
-                  name="lesson.level"
+                  name="level"
                   value="Intermediate"
                   defaultChecked={lessonInitialValues.level === 'Intermediate'}
                 >
@@ -261,7 +289,7 @@ function CMSViewResultLesson({
                 </Radio>
                 <Radio
                   ref={register}
-                  name="lesson.level"
+                  name="level"
                   value="Advanced"
                   defaultChecked={lessonInitialValues.level === 'Advanced'}
                 >
@@ -275,20 +303,31 @@ function CMSViewResultLesson({
 
       <Container width="100%" maxW="1500px" pt={5} px={0}>
         <Stack id="form-lesson-blocks" align="center" spacing={5}>
-          {JSON.stringify(getValues(), null, 2)}
-          {!lessonInitialValues?.blocks && <CMSBlockAdderButtons />}
-          {lessonInitialValues?.blocks &&
-            lessonInitialValues?.blocks.map((block, index) => {
+          <CMSBlockAdderButtons name="prepend" actions={{ prependBlock }} />
+          {fields &&
+            fields.map((block, index) => {
               return (
-                <Fragment key={index}>
+                <Fragment key={block.id}>
+                  {/* Each CMSBlock type contains CMSBlockModifierButtons */}
                   <CMSBlock
-                    block={block}
-                    // setValue={setValue}
+                    block={{ ...block, index }}
+                    actions={{
+                      register,
+                      appendBlock,
+                      insertBlock,
+                      moveBlock,
+                      prependBlock,
+                      removeBlock,
+                    }}
                   />
-                  <CMSBlockAdderButtons />
+                  <CMSBlockAdderButtons
+                    name="insert"
+                    actions={{ insertBlock }}
+                  />
                 </Fragment>
               )
             })}
+          <CMSBlockAdderButtons name="append" actions={{ appendBlock }} />
         </Stack>
       </Container>
     </>

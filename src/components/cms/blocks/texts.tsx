@@ -1,7 +1,8 @@
 import {
   Box,
-  Button,
   Badge,
+  Button,
+  ButtonGroup,
   HStack,
   Modal,
   ModalBody,
@@ -17,17 +18,17 @@ import {
   useToast,
 } from '@chakra-ui/react'
 
-import { CardArea, Icon, RichTextEditor } from '@components'
+import { ColorModeToggle, CardArea, Icon, RichTextEditor } from '@components'
 import { BlockTexts } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
-export function CMSBlockTexts({ block }) {
+export function CMSBlockTexts({ block, actions }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
       <CardArea>
-        <CMSBlockModifierButtons block={block} name="Texts">
+        <CMSBlockModifierButtons name="Texts" block={block} actions={actions}>
           <Button size="xs" leftIcon={<Icon name="edit" />} onClick={onOpen}>
             Open Editor
           </Button>
@@ -42,9 +43,17 @@ export function CMSBlockTexts({ block }) {
 
 function CMSBlockModal({ block, isOpen, onClose }) {
   const toast = useToast({ position: 'top', duration: 300 })
+
   const handleSave = () => {
     toast({
-      title: 'Texts are saved!',
+      title: 'Saved texts!',
+      status: 'success',
+    })
+  }
+
+  const handleLoad = () => {
+    toast({
+      title: 'Loaded texts!',
       status: 'success',
     })
   }
@@ -66,22 +75,31 @@ function CMSBlockModal({ block, isOpen, onClose }) {
       >
         <ModalHeader pt={1} px={2} pb={2}>
           <HStack>
-            <Badge colorScheme="teal">Texts Editor</Badge>
-            <Button
-              size="xs"
-              colorScheme="teal"
-              leftIcon={<Icon name="save" />}
-              onClick={handleSave}
-            >
-              Save
-            </Button>
+            <Badge colorScheme="teal">Rich Text Editor</Badge>
+            <ButtonGroup size="xs">
+              <ColorModeToggle />
+              <Button
+                colorScheme="teal"
+                leftIcon={<Icon name="save" />}
+                onClick={handleSave}
+              >
+                Save to JSON
+              </Button>
+              <Button
+                colorScheme="yellow"
+                leftIcon={<Icon name="save" />}
+                onClick={handleLoad}
+              >
+                Load to Slate
+              </Button>
+            </ButtonGroup>
           </HStack>
           <ModalCloseButton />
         </ModalHeader>
 
         <ModalBody align="center" p={0}>
           <Box maxW="760px" width="100%">
-            <RichTextEditor htmlString={block.html} />
+            <RichTextEditor handleSave={handleSave} htmlString={block.html} />
           </Box>
         </ModalBody>
       </ModalContent>

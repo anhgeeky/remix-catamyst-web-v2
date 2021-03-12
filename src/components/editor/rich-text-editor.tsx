@@ -1,25 +1,11 @@
 import { Box, ButtonGroup, Button } from '@chakra-ui/react'
 import { ColorModeToggle, EditorSlate } from '@components'
 
-export function RichTextEditor({ htmlString }) {
-  const handleSerialize = (value) => {
-    console.log('Serialize')
-  }
-
-  const handleDeserialize = () => {
-    console.log('Deserialize')
-  }
-
+export function RichTextEditor({ handleSave, htmlString }) {
   return (
     <Box textAlign="left" maxW="720px" width="100%">
-      <ButtonGroup size="xs" mb={5} variant="ghost">
-        <ColorModeToggle />
-        <Button onClick={handleSerialize}>Save</Button>
-        <Button onClick={handleDeserialize}>Load</Button>
-      </ButtonGroup>
-
       <Box>
-        <EditorSlate handleSerialize={handleSerialize} />
+        <EditorSlate handleSave={handleSave} />
       </Box>
     </Box>
   )

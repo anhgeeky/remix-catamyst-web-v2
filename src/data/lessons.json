@@ -8,7 +8,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
         "size": "Small",
@@ -21,12 +21,12 @@
         "showMeta": false
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at home, Neko wants to share his artworks with many people around the world, beyond just Japan.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly.</p><p>B. Publish the artworks on a website.</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called Google Arts &amp; Culture:</p>"
       },
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "size": "Huge",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
@@ -36,12 +36,12 @@
         "showMeta": true
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>What is web development?</h1><p>Web development is the process of building websites that run in a web browser. Web development powers popular sites like Google, Wikipedia, Twitter, YouTube, Facebook, Instagram, LinkedIn, Airbnb, and more. Even systems on software from Apple and Microsoft. And obviously, your favorite websites included!</p><p>In this learning track, you will obtain fundamental concepts and specific tools to build high-quality websites and web applications. Ultimately, you will be able to master your strengths in problem-solving and showcasing a portfolio that could leverage you to land a decent job or a freelance offer. You can even build your own tech business using the knowledge and skillset you obtain here.</p><h1>Who is a web developer?</h1><p>A web developer is the one who builds and maintains websites or web applications. They are also sometimes responsible to design how you would see and experience a website. Although, the work for the design can also be given to the dedicated web designers instead.</p><h1>Who can learn web development?</h1><p>Even though Neko is a painter, Neko can learn web development and build a website. So, no matter what your education and career background are, you can learn to build your own websites and web applications as long as you make the effort.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "isReferences": true,
         "links": [
@@ -64,7 +64,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
         "size": "Small",
@@ -73,7 +73,7 @@
         "showMeta": false
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Learn the fundamentals and specific tools</h1><p>You have to learn the fundamentals first to have a strong foundation in learning web development. After mastering the fundamentals, you will learn the skills to use the tools for building websites and web applications.</p><h1>Practice building a lot of projects</h1><p>When learning fundamentals and specific tools, you will also practice implementing the knowledge you have gained by building your own projects. The scale of the projects ranges from tiny, small, medium, to large.</p><h1>Gain career skills</h1><p>Finally, after gaining the skills and practicing the projects, it is important to know how to sell yourself and your crafts to future employers, clients, or customers. These career skills are essential to prepare you to enter the professional web and software development industry.</p>"
       }
@@ -88,7 +88,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "title": "Hour glass",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
@@ -97,12 +97,12 @@
         "showMeta": false
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Time expectation</h1><p>All of the activities are expected to be completed within 3 to 6 months, depending on your learning pace and effort. You can finish earlier in 2 months or longer in 1 year.</p><p>If you decide to spend at least 1 to 3 hours on weekdays and 5 to 8 hours on weekends, we can assume that you can finish them in 3 to 6 months. Of course, it would be more efficient if you spend more time per day.</p><h1>Faster is not always better</h1><p>To finish faster, some people might skip learning the knowledge and doing the projects directly. We do not recommend this way as each of them will give you the proper foundation to go to the next lessons. However, it is okay to skip some parts only if you already master them. Remember, the journey could take a while. Even after you have done them, you are still required to &quot;do the work&quot; because you need to always keep practicing.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "isReferences": true,
         "links": [
@@ -140,7 +140,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "title": "Cat with laptop",
         "alt": "Cat typing on laptop animated",
@@ -152,12 +152,12 @@
         "showMeta": false
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Laptop requirements</h1><p>Every laptop need an Operating System (OS), the system that being used to run your computer.</p><h2>If using Linux</h2><p>If you have a laptop with Linux OS like Ubuntu, it should be enough. Preferably using Ubuntu version 20.04 or later.</p><h2>If using Mac</h2><p>If you have a MacBook with macOS, it should be enough. Preferably bought on year 2015 or above, and using macOS Catalina or later.</p><h2>If using Windows</h2><p>If you have a laptop with Windows OS:</p><ul><li>Preferably bought on year 2015 or above, and using Windows 10.</li><li>Processor at least Intel Core i3 or AMD.</li><li>RAM at least 4 GB.</li><li>Hard drive at least 100 GB of space.</li></ul><h1>Mobile requirements</h1><p>Every mobile phone or tablet usually already comes with their OS too.</p><ul><li>If you have an iPhone or iPad, it should be enough.</li><li>If you have an Android phone or tablet, it should have minimum Android version 4.0 or above.</li></ul>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "isReferences": true,
         "links": [
@@ -195,26 +195,26 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>There are 5 essential software tools you can prepare:</p><ol><li>Web browser</li><li>Password manager</li><li>Task manager</li><li>Note taker</li><li>Grammar checker</li></ol>"
       },
       {
-        "component": "divider",
+        "type": "Divider",
         "isPublished": true
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Web browser</h1><p>With web browser, you can access websites and web applications via the Internet. Here are the recommended web browsers you can use:</p><ul><li>Google Chrome</li><li>Mozilla Firefox</li><li>Brave Browser</li></ul><p>All of these browsers are available on desktop and mobile.</p>"
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h2>Google Chrome</h2><p>Google Chrome is a fast and secure web browser developed by Google. It uses Chromium project under the hood.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -237,12 +237,12 @@
         ]
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h2>Mozilla Firefox</h2><p>Firefox is a free web browser backed by Mozilla, dedicated to internet health and privacy.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -265,12 +265,12 @@
         ]
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h2>Brave Browser</h2><p>Brave allows you to browse or loads content 3x faster than Chrome, while stops online surveillance and uses less battery. Despite its difference with Google Chrome, Brave uses Chromium as well.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -293,22 +293,22 @@
         ]
       },
       {
-        "component": "divider",
+        "type": "Divider",
         "isPublished": true
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Password manager</h1><p>During your learning, you will use various tools online. To use those tools, most of the time you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it&#39;s free, safe, and easier to use than other alternatives.</p>"
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h2>Bitwarden</h2><p>Bitwarden makes it easy to generate and store unique passwords. It is available for any browser or device.</p>"
       },
 
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -346,7 +346,7 @@
         ]
       },
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "size": "Huge",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
@@ -355,21 +355,21 @@
         "showMeta": true
       },
       {
-        "component": "divider",
+        "type": "Divider",
         "isPublished": true
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Task manager</h1><p>A task manager is essential to keep you on track and productive. Task management helps you to manage your projects so much easier. There are many task management apps you can use, but we recommend you to use Trello.</p>"
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h2>Trello</h2><p>Trello is the most popular task management app, owned by Atlassian. You can use Trello to track your tasks and activities, for personal or work, both on desktop and mobile.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -401,21 +401,21 @@
         ]
       },
       {
-        "component": "divider",
+        "type": "Divider",
         "isPublished": true
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Note taker</h1><p>Note taker or note-taking app helps you to record your own information over time while learning. There are also many note-taking apps, but we recommend you to use Notion if you want more capabilities.</p>"
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h2>Notion</h2><p>Notion is an all-in-one workspace for your notes, tasks, wikis, and databases. It is a new kind of tool that blends your everyday apps into one. Available on web, desktop, and mobile.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -432,21 +432,21 @@
         ]
       },
       {
-        "component": "divider",
+        "type": "Divider",
         "isPublished": true
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h1>Grammar checker</h1><p>To learn anything these days, you are also required to write a lot in English within various tools and media. While writing, a grammar checker helps you to write flawlessly. We recommend you to use Grammarly.</p>"
       },
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<h2>Grammarly</h2><p>Grammarly is a free online writing assistant that powered with AI. Available on desktop and mobile, also as browser plugin.</p>"
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -483,7 +483,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
@@ -498,7 +498,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
@@ -513,12 +513,12 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Learning things like technology, design, web development, and software engineering are rarely a linear process. There is actually no 1-2-3 order like a formal educational stage such as elementary school, middle school, high school, then university.</p><p>In real life, the actual learning itself has no beginning, a middle, and an end. Sometimes you have to go back and forth from concept to concept to understand something. It&#39;s obviously impossible to know everything perfectly, but you should embrace that imperfection.</p><p>There is no need to memorize everything too, as you can look up the information you need again and again whenever you need them. Even if you already learned about something some time ago, you can still re-learn it today.</p>"
       },
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
         "title": " Linear vs Non-linear learning · Inspired by Visual Thinkery",
@@ -527,11 +527,11 @@
         "showMeta": true
       },
       {
-        "component": "divider",
+        "type": "Divider",
         "isPublished": true
       },
       {
-        "component": "links",
+        "type": "Links",
         "isPublished": true,
         "links": [
           {
@@ -554,7 +554,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "image",
+        "type": "Image",
         "isPublished": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614961932/cat-painting-shapes.png",
         "title": "Just like a painter!",
@@ -562,11 +562,11 @@
         "size": "Small"
       },
       {
-        "component": "divider",
+        "type": "Divider",
         "isPublished": true
       },
       {
-        "component": "links",
+        "type": "Links",
         "isReferences": true,
         "isPublished": true,
         "links": [
@@ -590,7 +590,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
@@ -605,7 +605,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
@@ -619,7 +619,7 @@
     "level": "Newbie",
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
@@ -634,7 +634,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
@@ -649,7 +649,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
@@ -664,7 +664,7 @@
     "isPublished": true,
     "blocks": [
       {
-        "component": "texts",
+        "type": "Texts",
         "isPublished": true,
         "html": "<p>Coming soon!</p>"
       }
