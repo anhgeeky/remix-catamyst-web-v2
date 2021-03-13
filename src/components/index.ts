@@ -71,6 +71,7 @@ export { CardArea } from '@components/card-area'
 export { CodeHighlight } from '@components/code-highlight'
 export { Icon } from '@components/icon'
 export { RichTextEditor } from '@components/editor/rich-text-editor'
+export { useCustomToast as useToast } from '@components/toast'
 
 /**
  * Would be used with dynamic import.

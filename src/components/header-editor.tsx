@@ -18,43 +18,32 @@ import { Icon } from '@components'
  * This editor should work with generic data.
  * Item could be a track, topic, or lesson.
  */
-export default function HeaderEditor({
-  name,
-  item,
-  register,
-  handleBack,
-  handleDelete,
-  handleReset,
-  handleSave,
-  handleSubmit,
-  handleViewResult,
-  handleViewJSON,
-}) {
+export default function HeaderEditor({ name, item, register, actions }) {
   return (
     <Flex justify={{ base: 'flex-start', md: 'center' }} py={2} pt={3}>
       <Flex width="1200px" justify="space-between" px={5}>
         <ButtonGroup as={HStack} size="sm" spacing={2}>
-          <Button leftIcon={<Icon name="back" />} onClick={handleBack}>
+          <Button leftIcon={<Icon name="back" />} onClick={actions.handleBack}>
             Back
           </Button>
           <Button
             colorScheme="red"
             leftIcon={<Icon name="delete" />}
-            onClick={handleDelete}
+            onClick={actions.handleDelete}
           >
             Delete
           </Button>
           <Button
             colorScheme="yellow"
             leftIcon={<Icon name="reset" />}
-            onClick={handleReset}
+            onClick={actions.handleReset}
           >
             Reset
           </Button>
           <Button
             colorScheme="teal"
             leftIcon={<Icon name="save" />}
-            onClick={handleSubmit(handleSave)}
+            onClick={actions.handleSubmit(actions.handleSave)}
           >
             Save Changes
           </Button>
@@ -63,7 +52,7 @@ export default function HeaderEditor({
               defaultChecked={item.isPublished}
               name="isPublished"
               ref={register}
-              // onChange={actions.togglePublishBlock}
+              onChange={actions.togglePublishLesson}
             />
             <Text>{item.isPublished ? 'Published' : 'Unpublished'}</Text>
           </HStack>
@@ -81,12 +70,20 @@ export default function HeaderEditor({
               Editing {name} #{item.id}
             </Text>
           )}
-          {/* <Button leftIcon={<ResultIcon />} onClick={() => handleViewResult()}>
-            View Result
-          </Button> */}
-          {/* <Button leftIcon={<CodeIcon />} onClick={() => handleViewJSON()}>
-            View JSON
-          </Button> */}
+          <Box display="none">
+            <Button
+              leftIcon={<ResultIcon />}
+              onClick={() => actions.handleViewResult()}
+            >
+              View Result
+            </Button>
+            <Button
+              leftIcon={<CodeIcon />}
+              onClick={() => actions.handleViewJSON()}
+            >
+              View JSON
+            </Button>
+          </Box>
         </ButtonGroup>
       </Flex>
     </Flex>

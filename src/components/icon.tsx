@@ -34,9 +34,15 @@ import {
   FaListOl as ListOrderedIcon,
   FaListUl as ListUnorderedIcon,
   FaAngleRight as BulletIcon,
+  FaSearch as SearchIcon,
+  FaCog as SettingsIcon,
+  FaUser as ProfileIcon,
 } from 'react-icons/fa'
-import { RiRefreshLine as ResetIcon } from 'react-icons/ri'
-import { FiSettings as SettingsIcon } from 'react-icons/fi'
+import {
+  RiRefreshLine as ResetIcon,
+  RiDashboardFill as DashboardIcon,
+  RiLogoutBoxLine as SignOutIcon,
+} from 'react-icons/ri'
 
 export function Icon({ name }) {
   switch (name) {
@@ -92,8 +98,16 @@ export function Icon({ name }) {
       return <UpIcon />
     case 'url':
       return <UrlIcon />
+    case 'dashboard':
+      return <DashboardIcon />
+    case 'profile':
+      return <ProfileIcon />
     case 'settings':
       return <SettingsIcon />
+    case 'search':
+      return <SearchIcon />
+    case 'signout':
+      return <SignOutIcon />
     /**
      * Editor button icons
      */

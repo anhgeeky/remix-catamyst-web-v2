@@ -18,7 +18,6 @@ import {
   Stack,
   Text,
   Textarea,
-  useToast,
   Wrap,
   WrapItem,
 } from '@chakra-ui/react'
@@ -37,6 +36,7 @@ import {
   HeaderEditor,
   Hero,
   Icon,
+  useToast,
 } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { useRedirectSignIn } from '@hooks'
@@ -49,7 +49,7 @@ export default function CMSTrackId() {
   const router = useRouter()
   const { isAuthorized } = useRedirectSignIn()
   const [viewMode, setViewMode] = useState('result')
-  const toast = useToast({ duration: 1000, position: 'bottom-left' })
+  const toast = useToast({ duration: 1000 })
   const { trackId } = router.query
 
   /**
@@ -113,13 +113,15 @@ export default function CMSTrackId() {
             name="track"
             item={formTrack}
             register={() => {}}
-            handleBack={handleBack}
-            handleDelete={handleDelete}
-            handleReset={() => console.log('Reset')}
-            handleSave={handleSave}
-            handleSubmit={() => {}}
-            handleViewResult={() => setViewMode('result')}
-            handleViewJSON={() => setViewMode('json')}
+            actions={{
+              handleBack,
+              handleDelete,
+              // handleReset,
+              handleSave,
+              // handleSubmit,
+              handleViewResult: () => setViewMode('result'),
+              handleViewJSON: () => setViewMode('json'),
+            }}
           />
           {viewMode === 'json' && (
             <CMSViewJSON

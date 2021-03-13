@@ -1,27 +1,36 @@
 import NextLink from 'next/link'
 import NextHead from 'next/head'
-import NextImage from 'next/image'
 import {
   Box,
+  Button,
+  Flex,
   FormControl,
   FormLabel,
   Heading,
   HStack,
-  Image,
   Input,
+  InputGroup,
   Stack,
   StackDivider,
   Text,
+  InputLeftElement,
+  VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
-import { Content, CategoryBadge } from '@components'
+import { Icon, Content, CategoryBadge, useToast } from '@components'
 import { CMSHero } from '@components/cms'
 
 import dataLessons from '@data/lessons.json'
 
 export function CMSLessons() {
+  const toast = useToast()
+
+  const handleAddNewLesson = () => {
+    toast({ status: 'success', title: 'Created new lesson!' })
+  }
+
   return (
     <>
       <NextHead>
@@ -36,11 +45,35 @@ export function CMSLessons() {
       </CMSHero>
 
       <Content>
-        <FormControl id="search-lesson" mb={5}>
-          <FormLabel>Search lesson by name</FormLabel>
-          <Input type="text" placeholder="Search for lessons..." />
-        </FormControl>
+        <Stack direction="row">
+          <Box>
+            <VisuallyHidden>
+              <FormLabel>Add new lesson</FormLabel>
+            </VisuallyHidden>
+            <Button
+              colorScheme="teal"
+              leftIcon={<Icon name="add" />}
+              onClick={handleAddNewLesson}
+            >
+              Create new lesson
+            </Button>
+          </Box>
+          <Box width="100%">
+            <VisuallyHidden>
+              <FormLabel>Search lesson by name</FormLabel>
+            </VisuallyHidden>
+            <InputGroup>
+              <InputLeftElement
+                pointerEvents="none"
+                children={<Icon name="search" />}
+              />
+              <Input type="text" placeholder="Search for existing lessons..." />
+            </InputGroup>
+          </Box>
+        </Stack>
+
         <Stack
+          mt={5}
           divider={
             <StackDivider
               borderColor={useColorModeValue('gray.200', 'gray.700')}

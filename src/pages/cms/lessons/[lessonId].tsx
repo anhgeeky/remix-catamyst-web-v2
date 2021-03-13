@@ -13,7 +13,6 @@ import {
   Stack,
   Text,
   Tooltip,
-  useToast,
 } from '@chakra-ui/react'
 import { Fragment, useState, useEffect } from 'react'
 import NextHead from 'next/head'
@@ -27,6 +26,7 @@ import {
   HeaderEditor,
   HeadingStack,
   Hero,
+  useToast,
 } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
@@ -42,7 +42,7 @@ export default function CMSLessonId() {
   const NODE_ENV = process.env.NODE_ENV
   const { router, isAuthorized } = useRedirectSignIn()
   const { lessonId } = router.query
-  const toast = useToast({ duration: 1000, position: 'bottom-left' })
+  const toast = useToast({ duration: 1000 })
 
   /**
    * State to change UI view mode.
@@ -102,6 +102,22 @@ export default function CMSLessonId() {
     router.push('/cms/lessons')
   }
 
+  const togglePublishLesson = (event) => {
+    try {
+      if (event.target.checked) {
+        // Change lesson.isPublished here
+        toast({ title: 'Published lesson', status: 'success' })
+      } else {
+        toast({ title: 'Unpublished lesson', status: 'warning' })
+      }
+    } catch (error) {
+      toast({
+        status: 'error',
+        title: 'Failed to toggle lesson published status',
+      })
+    }
+  }
+
   const handleGenerateSlug = () => {
     try {
       const values = getValues()
@@ -134,19 +150,24 @@ export default function CMSLessonId() {
             name="lesson"
             item={lessonInitialValues}
             register={register}
-            handleBack={handleBack}
-            handleDelete={handleDelete}
-            handleReset={handleReset}
-            handleSave={handleSave}
-            handleSubmit={handleSubmit}
-            handleViewResult={() => setViewMode('result')}
-            handleViewJSON={() => setViewMode('json')}
+            actions={{
+              togglePublishLesson,
+              handleBack,
+              handleDelete,
+              handleReset,
+              handleSave,
+              handleSubmit,
+              handleViewResult: () => setViewMode('result'),
+              handleViewJSON: () => setViewMode('json'),
+            }}
           />
           {viewMode === 'result' && (
             <CMSViewResultLesson
               control={control}
               register={register}
-              handleGenerateSlug={handleGenerateSlug}
+              actions={{
+                handleGenerateSlug,
+              }}
               lessonInitialValues={lessonInitialValues}
             />
           )}
@@ -162,12 +183,12 @@ export default function CMSLessonId() {
  * The actual lesson content that utilize RHF field array helpers.
  -----------------------------------------------------------------------------*/
 function CMSViewResultLesson({
+  lessonInitialValues,
   control,
   register,
-  handleGenerateSlug,
-  lessonInitialValues,
+  actions,
 }) {
-  const toast = useToast({ duration: 1000, position: 'bottom-left' })
+  const toast = useToast({ duration: 1000 })
 
   /**
    * RHF (React Hook Form) field array with helpers.
@@ -184,7 +205,7 @@ function CMSViewResultLesson({
   const togglePublishBlock = (event) => {
     try {
       if (event.target.checked) {
-        // Directly toggle here
+        // Change block.isPublished here
         toast({ title: 'Published block', status: 'success' })
       } else {
         toast({ title: 'Unpublished block', status: 'warning' })
@@ -271,7 +292,7 @@ function CMSViewResultLesson({
       <CMSLessonHero
         register={register}
         lessonInitialValues={lessonInitialValues}
-        handleGenerateSlug={handleGenerateSlug}
+        actions={actions}
       />
 
       <Container width="100%" maxW="1500px" pt={5} px={0}>
@@ -319,7 +340,7 @@ function CMSViewResultLesson({
  * UI for lesson meta only, placed inside hero.
  * Contains slug, title, category, level.
  -----------------------------------------------------------------------------*/
-function CMSLessonHero({ register, lessonInitialValues, handleGenerateSlug }) {
+function CMSLessonHero({ register, lessonInitialValues, actions }) {
   return (
     <Hero>
       <Box align="center" pb={5}>
@@ -342,7 +363,7 @@ function CMSLessonHero({ register, lessonInitialValues, handleGenerateSlug }) {
                 size="xs"
                 aria-label="Generate slug"
                 icon={<Icon name="generate" />}
-                onClick={handleGenerateSlug}
+                onClick={actions.handleGenerateSlug}
               />
             </Tooltip>
           </InputGroup>

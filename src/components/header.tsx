@@ -64,7 +64,7 @@ export default function Header() {
                   <Logo />
                 </a>
               </NextLink>
-              <Box display={{ base: 'none', md: 'flex' }}>
+              <Box>
                 <ColorModeToggle />
               </Box>
             </HStack>

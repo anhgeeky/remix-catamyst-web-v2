@@ -15,10 +15,15 @@ import {
   Text,
   useColorModeValue,
   useDisclosure,
-  useToast,
 } from '@chakra-ui/react'
 
-import { ColorModeToggle, CardArea, Icon, RichTextEditor } from '@components'
+import {
+  ColorModeToggle,
+  CardArea,
+  Icon,
+  RichTextEditor,
+  useToast,
+} from '@components'
 import { BlockTexts } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
@@ -47,7 +52,7 @@ export function CMSBlockTexts({ index, block, actions }) {
 }
 
 function CMSBlockModal({ block, isOpen, onClose }) {
-  const toast = useToast({ position: 'top', duration: 300 })
+  const toast = useToast({ duration: 300 })
 
   const handleSave = () => {
     toast({

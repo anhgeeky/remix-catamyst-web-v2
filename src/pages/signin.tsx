@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
-import { useToast, Heading, Text, Container, Button } from '@chakra-ui/react'
+import { Heading, Text, Container, Button } from '@chakra-ui/react'
+
 import { Layout } from '@layouts'
-import { Hero } from '@components'
+import { Hero, useToast } from '@components'
 import { signIn } from '@features/auth/actions'
 import { useRedirectDashboard } from '@hooks'
 
@@ -12,7 +13,7 @@ export default function SignIn() {
 
   const router = useRouter()
   const dispatch = useDispatch()
-  const toast = useToast()
+  const toast = useToast({ duration: 3000, isClosable: true })
 
   async function handleSignIn() {
     dispatch(signIn())

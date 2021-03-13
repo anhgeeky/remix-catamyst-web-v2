@@ -1,6 +1,7 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
+
 import {
   Avatar,
   Flex,
@@ -12,8 +13,10 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
-  useToast,
+  Text,
 } from '@chakra-ui/react'
+
+import { Icon, useToast } from '@components'
 import { signOut } from '@features/auth/actions'
 
 export default function HeaderUser() {
@@ -37,17 +40,11 @@ export default function HeaderUser() {
 function UserMenuButton({ auth }) {
   const router = useRouter()
   const dispatch = useDispatch()
-  const toast = useToast()
+  const toast = useToast({ duration: 3000, isClosable: true })
 
   async function handleSignOut() {
     dispatch(signOut())
-    toast({
-      title: 'Signed out. Bye!',
-      status: 'warning',
-      duration: 3000,
-      isClosable: true,
-      position: 'bottom-right',
-    })
+    toast({ status: 'warning', title: 'Signed out. Bye!' })
   }
 
   return (
@@ -72,15 +69,29 @@ function UserMenuButton({ auth }) {
           </MenuItem>
           <MenuDivider />
           <MenuItem onClick={() => router.push('/dashboard')}>
-            Dashboard
+            <Icon name="dashboard" />
+            <Text as="span" ml={2}>
+              Dashboard
+            </Text>
           </MenuItem>
           <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
-            Profile
+            <Icon name="profile" />
+            <Text as="span" ml={2}>
+              Profile
+            </Text>
           </MenuItem>
-          <MenuItem onClick={() => router.push('/settings')}>Settings</MenuItem>
+          <MenuItem onClick={() => router.push('/settings')}>
+            <Icon name="settings" />
+            <Text as="span" ml={2}>
+              Settings
+            </Text>
+          </MenuItem>
           <MenuDivider />
           <MenuItem onClick={handleSignOut} color="red.500">
-            Sign out
+            <Icon name="signout" />
+            <Text as="span" ml={2}>
+              Sign out
+            </Text>
           </MenuItem>
         </MenuList>
       </Menu>
