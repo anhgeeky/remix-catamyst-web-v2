@@ -7,6 +7,10 @@ import {
 
 import { Content, HeadingStack } from '@components'
 
+/**
+ * There is only ViewJSON.
+ * No ViewResult because it is too custom for trackId, topicId, lessonId.
+ */
 export function CMSViewJSON({ name = '', codeString }) {
   const { colorMode } = useColorMode()
 

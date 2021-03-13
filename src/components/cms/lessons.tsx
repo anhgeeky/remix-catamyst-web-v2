@@ -20,15 +20,19 @@ import {
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { Icon, Content, CategoryBadge, useToast } from '@components'
-import { CMSHero } from '@components/cms'
+import { CMSHero, CMSToolbar } from '@components/cms'
 
 import dataLessons from '@data/lessons.json'
 
 export function CMSLessons() {
   const toast = useToast()
 
-  const handleAddNewLesson = () => {
+  const handleCreateItem = () => {
     toast({ status: 'success', title: 'Created new lesson!' })
+  }
+
+  const handleSearchItems = () => {
+    // Don't do toast
   }
 
   return (
@@ -45,32 +49,16 @@ export function CMSLessons() {
       </CMSHero>
 
       <Content>
-        <Stack direction="row">
-          <Box>
-            <VisuallyHidden>
-              <FormLabel>Add new lesson</FormLabel>
-            </VisuallyHidden>
-            <Button
-              colorScheme="teal"
-              leftIcon={<Icon name="add" />}
-              onClick={handleAddNewLesson}
-            >
-              Create new lesson
-            </Button>
-          </Box>
-          <Box width="100%">
-            <VisuallyHidden>
-              <FormLabel>Search lesson by name</FormLabel>
-            </VisuallyHidden>
-            <InputGroup>
-              <InputLeftElement
-                pointerEvents="none"
-                children={<Icon name="search" />}
-              />
-              <Input type="text" placeholder="Search for existing lessons..." />
-            </InputGroup>
-          </Box>
-        </Stack>
+        <CMSToolbar
+          labels={{
+            create: 'Create new lesson',
+            search: 'Search for existing lessons',
+          }}
+          actions={{
+            handleCreateItem,
+            handleSearchItems,
+          }}
+        />
 
         <Stack
           mt={5}

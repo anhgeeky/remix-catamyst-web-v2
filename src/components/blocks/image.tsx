@@ -36,7 +36,6 @@ export function BlockImage({ block }) {
       >
         {/* Need URL validaton later */}
         <NextImage
-          className="next-image"
           src={block.url || `https://example.com`}
           alt={block.alt || block.title || 'Unknown'}
           width={width}

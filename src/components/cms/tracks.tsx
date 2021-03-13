@@ -1,18 +1,32 @@
-import NextLink from 'next/link'
 import NextHead from 'next/head'
-import { Content } from '@components'
-import { CMSHero } from '@components/cms'
+import NextImage from 'next/image'
+import NextLink from 'next/link'
 import {
   Heading,
   Box,
   HStack,
   Text,
+  Stack,
+  StackDivider,
   Image,
   useColorModeValue,
 } from '@chakra-ui/react'
+
+import { Content, useToast } from '@components'
+import { CMSHero, CMSToolbar } from '@components/cms'
 import dataTracks from '@data/tracks.json'
 
 export function CMSTracks() {
+  const toast = useToast()
+
+  const handleCreateItem = () => {
+    toast({ status: 'success', title: 'Created new lesson!' })
+  }
+
+  const handleSearchItems = () => {
+    // Don't do toast
+  }
+
   return (
     <>
       <NextHead>
@@ -27,7 +41,24 @@ export function CMSTracks() {
       </CMSHero>
 
       <Content>
-        <Box>
+        <Stack
+          divider={
+            <StackDivider
+              borderColor={useColorModeValue('gray.200', 'gray.700')}
+            />
+          }
+        >
+          <CMSToolbar
+            labels={{
+              create: 'Create new track',
+              search: 'Search for existing tracks',
+            }}
+            actions={{
+              handleCreateItem,
+              handleSearchItems,
+            }}
+          />
+
           <HStack p={3} fontWeight="700">
             <Text flex={1}>ID</Text>
             <Text flex={1}>Icon</Text>
@@ -43,6 +74,7 @@ export function CMSTracks() {
               Hours
             </Text>
           </HStack>
+
           {dataTracks.map((track) => {
             return (
               <NextLink
@@ -57,11 +89,11 @@ export function CMSTracks() {
                     _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
                   >
                     <Text flex={1}>{track.id}</Text>
-                    <Box flex={1}>
-                      <Image
+                    <Box flex={1} className="next-image-container">
+                      <NextImage
                         src="/assets/logos/catamyst-avatar.svg"
-                        aria-label={`Icon of ${track.title}`}
                         alt="Icon"
+                        aria-label={`Icon of ${track.title}`}
                         width={30}
                         height={30}
                         layout="fixed"
@@ -83,7 +115,7 @@ export function CMSTracks() {
               </NextLink>
             )
           })}
-        </Box>
+        </Stack>
       </Content>
     </>
   )

@@ -1,6 +1,6 @@
-import NextLink from 'next/link'
 import NextHead from 'next/head'
 import NextImage from 'next/image'
+import NextLink from 'next/link'
 import {
   Box,
   FormControl,
@@ -15,12 +15,22 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Content, CategoryBadge } from '@components'
-import { CMSHero } from '@components/cms'
+import { Content, CategoryBadge, useToast } from '@components'
+import { CMSHero, CMSToolbar } from '@components/cms'
 
 import dataTopics from '@data/topics.json'
 
 export function CMSTopics() {
+  const toast = useToast()
+
+  const handleCreateItem = () => {
+    toast({ status: 'success', title: 'Created new lesson!' })
+  }
+
+  const handleSearchItems = () => {
+    // Don't do toast
+  }
+
   return (
     <>
       <NextHead>
@@ -35,10 +45,17 @@ export function CMSTopics() {
       </CMSHero>
 
       <Content>
-        <FormControl id="search-track" mb={5}>
-          <FormLabel>Search track by name</FormLabel>
-          <Input type="text" placeholder="Search for tracks..." />
-        </FormControl>
+        <CMSToolbar
+          labels={{
+            create: 'Create new topic',
+            search: 'Search for existing topics',
+          }}
+          actions={{
+            handleCreateItem,
+            handleSearchItems,
+          }}
+        />
+
         <Stack
           divider={
             <StackDivider
@@ -63,6 +80,7 @@ export function CMSTopics() {
               Hours
             </Text>
           </HStack>
+
           {dataTopics.map((topic) => {
             return (
               <NextLink
@@ -78,11 +96,11 @@ export function CMSTopics() {
                   >
                     <Text flex={1}>{topic.id}</Text>
                     <Text flex={1}>{topic.iconEmoji || '🐈'}</Text>
-                    <Box flex={1}>
-                      <Image
+                    <Box flex={1} className="next-image-container">
+                      <NextImage
                         src="/assets/logos/catamyst-avatar.svg"
-                        aria-label={`Icon of ${topic.title}`}
                         alt="Icon"
+                        aria-label={`Icon of ${topic.title}`}
                         width={30}
                         height={30}
                         layout="fixed"
