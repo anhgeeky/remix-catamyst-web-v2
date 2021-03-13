@@ -30,6 +30,7 @@ import {
 import { withHistory } from 'slate-history'
 import { Icon } from '@components'
 
+const LIST_TYPES = ['numbered-list', 'bulleted-list']
 const HOTKEYS = {
   'mod+b': 'bold',
   'mod+i': 'italic',
@@ -40,10 +41,13 @@ const HOTKEYS = {
   // 'mod+3': 'heading-three',
 }
 
-const LIST_TYPES = ['numbered-list', 'bulleted-list']
+/**
+ * Initialize SlateElements from input that already deserialized from HTML.
+ */
+export default function EditorSlate({ slateElements, handleSave }) {
+  // const [value, setValue] = useState<Descendant[]>(initialValue)
+  const [value, setValue] = useState<Descendant[]>(slateElements)
 
-export const EditorSlate = ({ handleSave }) => {
-  const [value, setValue] = useState<Descendant[]>(initialValue)
   const renderElement = useCallback((props) => <Element {...props} />, [])
   const renderLeaf = useCallback((props) => <Leaf {...props} />, [])
   const editor = useMemo(
@@ -177,7 +181,7 @@ const Element = ({ attributes, children, element }) => {
       )
     case 'numbered-list':
       return (
-        <OrderedList mt={3} paddingInlineStart="40px" {...attributes}>
+        <OrderedList mt={3} paddingInlineStart={5} {...attributes}>
           {children}
         </OrderedList>
       )
@@ -186,7 +190,7 @@ const Element = ({ attributes, children, element }) => {
         <List
           mt={3}
           listStyleType="initial"
-          paddingInlineStart="40px"
+          paddingInlineStart={5}
           {...attributes}
         >
           {children}
@@ -198,7 +202,6 @@ const Element = ({ attributes, children, element }) => {
           {children}
         </ListItem>
       )
-
     case 'block-quote':
       return (
         <Text
@@ -266,9 +269,11 @@ const Leaf = ({ attributes, children, leaf }) => {
 
 const BlockButton = ({ format, icon }) => {
   const editor = useSlate()
+  const isActive = isBlockActive(editor, format)
+
   return (
     <Button
-      // active={isBlockActive(editor, format)}
+      colorScheme={isActive ? 'teal' : 'gray'}
       onMouseDown={(event) => {
         event.preventDefault()
         toggleBlock(editor, format)
@@ -281,9 +286,11 @@ const BlockButton = ({ format, icon }) => {
 
 const MarkButton = ({ format, icon }) => {
   const editor = useSlate()
+  const isActive = isBlockActive(editor, format)
+
   return (
     <Button
-      // active={isMarkActive(editor, format)}
+      colorScheme={isActive ? 'teal' : 'gray'}
       onMouseDown={(event) => {
         event.preventDefault()
         toggleMark(editor, format)
@@ -296,15 +303,20 @@ const MarkButton = ({ format, icon }) => {
 
 const LinkButton = () => {
   const editor = useSlate()
+  const isActive = isLinkActive(editor)
+
+  const handleMouseDown = (event) => {
+    event.preventDefault()
+    const url = window.prompt('Enter URL with https://')
+    if (url) {
+      insertLink(editor, url)
+    }
+  }
+
   return (
     <Button
-      active={isLinkActive(editor)}
-      onMouseDown={(event) => {
-        event.preventDefault()
-        const url = window.prompt('Enter URL with https://')
-        if (!url) return
-        insertLink(editor, url)
-      }}
+      colorScheme={isActive ? 'teal' : 'gray'}
+      onMouseDown={handleMouseDown}
     >
       <Icon name="link" />
     </Button>
@@ -383,9 +395,8 @@ const wrapLink = (editor, url) => {
 }
 
 /**
- * Placeholder value
+ * Initial SlateElements as placeholder value.
  */
-
 const initialValue: SlateElement[] = [
   {
     type: 'paragraph',

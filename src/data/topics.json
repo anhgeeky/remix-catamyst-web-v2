@@ -4,7 +4,7 @@
     "slug": "getting-started",
     "title": "Getting started",
     "description": "Start by understand everything you have to prepare.",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "⭐",
     "totalLessons": 7,
     "totalHours": 2,
@@ -18,7 +18,7 @@
     "slug": "skills-and-principles",
     "title": "Skills and principles",
     "description": "Learn the essential skills and principles for professional work.",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "🧰",
     "totalLessons": 6,
     "totalHours": 3,
@@ -32,7 +32,7 @@
     "slug": "website-ideas",
     "title": "Website ideas",
     "description": "Get inspirations real-world websites.",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "💡",
     "totalLessons": 6,
     "totalHours": 3,
@@ -46,7 +46,7 @@
     "slug": "website-and-web-application-ideas",
     "title": "Website and web application ideas",
     "description": "Get inspirations to spark your website and web application ideas by real-world examples.",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "💡",
     "totalLessons": 6,
     "totalHours": 3,
@@ -61,7 +61,7 @@
     "slug": "website-projects",
     "title": "Website projects",
     "description": "Understand the possibilities of your website projects.",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "🧩",
     "totalLessons": 6,
     "totalHours": 3,
@@ -72,7 +72,7 @@
     "slug": "application-features-and-projects",
     "title": "Application features and projects",
     "description": "Understand the possibilities and functionalities of your website and application projects.",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "🧩",
     "totalLessons": 6,
     "totalHours": 3,
@@ -83,7 +83,7 @@
     "slug": "design-with-interface-and-experience",
     "title": "Design with interface and experience",
     "description": "Plan and design the user interface and experience of a website or web app.",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": "🎨",
     "totalLessons": 6,
     "totalHours": 3,
@@ -93,386 +93,386 @@
     "id": 8,
     "slug": "laptop-setup",
     "title": "Laptop setup",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "🏕️"
   },
   {
     "id": 9,
     "slug": "web-development-knowledge",
     "title": "Web development knowledge",
-    "category": "preparation",
+    "category": "Preparation",
     "iconEmoji": "🕸️"
   },
   {
     "id": 10,
     "slug": "development-with-code-editor",
     "title": "Development with code editor",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "📝"
   },
   {
     "id": 11,
     "slug": "documentation-with-markdown",
     "title": "Documentation with markdown",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "📜"
   },
   {
     "id": 12,
     "slug": "computer-navigation-with-terminal",
     "title": "Computer navigation with terminal",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "🚏"
   },
   {
     "id": 13,
     "slug": "version-control-with-git",
     "title": "Version control with Git",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "⏳"
   },
   {
     "id": 14,
     "slug": "website-content-with-html",
     "title": "Website content with HTML",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": "🦴"
   },
   {
     "id": 15,
-    "slug": "simple-frontend-website-deployment",
-    "title": "Simple frontend website deployment",
-    "category": "frontend",
+    "slug": "simple-Frontend-website-deployment",
+    "title": "Simple Frontend website deployment",
+    "category": "Frontend",
     "iconEmoji": "🏝️"
   },
   {
     "id": 16,
     "slug": "website-style-with-css",
     "title": "Website style with CSS",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": "🍖"
   },
   {
     "id": 17,
     "slug": "browser-and-developer-tools",
     "title": "Browser and developer tools",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": "🍱"
   },
   {
     "id": 18,
     "slug": "website-basic-layout-with-css",
     "title": "Website basic layout with CSS",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": "🥓"
   },
   {
     "id": 19,
     "slug": "website-responsive-layout-with-css",
     "title": "Website responsive layout with CSS",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": "🥩"
   },
   {
     "id": 20,
     "slug": "web-networking-and-domain",
     "title": "Web networking and domain",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "🗺️"
   },
   {
     "id": 21,
     "slug": "software-engineering-knowledge",
     "title": "Software engineering knowledge",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "🛠️"
   },
   {
     "id": 22,
     "slug": "",
     "title": "Logic and programming",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "🤖"
   },
   {
     "id": 23,
     "slug": "",
     "title": "Web programming with JavaScript",
-    "category": "general",
+    "category": "General",
     "iconEmoji": "🤠"
   },
   {
     "id": 24,
     "slug": "",
     "title": "JavaScript data operation",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 25,
     "slug": "",
     "title": "JavaScript function",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 26,
     "slug": "",
     "title": "JavaScript error handling",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 27,
     "slug": "",
     "title": "JavaScript global objects",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 28,
     "slug": "",
     "title": "JavaScript browser storage",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 29,
     "slug": "",
     "title": "JavaScript modules",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 30,
     "slug": "",
     "title": "JavaScript asynchronicity",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 31,
     "slug": "",
     "title": "JavaScript DOM",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": ""
   },
   {
     "id": 32,
     "slug": "",
     "title": "JavaScript with regex",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 33,
     "slug": "",
     "title": "REST API",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 34,
     "slug": "",
     "title": "Other API",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 35,
     "slug": "",
     "title": "REST API with JavaScript",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 36,
     "slug": "",
     "title": "JavaScript runtime and Node.js",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 37,
     "slug": "",
     "title": "Node.js with npm",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 38,
     "slug": "",
     "title": "CSS library and framework",
-    "category": "frontend",
+    "category": "Frontend",
     "iconEmoji": ""
   },
   {
     "id": 39,
     "slug": "",
     "title": "JavaScript library and framework",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 40,
     "slug": "",
     "title": "JavaScript code quality",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 41,
     "slug": "",
     "title": "Programming paradigms",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 42,
     "slug": "",
     "title": "JavaScript OOP and FP",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 43,
     "slug": "",
     "title": "JavaScript transpiler and bundler",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 44,
     "slug": "",
     "title": "Software design and architecture",
-    "category": "general",
+    "category": "General",
     "iconEmoji": ""
   },
   {
     "id": 45,
     "slug": "",
     "title": "React library",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 46,
     "slug": "",
     "title": "React data",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 47,
     "slug": "",
     "title": "React form",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 48,
     "slug": "",
     "title": "React routing",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 49,
     "slug": "",
     "title": "React styling",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 50,
     "slug": "",
     "title": "React with REST API",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 51,
     "slug": "",
     "title": "React extras",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 52,
     "slug": "",
     "title": "Redux as state management",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 53,
     "slug": "",
     "title": "React with Redux",
-    "category": "frontend"
+    "category": "Frontend"
   },
   {
     "id": 54,
     "slug": "",
     "title": "Node.js with Express",
-    "category": "backend"
+    "category": "Backend"
   },
   {
     "id": 55,
     "slug": "",
-    "title": "Simple backend app deployment",
-    "category": "backend"
+    "title": "Simple Backend app deployment",
+    "category": "Backend"
   },
   {
     "id": 56,
     "slug": "",
     "title": "Database management system",
-    "category": "backend"
+    "category": "Backend"
   },
   {
     "id": 57,
     "slug": "",
     "title": "Non-relational database",
-    "category": "backend"
+    "category": "Backend"
   },
   {
     "id": 58,
     "slug": "",
     "title": "Relational database",
-    "category": "backend"
+    "category": "Backend"
   },
   {
     "id": 59,
     "slug": "",
     "title": "Web security",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 60,
     "slug": "",
     "title": "Testing and automation",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 61,
     "slug": "",
     "title": "Containerization",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 62,
     "slug": "",
     "title": "Advanced deployment infrastructure",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 63,
     "slug": "",
     "title": "Additional application features",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 64,
     "slug": "",
     "title": "Advanced algorithm and data structure",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 65,
     "slug": "",
     "title": "Project development and management",
-    "category": "general"
+    "category": "General"
   },
   {
     "id": 66,

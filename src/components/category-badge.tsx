@@ -5,13 +5,13 @@ export default function CategoryBadge({ category }) {
     <Tag
       variant="solid"
       colorScheme={
-        category === 'general'
+        category === 'General'
           ? 'red'
-          : category === 'preparation'
+          : category === 'Preparation'
           ? 'blue'
-          : category === 'frontend'
+          : category === 'Frontend'
           ? 'yellow'
-          : category === 'backend'
+          : category === 'Backend'
           ? 'green'
           : category === 'Fundamental'
           ? 'purple'

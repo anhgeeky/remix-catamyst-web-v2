@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import {
   ButtonGroup,
   Switch,
@@ -19,7 +18,6 @@ import { Icon } from '@components'
  * This editor should work with generic data.
  * Item could be a track, topic, or lesson.
  */
-
 export default function HeaderEditor({
   name,
   item,

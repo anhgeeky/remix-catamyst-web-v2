@@ -56,13 +56,6 @@ function CMSBlockModal({ block, isOpen, onClose }) {
     })
   }
 
-  const handleLoad = () => {
-    toast({
-      title: 'Loaded texts!',
-      status: 'success',
-    })
-  }
-
   return (
     <Modal
       isOpen={isOpen}
@@ -88,14 +81,7 @@ function CMSBlockModal({ block, isOpen, onClose }) {
                 leftIcon={<Icon name="save" />}
                 onClick={handleSave}
               >
-                Save to JSON
-              </Button>
-              <Button
-                colorScheme="yellow"
-                leftIcon={<Icon name="save" />}
-                onClick={handleLoad}
-              >
-                Load to Slate
+                Save to HTML
               </Button>
             </ButtonGroup>
           </HStack>

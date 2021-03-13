@@ -36,6 +36,7 @@ import {
   FaAngleRight as BulletIcon,
 } from 'react-icons/fa'
 import { RiRefreshLine as ResetIcon } from 'react-icons/ri'
+import { FiSettings as SettingsIcon } from 'react-icons/fi'
 
 export function Icon({ name }) {
   switch (name) {
@@ -91,6 +92,8 @@ export function Icon({ name }) {
       return <UpIcon />
     case 'url':
       return <UrlIcon />
+    case 'settings':
+      return <SettingsIcon />
     /**
      * Editor button icons
      */
@@ -101,11 +104,11 @@ export function Icon({ name }) {
     case 'underlined':
       return <UnderlineIcon />
     case 'heading-one':
-      return <span>1</span>
+      return <span>H1</span>
     case 'heading-two':
-      return <span>2</span>
+      return <span>H2</span>
     case 'heading-three':
-      return <span>3</span>
+      return <span>H3</span>
     case 'block-quote':
       return <QuoteIcon />
     case 'list-ordered':

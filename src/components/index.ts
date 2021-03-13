@@ -30,12 +30,6 @@ import PreviewDashboard from '@components/preview-dashboard'
 import QuickSignUpForm from '@components/quick-signup-form'
 import ReferenceIcon from '@components/reference-icon'
 
-export { CardArea } from '@components/card-area'
-export { CodeHighlight } from '@components/code-highlight'
-export { Icon } from '@components/icon'
-export { RichTextEditor } from '@components/editor/rich-text-editor'
-export { EditorSlate } from '@components/editor/slate'
-
 export {
   AlertSoon,
   Block,
@@ -69,3 +63,17 @@ export {
   QuickSignUpForm,
   ReferenceIcon,
 }
+
+/**
+ * Would be used without dynamic import.
+ */
+export { CardArea } from '@components/card-area'
+export { CodeHighlight } from '@components/code-highlight'
+export { Icon } from '@components/icon'
+export { RichTextEditor } from '@components/editor/rich-text-editor'
+
+/**
+ * Would be used with dynamic import.
+ */
+import EditorSlate from '@components/editor/slate'
+export { EditorSlate }

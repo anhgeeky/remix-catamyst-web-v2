@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.61",
+  "version": "0.1.62",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -36,6 +36,7 @@
     "redux-thunk": "2.3.0",
     "slate": "0.59.0",
     "slate-history": "0.59.0",
+    "slate-hyperscript": "0.59.0",
     "slate-react": "0.59.0",
     "slugify": "1.4.7",
     "typescript": "4.1.5",
