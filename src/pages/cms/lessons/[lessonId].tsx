@@ -120,7 +120,8 @@ export default function CMSLessonId() {
   }
 
   /**
-   * User interface
+   * UI for the whole lesson.
+   * Handlers should be grouped into actions later.
    */
   return (
     <Layout>
@@ -132,6 +133,7 @@ export default function CMSLessonId() {
           <HeaderEditor
             name="lesson"
             item={lessonInitialValues}
+            register={register}
             handleBack={handleBack}
             handleDelete={handleDelete}
             handleReset={handleReset}
@@ -169,22 +171,29 @@ function CMSViewResultLesson({
 
   /**
    * RHF (React Hook Form) field array with helpers.
-   * Get control from instantiated useForm from parent component.
+   * Get control from instantiated useForm in parent component.
    */
   const { append, fields, insert, move, prepend, remove } = useFieldArray({
     control,
     name: 'blocks',
   })
-  console.log(fields)
 
   /**
-   * Toggle block by index to change isPublished true or false
+   * Toggle block by index to change isPublished true or false.
    */
   const togglePublishBlock = (event) => {
-    if (event.target.checked) {
-      toast({ title: 'Published block', status: 'success' })
-    } else {
-      toast({ title: 'Unpublished block', status: 'warning' })
+    try {
+      if (event.target.checked) {
+        // Directly toggle here
+        toast({ title: 'Published block', status: 'success' })
+      } else {
+        toast({ title: 'Unpublished block', status: 'warning' })
+      }
+    } catch (error) {
+      toast({
+        status: 'error',
+        title: 'Failed to toggle block published status',
+      })
     }
   }
 
@@ -192,39 +201,66 @@ function CMSViewResultLesson({
    * Add block to the first index.
    */
   const prependBlock = (index, type) => {
-    prepend(initBlock(type))
-    toast({ title: 'Prepended block above' })
+    try {
+      prepend(initBlock(type))
+      toast({ title: 'Prepended block above' })
+    } catch (error) {
+      toast({ status: 'error', title: 'Failed to prepend block above' })
+    }
   }
 
   /**
    * Add block to the selected index.
    */
   const insertBlock = (index, type) => {
-    insert(index + 1, initBlock(type))
-    toast({ title: 'Inserted block here' })
+    try {
+      insert(index + 1, initBlock(type))
+      toast({ title: 'Inserted block here' })
+    } catch (error) {
+      toast({ status: 'error', title: 'Failed to insert block here' })
+    }
   }
 
   /**
    * Add block to the last index.
    */
   const appendBlock = (index, type) => {
-    append(initBlock(type))
-    toast({ title: 'Appended block below' })
+    try {
+      append(initBlock(type))
+      toast({ title: 'Appended block below' })
+    } catch (error) {
+      toast({ status: 'error', title: 'Failed to append block below' })
+    }
   }
 
   /**
    * Move block to previous index or next index.
    */
-  const moveBlock = (direction) => {
-    toast({ title: `Moved block ${direction}` })
+  const moveBlock = (index, direction) => {
+    try {
+      if (direction === 'up' && index !== 0) {
+        move(index, index - 1)
+        toast({ title: `Moved block ${direction}` })
+      }
+      if (direction === 'down' && index !== fields.length) {
+        move(index, index + 1)
+        toast({ title: `Moved block ${direction}` })
+      }
+    } catch (error) {
+      toast({ status: 'error', title: `Failed to move block ${direction}` })
+    }
   }
 
   /**
    * Remove block by index that passed down into each CMS Block.
    */
   const removeBlock = (index) => {
-    toast({ title: 'Removed block', status: 'error' })
-    remove(index) //
+    try {
+      remove(index)
+      toast({ title: 'Removed block', status: 'error' })
+    } catch (error) {
+      toast({ status: 'error', title: 'Failed to remove block' })
+    }
   }
 
   /**

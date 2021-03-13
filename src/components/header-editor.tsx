@@ -1,5 +1,13 @@
 import { useRouter } from 'next/router'
-import { ButtonGroup, Button, Flex, HStack, Box, Text } from '@chakra-ui/react'
+import {
+  ButtonGroup,
+  Switch,
+  Button,
+  Flex,
+  HStack,
+  Box,
+  Text,
+} from '@chakra-ui/react'
 import {
   FaCode as CodeIcon,
   FaWindowMaximize as ResultIcon,
@@ -8,12 +16,14 @@ import {
 import { Icon } from '@components'
 
 /**
- * This editor should work with generic data
+ * This editor should work with generic data.
+ * Item could be a track, topic, or lesson.
  */
 
 export default function HeaderEditor({
   name,
   item,
+  register,
   handleBack,
   handleDelete,
   handleReset,
@@ -50,6 +60,15 @@ export default function HeaderEditor({
           >
             Save Changes
           </Button>
+          <HStack>
+            <Switch
+              defaultChecked={item.isPublished}
+              name="isPublished"
+              ref={register}
+              // onChange={actions.togglePublishBlock}
+            />
+            <Text>{item.isPublished ? 'Published' : 'Unpublished'}</Text>
+          </HStack>
         </ButtonGroup>
 
         <ButtonGroup

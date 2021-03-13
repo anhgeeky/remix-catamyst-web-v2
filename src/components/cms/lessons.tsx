@@ -54,7 +54,7 @@ export function CMSLessons() {
             <Text flex={2}>Category</Text>
             <Text flex={2}>Level</Text>
             <Text flex={1} textAlign="center">
-              Status
+              Published
             </Text>
           </HStack>
           {dataLessons.map((lesson) => {

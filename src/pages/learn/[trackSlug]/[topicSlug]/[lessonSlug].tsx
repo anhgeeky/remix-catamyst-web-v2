@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react'
 import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import {
-  Badge,
   Box,
   Container,
   Heading,
@@ -12,10 +10,8 @@ import {
 } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, Block, PaginationLessons } from '@components'
+import { Hero, Block, CategoryBadge, PaginationLessons } from '@components'
 import { usePaginationLessons } from '@hooks'
-import dataTracks from '@data/tracks.json'
-import dataTopics from '@data/topics.json'
 
 /**
  * The full content page of each lesson
@@ -56,11 +52,12 @@ export default function LessonBySlug() {
                   <Heading as="h1" size="xl" textAlign="center">
                     {lesson.title}
                   </Heading>
-                  {(lesson.category || lesson.level) && (
-                    <Badge color="teal.300">
-                      {lesson.category} {lesson.level} Lesson
-                    </Badge>
-                  )}
+                  <HStack>
+                    {lesson.category && (
+                      <CategoryBadge category={lesson.category} />
+                    )}
+                    {lesson.level && <CategoryBadge category={lesson.level} />}
+                  </HStack>
                 </VStack>
               </PaginationLessons>
             </Box>

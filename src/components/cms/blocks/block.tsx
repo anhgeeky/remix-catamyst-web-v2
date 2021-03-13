@@ -1,4 +1,8 @@
+import { Alert } from '@chakra-ui/react'
+
+import { CardArea } from '@components'
 import {
+  CMSBlockModifierButtons,
   CMSBlockImage,
   CMSBlockTexts,
   CMSBlockLinks,
@@ -6,7 +10,8 @@ import {
 } from '@components/cms/blocks'
 
 /**
- * CMS Block to choose which block to be displayed for CMS lesson blocks editor
+ * CMS Block to choose which block to be displayed for CMS lesson blocks editor.
+ * props contains index, block, actions (fieldArrayHelpers).
  */
 export function CMSBlock(props) {
   if (props.block.type === 'Image' && props.block.url) {
@@ -22,8 +27,11 @@ export function CMSBlock(props) {
     return <CMSBlockDivider {...props} />
   }
   return (
-    <div>
-      <p>Block {props.block.type} is unavailable</p>
-    </div>
+    <CardArea>
+      <CMSBlockModifierButtons name={props.block.type} {...props} />
+      <Alert status="warning" rounded="md">
+        Block {props.block.type} is coming soon.
+      </Alert>
+    </CardArea>
   )
 }

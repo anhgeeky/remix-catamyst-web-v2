@@ -107,13 +107,12 @@ export default function CMSTrackId() {
       {isAuthorized && formTrack && formTopics && (
         <>
           <NextHead>
-            <title>
-              #{formTrack.id} {formTrack.title} · Catamyst
-            </title>
+            <title>Lesson #{formTrack.id} · Catamyst</title>
           </NextHead>
           <HeaderEditor
             name="track"
             item={formTrack}
+            register={() => {}}
             handleBack={handleBack}
             handleDelete={handleDelete}
             handleReset={() => console.log('Reset')}

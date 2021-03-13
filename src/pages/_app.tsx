@@ -5,9 +5,9 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
 import { PersistGate } from 'redux-persist/integration/react'
 
+import { store, persistor } from '@features/store'
 import { Fonts } from '@components'
 import theme from '@theme'
-import { store, persistor } from '@features/store'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

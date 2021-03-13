@@ -34,7 +34,9 @@ export function CMSBlockModifierButtons({
           defaultChecked={block.isPublished}
           onChange={actions.togglePublishBlock}
         />
-        <Text fontSize="xs">{block.isPublished ? 'Publish' : 'Unpublish'}</Text>
+        <Text fontSize="xs">
+          {block.isPublished ? 'Published' : 'Unpublished'}
+        </Text>
         {children}
       </HStack>
 
@@ -42,12 +44,12 @@ export function CMSBlockModifierButtons({
         <IconButton
           aria-label="Move block up"
           icon={<Icon name="up" />}
-          onClick={() => actions.moveBlock('up')}
+          onClick={() => actions.moveBlock(index, 'up')}
         />
         <IconButton
           aria-label="Move block down"
           icon={<Icon name="down" />}
-          onClick={() => actions.moveBlock('down')}
+          onClick={() => actions.moveBlock(index, 'down')}
         />
         <IconButton
           aria-label="Delete block"

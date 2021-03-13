@@ -25,8 +25,8 @@ export function CMSBlockLinks({ index, block, actions }) {
     <CardArea>
       {block.isReferences && 'hello'}
       <CMSBlockModifierButtons
-        index={index}
         name="Links"
+        index={index}
         block={block}
         actions={actions}
       >
