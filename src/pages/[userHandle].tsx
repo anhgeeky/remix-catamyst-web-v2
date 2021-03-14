@@ -2,9 +2,7 @@ import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
-import { Content } from '@components'
 import { UserProfile } from '@components/user'
-
 import dataUsers from '@data/users.json'
 
 export default function userHandlePage() {
@@ -13,7 +11,7 @@ export default function userHandlePage() {
   const user = dataUsers.find((user) => user.handle === userHandle)
 
   return (
-    <Layout title={`Loading user profile... · Catamyst`}>
+    <Layout title="Catamyst">
       {!user && (
         <div>
           <h1>@{userHandle}</h1>
@@ -28,9 +26,7 @@ export default function userHandlePage() {
             </title>
           </NextHead>
 
-          <Content>
-            <UserProfile user={user} />
-          </Content>
+          <UserProfile user={user} />
         </>
       )}
     </Layout>

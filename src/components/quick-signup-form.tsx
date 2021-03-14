@@ -44,7 +44,7 @@ export default function QuickSignUpForm() {
         />
       </Box>
       <Button type="submit" colorScheme="teal" px={5}>
-        Get started
+        Start learning
       </Button>
     </Stack>
   )
