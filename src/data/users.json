@@ -1,32 +1,226 @@
 [
   {
+    "id": 0,
+    "email": "",
+    "name": "Guest",
+    "handle": "guest",
+    "bioHtml": "<p>Visitor account for Catamyst.</p>"
+  },
+  {
     "id": 1,
-    "name": "Catamyst",
+    "email": "",
     "handle": "catamyst",
-    "bio": "Administrator of Catamyst."
+    "name": "Catamyst",
+    "nickname": "Admin",
+    "avatarUrl": "https://storage.catamyst.com/avatars/catamyst.jpg",
+    "coverUrl": "https://storage.catamyst.com/covers/iceberg.jpg",
+    "bioHtml": "<p>Accelerating your career growth through all in one education and career platform. This is the administrator account. #AccelerateGrowth</p>",
+    "headline": "The Super User",
+    "location": "Worldwide",
+    "country": "EARTH",
+    "website": { "url": "https://catamyst.com", "name": "Catamyst.com" },
+    "socials": [
+      { "name": "Twitter", "url": "https://twitter.com/catamyst" },
+      { "name": "GitHub", "url": "https://github.com/catamyst" },
+      { "name": "LinkedIn", "url": "https://linkedin.com/company/catamyst" }
+    ],
+    "organization": {
+      "url": "https://catamyst.com",
+      "name": "Catamyst",
+      "title": "Administrator",
+      "handle": "catamyst"
+    },
+    "role": "Admin",
+    "plan": "Super",
+    "isEmailConfirmed": true,
+    "isAccountVerified": true,
+    "tracks": [1, 2],
+    "projects": [1],
+    "posts": [1],
+    "discussions": [1],
+    "mentors": [2],
+    "jobs": [1]
   },
   {
     "id": 2,
-    "name": "Guest",
-    "handle": "guest",
-    "bio": "Visitor account for Catamyst."
+    "email": "",
+    "handle": "haidar",
+    "name": "M Haidar Hanif",
+    "nickname": "Haidar",
+    "avatarUrl": "https://storage.catamyst.com/avatars/mhaidarhanif.jpg",
+    "coverUrl": "https://storage.catamyst.com/covers/forest.jpg",
+    "headline": "Engineering Educator",
+    "bioHtml": "<p>Human-oriented software engineer and mentor. Helping people to learn and grow their career with web and software development. Likes UI/UX design, illustration, icon, Git, HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js, Express, Prisma, PostgreSQL, MongoDB, REST API, GraphQL API, and the Cloud.</p>",
+    "country": "EARTH",
+    "location": "Worldwide",
+    "website": { "url": "https://mhaidarhanif.com", "name": "Website" },
+    "socials": [
+      { "name": "Twitter", "url": "https://twitter.com/mhaidarhanif" },
+      { "name": "GitHub", "url": "https://github.com/mhaidarhanif" },
+      { "name": "YouTube", "url": "https://youtube.com/mhaidarhanif" },
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/mhaidarhanif" },
+      { "name": "Instagram", "url": "https://instagram.com/mhaidarhanif_" },
+      { "name": "Facebook", "url": "https://facebook.com/mhaidarhanif" }
+    ],
+    "organization": {
+      "title": "Founder",
+      "name": "Catamyst",
+      "handle": "catamyst",
+      "url": "https://catamyst.com"
+    },
+    "role": "Staff",
+    "plan": "Super",
+    "isEmailConfirmed": true,
+    "isAccountVerified": true,
+    "tracks": [1, 2],
+    "projects": [1],
+    "posts": [1],
+    "discussions": [1],
+    "mentors": [2],
+    "jobs": [1]
   },
   {
     "id": 3,
-    "name": "M Haidar Hanif",
-    "handle": "haidar",
-    "bio": "Founder, Educator, and Developer of Catamyst."
+    "email": "",
+    "handle": "maya",
+    "name": "Maya Asmara",
+    "nickname": "Maya",
+    "avatarUrl": "https://storage.catamyst.com/avatars/mayaasmara.jpg",
+    "coverUrl": "https://storage.catamyst.com/covers/cats.jpg",
+    "headline": "The Writer",
+    "bioHtml": "Writer, content creator, and mental health activist. My passion for education and well-being is what drives me to consistently spreading messages about the importance of happiness in work and life through the community-based organization I founded and the contents I made.",
+    "country": "EARTH",
+    "location": "Worldwide",
+    "website": { "url": "https://mayaasmara.com", "name": "Digital Garden" },
+    "socials": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/mayaasmara" },
+      { "name": "GitHub", "url": "https://github.com/mayaasmara" },
+      { "name": "Instagram", "url": "https://instagram.com/mayaasmara_" }
+    ],
+    "organization": {
+      "title": "Writer",
+      "name": "Catamyst",
+      "handle": "catamyst",
+      "url": "https://catamyst.com"
+    }
   },
   {
     "id": 4,
-    "name": "Maya Asmara",
-    "handle": "maya",
-    "bio": "Writer of Catamyst."
+    "email": "",
+    "handle": "latifah",
+    "name": "Latifah Dhia I",
+    "nickname": "Latifah",
+    "avatarUrl": "https://storage.catamyst.com/avatars/latifahdhiai.jpg",
+    "coverUrl": "https://storage.catamyst.com/covers/sheeps.jpg",
+    "headline": "Free Spirit",
+    "bioHtml": "Avid illustrator.",
+    "country": "ID",
+    "location": "Java Island",
+    "website": {
+      "name": "",
+      "url": "https://latifahdhia.com"
+    },
+    "socials": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/latifahdhia" },
+      { "name": "Instagram", "url": "https://instagram.com/hamozks" }
+    ],
+    "organization": {
+      "title": "Illustrator",
+      "name": "Catamyst",
+      "handle": "catamyst",
+      "url": "https://catamyst.com"
+    }
   },
   {
     "id": 5,
-    "name": "Latifah",
-    "handle": "latifah",
-    "bio": "Illustrator of Catamyst."
+    "email": "",
+    "handle": "rahmanfadhil",
+    "name": "Rahman Fadhil",
+    "nickname": "Fadhil",
+    "avatarUrl": "https://storage.catamyst.com/avatars/rahmanfadhil.jpg",
+    "coverUrl": "",
+    "headline": "Ultimate Software Engineer",
+    "bioHtml": "<p>I am Rahman Fadhil, a software engineer specialized in iOS and full-stack web development. I make programming tutorials on my blog and <a href='https://youtube.com/channel/UCQsEh6BNgeDYnf1CXUnCttA'>YouTube</a>. I'm also a coding instructor at <a href='https://codementor.io/@rahmanfadhil'>Codementor</a>, a platform where I help developers learn new technologies and solve their coding problems.</p>",
+    "country": "ID",
+    "location": "Depok",
+    "website": { "url": "https://rahmanfadhil.com" },
+    "socials": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/rahmanfadhil" },
+      { "name": "GitHub", "url": "https://github.com/rahmanfadhil" }
+    ],
+    "organization": {
+      "title": "Software Engineer",
+      "name": "Freelance",
+      "url": "https://rahmanfadhil.com"
+    }
+  },
+  {
+    "id": 6,
+    "email": "",
+    "handle": "ahmadmarzuki",
+    "name": "Ahmad Marzuki",
+    "nickname": "Marzuki",
+    "avatarUrl": "https://storage.catamyst.com/avatars/ahmadmarzuki.jpg",
+    "coverUrl": "",
+    "headline": "Full Stack Web Developer",
+    "bio": "<p>Full-stack web developer working with JavaScript, React, Redux, Node.js, Express, MongoDB, REST API. And also utilizing deployment tools like netlify, heroku, and GCP with a bit of CI/CD pipeline. You can see my portfolios on <a href='https://ahmadmarzuki.com'>ahmadmarzuki.com</a> and <a href='https://github.com/amadzuki'>github.com/amadzuki</a>.</p>",
+    "country": "ID",
+    "location": "Jakarta",
+    "website": { "url": "https://ahmadmarzuki.com" },
+    "socials": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/ahmadmarzuki" },
+      { "name": "GitHub", "url": "https://github.com/amadzuki" }
+    ],
+    "organization": {
+      "title": "Software Engineer",
+      "name": "Grosir Parts"
+    }
+  },
+  {
+    "id": 7,
+    "email": "",
+    "handle": "jonathannicolas",
+    "name": "Jonathan Nicolas",
+    "nickname": "Jo",
+    "avatarUrl": "https://storage.catamyst.com/avatars/jonathannicolas.jpg",
+    "coverUrl": "",
+    "headline": "Artistic Developer",
+    "bio": "Fullstack web developer. MERN Stack Developer, with the passion to develop apps that can make this world better. Whenever I get bored, I call API's",
+    "country": "CA",
+    "location": "Vancouver, BC",
+    "website": { "url": "https://jonathannicolas.dev" },
+    "socials": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/jonathansnicolas" },
+      { "name": "GitHub", "url": "https://github.com/jonathannicolasdev" }
+    ],
+    "organization": {
+      "title": "Full Stack Web Developer",
+      "name": "Freelance"
+    }
+  },
+  {
+    "id": 8,
+    "email": "",
+    "handle": "mfarisgibran",
+    "name": "M Faris Gibran",
+    "nickname": "Gibran",
+    "avatarUrl": "https://storage.catamyst.com/avatars/mfarisgibran.jpg",
+    "coverUrl": "",
+    "headline": "Trader and Aspiring Creator",
+    "bio": "I’m currently an undergraduate student majoring in business administration at the Faculty of Economics and Management Sciences (KENMS) of International Islamic University Malaysia (IIUM).",
+    "country": "MY",
+    "location": "Kuala Lumpur",
+    "website": { "url": "https://mfarisgibran.com" },
+    "socials": [
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/muhammad-faris-gibran-1718b18b"
+      },
+      { "name": "GitHub", "url": "https://github.com/mfarisgibran" }
+    ],
+    "organization": {
+      "title": "Web Developer",
+      "name": "Freelance"
+    }
   }
 ]

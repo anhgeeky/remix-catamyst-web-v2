@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "type": "Announcement",
+    "slug": "welcome-to-catamyst",
+    "title": "Welcome to Catamyst",
+    "tags": [1, 2],
+    "html": "<p>Hey, glad to have you here.</p><p>Welcome to Catamyst.</p>",
+    "authors": [1, 2]
+  },
+  {
+    "id": 2,
+    "type": "Post",
+    "slug": "lets-learn-to-code-professionally",
+    "title": "Let's learn to code professionally",
+    "tags": [1, 2],
+    "html": "<p>Hi there, fellow aspiring coders and experienced engineers!</p><p>Let's learn to code professionally</p>",
+    "authors": [1, 2]
+  },
+  {
+    "id": 3,
+    "type": "Post",
+    "title": "Take a break",
+    "slug": "take-a-break",
+    "html": "<p>Feeling tired?</p><p>Take a break.</p>",
+    "authors": [3, 4]
+  },
+  {
+    "id": 4,
+    "type": "Post",
+    "title": "Getting inspired",
+    "slug": "getting-inspired",
+    "content": "A good sleep is the best source of inspiration.",
+    "authors": [3, 4]
+  }
+]
