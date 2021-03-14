@@ -4,7 +4,7 @@ import { Layout } from '@layouts'
 import { Hero, Content, CollectionUsers } from '@components'
 import users from '@data/users.json'
 
-export default function Discover() {
+export default function discoverPage() {
   return (
     <Layout title="Discover members and projects on Catamyst">
       <Hero>

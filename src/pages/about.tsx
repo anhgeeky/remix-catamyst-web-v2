@@ -2,7 +2,7 @@ import { Heading, Text } from '@chakra-ui/react'
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
 
-export default function About() {
+export default function aboutPage() {
   return (
     <Layout title="About Catamyst">
       <Hero>

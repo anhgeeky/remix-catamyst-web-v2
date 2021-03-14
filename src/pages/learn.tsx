@@ -3,7 +3,7 @@ import { Layout } from '@layouts'
 import { Hero, Content, CollectionTracks } from '@components'
 import dataTracks from '@data/tracks.json'
 
-export default function Learn() {
+export default function learnPage() {
   return (
     <Layout title="Learn with tracks on Catamyst">
       <Hero>

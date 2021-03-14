@@ -19,7 +19,7 @@ import { usePaginationLessons } from '@hooks'
  * text, image, video, link, code, etc
  */
 
-export default function LessonBySlug() {
+export default function lessonSlugPage() {
   const router = useRouter()
   const { trackSlug, topicSlug, lessonSlug } = router.query
   const { track, topic, lesson, prev, next } = usePaginationLessons({

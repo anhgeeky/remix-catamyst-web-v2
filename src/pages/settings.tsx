@@ -5,7 +5,7 @@ import { Heading, Text } from '@chakra-ui/react'
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
 
-export default function Settings() {
+export default function settingsPage() {
   const auth = useSelector((state) => state.auth)
   const router = useRouter()
   const isAuthorized = auth.isAuthenticated && auth.user

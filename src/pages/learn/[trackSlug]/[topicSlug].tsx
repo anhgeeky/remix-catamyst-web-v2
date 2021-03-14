@@ -11,7 +11,7 @@ import {
 } from '@components'
 import { usePaginationTopics } from '@hooks'
 
-export default function TopicBySlug() {
+export default function topicSlugPage() {
   const router = useRouter()
   const { trackSlug, topicSlug } = router.query
   const { track, topic, prev, next } = usePaginationTopics({

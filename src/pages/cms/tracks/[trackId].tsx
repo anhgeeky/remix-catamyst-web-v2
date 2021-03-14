@@ -45,7 +45,7 @@ import { slugify } from '@utils'
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
 
-export default function CMSTrackId() {
+export default function trackIdPage() {
   const router = useRouter()
   const { isAuthorized } = useRedirectSignIn()
   const [viewMode, setViewMode] = useState('result')

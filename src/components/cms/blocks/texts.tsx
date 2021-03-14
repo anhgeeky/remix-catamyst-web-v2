@@ -94,7 +94,7 @@ function CMSBlockModal({ block, isOpen, onClose }) {
         </ModalHeader>
 
         <ModalBody align="center" p={0}>
-          <Box maxW="760px" width="100%">
+          <Box maxW={760} width="100%">
             <RichTextEditor handleSave={handleSave} htmlString={block.html} />
           </Box>
         </ModalBody>

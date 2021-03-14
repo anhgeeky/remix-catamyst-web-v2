@@ -17,29 +17,29 @@ import ReactHtmlParser from 'react-html-parser'
 import dataTheme from '@theme/theme.json'
 
 /**
- * The actual block is very simple
+ * The actual block is very simple.
  */
 export function BlockTexts({ block }) {
   return (
     <Box maxW={dataTheme.maxContentWidth} width="100%" px={5}>
-      {ReactHtmlParser(block.html, options)}
+      {ReactHtmlParser(block.html, transformOptions)}
     </Box>
   )
 }
 
 /**
- * The options are the complex part
+ * The options are the complex part.
  *
- * Because it needs to transform:
+ * Because it needs to transform these:
  * h1, h2, h3, p, a, ul, ol, li
  *
- * It might transform:
+ * It might transform these later:
  * kbd, code
  *
- * It won't transform:
+ * It won't transform these yet:
  * h4, h5, h6, quote
  */
-const options = {
+export const transformOptions = {
   decodeEntities: true,
   transform: function transform(node, index) {
     const fontSizes = ['md', 'lg']

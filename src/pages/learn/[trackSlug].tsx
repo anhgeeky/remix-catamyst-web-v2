@@ -10,7 +10,7 @@ import { Hero, ContentWithSidebar, CollectionTopics } from '@components'
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
 
-export default function TrackBySlug() {
+export default function trackSlugPage() {
   const router = useRouter()
   const [topics, setTopics] = useState([])
   const { trackSlug } = router.query

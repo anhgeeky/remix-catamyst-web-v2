@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 
-export default function TopicId() {
+export default function topicIdPage() {
   const router = useRouter()
   const { topicId } = router.query
 

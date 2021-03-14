@@ -32,6 +32,7 @@ if (process.env.NODE_ENV === 'development') {
 
 const persistConfig = {
   key: 'root',
+  debug: false,
   storage,
   stateReconciler: autoMergeLevel2,
 }

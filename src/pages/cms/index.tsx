@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { Layout } from '@layouts'
 import { useAuth } from '@hooks'
 
-export default function CMS() {
+export default function cmsPage() {
   const router = useRouter()
   const { auth, isAuthorized } = useAuth()
 

@@ -4,7 +4,7 @@ import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
 import { useRedirectDashboard } from '@hooks'
 
-export default function SignUp() {
+export default function signUpPage() {
   const { isAuthorized } = useRedirectDashboard()
 
   return (

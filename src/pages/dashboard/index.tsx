@@ -4,7 +4,7 @@ import { Layout } from '@layouts'
 import { useAuth } from '@hooks'
 import React from 'react'
 
-export default function Dashboard() {
+export default function dashboardPage() {
   const router = useRouter()
   const { auth, isAuthorized } = useAuth()
 

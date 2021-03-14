@@ -2,7 +2,7 @@ import { Heading, Text } from '@chakra-ui/react'
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
 
-export default function Jobs() {
+export default function jobsPage() {
   return (
     <Layout title="Search and post jobs on Catamyst">
       <Hero>

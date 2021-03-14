@@ -38,7 +38,7 @@ import dataLessons from '@data/lessons.json'
 /**-----------------------------------------------------------------------------
  * CMS Lesson editor, with UI and logic
  -----------------------------------------------------------------------------*/
-export default function CMSLessonId() {
+export default function lessonIdPage() {
   const NODE_ENV = process.env.NODE_ENV
   const { router, isAuthorized } = useRedirectSignIn()
   const { lessonId } = router.query

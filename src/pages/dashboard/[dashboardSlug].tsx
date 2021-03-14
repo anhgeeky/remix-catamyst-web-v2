@@ -13,7 +13,7 @@ import {
 import { useRedirectSignIn } from '@hooks'
 import dataDashboardLinks from '@data/dashboard-links.json'
 
-export default function DashboardSlug() {
+export default function dashboardSlugPage() {
   const router = useRouter()
   const { dashboardSlug } = router.query
   const { auth, isAuthorized } = useRedirectSignIn()

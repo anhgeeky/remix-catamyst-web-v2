@@ -20,7 +20,12 @@ export default function CollectionUsers({ users }) {
             <NextLink href={user.handle} passHref>
               <a>
                 <HStack>
-                  <Avatar name={user.name} width="50px" height="50px" />
+                  <Avatar
+                    name={user.name}
+                    src={user.avatarUrl}
+                    width="50px"
+                    height="50px"
+                  />
                   <Heading as="h3" size="md">
                     {user.name} (@{user.handle})
                   </Heading>

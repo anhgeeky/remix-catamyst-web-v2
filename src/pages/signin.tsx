@@ -8,7 +8,7 @@ import { Hero, useToast } from '@components'
 import { signIn } from '@features/auth/actions'
 import { useRedirectDashboard } from '@hooks'
 
-export default function SignIn() {
+export default function signInPage() {
   const { isAuthorized } = useRedirectDashboard()
 
   const router = useRouter()
