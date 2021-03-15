@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Catamyst",
+    "links": [
+      {
+        "path": "/",
+        "text": "Home"
+      },
+      {
+        "path": "/about",
+        "text": "About"
+      },
+      {
+        "path": "/help",
+        "text": "Help"
+      },
+      {
+        "path": "/search",
+        "text": "Search",
+        "isEnabled": false
+      }
+    ]
+  },
+  {
+    "title": "Education",
+    "links": [
+      {
+        "path": "/tracks",
+        "text": "Tracks"
+      },
+      {
+        "path": "/members",
+        "text": "Members"
+      },
+      {
+        "path": "/projects",
+        "text": "Projects"
+      },
+      {
+        "path": "/discussions",
+        "text": "Discussions",
+        "isEnabled": false
+      },
+      {
+        "path": "/pricing",
+        "text": "Pricing"
+      }
+    ]
+  },
+  {
+    "title": "Work",
+    "isEnabled": false,
+    "links": [
+      {
+        "path": "/companies",
+        "text": "Companies",
+        "isEnabled": false
+      },
+      {
+        "path": "/jobs",
+        "text": "Jobs",
+        "isEnabled": false
+      },
+      {
+        "path": "/freelance",
+        "text": "Freelance",
+        "isEnabled": false
+      }
+    ]
+  }
+]

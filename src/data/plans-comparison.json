@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Newbie Level",
+    "description": "Get access to lessons for Newbie level.",
+    "basic": true,
+    "pro": true,
+    "super": true
+  },
+  {
+    "name": "Beginner Level",
+    "description": "Get access to lessons for Beginner level.",
+    "basic": false,
+    "pro": true,
+    "super": true
+  },
+  {
+    "name": "Intermediate Level",
+    "description": "Get access to lessons for Intermediate level.",
+    "basic": false,
+    "pro": true,
+    "super": true
+  },
+  {
+    "name": "Advanced Level",
+    "description": "Get access to lessons for Advanced level.",
+    "basic": false,
+    "pro": true,
+    "super": true
+  },
+  {
+    "name": "Lifetime Access",
+    "description": "Continue to have access to all the lessons even after you complete the track.",
+    "basic": false,
+    "pro": false,
+    "super": true
+  },
+  {
+    "name": "Publish Portfolio Projects",
+    "description": "The number of portfolio projects you can upload and showcase in your profile.",
+    "basic": "Up to 3",
+    "pro": "Unlimited",
+    "super": "Unlimited"
+  },
+  {
+    "name": "Community Forum",
+    "description": "Access to discussions that will help you build connection with other members, share knowledge, and discover a wide range of interesting topics.",
+    "basic": true,
+    "pro": true,
+    "super": true
+  },
+  {
+    "name": "Exclusive Discussions",
+    "description": "Access to Super members-only discussions in the forum with the most exclusive network of members.",
+    "basic": false,
+    "pro": false,
+    "super": true
+  },
+  {
+    "name": "Priority Support",
+    "description": "Get prioritized assistance as you need from real people.",
+    "basic": false,
+    "pro": true,
+    "super": true
+  },
+  {
+    "name": "Dedicated 1-on-1 Mentorhip",
+    "description": "Learn better and faster from your own dedicated private mentor with a customized schedule, lessons, and difficulty level that fit your needs.",
+    "basic": false,
+    "pro": false,
+    "super": true
+  },
+  {
+    "name": "Review and Feedback",
+    "description": "The number of your work that can be reviewed by our mentors to improve your quality.",
+    "basic": false,
+    "pro": false,
+    "super": "Unlimited during mentorship"
+  },
+  {
+    "name": "Project Collaboration",
+    "description": "Collaborate with the other members and add them as collaborators. Especially to build and publish a project together.",
+    "basic": false,
+    "pro": false,
+    "super": true
+  },
+  {
+    "name": "Certificate of Completion",
+    "description": "Receive a certificate that you can share on your profile or to your potential employers, co-workers, and friends after you complete a track.",
+    "basic": false,
+    "pro": false,
+    "super": true
+  },
+  {
+    "name": "Apply for Jobs",
+    "description": "Discover numerous work opportunities and accelerate your meaningful career",
+    "basic": true,
+    "pro": true,
+    "super": true
+  },
+  {
+    "name": "Exclusive Career Support",
+    "description": "...",
+    "basic": false,
+    "pro": false,
+    "super": true
+  }
+]

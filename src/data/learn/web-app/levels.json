@@ -1,0 +1,64 @@
+[
+  {
+    "level": 0,
+    "name": "Newbie",
+    "amount": "30% or ~110 lessons",
+    "notes": "Expected to finish in 1 month",
+    "scopes": [
+      "Fundamentals",
+      "Career Development",
+      "UI/UX Design",
+      "Project Management",
+      "Frontend Website"
+    ]
+  },
+  {
+    "level": 1,
+    "name": "Beginner",
+    "amount": "50% or ~170 lessons",
+    "notes": "Expected to finish in 1-2 months",
+    "scopes": [
+      "Fundamentals",
+      "Career Development",
+      "UI/UX Design",
+      "Project Management",
+      "Frontend Website",
+      "Frontend Application"
+    ]
+  },
+  {
+    "level": 2,
+    "name": "Intermediate",
+    "amount": "70% or ~250 lessons",
+    "notes": "Expected to finish in 2-3 months",
+    "scopes": [
+      "Fundamentals",
+      "Career Development",
+      "UI/UX Design",
+      "Project Management",
+      "Frontend Website",
+      "Frontend Application",
+      "Web API",
+      "Frontend Application Advanced"
+    ]
+  },
+  {
+    "level": 3,
+    "name": "Advanced",
+    "amount": "100% or ~350 lessons",
+    "notes": "Expected to finish in 3-6 months",
+    "scopes": [
+      "Fundamentals",
+      "Career Development",
+      "UI/UX Design",
+      "Project Management",
+      "Frontend Website",
+      "Frontend Application",
+      "Web API",
+      "Frontend Application Advanced",
+      "Backend Application",
+      "Database System",
+      "Server Infrastructure"
+    ]
+  }
+]

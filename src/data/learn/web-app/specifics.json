@@ -1,0 +1,284 @@
+[
+  {
+    "name": "Apple Macintosh",
+    "slug": "mac",
+    "url": "https://apple.com/mac",
+    "body": "The Macintosh is a family of personal computers designed, manufactured, and sold by Apple Inc. since January 1984. The original Macintosh is the first successful mass-market personal computer to have featured a graphical user interface, built-in screen, and mouse."
+  },
+  {
+    "name": "Linux",
+    "slug": "linux",
+    "url": "https://linux.org",
+    "body": "Linux is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged in a Linux distribution (distro)."
+  },
+  {
+    "name": "Linux Ubuntu",
+    "slug": "ubuntu",
+    "url": "https://ubuntu.com",
+    "body": "Ubuntu is a Linux distribution based on Debian mostly composed of free and open-source software. Ubuntu is officially released in three editions: Desktop, Server, and Core for Internet of things devices and robots."
+  },
+  {
+    "name": "Google Chrome",
+    "slug": "google-chrome",
+    "url": "https://google.com/chrome",
+    "body": "Google Chrome is a cross-platform web browser developed by Google. It was first released in 2008 for Microsoft Windows, and was later ported to Linux, macOS, iOS, and Android where it is the default browser built into the OS."
+  },
+  {
+    "name": "Mozilla Firefox",
+    "slug": "mozilla-firefox",
+    "url": "https://mozilla.org/firefox",
+    "body": "Mozilla Firefox or simply Firefox, is a free and open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation. Firefox uses the Gecko layout engine to render web pages, which implements current and anticipated web standards."
+  },
+  {
+    "name": "DevTools",
+    "slug": "devtools",
+    "url": "https://developers.google.com/web/tools/chrome-devtools",
+    "body": "DevTools (Developer Tools) such as Chrome DevTools or Firefox Developer Tools are a set of web developer tools built directly into the Google Chrome and Mozilla Firefox browser. It can help you edit pages on-the-fly and diagnose problems quickly. You can use them to examine, edit, and debug HTML, CSS, and JavaScript. Which ultimately helps you build better websites, faster."
+  },
+  {
+    "name": "Figma",
+    "slug": "figma",
+    "url": "https://figma.com",
+    "body": "Figma is a vector graphics editor and prototyping tool which is primarily web-based, with additional offline features enabled by desktop applications for macOS and Windows. The Figma Mirror companion apps for Android and iOS allow viewing Figma prototypes on mobile devices."
+  },
+  {
+    "name": "VS Code",
+    "slug": "vscode",
+    "url": "https://code.visualstudio.com",
+    "body": "Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git."
+  },
+  {
+    "name": "Markdown",
+    "slug": "markdown",
+    "url": "https://daringfireball.net/projects/markdown",
+    "body": "Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz. Markdown is often used for formatting readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor. "
+  },
+  {
+    "name": "Terminal Emulator",
+    "slug": "terminal",
+    "url": "https://wikipedia.org/wiki/Terminal_emulator",
+    "body": ""
+  },
+  {
+    "name": "Git",
+    "slug": "git",
+    "url": "https://git-scm.com",
+    "body": ""
+  },
+  {
+    "name": "GitHub",
+    "slug": "GitHub",
+    "url": "https://github.com",
+    "body": ""
+  },
+  {
+    "name": "HTML",
+    "slug": "html",
+    "url": "https://w3.org/html",
+    "body": ""
+  },
+  {
+    "name": "CSS",
+    "slug": "css",
+    "url": "https://w3.org/css",
+    "body": ""
+  },
+  {
+    "name": "JavaScript",
+    "slug": "javascript",
+    "url": "https://developer.mozilla.org/JavaScript",
+    "body": ""
+  },
+  {
+    "name": "TypeScript",
+    "slug": "typescript",
+    "url": "https://typescriptlang.org",
+    "body": ""
+  },
+  {
+    "name": "Netlify",
+    "slug": "netlify",
+    "url": "https://netlify.com",
+    "body": ""
+  },
+  {
+    "name": "Vercel",
+    "slug": "vercel",
+    "url": "https://vercel.com",
+    "body": ""
+  },
+  {
+    "name": "SSH",
+    "slug": "ssh",
+    "url": "https://wikipedia.org/wiki/Ssh_(Secure_Shell)",
+    "body": "SSH (Secure Shell) is a cryptographic network protocol for operating network services securely over an unsecured network. Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH."
+  },
+  {
+    "name": "REST API",
+    "slug": "rest-api",
+    "url": "https://tools.ietf.org/html/rfc7231",
+    "body": ""
+  },
+  {
+    "name": "GraphQL API",
+    "slug": "graphql",
+    "url": "https://graphql.org",
+    "body": ""
+  },
+  {
+    "name": "Postman",
+    "slug": "postman",
+    "url": "https://postman.com",
+    "body": ""
+  },
+  {
+    "name": "Node.js",
+    "slug": "nodejs",
+    "url": "https://nodejs.org",
+    "body": ""
+  },
+  {
+    "name": "npm",
+    "slug": "npm",
+    "url": "https://npmjs.com",
+    "body": ""
+  },
+  {
+    "name": "Yarn",
+    "slug": "yarn",
+    "url": "https://yarnpkg.com",
+    "body": ""
+  },
+  {
+    "name": "React",
+    "slug": "react",
+    "url": "https://reactjs.org",
+    "body": ""
+  },
+  {
+    "name": "React Router",
+    "slug": "react-router",
+    "url": "https://reactrouter.com",
+    "body": ""
+  },
+  {
+    "name": "Redux",
+    "slug": "redux",
+    "url": "https://redux.js.org",
+    "body": ""
+  },
+  {
+    "name": "Express",
+    "slug": "express",
+    "url": "https://expressjs.com",
+    "body": ""
+  },
+  {
+    "name": "Apollo",
+    "slug": "apollo",
+    "url": "https://apollographql.com",
+    "body": ""
+  },
+  {
+    "name": "Docker",
+    "slug": "docker",
+    "url": "https://docker.com",
+    "body": ""
+  },
+  {
+    "name": "Heroku",
+    "slug": "heroku",
+    "url": "https://heroku.com",
+    "body": ""
+  },
+  {
+    "name": "MongoDB",
+    "slug": "mongodb",
+    "url": "https://mongodb.com",
+    "body": ""
+  },
+  {
+    "name": "MySQL",
+    "slug": "mysql",
+    "url": "https://mysql.com",
+    "body": ""
+  },
+  {
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "url": "https://postgresql.org",
+    "body": ""
+  },
+  {
+    "name": "Prisma",
+    "slug": "prisma",
+    "url": "https://prisma.io",
+    "body": ""
+  },
+  {
+    "name": "Sequelize",
+    "slug": "sequelize",
+    "url": "https://sequelize.org",
+    "body": ""
+  },
+  {
+    "name": "JSON Web Token",
+    "slug": "jwt",
+    "url": "https://jwt.io",
+    "body": ""
+  },
+  {
+    "name": "Jest",
+    "slug": "jest",
+    "url": "https://jestjsio",
+    "body": ""
+  },
+  {
+    "name": "PM2",
+    "slug": "pm2",
+    "url": "https://pm2.io",
+    "body": ""
+  },
+  {
+    "name": "Nginx",
+    "slug": "nginx",
+    "url": "https://nginx.com",
+    "body": ""
+  },
+  {
+    "name": "Digital Ocean",
+    "slug": "digitalocean",
+    "url": "https://digitalocean.com",
+    "body": ""
+  },
+  {
+    "name": "Google Cloud Platform",
+    "slug": "google-cloud-platform",
+    "url": "https://cloud.google.com",
+    "body": ""
+  },
+  {
+    "name": "Microsoft Azure",
+    "slug": "microsoft-azure",
+    "url": "https://azure.microsoft.com",
+    "body": ""
+  },
+  {
+    "name": "Amazon Web Services",
+    "slug": "aws",
+    "url": "https://aws.amazon.com",
+    "body": ""
+  },
+  {
+    "name": "Circle CI",
+    "slug": "circleci",
+    "url": "https://circleci.com",
+    "body": ""
+  },
+  {
+    "name": "Others",
+    "slug": "others",
+    "url": "https://medium.com/@mhaidarh/b11ba12423c0",
+    "body": "If there are new things or you have other tools or technologies to use, we can discuss about it."
+  }
+]

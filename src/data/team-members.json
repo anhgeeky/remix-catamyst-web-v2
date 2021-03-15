@@ -1,0 +1,46 @@
+[
+  {
+    "handle": "haidar",
+    "avatarName": "mhaidarhanif.jpg",
+    "avatarUrl": "https://storage.catamyst.com",
+    "name": "M Haidar Hanif",
+    "title": "Founder, Engineer, Mentor",
+    "bio": "Haidar is the founder of Catamyst. A lifelong learner, engineer, and educator. Actively mentoring people to help them transition into tech careers or upgrading their skills. Previously had several years experience of teaching, training, and building a coding school.",
+    "socialLinks": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/mhaidarhanif" },
+      { "name": "Twitter", "url": "https://twitter.com/mhaidarh" },
+      { "name": "GitHub", "url": "https://github.com/mhaidarhanif" }
+    ],
+    "websiteUrl": "https://mhaidarhanif.com",
+    "countryCode": "EARTH"
+  },
+  {
+    "handle": "maya",
+    "avatarName": "mayaasmara.jpg",
+    "avatarUrl": "https://storage.catamyst.com",
+    "name": "Maya Asmara",
+    "title": "Co-Founder, Writer, Mentor",
+    "bio": "Maya is the co-founder of Catamyst. An avid writer and content creator. Consistently spreading messages about the importance of happiness in work and life.",
+    "socialLinks": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/mayaasmara" },
+      { "name": "Instagram", "url": "https://instagram.com/mayaasmara" },
+      { "name": "GitHub", "url": "https://github.com/mayaasmara" }
+    ],
+    "websiteUrl": "https://mayaasmara.com",
+    "countryCode": "EARTH"
+  },
+  {
+    "handle": "latifah",
+    "avatarName": "latifahdhiai.jpg",
+    "avatarUrl": "https://storage.catamyst.com",
+    "name": "Latifah Dhia I",
+    "title": "Illustrator",
+    "bio": "Latifah is the illustrator of Catamyst. Currently drawing interesting visuals on this platform.",
+    "socialLinks": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/latifahdhiai" },
+      { "name": "Instagram", "url": "https://instagram.com/hamozks" }
+    ],
+    "websiteUrl": "https://latifahdhiai.com",
+    "countryCode": "ID"
+  }
+]

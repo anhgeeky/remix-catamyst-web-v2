@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Basic",
+    "slug": "basic",
+    "benefits": [
+      "Join for free contents",
+      "Access to newbie level",
+      "Publish up to 3 projects",
+      "Involve in community discussions",
+      "Suitable for your who just want to try out with community support"
+    ],
+    "prices": {
+      "IDR": { "cost": 0, "info": "Forever" },
+      "USD": { "cost": 0, "info": "Forever" }
+    },
+    "buttons": {
+      "isNotAuthenticated": "Join and Start Basic",
+      "isAuthenticated": "Continue Basic"
+    }
+  },
+  {
+    "name": "Pro",
+    "slug": "pro",
+    "benefits": [
+      "Everything in Basic",
+      "Access to all levels",
+      "Publish unlimited projects",
+      "Involve in exclusive discussions",
+      "Get feedback, review, and advice for your career growth from our team",
+      "Suitable for you who want to learn and practice more with priority support"
+    ],
+    "prices": {
+      "USD": {
+        "1": { "cost": 19, "info": "1 month" },
+        "3": { "cost": 49, "costBefore": 57, "info": "3 months" },
+        "6": { "cost": 109, "costBefore": 114, "info": "6 months" },
+        "12": { "cost": 190, "costBefore": 228, "info": "12 months" }
+      },
+      "IDR": {
+        "1": { "cost": 199000, "info": "1 month" },
+        "3": { "cost": 567000, "costBefore": 597000, "info": "3 months" },
+        "6": { "cost": 999000, "costBefore": 1194000, "info": "6 months" },
+        "12": { "cost": 1990000, "costBefore": 2388000, "info": "12 months" }
+      }
+    },
+    "buttons": {
+      "isNotAuthenticated": "Join and Subscribe Pro",
+      "isAuthenticated": "Subscribe Pro"
+    }
+  },
+  {
+    "name": "Super",
+    "slug": "super",
+    "benefits": [
+      "Everything in Basic and Pro",
+      "Lifetime Pro access",
+      "Dedicated private 1-on-1 mentorship sessions with real dedicated mentor for around 150 hours",
+      "Suitable for you who want to get real serious on getting a professional job, freelancing gig, or even upgrading your current career"
+    ],
+    "prices": {
+      "USD": { "cost": 1999, "info": "1 person" },
+      "IDR": { "cost": 19999000, "info": "1 person" }
+    },
+    "buttons": {
+      "isNotAuthenticated": "Join and Request Super",
+      "isAuthenticated": "Request Super"
+    }
+  }
+]

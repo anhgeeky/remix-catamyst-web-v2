@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "learning-tracks",
+    "name": "Learning Tracks",
+    "imageName": "feature-tracks.png",
+    "imageUrl": "https://storage.catamyst.com/illustrations/feature-tracks.png",
+    "description": "Learn through a comprehensive series of topics, lessons, and projects. The curriculum is well-designed even beginners who never learn about software development can understand."
+  },
+  {
+    "slug": "portfolio-projects",
+    "name": "Portfolio Projects",
+    "imageName": "feature-projects.png",
+    "imageUrl": "https://storage.catamyst.com/illustrations/feature-projects.png",
+    "description": "Build and showcase your projects to display your skill and knowledge. Share them as your proof of knowledge and skills. Attract employers or clients with your remarkable portfolio."
+  },
+  {
+    "slug": "private-mentorship",
+    "name": "Private Mentorship",
+    "imageName": "feature-mentorship.png",
+    "imageUrl": "https://storage.catamyst.com/illustrations/feature-mentorship.png",
+    "description": "Learn better and faster with an experienced private mentor. Accelerate your learning progress with a customized schedule, lessons, and difficulty level. All learning experience can be designed to fit your needs and preferences."
+  },
+  {
+    "slug": "community-forum",
+    "name": "Community Forum",
+    "imageName": "feature-forum.png",
+    "imageUrl": "https://storage.catamyst.com/illustrations/feature-forum.png",
+    "description": "Connect with the global community in Catamyst. Discuss a wide range of interesting topics. It is a safe and clean place for everyone to ask and answer questions. Where you can resolve both technical and non-technical issues."
+  },
+  {
+    "slug": "members-collaboration",
+    "name": "Members Collaboration",
+    "imageName": "feature-collaboration.png",
+    "imageUrl": "https://storage.catamyst.com/illustrations/feature-collaboration.png",
+    "description": "Find learning and working teammates from the community. Build and showcase your projects as a team. Mentors can also guide on how you can work together."
+  },
+  {
+    "slug": "work-opportunities",
+    "name": "Work Opportunities",
+    "imageName": "feature-opportunities.png",
+    "imageUrl": "https://storage.catamyst.com/illustrations/feature-opportunities.png",
+    "description": "Discover numerous work opportunities around the world with your established skills and experience after the learning. Find the meaningful job you love."
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Catamyst",
+    "url": "https://catamyst.com",
+    "contributors": [
+      { "userId": 2, "role": "Founder, Developer" },
+      { "userId": 3, "role": "Writer" },
+      { "userId": 4, "role": "Illustrator" }
+    ]
+  }
+]

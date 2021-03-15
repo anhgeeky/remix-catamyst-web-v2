@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "nawaart",
+    "coverImageName": "nawaart.jpg",
+    "coverImageUrl": "https://storage.catamyst.com",
+    "name": "Nawaart",
+    "description": "Discover authentic and valuable contemporary artworks from various artists in Myanmar, the Land of the Golden Pagodas.",
+    "websiteUrl": "https://nawaart.com",
+    "users": [
+      {
+        "handle": "jonathannicolas",
+        "avatarName": "jonathannicolas.jpg",
+        "name": "Jonathan Nicolas"
+      }
+    ]
+  },
+  {
+    "slug": "saikou",
+    "coverImageName": "saikou.jpg",
+    "coverImageUrl": "https://storage.catamyst.com",
+    "name": "Saikou",
+    "description": "Find out the best anime and manga for your leisure entertainment variants originated from Japan, the Land of the Rising Sun.",
+    "websiteUrl": "https://saikou.ahmadmarzuki.com",
+    "users": [
+      {
+        "handle": "ahmadmarzuki",
+        "avatarName": "ahmadmarzuki.jpg",
+        "name": "Ahmad Marzuki"
+      }
+    ]
+  },
+  {
+    "slug": "zidence",
+    "coverImageName": "zidence.jpg",
+    "coverImageUrl": "https://storage.catamyst.com",
+    "name": "Zidence",
+    "description": "Simple residential property listing and comparison. Discover your next suitable home in Asia.",
+    "websiteUrl": "https://zidence.com",
+    "users": [
+      {
+        "handle": "mfarisgibran",
+        "avatarName": "mfarisgibran.jpg",
+        "name": "M Faris Gibran"
+      },
+      {
+        "handle": "ahmadmarzuki",
+        "avatarName": "ahmadmarzuki.jpg",
+        "name": "Ahmad Marzuki"
+      }
+    ]
+  },
+  {
+    "slug": "lelangbuana",
+    "coverImageName": "lelangbuana.jpg",
+    "coverImageUrl": "https://storage.catamyst.com",
+    "name": "Lelangbuana",
+    "description": "Fast and free auction commerce site for interesting goods between islands.",
+    "websiteUrl": "https://lelangbuana.com",
+    "users": [
+      {
+        "handle": "mayasopiah",
+        "avatarName": "mayasopiah.jpg",
+        "name": "Maya Sopiah"
+      },
+      {
+        "handle": "fadillahbilqis",
+        "avatarName": "fadillahbilqis.jpg",
+        "name": "Fadillah Bilqis"
+      }
+    ]
+  }
+]
