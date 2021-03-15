@@ -17,13 +17,7 @@ export default function signInPage() {
   async function handleSignIn() {
     dispatch(signIn())
     await router.replace('/dashboard')
-    toast({
-      title: 'Signed in. Welcome back!',
-      status: 'success',
-      duration: 3000,
-      isClosable: true,
-      position: 'bottom-right',
-    })
+    toast({ title: 'Signed in. Welcome back!', status: 'success' })
   }
 
   return (

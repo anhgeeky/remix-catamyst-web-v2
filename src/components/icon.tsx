@@ -29,6 +29,9 @@ import {
   FaQuoteRight as QuoteIcon,
   FaSave as SaveIcon,
   FaUserAlt as AuthorIcon,
+  FaEnvelope as EmailIcon,
+  FaKey as PasswordIcon,
+  FaFileInvoiceDollar as BillingIcon,
   // Navigation and mnu icons
   FaHome as HomeIcon,
   FaBookReader as LearnIcon,
@@ -140,6 +143,12 @@ export function Icon({ name }) {
       return <SearchIcon />
     case 'signout':
       return <SignOutIcon />
+    case 'email':
+      return <EmailIcon />
+    case 'password':
+      return <PasswordIcon />
+    case 'billing':
+      return <BillingIcon />
     /**
      * Navigation and menu icons.
      */

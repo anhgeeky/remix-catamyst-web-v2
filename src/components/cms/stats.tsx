@@ -35,17 +35,16 @@ export function CMSStats() {
       <NextHead>
         <title>Stats · CMS · Catamyst</title>
       </NextHead>
+
       <CMSHero>
         <Heading as="h1" size="xl">
-          Stats CMS
+          Welcome to CMS
         </Heading>
         <HStack>
-          <Text>Let's get editing! </Text>
-          <Badge variant="solid" colorScheme="red">
-            Admin
-          </Badge>
+          <Text>Let's get editing!</Text>
         </HStack>
       </CMSHero>
+
       <Content>
         <Stack as={Flex} spacing={5} direction={{ base: 'column', sm: 'row' }}>
           {dataStats.map((stat) => {

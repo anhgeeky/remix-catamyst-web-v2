@@ -2,14 +2,20 @@ import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
 import { HeaderTabs } from '@components'
-import { CMSStats, CMSTracks, CMSTopics, CMSLessons } from '@components/cms'
 import { useRedirectSignIn } from '@hooks'
+import {
+  SettingsOverview,
+  SettingsProfile,
+  SettingsEmail,
+  SettingsPassword,
+  SettingsBilling,
+} from '@components/settings'
 
-import dataCMSLinks from '@data/cms-links.json'
+import dataSettingsLinks from '@data/settings-links.json'
 
 export default function settingsSlug() {
   const router = useRouter()
-  const { cmsSlug } = router.query
+  const { settingsSlug } = router.query
   const { auth, isAuthenticated } = useRedirectSignIn()
 
   /**
@@ -17,13 +23,14 @@ export default function settingsSlug() {
    */
   return (
     <Layout>
-      {cmsSlug && isAuthenticated && auth && (
+      {settingsSlug && isAuthenticated && auth && (
         <>
-          <HeaderTabs links={dataCMSLinks} />
-          {cmsSlug === 'overview' && <CMSStats />}
-          {cmsSlug === 'tracks' && <CMSTracks />}
-          {cmsSlug === 'topics' && <CMSTopics />}
-          {cmsSlug === 'lessons' && <CMSLessons />}
+          <HeaderTabs links={dataSettingsLinks} />
+          {settingsSlug === 'overview' && <SettingsOverview auth={auth} />}
+          {settingsSlug === 'profile' && <SettingsProfile auth={auth} />}
+          {settingsSlug === 'email' && <SettingsEmail auth={auth} />}
+          {settingsSlug === 'password' && <SettingsPassword auth={auth} />}
+          {settingsSlug === 'billing' && <SettingsBilling auth={auth} />}
         </>
       )}
     </Layout>

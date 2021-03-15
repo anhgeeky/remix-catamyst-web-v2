@@ -18,7 +18,7 @@ import { transformOptions } from '@components/blocks'
  * user.bioHtml is the same format with BlockTexts.
  */
 export function UserProfile({ user }) {
-  const defaultCoverUrl = `https://storage.catamyst.com/covers/forest.jpg`
+  const defaultCoverUrl = `${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`
 
   return (
     <>
@@ -33,7 +33,7 @@ export function UserProfile({ user }) {
         >
           <NextImage
             alt={`Cover picture of ${user.name}`}
-            src={user.coverUrl}
+            src={user.coverUrl || defaultCoverUrl}
             layout="fixed"
             objectFit="cover"
             width={1200}
@@ -69,7 +69,7 @@ export function UserProfile({ user }) {
             </Heading>
           </Box>
 
-          <Box id="user-bio" maxW={760} fontSize="15px">
+          <Box id="user-bio" maxW={760}>
             {ReactHtmlParser(user.bioHtml, transformOptions)}
           </Box>
         </Stack>

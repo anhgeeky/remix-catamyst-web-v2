@@ -13,5 +13,5 @@ export default function settingsPage() {
     else router.replace('/signin')
   }, [isAuthenticated])
 
-  return <Layout>{auth.isLoading && <p>Loading...</p>}</Layout>
+  return <Layout>{auth.isLoading && <p>Loading settings...</p>}</Layout>
 }

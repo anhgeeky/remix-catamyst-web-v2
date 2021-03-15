@@ -51,7 +51,7 @@ export function HomeHero() {
 
         <NextImage
           alt="Evolution of cats"
-          src="https://storage.catamyst.com/illustrations/hero-home.png"
+          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-home.png`}
           objectFit="contain"
           width={500}
           height={300}

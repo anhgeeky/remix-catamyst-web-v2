@@ -14,7 +14,7 @@ export default function HeaderTabs({ links }) {
         className="tab-list"
         width="1200px"
         spacing={3}
-        px={3}
+        px={5}
         py={2}
         overflow="scroll"
       >

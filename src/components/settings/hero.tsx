@@ -1,11 +1,11 @@
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 
-export default function DashboardHero({ children }) {
+export function SettingsHero({ children }) {
   return (
     <Flex
       pb={5}
+      color={useColorModeValue(`red.500`, `red.200`)}
       justify="center"
-      // color={useColorModeValue(`green.500`, `green.200`)}
     >
       <Box px={5} width="1200px">
         {children}
