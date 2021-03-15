@@ -1,12 +1,13 @@
 import { Icon as ChakraIcon } from '@chakra-ui/react'
 import {
   FaBook as BookIcon,
+  FaBoxOpen as AppIcon,
   FaFileAlt as FileIcon,
-  FaVideo as VideoIcon,
   FaGlobe as WebIcon,
-  FaCube as AppIcon,
   FaPuzzlePiece as PluginIcon,
+  FaVideo as VideoIcon,
 } from 'react-icons/fa'
+
 import { Icon } from '@components'
 
 export default function ReferenceIcon({ name, size = 4 }) {

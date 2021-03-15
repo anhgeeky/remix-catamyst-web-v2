@@ -22,7 +22,7 @@ export default function DashboardMentors({ auth }) {
         <Stack spacing={5} width="100%">
           <Stack spacing={5} width="100%">
             <Stack>
-              <HeadingStack>Mentors:</HeadingStack>
+              <HeadingStack>Assigned mentors:</HeadingStack>
               <Card>
                 <Box>
                   <NextImage
@@ -35,6 +35,13 @@ export default function DashboardMentors({ auth }) {
                 <Text>
                   Hey {auth.user.name}, you don't have any mentors yet.
                 </Text>
+              </Card>
+            </Stack>
+
+            <Stack>
+              <HeadingStack>Available mentors:</HeadingStack>
+              <Card>
+                <Text>Here are the available mentors you can request.</Text>
               </Card>
             </Stack>
           </Stack>

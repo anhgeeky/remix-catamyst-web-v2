@@ -2,9 +2,13 @@ import NextHead from 'next/head'
 import { Heading, Stack, HStack, Text, Badge } from '@chakra-ui/react'
 import { CollectionTracks, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getDayNamePeriod } from '@utils'
+
 import dataTracks from '@data/tracks.json'
 
 export default function DashboardOverview({ auth }) {
+  const dayNamePeriod = getDayNamePeriod()
+
   return (
     <>
       <NextHead>
@@ -13,20 +17,20 @@ export default function DashboardOverview({ auth }) {
 
       <DashboardHero>
         <Heading as="h1" size="xl">
-          Overview
+          Welcome, {auth.user.name}!
         </Heading>
         <HStack>
-          <Text>Welcome back, {auth.user.name}! </Text>
-          <Badge variant="solid" colorScheme="blue">
-            {auth.user.plan}
-          </Badge>
+          <Text>
+            Happy {dayNamePeriod}. You are currently a learner with{' '}
+            {auth.user.plan} plan.
+          </Text>
         </HStack>
       </DashboardHero>
 
       <Content>
         <Stack spacing={5} width="100%">
           <Stack>
-            <HeadingStack>Tracks:</HeadingStack>
+            <HeadingStack>Tracks you can enroll:</HeadingStack>
             <CollectionTracks tracks={dataTracks} />
           </Stack>
         </Stack>

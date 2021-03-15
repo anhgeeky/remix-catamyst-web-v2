@@ -39,20 +39,25 @@ import {
   FaSearch as SearchIcon,
   FaCog as SettingsIcon,
   FaUser as ProfileIcon,
+  FaReceipt as InvoicesIcon,
   // Dashboard icons
   FaBinoculars as OverviewIcon,
-  FaBoxes as ProjectsIcon,
-  FaNewspaper as PostsIcon,
+  FaChartLine as StatsIcon,
+  FaMap as TracksIcon,
+  FaCubes as TopicsIcon,
+  FaCube as LessonsIcon,
+  FaShapes as ProjectsIcon,
+  FaScroll as PostsIcon,
   FaChalkboardTeacher as MentorsIcon,
   FaBriefcase as JobsIcon,
+  FaComments as DiscussionsIcon,
+  FaCertificate as CertificatesIcon,
 } from 'react-icons/fa'
 import {
   RiRefreshLine as ResetIcon,
   RiDashboardFill as DashboardIcon,
   RiLogoutBoxLine as SignOutIcon,
-  RiDiscussFill as DiscussionsIcon,
 } from 'react-icons/ri'
-import { IoTrailSign as TracksIcon } from 'react-icons/io5'
 
 export function Icon({ name }) {
   switch (name) {
@@ -126,8 +131,14 @@ export function Icon({ name }) {
      */
     case 'overview':
       return <OverviewIcon />
+    case 'stats':
+      return <StatsIcon />
     case 'tracks':
       return <TracksIcon />
+    case 'topics':
+      return <TopicsIcon />
+    case 'lessons':
+      return <LessonsIcon />
     case 'projects':
       return <ProjectsIcon />
     case 'posts':
@@ -138,6 +149,8 @@ export function Icon({ name }) {
       return <JobsIcon />
     case 'discussions':
       return <DiscussionsIcon />
+    case 'certificates':
+      return <CertificatesIcon />
     /**
      * Editor button icons
      */

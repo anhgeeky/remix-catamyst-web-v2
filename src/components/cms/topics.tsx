@@ -24,7 +24,7 @@ export function CMSTopics() {
   const toast = useToast()
 
   const handleCreateItem = () => {
-    toast({ status: 'success', title: 'Created new lesson!' })
+    toast({ status: 'success', title: 'Created new topic!' })
   }
 
   const handleSearchItems = () => {

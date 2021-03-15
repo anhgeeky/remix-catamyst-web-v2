@@ -20,7 +20,7 @@ export function CMSTracks() {
   const toast = useToast()
 
   const handleCreateItem = () => {
-    toast({ status: 'success', title: 'Created new lesson!' })
+    toast({ status: 'success', title: 'Created new track!' })
   }
 
   const handleSearchItems = () => {

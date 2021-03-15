@@ -54,7 +54,7 @@ export default function CollectionTracks({ tracks }) {
                         aria-label={`Choose ${track.title} track`}
                         _hover={{ textDecoration: 'none' }}
                       >
-                        Choose Track
+                        Open Track
                       </Button>
                     </NextLink>
                   )}

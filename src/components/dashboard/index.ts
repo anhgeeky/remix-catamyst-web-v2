@@ -7,6 +7,7 @@ import DashboardPosts from '@/components/dashboard/posts'
 import DashboardProjects from '@/components/dashboard/projects'
 import DashboardSidebar from '@components/dashboard/sidebar'
 import DashboardTracks from '@components/dashboard/tracks'
+import DashboardCertificates from '@components/dashboard/certificates'
 
 export {
   DashboardDiscussions,
@@ -18,4 +19,5 @@ export {
   DashboardProjects,
   DashboardSidebar,
   DashboardTracks,
+  DashboardCertificates,
 }

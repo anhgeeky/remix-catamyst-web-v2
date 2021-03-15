@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { Layout } from '@layouts'
 import { HeaderTabs } from '@components'
 import {
+  DashboardCertificates,
   DashboardDiscussions,
   DashboardJobs,
   DashboardMentors,
@@ -11,6 +12,7 @@ import {
   DashboardTracks,
 } from '@components/dashboard'
 import { useRedirectSignIn } from '@hooks'
+
 import dataDashboardLinks from '@data/dashboard-links.json'
 
 export default function dashboardSlugPage() {
@@ -34,6 +36,9 @@ export default function dashboardSlugPage() {
           {dashboardSlug === 'jobs' && <DashboardJobs auth={auth} />}
           {dashboardSlug === 'discussions' && (
             <DashboardDiscussions auth={auth} />
+          )}
+          {dashboardSlug === 'certificates' && (
+            <DashboardCertificates auth={auth} />
           )}
         </>
       )}

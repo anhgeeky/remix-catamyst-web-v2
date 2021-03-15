@@ -9,5 +9,10 @@
     "slug": "discussions",
     "text": "Discussions",
     "href": "/dashboard/discussions"
+  },
+  {
+    "slug": "certificates",
+    "text": "Certificates",
+    "href": "/dashboard/certificates"
   }
 ]
