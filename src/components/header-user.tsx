@@ -16,7 +16,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-import { Icon, useToast } from '@components'
+import { Icon, LinkButton, useToast } from '@components'
 import { signOut } from '@features/auth/actions'
 
 export default function HeaderUser() {
@@ -68,7 +68,7 @@ function UserMenuButton({ auth }) {
             </Flex>
           </MenuItem>
           <MenuDivider />
-          <MenuItem onClick={() => router.push('/dashboard')}>
+          <MenuItem onClick={() => router.push('/dashboard/overview')}>
             <Icon name="dashboard" />
             <Text as="span" ml={2}>
               Dashboard
@@ -80,7 +80,7 @@ function UserMenuButton({ auth }) {
               Profile
             </Text>
           </MenuItem>
-          <MenuItem onClick={() => router.push('/settings')}>
+          <MenuItem onClick={() => router.push('/settings/overview')}>
             <Icon name="settings" />
             <Text as="span" ml={2}>
               Settings
@@ -110,15 +110,7 @@ function UserAuthButtons() {
         </NextLink>
       </Box>
       <Box>
-        <NextLink href="/signin" passHref>
-          <Button
-            as={Link}
-            colorScheme="teal"
-            _hover={{ textDecoration: 'none' }}
-          >
-            Sign in
-          </Button>
-        </NextLink>
+        <LinkButton href="/signin">Sign in</LinkButton>
       </Box>
     </>
   )

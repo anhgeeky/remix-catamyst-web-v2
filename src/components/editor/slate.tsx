@@ -86,7 +86,7 @@ export default function EditorSlate({ slateElements, handleSave }) {
           <MarkButton format="italic" icon="italic" />
           <MarkButton format="underline" icon="underlined" />
           <MarkButton format="code" icon="code" />
-          <LinkButton />
+          <HyperlinkButton />
         </ButtonGroup>
 
         <Editable
@@ -301,7 +301,7 @@ const MarkButton = ({ format, icon }) => {
   )
 }
 
-const LinkButton = () => {
+const HyperlinkButton = () => {
   const editor = useSlate()
   const isActive = isLinkActive(editor)
 

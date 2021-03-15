@@ -4,15 +4,16 @@ import { useAuth } from '@hooks'
 
 export default function useRedirectSignIn() {
   const router = useRouter()
-  const { auth, isAuthorized } = useAuth()
+  const { auth, isAuthenticated, isAuthorized } = useAuth()
 
   useEffect(() => {
-    if (!isAuthorized) router.replace('/signin')
-  }, [isAuthorized])
+    if (!isAuthenticated) router.replace('/signin')
+  }, [isAuthenticated])
 
   return {
     router,
     auth,
+    isAuthenticated,
     isAuthorized,
   }
 }

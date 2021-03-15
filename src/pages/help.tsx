@@ -1,6 +1,8 @@
 import { Heading, Text } from '@chakra-ui/react'
+
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
+import { HelpFaqs } from '@components/help/faqs'
 
 export default function helpPage() {
   return (
@@ -13,7 +15,7 @@ export default function helpPage() {
       </Hero>
 
       <Content>
-        <Text>(Collapsible frequently asked questions)</Text>
+        <HelpFaqs />
       </Content>
     </Layout>
   )

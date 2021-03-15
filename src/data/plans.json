@@ -3,19 +3,24 @@
     "name": "Basic",
     "slug": "basic",
     "benefits": [
-      "Join for free contents",
       "Access to newbie level",
       "Publish up to 3 projects",
-      "Involve in community discussions",
+      "Discuss in community forum",
       "Suitable for your who just want to try out with community support"
     ],
-    "prices": {
-      "IDR": { "cost": 0, "info": "Forever" },
-      "USD": { "cost": 0, "info": "Forever" }
+    "price": {
+      "cost": 0,
+      "info": "Forever"
     },
     "buttons": {
-      "isNotAuthenticated": "Join and Start Basic",
-      "isAuthenticated": "Continue Basic"
+      "isNotAuthenticated": {
+        "href": "/signup",
+        "text": "Sign Up for Basic"
+      },
+      "isAuthenticated": {
+        "href": "/dashboard/overview",
+        "text": "Continue Basic"
+      }
     }
   },
   {
@@ -23,29 +28,23 @@
     "slug": "pro",
     "benefits": [
       "Everything in Basic",
-      "Access to all levels",
+      "Access to learn all levels",
       "Publish unlimited projects",
-      "Involve in exclusive discussions",
-      "Get feedback, review, and advice for your career growth from our team",
       "Suitable for you who want to learn and practice more with priority support"
     ],
-    "prices": {
-      "USD": {
-        "1": { "cost": 19, "info": "1 month" },
-        "3": { "cost": 49, "costBefore": 57, "info": "3 months" },
-        "6": { "cost": 109, "costBefore": 114, "info": "6 months" },
-        "12": { "cost": 190, "costBefore": 228, "info": "12 months" }
-      },
-      "IDR": {
-        "1": { "cost": 199000, "info": "1 month" },
-        "3": { "cost": 567000, "costBefore": 597000, "info": "3 months" },
-        "6": { "cost": 999000, "costBefore": 1194000, "info": "6 months" },
-        "12": { "cost": 1990000, "costBefore": 2388000, "info": "12 months" }
-      }
+    "price": {
+      "cost": 10,
+      "info": "month"
     },
     "buttons": {
-      "isNotAuthenticated": "Join and Subscribe Pro",
-      "isAuthenticated": "Subscribe Pro"
+      "isNotAuthenticated": {
+        "href": "/signup?plan=pro",
+        "text": "Sign Up for Pro"
+      },
+      "isAuthenticated": {
+        "href": "/settings/billing?plan=pro",
+        "text": "Subscribe Pro"
+      }
     }
   },
   {
@@ -53,17 +52,23 @@
     "slug": "super",
     "benefits": [
       "Everything in Basic and Pro",
-      "Lifetime Pro access",
-      "Dedicated private 1-on-1 mentorship sessions with real dedicated mentor for around 150 hours",
-      "Suitable for you who want to get real serious on getting a professional job, freelancing gig, or even upgrading your current career"
+      "Lifetime Pro benefits",
+      "Dedicated private 1-on-1 mentorship sessions with real dedicated mentor for 150 hours",
+      "Suitable for you who want to get real serious on getting a professional job, freelancing, upgrading your career, or building a tech business"
     ],
-    "prices": {
-      "USD": { "cost": 1999, "info": "1 person" },
-      "IDR": { "cost": 19999000, "info": "1 person" }
+    "price": {
+      "cost": 2000,
+      "info": "1 person"
     },
     "buttons": {
-      "isNotAuthenticated": "Join and Request Super",
-      "isAuthenticated": "Request Super"
+      "isNotAuthenticated": {
+        "href": "/signup?plan=super",
+        "text": "Sign Up for Super"
+      },
+      "isAuthenticated": {
+        "href": "/settings/billing?plan=super",
+        "text": "Request Super"
+      }
     }
   }
 ]

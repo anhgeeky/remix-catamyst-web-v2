@@ -1,4 +1,4 @@
-import { Link, HStack, IconButton, useColorModeValue } from '@chakra-ui/react'
+import { Link, HStack, useColorModeValue } from '@chakra-ui/react'
 import { Icon } from '@components'
 
 import dataSocialLinks from '@data/social-links.json'
@@ -10,6 +10,7 @@ export function SocialLinks() {
       {dataSocialLinks.map((link, index) => {
         return (
           <Link
+            key={link.name}
             isExternal
             href={link.url}
             fontSize="xl"
