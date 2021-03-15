@@ -2,6 +2,8 @@ import { useRouter } from 'next/router'
 import NextLink from 'next/link'
 import { Box, Flex, Link, HStack, useColorModeValue } from '@chakra-ui/react'
 
+import { Icon } from '@components'
+
 export default function HeaderTabs({ links }) {
   const router = useRouter()
 
@@ -23,8 +25,9 @@ export default function HeaderTabs({ links }) {
           const isActive = router.asPath === link.href
 
           return (
-            <TabLink key={link.href} href={link.href} isActive={isActive}>
-              {link.text}
+            <TabLink key={link.slug} href={link.href} isActive={isActive}>
+              <Icon name={link.slug} />
+              <span>{link.text}</span>
             </TabLink>
           )
         })}
@@ -36,7 +39,7 @@ export default function HeaderTabs({ links }) {
 function TabLink({ href, isActive = false, children }) {
   return (
     <NextLink href={href} passHref>
-      <Box
+      <HStack
         as={Link}
         aria-current={isActive ? 'page' : undefined}
         p={2}
@@ -55,7 +58,7 @@ function TabLink({ href, isActive = false, children }) {
         }}
       >
         {children}
-      </Box>
+      </HStack>
     </NextLink>
   )
 }

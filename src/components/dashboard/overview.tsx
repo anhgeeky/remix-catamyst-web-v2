@@ -10,6 +10,7 @@ export default function DashboardOverview({ auth }) {
       <NextHead>
         <title>Overview Dashboard · Catamyst</title>
       </NextHead>
+
       <DashboardHero>
         <Heading as="h1" size="xl">
           Overview
@@ -21,6 +22,7 @@ export default function DashboardOverview({ auth }) {
           </Badge>
         </HStack>
       </DashboardHero>
+
       <Content>
         <Stack spacing={5} width="100%">
           <Stack>
