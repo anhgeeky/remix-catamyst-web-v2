@@ -19,9 +19,8 @@ export default function signUpPage() {
           </Hero>
 
           <Content>
-            <Text>(Sign up form)</Text>
             <NextLink href="/signin">
-              <Button>Sign in instead</Button>
+              <Button colorScheme="teal">Instant sign in</Button>
             </NextLink>
           </Content>
         </>

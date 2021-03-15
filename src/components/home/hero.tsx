@@ -1,8 +1,19 @@
 import NextImage from 'next/image'
-import { Heading, Stack, Flex, Text } from '@chakra-ui/react'
-import { QuickSignUpForm } from '@components'
+import {
+  Heading,
+  Stack,
+  Flex,
+  Text,
+  List,
+  ListItem,
+  ListIcon,
+} from '@chakra-ui/react'
+import { FaCheckCircle as CheckIcon } from 'react-icons/fa'
 
-export default function HeroHome() {
+import { QuickSignUpForm } from '@components'
+import dataHeroHome from '@data/hero-home.json'
+
+export function HomeHero() {
   return (
     <Flex px={5} justify="center">
       <Stack
@@ -17,18 +28,24 @@ export default function HeroHome() {
         <Stack maxW="40rem" spacing={5}>
           <Heading
             as="h1"
-            fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '6xl' }}
+            fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '5xl' }}
             maxW="30ch"
             bgGradient="linear(to-r, teal.500, green.500)"
             bgClip="text"
           >
-            All-in-one platform to learn software development
+            {dataHeroHome.title}
           </Heading>
-          <Text fontSize={['md', 'lg']}>
-            Learn coding and design from the very beginning. Build and showcase
-            your projects as portfolio. Discuss ideas and ask questions with the
-            community. Explore and post job opportunities.
-          </Text>
+          <Text fontSize={['md', 'lg']}>{dataHeroHome.subtitle}</Text>
+          <List>
+            {dataHeroHome.benefits.map((benefit, index) => {
+              return (
+                <ListItem key={index}>
+                  <ListIcon as={CheckIcon} color="teal.500" />
+                  <Text as="span">{benefit}</Text>
+                </ListItem>
+              )
+            })}
+          </List>
           <QuickSignUpForm />
         </Stack>
 

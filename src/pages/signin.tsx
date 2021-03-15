@@ -1,10 +1,9 @@
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
-import { Heading, Text, Container, Button } from '@chakra-ui/react'
+import { Heading, Text, Button } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, useToast } from '@components'
+import { Hero, Content, useToast } from '@components'
 import { signIn } from '@features/auth/actions'
 import { useRedirectDashboard } from '@hooks'
 
@@ -37,11 +36,12 @@ export default function signInPage() {
             </Heading>
             <Text>Use your Catamyst account</Text>
           </Hero>
-          <Container maxW="1200px" pt={5}>
+
+          <Content>
             <Button colorScheme="teal" onClick={handleSignIn}>
               Instant sign in
             </Button>
-          </Container>
+          </Content>
         </>
       )}
     </Layout>

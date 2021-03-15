@@ -13,8 +13,8 @@ export default function Footer() {
   return (
     <VStack
       as="footer"
-      mt={20}
-      p={5}
+      mt={200}
+      p={10}
       spacing={5}
       color={useColorModeValue('gray.600', 'gray.100')}
       textAlign="center"

@@ -20,15 +20,18 @@ export default function QuickSignUpForm() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    router.push('/signup')
+    /**
+     * Temporarily instant sign in before sign up form is finished.
+     */
+    router.push('/signin')
   }
 
   return (
     <Stack
       id="quick-signup-form"
       as="form"
-      maxW="30rem"
-      direction={['column', 'row']}
+      maxW={{ base: '30rem', sm: '40rem' }}
+      direction={{ base: 'column', sm: 'row' }}
       onSubmit={handleSubmit}
     >
       <Box>
@@ -37,14 +40,14 @@ export default function QuickSignUpForm() {
         </VisuallyHidden>
         <Input
           type="email"
-          placeholder="yourname@mail.com"
+          placeholder="Enter your email..."
           onChange={handleChange}
           value={email}
-          minW="280px"
+          minW={{ base: 200, sm: 240, md: 340 }}
         />
       </Box>
       <Button type="submit" colorScheme="teal" px={5}>
-        Start learning
+        Start learning for free
       </Button>
     </Stack>
   )

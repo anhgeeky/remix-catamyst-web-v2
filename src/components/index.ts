@@ -17,7 +17,6 @@ import HeaderTabs from '@components/header-tabs'
 import HeaderUser from '@components/header-user'
 import HeadingStack from '@components/heading-stack'
 import Hero from '@components/hero'
-import HeroHome from '@components/hero-home'
 import LessonIcon from '@components/lesson-icon'
 import LinkButton from '@components/link-button'
 import Logo from '@components/logo'
@@ -50,7 +49,6 @@ export {
   HeaderUser,
   HeadingStack,
   Hero,
-  HeroHome,
   LessonIcon,
   LinkButton,
   Logo,
