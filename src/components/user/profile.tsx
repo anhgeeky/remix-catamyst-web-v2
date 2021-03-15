@@ -25,12 +25,14 @@ export function UserProfile({ user }) {
         <Box
           className="next-image-cover-container"
           maxW="1200px"
-          rounded="xl"
+          borderBottomLeftRadius="md"
+          borderBottomRightRadius="md"
           bg={useColorModeValue('gray.100', 'gray.500')}
         >
           <NextImage
             alt={`Cover picture of ${user.name}`}
             src={user.coverUrl || defaultCoverUrl}
+            objectFit="cover"
             layout="fixed"
             width="1200px"
             height="200px"

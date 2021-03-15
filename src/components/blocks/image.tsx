@@ -1,11 +1,18 @@
 import NextImage from 'next/image'
-import { Box, Text, Link, useColorModeValue } from '@chakra-ui/react'
+import {
+  Flex,
+  Image,
+  Box,
+  Text,
+  Link,
+  useColorModeValue,
+} from '@chakra-ui/react'
 
 /**
  * Block that can be used both for actual content and CMS
  * Because the CMS can show this as the preview
  */
-export function BlockImage({ block }) {
+export function BlockImage({ block, renderer = 'NextImage' }) {
   const width =
     block.size === 'Huge' // Fill the width
       ? 1440
@@ -29,21 +36,37 @@ export function BlockImage({ block }) {
 
   return (
     <Box>
-      <Box
-        className="next-image-container"
-        rounded="md"
-        bg={block.size === 'Huge' && useColorModeValue('gray.100', 'gray.500')}
-      >
-        {/* Need URL validaton later */}
-        <NextImage
-          src={block.url || `https://example.com`}
-          alt={block.alt || block.title || 'Unknown'}
-          width={width}
-          height={height}
-          layout="intrinsic"
-          objectFit="contain"
-        />
-      </Box>
+      {renderer === 'Image' && (
+        <Flex justify="center">
+          <Image
+            src={block.url || `https://example.com`}
+            alt={block.alt || block.title || 'Unknown'}
+            width={width}
+            height={height}
+            objectFit="contain"
+            rounded="md"
+          />
+        </Flex>
+      )}
+      {renderer === 'NextImage' && (
+        <Box
+          className="next-image-container"
+          rounded="md"
+          bg={
+            block.size === 'Huge' && useColorModeValue('gray.100', 'gray.500')
+          }
+        >
+          {/* Need URL validaton later */}
+          <NextImage
+            src={block.url || `https://example.com`}
+            alt={block.alt || block.title || 'Unknown'}
+            width={width}
+            height={height}
+            layout="intrinsic"
+            objectFit="contain"
+          />
+        </Box>
+      )}
 
       {block.showMeta !== false && block.title && (
         <Box opacity={0.5} align="center" mt={2}>

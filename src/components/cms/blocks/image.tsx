@@ -17,15 +17,17 @@ import { BlockImage } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
 /**
- * Block only can be used for CMS
- * But combines block for CMS and actual content as preview
+ * Block only can be used for CMS.
+ * But combines block for CMS and actual content as preview.
+ * Because regular BlockImage uses NextImage by default,
+ * it needs to specify the renderer with regular Image so it won't break
+ * when changing the image URL.
  */
 export function CMSBlockImage({ index, block, actions }) {
   /**
-   * Need to use RHF
+   * Need to use RHF later.
    */
   const [formBlock, setFormBlock] = useState(block)
-
   const handleChange = (event) => {
     setFormBlock({ ...formBlock, [event.target.name]: event.target.value })
   }
@@ -43,7 +45,7 @@ export function CMSBlockImage({ index, block, actions }) {
           actions={actions}
         />
 
-        <BlockImage block={formBlock} />
+        <BlockImage block={formBlock} renderer="Image" />
 
         <Flex
           bg={useColorModeValue('white', 'gray.800')}
@@ -186,5 +188,4 @@ export function CMSBlockImage({ index, block, actions }) {
       </CardArea>
     )
   }
-  return null
 }
