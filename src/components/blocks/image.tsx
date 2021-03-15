@@ -44,14 +44,12 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
             width={width}
             height={height}
             objectFit="contain"
-            rounded="md"
           />
         </Flex>
       )}
       {renderer === 'NextImage' && (
         <Box
           className="next-image-container"
-          rounded="md"
           bg={
             block.size === 'Huge' && useColorModeValue('gray.100', 'gray.500')
           }

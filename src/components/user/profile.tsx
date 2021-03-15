@@ -5,6 +5,7 @@ import {
   Avatar,
   Heading,
   Text,
+  Image,
   Box,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -25,17 +26,18 @@ export function UserProfile({ user }) {
         <Box
           className="next-image-cover-container"
           maxW="1200px"
+          // overflow="auto"
           borderBottomLeftRadius="md"
           borderBottomRightRadius="md"
           bg={useColorModeValue('gray.100', 'gray.500')}
         >
           <NextImage
             alt={`Cover picture of ${user.name}`}
-            src={user.coverUrl || defaultCoverUrl}
-            objectFit="cover"
+            src={user.coverUrl}
             layout="fixed"
-            width="1200px"
-            height="200px"
+            objectFit="cover"
+            width={1200}
+            height={200}
           />
         </Box>
       </Flex>
@@ -67,7 +69,7 @@ export function UserProfile({ user }) {
             </Heading>
           </Box>
 
-          <Box id="user-bio" maxW={760}>
+          <Box id="user-bio" maxW={760} fontSize="15px">
             {ReactHtmlParser(user.bioHtml, transformOptions)}
           </Box>
         </Stack>

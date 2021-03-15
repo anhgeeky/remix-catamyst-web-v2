@@ -86,7 +86,9 @@ export default function lessonIdPage() {
 
   const handleSave = (data) => {
     toast({ status: 'success', title: 'Saved lesson data!' })
-    console.log(JSON.stringify({ type: 'SAVE_LESSON', payload: data }, null, 2))
+    console.info(
+      JSON.stringify({ type: 'SAVE_LESSON', payload: data }, null, 2)
+    )
   }
 
   const handleDelete = () => {

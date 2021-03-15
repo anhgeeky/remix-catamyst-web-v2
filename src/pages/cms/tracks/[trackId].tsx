@@ -216,8 +216,9 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
               name="totalTopics"
               maxW={20}
               min={2}
-              // max={200}
+              max={200}
               defaultValue={formTrack.totalTopics}
+              isDisabled
             >
               <NumberInputField />
             </NumberInput>
@@ -230,6 +231,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
               min={2}
               defaultValue={formTrack.totalLessons}
               onChange={handleChange}
+              isDisabled
             >
               <NumberInputField />
             </NumberInput>
@@ -241,6 +243,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
               maxW={20}
               min={10}
               defaultValue={formTrack.totalHours}
+              isDisabled
             >
               <NumberInputField />
             </NumberInput>

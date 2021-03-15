@@ -21,7 +21,7 @@ export default function Footer() {
     >
       <SocialLinks />
       <Box>
-        <Text>Copyright © {year} Catamyst. All rights reserved.</Text>
+        <Text>Copyright © {year} Catamyst.</Text>
         <VStack opacity={0.5} fontSize={15} spacing={0}>
           <Text>Enjoy your {dayNamePeriod}!</Text>
         </VStack>
