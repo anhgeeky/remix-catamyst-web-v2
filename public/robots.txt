@@ -1,0 +1,16 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /cms
+Disallow: /dashboard
+Disallow: /onboard
+Disallow: /reset
+Disallow: /secret
+Disallow: /settings
+
+# Host
+Host: https://catamyst.com
+
+# Sitemaps
+Sitemap: https://catamyst.com/sitemap.xml
