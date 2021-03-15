@@ -199,309 +199,356 @@
     "slug": "",
     "title": "Web programming with JavaScript",
     "category": "General",
-    "iconEmoji": "🤠"
+    "iconEmoji": "🐱"
   },
   {
     "id": 24,
     "slug": "",
     "title": "JavaScript data operation",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🗄️"
   },
   {
     "id": 25,
     "slug": "",
     "title": "JavaScript function",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🖨️"
   },
   {
     "id": 26,
     "slug": "",
     "title": "JavaScript error handling",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "⚔️"
   },
   {
     "id": 27,
     "slug": "",
     "title": "JavaScript global objects",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🌐"
   },
   {
     "id": 28,
     "slug": "",
     "title": "JavaScript browser storage",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "💽"
   },
   {
     "id": 29,
     "slug": "",
     "title": "JavaScript modules",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🔌"
   },
   {
     "id": 30,
     "slug": "",
     "title": "JavaScript asynchronicity",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "⏱️"
   },
   {
     "id": 31,
     "slug": "",
     "title": "JavaScript DOM",
     "category": "Frontend",
-    "iconEmoji": ""
+    "iconEmoji": "📜"
   },
   {
     "id": 32,
     "slug": "",
     "title": "JavaScript with regex",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🔠"
   },
   {
     "id": 33,
     "slug": "",
     "title": "REST API",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🛏️"
   },
   {
     "id": 34,
     "slug": "",
+    "title": "GraphQL API",
+    "category": "General",
+    "iconEmoji": "⛓️"
+  },
+  {
+    "id": 350,
+    "slug": "",
     "title": "Other API",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "📊"
   },
   {
     "id": 35,
     "slug": "",
     "title": "REST API with JavaScript",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🛏️"
+  },
+  {
+    "id": 350,
+    "slug": "",
+    "title": "GraphQL API with JavaScript",
+    "category": "General",
+    "iconEmoji": "⛓️"
   },
   {
     "id": 36,
     "slug": "",
     "title": "JavaScript runtime and Node.js",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🐯"
   },
   {
     "id": 37,
     "slug": "",
     "title": "Node.js with npm",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🦁"
   },
   {
     "id": 38,
     "slug": "",
     "title": "CSS library and framework",
     "category": "Frontend",
-    "iconEmoji": ""
+    "iconEmoji": "🍔"
   },
   {
     "id": 39,
     "slug": "",
     "title": "JavaScript library and framework",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🎩"
   },
   {
     "id": 40,
     "slug": "",
     "title": "JavaScript code quality",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🦉"
   },
   {
     "id": 41,
     "slug": "",
-    "title": "Programming paradigms",
+    "title": "Programming paradigms, OOP, and FP",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🐻"
   },
   {
     "id": 42,
     "slug": "",
     "title": "JavaScript OOP and FP",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🐼"
   },
   {
     "id": 43,
     "slug": "",
     "title": "JavaScript transpiler and bundler",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "📦"
   },
   {
     "id": 44,
     "slug": "",
     "title": "Software design and architecture",
     "category": "General",
-    "iconEmoji": ""
+    "iconEmoji": "🖼️"
   },
   {
     "id": 45,
     "slug": "",
     "title": "React library",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "🧶"
   },
   {
     "id": 46,
     "slug": "",
     "title": "React data",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "🎽"
   },
   {
     "id": 47,
     "slug": "",
     "title": "React form",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "👖"
   },
   {
     "id": 48,
     "slug": "",
     "title": "React routing",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "👗"
   },
   {
     "id": 49,
     "slug": "",
     "title": "React styling",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "👘"
   },
   {
     "id": 50,
     "slug": "",
     "title": "React with REST API",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "👕"
+  },
+  {
+    "id": 500,
+    "slug": "",
+    "title": "React with GraphQL API",
+    "category": "Frontend",
+    "iconEmoji": "👚"
   },
   {
     "id": 51,
     "slug": "",
     "title": "React extras",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "🧤"
   },
   {
     "id": 52,
     "slug": "",
     "title": "Redux as state management",
-    "category": "General"
+    "category": "General",
+    "iconEmoji": "🦆"
   },
   {
     "id": 53,
     "slug": "",
     "title": "React with Redux",
-    "category": "Frontend"
+    "category": "Frontend",
+    "iconEmoji": "👔"
   },
   {
     "id": 54,
     "slug": "",
     "title": "Node.js with Express",
-    "category": "Backend"
+    "category": "Backend",
+    "iconEmoji": "🐨"
   },
   {
     "id": 55,
     "slug": "",
     "title": "Simple Backend app deployment",
-    "category": "Backend"
+    "category": "Backend",
+    "iconEmoji": "🏝️"
   },
   {
     "id": 56,
     "slug": "",
     "title": "Database management system",
-    "category": "Backend"
+    "category": "Backend",
+    "iconEmoji": "📕"
   },
   {
     "id": 57,
     "slug": "",
     "title": "Non-relational database",
-    "category": "Backend"
+    "category": "Backend",
+    "iconEmoji": "📗"
   },
   {
     "id": 58,
     "slug": "",
     "title": "Relational database",
-    "category": "Backend"
+    "category": "Backend",
+    "iconEmoji": "📘"
   },
   {
     "id": 59,
     "slug": "",
     "title": "Web security",
-    "category": "General"
+    "category": "General",
+    "iconEmoji": "🔐"
   },
   {
     "id": 60,
     "slug": "",
     "title": "Testing and automation",
-    "category": "General"
+    "category": "General",
+    "iconEmoji": "🧪"
   },
   {
     "id": 61,
     "slug": "",
     "title": "Containerization",
-    "category": "General"
+    "category": "General",
+    "iconEmoji": "🐳"
   },
   {
     "id": 62,
     "slug": "",
-    "title": "Advanced deployment infrastructure",
-    "category": "General"
+    "title": "Advanced app deployment and infrastructure",
+    "category": "General",
+    "iconEmoji": "🌴"
   },
   {
     "id": 63,
     "slug": "",
     "title": "Additional application features",
-    "category": "General"
+    "category": "General",
+    "iconEmoji": "🌳"
   },
   {
     "id": 64,
     "slug": "",
     "title": "Advanced algorithm and data structure",
-    "category": "General"
+    "category": "General",
+    "iconEmoji": "🤖"
   },
   {
     "id": 65,
     "slug": "",
     "title": "Project development and management",
-    "category": "General"
+    "category": "General",
+    "iconEmoji": "🏭"
   },
   {
     "id": 66,
     "slug": "",
     "title": "Special resources",
-    "category": "special"
+    "category": "special",
+    "iconEmoji": "🏗️"
   },
   {
     "id": 67,
     "slug": "",
     "title": "Large-scale project",
-    "category": "special"
+    "category": "special",
+    "iconEmoji": "🏟️"
   },
   {
     "id": 68,
     "slug": "",
     "title": "Professional work",
-    "category": "career"
+    "category": "career",
+    "iconEmoji": "💼"
   },
   {
     "id": 69,
     "slug": "",
     "title": "Business and startup",
-    "category": "career"
+    "category": "career",
+    "iconEmoji": "💸"
   },
   {
     "id": 70,
     "slug": "",
     "title": "Consultation and discussion",
-    "category": "career"
+    "category": "career",
+    "iconEmoji": "🧭"
   }
 ]

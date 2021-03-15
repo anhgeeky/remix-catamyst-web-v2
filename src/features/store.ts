@@ -21,10 +21,10 @@ import rootReducer from '@features/reducer'
 
 const middlewares = [thunk]
 
-if (process.env.NODE_ENV === 'development') {
-  const logger = createLogger({ collapsed: true })
-  middlewares.push(logger)
-}
+// if (process.env.NODE_ENV === 'development') {
+//   const logger = createLogger({ collapsed: true })
+//   middlewares.push(logger)
+// }
 
 /**
  * Configure Redux Persist

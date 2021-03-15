@@ -116,9 +116,9 @@ export default function trackIdPage() {
             actions={{
               handleBack,
               handleDelete,
-              // handleReset,
+              handleReset: () => {},
               handleSave,
-              // handleSubmit,
+              handleSubmit: () => {},
               handleViewResult: () => setViewMode('result'),
               handleViewJSON: () => setViewMode('json'),
             }}

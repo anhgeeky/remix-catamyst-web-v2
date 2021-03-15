@@ -1,12 +1,12 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.75",
+  "version": "0.1.76",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8000",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "start": "next start"
+    "start": "next start -p 8000"
   },
   "dependencies": {
     "@chakra-ui/icons": "1.0.5",
