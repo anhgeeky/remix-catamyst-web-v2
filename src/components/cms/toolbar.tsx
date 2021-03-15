@@ -13,7 +13,7 @@ import { Icon } from '@components'
 
 export function CMSToolbar({ labels, actions }) {
   return (
-    <Stack direction="row">
+    <Stack direction="row" mb={5}>
       <Box>
         <Button
           colorScheme="teal"

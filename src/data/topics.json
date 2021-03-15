@@ -520,35 +520,35 @@
     "id": 66,
     "slug": "",
     "title": "Special resources",
-    "category": "special",
+    "category": "Special",
     "iconEmoji": "🏗️"
   },
   {
     "id": 67,
     "slug": "",
     "title": "Large-scale project",
-    "category": "special",
+    "category": "Special",
     "iconEmoji": "🏟️"
   },
   {
     "id": 68,
     "slug": "",
     "title": "Professional work",
-    "category": "career",
+    "category": "Career",
     "iconEmoji": "💼"
   },
   {
     "id": 69,
     "slug": "",
     "title": "Business and startup",
-    "category": "career",
+    "category": "Career",
     "iconEmoji": "💸"
   },
   {
     "id": 70,
     "slug": "",
     "title": "Consultation and discussion",
-    "category": "career",
+    "category": "Career",
     "iconEmoji": "🧭"
   }
 ]

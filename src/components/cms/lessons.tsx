@@ -61,7 +61,6 @@ export function CMSLessons() {
         />
 
         <Stack
-          mt={5}
           divider={
             <StackDivider
               borderColor={useColorModeValue('gray.200', 'gray.700')}
@@ -78,6 +77,7 @@ export function CMSLessons() {
               Published
             </Text>
           </HStack>
+
           {dataLessons.map((lesson) => {
             return (
               <NextLink

@@ -41,6 +41,17 @@ export function CMSTracks() {
       </CMSHero>
 
       <Content>
+        <CMSToolbar
+          labels={{
+            create: 'Create new track',
+            search: 'Search for existing tracks',
+          }}
+          actions={{
+            handleCreateItem,
+            handleSearchItems,
+          }}
+        />
+
         <Stack
           divider={
             <StackDivider
@@ -48,17 +59,6 @@ export function CMSTracks() {
             />
           }
         >
-          <CMSToolbar
-            labels={{
-              create: 'Create new track',
-              search: 'Search for existing tracks',
-            }}
-            actions={{
-              handleCreateItem,
-              handleSearchItems,
-            }}
-          />
-
           <HStack p={3} fontWeight="700">
             <Text flex={1}>ID</Text>
             <Text flex={1}>Icon</Text>
