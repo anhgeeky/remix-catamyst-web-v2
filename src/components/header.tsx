@@ -17,7 +17,7 @@ import {
   MenuPanel,
   HeaderUser,
 } from '@components'
-import publicPages from '@data/public-pages.json'
+import dataNavLinks from '@data/nav-links.json'
 
 export default function Header() {
   const bg = useColorModeValue('white', 'gray.900')
@@ -76,8 +76,8 @@ export default function Header() {
             display={{ base: 'none', md: 'flex' }}
           >
             <HStack spacing={1}>
-              {publicPages.map((page, index) => {
-                return <NavLink key={index} page={page} />
+              {dataNavLinks.map((page, index) => {
+                return <NavLink key={page.slug} page={page} />
               })}
             </HStack>
           </Flex>

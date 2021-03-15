@@ -29,6 +29,13 @@ import {
   FaQuoteRight as QuoteIcon,
   FaSave as SaveIcon,
   FaUserAlt as AuthorIcon,
+  // Navigation and mnu icons
+  FaHome as HomeIcon,
+  FaBookReader as LearnIcon,
+  FaComments as ForumIcon,
+  FaMoneyBill as PricingIcon,
+  FaQuestionCircle as HelpIcon,
+  FaCat as AboutIcon,
   // Editor button icons
   FaBold as BoldIcon,
   FaItalic as ItalicIcon,
@@ -52,12 +59,19 @@ import {
   FaBriefcase as JobsIcon,
   FaComments as DiscussionsIcon,
   FaCertificate as CertificatesIcon,
+  // Social icons
+  FaTwitter as TwitterIcon,
+  FaGithub as GitHubIcon,
+  FaLinkedin as LinkedInIcon,
+  FaInstagram as InstagramIcon,
+  FaFacebook as FacebookIcon,
 } from 'react-icons/fa'
 import {
   RiRefreshLine as ResetIcon,
   RiDashboardFill as DashboardIcon,
   RiLogoutBoxLine as SignOutIcon,
 } from 'react-icons/ri'
+import { IoTelescope as DiscoverIcon } from 'react-icons/io5'
 
 export function Icon({ name }) {
   switch (name) {
@@ -127,7 +141,24 @@ export function Icon({ name }) {
     case 'signout':
       return <SignOutIcon />
     /**
-     * Dashboard icons
+     * Navigation and menu icons.
+     */
+    case 'home':
+      return <HomeIcon />
+    case 'learn':
+      return <LearnIcon />
+    case 'discover':
+      return <DiscoverIcon />
+    case 'forum':
+      return <ForumIcon />
+    case 'pricing':
+      return <PricingIcon />
+    case 'help':
+      return <HelpIcon />
+    case 'about':
+      return <AboutIcon />
+    /**
+     * Dashboard icons.
      */
     case 'overview':
       return <OverviewIcon />
@@ -174,6 +205,19 @@ export function Icon({ name }) {
       return <ListUnorderedIcon />
     case 'bullet':
       return <BulletIcon />
+    /**
+     * Social icons.
+     */
+    case 'twitter':
+      return <TwitterIcon />
+    case 'github':
+      return <GitHubIcon />
+    case 'linkedin':
+      return <LinkedInIcon />
+    case 'instagram':
+      return <InstagramIcon />
+    case 'facebook':
+      return <FacebookIcon />
     /**
      * When nothing found
      */

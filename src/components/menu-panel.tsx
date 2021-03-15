@@ -1,8 +1,11 @@
 import NextLink from 'next/link'
 import {
   Box,
+  HStack,
+  Link,
   Button,
   Flex,
+  Text,
   IconButton,
   Stack,
   StackDivider,
@@ -11,12 +14,16 @@ import {
 import { useSelector } from 'react-redux'
 import { RemoveScroll } from 'react-remove-scroll'
 import { FaTimes } from 'react-icons/fa'
-import { ColorModeToggle } from '@components'
+
+import { ColorModeToggle, Icon, SocialLinks } from '@components'
 import useRouteChanged from '@hooks/use-route-changed'
 
-import publicPages from '@data/public-pages.json'
+import dataMenuLinks from '@data/menu-links.json'
 import React from 'react'
 
+/**
+ * menu-link needs CSS to retain accessibility on focus.
+ */
 export default function MenuPanel({ closeMenu, isMenuOpen }) {
   const auth = useSelector((state) => state.auth)
   const bg = useColorModeValue('white', 'gray.900')
@@ -42,7 +49,7 @@ export default function MenuPanel({ closeMenu, isMenuOpen }) {
               as="nav"
               width="100%"
               maxW={1200}
-              spacing={4}
+              spacing={2}
               px={{ base: 2, sm: 4 }}
               py={2}
             >
@@ -62,11 +69,32 @@ export default function MenuPanel({ closeMenu, isMenuOpen }) {
                 align="stretch"
                 divider={<StackDivider borderColor={dividerBorderColor} />}
               >
-                {publicPages.map((page, index) => {
+                {dataMenuLinks.map((page, index) => {
                   return (
-                    <Box key={index} as={NextLink} href={page.href}>
-                      <a className="menu-link">{page.text}</a>
-                    </Box>
+                    <Link
+                      key={page.slug}
+                      as={NextLink}
+                      href={page.href}
+                      _hover={{ bg: 'teal.500' }}
+                    >
+                      <a className="menu-link">
+                        <HStack
+                          display="flex"
+                          padding="10px"
+                          cursor="pointer"
+                          align="center"
+                          borderRadius="md"
+                          _hover={{
+                            bg: useColorModeValue('teal.400', 'teal.700'),
+                          }}
+                        >
+                          <Icon name={page.slug} />
+                          <Text as="span" ml={2}>
+                            {page.text}
+                          </Text>
+                        </HStack>
+                      </a>
+                    </Link>
                   )
                 })}
 
@@ -87,6 +115,8 @@ export default function MenuPanel({ closeMenu, isMenuOpen }) {
                   </Stack>
                 )}
               </Stack>
+
+              <SocialLinks />
             </Stack>
           </Flex>
         </RemoveScroll>

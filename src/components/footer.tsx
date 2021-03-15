@@ -1,5 +1,6 @@
-import { useColorModeValue, Code, VStack, Text } from '@chakra-ui/react'
+import { Box, useColorModeValue, Code, VStack, Text } from '@chakra-ui/react'
 
+import { SocialLinks } from '@components'
 import { getYear, getDayNamePeriod } from '@utils'
 
 const NODE_ENV = process.env.NODE_ENV
@@ -14,18 +15,22 @@ export default function Footer() {
       as="footer"
       mt={20}
       p={5}
+      spacing={5}
       color={useColorModeValue('gray.600', 'gray.100')}
       textAlign="center"
     >
-      <Text>Copyright © {year} Catamyst. All rights reserved.</Text>
-      <VStack opacity={0.5} fontSize={15} spacing={0}>
-        <Text>Enjoy your {dayNamePeriod}!</Text>
-      </VStack>
-      {NODE_ENV !== 'production' && (
-        <Code colorScheme="gray" fontWeight="bold">
-          {NODE_ENV} && {API_URL}
-        </Code>
-      )}
+      <SocialLinks />
+      <Box>
+        <Text>Copyright © {year} Catamyst. All rights reserved.</Text>
+        <VStack opacity={0.5} fontSize={15} spacing={0}>
+          <Text>Enjoy your {dayNamePeriod}!</Text>
+        </VStack>
+        {NODE_ENV !== 'production' && (
+          <Code colorScheme="gray" fontWeight="bold">
+            {NODE_ENV} && {API_URL}
+          </Code>
+        )}
+      </Box>
     </VStack>
   )
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "learn",
+    "text": "Learn",
+    "href": "/learn"
+  },
+  {
+    "slug": "discover",
+    "text": "Discover",
+    "href": "/discover"
+  },
+  {
+    "slug": "forum",
+    "text": "Forum",
+    "href": "/forum"
+  },
+  {
+    "slug": "jobs",
+    "text": "Jobs",
+    "href": "/jobs"
+  },
+  {
+    "slug": "pricing",
+    "text": "Pricing",
+    "href": "/pricing"
+  },
+  {
+    "slug": "help",
+    "text": "Help",
+    "href": "/help"
+  }
+]

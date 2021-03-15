@@ -1,3 +1,7 @@
+/**
+ * General.
+ */
+
 :root {
   --color-primary: #0aa;
   --color-secondary: #aca;
@@ -24,22 +28,9 @@ p code {
   font-size: 0.8em;
 }
 
-/* Style overrides */
-
-.nav-link {
-  padding: 6px;
-  opacity: 0.5;
-  transition: opacity 0.2s ease;
-}
-
-.nav-link:hover,
-.nav-link:focus {
-  opacity: 1;
-}
-
-.menu-link {
-  padding: 8px;
-}
+/**
+ * TabList
+ */
 
 .tab-list {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -49,6 +40,10 @@ p code {
 .tab-list::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+/**
+ * NextImage container.
+ */
 
 .next-image-container > div {
   display: block !important;
