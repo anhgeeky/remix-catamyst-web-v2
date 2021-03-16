@@ -12,7 +12,7 @@ import {
   chakra,
 } from '@chakra-ui/react'
 import { FaAngleRight } from 'react-icons/fa'
-import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
+import ReactHtmlParser from 'react-html-parser'
 
 import dataTheme from '@theme/theme.json'
 

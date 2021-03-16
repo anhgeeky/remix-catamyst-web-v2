@@ -1,7 +1,12 @@
 import { VStack } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { HomeHero, HomeScreens, HomeFeatures } from '@components/home'
+import {
+  HomeHero,
+  HomeScreens,
+  HomeFeatures,
+  HomeReviews,
+} from '@components/home'
 
 export default function homePage() {
   return (
@@ -10,6 +15,7 @@ export default function homePage() {
         <HomeHero />
         <HomeScreens />
         <HomeFeatures />
+        <HomeReviews />
       </VStack>
     </Layout>
   )

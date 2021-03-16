@@ -89,12 +89,12 @@ export function HomeScreens() {
           </AnimatePresence>
         </Box>
 
-        <VStack mt={5}>
+        <VStack mt={-5}>
           {buttons.map((button) => {
             if (button.slug === selected) {
               return (
                 <NextLink key={button.slug} href={button.href} passHref>
-                  <Button as="a" colorScheme="teal">
+                  <Button as="a" colorScheme="teal" boxShadow="xl" size="lg">
                     Check this {button.slug} for real
                   </Button>
                 </NextLink>

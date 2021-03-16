@@ -27,6 +27,8 @@ import {
   FaPalette as ColorIcon,
   FaQuestionCircle as AltIcon,
   FaQuoteRight as QuoteIcon,
+  FaQuoteLeft as QuoteLeftIcon,
+  FaQuoteRight as QuoteRightIcon,
   FaSave as SaveIcon,
   FaUserAlt as AuthorIcon,
   FaEnvelope as EmailIcon,
@@ -119,6 +121,10 @@ export function Icon({ name }) {
       return <PhoneIcon />
     case 'quote':
       return <QuoteIcon />
+    case 'quote-left':
+      return <QuoteLeftIcon />
+    case 'quote-right':
+      return <QuoteRightIcon />
     case 'reset':
       return <ResetIcon />
     case 'save':

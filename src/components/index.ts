@@ -67,10 +67,12 @@ export {
  */
 export { CardArea } from '@components/card-area'
 export { CodeHighlight } from '@components/code-highlight'
+export { Country } from '@components/country'
 export { Icon } from '@components/icon'
 export { RichTextEditor } from '@components/editor/rich-text-editor'
-export { useCustomToast as useToast } from '@components/toast'
 export { SocialLinks } from '@components/social-links'
+export { useCustomToast as useToast } from '@components/toast'
+export { TrimmedURL } from '@components/trimmed-url'
 
 /**
  * Would be used with dynamic import.

@@ -4,18 +4,17 @@ import { Icon } from '@components'
 import dataSocialLinks from '@data/social-links.json'
 import React from 'react'
 
-export function SocialLinks() {
+export function SocialLinks({ links = dataSocialLinks }) {
   return (
-    <HStack spacing={2} justify="center">
-      {dataSocialLinks.map((link, index) => {
+    <HStack spacing={2}>
+      {links.map((link) => {
         return (
           <Link
             key={link.name}
-            isExternal
             href={link.url}
-            fontSize="xl"
-            p={1}
             color="gray.500"
+            fontSize="xl"
+            isExternal
             _hover={{ color: useColorModeValue('gray.900', 'gray.100') }}
           >
             <Icon name={link.name.toLowerCase()} />
