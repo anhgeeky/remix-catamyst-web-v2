@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
 import { HeaderTabs } from '@components'
-import { CMSStats, CMSTracks, CMSTopics, CMSLessons } from '@components/cms'
+import { CMSOverview, CMSTracks, CMSTopics, CMSLessons } from '@components/cms'
 import { useRedirectSignIn } from '@hooks'
 
 import dataCMSLinks from '@data/cms-links.json'
@@ -20,7 +20,7 @@ export default function cmsSlugPage() {
       {cmsSlug && isAuthorized && auth && (
         <>
           <HeaderTabs links={dataCMSLinks} />
-          {cmsSlug === 'stats' && <CMSStats />}
+          {cmsSlug === 'overview' && <CMSOverview />}
           {cmsSlug === 'tracks' && <CMSTracks />}
           {cmsSlug === 'topics' && <CMSTopics />}
           {cmsSlug === 'lessons' && <CMSLessons />}

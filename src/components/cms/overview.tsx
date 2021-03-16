@@ -13,16 +13,15 @@ import {
   StatArrow,
   StatGroup,
 } from '@chakra-ui/react'
-import { Content, HeadingStack, LinkButton, Card } from '@components'
+import { Content, LinkButton, Card } from '@components'
 import { CMSHero } from '@components/cms'
 
 import dataUsers from '@data/users.json'
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
 import dataLessons from '@data/lessons.json'
-import { FaVrCardboard } from 'react-icons/fa'
 
-export function CMSStats() {
+export function CMSOverview() {
   const dataStats = [
     { label: 'Users', total: dataUsers.length, href: '/cms' },
     { label: 'Tracks', total: dataTracks.length, href: '/cms/tracks' },
@@ -33,7 +32,7 @@ export function CMSStats() {
   return (
     <>
       <NextHead>
-        <title>Stats · CMS · Catamyst</title>
+        <title>Overview of CMS · Catamyst</title>
       </NextHead>
 
       <CMSHero>
@@ -41,7 +40,7 @@ export function CMSStats() {
           Welcome to CMS
         </Heading>
         <HStack>
-          <Text>Let's get editing!</Text>
+          <Text>Let's get looking and editing!</Text>
         </HStack>
       </CMSHero>
 

@@ -38,7 +38,7 @@ export function CMSLessons() {
   return (
     <>
       <NextHead>
-        <title>Lessons · CMS · Catamyst</title>
+        <title>Lessons CMS · Catamyst</title>
       </NextHead>
 
       <CMSHero>

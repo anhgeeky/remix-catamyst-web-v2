@@ -34,7 +34,7 @@ export function CMSTopics() {
   return (
     <>
       <NextHead>
-        <title>Topics · CMS · Catamyst</title>
+        <title>Topics CMS · Catamyst</title>
       </NextHead>
 
       <CMSHero>

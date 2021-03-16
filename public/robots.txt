@@ -2,12 +2,12 @@
 User-agent: *
 Allow: /
 Disallow: /404
-Disallow: /cms
-Disallow: /dashboard
-Disallow: /onboard
+Disallow: /cms/*
+Disallow: /dashboard/*
+Disallow: /onboard/*
 Disallow: /reset
 Disallow: /secret
-Disallow: /settings
+Disallow: /settings/*
 
 # Host
 Host: https://catamyst.com

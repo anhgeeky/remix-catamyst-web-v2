@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import { Box, useColorModeValue, Code, VStack, Text } from '@chakra-ui/react'
 
 import { SocialLinks } from '@components'
@@ -21,7 +22,13 @@ export default function Footer() {
     >
       <SocialLinks />
       <Box>
-        <Text>Copyright © {year} Catamyst.</Text>
+        <Text>
+          Copyright{' '}
+          <NextLink href="/cms">
+            <a>©</a>
+          </NextLink>{' '}
+          {year} Catamyst.
+        </Text>
         <VStack opacity={0.5} fontSize={15} spacing={0}>
           <Text>Enjoy your {dayNamePeriod}!</Text>
         </VStack>

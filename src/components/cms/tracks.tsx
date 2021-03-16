@@ -30,7 +30,7 @@ export function CMSTracks() {
   return (
     <>
       <NextHead>
-        <title>Tracks · CMS · Catamyst</title>
+        <title>Tracks CMS · Catamyst</title>
       </NextHead>
 
       <CMSHero>

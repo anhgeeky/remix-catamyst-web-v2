@@ -9,7 +9,7 @@ export default function useAuth() {
   const isAuthenticated = auth.isAuthenticated && auth.user
 
   /**
-   * When user is allowed to access the data.
+   * When user is allowed to access.
    */
   const isAuthorized = auth.isAuthenticated && auth.user
 

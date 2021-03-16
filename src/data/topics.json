@@ -69,9 +69,9 @@
   },
   {
     "id": 6,
-    "slug": "application-features-projects",
-    "title": "Application features and projects",
-    "description": "Understand the possibilities and functionalities of your website and application projects.",
+    "slug": "features-projects",
+    "title": "Features and projects",
+    "description": "Understand the possibility of features in your projects.",
     "category": "Preparation",
     "iconEmoji": "🧩",
     "totalLessons": 6,
@@ -80,7 +80,7 @@
   },
   {
     "id": 7,
-    "slug": "web-design-interface-experience",
+    "slug": "web-design",
     "title": "Web design with interface and experience",
     "description": "Plan and design the user interface and experience of a website or web app.",
     "category": "Frontend",
@@ -147,9 +147,9 @@
   },
   {
     "id": 15,
-    "slug": "simple-frontend-website-deployment",
-    "title": "Simple Frontend website deployment",
-    "description": "Deploy and launch a live website on the Internet, accessible for everyone.",
+    "slug": "simple-frontend-deployment",
+    "title": "Simple frontend or website deployment",
+    "description": "Deploy and launch a live website on the Internet, accessible for everyone to see.",
     "category": "Frontend",
     "iconEmoji": "🏝️"
   },
@@ -189,431 +189,447 @@
     "id": 20,
     "slug": "web-networking-domain",
     "title": "Web networking and domain",
-    "description": "",
+    "description": "Launching your website with an actual domain you own. Just like yourname.com",
     "category": "General",
     "iconEmoji": "🗺️"
+  },
+  {
+    "id": 200,
+    "slug": "large-scale-website-project",
+    "title": "Large scale website or frontend project",
+    "description": "Creating a large-scale website or frontend that you will show as your primary portfolio. The focus is on the design and interactivity. Can be shown for future employers, potential clients, or even prospective customers.",
+    "category": "Special",
+    "iconEmoji": "🏟️"
   },
   {
     "id": 21,
     "slug": "software-engineering-knowledge",
     "title": "Software engineering knowledge",
-    "description": "",
+    "description": "Prepare the real-world knowledge of technology and software engineering.",
     "category": "General",
     "iconEmoji": "🛠️"
   },
   {
     "id": 22,
-    "slug": "",
+    "slug": "logic-programming",
     "title": "Logic and programming",
-    "description": "",
+    "description": "Programing the logic and application.",
     "category": "General",
     "iconEmoji": "🤖"
   },
   {
     "id": 23,
-    "slug": "",
+    "slug": "web-programming-javascript",
     "title": "Web programming with JavaScript",
-    "description": "",
+    "description": "Implementing program in a website.",
     "category": "General",
     "iconEmoji": "🐱"
   },
   {
     "id": 24,
-    "slug": "",
+    "slug": "javascript-data-operation",
     "title": "JavaScript data operation",
-    "description": "",
+    "description": "Operating data in JavaScript.",
     "category": "General",
     "iconEmoji": "🗄️"
   },
   {
     "id": 25,
-    "slug": "",
+    "slug": "javascript-function",
     "title": "JavaScript function",
-    "description": "",
+    "description": "Calling repetitive tasks in JavaScript.",
     "category": "General",
     "iconEmoji": "🖨️"
   },
   {
     "id": 26,
-    "slug": "",
+    "slug": "javascript-error-handling",
     "title": "JavaScript error handling",
-    "description": "",
+    "description": "Handling mistakes or errors in JavaScript.",
     "category": "General",
     "iconEmoji": "⚔️"
   },
   {
     "id": 27,
-    "slug": "",
+    "slug": "javascript-global-objects",
     "title": "JavaScript global objects",
-    "description": "",
+    "description": "Utilizing built-in JavaScript objects and functions.",
     "category": "General",
     "iconEmoji": "🌐"
   },
   {
     "id": 28,
-    "slug": "",
-    "title": "JavaScript browser storage",
-    "description": "",
+    "slug": "javascript-browser-storage-cookie",
+    "title": "JavaScript browser storage and cookie",
+    "description": "Storing data in browser's built in storage and cookie mechanism.",
     "category": "General",
     "iconEmoji": "💽"
   },
   {
     "id": 29,
-    "slug": "",
+    "slug": "javascript-modules",
     "title": "JavaScript modules",
-    "description": "",
+    "description": "Organizing JavaScript code and files so you can get a cleaner project structure.",
     "category": "General",
     "iconEmoji": "🔌"
   },
   {
     "id": 30,
-    "slug": "",
+    "slug": "javascript-asynchronicity",
     "title": "JavaScript asynchronicity",
-    "description": "",
+    "description": "Handling different JavaScript execution timing. Because sometimes a process executions are fast and slow.",
     "category": "General",
     "iconEmoji": "⏱️"
   },
   {
     "id": 31,
-    "slug": "",
+    "slug": "javascript-dom",
     "title": "JavaScript DOM",
-    "description": "",
+    "description": "Connecting JavaScript with HTML. So your website is now interactive, or can be a true web application!",
     "category": "Frontend",
     "iconEmoji": "📜"
   },
   {
     "id": 32,
-    "slug": "",
+    "slug": "javascript-with-regex",
     "title": "JavaScript with regex",
-    "description": "",
+    "description": "Search, match, and test for a string pattern using regex. Such as validating name, email, and password.",
     "category": "General",
     "iconEmoji": "🔠"
   },
   {
     "id": 33,
-    "slug": "",
+    "slug": "rest-api",
     "title": "REST API",
-    "description": "",
+    "description": "Communicate between systems or web apps with the most highly used data communication format.",
     "category": "General",
     "iconEmoji": "🛏️"
   },
   {
     "id": 34,
-    "slug": "",
+    "slug": "graphql-api",
     "title": "GraphQL API",
-    "description": "",
+    "description": "Communicate between systems or web apps with the newly effecient data communication strategy.",
     "category": "General",
     "iconEmoji": "⛓️"
   },
   {
     "id": 350,
-    "slug": "",
+    "slug": "other-api",
     "title": "Other API",
-    "description": "",
+    "description": "Other ways to communicate between systems or web apps.",
     "category": "General",
     "iconEmoji": "📊"
   },
   {
     "id": 35,
-    "slug": "",
+    "slug": "rest-api-javascript",
     "title": "REST API with JavaScript",
-    "description": "",
+    "description": "Using REST API in JavaScript or Node.js. So you app can interact with other apps!",
     "category": "General",
     "iconEmoji": "🛏️"
   },
   {
     "id": 350,
-    "slug": "",
+    "slug": "graphql-api-javascript",
     "title": "GraphQL API with JavaScript",
-    "description": "",
+    "description": "Using REST API in JavaScript or Node.js. So you app can interact with other apps in a more efficient way!",
     "category": "General",
     "iconEmoji": "⛓️"
   },
   {
     "id": 36,
-    "slug": "",
+    "slug": "javascript-runtime-nodejs",
     "title": "JavaScript runtime and Node.js",
-    "description": "",
+    "description": "Running JavaScript outside of browser. Because now JavaScript can be run almost anywhere. This is similar how other programming languages such as Python, Ruby, Java, Golang, and others are run.",
     "category": "General",
     "iconEmoji": "🐯"
   },
   {
     "id": 37,
-    "slug": "",
+    "slug": "nodejs-npm",
     "title": "Node.js with npm",
-    "description": "",
+    "description": "Managing and installing JavaScript or Node.js packages that made by the community. It's the software hub that used by millions of developers worldwide.",
     "category": "General",
     "iconEmoji": "🦁"
   },
   {
     "id": 38,
-    "slug": "",
+    "slug": "css-library-framework",
     "title": "CSS library and framework",
-    "description": "",
+    "description": "Enhancing your styling and CSS with community-made solutions. To be used with your design, so you don't have to design every little things.",
     "category": "Frontend",
     "iconEmoji": "🍔"
   },
   {
     "id": 39,
-    "slug": "",
+    "slug": "javascript-library-framework",
     "title": "JavaScript library and framework",
-    "description": "",
+    "description": "Utilizing popular JavaScript or Node.js packages. To be used with your app, so you don't have to create every app components from scratch.",
     "category": "General",
     "iconEmoji": "🎩"
   },
   {
     "id": 40,
-    "slug": "",
+    "slug": "javascript-code-quality",
     "title": "JavaScript code quality",
-    "description": "",
+    "description": "Improving code quality in JavaScript. So you can become better in development and reduce potential issues.",
     "category": "General",
     "iconEmoji": "🦉"
   },
   {
     "id": 41,
-    "slug": "",
+    "slug": "programming-paradigms-oop-fp",
     "title": "Programming paradigms, OOP, and FP",
-    "description": "",
+    "description": "Improving programming techniques by stated paradigms like OOP (Object-Oriented Programming) and Functional Programming (FP).",
     "category": "General",
     "iconEmoji": "🐻"
   },
   {
     "id": 42,
-    "slug": "",
+    "slug": "javascript-oop-fp",
     "title": "JavaScript OOP and FP",
-    "description": "",
+    "description": "Applying the most popular programming paradigms such as OOP and FP with JavaScript.",
     "category": "General",
     "iconEmoji": "🐼"
   },
   {
     "id": 43,
-    "slug": "",
+    "slug": "javascript-transpiler-bundler",
     "title": "JavaScript transpiler and bundler",
-    "description": "",
+    "description": "Converting JavaScript code and files. They can combine and transform project files as the input, then process them to get the output we want.",
     "category": "General",
     "iconEmoji": "📦"
   },
   {
     "id": 44,
-    "slug": "",
+    "slug": "software-design-architecture",
     "title": "Software design and architecture",
-    "description": "",
+    "description": "Constructing better web application structure. Especially if your app has becoming more complex or has a lot of moving parts.",
     "category": "General",
     "iconEmoji": "🖼️"
   },
   {
     "id": 45,
-    "slug": "",
-    "title": "React library",
-    "description": "",
+    "slug": "react-ui-library",
+    "title": "React UI library",
+    "description": "Using the basics of React, one of the most popular UI library for the curent industrial-grade web application development.",
     "category": "Frontend",
     "iconEmoji": "🧶"
   },
   {
     "id": 46,
-    "slug": "",
+    "slug": "react-data",
     "title": "React data",
-    "description": "",
+    "description": "Handling data in React with state and props, through JavaScript class and React hooks.",
     "category": "Frontend",
     "iconEmoji": "🎽"
   },
   {
     "id": 47,
-    "slug": "",
-    "title": "React form",
-    "description": "",
+    "slug": "react-form",
+    "title": "React form handling",
+    "description": "Handling form fields in React. Using plain functions or with some libraries.",
     "category": "Frontend",
     "iconEmoji": "👖"
   },
   {
     "id": 48,
-    "slug": "",
+    "slug": "react-routing",
     "title": "React routing",
-    "description": "",
+    "description": "Handling multiple pages in React. So the users can navigate like how it should be.",
     "category": "Frontend",
     "iconEmoji": "👗"
   },
   {
     "id": 49,
-    "slug": "",
+    "slug": "react-styling",
     "title": "React styling",
-    "description": "",
+    "description": "Styling React components with modern approach such as CSS-in-JS.",
     "category": "Frontend",
     "iconEmoji": "👘"
   },
   {
     "id": 50,
-    "slug": "",
+    "slug": "react-rest-api",
     "title": "React with REST API",
-    "description": "",
+    "description": "Requesting REST API in React, with plain fetch or libraries.",
     "category": "Frontend",
     "iconEmoji": "👕"
   },
   {
     "id": 500,
-    "slug": "",
+    "slug": "react-graphql-api",
     "title": "React with GraphQL API",
-    "description": "",
+    "description": "Requesting GraphQL API in React, with plain fetch or libraries.",
     "category": "Frontend",
     "iconEmoji": "👚"
   },
   {
     "id": 51,
-    "slug": "",
+    "slug": "react-extras",
     "title": "React extras",
-    "description": "",
+    "description": "Additional functionalities with React.",
     "category": "Frontend",
     "iconEmoji": "🧤"
   },
   {
     "id": 52,
-    "slug": "",
+    "slug": "redux-state-management",
     "title": "Redux as state management",
-    "description": "",
+    "description": "Architect data flow in JavaScript app.",
     "category": "General",
     "iconEmoji": "🦆"
   },
   {
     "id": 53,
-    "slug": "",
+    "slug": "react-redux",
     "title": "React with Redux",
-    "description": "",
+    "description": "Architect data flow in React app.",
     "category": "Frontend",
     "iconEmoji": "👔"
   },
   {
     "id": 54,
-    "slug": "",
+    "slug": "nodejs-express",
     "title": "Node.js with Express",
-    "description": "",
+    "description": "Node.js to create web API, such as REST or GraphQL.",
     "category": "Backend",
     "iconEmoji": "🐨"
   },
   {
     "id": 55,
-    "slug": "",
-    "title": "Simple Backend app deployment",
-    "description": "",
+    "slug": "simple-backend-deployment",
+    "title": "Simple backend deployment",
+    "description": "Deploy backend and database in simple way.",
     "category": "Backend",
     "iconEmoji": "🏝️"
   },
   {
     "id": 56,
-    "slug": "",
+    "slug": "database-management-system",
     "title": "Database management system",
-    "description": "",
+    "description": "Store persistent data that can be used over and over again across different space and time.",
     "category": "Backend",
     "iconEmoji": "📕"
   },
   {
     "id": 57,
-    "slug": "",
+    "slug": "non-relational-database",
     "title": "Non-relational database",
-    "description": "",
+    "description": "Store data that non-relational.",
     "category": "Backend",
     "iconEmoji": "📗"
   },
   {
     "id": 58,
-    "slug": "",
+    "slug": "relational-database",
     "title": "Relational database",
-    "description": "",
+    "description": "Store data that relational.",
     "category": "Backend",
     "iconEmoji": "📘"
   },
   {
     "id": 59,
-    "slug": "",
+    "slug": "web-security",
     "title": "Web security",
-    "description": "",
+    "description": "Secure application with authentication, encryption, and encoding. Such as password, access, and roles.",
     "category": "General",
     "iconEmoji": "🔐"
   },
   {
     "id": 60,
-    "slug": "",
+    "slug": "testing-automation",
     "title": "Testing and automation",
-    "description": "",
+    "description": "Test and assure the app functionality and quality without having to do them manually.",
     "category": "General",
     "iconEmoji": "🧪"
   },
   {
     "id": 61,
-    "slug": "",
+    "slug": "containerization",
     "title": "Containerization",
-    "description": "",
+    "description": "Manage software run on various platforms. Especially using Docker ecosystem tools.",
     "category": "General",
     "iconEmoji": "🐳"
   },
   {
     "id": 62,
-    "slug": "",
-    "title": "Advanced app deployment and infrastructure",
-    "description": "",
+    "slug": "advanced-app-deployment-infrastructure",
+    "title": "Advanced application deployment and infrastructure",
+    "description": "Deploy any web app with service or cloud computing.",
     "category": "General",
     "iconEmoji": "🌴"
   },
   {
+    "id": 620,
+    "slug": "large-scale-api-project",
+    "title": "Large-scale API or backend project",
+    "description": "Creating a large-scale backend application as REST API or GraphQL, that you will show as your primary portfolio. The focus is on the data structure and interconnectivity with the potential frontend. Can be shown for future employers, potential clients, or even prospective customers.",
+    "category": "Special",
+    "iconEmoji": "🏟️"
+  },
+  {
     "id": 63,
-    "slug": "",
+    "slug": "additional-app-features",
     "title": "Additional application features",
-    "description": "",
+    "description": "More integration and deployment techniques for both frontend and backend to improve experience",
     "category": "General",
     "iconEmoji": "🌳"
   },
   {
     "id": 64,
-    "slug": "",
+    "slug": "advanced-algorithm-data-structure",
     "title": "Advanced algorithm and data structure",
-    "description": "",
+    "description": "Practice with more computer science knowledge, especially algorithm problems and data structure.",
     "category": "General",
     "iconEmoji": "🤖"
   },
   {
     "id": 65,
-    "slug": "",
+    "slug": "project-development-management",
     "title": "Project development and management",
-    "description": "",
+    "description": "Manage project the better way. Understand about project, product, software craftmanship, MVP, MLP, Agile, Scrum.",
     "category": "General",
     "iconEmoji": "🏭"
   },
   {
     "id": 66,
-    "slug": "",
+    "slug": "special-resources",
     "title": "Special resources",
-    "description": "",
+    "description": "Read and leverage books and more resources to give you more ideas and understanding. Could be helpful for job interview.",
     "category": "Special",
     "iconEmoji": "🏗️"
   },
   {
     "id": 67,
-    "slug": "",
-    "title": "Large-scale project",
-    "description": "",
+    "slug": "large-scale-web-app-project",
+    "title": "Large-scale web application project",
+    "description": "Creating a large-scale web application, both frontend and backend, that you will show as your primary portfolio. The focus is everything you have learned. Can be shown for future employers, potential clients, or even prospective customers.",
     "category": "Special",
     "iconEmoji": "🏟️"
   },
   {
     "id": 68,
-    "slug": "",
+    "slug": "professional-work",
     "title": "Professional work",
-    "description": "",
+    "description": "Do something real in the industry. You can choose to work, freelance, create content, or even start a business.",
     "category": "Career",
     "iconEmoji": "💼"
   },
   {
     "id": 69,
-    "slug": "",
+    "slug": "business-startup",
     "title": "Business and startup",
-    "description": "",
+    "description": "Build something that you can monetize with the market of customers",
     "category": "Career",
     "iconEmoji": "💸"
   },
   {
     "id": 70,
-    "slug": "",
+    "slug": "consultation-discussion",
     "title": "Consultation and discussion",
-    "description": "",
+    "description": "What's next? Let's discuss the support to help your career and life beyond this.",
     "category": "Career",
     "iconEmoji": "🧭"
   }

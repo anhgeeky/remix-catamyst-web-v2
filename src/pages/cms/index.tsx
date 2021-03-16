@@ -8,6 +8,9 @@ export default function cmsPage() {
   const router = useRouter()
   const { auth, isAuthorized } = useAuth()
 
+  /**
+   * To access CMS, user must both authenticated and authorized to do so.
+   */
   useEffect(() => {
     if (isAuthorized) router.replace('/cms/stats')
     else router.replace('/signin')
