@@ -24,7 +24,7 @@ export default function Footer() {
       <Box>
         <Text>
           Copyright{' '}
-          <NextLink href="/cms">
+          <NextLink href="/cms/overview">
             <a>©</a>
           </NextLink>{' '}
           {year} Catamyst.

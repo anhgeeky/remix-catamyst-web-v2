@@ -18,7 +18,7 @@ export function HomeFeatures() {
 
   return (
     <VStack spacing={10} p={5} maxW={1200} width="100%">
-      <VStack textAlign="center" maxW="60ch">
+      <VStack textAlign="center" maxW="40rem">
         <Heading
           as="h1"
           size="2xl"

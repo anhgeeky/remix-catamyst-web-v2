@@ -19,7 +19,7 @@ import dataReviews from '@data/reviews-featured.json'
 export function HomeReviews() {
   return (
     <VStack spacing={10} p={5} maxW={1200} width="100%">
-      <VStack textAlign="center" maxW="65ch">
+      <VStack textAlign="center" maxW="40rem">
         <Heading
           as="h1"
           size="2xl"
@@ -37,7 +37,13 @@ export function HomeReviews() {
         <SimpleGrid spacing={5} minChildWidth={400} width="100%">
           {dataReviews.map((user) => {
             return (
-              <Card key={user.handle} as={Stack} direction="column" spacing={5}>
+              <Card
+                key={user.handle}
+                as={VStack}
+                direction="column"
+                spacing={0}
+                justify="space-between"
+              >
                 <HStack spacing={5}>
                   <Avatar src={user.avatarUrl} alt={user.name} size="xl" />
                   <Box>

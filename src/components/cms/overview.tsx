@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 import { Content, LinkButton, Card } from '@components'
 import { CMSHero } from '@components/cms'
+import { getDayNamePeriod } from '@utils'
 
 import dataUsers from '@data/users.json'
 import dataTracks from '@data/tracks.json'
@@ -22,6 +23,7 @@ import dataTopics from '@data/topics.json'
 import dataLessons from '@data/lessons.json'
 
 export function CMSOverview() {
+  const dayNamePeriod = getDayNamePeriod()
   const dataStats = [
     { label: 'Users', total: dataUsers.length, href: '/cms' },
     { label: 'Tracks', total: dataTracks.length, href: '/cms/tracks' },
@@ -40,7 +42,7 @@ export function CMSOverview() {
           Welcome to CMS
         </Heading>
         <HStack>
-          <Text>Let's get looking and editing!</Text>
+          <Text>It's {dayNamePeriod} get looking and editing!</Text>
         </HStack>
       </CMSHero>
 

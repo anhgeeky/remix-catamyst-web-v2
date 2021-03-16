@@ -12,7 +12,7 @@ export default function cmsPage() {
    * To access CMS, user must both authenticated and authorized to do so.
    */
   useEffect(() => {
-    if (isAuthorized) router.replace('/cms/stats')
+    if (isAuthorized) router.replace('/cms/overview')
     else router.replace('/signin')
   }, [isAuthorized])
 

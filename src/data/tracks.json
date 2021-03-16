@@ -104,7 +104,7 @@
     "levels": ["Newbie", "Beginner", "Intermediate"],
     "iconUrl": "/assets/logos/catamyst-avatar.svg",
     "totalTopics": 3,
-    "totalLessons": 9,
+    "totalLessons": 10,
     "totalHours": 18,
     "topics": []
   },
@@ -117,8 +117,34 @@
     "levels": ["Newbie", "Beginner", "Intermediate", "Advanced"],
     "iconUrl": "/assets/logos/catamyst-avatar.svg",
     "totalTopics": 3,
-    "totalLessons": 9,
+    "totalLessons": 10,
     "totalHours": 18,
+    "topics": []
+  },
+  {
+    "id": 5,
+    "isAvailable": false,
+    "slug": "graphic-design",
+    "title": "Graphic Design",
+    "description": "",
+    "levels": ["Newbie", "Beginner"],
+    "iconUrl": "/assets/logos/catamyst-avatar.svg",
+    "totalTopics": 3,
+    "totalLessons": 10,
+    "totalHours": 12,
+    "topics": []
+  },
+  {
+    "id": 6,
+    "isAvailable": false,
+    "slug": "uiux-design",
+    "title": "UI and UX Design",
+    "description": "",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "iconUrl": "/assets/logos/catamyst-avatar.svg",
+    "totalTopics": 10,
+    "totalLessons": 10,
+    "totalHours": 24,
     "topics": []
   }
 ]
