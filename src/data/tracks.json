@@ -7,7 +7,7 @@
     "description": "Learn and practice the fundamental concepts and specific tools you can use to build basic websites. This track focuses only on the design and frontend (what your website visitor would see).",
     "levels": ["Newbie"],
     "iconUrl": "/assets/logos/catamyst-avatar.svg",
-    "totalTopics": 10,
+    "totalTopics": 18,
     "totalLessons": 131,
     "totalHours": 28,
     "topics": [1, 2, 3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]

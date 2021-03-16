@@ -62,7 +62,7 @@ export function CMSStats() {
                   <StatArrow type="increase" />
                   3%
                 </StatHelpText>
-                <LinkButton href={stat.href} size="sm">
+                <LinkButton href={stat.href} size="sm" colorScheme="teal">
                   Edit
                 </LinkButton>
               </Stat>

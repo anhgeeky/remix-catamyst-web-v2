@@ -75,12 +75,18 @@ export function PricingPlans() {
               </VStack>
 
               {!isAuthenticated && (
-                <LinkButton href={plan.buttons.isNotAuthenticated.href}>
+                <LinkButton
+                  href={plan.buttons.isNotAuthenticated.href}
+                  colorScheme="teal"
+                >
                   {plan.buttons.isNotAuthenticated.text}
                 </LinkButton>
               )}
               {isAuthenticated && (
-                <LinkButton href={plan.buttons.isAuthenticated.href}>
+                <LinkButton
+                  href={plan.buttons.isAuthenticated.href}
+                  colorScheme="blue"
+                >
                   {plan.buttons.isAuthenticated.text}
                 </LinkButton>
               )}

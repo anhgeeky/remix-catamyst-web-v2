@@ -104,10 +104,10 @@ export default function MenuPanel({ closeMenu, isMenuOpen }) {
                     justify=""
                     direction={['column', 'row']}
                   >
-                    <NextLink href="/signup">
+                    <NextLink href="/signup" passHref>
                       <Button flex={[null, 1]}>Sign up</Button>
                     </NextLink>
-                    <NextLink href="/signin">
+                    <NextLink href="/signin" passHref>
                       <Button flex={[null, 1]} colorScheme="teal">
                         Sign in
                       </Button>

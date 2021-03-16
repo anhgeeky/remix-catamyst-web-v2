@@ -103,14 +103,14 @@ function UserAuthButtons() {
   return (
     <>
       <Box display={{ base: 'none', md: 'block' }}>
-        <NextLink href="/signup" passHref>
-          <Button as={Link} variant="ghost" _hover={{ textDecoration: 'none' }}>
-            Sign up
-          </Button>
-        </NextLink>
+        <LinkButton href="/signup" variant="ghost">
+          Sign up
+        </LinkButton>
       </Box>
       <Box>
-        <LinkButton href="/signin">Sign in</LinkButton>
+        <LinkButton href="/signin" colorScheme="teal">
+          Sign in
+        </LinkButton>
       </Box>
     </>
   )

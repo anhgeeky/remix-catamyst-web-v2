@@ -46,6 +46,7 @@ export function HomeHero() {
               )
             })}
           </List>
+
           <QuickSignUpForm />
         </Stack>
 

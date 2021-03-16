@@ -299,7 +299,7 @@
       {
         "type": "Texts",
         "isPublished": true,
-        "html": "<h1>Password manager</h1><p>During your learning, you will use various tools online. To use those tools, most of the time you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it&#39;s free, safe, and easier to use than other alternatives.</p>"
+        "html": "<h1>Password manager</h1><p>During your learning and professional work, you will eventually use a lot of online tools. To use them, most of the time you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it&#39;s free, safe, and easier to use than other alternatives.</p>"
       },
       {
         "type": "Texts",
@@ -312,7 +312,7 @@
         "links": [
           {
             "title": "Bitwarden",
-            "category": "App",
+            "category": "Website",
             "url": "https://bitwarden.com",
             "color": "blue.400"
           },

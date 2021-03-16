@@ -3,14 +3,17 @@ import { useRouter } from 'next/router'
 import {
   Box,
   VisuallyHidden,
-  FormControl,
   FormLabel,
   Button,
   Input,
   Stack,
 } from '@chakra-ui/react'
 
+import { LinkButton } from '@components'
+import { useAuth } from '@hooks'
+
 export default function QuickSignUpForm() {
+  const { isAuthenticated } = useAuth()
   const [email, setEmail] = useState('')
   const router = useRouter()
 
@@ -34,21 +37,32 @@ export default function QuickSignUpForm() {
       direction={{ base: 'column', sm: 'row' }}
       onSubmit={handleSubmit}
     >
-      <Box>
-        <VisuallyHidden>
-          <FormLabel>Email address</FormLabel>
-        </VisuallyHidden>
-        <Input
-          type="email"
-          placeholder="Enter your email..."
-          onChange={handleChange}
-          value={email}
-          minW={{ base: 200, sm: 240, md: 340 }}
-        />
-      </Box>
-      <Button type="submit" colorScheme="teal" px={5}>
-        Start learning for free
-      </Button>
+      {!isAuthenticated && (
+        <>
+          <Box>
+            <VisuallyHidden>
+              <FormLabel>Email address</FormLabel>
+            </VisuallyHidden>
+            <Input
+              type="email"
+              placeholder="Enter your email..."
+              onChange={handleChange}
+              value={email}
+              minW={{ base: 200, sm: 240, md: 340 }}
+            />
+          </Box>
+          <Button type="submit" colorScheme="teal" px={5}>
+            Start learning for free
+          </Button>
+        </>
+      )}
+      {isAuthenticated && (
+        <>
+          <LinkButton href="/learn" colorScheme="teal">
+            Continue your learning
+          </LinkButton>
+        </>
+      )}
     </Stack>
   )
 }
