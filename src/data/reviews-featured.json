@@ -5,7 +5,7 @@
     "name": "Ahmad Marzuki",
     "title": "Software Engineer",
     "organization": {
-      "name": "Grosir Parts"
+      "name": "AutoParts"
     },
     "countryCode": "ID",
     "review": {
@@ -24,7 +24,7 @@
     "title": "Freelance Web Developer",
     "countryCode": "CA",
     "review": {
-      "html": "<p>With Catamyst I've learned and practiced a lot of latest web development stack such as JavaScript, Node.js, React, Redux, database, deployment, Amazon Web Services, Docker, and more. Using them I created my own projects, Nawaart and Sneakergram. All of these even I'm more of a finance guy.</p>"
+      "html": "<p>With Catamyst I've learned and practiced a lot of latest web development stack such as JavaScript, Node.js, React, Redux, database, deployment, Amazon Web Services, Docker, and more. Using them I created my own projects, <a href='http://nawaart.com'>Nawaart</a> and <b>Sneakergram</b>. All of these even I'm more of a finance guy.</p>"
     },
     "socialLinks": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/jonathannicolas" },
@@ -39,7 +39,7 @@
     "title": "University Student",
     "countryCode": "MY",
     "review": {
-      "html": "<p>Even though I wasn't coming from technical background, but during the learning I can follow through the lessons. Any questions I had, both technical and non-technical were answered by the mentor. Finally I'm able to made my own creative work, Zidence, the property listing hub.</p>"
+      "html": "<p>Even though I wasn't coming from technical background, but during the learning I can follow through the lessons. Any questions I had, both technical and non-technical were answered by the mentor. Finally I'm able to made my own creative work, <a href='http://zidence.com'>Zidence</a>, the property listing hub.</p>"
     },
     "socialLinks": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/mfarisgibran" },
@@ -58,7 +58,7 @@
     },
     "countryCode": "SG",
     "review": {
-      "html": "<p>The learning experience motivates me to learn more. It enhanced my confidence in variety of work and life aspects. Now I'm working as a software developer with modern web technologies. Previously my project Lelangbuana helped to me to tackle the hiring process.</p>"
+      "html": "<p>The learning experience motivates me to learn more. It enhanced my confidence in variety of work and life aspects. Now I'm working as a software developer with modern web technologies. Previously my project <b>Lelangbuana</b> helped to me to tackle the job matching process.</p>"
     },
     "socialLinks": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/mayasopiah" },

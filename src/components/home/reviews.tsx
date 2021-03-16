@@ -19,7 +19,7 @@ import dataReviews from '@data/reviews-featured.json'
 export function HomeReviews() {
   return (
     <VStack spacing={10} p={5} maxW={1200} width="100%">
-      <VStack textAlign="center" maxW="60ch">
+      <VStack textAlign="center" maxW="65ch">
         <Heading
           as="h1"
           size="2xl"
@@ -61,7 +61,7 @@ export function HomeReviews() {
                   </Box>
                 </HStack>
 
-                <Stack spacing={5}>
+                <Stack spacing={5} align="space-between">
                   <blockquote cite={`https://catamyst.com/${user.handle}`}>
                     <Box fontSize="7xl" ml={-2} color="gray.200">
                       <Icon name="quote-left" />

@@ -22,11 +22,11 @@ export function UserProfile({ user }) {
 
   return (
     <>
-      <Flex width="100vw" height="200px" align="center" justify="center">
+      <Flex justify="center" px={1}>
         <Box
           className="next-image-cover-container"
           maxW="1200px"
-          // overflow="auto"
+          overflow="auto"
           borderBottomLeftRadius="md"
           borderBottomRightRadius="md"
           bg={useColorModeValue('gray.100', 'gray.500')}
