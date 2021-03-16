@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
-  Link,
   Box,
   VStack,
   ButtonGroup,
@@ -12,26 +11,25 @@ import {
 } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import { Content, Icon } from '@components'
-
-const buttons = [
-  { slug: 'track', name: 'Track', href: '/learn/web' },
-  { slug: 'topic', name: 'Topic', href: '/learn/web/getting-started' },
-  {
-    slug: 'lesson',
-    name: 'Lesson',
-    href: '/learn/web/getting-started/web-development-introduction',
-  },
-]
+import { Icon } from '@components'
 
 export function HomeScreens() {
   const { colorMode } = useColorMode()
   const [selected, setSelected] = useState('track')
+  const buttons = [
+    { slug: 'track', name: 'Track', href: '/learn/web' },
+    { slug: 'topic', name: 'Topic', href: '/learn/web/getting-started' },
+    {
+      slug: 'lesson',
+      name: 'Lesson',
+      href: '/learn/web/getting-started/web-development-introduction',
+    },
+  ]
 
   return (
-    <Content p={0}>
+    <Box maxW={1200} p={0} width="100%">
       <Box
-        maxW={1400}
+        maxW={1200}
         py={5}
         px={{ base: 5, lg: 20 }}
         borderRadius={{ base: 0, md: 'xl' }}
@@ -42,7 +40,7 @@ export function HomeScreens() {
             {buttons.map((button, index) => {
               return (
                 <Button
-                  key={index}
+                  key={button.slug}
                   onClick={() => setSelected(button.slug)}
                   leftIcon={<Icon name={`${button.slug}s`} />}
                   bg={
@@ -95,7 +93,7 @@ export function HomeScreens() {
           {buttons.map((button) => {
             if (button.slug === selected) {
               return (
-                <NextLink href={button.href} passHref>
+                <NextLink key={button.slug} href={button.href} passHref>
                   <Button as="a" colorScheme="teal">
                     Check this {button.slug} for real
                   </Button>
@@ -107,6 +105,6 @@ export function HomeScreens() {
           })}
         </VStack>
       </Box>
-    </Content>
+    </Box>
   )
 }
