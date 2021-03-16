@@ -23,7 +23,7 @@ export default function Header() {
   const bg = useColorModeValue('white', 'gray.900')
   const borderBg = useColorModeValue('white', 'gray.700')
   const [isMenuOpen, setMenuOpen] = useState(false)
-  const [isTablet] = useMediaQuery('(max-width: 768px)')
+  const [isTooSmall] = useMediaQuery('(max-width: 991px)') // Not 1024px
 
   function openMenu() {
     setMenuOpen(true)
@@ -73,7 +73,7 @@ export default function Header() {
           <Flex
             flex={1}
             justify="center"
-            display={{ base: 'none', md: 'flex' }}
+            display={{ base: 'none', lg: 'flex' }}
           >
             <HStack spacing={1}>
               {dataNavLinks.map((page, index) => {
@@ -85,7 +85,7 @@ export default function Header() {
           <Flex flex={1} justify="flex-end">
             <HStack spacing={1}>
               <HeaderUser />
-              {isTablet && (
+              {isTooSmall && (
                 <MenuToggle openMenu={openMenu} isMenuOpen={isMenuOpen} />
               )}
             </HStack>

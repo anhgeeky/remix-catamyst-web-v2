@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "slug": "skills-and-principles",
+    "slug": "skills-principles",
     "title": "Skills and principles",
     "description": "Learn the essential skills and principles for professional work.",
     "category": "Preparation",
@@ -43,7 +43,7 @@
   },
   {
     "id": 4,
-    "slug": "website-and-web-application-ideas",
+    "slug": "website-web-app-ideas",
     "title": "Website and web application ideas",
     "description": "Get inspirations to spark your website and web application ideas by real-world examples.",
     "category": "Preparation",
@@ -69,7 +69,7 @@
   },
   {
     "id": 6,
-    "slug": "application-features-and-projects",
+    "slug": "application-features-projects",
     "title": "Application features and projects",
     "description": "Understand the possibilities and functionalities of your website and application projects.",
     "category": "Preparation",
@@ -80,8 +80,8 @@
   },
   {
     "id": 7,
-    "slug": "design-with-interface-and-experience",
-    "title": "Design with interface and experience",
+    "slug": "web-design-interface-experience",
+    "title": "Web design with interface and experience",
     "description": "Plan and design the user interface and experience of a website or web app.",
     "category": "Frontend",
     "iconEmoji": "🎨",
@@ -93,6 +93,7 @@
     "id": 8,
     "slug": "laptop-setup",
     "title": "Laptop setup",
+    "description": "Setup the laptop for smoother technical learning and development.",
     "category": "Preparation",
     "iconEmoji": "🏕️"
   },
@@ -100,83 +101,95 @@
     "id": 9,
     "slug": "web-development-knowledge",
     "title": "Web development knowledge",
+    "description": "Prepare the basic knowledge of web development.",
     "category": "Preparation",
     "iconEmoji": "🕸️"
   },
   {
     "id": 10,
-    "slug": "development-with-code-editor",
+    "slug": "development-code-editor",
     "title": "Development with code editor",
+    "description": "Use professional web development tools before building the actual website.",
     "category": "General",
     "iconEmoji": "📝"
   },
   {
     "id": 11,
-    "slug": "documentation-with-markdown",
+    "slug": "documentation-markdown",
     "title": "Documentation with markdown",
+    "description": "Write the documentation with easy to use text format called Markdown.",
     "category": "General",
     "iconEmoji": "📜"
   },
   {
     "id": 12,
-    "slug": "computer-navigation-with-terminal",
+    "slug": "computer-navigation-terminal",
     "title": "Computer navigation with terminal",
+    "description": "Navigate your computer file through a terminal.",
     "category": "General",
     "iconEmoji": "🚏"
   },
   {
     "id": 13,
-    "slug": "version-control-with-git",
+    "slug": "version-control-git",
     "title": "Version control with Git",
+    "description": "Manage source code and control the version of your project with Git.",
     "category": "General",
     "iconEmoji": "⏳"
   },
   {
     "id": 14,
-    "slug": "website-content-with-html",
+    "slug": "website-content-html",
     "title": "Website content with HTML",
+    "description": "Implement the content of a website with a markup language called HTML.",
     "category": "Frontend",
     "iconEmoji": "🦴"
   },
   {
     "id": 15,
-    "slug": "simple-Frontend-website-deployment",
+    "slug": "simple-frontend-website-deployment",
     "title": "Simple Frontend website deployment",
+    "description": "Deploy and launch a live website on the Internet, accessible for everyone.",
     "category": "Frontend",
     "iconEmoji": "🏝️"
   },
   {
     "id": 16,
-    "slug": "website-style-with-css",
+    "slug": "website-style-css",
     "title": "Website style with CSS",
+    "description": "Implement the style of a website with styling language called CSS.",
     "category": "Frontend",
     "iconEmoji": "🍖"
   },
   {
     "id": 17,
-    "slug": "browser-and-developer-tools",
+    "slug": "browser-developer-tools",
     "title": "Browser and developer tools",
+    "description": "Understand different browsers and inspect live website code with developer tools.",
     "category": "Frontend",
     "iconEmoji": "🍱"
   },
   {
     "id": 18,
-    "slug": "website-basic-layout-with-css",
+    "slug": "website-basic-layout-css",
     "title": "Website basic layout with CSS",
+    "description": "Implement the layout of a website with CSS layout system.",
     "category": "Frontend",
     "iconEmoji": "🥓"
   },
   {
     "id": 19,
-    "slug": "website-responsive-layout-with-css",
+    "slug": "website-responsive-layout-css",
     "title": "Website responsive layout with CSS",
+    "description": "Implement the responsive style behavior of a website with CSS media query. So your website looks good on desktop, tablet, and mobile.",
     "category": "Frontend",
     "iconEmoji": "🥩"
   },
   {
     "id": 20,
-    "slug": "web-networking-and-domain",
+    "slug": "web-networking-domain",
     "title": "Web networking and domain",
+    "description": "",
     "category": "General",
     "iconEmoji": "🗺️"
   },
@@ -184,6 +197,7 @@
     "id": 21,
     "slug": "software-engineering-knowledge",
     "title": "Software engineering knowledge",
+    "description": "",
     "category": "General",
     "iconEmoji": "🛠️"
   },
@@ -191,6 +205,7 @@
     "id": 22,
     "slug": "",
     "title": "Logic and programming",
+    "description": "",
     "category": "General",
     "iconEmoji": "🤖"
   },
@@ -198,6 +213,7 @@
     "id": 23,
     "slug": "",
     "title": "Web programming with JavaScript",
+    "description": "",
     "category": "General",
     "iconEmoji": "🐱"
   },
@@ -205,6 +221,7 @@
     "id": 24,
     "slug": "",
     "title": "JavaScript data operation",
+    "description": "",
     "category": "General",
     "iconEmoji": "🗄️"
   },
@@ -212,6 +229,7 @@
     "id": 25,
     "slug": "",
     "title": "JavaScript function",
+    "description": "",
     "category": "General",
     "iconEmoji": "🖨️"
   },
@@ -219,6 +237,7 @@
     "id": 26,
     "slug": "",
     "title": "JavaScript error handling",
+    "description": "",
     "category": "General",
     "iconEmoji": "⚔️"
   },
@@ -226,6 +245,7 @@
     "id": 27,
     "slug": "",
     "title": "JavaScript global objects",
+    "description": "",
     "category": "General",
     "iconEmoji": "🌐"
   },
@@ -233,6 +253,7 @@
     "id": 28,
     "slug": "",
     "title": "JavaScript browser storage",
+    "description": "",
     "category": "General",
     "iconEmoji": "💽"
   },
@@ -240,6 +261,7 @@
     "id": 29,
     "slug": "",
     "title": "JavaScript modules",
+    "description": "",
     "category": "General",
     "iconEmoji": "🔌"
   },
@@ -247,6 +269,7 @@
     "id": 30,
     "slug": "",
     "title": "JavaScript asynchronicity",
+    "description": "",
     "category": "General",
     "iconEmoji": "⏱️"
   },
@@ -254,6 +277,7 @@
     "id": 31,
     "slug": "",
     "title": "JavaScript DOM",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "📜"
   },
@@ -261,6 +285,7 @@
     "id": 32,
     "slug": "",
     "title": "JavaScript with regex",
+    "description": "",
     "category": "General",
     "iconEmoji": "🔠"
   },
@@ -268,6 +293,7 @@
     "id": 33,
     "slug": "",
     "title": "REST API",
+    "description": "",
     "category": "General",
     "iconEmoji": "🛏️"
   },
@@ -275,6 +301,7 @@
     "id": 34,
     "slug": "",
     "title": "GraphQL API",
+    "description": "",
     "category": "General",
     "iconEmoji": "⛓️"
   },
@@ -282,6 +309,7 @@
     "id": 350,
     "slug": "",
     "title": "Other API",
+    "description": "",
     "category": "General",
     "iconEmoji": "📊"
   },
@@ -289,6 +317,7 @@
     "id": 35,
     "slug": "",
     "title": "REST API with JavaScript",
+    "description": "",
     "category": "General",
     "iconEmoji": "🛏️"
   },
@@ -296,6 +325,7 @@
     "id": 350,
     "slug": "",
     "title": "GraphQL API with JavaScript",
+    "description": "",
     "category": "General",
     "iconEmoji": "⛓️"
   },
@@ -303,6 +333,7 @@
     "id": 36,
     "slug": "",
     "title": "JavaScript runtime and Node.js",
+    "description": "",
     "category": "General",
     "iconEmoji": "🐯"
   },
@@ -310,6 +341,7 @@
     "id": 37,
     "slug": "",
     "title": "Node.js with npm",
+    "description": "",
     "category": "General",
     "iconEmoji": "🦁"
   },
@@ -317,6 +349,7 @@
     "id": 38,
     "slug": "",
     "title": "CSS library and framework",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "🍔"
   },
@@ -324,6 +357,7 @@
     "id": 39,
     "slug": "",
     "title": "JavaScript library and framework",
+    "description": "",
     "category": "General",
     "iconEmoji": "🎩"
   },
@@ -331,6 +365,7 @@
     "id": 40,
     "slug": "",
     "title": "JavaScript code quality",
+    "description": "",
     "category": "General",
     "iconEmoji": "🦉"
   },
@@ -338,6 +373,7 @@
     "id": 41,
     "slug": "",
     "title": "Programming paradigms, OOP, and FP",
+    "description": "",
     "category": "General",
     "iconEmoji": "🐻"
   },
@@ -345,6 +381,7 @@
     "id": 42,
     "slug": "",
     "title": "JavaScript OOP and FP",
+    "description": "",
     "category": "General",
     "iconEmoji": "🐼"
   },
@@ -352,6 +389,7 @@
     "id": 43,
     "slug": "",
     "title": "JavaScript transpiler and bundler",
+    "description": "",
     "category": "General",
     "iconEmoji": "📦"
   },
@@ -359,6 +397,7 @@
     "id": 44,
     "slug": "",
     "title": "Software design and architecture",
+    "description": "",
     "category": "General",
     "iconEmoji": "🖼️"
   },
@@ -366,6 +405,7 @@
     "id": 45,
     "slug": "",
     "title": "React library",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "🧶"
   },
@@ -373,6 +413,7 @@
     "id": 46,
     "slug": "",
     "title": "React data",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "🎽"
   },
@@ -380,6 +421,7 @@
     "id": 47,
     "slug": "",
     "title": "React form",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "👖"
   },
@@ -387,6 +429,7 @@
     "id": 48,
     "slug": "",
     "title": "React routing",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "👗"
   },
@@ -394,6 +437,7 @@
     "id": 49,
     "slug": "",
     "title": "React styling",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "👘"
   },
@@ -401,6 +445,7 @@
     "id": 50,
     "slug": "",
     "title": "React with REST API",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "👕"
   },
@@ -408,6 +453,7 @@
     "id": 500,
     "slug": "",
     "title": "React with GraphQL API",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "👚"
   },
@@ -415,6 +461,7 @@
     "id": 51,
     "slug": "",
     "title": "React extras",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "🧤"
   },
@@ -422,6 +469,7 @@
     "id": 52,
     "slug": "",
     "title": "Redux as state management",
+    "description": "",
     "category": "General",
     "iconEmoji": "🦆"
   },
@@ -429,6 +477,7 @@
     "id": 53,
     "slug": "",
     "title": "React with Redux",
+    "description": "",
     "category": "Frontend",
     "iconEmoji": "👔"
   },
@@ -436,6 +485,7 @@
     "id": 54,
     "slug": "",
     "title": "Node.js with Express",
+    "description": "",
     "category": "Backend",
     "iconEmoji": "🐨"
   },
@@ -443,6 +493,7 @@
     "id": 55,
     "slug": "",
     "title": "Simple Backend app deployment",
+    "description": "",
     "category": "Backend",
     "iconEmoji": "🏝️"
   },
@@ -450,6 +501,7 @@
     "id": 56,
     "slug": "",
     "title": "Database management system",
+    "description": "",
     "category": "Backend",
     "iconEmoji": "📕"
   },
@@ -457,6 +509,7 @@
     "id": 57,
     "slug": "",
     "title": "Non-relational database",
+    "description": "",
     "category": "Backend",
     "iconEmoji": "📗"
   },
@@ -464,6 +517,7 @@
     "id": 58,
     "slug": "",
     "title": "Relational database",
+    "description": "",
     "category": "Backend",
     "iconEmoji": "📘"
   },
@@ -471,6 +525,7 @@
     "id": 59,
     "slug": "",
     "title": "Web security",
+    "description": "",
     "category": "General",
     "iconEmoji": "🔐"
   },
@@ -478,6 +533,7 @@
     "id": 60,
     "slug": "",
     "title": "Testing and automation",
+    "description": "",
     "category": "General",
     "iconEmoji": "🧪"
   },
@@ -485,6 +541,7 @@
     "id": 61,
     "slug": "",
     "title": "Containerization",
+    "description": "",
     "category": "General",
     "iconEmoji": "🐳"
   },
@@ -492,6 +549,7 @@
     "id": 62,
     "slug": "",
     "title": "Advanced app deployment and infrastructure",
+    "description": "",
     "category": "General",
     "iconEmoji": "🌴"
   },
@@ -499,6 +557,7 @@
     "id": 63,
     "slug": "",
     "title": "Additional application features",
+    "description": "",
     "category": "General",
     "iconEmoji": "🌳"
   },
@@ -506,6 +565,7 @@
     "id": 64,
     "slug": "",
     "title": "Advanced algorithm and data structure",
+    "description": "",
     "category": "General",
     "iconEmoji": "🤖"
   },
@@ -513,6 +573,7 @@
     "id": 65,
     "slug": "",
     "title": "Project development and management",
+    "description": "",
     "category": "General",
     "iconEmoji": "🏭"
   },
@@ -520,6 +581,7 @@
     "id": 66,
     "slug": "",
     "title": "Special resources",
+    "description": "",
     "category": "Special",
     "iconEmoji": "🏗️"
   },
@@ -527,6 +589,7 @@
     "id": 67,
     "slug": "",
     "title": "Large-scale project",
+    "description": "",
     "category": "Special",
     "iconEmoji": "🏟️"
   },
@@ -534,6 +597,7 @@
     "id": 68,
     "slug": "",
     "title": "Professional work",
+    "description": "",
     "category": "Career",
     "iconEmoji": "💼"
   },
@@ -541,6 +605,7 @@
     "id": 69,
     "slug": "",
     "title": "Business and startup",
+    "description": "",
     "category": "Career",
     "iconEmoji": "💸"
   },
@@ -548,6 +613,7 @@
     "id": 70,
     "slug": "",
     "title": "Consultation and discussion",
+    "description": "",
     "category": "Career",
     "iconEmoji": "🧭"
   }

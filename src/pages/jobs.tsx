@@ -14,7 +14,7 @@ export default function jobsPage() {
       </Hero>
 
       <Content>
-        <Text>(Collection of job posts)</Text>
+        <Text>Jobs</Text>
       </Content>
     </Layout>
   )

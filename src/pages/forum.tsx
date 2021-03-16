@@ -13,7 +13,7 @@ export default function forumPage() {
       </Hero>
 
       <Content>
-        <Text>(Collection of forum posts)</Text>
+        <Text>Forum is coming soon!</Text>
       </Content>
     </Layout>
   )

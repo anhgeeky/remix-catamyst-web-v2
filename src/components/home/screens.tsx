@@ -10,6 +10,7 @@ import {
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import { Content, Icon } from '@components'
 
@@ -26,22 +27,13 @@ const buttons = [
 export function HomeScreens() {
   const { colorMode } = useColorMode()
   const [selected, setSelected] = useState('track')
-  const [imageUrl, setImageUrl] = useState(
-    `${process.env.NEXT_PUBLIC_STORAGE_URL}/screenshots/${selected}-${colorMode}.png`
-  )
-
-  useEffect(() => {
-    setImageUrl(
-      `${process.env.NEXT_PUBLIC_STORAGE_URL}/screenshots/${selected}-${colorMode}.png`
-    )
-  })
 
   return (
     <Content p={0}>
       <Box
         maxW={1400}
-        px={5}
         py={5}
+        px={{ base: 5, lg: 20 }}
         borderRadius={{ base: 0, md: 'xl' }}
         bg={useColorModeValue('teal.50', 'teal.900')}
       >
@@ -70,17 +62,33 @@ export function HomeScreens() {
           className="next-image-screenshot-container"
           rounded="md"
           boxShadow="lg"
-          bg={useColorModeValue('white', 'gray.900')}
+          bg={useColorModeValue('gray.50', 'gray.900')}
         >
-          {colorMode && selected && imageUrl && (
-            <NextImage
-              src={imageUrl}
-              objectFit="contain"
-              layout="responsive"
-              width={936}
-              height={585}
-            />
-          )}
+          <AnimatePresence initial={false} exitBeforeEnter>
+            {selected && colorMode && (
+              <motion.div
+                key={`${selected}-${colorMode}`}
+                initial={{ opacity: 0.2 }}
+                exit={{ opacity: 0.2, transition: { duration: 0.1 } }}
+                animate={{
+                  opacity: 1,
+                  transition: {
+                    duration: 0.1,
+                    delay: 0.1,
+                    when: 'beforeChildren',
+                  },
+                }}
+              >
+                <NextImage
+                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/screenshots/${selected}-${colorMode}.png`}
+                  objectFit="contain"
+                  layout="responsive"
+                  width={936}
+                  height={585}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Box>
 
         <VStack mt={5}>
