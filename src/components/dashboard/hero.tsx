@@ -1,6 +1,6 @@
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 
-export default function DashboardHero({ children }) {
+export function DashboardHero({ children }) {
   return (
     <Flex
       pb={5}

@@ -3,7 +3,7 @@ import slugify from 'slugify'
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
 
-export default function usePaginationTopics({ trackSlug, topicSlug }) {
+export function usePaginationTopics({ trackSlug, topicSlug }) {
   const track = dataTracks.find((track) => trackSlug === track.slug)
   const topic = dataTopics.find((topic) => {
     if (topic.slug) return topicSlug === topic.slug

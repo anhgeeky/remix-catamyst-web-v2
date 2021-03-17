@@ -6,7 +6,7 @@ import { getDayNamePeriod } from '@utils'
 
 import dataTracks from '@data/tracks.json'
 
-export default function DashboardOverview({ auth }) {
+export function DashboardOverview({ auth }) {
   const dayNamePeriod = getDayNamePeriod()
 
   return (

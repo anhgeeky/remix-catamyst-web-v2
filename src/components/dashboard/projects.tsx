@@ -5,7 +5,7 @@ import { Box, Heading, Stack, Text, useMediaQuery } from '@chakra-ui/react'
 import { Card, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export default function DashboardProjects({ auth }) {
+export function DashboardProjects({ auth }) {
   const [isTablet] = useMediaQuery('(max-width: 768px)')
 
   return (

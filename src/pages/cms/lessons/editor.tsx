@@ -1,6 +1,7 @@
 import NextHead from 'next/head'
 import { Flex } from '@chakra-ui/react'
-import { RichTextEditor } from '@components'
+
+import { RichTextEditor } from '@components/editor'
 
 export default function editorPage({ handleSave, htmlString }) {
   return (

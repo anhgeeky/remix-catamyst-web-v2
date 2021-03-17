@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import dataDashboardLinks from '@data/dashboard-links.json'
 
-export default function DashboardSidebar() {
+export function DashboardSidebar() {
   const router = useRouter()
 
   return (

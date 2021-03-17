@@ -10,7 +10,8 @@ import {
 } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, Block, CategoryBadge, PaginationLessons } from '@components'
+import { Hero, CategoryBadge, PaginationLessons } from '@components'
+import { Block } from '@components/blocks'
 import { usePaginationLessons } from '@hooks'
 
 /**

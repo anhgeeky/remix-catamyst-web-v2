@@ -1,3 +1,4 @@
+export { Block } from '@components/blocks/block'
 export { BlockCode } from '@components/blocks/code'
 export { BlockDivider } from '@components/blocks/divider'
 export { BlockImage } from '@components/blocks/image'

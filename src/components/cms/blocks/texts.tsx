@@ -17,13 +17,8 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-import {
-  ColorModeToggle,
-  CardArea,
-  Icon,
-  RichTextEditor,
-  useToast,
-} from '@components'
+import { ColorModeToggle, CardArea, Icon, useToast } from '@components'
+import { RichTextEditor } from '@components/editor'
 import { BlockTexts } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 

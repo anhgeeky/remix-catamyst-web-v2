@@ -1,81 +1,40 @@
-import AlertSoon from '@components/alert-soon'
-import Block from '@components/block'
-import Card from '@components/card'
-import CategoryBadge from '@components/category-badge'
-import CollectionLessons from '@components/collection-lessons'
-import CollectionTopics from '@components/collection-topics'
-import CollectionTracks from '@components/collection-tracks'
-import CollectionUsers from '@components/collection-users'
-import ColorModeToggle from '@components/color-mode-toggle'
-import Content from '@components/content'
-import ContentWithSidebar from '@components/content-with-sidebar'
-import Fonts from '@components/fonts'
-import Footer from '@components/footer'
-import Header from '@components/header'
-import HeaderEditor from '@components/header-editor'
-import HeaderTabs from '@components/header-tabs'
-import HeaderUser from '@components/header-user'
-import HeadingStack from '@components/heading-stack'
-import Hero from '@components/hero'
-import LessonIcon from '@components/lesson-icon'
-import LinkButton from '@components/link-button'
-import Logo from '@components/logo'
-import MenuPanel from '@components/menu-panel'
-import MenuToggle from '@components/menu-toggle'
-import NavLink from '@components/nav-link'
-import PaginationLessons from '@components/pagination-lessons'
-import PaginationTopics from '@components/pagination-topics'
-import PreviewDashboard from '@components/preview-dashboard'
-import QuickSignUpForm from '@components/quick-signup-form'
-import ReferenceIcon from '@components/reference-icon'
-
-export {
-  AlertSoon,
-  Block,
-  Card,
-  CategoryBadge,
-  CollectionLessons,
-  CollectionTopics,
-  CollectionTracks,
-  CollectionUsers,
-  ColorModeToggle,
-  Content,
-  ContentWithSidebar,
-  Fonts,
-  Footer,
-  Header,
-  HeaderEditor,
-  HeaderTabs,
-  HeaderUser,
-  HeadingStack,
-  Hero,
-  LessonIcon,
-  LinkButton,
-  Logo,
-  MenuPanel,
-  MenuToggle,
-  NavLink,
-  PaginationLessons,
-  PaginationTopics,
-  PreviewDashboard,
-  QuickSignUpForm,
-  ReferenceIcon,
-}
-
 /**
+ * components/all
  * Would be used without dynamic import.
  */
-export { CardArea } from '@components/card-area'
-export { CodeHighlight } from '@components/code-highlight'
-export { Country } from '@components/country'
-export { Icon } from '@components/icon'
-export { RichTextEditor } from '@components/editor/rich-text-editor'
-export { SocialLinks } from '@components/social-links'
-export { useCustomToast as useToast } from '@components/toast'
-export { TrimmedURL } from '@components/trimmed-url'
-
-/**
- * Would be used with dynamic import.
- */
-import EditorSlate from '@components/editor/slate'
-export { EditorSlate }
+export { AlertSoon } from '@components/all/alert-soon'
+export { Card } from '@components/all/card'
+export { CardArea } from '@components/all/card-area'
+export { CategoryBadge } from '@components/all/category-badge'
+export { CodeHighlight } from '@components/all/code-highlight'
+export { CollectionLessons } from '@components/all/collection-lessons'
+export { CollectionTopics } from '@components/all/collection-topics'
+export { CollectionTracks } from '@components/all/collection-tracks'
+export { CollectionUsers } from '@components/all/collection-users'
+export { ColorModeToggle } from '@components/all/color-mode-toggle'
+export { Content } from '@components/all/content'
+export { ContentWithSidebar } from '@components/all/content-with-sidebar'
+export { Country } from '@components/all/country'
+export { Fonts } from '@components/all/fonts'
+export { Footer } from '@components/all/footer'
+export { Header } from '@components/all/header'
+export { HeaderEditor } from '@components/all/header-editor'
+export { HeaderTabs } from '@components/all/header-tabs'
+export { HeaderUser } from '@components/all/header-user'
+export { HeadingStack } from '@components/all/heading-stack'
+export { Hero } from '@components/all/hero'
+export { Icon } from '@components/all/icon'
+export { LessonIcon } from '@components/all/lesson-icon'
+export { LinkButton } from '@components/all/link-button'
+export { Logo } from '@components/all/logo'
+export { MenuPanel } from '@components/all/menu-panel'
+export { MenuToggle } from '@components/all/menu-toggle'
+export { NavLink } from '@components/all/nav-link'
+export { PaginationLessons } from '@components/all/pagination-lessons'
+export { PaginationTopics } from '@components/all/pagination-topics'
+export { PreviewDashboard } from '@components/all/preview-dashboard'
+export { QuickSignUpForm } from '@components/all/quick-signup-form'
+export { ReferenceIcon } from '@components/all/reference-icon'
+export { SocialLinks } from '@components/all/social-links'
+export { TrimmedURL } from '@components/all/trimmed-url'
+export { useCustomToast as useToast } from '@components/all/toast'

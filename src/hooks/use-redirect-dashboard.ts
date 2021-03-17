@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useAuth } from '@hooks'
 
-export default function useRedirectDashboard() {
+export function useRedirectDashboard() {
   const router = useRouter()
   const { auth, isAuthorized } = useAuth()
 

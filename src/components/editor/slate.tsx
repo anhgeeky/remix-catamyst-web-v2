@@ -43,6 +43,7 @@ const HOTKEYS = {
 
 /**
  * Initialize SlateElements from input that already deserialized from HTML.
+ * Using default export because will be used with dynamic import.
  */
 export default function EditorSlate({ slateElements, handleSave }) {
   // const [value, setValue] = useState<Descendant[]>(initialValue)

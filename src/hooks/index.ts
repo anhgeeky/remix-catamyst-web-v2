@@ -1,15 +1,6 @@
-import useAuth from '@hooks/use-auth'
-import usePaginationLessons from '@hooks/use-pagination-lessons'
-import usePaginationTopics from '@hooks/use-pagination-topics'
-import useRedirectDashboard from '@hooks/use-redirect-dashboard'
-import useRedirectSignIn from '@hooks/use-redirect-signin'
-import useRouteChanged from '@hooks/use-route-changed'
-
-export {
-  useAuth,
-  usePaginationLessons,
-  usePaginationTopics,
-  useRedirectDashboard,
-  useRedirectSignIn,
-  useRouteChanged,
-}
+export { useAuth } from '@hooks/use-auth'
+export { usePaginationLessons } from '@hooks/use-pagination-lessons'
+export { usePaginationTopics } from '@hooks/use-pagination-topics'
+export { useRedirectDashboard } from '@hooks/use-redirect-dashboard'
+export { useRedirectSignIn } from '@hooks/use-redirect-signin'
+export { useRouteChanged } from '@hooks/use-route-changed'

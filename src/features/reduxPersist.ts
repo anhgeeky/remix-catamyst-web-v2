@@ -2,7 +2,7 @@ import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 
 /**
  * Solve issue of redux-persist failed to create sync storage.
- * falling back to noop storage.
+ * Falling back to noop storage.
  * https://github.com/rt2zz/redux-persist/issues/1208
  * https://github.com/vercel/next.js/discussions/15687
  */
@@ -22,7 +22,7 @@ const createNoopStorage = () => {
 
 const storage =
   typeof window !== 'undefined'
-    ? createWebStorage('local') // Must use this name
+    ? createWebStorage('local') // Must use this 'local' name
     : createNoopStorage()
 
 export default storage

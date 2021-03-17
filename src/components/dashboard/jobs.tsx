@@ -5,7 +5,7 @@ import { Box, Heading, Stack, Text } from '@chakra-ui/react'
 import { Card, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export default function DashboardJobs({ auth }) {
+export function DashboardJobs({ auth }) {
   return (
     <>
       <NextHead>
