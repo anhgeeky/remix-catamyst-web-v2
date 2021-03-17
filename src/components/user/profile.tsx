@@ -10,6 +10,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { transformOptions } from '@components/blocks'
 
@@ -18,6 +19,7 @@ import { transformOptions } from '@components/blocks'
  * user.bioHtml is the same format with BlockTexts.
  */
 export function UserProfile({ user }) {
+  const auth = useSelector((state) => state.auth)
   const defaultCoverUrl = `${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`
 
   return (
@@ -72,6 +74,12 @@ export function UserProfile({ user }) {
           <Box id="user-bio" maxW={760}>
             {ReactHtmlParser(user.bioHtml, transformOptions)}
           </Box>
+
+          {auth.user.handle === user.handle && (
+            <Box opacity={0.25}>
+              <Text>This is your profile.</Text>
+            </Box>
+          )}
         </Stack>
       </Flex>
     </>

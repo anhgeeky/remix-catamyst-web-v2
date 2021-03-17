@@ -4,10 +4,15 @@ Allow: /
 Disallow: /404
 Disallow: /cms/*
 Disallow: /dashboard/*
+Disallow: /join
+Disallow: /login
+Disallow: /logout
 Disallow: /onboard/*
+Disallow: /register
 Disallow: /reset
 Disallow: /secret
 Disallow: /settings/*
+Disallow: /signout
 
 # Host
 Host: https://catamyst.com

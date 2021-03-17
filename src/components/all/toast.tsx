@@ -1,4 +1,4 @@
-import { useToast } from '@chakra-ui/react'
+import { useToast, createStandaloneToast } from '@chakra-ui/react'
 
 export function useCustomToast(options = null) {
   return useToast({
@@ -9,3 +9,5 @@ export function useCustomToast(options = null) {
     ...options,
   })
 }
+
+export const toast = createStandaloneToast()

@@ -40,6 +40,8 @@ export const yupHandle = Yup.string()
 export const SignUpSchema = Yup.object().shape({
   email: yupEmail,
   password: yupPassword,
+  // name: yupName,
+  // handle: yupHandle,
 })
 
 export const SignInSchema = Yup.object().shape({

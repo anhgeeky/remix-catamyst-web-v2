@@ -1,4 +1,7 @@
 import {
+  SIGN_UP_BEGIN,
+  SIGN_UP_ERROR,
+  SIGN_UP_SUCCESS,
   SIGN_IN_BEGIN,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
@@ -13,16 +16,54 @@ const initialState = {
   user: {},
 }
 
-export default function authReducer(state = initialState, action) {
+/**
+ * Reducer only used for UI/UX purpose.
+ * Not for the actual authentication/authorization process.
+ * Because we would use Cookie and HTTP headers.
+ */
+export function authReducer(state = initialState, action) {
   switch (action.type) {
     /**
-     * Sign in
+     * Sign up begin/error/success.
+     */
+    case SIGN_UP_BEGIN: {
+      return {
+        ...state,
+        isLoading: true,
+      }
+    }
+    case SIGN_UP_ERROR: {
+      return {
+        ...state,
+        isLoading: false,
+        isAuthenticated: false,
+        user: {},
+      }
+    }
+    case SIGN_UP_SUCCESS: {
+      return {
+        ...state,
+        isLoading: false,
+        isAuthenticated: true,
+        user: action.payload.user,
+      }
+    }
+    /**
+     * Sign in begin/error/success.
      */
     case SIGN_IN_BEGIN: {
-      return { ...state, isLoading: true }
+      return {
+        ...state,
+        isLoading: true,
+      }
     }
     case SIGN_IN_ERROR: {
-      return { ...state, isLoading: false, isAuthenticated: false, user: {} }
+      return {
+        ...state,
+        isLoading: false,
+        isAuthenticated: false,
+        user: {},
+      }
     }
     case SIGN_IN_SUCCESS: {
       return {
@@ -33,19 +74,30 @@ export default function authReducer(state = initialState, action) {
       }
     }
     /**
-     * Sign out
+     * Sign out begin/error/success.
      */
     case SIGN_OUT_BEGIN: {
-      return { ...state, isLoading: true }
+      return {
+        ...state,
+        isLoading: true,
+      }
     }
     case SIGN_OUT_ERROR: {
-      return { ...state, isLoading: false }
+      return {
+        ...state,
+        isLoading: false,
+      }
     }
     case SIGN_OUT_SUCCESS: {
-      return { ...state, isLoading: false, isAuthenticated: false, user: {} }
+      return {
+        ...state,
+        isLoading: false,
+        isAuthenticated: false,
+        user: {},
+      }
     }
     /**
-     * Default
+     * Default.
      */
     default:
       return state

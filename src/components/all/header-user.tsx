@@ -1,4 +1,3 @@
-import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -45,7 +44,6 @@ function UserMenuButton({ auth }) {
 
   async function handleSignOut() {
     dispatch(signOut())
-    toast({ status: 'warning', title: 'Signed out. Bye!' })
   }
 
   return (

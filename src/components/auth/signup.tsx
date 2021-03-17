@@ -29,11 +29,14 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useDispatch } from 'react-redux'
 
 import { Icon, useToast } from '@components'
 import { SignUpSchema } from '@utils/yup'
+import { signUp } from '@features/auth/actions'
 
 export function AuthSignUp({ router }) {
+  const dispatch = useDispatch()
   const toast = useToast()
   const [showPassword, setShowPassword] = useState(false)
   const {
@@ -54,22 +57,15 @@ export function AuthSignUp({ router }) {
     setShowPassword(!showPassword)
   }
 
-  const handleSignUp = (data) => {
-    // data will be passed as payload to signUp thunk
+  const handleSignUp = async (data) => {
+    /**
+     * Data will be passed as payload to signUp thunk
+     */
     try {
-      // dispatch(signUp())
-      toast({
-        status: 'success',
-        title: 'Sign up success!',
-        description: 'Welcome onboard.',
-      })
+      await dispatch(signUp())
       router.replace('/dashboard/overview')
     } catch (error) {
-      toast({
-        status: 'error',
-        title: 'Failed to sign up!',
-        description: 'Please try again and check your data.',
-      })
+      console.log('Failed to sign up.')
     }
   }
 

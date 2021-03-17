@@ -5,7 +5,6 @@ import {
   Divider,
   FormControl,
   FormErrorMessage,
-  FormHelperText,
   FormLabel,
   Input,
   InputGroup,
@@ -19,12 +18,10 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useDispatch } from 'react-redux'
 
-import { useToast } from '@components'
 import { SignInSchema } from '@utils/yup'
 import { signIn } from '@features/auth/actions'
 
 export function AuthSignIn({ router }) {
-  const toast = useToast()
   const dispatch = useDispatch()
   const [showPassword, setShowPassword] = useState(false)
   const { errors, handleSubmit, register } = useForm({
@@ -37,21 +34,14 @@ export function AuthSignIn({ router }) {
   }
 
   const handleSignIn = async (data) => {
-    // data will be passed as payload to signIn thunk
+    /**
+     * Data will be passed as payload to signIn thunk
+     */
     try {
-      dispatch(signIn())
-      toast({
-        status: 'success',
-        title: 'Signed in!',
-        description: 'Welcome back.',
-      })
+      await dispatch(signIn())
       router.replace('/dashboard/overview')
     } catch (error) {
-      toast({
-        status: 'error',
-        title: 'Failed to sign up!',
-        description: 'Please try again and check your data.',
-      })
+      console.log('Failed to sign in.')
     }
   }
 
