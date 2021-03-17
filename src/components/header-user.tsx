@@ -14,6 +14,7 @@ import {
   MenuItem,
   MenuList,
   Text,
+  useMediaQuery,
 } from '@chakra-ui/react'
 
 import { Icon, LinkButton, useToast } from '@components'
@@ -100,6 +101,8 @@ function UserMenuButton({ auth }) {
 }
 
 function UserAuthButtons() {
+  const [isTooSmall] = useMediaQuery('(max-width: 350px)') // Less than
+
   return (
     <>
       <Box display={{ base: 'none', md: 'block' }}>
@@ -107,7 +110,7 @@ function UserAuthButtons() {
           Sign up
         </LinkButton>
       </Box>
-      <Box>
+      <Box display={isTooSmall ? 'none' : 'block'}>
         <LinkButton href="/signin" colorScheme="teal">
           Sign in
         </LinkButton>

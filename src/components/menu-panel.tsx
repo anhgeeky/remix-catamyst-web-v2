@@ -9,6 +9,7 @@ import {
   IconButton,
   Stack,
   StackDivider,
+  VStack,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { useSelector } from 'react-redux'
@@ -19,7 +20,6 @@ import { ColorModeToggle, Icon, SocialLinks } from '@components'
 import useRouteChanged from '@hooks/use-route-changed'
 
 import dataMenuLinks from '@data/menu-links.json'
-import React from 'react'
 
 /**
  * menu-link needs CSS to retain accessibility on focus.
@@ -48,55 +48,61 @@ export default function MenuPanel({ closeMenu, isMenuOpen }) {
             <Stack
               as="nav"
               width="100%"
+              height="100vh"
+              justify="space-between"
               maxW={1200}
               spacing={2}
               px={{ base: 2, sm: 4 }}
-              py={2}
+              py={{ base: 1, sm: 2 }}
             >
-              <Flex justify="space-between">
-                <ColorModeToggle />
+              <Stack>
+                <Flex justify="space-between">
+                  <ColorModeToggle />
 
-                <IconButton
-                  aria-label="Toggle menu"
-                  variant="ghost"
-                  onClick={closeMenu}
+                  <IconButton
+                    aria-label="Toggle menu"
+                    variant="ghost"
+                    onClick={closeMenu}
+                  >
+                    <FaTimes />
+                  </IconButton>
+                </Flex>
+
+                <Stack
+                  align="stretch"
+                  divider={<StackDivider borderColor={dividerBorderColor} />}
+                  spacing={1}
                 >
-                  <FaTimes />
-                </IconButton>
-              </Flex>
-
-              <Stack
-                align="stretch"
-                divider={<StackDivider borderColor={dividerBorderColor} />}
-              >
-                {dataMenuLinks.map((page, index) => {
-                  return (
-                    <Link
-                      key={page.slug}
-                      as={NextLink}
-                      href={page.href}
-                      _hover={{ bg: 'teal.500' }}
-                    >
-                      <a className="menu-link">
-                        <HStack
-                          display="flex"
-                          padding="10px"
-                          cursor="pointer"
-                          align="center"
-                          borderRadius="md"
-                          _hover={{
-                            bg: useColorModeValue('teal.400', 'teal.700'),
-                          }}
-                        >
-                          <Icon name={page.slug} />
-                          <Text as="span" ml={2}>
-                            {page.text}
-                          </Text>
-                        </HStack>
-                      </a>
-                    </Link>
-                  )
-                })}
+                  {dataMenuLinks.map((page, index) => {
+                    return (
+                      <Link
+                        key={page.slug}
+                        as={NextLink}
+                        href={page.href}
+                        _hover={{ bg: 'teal.500' }}
+                      >
+                        <a className="menu-link">
+                          <HStack
+                            display="flex"
+                            px={3}
+                            py={1}
+                            cursor="pointer"
+                            align="center"
+                            borderRadius="md"
+                            _hover={{
+                              bg: useColorModeValue('teal.400', 'teal.700'),
+                            }}
+                          >
+                            <Icon name={page.slug} />
+                            <Text as="span" ml={2}>
+                              {page.text}
+                            </Text>
+                          </HStack>
+                        </a>
+                      </Link>
+                    )
+                  })}
+                </Stack>
 
                 {!auth.isAuthenticated && (
                   <Stack
@@ -116,7 +122,9 @@ export default function MenuPanel({ closeMenu, isMenuOpen }) {
                 )}
               </Stack>
 
-              <SocialLinks />
+              <VStack p={5}>
+                <SocialLinks />
+              </VStack>
             </Stack>
           </Flex>
         </RemoveScroll>

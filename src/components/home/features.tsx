@@ -33,7 +33,7 @@ export function HomeFeatures() {
       </VStack>
 
       <VStack width="100%">
-        <SimpleGrid spacing={5} minChildWidth={300} width="100%">
+        <SimpleGrid spacing={5} width="100%" minChildWidth={280}>
           {dataFeatures.map((feature) => {
             return (
               <Card key={feature.slug}>

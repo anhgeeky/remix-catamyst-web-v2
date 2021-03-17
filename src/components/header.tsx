@@ -49,13 +49,14 @@ export default function Header() {
         borderBottomColor={borderBg}
       >
         <SkipNavLink>Skip to content</SkipNavLink>
+
         <Flex
           as="nav"
-          maxW={1200}
           align="center"
           width="100%"
+          maxW={1200}
           px={{ base: 2, sm: 4 }}
-          py={2}
+          py={{ base: 1, sm: 2 }}
         >
           <Flex flex={1}>
             <HStack spacing={2}>

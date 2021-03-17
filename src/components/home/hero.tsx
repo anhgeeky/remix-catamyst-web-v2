@@ -15,14 +15,14 @@ import dataHeroHome from '@data/hero-home.json'
 
 export function HomeHero() {
   return (
-    <Flex px={5} justify="center">
+    <Flex px={3} justify="center">
       <Stack
         id="hero-home"
         align="center"
         width="100%"
         maxW="1200px"
         px={{ base: 0, lg: 5 }}
-        pt={{ base: 10, md: 50, lg: 100 }}
+        pt={{ base: 10, md: 50, lg: 70 }}
         direction={{ base: 'column', lg: 'row' }}
       >
         <Stack maxW="40rem" spacing={5}>
@@ -52,7 +52,7 @@ export function HomeHero() {
         </Stack>
 
         <NextImage
-          alt="Evolution of cats"
+          alt="Multiple cats learning"
           src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-home.png`}
           objectFit="contain"
           width={500}
