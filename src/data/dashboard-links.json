@@ -1,18 +1,19 @@
 [
   { "slug": "overview", "text": "Overview", "href": "/dashboard/overview" },
   { "slug": "tracks", "text": "Tracks", "href": "/dashboard/tracks" },
-  { "slug": "projects", "text": "Projects", "href": "/dashboard/projects" },
-  { "slug": "posts", "text": "Posts", "href": "/dashboard/posts" },
-  { "slug": "mentors", "text": "Mentors", "href": "/dashboard/mentors" },
-  { "slug": "jobs", "text": "Jobs", "href": "/dashboard/jobs" },
   {
     "slug": "discussions",
     "text": "Discussions",
     "href": "/dashboard/discussions"
   },
+  { "slug": "posts", "text": "Posts", "href": "/dashboard/posts" },
+  { "slug": "projects", "text": "Projects", "href": "/dashboard/projects" },
+  { "slug": "jobs", "text": "Jobs", "href": "/dashboard/jobs" },
+  { "slug": "mentors", "text": "Mentors", "href": "/dashboard/mentors" },
   {
     "slug": "certificates",
     "text": "Certificates",
-    "href": "/dashboard/certificates"
+    "href": "/dashboard/certificates",
+    "isEnabled": false
   }
 ]

@@ -19,17 +19,20 @@ export function HeaderTabs({ links }) {
         overflow="scroll"
       >
         {links.map((link) => {
-          /**
-           * If the current page contains the pathname
-           */
-          const isActive = router.asPath === link.href
-
-          return (
-            <TabLink key={link.slug} href={link.href} isActive={isActive}>
-              <Icon name={link.slug} />
-              <span>{link.text}</span>
-            </TabLink>
-          )
+          if (link.isEnabled === false) {
+            return null
+          } else {
+            /**
+             * If the current page contains the pathname.
+             */
+            const isActive = router.asPath === link.href
+            return (
+              <TabLink key={link.slug} href={link.href} isActive={isActive}>
+                <Icon name={link.slug} />
+                <span>{link.text}</span>
+              </TabLink>
+            )
+          }
         })}
       </HStack>
     </Flex>

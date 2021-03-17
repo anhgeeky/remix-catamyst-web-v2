@@ -1,30 +1,18 @@
-import { useRouter } from 'next/router'
-import { useDispatch } from 'react-redux'
-import { Heading, Text, Button } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, Content, useToast } from '@components'
-import { signIn } from '@features/auth/actions'
+import { Hero, Content } from '@components'
+import { AuthSignIn } from '@components/auth'
 import { useRedirectDashboard } from '@hooks'
 
 export default function signInPage() {
-  const { isAuthorized } = useRedirectDashboard()
-
-  const router = useRouter()
-  const dispatch = useDispatch()
-  const toast = useToast({ duration: 3000, isClosable: true })
-
-  async function handleSignIn() {
-    dispatch(signIn())
-    await router.replace('/dashboard')
-    toast({ title: 'Signed in. Welcome back!', status: 'success' })
-  }
+  const { router, isAuthorized } = useRedirectDashboard()
 
   return (
     <Layout title="Sign in to your Catamyst account">
       {!isAuthorized && (
         <>
-          <Hero>
+          <Hero textAlign="center">
             <Heading as="h1" size="xl">
               Sign in
             </Heading>
@@ -32,9 +20,7 @@ export default function signInPage() {
           </Hero>
 
           <Content>
-            <Button colorScheme="teal" onClick={handleSignIn}>
-              Instant sign in
-            </Button>
+            <AuthSignIn router={router} />
           </Content>
         </>
       )}

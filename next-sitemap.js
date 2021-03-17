@@ -2,10 +2,15 @@ const excludes = [
   '/404',
   '/cms/*',
   '/dashboard/*',
+  '/join',
+  '/login',
+  '/logout',
   '/onboard/*',
+  '/register',
   '/reset',
   '/secret',
   '/settings/*',
+  '/signout',
 ]
 
 module.exports = {

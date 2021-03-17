@@ -37,8 +37,8 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
         <RemoveScroll forwardProps>
           <Flex
             justify="center"
-            w="100%"
-            h="100vh"
+            width="100%"
+            height="100vh"
             pos="fixed"
             top="0"
             left="0"

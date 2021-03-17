@@ -10,5 +10,9 @@ export function useRedirectDashboard() {
     if (isAuthorized) router.replace('/dashboard/overview')
   }, [isAuthorized])
 
-  return { auth, isAuthorized }
+  return {
+    router,
+    auth,
+    isAuthorized,
+  }
 }

@@ -72,3 +72,16 @@ p code {
 .next-image-cover-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+/**
+ * Chakra UI components.
+ * Because the export components with theme defaultProps doesn't work.
+ */
+
+.chakra-form__label {
+  margin-bottom: 0 !important;
+}
+
+.chakra-form__helper-text {
+  line-height: 21px !important;
+}

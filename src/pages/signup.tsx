@@ -1,17 +1,18 @@
-import NextLink from 'next/link'
-import { Heading, Text, Button } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
+
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
+import { AuthSignUp } from '@components/auth'
 import { useRedirectDashboard } from '@hooks'
 
 export default function signUpPage() {
-  const { isAuthorized } = useRedirectDashboard()
+  const { router, isAuthorized } = useRedirectDashboard()
 
   return (
     <Layout title="Create your Catamyst account">
       {!isAuthorized && (
         <>
-          <Hero>
+          <Hero textAlign="center">
             <Heading as="h1" size="xl">
               Sign up
             </Heading>
@@ -19,9 +20,7 @@ export default function signUpPage() {
           </Hero>
 
           <Content>
-            <NextLink href="/signin">
-              <Button colorScheme="teal">Instant sign in</Button>
-            </NextLink>
+            <AuthSignUp router={router} />
           </Content>
         </>
       )}
