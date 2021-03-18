@@ -44,7 +44,7 @@ export default function Layout({ title = 'Catamyst', children = null }) {
 
       <Header />
 
-      <Box as="main" pt={{ base: 50, sm: 55 }} minH="80vh">
+      <Box as="main" pt={{ base: 45, sm: 55 }} minH="80vh">
         <SkipNavContent>{children}</SkipNavContent>
       </Box>
 

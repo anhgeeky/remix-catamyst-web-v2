@@ -103,7 +103,7 @@ export function AuthSignIn({ router }) {
         <Stack fontSize="sm" opacity={0.75}>
           <Divider opacity={1} />
           <Text>
-            Doesn't have an account?{' '}
+            Don't have an account?{' '}
             <NextLink href="/signup">
               <Link color="teal.500">Sign up</Link>
             </NextLink>

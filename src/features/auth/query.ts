@@ -1,0 +1,1 @@
+export const QUERY_AUTHENTICATED_USER = ``

@@ -64,13 +64,20 @@ p code {
 }
 
 .next-image-cover-container {
-  overflow: auto;
   -ms-overflow-style: none; /* IE10+ */
   scrollbar-width: none; /* Firefox */
 }
 
 .next-image-cover-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+
+.next-image-avatar-container > div {
+  display: block !important;
+}
+
+.next-image-avatar {
+  border-radius: 100%;
 }
 
 /**

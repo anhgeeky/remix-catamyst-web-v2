@@ -1,3 +1,4 @@
+import NextImage from 'next/image'
 import NextLink from 'next/link'
 import {
   Avatar,
@@ -52,7 +53,21 @@ export function HomeReviews() {
               >
                 <Stack spacing={3}>
                   <HStack spacing={5}>
-                    <Avatar src={user.avatarUrl} alt={user.name} size="xl" />
+                    <Box
+                      className="next-image-avatar-container"
+                      rounded="full"
+                      bg={useColorModeValue('gray.100', 'gray.500')}
+                    >
+                      <NextImage
+                        className="next-image-avatar"
+                        src={user.avatarUrl}
+                        alt={user.name}
+                        objectFit="cover"
+                        layout="fixed"
+                        width={100}
+                        height={100}
+                      />
+                    </Box>
                     <Box>
                       <Heading as="h3" size="lg">
                         <NextLink href={`/${user.handle}`}>
@@ -60,15 +75,17 @@ export function HomeReviews() {
                         </NextLink>
                       </Heading>
                       <Box>
-                        {user.title}
-                        {user.organization?.name && (
-                          <>
-                            <span> at </span>
-                            <Link isExternal href={user.organization.url}>
-                              {user.organization.name}
-                            </Link>
-                          </>
-                        )}
+                        <Text>
+                          {user.title}
+                          {user.organization?.name && (
+                            <>
+                              <span> at </span>
+                              <Link isExternal href={user.organization.url}>
+                                {user.organization.name}
+                              </Link>
+                            </>
+                          )}
+                        </Text>
                       </Box>
                       <Country code={user.countryCode} />
                     </Box>
@@ -94,12 +111,7 @@ export function HomeReviews() {
 
                 <HStack>
                   <SocialLinks links={user.socialLinks} />
-                  <Link
-                    isExternal
-                    href={user.websiteUrl}
-                    color="teal.500"
-                    fontWeight="bold"
-                  >
+                  <Link isExternal href={user.websiteUrl} color="teal.500">
                     <TrimmedURL url={user.websiteUrl} />
                   </Link>
                 </HStack>

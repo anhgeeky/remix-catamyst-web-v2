@@ -63,7 +63,7 @@ export const UserEmailSchema = Yup.object().shape({
 })
 
 export const UserPasswordChangeSchema = Yup.object().shape({
-  currentPassword: yupPasswordAlt,
+  currentPassword: Yup.string().required('Current password is required'),
   newPassword: yupPassword,
 })
 

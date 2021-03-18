@@ -14,7 +14,7 @@
     "nickname": "Admin",
     "avatarUrl": "https://storage.catamyst.com/avatars/catamyst.jpg",
     "coverUrl": "https://storage.catamyst.com/covers/iceberg.jpg",
-    "bioHtml": "<p>Accelerating your career growth through all in one education and career platform. This is the administrator account. #AccelerateGrowth</p>",
+    "bioHtml": "<p>Helping you to enjoy this site.</p>",
     "headline": "The Super User",
     "location": "Worldwide",
     "country": "EARTH",
@@ -185,7 +185,7 @@
     "avatarUrl": "https://storage.catamyst.com/avatars/jonathannicolas.jpg",
     "coverUrl": "",
     "headline": "Artistic Developer",
-    "bioHtml": "Fullstack web developer. MERN Stack Developer, with the passion to develop apps that can make this world better. Whenever I get bored, I call API's",
+    "bioHtml": "<p>Fullstack web developer. MERN Stack Developer, with the passion to develop apps that can make this world better. Whenever I get bored, I call API's.</p>",
     "country": "CA",
     "location": "Vancouver, BC",
     "website": { "url": "https://jonathannicolas.dev" },
@@ -207,7 +207,7 @@
     "avatarUrl": "https://storage.catamyst.com/avatars/mfarisgibran.jpg",
     "coverUrl": "",
     "headline": "Trader and Aspiring Creator",
-    "bioHtml": "I’m currently an undergraduate student majoring in business administration at the Faculty of Economics and Management Sciences (KENMS) of International Islamic University Malaysia (IIUM).",
+    "bioHtml": "<p>I’m currently an undergraduate student majoring in business administration at the Faculty of Economics and Management Sciences (KENMS) of International Islamic University Malaysia (IIUM).</p>",
     "country": "MY",
     "location": "Kuala Lumpur",
     "website": { "url": "https://mfarisgibran.com" },
@@ -232,7 +232,7 @@
     "avatarUrl": "https://storage.catamyst.com/avatars/mayasopiah.jpg",
     "coverUrl": "",
     "headline": "",
-    "bioHtml": "Software Engineer",
+    "bioHtml": "<p>Software Engineer</p>",
     "country": "SG",
     "location": "Singapore-Batam",
     "organization": {
@@ -249,7 +249,7 @@
     "avatarUrl": "https://storage.catamyst.com/avatars/fadillahbilqis.jpg",
     "coverUrl": "",
     "headline": "",
-    "bioHtml": "Developer",
+    "bioHtml": "<p>Developer</p>",
     "country": "ID",
     "location": "Batam"
   },
@@ -262,7 +262,7 @@
     "avatarUrl": "https://storage.catamyst.com/avatars/digachandra.jpg",
     "coverUrl": "",
     "headline": "",
-    "bioHtml": "Web Developer",
+    "bioHtml": "<p>Web Developer</p>",
     "country": "ID",
     "location": "Tangerang"
   }

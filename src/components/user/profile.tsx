@@ -7,6 +7,7 @@ import {
   Text,
   Image,
   Box,
+  Button,
   useColorModeValue,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
@@ -21,6 +22,7 @@ import { transformOptions } from '@components/blocks'
 export function UserProfile({ user }) {
   const auth = useSelector((state) => state.auth)
   const defaultCoverUrl = `${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`
+  const isSameUser = user.handle === auth?.user?.handle
 
   return (
     <>
@@ -75,11 +77,18 @@ export function UserProfile({ user }) {
             {ReactHtmlParser(user.bioHtml, transformOptions)}
           </Box>
 
-          {auth.user.handle === user.handle && (
-            <Box opacity={0.25}>
-              <Text>This is your profile.</Text>
-            </Box>
-          )}
+          <Box>
+            {isSameUser && (
+              <Button colorScheme="teal" variant="outline" rounded="xl">
+                This is you
+              </Button>
+            )}
+            {!isSameUser && (
+              <Button colorScheme="teal" variant="outline" rounded="xl">
+                Follow
+              </Button>
+            )}
+          </Box>
         </Stack>
       </Flex>
     </>
