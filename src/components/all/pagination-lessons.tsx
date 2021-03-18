@@ -1,5 +1,7 @@
 import NextLink from 'next/link'
 import {
+  Box,
+  Divider,
   HStack,
   IconButton,
   Link,
@@ -28,7 +30,7 @@ export function PaginationLessons({
 
   /**
    * Only render top/minimal lessons pagination
-   * above mobile size to avoid shifted hero layout
+   * above mobile size to avoid shifted hero layout.
    */
   if (mode === 'minimal' && isMobile) {
     return <>{children}</>
@@ -41,18 +43,21 @@ export function PaginationLessons({
         prev={prev}
         next={next}
       >
-        <>{children}</>
+        {children}
       </PaginationLessonsMinimal>
     )
   }
   if (mode === 'full') {
     return (
-      <PaginationLessonsFull
-        track={track}
-        topic={topic}
-        prev={prev}
-        next={next}
-      />
+      <Box width="100%" maxW={760} p={5}>
+        <Divider opacity={1} mb={5} />
+        <PaginationLessonsFull
+          track={track}
+          topic={topic}
+          prev={prev}
+          next={next}
+        />
+      </Box>
     )
   }
   return null
@@ -124,15 +129,7 @@ function PaginationLinkMinimal({ label, href, icon }) {
 
 function PaginationLessonsFull({ track, topic, prev, next }) {
   return (
-    <SimpleGrid
-      as="nav"
-      aria-label="Pagination lesson"
-      width="100%"
-      px={5}
-      spacing={2}
-      columns={2}
-      maxW={dataTheme.maxContentWidth}
-    >
+    <SimpleGrid as="nav" aria-label="Pagination lesson" spacing={2} columns={2}>
       {prev?.slug ? (
         <PaginationLinkFull
           label="Previous Lesson"

@@ -4,22 +4,23 @@ export function CategoryBadge({ category }) {
   return (
     <Tag
       variant="solid"
-      colorScheme={
-        category === 'General'
-          ? 'red'
-          : category === 'Preparation'
-          ? 'blue'
+      color="white"
+      bg={
+        category === 'Preparation'
+          ? 'black'
+          : category === 'General'
+          ? 'gray.700'
           : category === 'Frontend'
-          ? 'yellow'
+          ? 'gray.600'
           : category === 'Backend'
-          ? 'green'
+          ? 'gray.500'
           : category === 'Fundamental'
-          ? 'purple'
+          ? 'purple.500'
           : category === 'Specific'
-          ? 'pink'
+          ? 'pink.500'
           : category === 'Project'
-          ? 'cyan'
-          : 'gray'
+          ? 'cyan.500'
+          : 'teal.400'
       }
     >
       {category}

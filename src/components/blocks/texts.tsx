@@ -13,15 +13,14 @@ import {
 } from '@chakra-ui/react'
 import { FaAngleRight } from 'react-icons/fa'
 import ReactHtmlParser from 'react-html-parser'
-
-import dataTheme from '@theme/theme.json'
+import slugify from 'slugify'
 
 /**
  * The actual block is very simple.
  */
 export function BlockTexts({ block }) {
   return (
-    <Box maxW={dataTheme.maxContentWidth} width="100%" px={5}>
+    <Box className="block-texts" width="100%" maxW={760} px={5}>
       {ReactHtmlParser(block.html, transformOptions)}
     </Box>
   )
@@ -100,9 +99,13 @@ export const transformOptions = {
      * HTML block elements such as headings, paragraph
      */
     if (node.type === 'tag' && node.name === 'h1') {
+      const slug = slugify(node.children[0].data)
       return (
-        <Heading key={index} as="h1" fontFamily="body" size="xl" pt={5}>
-          {node.children[0].data}
+        <Heading key={index} as="h1" fontFamily="body" size="xl" pt={8}>
+          <span>{node.children[0].data}</span>
+          <Link aria-label="anchor" href={`#${slug}`} color="teal.500" ml={3}>
+            #
+          </Link>
         </Heading>
       )
     }
@@ -120,29 +123,6 @@ export const transformOptions = {
         </Heading>
       )
     }
-    if (node.type === 'tag' && node.name === 'ul') {
-      return (
-        <List key={index} fontSize={fontSizes} spacing={1} pt={3}>
-          {node.children.map((item, index) => {
-            return (
-              <ListItem key={index}>
-                <ListIcon as={FaAngleRight} color="teal.500" />
-                <Text as="span">{item.children[0].data}</Text>
-              </ListItem>
-            )
-          })}
-        </List>
-      )
-    }
-    if (node.type === 'tag' && node.name === 'ol') {
-      return (
-        <OrderedList key={index} fontSize={fontSizes} spacing={1} pt={3}>
-          {node.children.map((item, index) => {
-            return <ListItem key={index}>{item.children[0].data}</ListItem>
-          })}
-        </OrderedList>
-      )
-    }
     if (node.type === 'tag' && node.name === 'p') {
       return (
         <Text key={index} fontSize={fontSizes} pt={3}>
@@ -155,6 +135,49 @@ export const transformOptions = {
             }
           })}
         </Text>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'ul') {
+      return (
+        <List key={index} fontSize={fontSizes} spacing={1} pt={3}>
+          {node.children.map((item, index) => {
+            return (
+              <ListItem key={index}>
+                <ListIcon as={FaAngleRight} color="teal.500" />
+                <Text as="span">
+                  {item.children.map((node, index) => {
+                    if (node.type === 'tag') {
+                      return transform(node, index)
+                    }
+                    if (node.type === 'text') {
+                      return node.data
+                    }
+                  })}
+                </Text>
+              </ListItem>
+            )
+          })}
+        </List>
+      )
+    }
+    if (node.type === 'tag' && node.name === 'ol') {
+      return (
+        <OrderedList key={index} fontSize={fontSizes} spacing={1} pt={3}>
+          {node.children.map((item, index) => {
+            return (
+              <ListItem key={index}>
+                {item.children.map((node, index) => {
+                  if (node.type === 'tag') {
+                    return transform(node, index)
+                  }
+                  if (node.type === 'text') {
+                    return node.data
+                  }
+                })}
+              </ListItem>
+            )
+          })}
+        </OrderedList>
       )
     }
   },

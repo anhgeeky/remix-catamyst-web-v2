@@ -16,7 +16,7 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   if (!sections || sections.length === 0) {
-    return <AlertSoon text="No lessons here yet. Coming soon!" />
+    return <AlertSoon text="The lessons in this topic are coming soon!" />
   }
   return (
     <Stack spacing={5} width="100%">
@@ -40,8 +40,13 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
                   const lesson = dataLessons.find((lesson, index) => {
                     return lesson.id === lessonId
                   })
+                  if (lesson?.isPublished === false) {
+                    return null
+                  }
                   if (!lesson) {
-                    return <Text key={index}>Lesson {index + 1} hidden</Text>
+                    return (
+                      <Text key={index}>Lesson {index + 1} is coming soon</Text>
+                    )
                   }
                   if (lesson) {
                     const lessonHref = `/learn/${trackSlug}/${topicSlug}/${lesson.slug}`

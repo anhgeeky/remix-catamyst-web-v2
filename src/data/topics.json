@@ -3,14 +3,14 @@
     "id": 1,
     "slug": "getting-started",
     "title": "Getting started",
-    "description": "Start by understand everything you have to prepare.",
+    "description": "Start by understand everything you have to prepare in the beginning of your journey.",
     "category": "Preparation",
     "iconEmoji": "⭐",
     "totalLessons": 7,
     "totalHours": 2,
     "sections": [
-      { "title": "Let's start from here", "lessons": [1, 2, 3] },
-      { "title": "Hardware and software requirements", "lessons": [4, 5, 6, 7] }
+      { "title": "The beginning", "lessons": [0, 1, 2, 3] },
+      { "title": "The requirements", "lessons": [4, 5, 6, 7] }
     ]
   },
   {
@@ -223,7 +223,8 @@
     "title": "Web programming with JavaScript",
     "description": "Implementing program in a website.",
     "category": "General",
-    "iconEmoji": "🐱"
+    "iconEmoji": "🐱",
+    "sections": [{ "title": "Test 1", "lessons": [100] }]
   },
   {
     "id": 24,

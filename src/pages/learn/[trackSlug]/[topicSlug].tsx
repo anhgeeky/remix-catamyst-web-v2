@@ -21,6 +21,14 @@ export default function topicSlugPage() {
 
   return (
     <Layout title={`Loading topic... · Catamyst`}>
+      {(!track || !topic) && (
+        <>
+          <NextHead>
+            <title>Topic not found · Catamyst</title>
+          </NextHead>
+          <Text>Sorry, topic is not found.</Text>
+        </>
+      )}
       {track && topic && (
         <>
           <NextHead>

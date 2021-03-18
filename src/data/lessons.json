@@ -1,5 +1,20 @@
 [
   {
+    "id": 0,
+    "title": "Let's start here",
+    "slug": "lets-start-here",
+    "level": "Newbie",
+    "category": "Fundamental",
+    "isPublished": true,
+    "blocks": [
+      {
+        "type": "Texts",
+        "isPublished": true,
+        "html": "<p>Welcome aboard! It's a good time to learn.</p><p>But first, take our time to understand how we're going to learn here.</p><h1>Learning Structure</h1><p>In Catamyst, learning and practicing are bundled together with this structure:</p><ul><li><strong>Track</strong>: The learning roadmaps which you can choose based on your interest. Everything starts from the very beginning, continuing up to a more challenging ones. Each Track contains several Topics that already in order<strong>.</strong></li><li><strong>Topic</strong>: The subjects that nicely arranged based on the track. Each Topic contains multiple Lessons that are grouped together. Topics are also categorized based on the similarities or discipline with other topics such as Preparation, General, Frontend, Backend, Career, and Special.</li><li><strong>Lesson</strong>: The actual materials from which you can learn. It could contains texts to read, images to see, video to watch, links to visit, demo to try, activity to enjoy, project to practice, tutorial to follow, and other references to learn more. Feel free to use the provided materials based on your preference in learning.</li></ul><p>You can also notice that in every <strong>Topic</strong> and <strong>Lesson</strong>, there are navigation buttons to either go to the previous or the next one.</p><p>Here you are actually free to start almost anywhere, or jump between different topics and lessons as you wish. But recommend you to follow through from the very beginning, sequentially, unless you already know what you're doing by yourself.</p><h1>Lesson Category</h1><p>Each lessons have their category:</p><ul><li><strong>Fundamental</strong>: Mostly theories or very important things you need to understand at first before moving into something more specific or practical.</li><li><strong>Specific</strong>: Mostly implementations or what are the specific tools or technologies to choose. Then how to use them.</li><li><strong>Project</strong>: Practical activity to build something that apply both the fundamental knowledge and specific skill.</li></ul><h1>Lesson Level</h1><p>Each lessons have their level:</p><ul><li><strong>Newbie</strong></li><li><strong>Beginner</strong></li><li><strong>Intermediate</strong></li><li><strong>Advanced</strong></li></ul><p>They are what they are, just like in a game. If you're just getting started in learning the chosen track, you would start from Newbie level lessons. If you already had prior experience, you might continue from either Beginner, Intermediate, or Advanced level.</p><p>Currently, the Newbie lessons are the only free lessons, that even you can access directly without signing up. If you want to access beyond that, then you have to sign up for an account, then upgrade to Pro plan.</p><h1>Your Contents</h1><p>Since Catamyst is an all-in-one platform, you are able to do these other than just learning if you created an account:</p><ol><li>Profile that can be used for your homepage or resume. Just like Twitter, Instagram, or LinkedIn.</li><li>Publish projects as your portfolio to prove your knowledge or work experience.</li><li>Create discussions or ask and answer questions with the other community members.</li><li>Get an experienced mentor to help you directly, live 1-on-1, with a customized schedule.</li><li>Apply for jobs, either full-time or freelance. Or if you are an employer from a company, you can also post a job vacancy.</li></ol><p>Alright, that's all you have to know to start. Please enjoy the journey!</p>"
+      }
+    ]
+  },
+  {
     "id": 1,
     "title": "Web development introduction",
     "slug": "web-development-introduction",
@@ -99,7 +114,7 @@
       {
         "type": "Texts",
         "isPublished": true,
-        "html": "<h1>Time expectation</h1><p>All of the activities are expected to be completed within 3 to 6 months, depending on your learning pace and effort. You can finish earlier in 2 months or longer in 1 year.</p><p>If you decide to spend at least 1 to 3 hours on weekdays and 5 to 8 hours on weekends, we can assume that you can finish them in 3 to 6 months. Of course, it would be more efficient if you spend more time per day.</p><h1>Faster is not always better</h1><p>To finish faster, some people might skip learning the knowledge and doing the projects directly. We do not recommend this way as each of them will give you the proper foundation to go to the next lessons. However, it is okay to skip some parts only if you already master them. Remember, the journey could take a while. Even after you have done them, you are still required to &quot;do the work&quot; because you need to always keep practicing.</p>"
+        "html": "<h1>Learning and time expectation</h1><p>We're aiming for you to achieve mastery of your learning. Which means you would learn gradually. You prove to yourself that you already understand the particular lesson first, before moving on to the next.</p><p>All of the activities are expected to be completed within 3 to 6 months, depending on your learning pace and effort. You can finish earlier in 2 months or longer in 1 year.</p><p>If you decide to spend at least 1 to 3 hours on weekdays and 5 to 8 hours on weekends, we can assume that you can finish them in 3 to 6 months. Of course, it would be more efficient if you spend more time per day.</p><h1>Faster is not always better</h1><p>To finish faster, some people might skip learning the knowledge and doing the projects directly. We do not recommend this way as each of them will give you the proper foundation to go to the next lessons. However, it is okay to skip some parts only if you already master them. Remember, the journey could take a while. Even after you have done them, you are still required to &quot;do the work&quot; because you need to always keep practicing.</p>"
       },
       {
         "type": "Links",
@@ -197,7 +212,7 @@
       {
         "type": "Texts",
         "isPublished": true,
-        "html": "<p>There are 5 essential software tools you can prepare:</p><ol><li>Web browser</li><li>Password manager</li><li>Task manager</li><li>Note taker</li><li>Grammar checker</li></ol>"
+        "html": "<p>There are 5 essential software tools you should prepare:</p><ol><li>Web browser</li><li>Password manager</li><li>Task manager</li><li>Note taker</li><li>Grammar checker</li></ol><p>If you somehow already know or use them all, you are free to skip this. Otherwise, please check them first.</p>"
       },
       {
         "type": "Divider",
@@ -479,13 +494,7 @@
     "category": "Specific",
     "level": "Newbie",
     "isPublished": true,
-    "blocks": [
-      {
-        "type": "Texts",
-        "isPublished": true,
-        "html": "<p>Coming soon!</p>"
-      }
-    ]
+    "blocks": []
   },
   {
     "id": 7,
@@ -494,13 +503,7 @@
     "category": "Project",
     "level": "Newbie",
     "isPublished": true,
-    "blocks": [
-      {
-        "type": "Texts",
-        "isPublished": true,
-        "html": "<p>Coming soon!</p>"
-      }
-    ]
+    "blocks": []
   },
   {
     "id": 8,
@@ -560,10 +563,6 @@
         "size": "Small"
       },
       {
-        "type": "Divider",
-        "isPublished": true
-      },
-      {
         "type": "Links",
         "isReferences": true,
         "isPublished": true,
@@ -586,13 +585,7 @@
     "category": "Fundamental",
     "level": "Newbie",
     "isPublished": true,
-    "blocks": [
-      {
-        "type": "Texts",
-        "isPublished": true,
-        "html": "<p>Coming soon!</p>"
-      }
-    ]
+    "blocks": []
   },
   {
     "id": 11,
@@ -601,13 +594,7 @@
     "category": "Fundamental",
     "level": "Newbie",
     "isPublished": true,
-    "blocks": [
-      {
-        "type": "Texts",
-        "isPublished": true,
-        "html": "<p>Coming soon!</p>"
-      }
-    ]
+    "blocks": []
   },
   {
     "id": 12,
@@ -615,13 +602,8 @@
     "title": "Good communication skills",
     "category": "Fundamental",
     "level": "Newbie",
-    "blocks": [
-      {
-        "type": "Texts",
-        "isPublished": true,
-        "html": "<p>Coming soon!</p>"
-      }
-    ]
+    "isPublished": true,
+    "blocks": []
   },
   {
     "id": 13,
@@ -630,13 +612,7 @@
     "category": "Fundamental",
     "level": "Newbie",
     "isPublished": true,
-    "blocks": [
-      {
-        "type": "Texts",
-        "isPublished": true,
-        "html": "<p>Coming soon!</p>"
-      }
-    ]
+    "blocks": []
   },
   {
     "id": 14,
@@ -645,13 +621,7 @@
     "category": "Fundamental",
     "level": "Newbie",
     "isPublished": true,
-    "blocks": [
-      {
-        "type": "Texts",
-        "isPublished": true,
-        "html": "<p>Coming soon!</p>"
-      }
-    ]
+    "blocks": []
   },
   {
     "id": 15,
@@ -660,11 +630,61 @@
     "category": "Fundamental",
     "level": "Newbie",
     "isPublished": true,
+    "blocks": []
+  },
+  {
+    "id": 16,
+    "slug": "company-websites",
+    "title": "Company websites",
+    "category": "Fundamental",
+    "level": "Newbie",
+    "isPublished": true,
+    "blocks": []
+  },
+  {
+    "id": 17,
+    "slug": "organization-websites",
+    "title": "Organization websites",
+    "category": "Fundamental",
+    "level": "Newbie",
+    "isPublished": true,
+    "blocks": []
+  },
+  {
+    "id": 100,
+    "slug": "test-1",
+    "title": "Test 1",
+    "category": "Specific",
+    "level": "Beginner",
+    "isPublished": true,
     "blocks": [
       {
-        "type": "Texts",
+        "type": "Image",
         "isPublished": true,
-        "html": "<p>Coming soon!</p>"
+        "title": "Beginner image",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
+        "size": "Tiny",
+        "source": "https://catamyst.com",
+        "showMeta": false
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "slug": "test-2",
+    "title": "Test 2",
+    "category": "Project",
+    "level": "Beginner",
+    "isPublished": true,
+    "blocks": [
+      {
+        "type": "Image",
+        "isPublished": true,
+        "title": "Beginner image",
+        "url": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
+        "size": "Tiny",
+        "source": "https://catamyst.com",
+        "showMeta": false
       }
     ]
   }

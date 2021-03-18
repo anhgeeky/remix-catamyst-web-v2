@@ -31,11 +31,21 @@ export default function trackSlugPage() {
 
   return (
     <Layout title={`Loading track... · Catamyst`}>
+      {(!track || !topics) && (
+        <>
+          <NextHead>
+            <title>Track is not found · Catamyst</title>
+          </NextHead>
+          <Text>Sorry, track is not found.</Text>
+        </>
+      )}
+
       {track && topics && (
         <>
           <NextHead>
             <title>{track.title} · Catamyst</title>
           </NextHead>
+
           <TrackHero track={track} />
           <ContentWithSidebar>
             <TrackSideBar track={track} />

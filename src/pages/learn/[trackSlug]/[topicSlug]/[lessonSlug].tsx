@@ -6,11 +6,12 @@ import {
   Heading,
   HStack,
   Stack,
+  Text,
   VStack,
 } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, CategoryBadge, PaginationLessons } from '@components'
+import { Hero, CategoryBadge, PaginationLessons, AlertSoon } from '@components'
 import { Block } from '@components/blocks'
 import { usePaginationLessons } from '@hooks'
 
@@ -34,7 +35,16 @@ export default function lessonSlugPage() {
    */
   return (
     <Layout title={`Loading lesson... · Catamyst`}>
-      {track && topic && lesson.title && (
+      {(!track || !topic || !lesson) && (
+        <>
+          <NextHead>
+            <title>Lesson not found · Catamyst</title>
+          </NextHead>
+          <Text>Sorry, lesson is not found.</Text>
+        </>
+      )}
+
+      {track && topic && lesson && (
         <>
           <NextHead>
             <title>{lesson.title} · Lesson · Catamyst</title>
@@ -72,12 +82,35 @@ export default function lessonSlugPage() {
             px={0}
           >
             <Stack align="center" spacing={10}>
-              <Stack id="lesson-blocks" align="center" spacing={5}>
-                {lesson?.blocks &&
-                  (lesson.blocks as any[]).map((block, index) => {
-                    return <Block key={index} block={block} />
-                  })}
-              </Stack>
+              {lesson.isPublished !== false && (
+                <Stack
+                  id="lesson-blocks"
+                  align="center"
+                  width="100%"
+                  spacing={5}
+                >
+                  {/* No maxW in Stack, ImageBlock could be full width */}
+                  {lesson?.blocks &&
+                    (lesson.blocks as any[]).map((block, index) => {
+                      return <Block key={index} block={block} />
+                    })}
+                  {(!lesson?.blocks || lesson.blocks.length === 0) && (
+                    <Box width="100%" maxW={760} px={5}>
+                      <AlertSoon />
+                    </Box>
+                  )}
+                </Stack>
+              )}
+              {lesson.isPublished === false && (
+                <Stack
+                  id="lesson-blocks"
+                  align="center"
+                  width="100%"
+                  spacing={5}
+                >
+                  <AlertSoon />
+                </Stack>
+              )}
               <PaginationLessons
                 mode="full"
                 track={track}

@@ -7,12 +7,14 @@ import {
   Link,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { v4 as uuidv4 } from 'uuid'
 
 /**
  * Block that can be used both for actual content and CMS
  * Because the CMS can show this as the preview
  */
 export function BlockImage({ block, renderer = 'NextImage' }) {
+  const uuid = uuidv4()
   const width =
     block.size === 'Huge' // Fill the width
       ? 1440
@@ -22,7 +24,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       ? 720
       : block.size === 'Small' // Standard size
       ? 300
-      : 100 // Tiny for Logo or Icon
+      : 150 // Tiny for Logo or Icon
   const height =
     block.size === 'Huge'
       ? 900
@@ -32,7 +34,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       ? 300
       : block.size === 'Small'
       ? 300
-      : 100 // Tiny
+      : 150 // Tiny
 
   return (
     <Box>
@@ -56,6 +58,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
         >
           {/* Need URL validaton later */}
           <NextImage
+            key={uuid}
             src={block.url || `https://example.com`}
             alt={block.alt || block.title || 'Unknown'}
             width={width}
