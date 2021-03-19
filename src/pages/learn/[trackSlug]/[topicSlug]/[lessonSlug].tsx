@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, CategoryBadge, PaginationLessons, AlertSoon } from '@components'
+import { Hero, LearningTag, PaginationLessons, AlertSoon } from '@components'
 import { Block } from '@components/blocks'
 import { usePaginationLessons } from '@hooks'
 
@@ -65,9 +65,9 @@ export default function lessonSlugPage() {
                   </Heading>
                   <HStack>
                     {lesson.category && (
-                      <CategoryBadge category={lesson.category} />
+                      <LearningTag category={lesson.category} />
                     )}
-                    {lesson.level && <CategoryBadge category={lesson.level} />}
+                    {lesson.level && <LearningTag category={lesson.level} />}
                   </HStack>
                 </VStack>
               </PaginationLessons>

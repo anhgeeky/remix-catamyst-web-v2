@@ -24,7 +24,9 @@ export function BlockLinks({ block }) {
       <Stack spacing={2}>
         {block.isReferences && (
           <Heading
+            className="heading-with-anchor"
             as="h1"
+            id="references"
             pt={10}
             color="gray.500"
             fontFamily="body"
@@ -33,7 +35,16 @@ export function BlockLinks({ block }) {
             textTransform="uppercase"
             letterSpacing={0.5}
           >
-            References
+            <span>References</span>
+            <Link
+              href="#references"
+              aria-label="Anchor to references"
+              color="teal.500"
+              opacity={0}
+              ml={1}
+            >
+              #
+            </Link>
           </Heading>
         )}
         {Array.isArray(block.links) &&

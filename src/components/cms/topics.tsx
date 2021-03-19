@@ -15,7 +15,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Content, CategoryBadge, useToast } from '@components'
+import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
 
 import dataTopics from '@data/topics.json'
@@ -111,7 +111,7 @@ export function CMSTopics() {
                       {topic.slug}
                     </Text>
                     <Text flex={2}>
-                      <CategoryBadge category={topic.category} />
+                      <LearningTag category={topic.category} />
                     </Text>
                     <Text flex={1} textAlign="right">
                       {topic.sections?.length || '-'}

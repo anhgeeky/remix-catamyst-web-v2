@@ -53,6 +53,7 @@ export function HomeHero() {
         </Stack>
 
         <NextImage
+          priority
           alt="Multiple cats learning"
           src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-home.png`}
           objectFit="contain"

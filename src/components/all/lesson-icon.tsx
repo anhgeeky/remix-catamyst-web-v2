@@ -2,7 +2,7 @@ import { Icon } from '@chakra-ui/react'
 import {
   FaLightbulb as FundamentalIcon,
   FaCog as SpecificIcon,
-  FaClipboardCheck as ProjectIcon,
+  FaPencilAlt as ProjectIcon,
   FaCat as UnknownIcon,
 } from 'react-icons/fa'
 

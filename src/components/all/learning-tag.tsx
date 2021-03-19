@@ -1,8 +1,15 @@
-import { Tag } from '@chakra-ui/react'
+import { HStack, Tag } from '@chakra-ui/react'
+import {
+  FaLightbulb as FundamentalIcon,
+  FaCog as SpecificIcon,
+  FaPencilAlt as ProjectIcon,
+} from 'react-icons/fa'
 
-export function CategoryBadge({ category }) {
+export function LearningTag({ category }) {
   return (
     <Tag
+      as={HStack}
+      // spacing={2}
       variant="solid"
       color="white"
       bg={
@@ -23,7 +30,14 @@ export function CategoryBadge({ category }) {
           : 'teal.400'
       }
     >
-      {category}
+      {category === 'Fundamental' ? (
+        <FundamentalIcon />
+      ) : category === 'Specific' ? (
+        <SpecificIcon />
+      ) : category === 'Project' ? (
+        <ProjectIcon />
+      ) : null}
+      <span>{category}</span>
     </Tag>
   )
 }

@@ -22,7 +22,7 @@ import { DevTool } from '@hookform/devtools'
 import { Layout } from '@layouts'
 import {
   Icon,
-  CategoryBadge,
+  LearningTag,
   HeaderEditor,
   HeadingStack,
   Hero,
@@ -393,7 +393,7 @@ function CMSLessonHero({ register, lessonInitialValues, actions }) {
                 value="Fundamental"
                 defaultChecked={lessonInitialValues.category === 'Fundamental'}
               >
-                <CategoryBadge category="Fundamental" />
+                <LearningTag category="Fundamental" />
               </Radio>
               <Radio
                 ref={register}
@@ -401,7 +401,7 @@ function CMSLessonHero({ register, lessonInitialValues, actions }) {
                 value="Specific"
                 defaultChecked={lessonInitialValues.category === 'Specific'}
               >
-                <CategoryBadge category="Specific" />
+                <LearningTag category="Specific" />
               </Radio>
               <Radio
                 ref={register}
@@ -409,7 +409,7 @@ function CMSLessonHero({ register, lessonInitialValues, actions }) {
                 value="Project"
                 defaultChecked={lessonInitialValues.category === 'Project'}
               >
-                <CategoryBadge category="Project" />
+                <LearningTag category="Project" />
               </Radio>
             </Stack>
           </RadioGroup>

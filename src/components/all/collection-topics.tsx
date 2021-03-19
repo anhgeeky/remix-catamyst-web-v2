@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import slugify from 'slugify'
 
-import { AlertSoon, CategoryBadge } from '@components'
+import { AlertSoon, LearningTag } from '@components'
 
 export function CollectionTopics({ trackSlug, topics }) {
   const bg = useColorModeValue('white', 'gray.800')
@@ -45,7 +45,7 @@ export function CollectionTopics({ trackSlug, topics }) {
                   {topic.iconEmoji || '🐈'} {topic.title}
                 </Heading>
                 <Box>
-                  <CategoryBadge category={topic.category} />
+                  <LearningTag category={topic.category} />
                 </Box>
               </HStack>
             </NextLink>

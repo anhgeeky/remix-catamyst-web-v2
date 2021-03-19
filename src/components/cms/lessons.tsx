@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
-import { Icon, Content, CategoryBadge, useToast } from '@components'
+import { Icon, Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
 
 import dataLessons from '@data/lessons.json'
@@ -97,10 +97,10 @@ export function CMSLessons() {
                       {lesson.slug}
                     </Text>
                     <Text flex={2}>
-                      <CategoryBadge category={lesson.category} />
+                      <LearningTag category={lesson.category} />
                     </Text>
                     <Text flex={2}>
-                      <CategoryBadge category={lesson.level} />
+                      <LearningTag category={lesson.level} />
                     </Text>
                     <Text flex={1} textAlign="center">
                       {lesson.isPublished ? (

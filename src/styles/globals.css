@@ -42,6 +42,18 @@ p code {
 }
 
 /**
+ * Texts Heading permalink.
+ */
+
+.heading-with-anchor:hover a {
+  opacity: 1;
+}
+
+.heading-with-anchor a:focus {
+  opacity: 1;
+}
+
+/**
  * NextImage container.
  */
 

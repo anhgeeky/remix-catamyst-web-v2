@@ -99,28 +99,24 @@ export const transformOptions = {
      * HTML block elements such as headings, paragraph
      */
     if (node.type === 'tag' && node.name === 'h1') {
-      const slug = slugify(node.children[0].data)
       return (
-        <Heading key={index} as="h1" fontFamily="body" size="xl" pt={8}>
-          <span>{node.children[0].data}</span>
-          <Link aria-label="anchor" href={`#${slug}`} color="teal.500" ml={3}>
-            #
-          </Link>
-        </Heading>
+        <CustomHeading key={index} as="h1" size="xl" pt={8}>
+          {node.children[0].data}
+        </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'h2') {
       return (
-        <Heading key={index} as="h2" fontFamily="body" size="lg" pt={5}>
+        <CustomHeading key={index} as="h2" size="lg" pt={5}>
           {node.children[0].data}
-        </Heading>
+        </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'h3') {
       return (
-        <Heading key={index} as="h3" fontFamily="body" size="md" pt={3}>
+        <CustomHeading key={index} as="h3" size="md" pt={3}>
           {node.children[0].data}
-        </Heading>
+        </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'p') {
@@ -181,4 +177,27 @@ export const transformOptions = {
       )
     }
   },
+}
+
+function CustomHeading(props) {
+  const slug = slugify(props.children, { lower: true })
+  return (
+    <Heading
+      className="heading-with-anchor"
+      fontFamily="body"
+      id={slug}
+      {...props}
+    >
+      <span>{props.children}</span>
+      <Link
+        href={`#${slug}`}
+        aria-label={`Anchor to ${props.children}`}
+        color="teal.500"
+        opacity={0}
+        ml={3}
+      >
+        #
+      </Link>
+    </Heading>
+  )
 }

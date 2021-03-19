@@ -31,7 +31,7 @@ import {
 import { Layout } from '@layouts'
 import {
   Card,
-  CategoryBadge,
+  LearningTag,
   ContentWithSidebar,
   HeaderEditor,
   Hero,
@@ -287,7 +287,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
                   </HStack>
 
                   <HStack spacing={1}>
-                    <CategoryBadge category={topic.category} />
+                    <LearningTag category={topic.category} />
                     <ButtonGroup spacing={1} variant="ghost" size="xs">
                       <IconButton
                         colorScheme="gray"
