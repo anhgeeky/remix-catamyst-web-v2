@@ -15,20 +15,27 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon, Country } from '@components'
+import { Icon } from '@components'
 
 /**
  * Because there are a lot of users, the identification is using className.
  */
 export function CollectionUsers({ users }) {
-  const dividerBorderColor = useColorModeValue('gray.200', 'gray.700')
-
   return (
-    <Stack divider={<StackDivider borderColor={dividerBorderColor} />}>
+    <Stack
+      divider={
+        <StackDivider borderColor={useColorModeValue('gray.200', 'gray.700')} />
+      }
+    >
       {users.map((user, index) => {
         return (
           <NextLink key={user.id} href={user.handle} passHref>
-            <Link as="article" rounded="md" p={3} _hover={{ bg: 'gray.100' }}>
+            <Link
+              as="article"
+              rounded="md"
+              p={3}
+              _hover={{ bg: useColorModeValue('gray.100', 'gray.800') }}
+            >
               <Stack
                 className="user-and-contents"
                 direction={{ base: 'column', lg: 'row' }}
@@ -59,11 +66,14 @@ export function CollectionUsers({ users }) {
                     >
                       @{user.handle}
                     </Heading>
-                    <Country code={user.countryCode} />
                   </Stack>
                 </HStack>
 
-                <HStack width="100%" overflow="scroll">
+                <HStack
+                  className="hidden-scrollbar"
+                  width="100%"
+                  overflowX="scroll"
+                >
                   <Box bg="gray.500" height={100} width={200}>
                     {' '}
                   </Box>

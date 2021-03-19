@@ -11,7 +11,7 @@ export function HeaderTabs({ links }) {
     <Flex py={3} justify={{ base: 'flex-start', md: 'center' }}>
       <HStack
         role="tablist"
-        className="tab-list"
+        className="hidden-scrollbar"
         width="1200px"
         spacing={3}
         px={5}

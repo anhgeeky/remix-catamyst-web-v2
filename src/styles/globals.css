@@ -29,16 +29,19 @@ p code {
 }
 
 /**
- * TabList
+ * Heading Stack with icon.
  */
 
-.tab-list {
-  -ms-overflow-style: none; /* IE10+ */
-  scrollbar-width: none; /* Firefox */
+.heading-stack svg {
+  margin-right: 8px;
 }
 
-.tab-list::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+/**
+ * Card and Card Placeholder
+ */
+
+.card-placeholder p {
+  color: #999;
 }
 
 /**
@@ -51,6 +54,19 @@ p code {
 
 .heading-with-anchor a:focus {
   opacity: 1;
+}
+
+/**
+ * Hidden scrollbars.
+ */
+
+.hidden-scrollbar {
+  -ms-overflow-style: none; /* IE10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 /**
@@ -103,4 +119,10 @@ p code {
 
 .chakra-form__helper-text {
   line-height: 21px !important;
+}
+
+/** Quick fix for Chakra UI AutoComplete */
+.hide-last-div > div div:last-of-type {
+  margin: 0;
+  padding: 0;
 }

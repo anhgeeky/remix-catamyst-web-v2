@@ -16,11 +16,11 @@
     "buttons": {
       "isNotAuthenticated": {
         "href": "/signup",
-        "text": "Sign Up for Basic"
+        "text": "Sign up for Basic plan"
       },
       "isAuthenticated": {
         "href": "/dashboard/overview",
-        "text": "Continue Basic"
+        "text": "Continue Basic plan"
       }
     }
   },
@@ -42,11 +42,11 @@
     "buttons": {
       "isNotAuthenticated": {
         "href": "/signup?plan=pro",
-        "text": "Sign Up for Pro"
+        "text": "Sign up for Pro plan"
       },
       "isAuthenticated": {
         "href": "/settings/billing?plan=pro",
-        "text": "Subscribe Pro"
+        "text": "Subscribe Pro plan"
       }
     }
   },
@@ -66,11 +66,11 @@
     "buttons": {
       "isNotAuthenticated": {
         "href": "/signup?plan=super",
-        "text": "Sign Up for Super"
+        "text": "Sign up for Super plan"
       },
       "isAuthenticated": {
         "href": "/settings/billing?plan=super",
-        "text": "Request Super"
+        "text": "Request Super plan"
       }
     }
   }

@@ -8,21 +8,37 @@
     "bioHtml": "<p>Just a guest or demo account for using Catamyst.</p>",
     "countryCode": "MARS",
     "website": { "url": "https://example.com", "name": "Example Website" },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Basic",
-    "isEmailConfirmed": true
+    "isEmailConfirmed": true,
+    "joinedAt": "2020-02-01"
   },
   {
     "id": 1,
     "email": "",
-    "handle": "catamyst",
-    "name": "Catamyst",
+    "handle": "admin",
+    "name": "Administrator",
     "nickname": "Admin",
     "avatarUrl": "https://storage.catamyst.com/avatars/catamyst.jpg",
+    "headline": "The Administrator",
+    "bioHtml": "<p>Usually running <code>sudo</code> commands.</p>",
+    "location": "localhost",
+    "role": "Admin",
+    "isVerified": true,
+    "isEmailConfirmed": true,
+    "joinedAt": "2020-01-01"
+  },
+  {
+    "id": 2,
+    "email": "",
+    "handle": "catamyst",
+    "name": "Catamyst",
+    "nickname": "Catamyst",
+    "avatarUrl": "/assets/logos/catamyst-avatar.png",
     "coverUrl": "https://storage.catamyst.com/covers/iceberg.jpg",
-    "bioHtml": "<p>Helping you to enjoy this site.</p>",
-    "headline": "The Super User",
-    "location": "Everywhere",
+    "headline": "The Company of This Site",
+    "bioHtml": "<p>Helping people like you to learn and grow with web development and software engineering.</p>",
+    "location": "Remote",
     "countryCode": "EARTH",
     "website": { "url": "https://catamyst.com/about", "name": "Catamyst.com" },
     "socials": [
@@ -31,12 +47,12 @@
       { "name": "LinkedIn", "url": "https://linkedin.com/company/catamyst" }
     ],
     "organization": {
-      "url": "https://catamyst.com",
       "name": "Catamyst",
-      "title": "Administrator",
+      "title": "Operation",
+      "url": "https://catamyst.com",
       "handle": "catamyst"
     },
-    "role": "Admin",
+    "role": "Employer",
     "plan": "Super",
     "isVerified": true,
     "isEmailConfirmed": true,
@@ -45,10 +61,11 @@
     "posts": [1],
     "discussions": [1],
     "mentors": [2],
-    "jobs": [1]
+    "jobs": [1],
+    "joinedAt": "2020-01-01"
   },
   {
-    "id": 2,
+    "id": 3,
     "email": "",
     "handle": "haidar",
     "name": "M Haidar Hanif",
@@ -83,10 +100,11 @@
     "posts": [1],
     "discussions": [1],
     "mentors": [2],
-    "jobs": [1]
+    "jobs": [1],
+    "joinedAt": "2021-01-01"
   },
   {
-    "id": 3,
+    "id": 4,
     "email": "",
     "handle": "maya",
     "name": "Maya Asmara",
@@ -112,10 +130,11 @@
     "role": "Staff",
     "plan": "Super",
     "isVerified": true,
-    "isEmailConfirmed": true
+    "isEmailConfirmed": true,
+    "joinedAt": "2021-01-01"
   },
   {
-    "id": 4,
+    "id": 5,
     "email": "",
     "handle": "latifah",
     "name": "Latifah Dhia I",
@@ -140,13 +159,13 @@
       "handle": "catamyst",
       "url": "https://catamyst.com"
     },
-    "role": "Staff",
+    "role": "Learner",
     "plan": "Super",
-    "isVerified": true,
-    "isEmailConfirmed": true
+    "isEmailConfirmed": true,
+    "joinedAt": "2020-12-01"
   },
   {
-    "id": 5,
+    "id": 6,
     "email": "",
     "handle": "rahmanfadhil",
     "name": "Rahman Fadhil",
@@ -167,12 +186,13 @@
       "name": "Freelance",
       "url": "https://rahmanfadhil.com"
     },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Super",
-    "isEmailConfirmed": false
+    "isEmailConfirmed": false,
+    "joinedAt": "2021-01-01"
   },
   {
-    "id": 6,
+    "id": 7,
     "email": "",
     "handle": "ahmadmarzuki",
     "name": "Ahmad Marzuki",
@@ -192,12 +212,13 @@
       "title": "Software Engineer",
       "name": "Grosir Parts"
     },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Super",
-    "isEmailConfirmed": false
+    "isEmailConfirmed": false,
+    "joinedAt": "2020-03-01"
   },
   {
-    "id": 7,
+    "id": 8,
     "email": "",
     "handle": "jonathannicolas",
     "name": "Jonathan Nicolas",
@@ -217,12 +238,13 @@
       "title": "Full Stack Web Developer",
       "name": "Freelance"
     },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Super",
-    "isEmailConfirmed": false
+    "isEmailConfirmed": false,
+    "joinedAt": "2020-04-01"
   },
   {
-    "id": 8,
+    "id": 9,
     "email": "",
     "handle": "mfarisgibran",
     "name": "M Faris Gibran",
@@ -245,12 +267,13 @@
       "title": "Web Developer",
       "name": "Freelance"
     },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Super",
-    "isEmailConfirmed": false
+    "isEmailConfirmed": false,
+    "joinedAt": "2020-08-01"
   },
   {
-    "id": 9,
+    "id": 10,
     "email": "",
     "handle": "mayasopiah",
     "name": "Maya Sopiah",
@@ -265,12 +288,13 @@
       "title": "Software Engineer",
       "name": "Glee Trees"
     },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Pro",
-    "isEmailConfirmed": false
+    "isEmailConfirmed": false,
+    "joinedAt": "2021-01-01"
   },
   {
-    "id": 10,
+    "id": 11,
     "email": "",
     "handle": "fadillahbilqis",
     "name": "Fadillah Bilqis",
@@ -285,12 +309,12 @@
       "title": "Developer",
       "name": "Company"
     },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Pro",
     "isEmailConfirmed": false
   },
   {
-    "id": 11,
+    "id": 12,
     "email": "",
     "handle": "digachandra",
     "name": "Diga Chandra",
@@ -305,8 +329,31 @@
       "title": "Web Developer",
       "name": "Vidio (KMK Labs)"
     },
-    "role": "Regular",
+    "role": "Learner",
     "plan": "Pro",
-    "isEmailConfirmed": false
+    "isEmailConfirmed": false,
+    "joinedAt": "2021-01-01"
+  },
+  {
+    "id": 13,
+    "email": "",
+    "handle": "calvinwong",
+    "name": "Calvin Wong",
+    "nickname": "Calvin",
+    "avatarUrl": "https://storage.catamyst.com/avatars/calvinwong.jpg",
+    "coverUrl": "",
+    "headline": "",
+    "bioHtml": "<p>CEO of Plater, Member of Global Shapers and Founder of Mealennials. My team is building Indonesia food supply chain, in association Telesindo Group.</p>",
+    "countryCode": "ID",
+    "location": "Tangerang",
+    "organization": {
+      "title": "CEO",
+      "name": "Plater",
+      "url": "https://plater.id"
+    },
+    "role": "Employer",
+    "plan": "Pro",
+    "isEmailConfirmed": false,
+    "joinedAt": "2021-01-01"
   }
 ]

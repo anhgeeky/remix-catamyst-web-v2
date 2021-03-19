@@ -1,8 +1,8 @@
 import NextHead from 'next/head'
 import NextImage from 'next/image'
-import { Box, Heading, Stack, Text } from '@chakra-ui/react'
+import { Box, Heading, Stack, Text, Button } from '@chakra-ui/react'
 
-import { Card, Content, HeadingStack } from '@components'
+import { Card, CardPlaceholder, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
 export function DashboardJobs({ auth }) {
@@ -16,7 +16,10 @@ export function DashboardJobs({ auth }) {
         <Heading as="h1" size="xl">
           Jobs
         </Heading>
-        <Text>Your applied jobs and posted jobs.</Text>
+        <Text>
+          You can search and apply jobs that suits you. Either for a full-time,
+          part-time, quarter-time, freelance, or project-based.
+        </Text>
       </DashboardHero>
 
       <Content>
@@ -24,23 +27,21 @@ export function DashboardJobs({ auth }) {
           <Stack>
             <HeadingStack>Jobs you've applied to:</HeadingStack>
             <Card>
-              <Box>
-                <NextImage
-                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-jobs-none.png`}
-                  alt="No Jobs"
-                  width={200}
-                  height={200}
-                />
-              </Box>
-              <Text>
-                Hey {auth.user.name}, you haven't applied to a job yet.
-              </Text>
+              <CardPlaceholder>
+                <Box>
+                  <NextImage
+                    src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-jobs-none.png`}
+                    alt="No Jobs"
+                    width={200}
+                    height={200}
+                  />
+                </Box>
+                <Text>
+                  Hey {auth.user.name}, you haven't applied to a job yet.
+                </Text>
+                <Button colorScheme="teal">Search for a job</Button>
+              </CardPlaceholder>
             </Card>
-          </Stack>
-
-          <Stack>
-            <HeadingStack>Jobs you've posted:</HeadingStack>
-            <Card>Hey {auth.user.name}, you haven't posted any job yet.</Card>
           </Stack>
         </Stack>
       </Content>

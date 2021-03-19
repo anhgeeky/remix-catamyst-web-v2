@@ -6,7 +6,7 @@ import dataCountries from '@data/countries.json'
 export function Country({ code }) {
   const country = dataCountries.find((country) => country.code === code)
 
-  if (country.code === 'EARTH') {
+  if (country?.code === 'EARTH') {
     return (
       <HStack>
         <img
@@ -20,7 +20,7 @@ export function Country({ code }) {
       </HStack>
     )
   }
-  if (country.code === 'MARS') {
+  if (country?.code === 'MARS') {
     return (
       <HStack>
         <img
@@ -34,7 +34,7 @@ export function Country({ code }) {
       </HStack>
     )
   }
-  if (country.code && country.name) {
+  if (country?.code && country?.name) {
     return (
       <HStack>
         <Flag country={country.code} role="flag" size={20} alt={country.name} />
@@ -42,9 +42,5 @@ export function Country({ code }) {
       </HStack>
     )
   }
-  return (
-    <HStack>
-      <i>Unknown</i>
-    </HStack>
-  )
+  return null
 }

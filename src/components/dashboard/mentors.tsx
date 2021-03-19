@@ -1,7 +1,7 @@
 import NextHead from 'next/head'
 import NextImage from 'next/image'
-import { Box, Heading, Stack, Text } from '@chakra-ui/react'
-import { Card, Content, HeadingStack } from '@components'
+import { Box, Heading, Stack, Text, Button } from '@chakra-ui/react'
+import { Card, CardPlaceholder, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
 export function DashboardMentors({ auth }) {
@@ -15,7 +15,10 @@ export function DashboardMentors({ auth }) {
         <Heading as="h1" size="xl">
           Mentors
         </Heading>
-        <Text>Your assigned mentors from Catamyst.</Text>
+        <Text>
+          You can be assigned with a dedicated 1-on-1 live mentorship from
+          experienced professionals.
+        </Text>
       </DashboardHero>
 
       <Content>
@@ -24,24 +27,33 @@ export function DashboardMentors({ auth }) {
             <Stack>
               <HeadingStack>Assigned mentors:</HeadingStack>
               <Card>
-                <Box>
-                  <NextImage
-                    src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-mentors-none.png`}
-                    alt="No Mentors"
-                    width={200}
-                    height={200}
-                  />
-                </Box>
-                <Text>
-                  Hey {auth.user.name}, you don't have any mentors yet.
-                </Text>
+                <CardPlaceholder>
+                  <Box>
+                    <NextImage
+                      src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-mentors-none.png`}
+                      alt="No Mentors"
+                      width={200}
+                      height={200}
+                    />
+                  </Box>
+                  <Text>
+                    Hey {auth.user.name}, you don't have any mentors yet.
+                  </Text>
+                  <Button colorScheme="teal">Request Super plan</Button>
+                </CardPlaceholder>
               </Card>
             </Stack>
 
             <Stack>
               <HeadingStack>Available mentors:</HeadingStack>
               <Card>
-                <Text>Here are the available mentors you can request.</Text>
+                <CardPlaceholder>
+                  <Text>
+                    Here are the available mentors you can request when you
+                    enroll in <b>Super</b> plan.
+                  </Text>
+                  <Button colorScheme="teal">Request Super plan</Button>
+                </CardPlaceholder>
               </Card>
             </Stack>
           </Stack>

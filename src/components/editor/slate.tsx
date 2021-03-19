@@ -76,7 +76,12 @@ export default function EditorSlate({ slateElements, handleSave }) {
           setValue(value)
         }}
       >
-        <ButtonGroup size="sm" spacing={2}>
+        <ButtonGroup
+          className="hidden-scrollbar"
+          size="sm"
+          spacing={1}
+          overflow="scroll"
+        >
           <BlockButton format="heading-one" icon="heading-one" />
           <BlockButton format="heading-two" icon="heading-two" />
           <BlockButton format="heading-three" icon="heading-three" />
@@ -164,19 +169,19 @@ const Element = ({ attributes, children, element }) => {
   switch (element.type) {
     case 'heading-one':
       return (
-        <Heading as="h1" size="xl" mt={3} {...attributes}>
+        <Heading as="h1" size="xl" fontFamily="body" mt={3} {...attributes}>
           {children}
         </Heading>
       )
     case 'heading-two':
       return (
-        <Heading as="h2" size="lg" mt={3} {...attributes}>
+        <Heading as="h2" size="lg" fontFamily="body" mt={3} {...attributes}>
           {children}
         </Heading>
       )
     case 'heading-three':
       return (
-        <Heading as="h3" size="md" mt={3} {...attributes}>
+        <Heading as="h3" size="md" fontFamily="body" mt={3} {...attributes}>
           {children}
         </Heading>
       )

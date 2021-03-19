@@ -1,1 +1,1 @@
-export { UserProfile } from '@components/user/profile'
+export { UserProfile, UserNameHandle } from '@components/user/profile'

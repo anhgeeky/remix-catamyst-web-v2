@@ -31,11 +31,7 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
               boxShadow="xs"
               p={5}
             >
-              <Heading as="h3" size="md">
-                {section.title}
-              </Heading>
-
-              <Stack mt={5}>
+              <Stack>
                 {section.lessons.map((lessonId, index) => {
                   const lesson = dataLessons.find((lesson, index) => {
                     return lesson.id === lessonId
@@ -50,15 +46,23 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
                   }
                   if (lesson) {
                     const lessonHref = `/learn/${trackSlug}/${topicSlug}/${lesson.slug}`
+
                     return (
-                      <NextLink key={lesson.slug} href={lessonHref} passHref>
-                        <Link rounded="md">
-                          <Flex align="center" cursor="pointer">
-                            <LessonIcon type={lesson.category} />
-                            <Text ml={2}>{lesson.title}</Text>
-                          </Flex>
-                        </Link>
-                      </NextLink>
+                      <>
+                        {index === 0 && (
+                          <Heading as="h3" size="md">
+                            <Link href={lessonHref}>{section.title}</Link>
+                          </Heading>
+                        )}
+                        <NextLink key={lesson.slug} href={lessonHref} passHref>
+                          <Link rounded="md">
+                            <Flex align="center" cursor="pointer">
+                              <LessonIcon type={lesson.category} />
+                              <Text ml={2}>{lesson.title}</Text>
+                            </Flex>
+                          </Link>
+                        </NextLink>
+                      </>
                     )
                   }
                   return null

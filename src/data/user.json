@@ -3,6 +3,5 @@
   "name": "Guest",
   "handle": "guest",
   "email": "guest@catamyst.com",
-  "plan": "Basic",
-  "bio": "Guest account of Catamyst."
+  "plan": "Basic"
 }

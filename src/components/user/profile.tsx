@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
   chakra,
@@ -21,11 +22,10 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
-import { useSelector, useDispatch } from 'react-redux'
 
 import { Country, Icon, SocialLinks, useToast } from '@components'
 import { transformOptions } from '@components/blocks'
-import { trimUrl } from '@utils'
+import { trimUrl, getJoinedDate } from '@utils'
 import { useAuth } from '@hooks'
 
 /**
@@ -42,9 +42,6 @@ export function UserProfile({ user }) {
   const [isFavorited, setIsFavorited] = useState(false)
 
   const isActionsAllowed = isAuthenticated
-  const isVerified = user.isVerified // Verified
-  const isBasicPlan = user.plan === 'Basic' ? true : false // Plan
-  const isRegularRole = user.role === 'Regular' ? true : false // Role
   const isSameUser = user.handle === auth?.user?.handle
 
   const hasCountry = Boolean(user.countryCode)
@@ -52,7 +49,7 @@ export function UserProfile({ user }) {
   const hasOrganization = user.organization?.title && user.organization?.name
   const hasSocialLinks = Boolean(user.socials?.length > 0)
   const hasWebsite = Boolean(user.website?.url)
-  const joinDate = 'January 2020'
+  const joinedDate = getJoinedDate(user?.joinedAt)
 
   const handleFollow = () => {
     if (isActionsAllowed) {
@@ -100,9 +97,6 @@ export function UserProfile({ user }) {
       <UserProfileContent
         user={user}
         state={{
-          isVerified,
-          isBasicPlan,
-          isRegularRole,
           isSameUser,
           isFollowed,
           isFavorited,
@@ -111,7 +105,7 @@ export function UserProfile({ user }) {
           hasOrganization,
           hasSocialLinks,
           hasWebsite,
-          joinDate,
+          joinedDate,
         }}
         actions={{
           handleFollow,
@@ -175,49 +169,7 @@ function UserProfileContent({ user, state, actions }) {
             <Avatar name={user.name} src={user.avatarUrl} size="2xl" />
           </Box>
 
-          <Box id="user-name-handle" textAlign="center">
-            <Flex id="user-name-verified">
-              <Heading id="user-name" as="h1" size="lg">
-                {user.name}
-              </Heading>
-              {state.isVerified && (
-                <Tooltip
-                  hasArrow
-                  label="Verified user account"
-                  aria-label="Verified"
-                  placement="top"
-                >
-                  <chakra.span
-                    fontSize="2xl"
-                    color="teal.500"
-                    position="relative"
-                    top="3px"
-                    ml={2}
-                  >
-                    <Icon name="verified" />
-                  </chakra.span>
-                </Tooltip>
-              )}
-            </Flex>
-            <HStack id="user-handle-role-plan" justify="center">
-              <Heading
-                id="user-handle"
-                as="h2"
-                size="sm"
-                color="gray.500"
-                fontFamily="body"
-                fontWeight="400"
-              >
-                @{user.handle}
-              </Heading>
-              {!state.isRegularRole && (
-                <Badge variant="solid">{user.role}</Badge>
-              )}
-              {!state.isBasicPlan && state.isRegularRole && (
-                <Badge variant="solid">{user.plan}</Badge>
-              )}
-            </HStack>
-          </Box>
+          <UserNameHandle user={user} />
 
           <Box id="user-actions" as={ButtonGroup} size="sm">
             {state.isSameUser && (
@@ -286,7 +238,17 @@ function UserProfileContent({ user, state, actions }) {
             <Box id="user-organization" mr={5} as={HStack} spacing={1}>
               <Icon name="organization" />
               <span>{user.organization.title}, </span>
-              <span>{user.organization.name}</span>
+              {user.organization.handle ? (
+                <NextLink href={user.organization.handle} passHref>
+                  <Link color="teal.500">{user.organization.name}</Link>
+                </NextLink>
+              ) : user.organization.url ? (
+                <Link isExternal href={user.organization.url} color="teal.500">
+                  {user.organization.name}
+                </Link>
+              ) : (
+                <span>{user.organization.name}</span>
+              )}
             </Box>
           )}
 
@@ -327,7 +289,7 @@ function UserProfileContent({ user, state, actions }) {
 
           <Box id="user-join-date" mr={5} as={HStack} spacing={1}>
             <Icon name="date" />
-            <span>Joined {state.joinDate}</span>
+            <span>Joined {state.joinedDate}</span>
           </Box>
         </Flex>
 
@@ -372,5 +334,54 @@ function UserProfileContent({ user, state, actions }) {
         </Flex>
       </Stack>
     </Flex>
+  )
+}
+
+export function UserNameHandle({ user }) {
+  const isVerified = user.isVerified
+  const isBasicPlan = user.plan === 'Basic' ? true : false
+
+  return (
+    <Box id="user-name-handle" textAlign="center">
+      <Flex id="user-name-verified" justify="center">
+        <Heading id="user-name" as="h1" size="lg">
+          {user.name}
+        </Heading>
+
+        {isVerified && (
+          <Tooltip
+            hasArrow
+            label="Verified user account"
+            aria-label="Verified"
+            placement="top"
+          >
+            <chakra.span
+              fontSize="2xl"
+              color="teal.500"
+              position="relative"
+              top="3px"
+              ml={2}
+            >
+              <Icon name="verified" />
+            </chakra.span>
+          </Tooltip>
+        )}
+      </Flex>
+
+      <HStack id="user-handle-role-plan" justify="center">
+        <Heading
+          id="user-handle"
+          as="h2"
+          size="sm"
+          color="gray.500"
+          fontFamily="body"
+          fontWeight="400"
+        >
+          @{user.handle}
+        </Heading>
+        <Badge variant="solid">{user.role}</Badge>
+        {!isBasicPlan && <Badge variant="solid">{user.plan}</Badge>}
+      </HStack>
+    </Box>
   )
 }

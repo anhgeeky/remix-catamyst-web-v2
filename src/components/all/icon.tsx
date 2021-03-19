@@ -30,6 +30,7 @@ import {
   FaQuoteLeft as QuoteLeftIcon,
   FaQuoteRight as QuoteRightIcon,
   FaSave as SaveIcon,
+  FaRocket as PublishIcon,
   FaUserAlt as AuthorIcon,
   FaEnvelope as EmailIcon,
   FaKey as PasswordIcon,
@@ -138,6 +139,8 @@ export function Icon({ name }) {
       return <ResetIcon />
     case 'save':
       return <SaveIcon />
+    case 'publish':
+      return <PublishIcon />
     case 'size':
       return <SizeIcon />
     case 'texts':

@@ -1,0 +1,7 @@
+export const NAVIGATE_TRACKS = 'navigate/tracks'
+export const NAVIGATE_DISCUSSIONS = 'navigate/discussions'
+export const NAVIGATE_POSTS = 'navigate/posts/new'
+export const NAVIGATE_PROJECTS = 'navigate/projects/new'
+export const NAVIGATE_JOBS = 'navigate/jobs'
+export const NAVIGATE_MENTORS = 'navigate/mentors'
+export const NAVIGATE_CERTIFICATES = 'navigate/certificates'

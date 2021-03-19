@@ -27,3 +27,10 @@ export const getDayNamePeriod = () => {
   const dayNamePeriod = `${getDayName()} ${getDayPeriod()}`
   return dayNamePeriod
 }
+
+export const dayNamePeriod = `${getDayName()} ${getDayPeriod()}`
+
+export const getJoinedDate = (date) => {
+  const joinedDate = dayjs(date).format('MMMM YYYY')
+  return joinedDate
+}
