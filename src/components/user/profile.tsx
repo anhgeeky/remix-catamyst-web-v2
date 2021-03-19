@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import NextImage from 'next/image'
 import {
   chakra,
@@ -12,7 +14,9 @@ import {
   Image,
   Link,
   Stack,
+  Badge,
   Text,
+  Tooltip,
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -22,27 +26,72 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Country, Icon, SocialLinks, useToast } from '@components'
 import { transformOptions } from '@components/blocks'
 import { trimUrl } from '@utils'
+import { useAuth } from '@hooks'
 
 /**
  * User profile.
  * user.bioHtml is the same format with BlockTexts.
+ * Because there is only one user, the identification is using id.
  */
 export function UserProfile({ user }) {
   const toast = useToast()
-  const auth = useSelector((state) => state.auth)
+  const router = useRouter()
+  const { auth, isAuthenticated } = useAuth()
+
+  const [isFollowed, setIsFollowed] = useState(false)
+  const [isFavorited, setIsFavorited] = useState(false)
+
+  const isActionsAllowed = isAuthenticated
+  const isVerified = user.isVerified // Verified
+  const isBasicPlan = user.plan === 'Basic' ? true : false // Plan
+  const isRegularRole = user.role === 'Regular' ? true : false // Role
   const isSameUser = user.handle === auth?.user?.handle
-  const isFollowed = false
+
+  const hasCountry = Boolean(user.countryCode)
+  const hasLocation = Boolean(user.location)
+  const hasOrganization = user.organization?.title && user.organization?.name
+  const hasSocialLinks = Boolean(user.socials?.length > 0)
+  const hasWebsite = Boolean(user.website?.url)
+  const joinDate = 'January 2020'
 
   const handleFollow = () => {
-    toast({ status: 'success', title: `Followed ${user.name}` })
+    if (isActionsAllowed) {
+      setIsFollowed(true)
+      toast({ status: 'success', title: `Followed ${user.name}` })
+    } else {
+      router.push('/signin')
+    }
   }
 
   const handleUnfollow = () => {
-    toast({ status: 'warning', title: `Unfollowed ${user.name}` })
+    if (isActionsAllowed) {
+      setIsFollowed(false)
+      toast({ status: 'warning', title: `Unfollowed ${user.name}` })
+    } else {
+      router.push('/signin')
+    }
   }
 
   const handleFavorite = () => {
-    toast({ title: `Favorited ${user.name}` })
+    if (isActionsAllowed) {
+      setIsFavorited(true)
+      toast({ title: `Favorited ${user.name}` })
+    } else {
+      router.push('/signin')
+    }
+  }
+
+  const handleUnfavorite = () => {
+    if (isActionsAllowed) {
+      setIsFavorited(false)
+      toast({ status: 'warning', title: `Unfavorited ${user.name}` })
+    } else {
+      router.push('/signin')
+    }
+  }
+
+  const handleEditProfile = () => {
+    router.push('/settings/profile')
   }
 
   return (
@@ -51,13 +100,25 @@ export function UserProfile({ user }) {
       <UserProfileContent
         user={user}
         state={{
+          isVerified,
+          isBasicPlan,
+          isRegularRole,
           isSameUser,
           isFollowed,
+          isFavorited,
+          hasCountry,
+          hasLocation,
+          hasOrganization,
+          hasSocialLinks,
+          hasWebsite,
+          joinDate,
         }}
         actions={{
           handleFollow,
           handleUnfollow,
           handleFavorite,
+          handleUnfavorite,
+          handleEditProfile,
         }}
       />
     </>
@@ -91,13 +152,6 @@ function UserProfileCover({ user }) {
 }
 
 function UserProfileContent({ user, state, actions }) {
-  const hasCountry = Boolean(user.countryCode)
-  const hasLocation = Boolean(user.location)
-  const hasOrganization = user.organization?.title && user.organization?.name
-  const joinDate = 'January 2020'
-  const hasWebsite = Boolean(user.website?.url)
-  const hasSocialLinks = Boolean(user.socials?.length > 0)
-
   const placeholder = {
     totalFollowing: 10,
     totalFollowers: 20,
@@ -122,25 +176,57 @@ function UserProfileContent({ user, state, actions }) {
           </Box>
 
           <Box id="user-name-handle" textAlign="center">
-            <Heading id="user-name" as="h1" size="lg">
-              {user.name}
-            </Heading>
-            <Heading
-              id="user-handle"
-              as="h2"
-              size="sm"
-              color="gray.500"
-              fontFamily="body"
-              fontWeight="400"
-            >
-              @{user.handle}
-            </Heading>
+            <Flex id="user-name-verified">
+              <Heading id="user-name" as="h1" size="lg">
+                {user.name}
+              </Heading>
+              {state.isVerified && (
+                <Tooltip
+                  hasArrow
+                  label="Verified user account"
+                  aria-label="Verified"
+                  placement="top"
+                >
+                  <chakra.span
+                    fontSize="2xl"
+                    color="teal.500"
+                    position="relative"
+                    top="3px"
+                    ml={2}
+                  >
+                    <Icon name="verified" />
+                  </chakra.span>
+                </Tooltip>
+              )}
+            </Flex>
+            <HStack id="user-handle-role-plan" justify="center">
+              <Heading
+                id="user-handle"
+                as="h2"
+                size="sm"
+                color="gray.500"
+                fontFamily="body"
+                fontWeight="400"
+              >
+                @{user.handle}
+              </Heading>
+              {!state.isRegularRole && (
+                <Badge variant="solid">{user.role}</Badge>
+              )}
+              {!state.isBasicPlan && state.isRegularRole && (
+                <Badge variant="solid">{user.plan}</Badge>
+              )}
+            </HStack>
           </Box>
 
           <Box id="user-actions" as={ButtonGroup} size="sm">
             {state.isSameUser && (
-              <Button colorScheme="teal" variant="outline">
-                This is you
+              <Button
+                colorScheme="teal"
+                variant="outline"
+                onClick={actions.handleEditProfile}
+              >
+                Edit profile
               </Button>
             )}
             {!state.isSameUser && !state.isFollowed && (
@@ -158,24 +244,31 @@ function UserProfileContent({ user, state, actions }) {
                 variant="solid"
                 onClick={actions.handleUnfollow}
               >
-                Following
+                Unfollow
               </Button>
             )}
-            {!state.isSameUser && (
+            {!state.isFavorited && (
               <IconButton
                 aria-label="Favorite user"
                 colorScheme="teal"
                 variant="outline"
                 icon={<Icon name="favorite" />}
                 onClick={actions.handleFavorite}
-              >
-                Icon
-              </IconButton>
+              />
+            )}
+            {state.isFavorited && (
+              <IconButton
+                aria-label="Unfavorite user"
+                colorScheme="teal"
+                variant="solid"
+                icon={<Icon name="favorite" />}
+                onClick={actions.handleUnfavorite}
+              />
             )}
           </Box>
         </VStack>
 
-        <Stack id="user-info-1" spacing={0}>
+        <Stack id="user-info-1" spacing={0} pt={3}>
           {user.headline && (
             <Box id="user-headline">
               <Heading as="h3" size="md" color="gray.500">
@@ -189,7 +282,7 @@ function UserProfileContent({ user, state, actions }) {
         </Stack>
 
         <Flex id="user-info-2" color="gray.500" align="center" flexWrap="wrap">
-          {hasOrganization && (
+          {state.hasOrganization && (
             <Box id="user-organization" mr={5} as={HStack} spacing={1}>
               <Icon name="organization" />
               <span>{user.organization.title}, </span>
@@ -197,13 +290,13 @@ function UserProfileContent({ user, state, actions }) {
             </Box>
           )}
 
-          {hasCountry && (
+          {state.hasCountry && (
             <Box id="user-country" mr={5}>
               <Country code={user.countryCode} />
             </Box>
           )}
 
-          {hasLocation && (
+          {state.hasLocation && (
             <Box id="user-location" mr={5} as={HStack} spacing={1}>
               <Icon name="location" />
               <span>{user.location}</span>
@@ -212,70 +305,67 @@ function UserProfileContent({ user, state, actions }) {
         </Flex>
 
         <Flex id="user-info-3" color="gray.500" align="center" flexWrap="wrap">
-          {hasWebsite && (
-            <Box id="user-website" mr={5}>
+          {state.hasWebsite && (
+            <Box id="user-website" mr={5} as={HStack} spacing={1}>
+              <Icon name="link" />
               <Link
                 isExternal
                 href={user.website.url}
-                as={HStack}
-                spacing={1}
                 fontWeight="500"
+                color="teal.500"
               >
-                <Icon name="link" />
-                <chakra.span color="teal.500">
-                  {trimUrl(user.website.url)}
-                </chakra.span>
+                {trimUrl(user.website.url)}
               </Link>
             </Box>
           )}
 
-          {hasSocialLinks && (
-            <Box id="user-social-links" mr={5}>
+          {state.hasSocialLinks && (
+            <Box id="user-social-links" mr={5} my={1}>
               <SocialLinks links={user.socials} />
             </Box>
           )}
 
           <Box id="user-join-date" mr={5} as={HStack} spacing={1}>
             <Icon name="date" />
-            <span>Joined {joinDate}</span>
+            <span>Joined {state.joinDate}</span>
           </Box>
         </Flex>
 
         <Flex id="user-info-4" color="gray.500" align="center" flexWrap="wrap">
-          <Box id="user-following" mr={5} as={HStack} spacing={1}>
+          <Box id="user-following" mr={3} as={HStack} spacing={1}>
             <chakra.span fontWeight="700">
               {placeholder.totalFollowing}
             </chakra.span>
             <span>Following</span>
           </Box>
 
-          <Box id="user-followers" mr={5} as={HStack} spacing={1}>
+          <Box id="user-followers" mr={3} as={HStack} spacing={1}>
             <chakra.span fontWeight="700">
               {placeholder.totalFollowers}
             </chakra.span>
             <span>Followers</span>
           </Box>
 
-          <Box id="user-posts" mr={5} as={HStack} spacing={1}>
+          <Box id="user-posts" mr={3} as={HStack} spacing={1}>
             <chakra.span fontWeight="700">{placeholder.totalPosts}</chakra.span>
             <span>Posts</span>
           </Box>
 
-          <Box id="user-projects" mr={5} as={HStack} spacing={1}>
+          <Box id="user-projects" mr={3} as={HStack} spacing={1}>
             <chakra.span fontWeight="700">
               {placeholder.totalProjects}
             </chakra.span>
             <span>Projects</span>
           </Box>
 
-          <Box id="user-favorites" mr={5} as={HStack} spacing={1}>
+          <Box id="user-favorites" mr={3} as={HStack} spacing={1}>
             <chakra.span fontWeight="700">
               {placeholder.totalFavorites}
             </chakra.span>
             <span>Favorites</span>
           </Box>
 
-          <Box id="user-likes" mr={5} as={HStack} spacing={1}>
+          <Box id="user-likes" mr={3} as={HStack} spacing={1}>
             <chakra.span fontWeight="700">{placeholder.totalLikes}</chakra.span>
             <span>Likes</span>
           </Box>

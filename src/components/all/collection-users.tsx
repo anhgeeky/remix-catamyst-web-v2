@@ -1,9 +1,11 @@
 import NextLink from 'next/link'
 import {
+  chakra,
   Avatar,
   Box,
   Heading,
   HStack,
+  Flex,
   Link,
   LinkBox,
   LinkOverlay,
@@ -13,8 +15,11 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Country } from '@components'
+import { Icon, Country } from '@components'
 
+/**
+ * Because there are a lot of users, the identification is using className.
+ */
 export function CollectionUsers({ users }) {
   const dividerBorderColor = useColorModeValue('gray.200', 'gray.700')
 
@@ -31,9 +36,19 @@ export function CollectionUsers({ users }) {
                 <HStack minW={300} spacing={3}>
                   <Avatar name={user.name} src={user.avatarUrl} size="xl" />
                   <Stack spacing={1}>
-                    <Heading className="user-name" as="h3" size="md">
-                      {user.name}
-                    </Heading>
+                    <Flex id="user-name-verified">
+                      <Heading className="user-name" as="h3" size="md">
+                        {user.name}
+                      </Heading>
+                      <chakra.span
+                        color="teal.500"
+                        position="relative"
+                        top="2px"
+                        ml={1}
+                      >
+                        {user.isVerified && <Icon name="verified" />}
+                      </chakra.span>
+                    </Flex>
                     <Heading
                       className="user-handle"
                       as="h4"

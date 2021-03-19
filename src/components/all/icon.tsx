@@ -83,6 +83,7 @@ import {
   RiLogoutBoxLine as SignOutIcon,
 } from 'react-icons/ri'
 import { IoTelescope as DiscoverIcon } from 'react-icons/io5'
+import { GoVerified as VerifiedIcon } from 'react-icons/go'
 
 export function Icon({ name }) {
   switch (name) {
@@ -252,6 +253,8 @@ export function Icon({ name }) {
       return <LocationIcon />
     case 'organization':
       return <OrganizationIcon />
+    case 'verified':
+      return <VerifiedIcon />
     /**
      * When nothing found
      */

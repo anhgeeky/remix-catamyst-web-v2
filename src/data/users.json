@@ -5,8 +5,12 @@
     "name": "Guest",
     "handle": "guest",
     "headline": "Visitor from somewhere",
-    "bioHtml": "<p>Just a guest account for using Catamyst.</p>",
-    "countryCode": "MARS"
+    "bioHtml": "<p>Just a guest or demo account for using Catamyst.</p>",
+    "countryCode": "MARS",
+    "website": { "url": "https://example.com", "name": "Example Website" },
+    "role": "Regular",
+    "plan": "Basic",
+    "isEmailConfirmed": true
   },
   {
     "id": 1,
@@ -18,9 +22,9 @@
     "coverUrl": "https://storage.catamyst.com/covers/iceberg.jpg",
     "bioHtml": "<p>Helping you to enjoy this site.</p>",
     "headline": "The Super User",
-    "location": "Worldwide",
+    "location": "Everywhere",
     "countryCode": "EARTH",
-    "website": { "url": "https://catamyst.com", "name": "Catamyst.com" },
+    "website": { "url": "https://catamyst.com/about", "name": "Catamyst.com" },
     "socials": [
       { "name": "Twitter", "url": "https://twitter.com/catamyst" },
       { "name": "GitHub", "url": "https://github.com/catamyst" },
@@ -34,8 +38,8 @@
     },
     "role": "Admin",
     "plan": "Super",
+    "isVerified": true,
     "isEmailConfirmed": true,
-    "isAccountVerified": true,
     "tracks": [1, 2],
     "projects": [1],
     "posts": [1],
@@ -52,7 +56,7 @@
     "avatarUrl": "https://storage.catamyst.com/avatars/mhaidarhanif.jpg",
     "coverUrl": "https://storage.catamyst.com/covers/forest.jpg",
     "headline": "Engineering Educator",
-    "bioHtml": "<p>Hey! I'm <b>Haidar</b>. The founder of <a href='https://catamyst.com'>Catamyst</a>. Human-oriented software engineer and mentor. Helping people to learn and grow their career with web and software development.</p><p>Likes both design <i>and</i> code: UI/UX, illustrations, icons, Git, HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js, Express, Prisma, PostgreSQL, MongoDB, REST API, GraphQL API, and the cloud infrastructure.</p><p>Please enjoy this site, thanks!</p>",
+    "bioHtml": "<p>Hey! I'm <b>Haidar</b>. The founder of <a href='https://catamyst.com'>Catamyst</a>. Human-oriented software engineer and mentor. Helping people to learn and grow their career with web and software development.</p><p>Likes both design <i>and</i> code: UI/UX, illustrations, icons, Git, HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js, Express, Apollo, Prisma, PostgreSQL, MongoDB, REST API, GraphQL API, and the cloud infrastructure.</p><p>Please enjoy this site, thanks!</p>",
     "countryCode": "EARTH",
     "location": "Worldwide",
     "website": { "url": "https://mhaidarhanif.com", "name": "Website" },
@@ -72,8 +76,8 @@
     },
     "role": "Staff",
     "plan": "Super",
+    "isVerified": true,
     "isEmailConfirmed": true,
-    "isAccountVerified": true,
     "tracks": [1, 2],
     "projects": [1],
     "posts": [1],
@@ -104,7 +108,11 @@
       "name": "Catamyst",
       "handle": "catamyst",
       "url": "https://catamyst.com"
-    }
+    },
+    "role": "Staff",
+    "plan": "Super",
+    "isVerified": true,
+    "isEmailConfirmed": true
   },
   {
     "id": 4,
@@ -131,7 +139,11 @@
       "name": "Catamyst",
       "handle": "catamyst",
       "url": "https://catamyst.com"
-    }
+    },
+    "role": "Staff",
+    "plan": "Super",
+    "isVerified": true,
+    "isEmailConfirmed": true
   },
   {
     "id": 5,
@@ -154,7 +166,10 @@
       "title": "Software Engineer",
       "name": "Freelance",
       "url": "https://rahmanfadhil.com"
-    }
+    },
+    "role": "Regular",
+    "plan": "Super",
+    "isEmailConfirmed": false
   },
   {
     "id": 6,
@@ -176,7 +191,10 @@
     "organization": {
       "title": "Software Engineer",
       "name": "Grosir Parts"
-    }
+    },
+    "role": "Regular",
+    "plan": "Super",
+    "isEmailConfirmed": false
   },
   {
     "id": 7,
@@ -198,7 +216,10 @@
     "organization": {
       "title": "Full Stack Web Developer",
       "name": "Freelance"
-    }
+    },
+    "role": "Regular",
+    "plan": "Super",
+    "isEmailConfirmed": false
   },
   {
     "id": 8,
@@ -223,7 +244,10 @@
     "organization": {
       "title": "Web Developer",
       "name": "Freelance"
-    }
+    },
+    "role": "Regular",
+    "plan": "Super",
+    "isEmailConfirmed": false
   },
   {
     "id": 9,
@@ -240,7 +264,10 @@
     "organization": {
       "title": "Software Engineer",
       "name": "Glee Trees"
-    }
+    },
+    "role": "Regular",
+    "plan": "Pro",
+    "isEmailConfirmed": false
   },
   {
     "id": 10,
@@ -253,7 +280,14 @@
     "headline": "",
     "bioHtml": "<p>Developer</p>",
     "countryCode": "ID",
-    "location": "Batam"
+    "location": "Batam",
+    "organization": {
+      "title": "Developer",
+      "name": "Company"
+    },
+    "role": "Regular",
+    "plan": "Pro",
+    "isEmailConfirmed": false
   },
   {
     "id": 11,
@@ -266,6 +300,13 @@
     "headline": "",
     "bioHtml": "<p>Web Developer</p>",
     "countryCode": "ID",
-    "location": "Tangerang"
+    "location": "Tangerang",
+    "organization": {
+      "title": "Web Developer",
+      "name": "Vidio (KMK Labs)"
+    },
+    "role": "Regular",
+    "plan": "Pro",
+    "isEmailConfirmed": false
   }
 ]
