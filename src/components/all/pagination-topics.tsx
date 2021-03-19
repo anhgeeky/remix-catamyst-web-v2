@@ -67,7 +67,7 @@ function PaginationLink({ label, href, textAlign, children }) {
           bg: useColorModeValue('gray.100', 'gray.800'),
         }}
       >
-        <Text fontSize="md" fontWeight="bold" color="teal.400">
+        <Text fontSize="md" fontWeight="700" color="teal.400">
           {children}
         </Text>
       </Link>

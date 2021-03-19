@@ -4,7 +4,9 @@
     "email": "",
     "name": "Guest",
     "handle": "guest",
-    "bioHtml": "<p>Visitor account for Catamyst.</p>"
+    "headline": "Visitor from somewhere",
+    "bioHtml": "<p>Just a guest account for using Catamyst.</p>",
+    "countryCode": "MARS"
   },
   {
     "id": 1,
@@ -17,7 +19,7 @@
     "bioHtml": "<p>Helping you to enjoy this site.</p>",
     "headline": "The Super User",
     "location": "Worldwide",
-    "country": "EARTH",
+    "countryCode": "EARTH",
     "website": { "url": "https://catamyst.com", "name": "Catamyst.com" },
     "socials": [
       { "name": "Twitter", "url": "https://twitter.com/catamyst" },
@@ -51,7 +53,7 @@
     "coverUrl": "https://storage.catamyst.com/covers/forest.jpg",
     "headline": "Engineering Educator",
     "bioHtml": "<p>Hey! I'm <b>Haidar</b>. The founder of <a href='https://catamyst.com'>Catamyst</a>. Human-oriented software engineer and mentor. Helping people to learn and grow their career with web and software development.</p><p>Likes both design <i>and</i> code: UI/UX, illustrations, icons, Git, HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js, Express, Prisma, PostgreSQL, MongoDB, REST API, GraphQL API, and the cloud infrastructure.</p><p>Please enjoy this site, thanks!</p>",
-    "country": "EARTH",
+    "countryCode": "EARTH",
     "location": "Worldwide",
     "website": { "url": "https://mhaidarhanif.com", "name": "Website" },
     "socials": [
@@ -89,7 +91,7 @@
     "coverUrl": "https://storage.catamyst.com/covers/cats.jpg",
     "headline": "The Writer",
     "bioHtml": "Writer, content creator, and mental health activist. My passion for education and well-being is what drives me to consistently spreading messages about the importance of happiness in work and life through the community-based organization I founded and the contents I made.",
-    "country": "EARTH",
+    "countryCode": "EARTH",
     "location": "Worldwide",
     "website": { "url": "https://mayaasmara.com", "name": "Digital Garden" },
     "socials": [
@@ -114,7 +116,7 @@
     "coverUrl": "https://storage.catamyst.com/covers/sheeps.jpg",
     "headline": "Free Spirit",
     "bioHtml": "Avid illustrator.",
-    "country": "ID",
+    "countryCode": "ID",
     "location": "Java Island",
     "website": {
       "name": "",
@@ -141,7 +143,7 @@
     "coverUrl": "",
     "headline": "Ultimate Software Engineer",
     "bioHtml": "<p>I am Rahman Fadhil, a software engineer specialized in iOS and full-stack web development. I make programming tutorials on my blog and <a href='https://youtube.com/channel/UCQsEh6BNgeDYnf1CXUnCttA'>YouTube</a>. I'm also a coding instructor at <a href='https://codementor.io/@rahmanfadhil'>Codementor</a>, a platform where I help developers learn new technologies and solve their coding problems.</p>",
-    "country": "ID",
+    "countryCode": "ID",
     "location": "Depok",
     "website": { "url": "https://rahmanfadhil.com" },
     "socials": [
@@ -164,7 +166,7 @@
     "coverUrl": "",
     "headline": "Full Stack Web Developer",
     "bioHtml": "<p>Full-stack web developer working with JavaScript, React, Redux, Node.js, Express, MongoDB, REST API. And also utilizing deployment tools like netlify, heroku, and GCP with a bit of CI/CD pipeline. You can see my portfolios on <a href='https://ahmadmarzuki.com'>ahmadmarzuki.com</a> and <a href='https://github.com/amadzuki'>github.com/amadzuki</a>.</p>",
-    "country": "ID",
+    "countryCode": "ID",
     "location": "Jakarta",
     "website": { "url": "https://ahmadmarzuki.com" },
     "socials": [
@@ -186,7 +188,7 @@
     "coverUrl": "",
     "headline": "Artistic Developer",
     "bioHtml": "<p>Fullstack web developer. MERN Stack Developer, with the passion to develop apps that can make this world better. Whenever I get bored, I call API's.</p>",
-    "country": "CA",
+    "countryCode": "CA",
     "location": "Vancouver, BC",
     "website": { "url": "https://jonathannicolas.dev" },
     "socials": [
@@ -208,7 +210,7 @@
     "coverUrl": "",
     "headline": "Trader and Aspiring Creator",
     "bioHtml": "<p>I’m currently an undergraduate student majoring in business administration at the Faculty of Economics and Management Sciences (KENMS) of International Islamic University Malaysia (IIUM).</p>",
-    "country": "MY",
+    "countryCode": "MY",
     "location": "Kuala Lumpur",
     "website": { "url": "https://mfarisgibran.com" },
     "socials": [
@@ -233,7 +235,7 @@
     "coverUrl": "",
     "headline": "",
     "bioHtml": "<p>Software Engineer</p>",
-    "country": "SG",
+    "countryCode": "SG",
     "location": "Singapore-Batam",
     "organization": {
       "title": "Software Engineer",
@@ -250,7 +252,7 @@
     "coverUrl": "",
     "headline": "",
     "bioHtml": "<p>Developer</p>",
-    "country": "ID",
+    "countryCode": "ID",
     "location": "Batam"
   },
   {
@@ -263,7 +265,7 @@
     "coverUrl": "",
     "headline": "",
     "bioHtml": "<p>Web Developer</p>",
-    "country": "ID",
+    "countryCode": "ID",
     "location": "Tangerang"
   }
 ]

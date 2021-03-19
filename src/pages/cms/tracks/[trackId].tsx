@@ -177,7 +177,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
               name="title"
               size="lg"
               fontFamily="heading"
-              fontWeight="bold"
+              fontWeight="700"
               fontSize="3xl"
               placeholder="Track Title"
               value={formTrack.title}

@@ -159,7 +159,7 @@ function HelpPasswordButton() {
         <PopoverHeader fontWeight="semibold">Help for password</PopoverHeader>
         <PopoverArrow />
         <PopoverCloseButton />
-        <PopoverBody as={Stack} fontWeight="normal">
+        <PopoverBody as={Stack} fontWeight="400">
           <Text>
             To manage your password, we recommend to use a free and secure
             password manager like{' '}

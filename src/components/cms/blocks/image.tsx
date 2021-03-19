@@ -64,7 +64,7 @@ export function CMSBlockImage({ index, block, actions }) {
                 </VisuallyHidden>
                 <Icon name="link" />
                 <Input
-                  name="url"
+                  name="link"
                   size="sm"
                   type="text"
                   variant="flushed"
@@ -173,7 +173,7 @@ export function CMSBlockImage({ index, block, actions }) {
               <VisuallyHidden>
                 <FormLabel>Source:</FormLabel>
               </VisuallyHidden>
-              <Icon name="url" />
+              <Icon name="link" />
               <Input
                 name="source"
                 size="sm"

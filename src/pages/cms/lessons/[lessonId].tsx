@@ -375,7 +375,7 @@ function CMSLessonHero({ register, lessonInitialValues, actions }) {
             name="title"
             size="lg"
             fontFamily="heading"
-            fontWeight="bold"
+            fontWeight="700"
             fontSize="3xl"
             textAlign="center"
             p={3}
@@ -386,7 +386,7 @@ function CMSLessonHero({ register, lessonInitialValues, actions }) {
 
           <RadioGroup colorScheme="teal">
             <Stack direction="row">
-              <Text fontWeight="bold">Category:</Text>
+              <Text fontWeight="700">Category:</Text>
               <Radio
                 ref={register}
                 name="category"
@@ -416,7 +416,7 @@ function CMSLessonHero({ register, lessonInitialValues, actions }) {
 
           <RadioGroup colorScheme="teal">
             <Stack direction="row">
-              <Text fontWeight="bold">Level:</Text>
+              <Text fontWeight="700">Level:</Text>
               <Radio
                 ref={register}
                 name="level"

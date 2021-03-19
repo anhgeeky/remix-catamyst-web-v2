@@ -10,7 +10,8 @@ export function Country({ code }) {
     return (
       <HStack>
         <img
-          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/icons/EARTH.svg`}
+          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/flags/EARTH.svg`}
+          role="flag"
           alt="Earth"
           width={21}
           height={14}
@@ -19,10 +20,24 @@ export function Country({ code }) {
       </HStack>
     )
   }
+  if (country.code === 'MARS') {
+    return (
+      <HStack>
+        <img
+          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/flags/MARS.svg`}
+          role="flag"
+          alt="Mars"
+          width={21}
+          height={14}
+        />
+        <span>Mars</span>
+      </HStack>
+    )
+  }
   if (country.code && country.name) {
     return (
       <HStack>
-        <Flag country={country.code} size={20} />
+        <Flag country={country.code} role="flag" size={20} alt={country.name} />
         <span>{country.name}</span>
       </HStack>
     )

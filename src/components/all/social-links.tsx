@@ -10,11 +10,12 @@ export function SocialLinks({ links = dataSocialLinks }) {
       {links.map((link) => {
         return (
           <Link
+            isExternal
+            aria-label={link.name}
             key={link.name}
             href={link.url}
             color="gray.500"
             fontSize="xl"
-            isExternal
             _hover={{ color: useColorModeValue('gray.900', 'gray.100') }}
           >
             <Icon name={link.name.toLowerCase()} />

@@ -14,8 +14,9 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Card, Country, SocialLinks, TrimmedURL, Icon } from '@components'
+import { Card, Country, SocialLinks, Icon } from '@components'
 import { transformOptions } from '@components/blocks'
+import { trimUrl } from '@utils'
 import dataReviews from '@data/reviews-featured.json'
 
 export function HomeReviews() {
@@ -112,7 +113,7 @@ export function HomeReviews() {
                 <HStack>
                   <SocialLinks links={user.socialLinks} />
                   <Link isExternal href={user.websiteUrl} color="teal.500">
-                    <TrimmedURL url={user.websiteUrl} />
+                    {trimUrl(user.websiteUrl)}
                   </Link>
                 </HStack>
               </Card>

@@ -183,7 +183,7 @@ function PaginationLinkFull({ label, href, textAlign, children }) {
         }}
       >
         <Text fontSize="sm">{label}</Text>
-        <Text fontSize="md" fontWeight="bold" color="teal.400">
+        <Text fontSize="md" fontWeight="700" color="teal.400">
           {children}
         </Text>
       </Link>

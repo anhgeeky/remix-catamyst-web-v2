@@ -33,7 +33,7 @@ export function Footer() {
           <Text>Enjoy your {dayNamePeriod}!</Text>
         </VStack>
         {NODE_ENV !== 'production' && (
-          <Code colorScheme="gray" fontWeight="bold">
+          <Code colorScheme="gray" fontWeight="700">
             {NODE_ENV} && {API_URL}
           </Code>
         )}

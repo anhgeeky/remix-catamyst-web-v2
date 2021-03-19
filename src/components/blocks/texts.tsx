@@ -48,7 +48,13 @@ export const transformOptions = {
      */
     if (node.type === 'tag' && node.name === 'a') {
       return (
-        <Link key={index} href={node.attribs.href} color="teal.500" isExternal>
+        <Link
+          key={index}
+          href={node.attribs.href}
+          color="teal.500"
+          fontWeight="500"
+          isExternal
+        >
           {node.children[0].data}
         </Link>
       )

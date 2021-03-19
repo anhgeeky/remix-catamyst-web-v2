@@ -15,7 +15,7 @@ import {
   FaCopyright as CopyrightIcon,
   FaDivide as DividerIcon,
   FaExpandAlt as SizeIcon,
-  FaExternalLinkAlt as UrlIcon,
+  FaExternalLinkAlt as ExternalIcon,
   FaEye as MetaIcon,
   FaFont as TextsIcon,
   FaGenderless as CategoryIcon,
@@ -70,6 +70,12 @@ import {
   FaLinkedin as LinkedInIcon,
   FaInstagram as InstagramIcon,
   FaFacebook as FacebookIcon,
+  FaYoutube as YouTubeIcon,
+  // User profile and actions.
+  FaCalendar as DateIcon,
+  FaStar as FavoriteIcon,
+  FaMapMarkerAlt as LocationIcon,
+  FaBuilding as OrganizationIcon,
 } from 'react-icons/fa'
 import {
   RiRefreshLine as ResetIcon,
@@ -109,6 +115,8 @@ export function Icon({ name }) {
       return <GenerateIcon />
     case 'image':
       return <ImageIcon />
+    case 'external':
+      return <ExternalIcon />
     case 'link':
       return <LinkIcon />
     case 'links':
@@ -137,8 +145,6 @@ export function Icon({ name }) {
       return <TitleIcon />
     case 'up':
       return <UpIcon />
-    case 'url':
-      return <UrlIcon />
     case 'dashboard':
       return <DashboardIcon />
     case 'profile':
@@ -233,6 +239,19 @@ export function Icon({ name }) {
       return <InstagramIcon />
     case 'facebook':
       return <FacebookIcon />
+    case 'youtube':
+      return <YouTubeIcon />
+    /**
+     * User profile and actions.
+     */
+    case 'date':
+      return <DateIcon />
+    case 'favorite':
+      return <FavoriteIcon />
+    case 'location':
+      return <LocationIcon />
+    case 'organization':
+      return <OrganizationIcon />
     /**
      * When nothing found
      */

@@ -13,6 +13,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
+import { Country } from '@components'
+
 export function CollectionUsers({ users }) {
   const dividerBorderColor = useColorModeValue('gray.200', 'gray.700')
 
@@ -22,15 +24,13 @@ export function CollectionUsers({ users }) {
         return (
           <NextLink key={user.id} href={user.handle} passHref>
             <Link as="article" rounded="md" p={3} _hover={{ bg: 'gray.100' }}>
-              <Stack className="user-and-contents" direction="row">
-                <HStack minW={300}>
-                  <Avatar
-                    name={user.name}
-                    src={user.avatarUrl}
-                    width="50px"
-                    height="50px"
-                  />
-                  <Box>
+              <Stack
+                className="user-and-contents"
+                direction={{ base: 'column', lg: 'row' }}
+              >
+                <HStack minW={300} spacing={3}>
+                  <Avatar name={user.name} src={user.avatarUrl} size="xl" />
+                  <Stack spacing={1}>
                     <Heading className="user-name" as="h3" size="md">
                       {user.name}
                     </Heading>
@@ -40,11 +40,12 @@ export function CollectionUsers({ users }) {
                       size="sm"
                       color="gray.500"
                       fontFamily="body"
-                      fontWeight="normal"
+                      fontWeight="400"
                     >
                       @{user.handle}
                     </Heading>
-                  </Box>
+                    <Country code={user.countryCode} />
+                  </Stack>
                 </HStack>
 
                 <HStack width="100%" overflow="scroll">
