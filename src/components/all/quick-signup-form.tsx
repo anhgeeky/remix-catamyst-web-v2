@@ -58,7 +58,7 @@ export function QuickSignUpForm() {
       )}
       {isAuthenticated && (
         <>
-          <LinkButton href="/learn" colorScheme="teal">
+          <LinkButton href="/dashboard" colorScheme="teal">
             Continue to dashboard
           </LinkButton>
         </>

@@ -51,12 +51,7 @@ export function DashboardOverview({ auth }) {
           </DashboardHero>
 
           <Content>
-            <SimpleGrid
-              spacing={5}
-              width="100%"
-              minChildWidth={280}
-              minChildHeight={300}
-            >
+            <SimpleGrid spacing={5} width="100%" minChildWidth={350}>
               <Stack width="100%">
                 <HeadingStack>You</HeadingStack>
                 <Card>
@@ -80,10 +75,16 @@ export function DashboardOverview({ auth }) {
                     </Heading>
 
                     <ButtonGroup size="xs">
-                      <Button colorScheme="teal">Visit Profile</Button>
-                      <Button colorScheme="teal" variant="outline">
+                      <LinkButton href={`/${user.handle}`} colorScheme="teal">
+                        Visit Profile
+                      </LinkButton>
+                      <LinkButton
+                        href="/settings/profile"
+                        colorScheme="teal"
+                        variant="outline"
+                      >
                         Edit Profile
-                      </Button>
+                      </LinkButton>
                     </ButtonGroup>
                   </VStack>
                 </Card>
@@ -94,7 +95,7 @@ export function DashboardOverview({ auth }) {
                   <Icon name="tracks" />
                   Tracks
                 </HeadingStack>
-                <Card>
+                <CardOverview>
                   <CardPlaceholder>
                     <Text>
                       You can learn then practice from our guided curriculum
@@ -102,7 +103,7 @@ export function DashboardOverview({ auth }) {
                     </Text>
                     <LinkButton href="/learn">Choose a track</LinkButton>
                   </CardPlaceholder>
-                </Card>
+                </CardOverview>
               </Stack>
 
               <Stack width="100%">
@@ -110,7 +111,7 @@ export function DashboardOverview({ auth }) {
                   <Icon name="projects" />
                   Projects
                 </HeadingStack>
-                <Card>
+                <CardOverview>
                   <CardPlaceholder>
                     <Text>
                       You can publish your own or contributed projects. Whether
@@ -120,7 +121,7 @@ export function DashboardOverview({ auth }) {
                       Publish a project
                     </LinkButton>
                   </CardPlaceholder>
-                </Card>
+                </CardOverview>
               </Stack>
 
               <Stack width="100%">
@@ -128,7 +129,7 @@ export function DashboardOverview({ auth }) {
                   <Icon name="posts" />
                   Posts
                 </HeadingStack>
-                <Card>
+                <CardOverview>
                   <CardPlaceholder>
                     <Text>
                       You can write a blog post, notes, tutorial, publication,
@@ -138,7 +139,7 @@ export function DashboardOverview({ auth }) {
                       Write a post
                     </LinkButton>
                   </CardPlaceholder>
-                </Card>
+                </CardOverview>
               </Stack>
 
               <Stack width="100%">
@@ -146,7 +147,7 @@ export function DashboardOverview({ auth }) {
                   <Icon name="discussions" />
                   Discussions
                 </HeadingStack>
-                <Card>
+                <CardOverview>
                   <CardPlaceholder>
                     <Text>
                       You can discuss ideas, ask questions, and answer things
@@ -154,7 +155,7 @@ export function DashboardOverview({ auth }) {
                     </Text>
                     <LinkButton href="/forum">Explore the forum</LinkButton>
                   </CardPlaceholder>
-                </Card>
+                </CardOverview>
               </Stack>
 
               <Stack width="100%">
@@ -162,7 +163,7 @@ export function DashboardOverview({ auth }) {
                   <Icon name="jobs" />
                   Jobs
                 </HeadingStack>
-                <Card>
+                <CardOverview>
                   <CardPlaceholder>
                     <Text>
                       You can search and apply jobs that suits you. Either for a
@@ -171,7 +172,7 @@ export function DashboardOverview({ auth }) {
                     </Text>
                     <LinkButton href="/jobs">Search for a job</LinkButton>
                   </CardPlaceholder>
-                </Card>
+                </CardOverview>
               </Stack>
 
               <Stack width="100%">
@@ -179,7 +180,7 @@ export function DashboardOverview({ auth }) {
                   <Icon name="mentors" />
                   Mentors
                 </HeadingStack>
-                <Card>
+                <CardOverview>
                   <CardPlaceholder>
                     <Text>
                       You can be assigned with a dedicated 1-on-1 live
@@ -190,12 +191,26 @@ export function DashboardOverview({ auth }) {
                       Request Super plan
                     </LinkButton>
                   </CardPlaceholder>
-                </Card>
+                </CardOverview>
               </Stack>
             </SimpleGrid>
           </Content>
         </>
       )}
     </>
+  )
+}
+
+function CardOverview({ children }) {
+  return (
+    <Card
+      minH={300}
+      height="100%"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+    >
+      {children}
+    </Card>
   )
 }

@@ -1,8 +1,6 @@
 import {
   Box,
-  Button,
   Container,
-  Heading,
   IconButton,
   Input,
   InputGroup,
@@ -17,17 +15,9 @@ import {
 import { Fragment, useState, useEffect } from 'react'
 import NextHead from 'next/head'
 import { useForm, useFieldArray } from 'react-hook-form'
-import { DevTool } from '@hookform/devtools'
 
 import { Layout } from '@layouts'
-import {
-  Icon,
-  LearningTag,
-  HeaderEditor,
-  HeadingStack,
-  Hero,
-  useToast,
-} from '@components'
+import { Icon, LearningTag, HeaderEditor, Hero, useToast } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
 import { useRedirectSignIn } from '@hooks'
@@ -39,7 +29,6 @@ import dataLessons from '@data/lessons.json'
  * CMS Lesson editor, with UI and logic
  -----------------------------------------------------------------------------*/
 export default function lessonIdPage() {
-  const NODE_ENV = process.env.NODE_ENV
   const { router, isAuthorized } = useRedirectSignIn()
   const { lessonId } = router.query
   const toast = useToast({ duration: 1000 })
@@ -174,7 +163,6 @@ export default function lessonIdPage() {
             />
           )}
           {viewMode === 'json' && <CMSViewJSON codeString={getValues()} />}
-          {NODE_ENV !== 'production' && <DevTool control={control} />}
         </>
       )}
     </Layout>
