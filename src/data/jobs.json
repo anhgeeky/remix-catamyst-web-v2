@@ -1,0 +1,181 @@
+[
+  {
+    "id": 1,
+    "organizationId": 0,
+    "organization": {
+      "handle": "catamyst",
+      "name": "Catamyst",
+      "avatarUrl": "/assets/logos/catamyst.png",
+      "countryCode": "ID",
+      "location": "Worldwide and Remote",
+      "isVerified": true
+    },
+    "title": "Software Engineering Mentor",
+    "descriptionHtml": "<p>We are Catamyst. We help people to learn web development and software engineering.</p>",
+    "salary": {
+      "currencyCode": "USD",
+      "currencySymbol": "$",
+      "hourlyMin": 15,
+      "hourlyMax": 25
+    },
+    "applyUrl": "https://apply.catamyst.com/200",
+    "applyEmail": "",
+    "theme": {
+      "textColor": "#fff",
+      "backgroundColor": "#0aa"
+    },
+    "isVerified": true,
+    "isPublished": true,
+    "publishedDate": "2021-03-10",
+    "benefits": ["Flexible and remote working", "Quarter-time work"],
+    "skills": [
+      "Teaching",
+      "Technical Writing",
+      "Linux",
+      "macOS",
+      "Figma",
+      "Markdown",
+      "HTML",
+      "CSS",
+      "Git",
+      "GitHub",
+      "Netlify",
+      "Vercel",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "React",
+      "REST API",
+      "GraphQL API",
+      "MongoDB",
+      "Mongoose",
+      "MySQL",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Heroku",
+      "Railway.app",
+      "Google Cloud Platform",
+      "Amazon Web Services"
+    ]
+  },
+  {
+    "id": 2,
+    "organizationId": 0,
+    "organization": {
+      "handle": "catamyst",
+      "name": "Catamyst",
+      "avatarUrl": "/assets/logos/catamyst.png",
+      "countryCode": "ID",
+      "location": "Worldwide and Remote",
+      "isVerified": true
+    },
+    "title": "Full Stack Web Developer",
+    "descriptionHtml": "<p>We are Catamyst. We are building the all-in-one platform to help people learn web development and software engineering.</p>",
+    "salary": {
+      "currencyCode": "IDR",
+      "currencySymbol": "Rp ",
+      "hourlyMin": 100000,
+      "hourlyMax": 120000
+    },
+    "applyUrl": "https://apply.catamyst.com/100",
+    "applyEmail": "",
+    "isVerified": true,
+    "isPublished": true,
+    "publishedDate": "2021-03-20",
+    "theme": {
+      "textColor": "#fff",
+      "backgroundColor": "#0aa"
+    },
+    "skills": [
+      "Linux",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "React.js",
+      "Chakra UI",
+      "GraphQL API",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Vercel",
+      "Railway.app",
+      "Google Cloud Platform"
+    ]
+  },
+  {
+    "id": 3,
+    "organization": {
+      "handle": "nawaart",
+      "name": "Nawaart",
+      "countryCode": "CA",
+      "location": "Canada/Myanmar"
+    },
+    "title": "UX Engineer",
+    "descriptionHtml": "<p>In Nawaart, we are promoting local artists of Myanmar.</p>",
+    "salary": {
+      "currencyCode": "CAD",
+      "currencySymbol": "$",
+      "monthlyMin": 3500,
+      "monthlyMax": 5000
+    },
+    "applyUrl": "https://apply.catamyst.com/987",
+    "applyEmail": "",
+    "isVerified": true,
+    "isPublished": true,
+    "publishedDate": "2021-01-14",
+    "theme": {
+      "textColor": "#fff",
+      "backgroundColor": "red.800"
+    },
+    "skills": [
+      "People Communication",
+      "Figma",
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "REST API",
+      "MongoDB",
+      "Mongoose",
+      "Amazon Web Services"
+    ]
+  },
+  {
+    "id": 4,
+    "organization": {
+      "name": "UX Army",
+      "countryCode": "SG",
+      "location": "Singapore/Malaysia"
+    },
+    "title": "UX Designer",
+    "descriptionHtml": "<p>We provide a remote user research platform.</p>",
+    "salary": {
+      "currencyCode": "SGD",
+      "currencySymbol": "$",
+      "hourlyMin": 30,
+      "hourlyMax": 50,
+      "monthlyMin": 2000,
+      "monthlyMax": 3000,
+      "yearlyMin": 24000,
+      "yearlyMax": 27000
+    },
+    "applyUrl": "https://apply.catamyst.com/400",
+    "applyEmail": "",
+    "isPublished": true,
+    "publishedDate": "2021-02-25",
+    "theme": {
+      "textColor": "#fff",
+      "backgroundColor": "blue.700"
+    },
+    "skills": [
+      "UI",
+      "UX",
+      "iOS",
+      "Android",
+      "Persona Research",
+      "Wireframing",
+      "Prototyping",
+      "Sketch",
+      "Figma",
+      "End-to-End Testing"
+    ]
+  }
+]

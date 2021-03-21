@@ -1,4 +1,7 @@
 import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+
+dayjs.extend(relativeTime)
 
 const date = new Date()
 
@@ -28,9 +31,19 @@ export const getDayNamePeriod = () => {
   return dayNamePeriod
 }
 
-export const dayNamePeriod = `${getDayName()} ${getDayPeriod()}`
-
 export const getJoinedDate = (date) => {
   const joinedDate = dayjs(date).format('MMMM YYYY')
   return joinedDate
 }
+
+export const getPublishedDate = (date) => {
+  const publishedDate = dayjs(date).format('D MMMM YYYY')
+  return publishedDate
+}
+
+export const getRelativePublishedDate = (date) => {
+  const relativePublishedDate = dayjs().to(dayjs(date))
+  return relativePublishedDate
+}
+
+export const dayNamePeriod = `${getDayName()} ${getDayPeriod()}`

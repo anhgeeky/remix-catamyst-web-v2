@@ -1,7 +1,8 @@
-import { Heading, Text } from '@chakra-ui/react'
+import { Stack, Heading, Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
+import { Hero, Content, HeadingStack } from '@components'
+import { JobsBoards, JobsToolbar } from '@components/jobs'
 
 export default function jobsPage() {
   return (
@@ -16,7 +17,11 @@ export default function jobsPage() {
       </Hero>
 
       <Content>
-        <Text>Job portal is coming soon!</Text>
+        <Stack>
+          <JobsToolbar />
+          <HeadingStack>Featured Jobs</HeadingStack>
+          <JobsBoards />
+        </Stack>
       </Content>
     </Layout>
   )

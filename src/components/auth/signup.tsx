@@ -65,7 +65,7 @@ export function AuthSignUp({ router }) {
       await dispatch(signUp())
       router.replace('/dashboard/overview')
     } catch (error) {
-      console.log('Failed to sign up.')
+      console.error('Failed to sign up.')
     }
   }
 

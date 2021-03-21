@@ -41,7 +41,7 @@ export function AuthSignIn({ router }) {
       await dispatch(signIn())
       router.replace('/dashboard/overview')
     } catch (error) {
-      console.log('Failed to sign in.')
+      console.error('Failed to sign in.')
     }
   }
 

@@ -1,4 +1,5 @@
 export { useAuth } from '@hooks/use-auth'
+export { useToast } from '@hooks/use-toast'
 export { usePaginationLessons } from '@hooks/use-pagination-lessons'
 export { usePaginationTopics } from '@hooks/use-pagination-topics'
 export { useRedirectDashboard } from '@hooks/use-redirect-dashboard'

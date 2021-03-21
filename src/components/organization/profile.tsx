@@ -312,7 +312,7 @@ export function OrganizationNameHandle({ org }) {
         {isVerified && (
           <Tooltip
             hasArrow
-            label="Verified org account"
+            label="Verified organization account"
             aria-label="Verified"
             placement="top"
           >

@@ -1,3 +1,1 @@
-import Layout from '@layouts/default'
-
-export { Layout }
+export { Layout } from '@layouts/default'

@@ -106,28 +106,28 @@ export const transformOptions = {
      */
     if (node.type === 'tag' && node.name === 'h1') {
       return (
-        <CustomHeading key={index} as="h1" size="xl" pt={8}>
+        <CustomHeading key={index} as="h1" size="xl" pt={6} pb={4}>
           {node.children[0].data}
         </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'h2') {
       return (
-        <CustomHeading key={index} as="h2" size="lg" pt={5}>
+        <CustomHeading key={index} as="h2" size="lg" pt={5} pb={3}>
           {node.children[0].data}
         </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'h3') {
       return (
-        <CustomHeading key={index} as="h3" size="md" pt={3}>
+        <CustomHeading key={index} as="h3" size="md" pt={4} pb={2}>
           {node.children[0].data}
         </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'p') {
       return (
-        <Text key={index} fontSize={fontSizes} pt={3}>
+        <Text key={index} fontSize={fontSizes} pt={2} pb={2}>
           {node.children.map((node, index) => {
             if (node.type === 'tag') {
               return transform(node, index)
@@ -141,7 +141,7 @@ export const transformOptions = {
     }
     if (node.type === 'tag' && node.name === 'ul') {
       return (
-        <List key={index} fontSize={fontSizes} spacing={1} pt={3}>
+        <List key={index} fontSize={fontSizes} spacing={1} pt={2} pb={2}>
           {node.children.map((item, index) => {
             return (
               <ListItem key={index}>
@@ -164,7 +164,7 @@ export const transformOptions = {
     }
     if (node.type === 'tag' && node.name === 'ol') {
       return (
-        <OrderedList key={index} fontSize={fontSizes} spacing={1} pt={3}>
+        <OrderedList key={index} fontSize={fontSizes} spacing={1} pt={2} pb={2}>
           {node.children.map((item, index) => {
             return (
               <ListItem key={index}>

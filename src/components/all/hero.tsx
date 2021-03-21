@@ -2,7 +2,6 @@ import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
 
 export function Hero(props) {
   const color = props.color || 'cyan'
-
   const textColor = useColorModeValue(`${color}.900`, `${color}.100`)
   const bg = useColorModeValue(`${color}.100`, `${color}.900`)
 

@@ -74,6 +74,24 @@ p code {
 }
 
 /**
+ * Job skills tags
+ */
+
+/* skillname */
+.job-skills-tags a {
+  margin-right: 0.375rem;
+  margin-bottom: 0.375rem;
+}
+.job-skills-tags a:hover {
+  text-decoration: none;
+}
+
+/* +10 more */
+.job-skills-tags > span {
+  margin-bottom: 0.375rem;
+}
+
+/**
  * NextImage container.
  */
 

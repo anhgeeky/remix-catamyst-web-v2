@@ -2,9 +2,10 @@ import NextHead from 'next/head'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
 import { Header, Footer } from '@components'
+
 import dataSite from '@data/site.json'
 
-export default function Layout({ title = 'Catamyst', children = null }) {
+export function Layout({ title = 'Catamyst', children = null }) {
   const bg = useColorModeValue('gray.50', 'gray.900')
 
   return (

@@ -28,7 +28,7 @@ export default function discoverPage() {
       <Content>
         <Stack spacing={10} width="100%">
           <Stack>
-            <HeadingStack>Featured Users</HeadingStack>
+            <HeadingStack>Featured Members</HeadingStack>
             <CollectionUsers users={dataUsers} />
           </Stack>
 

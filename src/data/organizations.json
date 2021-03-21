@@ -27,7 +27,23 @@
   },
   {
     "type": "Organization",
-    "id": 1,
+    "id": 2,
+    "handle": "nawaart",
+    "name": "Nawaart",
+    "bioHtml": "<p>Promoting local artists of South East Asia.</p>",
+    "countryCode": "MY",
+    "location": "Naypyitaw",
+    "website": {
+      "url": "https://nawaart.com",
+      "name": "Nawaart"
+    },
+    "role": "Company",
+    "joinedAt": "2020-06-01",
+    "people": []
+  },
+  {
+    "type": "Organization",
+    "id": 2,
     "handle": "github",
     "name": "GitHub",
     "bioHtml": "<p>How people build software.</p>",
@@ -43,7 +59,7 @@
   },
   {
     "type": "Organization",
-    "id": 2,
+    "id": 3,
     "handle": "google",
     "name": "Google",
     "avatarUrl": "https://storage.catamyst.com/avatars/google.png",
@@ -59,7 +75,7 @@
   },
   {
     "type": "Organization",
-    "id": 3,
+    "id": 4,
     "handle": "facebook",
     "name": "Facebook",
     "avatarUrl": "https://storage.catamyst.com/avatars/facebook.png",
@@ -72,7 +88,7 @@
   },
   {
     "type": "Organization",
-    "id": 4,
+    "id": 5,
     "handle": "spotify",
     "name": "Spotify",
     "avatarUrl": "https://storage.catamyst.com/avatars/spotify.png",
@@ -85,7 +101,7 @@
   },
   {
     "type": "Organization",
-    "id": 5,
+    "id": 6,
     "handle": "impactbyte",
     "name": "Impact Byte",
     "bioHtml": "<p>Make impact with your code.</p>",

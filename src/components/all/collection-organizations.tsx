@@ -43,7 +43,6 @@ export function CollectionOrganizations({ organizations }) {
                 <HStack minW={300} spacing={3}>
                   {!org.avatarUrl && (
                     <Avatar
-                      // className="org-logo"
                       name={org.name}
                       src={org.avatarUrl}
                       width={100}
