@@ -104,13 +104,13 @@ export function AuthSignIn({ router }) {
           <Divider opacity={1} />
           <Text>
             Don't have an account?{' '}
-            <NextLink href="/signup">
+            <NextLink href="/signup" passHref>
               <Link color="teal.500">Sign up</Link>
             </NextLink>
           </Text>
           <Text>
             Forgot password?{' '}
-            <NextLink href="/reset">
+            <NextLink href="/reset" passHref>
               <Link color="teal.500">Reset here</Link>
             </NextLink>
           </Text>

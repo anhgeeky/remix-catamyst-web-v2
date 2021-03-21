@@ -51,7 +51,11 @@ export function DashboardOverview({ auth }) {
           </DashboardHero>
 
           <Content>
-            <SimpleGrid spacing={5} width="100%" minChildWidth={350}>
+            <SimpleGrid
+              spacing={5}
+              width="100%"
+              minChildWidth={{ base: 280, sm: 350 }}
+            >
               <Stack width="100%">
                 <HeadingStack>You</HeadingStack>
                 <Card>

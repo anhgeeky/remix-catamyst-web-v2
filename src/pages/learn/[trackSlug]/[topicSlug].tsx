@@ -67,7 +67,7 @@ function TopicHero({ topic }) {
 
 function TopicSidebar({ topic }) {
   return (
-    <Stack maxW="280px" width="100%" spacing={2}>
+    <Stack maxW="280px" width="100%" spacing={1}>
       <Heading as="h2" size="sm">
         About this topic
       </Heading>

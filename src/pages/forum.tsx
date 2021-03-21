@@ -4,10 +4,10 @@ import { Hero, Content } from '@components'
 
 export default function forumPage() {
   return (
-    <Layout title="Forum · Catamyst">
+    <Layout title="Community Forum · Catamyst">
       <Hero>
         <Heading as="h1" size="xl">
-          Forum
+          Community Forum
         </Heading>
         <Text>Discuss ideas, ask questions, and contribute answers.</Text>
       </Hero>

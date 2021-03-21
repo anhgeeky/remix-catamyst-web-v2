@@ -2,7 +2,15 @@ import NextHead from 'next/head'
 import NextImage from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { Flex, Heading, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
+import {
+  Button,
+  Flex,
+  Heading,
+  Stack,
+  Text,
+  Wrap,
+  WrapItem,
+} from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { Hero, ContentWithSidebar, CollectionTopics } from '@components'
@@ -82,8 +90,10 @@ function TrackHero({ track }) {
 }
 
 function TrackSideBar({ track }) {
+  const isEnrolled = track.id === 1
+
   return (
-    <Stack maxW={{ lg: '280px' }} width="100%" spacing={2}>
+    <Stack maxW={{ lg: '280px' }} width="100%" spacing={1}>
       <Heading as="h2" size="sm">
         About this track
       </Heading>
@@ -105,6 +115,13 @@ function TrackSideBar({ track }) {
       <Text>
         <b>{track.totalHours}</b> hours (estimated)
       </Text>
+
+      {isEnrolled && (
+        <Button colorScheme="teal" variant="outline">
+          Enroll track
+        </Button>
+      )}
+      {!isEnrolled && <Button colorScheme="red">Un-Enroll</Button>}
     </Stack>
   )
 }

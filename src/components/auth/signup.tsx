@@ -133,7 +133,7 @@ export function AuthSignUp({ router }) {
           <Divider opacity={1} />
           <Text>
             Already have a Catamyst account?{' '}
-            <NextLink href="/signin">
+            <NextLink href="/signin" passHref>
               <Link color="teal.500">Sign in</Link>
             </NextLink>
           </Text>

@@ -48,6 +48,22 @@
     "websiteUrl": "https://mfarisgibran.com"
   },
   {
+    "handle": "latifahdhia",
+    "avatarUrl": "https://storage.catamyst.com/avatars/latifahdhia.jpg",
+    "name": "Latifah Dhia I",
+    "title": "Illustrator",
+    "countryCode": "ID",
+    "review": {
+      "html": "<p>As someone who has no basic knowledge of web development before, learning in Catamyst has taught me a lot of things. The lessons are easy to follow and were taught in an articulate manner. It motivates me to learn more about web and software development in general. Now I'm able to build my own website and it helps me to grow my career as an artist.</p>"
+    },
+    "socialLinks": [
+      { "name": "LinkedIn", "url": "https://linkedin.com/in/latifahdhia" },
+      { "name": "GitHub", "url": "https://github.com/latifahdhia" }
+    ],
+    "websiteUrl": "https://latifahdhia.com"
+  },
+  {
+    "isPublished": false,
     "handle": "mayasopiah",
     "avatarUrl": "https://storage.catamyst.com/avatars/mayasopiah.jpg",
     "name": "Maya Sopiah",

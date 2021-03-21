@@ -8,13 +8,15 @@ export default function jobsPage() {
     <Layout title="Search and post jobs on Catamyst">
       <Hero>
         <Heading as="h1" size="xl">
-          Jobs
+          Job Portal
         </Heading>
-        <Text>Search your next opportunities and post job vacancies.</Text>
+        <Text>
+          Search and apply your next opportunities. Or even post job vacancies.
+        </Text>
       </Hero>
 
       <Content>
-        <Text>Jobs</Text>
+        <Text>Job portal is coming soon!</Text>
       </Content>
     </Layout>
   )

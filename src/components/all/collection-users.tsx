@@ -29,7 +29,7 @@ export function CollectionUsers({ users }) {
     >
       {users.map((user, index) => {
         return (
-          <NextLink key={user.id} href={user.handle} passHref>
+          <NextLink key={user.handle} href={user.handle} passHref>
             <Link
               as="article"
               rounded="md"

@@ -1,0 +1,98 @@
+[
+  {
+    "type": "Organization",
+    "id": 0,
+    "handle": "catamyst",
+    "name": "Catamyst",
+    "avatarUrl": "/assets/logos/catamyst.png",
+    "coverUrl": "https://storage.catamyst.com/covers/iceberg.jpg",
+    "headline": "The Company of This Site",
+    "bioHtml": "<p>Learning, growing, and working with software. Helping people like you to learn and grow with web development and software engineering.</p>",
+    "location": "Remote",
+    "countryCode": "EARTH",
+    "website": {
+      "url": "https://catamyst.com/about",
+      "name": "Catamyst.com"
+    },
+    "socials": [
+      { "name": "Twitter", "url": "https://twitter.com/catamyst" },
+      { "name": "GitHub", "url": "https://github.com/catamyst" },
+      { "name": "LinkedIn", "url": "https://linkedin.com/company/catamyst" }
+    ],
+    "role": "Company",
+    "isVerified": true,
+    "isEmailConfirmed": true,
+    "joinedAt": "2020-01-01",
+    "people": [1, 2, 3, 4]
+  },
+  {
+    "type": "Organization",
+    "id": 1,
+    "handle": "github",
+    "name": "GitHub",
+    "bioHtml": "<p>How people build software.</p>",
+    "countryCode": "US",
+    "location": "San Francisco, CA",
+    "website": {
+      "url": "https://github.com/about",
+      "name": "GitHub"
+    },
+    "role": "Company",
+    "joinedAt": "2021-01-03",
+    "people": []
+  },
+  {
+    "type": "Organization",
+    "id": 2,
+    "handle": "google",
+    "name": "Google",
+    "avatarUrl": "https://storage.catamyst.com/avatars/google.png",
+    "bioHtml": "<p>Google ❤️ Learning and Open Source.</p>",
+    "countryCode": "US",
+    "website": {
+      "url": "https://opensource.google",
+      "name": "Google Open Source"
+    },
+    "role": "Company",
+    "joinedAt": "2021-01-03",
+    "people": []
+  },
+  {
+    "type": "Organization",
+    "id": 3,
+    "handle": "facebook",
+    "name": "Facebook",
+    "avatarUrl": "https://storage.catamyst.com/avatars/facebook.png",
+    "bioHtml": "<p>We are working to build community through learning and open source technology.</p>",
+    "countryCode": "US",
+    "location": "Menlo Park, California",
+    "role": "Company",
+    "joinedAt": "2021-01-03",
+    "people": []
+  },
+  {
+    "type": "Organization",
+    "id": 4,
+    "handle": "spotify",
+    "name": "Spotify",
+    "avatarUrl": "https://storage.catamyst.com/avatars/spotify.png",
+    "bioHtml": "<p>Company description.</p>",
+    "countryCode": "SE",
+    "location": "Stockholm",
+    "role": "Company",
+    "joinedAt": "2021-01-03",
+    "people": []
+  },
+  {
+    "type": "Organization",
+    "id": 5,
+    "handle": "impactbyte",
+    "name": "Impact Byte",
+    "bioHtml": "<p>Make impact with your code.</p>",
+    "countryCode": "ID",
+    "location": "Jakarta",
+    "role": "Company",
+    "joinedAt": "2021-01-03",
+    "people": []
+  }
+]
