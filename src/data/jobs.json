@@ -1,6 +1,13 @@
 [
   {
     "id": 1,
+    "isPublished": true,
+    "isVerified": true,
+    "publishedDate": "2021-03-10",
+    "status": "Closed",
+    "slug": "software-engineering-mentor-catamyst",
+    "title": "Software Engineering Mentor",
+    "descriptionHtml": "<p>We are Catamyst. We help people to learn web development and software engineering.</p>",
     "organizationId": 0,
     "organization": {
       "handle": "catamyst",
@@ -10,13 +17,13 @@
       "location": "Worldwide and Remote",
       "isVerified": true
     },
-    "title": "Software Engineering Mentor",
-    "descriptionHtml": "<p>We are Catamyst. We help people to learn web development and software engineering.</p>",
+    "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
       "currencyCode": "USD",
       "currencySymbol": "$",
       "hourlyMin": 15,
-      "hourlyMax": 25
+      "hourlyMax": 25,
+      "description": "Salary can grow significantly upon the growth of company revenue. Pay day is on every 1st day of the month."
     },
     "applyUrl": "https://apply.catamyst.com/200",
     "applyEmail": "",
@@ -24,9 +31,6 @@
       "textColor": "#fff",
       "backgroundColor": "#0aa"
     },
-    "isVerified": true,
-    "isPublished": true,
-    "publishedDate": "2021-03-10",
     "benefits": ["Flexible and remote working", "Quarter-time work"],
     "skills": [
       "Teaching",
@@ -60,6 +64,13 @@
   },
   {
     "id": 2,
+    "isPublished": true,
+    "isVerified": true,
+    "publishedDate": "2021-03-10",
+    "status": "Closed",
+    "slug": "full-stack-web-developer-catamyst",
+    "title": "Full Stack Web Developer",
+    "descriptionHtml": "<p>We are Catamyst. We are building the all-in-one platform to help people learn web development and software engineering.</p>",
     "organizationId": 0,
     "organization": {
       "handle": "catamyst",
@@ -69,19 +80,16 @@
       "location": "Worldwide and Remote",
       "isVerified": true
     },
-    "title": "Full Stack Web Developer",
-    "descriptionHtml": "<p>We are Catamyst. We are building the all-in-one platform to help people learn web development and software engineering.</p>",
+    "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
       "currencyCode": "IDR",
       "currencySymbol": "Rp ",
       "hourlyMin": 100000,
-      "hourlyMax": 120000
+      "hourlyMax": 120000,
+      "description": "Salary can grow significantly upon the growth of company revenue. Pay day is on every 1st day of the month."
     },
     "applyUrl": "https://apply.catamyst.com/100",
     "applyEmail": "",
-    "isVerified": true,
-    "isPublished": true,
-    "publishedDate": "2021-03-20",
     "theme": {
       "textColor": "#fff",
       "backgroundColor": "#0aa"
@@ -103,14 +111,20 @@
   },
   {
     "id": 3,
+    "isPublished": true,
+    "isVerified": true,
+    "publishedDate": "2021-01-14",
+    "status": "Closed",
+    "slug": "ux-engineer-nawaart",
+    "title": "UX Engineer",
+    "descriptionHtml": "<p>In Nawaart, we are promoting local artists of Myanmar.</p>",
     "organization": {
       "handle": "nawaart",
       "name": "Nawaart",
       "countryCode": "CA",
       "location": "Canada/Myanmar"
     },
-    "title": "UX Engineer",
-    "descriptionHtml": "<p>In Nawaart, we are promoting local artists of Myanmar.</p>",
+    "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
       "currencyCode": "CAD",
       "currencySymbol": "$",
@@ -119,9 +133,6 @@
     },
     "applyUrl": "https://apply.catamyst.com/987",
     "applyEmail": "",
-    "isVerified": true,
-    "isPublished": true,
-    "publishedDate": "2021-01-14",
     "theme": {
       "textColor": "#fff",
       "backgroundColor": "red.800"
@@ -140,13 +151,18 @@
   },
   {
     "id": 4,
+    "isPublished": true,
+    "publishedDate": "2021-02-25",
+    "status": "Closed",
+    "slug": "ux-designer-ux-army",
+    "title": "UX Designer",
+    "descriptionHtml": "<p>We provide a remote user research platform.</p>",
     "organization": {
       "name": "UX Army",
       "countryCode": "SG",
       "location": "Singapore/Malaysia"
     },
-    "title": "UX Designer",
-    "descriptionHtml": "<p>We provide a remote user research platform.</p>",
+    "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
       "currencyCode": "SGD",
       "currencySymbol": "$",
@@ -154,13 +170,11 @@
       "hourlyMax": 50,
       "monthlyMin": 2000,
       "monthlyMax": 3000,
-      "yearlyMin": 24000,
-      "yearlyMax": 27000
+      "yearlyMin": 30000,
+      "yearlyMax": 40000
     },
     "applyUrl": "https://apply.catamyst.com/400",
     "applyEmail": "",
-    "isPublished": true,
-    "publishedDate": "2021-02-25",
     "theme": {
       "textColor": "#fff",
       "backgroundColor": "blue.700"

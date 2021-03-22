@@ -1,7 +1,7 @@
 [
   {
     "type": "Organization",
-    "id": 0,
+    "id": 1,
     "handle": "catamyst",
     "name": "Catamyst",
     "avatarUrl": "/assets/logos/catamyst.png",
@@ -31,8 +31,8 @@
     "handle": "nawaart",
     "name": "Nawaart",
     "bioHtml": "<p>Promoting local artists of South East Asia.</p>",
-    "countryCode": "MY",
-    "location": "Naypyitaw",
+    "countryCode": "MM",
+    "location": "Naypyitaw and Vancouver, CA",
     "website": {
       "url": "https://nawaart.com",
       "name": "Nawaart"
@@ -43,7 +43,23 @@
   },
   {
     "type": "Organization",
-    "id": 2,
+    "id": 3,
+    "handle": "zidence",
+    "name": "Zidence",
+    "bioHtml": "<p>Simple property listing for everyone.</p>",
+    "countryCode": "MY",
+    "location": "Kuala Lumpur",
+    "website": {
+      "url": "https://zidence.com",
+      "name": "Zidence"
+    },
+    "role": "Company",
+    "joinedAt": "2020-12-01",
+    "people": []
+  },
+  {
+    "type": "Organization",
+    "id": 4,
     "handle": "github",
     "name": "GitHub",
     "bioHtml": "<p>How people build software.</p>",
@@ -59,7 +75,7 @@
   },
   {
     "type": "Organization",
-    "id": 3,
+    "id": 5,
     "handle": "google",
     "name": "Google",
     "avatarUrl": "https://storage.catamyst.com/avatars/google.png",
@@ -75,7 +91,7 @@
   },
   {
     "type": "Organization",
-    "id": 4,
+    "id": 6,
     "handle": "facebook",
     "name": "Facebook",
     "avatarUrl": "https://storage.catamyst.com/avatars/facebook.png",
@@ -88,7 +104,7 @@
   },
   {
     "type": "Organization",
-    "id": 5,
+    "id": 7,
     "handle": "spotify",
     "name": "Spotify",
     "avatarUrl": "https://storage.catamyst.com/avatars/spotify.png",
@@ -101,7 +117,7 @@
   },
   {
     "type": "Organization",
-    "id": 6,
+    "id": 8,
     "handle": "impactbyte",
     "name": "Impact Byte",
     "bioHtml": "<p>Make impact with your code.</p>",

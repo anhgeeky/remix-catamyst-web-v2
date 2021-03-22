@@ -24,6 +24,7 @@ import {
 import ReactHtmlParser from 'react-html-parser'
 
 import { Country, Icon, SocialLinks, useToast } from '@components'
+import { OrganizationAvatar } from '@components/organizations'
 import { transformOptions } from '@components/blocks'
 import { trimUrl, getJoinedDate } from '@utils'
 import { useAuth } from '@hooks'
@@ -157,12 +158,12 @@ function OrganizationProfileContent({ org, state, actions }) {
         <VStack id="org-names">
           <Box
             id="org-avatar"
-            rounded="full"
+            rounded="md"
             p={1}
             zIndex={1}
             bg={useColorModeValue('gray.50', 'gray.900')}
           >
-            <Avatar name={org.name} src={org.avatarUrl} size="2xl" />
+            <OrganizationAvatar org={org} />
           </Box>
 
           <OrganizationNameHandle org={org} />

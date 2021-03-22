@@ -1,15 +1,14 @@
 import NextHead from 'next/head'
 import NextImage from 'next/image'
-import {
-  Box,
-  Heading,
-  Stack,
-  Text,
-  Button,
-  useMediaQuery,
-} from '@chakra-ui/react'
+import { Box, Heading, Stack, Text, useMediaQuery } from '@chakra-ui/react'
 
-import { Card, CardPlaceholder, Content, HeadingStack } from '@components'
+import {
+  Card,
+  CardPlaceholder,
+  Content,
+  HeadingStack,
+  LinkButton,
+} from '@components'
 import { DashboardHero } from '@components/dashboard'
 
 export function DashboardProjects({ auth }) {
@@ -59,7 +58,9 @@ export function DashboardProjects({ auth }) {
                   Hey {auth.user.name}, you don't have any published projects
                   yet.
                 </Text>
-                <Button colorScheme="teal">Publish a project</Button>
+                <LinkButton colorScheme="teal" href="/dashboard/projects/new">
+                  Publish a project
+                </LinkButton>
               </CardPlaceholder>
             </Card>
           </Stack>
@@ -71,7 +72,9 @@ export function DashboardProjects({ auth }) {
                 <Text>
                   Hey {auth.user.name}, you don't have any draft projects.
                 </Text>
-                <Button colorScheme="teal">Publish a project</Button>
+                <LinkButton colorScheme="teal" href="/dashboard/projects/new">
+                  Publish a project
+                </LinkButton>
               </CardPlaceholder>
             </Card>
           </Stack>

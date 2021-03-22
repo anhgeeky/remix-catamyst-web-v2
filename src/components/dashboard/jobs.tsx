@@ -2,7 +2,13 @@ import NextHead from 'next/head'
 import NextImage from 'next/image'
 import { Box, Heading, Stack, Text, Button } from '@chakra-ui/react'
 
-import { Card, CardPlaceholder, Content, HeadingStack } from '@components'
+import {
+  Card,
+  CardPlaceholder,
+  Content,
+  HeadingStack,
+  LinkButton,
+} from '@components'
 import { DashboardHero } from '@components/dashboard'
 
 export function DashboardJobs({ auth }) {
@@ -39,7 +45,9 @@ export function DashboardJobs({ auth }) {
                 <Text>
                   Hey {auth.user.name}, you haven't applied to a job yet.
                 </Text>
-                <Button colorScheme="teal">Search for a job</Button>
+                <LinkButton colorScheme="teal" href="/jobs">
+                  Search for a job
+                </LinkButton>
               </CardPlaceholder>
             </Card>
           </Stack>

@@ -8,6 +8,7 @@ import {
   Stack,
   VStack,
   Input,
+  Textarea,
   ButtonGroup,
   Button,
   VisuallyHidden,
@@ -50,78 +51,85 @@ export function ProjectNew() {
           <LinkButton href="/dashboard/projects">Cancel</LinkButton>
         </ButtonGroup>
 
-        <Box>
-          <FormControl>
-            <VisuallyHidden>
-              <FormLabel>Title or name</FormLabel>
-            </VisuallyHidden>
-            <Input
-              // ref={register}
-              isRequired
-              name="title"
-              fontFamily="heading"
-              fontWeight="700"
-              fontSize="4xl"
-              variant="unstyled"
-              py={3}
-              placeholder="Project title or name"
-              aria-placeholder="Enter project title or name"
-            />
-          </FormControl>
+        <FormControl>
+          <FormLabel>Title or name</FormLabel>
+          <Input
+            // ref={register}
+            isRequired
+            variant="unstyled"
+            name="title"
+            fontFamily="heading"
+            fontWeight="700"
+            fontSize="4xl"
+            py={3}
+            placeholder="Title or name..."
+            aria-placeholder="Enter project title or name"
+          />
+        </FormControl>
 
-          <FormControl>
-            <VisuallyHidden>
-              <FormLabel>Subtitle or tagline</FormLabel>
-            </VisuallyHidden>
-            <Input
-              // ref={register}
-              name="subtitle"
-              fontSize="2xl"
-              variant="unstyled"
-              py={3}
-              placeholder="Subtitle, tagline, or short description..."
-              aria-placeholder="Enter subtitle, tagline, or short description"
-            />
-          </FormControl>
+        <FormControl>
+          <FormLabel>Subtitle or tagline</FormLabel>
+          <Input
+            // ref={register}
+            isRequired
+            variant="unstyled"
+            name="subtitle"
+            fontSize="2xl"
+            py={3}
+            placeholder="Subtitle or tagline..."
+            aria-placeholder="Enter subtitle, tagline, or short description"
+          />
+        </FormControl>
 
-          <FormControl>
-            <VisuallyHidden>
-              <FormLabel>URL or link</FormLabel>
-            </VisuallyHidden>
-            <Input
-              isRequired
-              // ref={register}
-              name="url"
-              fontSize="xl"
-              variant="unstyled"
-              py={3}
-              placeholder="https://example.com"
-              aria-placeholder="Enter URL like https://example.com"
-            />
-          </FormControl>
-        </Box>
+        <FormControl>
+          <FormLabel>URL or link</FormLabel>
+          <Input
+            isRequired
+            // ref={register}
+            name="url"
+            fontSize="xl"
+            variant="unstyled"
+            py={3}
+            placeholder="https://example.com"
+            aria-placeholder="Enter URL like https://example.com"
+          />
+        </FormControl>
 
-        <Box>
+        <FormControl>
+          <FormLabel>Images or screenshots</FormLabel>
           <Flex
             align="center"
             bg={useColorModeValue('white', 'gray.800')}
             borderColor={useColorModeValue('gray.100', 'gray.700')}
             borderWidth={2}
-            height={300}
+            height={200}
             justify="center"
             rounded="md"
             width="100%"
           >
             <Button variant="outline">Upload images</Button>
           </Flex>
-        </Box>
+        </FormControl>
 
-        <Box className="select-project-categories hide-last-div">
+        <FormControl>
+          <FormLabel>Description or details</FormLabel>
+          <Textarea
+            isRequired
+            // ref={register}
+            name="url"
+            // variant="unstyled"
+            py={3}
+            placeholder="Enter project description or details"
+            aria-placeholder="Enter project description or details"
+          />
+        </FormControl>
+
+        <FormControl className="select-project-categories hide-last-div">
           <SelectProjectCategories />
-        </Box>
-        <Box className="select-project-specifics hide-last-div">
+        </FormControl>
+        <FormControl className="select-project-specifics hide-last-div">
           <SelectProjectSpecifics />
-        </Box>
+        </FormControl>
       </Stack>
     </Flex>
   )
@@ -164,7 +172,7 @@ export function SelectProjectCategories() {
   return (
     <SelectAutoComplete
       label="Categories"
-      placeholder="Choose one or more categories"
+      placeholder="Choose categories"
       onCreateItem={handleCreateItem}
       items={pickerItems}
       selectedItems={selectedItems}
@@ -193,7 +201,7 @@ export function SelectProjectSpecifics() {
   return (
     <SelectAutoComplete
       label="Tools and technologies"
-      placeholder="Choose one or more tools and technologies"
+      placeholder="Choose tools and technologies"
       onCreateItem={handleCreateItem}
       items={pickerItems}
       selectedItems={selectedItems}

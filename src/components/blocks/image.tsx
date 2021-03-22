@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from 'uuid'
  */
 export function BlockImage({ block, renderer = 'NextImage' }) {
   const uuid = uuidv4()
-  const width =
+  const autoWidth =
     block.size === 'Huge' // Fill the width
       ? 1440
       : block.size === 'Large' // Beyond texts
@@ -25,7 +25,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       : block.size === 'Small' // Standard size
       ? 300
       : 150 // Tiny for Logo or Icon
-  const height =
+  const autoHeight =
     block.size === 'Huge'
       ? 900
       : block.size === 'Large'
@@ -36,6 +36,9 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       ? 300
       : 150 // Tiny
 
+  /**
+   * Renderer should be automatice to determine based on next.config.js
+   */
   return (
     <Box>
       {renderer === 'Image' && (
@@ -43,8 +46,8 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
           <Image
             src={block.url || `https://example.com`}
             alt={block.alt || block.title || 'Unknown'}
-            width={width}
-            height={height}
+            width={block.width || autoWidth}
+            height={block.height || autoHeight}
             objectFit="contain"
           />
         </Flex>
@@ -61,8 +64,8 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
             key={uuid}
             src={block.url || `https://example.com`}
             alt={block.alt || block.title || 'Unknown'}
-            width={width}
-            height={height}
+            width={block.width || autoWidth}
+            height={block.height || autoHeight}
             layout="intrinsic"
             objectFit="contain"
           />
@@ -71,9 +74,9 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
 
       {block.showMeta !== false && block.title && (
         <Box opacity={0.5} align="center" mt={2}>
-          <Text>{block.title}</Text>
+          <Text fontSize="sm">{block.title}</Text>
           {block.source && (
-            <Link fontSize="sm" href={block.source}>
+            <Link fontSize="xs" href={block.source}>
               {block.source}
             </Link>
           )}

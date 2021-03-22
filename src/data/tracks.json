@@ -4,7 +4,7 @@
     "isAvailable": true,
     "slug": "web",
     "title": "Website Development",
-    "description": "Learn and practice the fundamental concepts and specific tools you can use to build basic websites. This track focuses only on the design and frontend (what your website visitor would see).",
+    "description": "Learn and practice the fundamental concepts and specific tools you can use to build basic websites. This track focuses on the design and frontend (what your website visitor would see).",
     "levels": ["Newbie"],
     "iconUrl": "/assets/logos/catamyst-avatar.svg",
     "totalTopics": 18,

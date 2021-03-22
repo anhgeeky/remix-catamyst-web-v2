@@ -79,8 +79,9 @@ export default function EditorSlate({ slateElements, handleSave }) {
         <ButtonGroup
           className="hidden-scrollbar"
           size="sm"
-          spacing={1}
           overflow="scroll"
+          flexWrap="wrap"
+          spacing={0}
         >
           <BlockButton format="heading-one" icon="heading-one" />
           <BlockButton format="heading-two" icon="heading-two" />
@@ -279,6 +280,8 @@ const BlockButton = ({ format, icon }) => {
 
   return (
     <Button
+      mr={1}
+      mb={1}
       colorScheme={isActive ? 'teal' : 'gray'}
       onMouseDown={(event) => {
         event.preventDefault()
@@ -296,6 +299,8 @@ const MarkButton = ({ format, icon }) => {
 
   return (
     <Button
+      mr={1}
+      mb={1}
       colorScheme={isActive ? 'teal' : 'gray'}
       onMouseDown={(event) => {
         event.preventDefault()

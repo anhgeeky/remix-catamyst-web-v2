@@ -85,14 +85,14 @@
   },
   {
     "name": "Certificate of Completion",
-    "description": "Receive a certificate that you can share on your profile or to your potential employers, co-workers, and friends after you complete a track.",
+    "description": "Receive a certificate that you can share on your profile or to your potential employers and others after you complete a track.",
     "basic": false,
     "pro": false,
     "super": true
   },
   {
     "name": "Apply for Jobs",
-    "description": "Discover numerous work opportunities and accelerate your meaningful career",
+    "description": "Discover work opportunities either full-time or freelance.",
     "basic": true,
     "pro": true,
     "super": true

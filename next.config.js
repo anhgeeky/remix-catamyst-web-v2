@@ -6,6 +6,7 @@ module.exports = {
       'storage.catamyst.com',
       'a.storyblok.com',
       'amazonaws.com',
+      'apple.com',
       'bit.ly',
       'datocms-assets.com',
       'example.com',

@@ -18,6 +18,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Icon } from '@components'
+import { OrganizationAvatar } from '@components/organizations'
 
 /**
  * Because there are a lot of organizations,
@@ -25,7 +26,7 @@ import { Icon } from '@components'
  */
 export function CollectionOrganizations({ organizations }) {
   return (
-    <SimpleGrid spacing={5} width="100%" minChildWidth={220}>
+    <SimpleGrid spacing={3} width="100%" minChildWidth={250}>
       {organizations.map((org, index) => {
         return (
           <NextLink key={org.handle} href={org.handle} passHref>
@@ -41,30 +42,7 @@ export function CollectionOrganizations({ organizations }) {
                 direction={{ base: 'column', lg: 'row' }}
               >
                 <HStack minW={300} spacing={3}>
-                  {!org.avatarUrl && (
-                    <Avatar
-                      name={org.name}
-                      src={org.avatarUrl}
-                      width={100}
-                      height={100}
-                      size="2xl"
-                      rounded="md"
-                    />
-                  )}
-                  {org.avatarUrl && (
-                    <Box
-                      className="next-image-container org-avatar"
-                      rounded="md"
-                    >
-                      <NextImage
-                        className="next-image"
-                        src={org.avatarUrl}
-                        width={100}
-                        height={100}
-                        layout="fixed"
-                      />
-                    </Box>
-                  )}
+                  <OrganizationAvatar org={org} />
                   <Stack spacing={1}>
                     <Flex id="org-name-verified">
                       <Heading className="org-name" as="h3" size="md">

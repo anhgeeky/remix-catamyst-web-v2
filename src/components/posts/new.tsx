@@ -7,6 +7,7 @@ import {
   Button,
   Stack,
   VStack,
+  Textarea,
   Input,
 } from '@chakra-ui/react'
 
@@ -54,6 +55,7 @@ export function PostNew() {
             variant="unstyled"
             py={3}
             placeholder="New post title..."
+            aria-placeholder="Enter the post title"
           />
 
           <Input
@@ -64,6 +66,7 @@ export function PostNew() {
             variant="unstyled"
             py={3}
             placeholder="Put a subtitle text..."
+            aria-placeholder="Enter the subtitle text"
           />
         </Stack>
 

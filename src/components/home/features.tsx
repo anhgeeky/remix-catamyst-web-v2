@@ -27,7 +27,7 @@ export function HomeFeatures() {
         >
           Supports you can get
         </Heading>
-        <Text as="h2" fontSize="xl">
+        <Text as="h2" fontSize="lg">
           Catamyst provide the essentials for your career journey.
         </Text>
       </VStack>

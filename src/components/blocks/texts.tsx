@@ -1,15 +1,16 @@
+import NextLink from 'next/link'
 import {
-  Box,
-  Heading,
-  Text,
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  Link,
-  Kbd,
-  Code,
   chakra,
+  Box,
+  Code,
+  Heading,
+  Kbd,
+  Link,
+  List,
+  ListIcon,
+  ListItem,
+  OrderedList,
+  Text,
 } from '@chakra-ui/react'
 import { FaAngleRight } from 'react-icons/fa'
 import ReactHtmlParser from 'react-html-parser'
@@ -46,6 +47,15 @@ export const transformOptions = {
     /**
      * HTML inline elements such as: a, span, b, strong, i, em, code, kbd.
      */
+    if (node.type === 'tag' && node.name === 'alink') {
+      return (
+        <NextLink key={index} href={node.attribs.href} passHref>
+          <Link color="teal.500" fontWeight="500">
+            {node.children[0].data}
+          </Link>
+        </NextLink>
+      )
+    }
     if (node.type === 'tag' && node.name === 'a') {
       return (
         <Link

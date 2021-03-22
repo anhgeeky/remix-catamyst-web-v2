@@ -31,7 +31,7 @@ export function HomeReviews() {
         >
           What our members say
         </Heading>
-        <Text as="h2" fontSize="xl">
+        <Text as="h2" fontSize="lg">
           Their reviews on the experience with Catamyst.
         </Text>
       </VStack>

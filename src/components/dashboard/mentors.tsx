@@ -1,7 +1,14 @@
 import NextHead from 'next/head'
 import NextImage from 'next/image'
 import { Box, Heading, Stack, Text, Button } from '@chakra-ui/react'
-import { Card, CardPlaceholder, Content, HeadingStack } from '@components'
+
+import {
+  Card,
+  CardPlaceholder,
+  Content,
+  HeadingStack,
+  LinkButton,
+} from '@components'
 import { DashboardHero } from '@components/dashboard'
 
 export function DashboardMentors({ auth }) {
@@ -39,7 +46,12 @@ export function DashboardMentors({ auth }) {
                   <Text>
                     Hey {auth.user.name}, you don't have any mentors yet.
                   </Text>
-                  <Button colorScheme="teal">Request Super plan</Button>
+                  <LinkButton
+                    colorScheme="teal"
+                    href="/settings/billing?plan=super"
+                  >
+                    Request Super plan
+                  </LinkButton>
                 </CardPlaceholder>
               </Card>
             </Stack>
@@ -52,7 +64,12 @@ export function DashboardMentors({ auth }) {
                     Here are the available mentors you can request when you
                     enroll in <b>Super</b> plan.
                   </Text>
-                  <Button colorScheme="teal">Request Super plan</Button>
+                  <LinkButton
+                    colorScheme="teal"
+                    href="/settings/billing?plan=super"
+                  >
+                    Request Super plan
+                  </LinkButton>
                 </CardPlaceholder>
               </Card>
             </Stack>

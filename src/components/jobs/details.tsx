@@ -1,17 +1,20 @@
-import NextHead from 'next/head'
-import NextLink from 'next/link'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
+import NextLink from 'next/link'
+import NextHead from 'next/head'
 import {
   Box,
   Button,
+  ButtonGroup,
+  chakra,
   Flex,
   Heading,
+  HStack,
   Link,
   Stack,
+  Tag,
   Text,
   VStack,
-  chakra,
-  HStack,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
@@ -31,9 +34,10 @@ export function JobDetails({ jobParams }) {
   const toast = useToast()
   const router = useRouter()
   const { isAuthenticated } = useAuth()
-  const job = dataJobs.find((job) => {
-    return job.id === Number(jobParams[0])
-  })
+  const [jobId, jobSlug] = jobParams[0]
+
+  const job = dataJobs.find((job) => job.id === Number(jobId))
+  const [isApplied, setApplied] = useState(false)
 
   const handlePickSkill = () => {
     toast({ title: 'Added skill to filter' })
@@ -41,7 +45,13 @@ export function JobDetails({ jobParams }) {
 
   const handleApplyJob = () => {
     if (isAuthenticated) {
-      toast({ status: 'success', title: 'Applied to this job!' })
+      if (isApplied) {
+        setApplied(false)
+        toast({ status: 'warning', title: 'Cancelled to apply' })
+      } else {
+        setApplied(true)
+        toast({ status: 'success', title: 'Applied to this job!' })
+      }
     } else {
       router.push('/signin')
     }
@@ -73,20 +83,21 @@ export function JobDetails({ jobParams }) {
               </Link>
             </NextLink>
           )}
+          <Tag>{job.status || 'Closed'}</Tag>
         </VStack>
       </JobHero>
 
       <Content maxW={700}>
         <Stack id="job-description" align="stretch" spacing={7}>
           <Stack>
-            <HeadingStack>Job Description</HeadingStack>
+            <HeadingStack>Description and Benefits</HeadingStack>
             <Card>
               {ReactHtmlParser(job.descriptionHtml, transformOptions)}
             </Card>
           </Stack>
 
           <Stack>
-            <HeadingStack>Skills</HeadingStack>
+            <HeadingStack>Skills and Technologies</HeadingStack>
             <Card>
               <JobSkillsTags
                 skills={job.skills}
@@ -98,7 +109,7 @@ export function JobDetails({ jobParams }) {
           </Stack>
 
           <Stack>
-            <HeadingStack>Origin Country and Location</HeadingStack>
+            <HeadingStack>Country and Location</HeadingStack>
             <Card>
               <Box id="job-country-location">
                 <Flex flexWrap="wrap">
@@ -115,17 +126,48 @@ export function JobDetails({ jobParams }) {
           </Stack>
 
           <Stack>
-            <HeadingStack>Salary Rate</HeadingStack>
+            <HeadingStack>Position Type and Salary Rate</HeadingStack>
             <Card>
-              <JobSalaryRate salary={job.salary} />
+              <Stack>
+                {job?.positionTypes.length > 1 && (
+                  <Text>
+                    {job.positionTypes.map((position, index) => {
+                      return (
+                        <span>
+                          {index > 0 && ' or '}
+                          {position}
+                        </span>
+                      )
+                    })}
+                  </Text>
+                )}
+                <JobSalaryRate salary={job.salary} />
+                {job.salary.description && (
+                  <Text fontSize="sm">{job.salary.description}</Text>
+                )}
+              </Stack>
             </Card>
           </Stack>
 
-          <Box>
-            <Button colorScheme="teal" size="lg" onClick={handleApplyJob}>
-              Apply for this position
-            </Button>
-          </Box>
+          <Stack>
+            <Text color="gray.500">
+              {job.status === 'Open'
+                ? 'This job vacancy is open to apply'
+                : 'This job vacancy is closed but you can try to apply'}
+            </Text>
+            <ButtonGroup>
+              <Button
+                variant="solid"
+                colorScheme={isApplied ? 'red' : 'teal'}
+                onClick={handleApplyJob}
+              >
+                {isApplied ? 'Cancel apply' : 'Apply for this position'}
+              </Button>
+              <Button disabled variant="outline">
+                Share
+              </Button>
+            </ButtonGroup>
+          </Stack>
         </Stack>
       </Content>
     </>

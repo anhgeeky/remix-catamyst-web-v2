@@ -75,7 +75,6 @@
       "url": "https://catamyst.com"
     },
     "role": "Staff",
-    "plan": "Super",
     "isVerified": true,
     "isEmailConfirmed": true,
     "tracks": [1, 2],
@@ -112,7 +111,6 @@
       "url": "https://catamyst.com"
     },
     "role": "Staff",
-    "plan": "Super",
     "isVerified": true,
     "isEmailConfirmed": true,
     "joinedAt": "2021-01-01"

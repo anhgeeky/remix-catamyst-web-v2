@@ -5,7 +5,7 @@ import { Link } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { UserProfile } from '@components/user'
-import { OrganizationProfile } from '@components/organization'
+import { OrganizationProfile } from '@components/organizations'
 
 import dataUsers from '@data/users.json'
 import dataOrganizations from '@data/organizations.json'

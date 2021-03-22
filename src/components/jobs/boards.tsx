@@ -1,5 +1,7 @@
-import NextImage from 'next/image'
+import { useState } from 'react'
+import { useRouter } from 'next/router'
 import NextLink from 'next/link'
+import NextImage from 'next/image'
 import {
   chakra,
   Link,
@@ -18,7 +20,7 @@ import {
 
 import { Card, Icon, TagSkill, Country, LinkButton } from '@components'
 import { getPublishedDate, getRelativePublishedDate } from '@utils'
-import { useToast } from '@hooks'
+import { useToast, useAuth } from '@hooks'
 
 import dataJobs from '@data/jobs.json'
 
@@ -28,162 +30,178 @@ import dataJobs from '@data/jobs.json'
  * Because there are a lot of jobs, the identification is using className.
  */
 export function JobsBoards() {
+  return (
+    <Stack spacing={3}>
+      {dataJobs.map((job, index) => {
+        return <JobDetail key={index} job={job} />
+      })}
+    </Stack>
+  )
+}
+
+export function JobDetail({ job }) {
   const toast = useToast()
+  const router = useRouter()
+  const { isAuthenticated } = useAuth()
+  const [isApplied, setApplied] = useState(false) // Can be from user.jobs
+
   const handlePickSkill = (skill) => {
     toast({ title: `Added ${skill} to filter` })
   }
 
+  const state = {
+    publishedDate: getPublishedDate(job.publishedDate),
+    relativePublishedDate: getRelativePublishedDate(job.publishedDate),
+  }
+
+  const handleApplyJob = () => {
+    if (isAuthenticated) {
+      if (isApplied) {
+        setApplied(false)
+        toast({ status: 'warning', title: 'Cancelled to apply' })
+      } else {
+        setApplied(true)
+        toast({ status: 'success', title: 'Applied to this job!' })
+      }
+    } else {
+      router.push('/signin')
+    }
+  }
+
   return (
-    <Stack spacing={3}>
-      {dataJobs.map((job, index) => {
-        const state = {
-          publishedDate: getPublishedDate(job.publishedDate),
-          relativePublishedDate: getRelativePublishedDate(job.publishedDate),
-        }
-
-        return (
-          <Stack
-            as={Card}
-            key={index}
-            justify="space-between"
-            align="flex-start"
-            spacing={5}
-            direction={{ base: 'column', lg: 'row' }}
-          >
-            <Stack
-              className="job-logo-info"
-              spacing={3}
-              direction={{ base: 'column', sm: 'row' }}
-              flex={3}
-            >
-              <JobOrganizationLogo org={job.organization} size="80px" />
-              <Stack className="job-info" spacing={1}>
-                <Box>
-                  <HStack className="job-organization-name">
-                    {!job.organization.handle && (
-                      <Text
-                        as="h1"
-                        fontSize="md"
-                        fontWeight="700"
-                        fontFamily="heading"
-                      >
-                        {job.organization.name}
-                      </Text>
-                    )}
-                    {job.organization.handle && (
-                      <NextLink href={`/${job.organization.handle}`} passHref>
-                        <Link
-                          fontSize="md"
-                          fontWeight="700"
-                          fontFamily="heading"
-                        >
-                          {job.organization.name}
-                        </Link>
-                      </NextLink>
-                    )}
-                    {job.organization.isVerified && (
-                      <Tooltip
-                        hasArrow
-                        label="Verified organization account"
-                        aria-label="Verified"
-                        placement="top"
-                      >
-                        <chakra.span
-                          fontSize="sm"
-                          color="teal.500"
-                          position="relative"
-                          top="-2px"
-                          left="-3px"
-                        >
-                          <Icon name="verified" />
-                        </chakra.span>
-                      </Tooltip>
-                    )}
-                  </HStack>
-
-                  <HStack className="job-title">
-                    <NextLink href={`/jobs/${job.id}`} passHref>
-                      <Link
-                        fontSize="2xl"
-                        fontWeight="700"
-                        fontFamily="heading"
-                      >
-                        {job.title}
-                      </Link>
-                    </NextLink>
-                    {job.isVerified && (
-                      <Tooltip
-                        hasArrow
-                        label="This job is is verified and trustworty"
-                        aria-label="Verified"
-                        placement="top"
-                      >
-                        <chakra.span
-                          fontSize="xl"
-                          color="gray.500"
-                          position="relative"
-                          top="-2px"
-                        >
-                          <Icon name="trusted" />
-                        </chakra.span>
-                      </Tooltip>
-                    )}
-                  </HStack>
-                </Box>
-
-                <JobSalaryRate salary={job.salary} />
-
-                <Box className="job-country-location">
-                  <Flex flexWrap="wrap">
-                    <chakra.span mr={3}>
-                      <Country code={job.organization.countryCode} />
-                    </chakra.span>
-                    <HStack className="jobs-location" spacing={1}>
-                      <Icon name="location" />
-                      <span>{job.organization.location}</span>
-                    </HStack>
-                  </Flex>
-                </Box>
-              </Stack>
-            </Stack>
-
-            <Box className="job-skills" maxW={{ base: 700, lg: 500 }} flex={2}>
-              <JobSkillsTags
-                isLimited
-                skills={job.skills}
-                actions={{
-                  handlePickSkill,
-                }}
-              />
-            </Box>
-
-            <Stack className="job-meta">
-              <Stack
-                className="job-published-date"
-                spacing={1}
-                textAlign={{ lg: 'right' }}
-              >
-                <HStack spacing={1} justify={{ lg: 'flex-end' }}>
-                  <Icon name="date" />
-                  <Text as="span">{state.publishedDate}</Text>
-                </HStack>
-                <Text as="span" fontSize="sm" color="gray.500">
-                  {state.relativePublishedDate}
+    <Stack
+      as={Card}
+      justify="space-between"
+      align="flex-start"
+      spacing={5}
+      direction={{ base: 'column', lg: 'row' }}
+    >
+      <Stack
+        className="job-logo-info"
+        spacing={3}
+        direction={{ base: 'column', sm: 'row' }}
+        flex={3}
+      >
+        <JobOrganizationLogo org={job.organization} size="80px" />
+        <Stack className="job-info" spacing={1}>
+          <Box>
+            <HStack className="job-organization-name">
+              {!job.organization.handle && (
+                <Text
+                  as="h1"
+                  fontSize="md"
+                  fontWeight="700"
+                  fontFamily="heading"
+                >
+                  {job.organization.name}
                 </Text>
-              </Stack>
+              )}
+              {job.organization.handle && (
+                <NextLink href={`/${job.organization.handle}`} passHref>
+                  <Link fontSize="md" fontWeight="700" fontFamily="heading">
+                    {job.organization.name}
+                  </Link>
+                </NextLink>
+              )}
+              {job.organization.isVerified && (
+                <Tooltip
+                  hasArrow
+                  label="Verified organization account"
+                  aria-label="Verified"
+                  placement="top"
+                >
+                  <chakra.span
+                    fontSize="sm"
+                    color="teal.500"
+                    position="relative"
+                    top="-2px"
+                    left="-3px"
+                  >
+                    <Icon name="verified" />
+                  </chakra.span>
+                </Tooltip>
+              )}
+            </HStack>
 
-              <Box className="job-actions">
-                <ButtonGroup size="sm">
-                  <LinkButton variant="outline" href={`/jobs/${job.id}`}>
-                    Details
-                  </LinkButton>
-                  <Button colorScheme="teal">Apply</Button>
-                </ButtonGroup>
-              </Box>
-            </Stack>
-          </Stack>
-        )
-      })}
+            <HStack className="job-title">
+              <NextLink href={`/jobs/${job.id}/${job.slug}`} passHref>
+                <Link fontSize="2xl" fontWeight="700" fontFamily="heading">
+                  {job.title}
+                </Link>
+              </NextLink>
+              {job.isVerified && (
+                <Tooltip
+                  hasArrow
+                  label="This job is is verified and trustworty"
+                  aria-label="Verified"
+                  placement="top"
+                >
+                  <chakra.span
+                    fontSize="xl"
+                    color="gray.500"
+                    position="relative"
+                    top="-2px"
+                  >
+                    <Icon name="trusted" />
+                  </chakra.span>
+                </Tooltip>
+              )}
+            </HStack>
+          </Box>
+
+          <JobSalaryRate salary={job.salary} />
+
+          <Box className="job-country-location">
+            <Flex flexWrap="wrap">
+              <chakra.span mr={3}>
+                <Country code={job.organization.countryCode} />
+              </chakra.span>
+              <HStack className="jobs-location" spacing={1}>
+                <Icon name="location" />
+                <span>{job.organization.location}</span>
+              </HStack>
+            </Flex>
+          </Box>
+        </Stack>
+      </Stack>
+
+      <Box className="job-skills" maxW={{ base: 700, lg: 500 }} flex={2}>
+        <JobSkillsTags
+          isLimited
+          skills={job.skills}
+          actions={{
+            handlePickSkill,
+          }}
+        />
+      </Box>
+
+      <Stack className="job-meta" minW={160}>
+        <Stack
+          className="job-date-actions"
+          spacing={1}
+          textAlign={{ lg: 'right' }}
+          alignItems="flex-end"
+        >
+          <HStack spacing={1}>
+            <Icon name="date" />
+            <Text as="span">{state.publishedDate}</Text>
+          </HStack>
+          <Text as="span" fontSize="sm" color="gray.500">
+            {state.relativePublishedDate}
+          </Text>
+          <ButtonGroup size="sm">
+            <LinkButton variant="outline" href={`/jobs/${job.id}/${job.slug}`}>
+              Details
+            </LinkButton>
+            <Button
+              colorScheme={isApplied ? 'red' : 'teal'}
+              onClick={handleApplyJob}
+            >
+              {isApplied ? 'Cancel' : 'Apply'}
+            </Button>
+          </ButtonGroup>
+        </Stack>
+      </Stack>
     </Stack>
   )
 }
