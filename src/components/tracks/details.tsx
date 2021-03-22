@@ -3,6 +3,8 @@ import NextImage from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import {
+  Box,
+  ButtonGroup,
   Button,
   Flex,
   Heading,
@@ -95,7 +97,7 @@ export function TrackSideBar({ track }) {
     if (isAuthenticated) {
       if (isEnrolled) {
         setEnrolled(false)
-        toast({ status: 'warning', title: 'Leaved track' })
+        toast({ status: 'warning', title: 'Left track' })
       } else {
         setEnrolled(true)
         toast({ status: 'success', title: 'Enrolled to this track!' })
@@ -107,14 +109,20 @@ export function TrackSideBar({ track }) {
 
   return (
     <Stack maxW={{ lg: '280px' }} width="100%" spacing={0}>
-      <Button
-        colorScheme="teal"
-        variant={isEnrolled ? 'solid' : 'outline'}
-        onClick={handleToggleEnroll}
-      >
-        {isEnrolled ? 'Enrolled' : 'Enroll track'}
-      </Button>
-      <Heading as="h2" size="sm" pt={5}>
+      {track.isAvailable && (
+        <ButtonGroup pb={3}>
+          <Button
+            width="100%"
+            maxW={{ sm: '280px' }}
+            variant="solid"
+            colorScheme={isEnrolled ? 'red' : 'teal'}
+            onClick={handleToggleEnroll}
+          >
+            {isEnrolled ? 'Enrolled' : 'Enroll track'}
+          </Button>
+        </ButtonGroup>
+      )}
+      <Heading as="h2" size="sm">
         About this track
       </Heading>
       <Text>
@@ -127,7 +135,8 @@ export function TrackSideBar({ track }) {
         })}
       </Text>
       <Text>
-        <b>{track.totalTopics}</b> topics
+        {/* {track.totalTopics || '-'} */}
+        <b>{track.topics.length}</b> topics
       </Text>
       <Text>
         <b>{track.totalLessons}</b> lessons

@@ -27,7 +27,7 @@ export function LearningTag({ category }) {
           ? 'pink.500'
           : category === 'Project'
           ? 'cyan.500'
-          : 'teal.400'
+          : 'gray.400'
       }
     >
       {category === 'Fundamental' ? (

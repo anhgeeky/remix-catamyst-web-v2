@@ -311,10 +311,11 @@
     "nickname": "Sep",
     "avatarUrl": "https://storage.catamyst.com/avatars/digachandra.jpg",
     "coverUrl": "",
-    "headline": "",
-    "bioHtml": "<p>Web Developer</p>",
+    "headline": "Design is my passion",
+    "bioHtml": "<p>Web Developer. UI & UX Enthusiast</p>",
     "countryCode": "ID",
     "location": "Tangerang",
+    "website": { "url": "https://digachandra.com" },
     "organization": {
       "title": "Web Developer",
       "name": "Vidio (KMK Labs)"

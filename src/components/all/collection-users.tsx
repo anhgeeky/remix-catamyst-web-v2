@@ -6,6 +6,7 @@ import {
   Heading,
   HStack,
   Flex,
+  SimpleGrid,
   Link,
   LinkBox,
   LinkOverlay,
@@ -22,11 +23,7 @@ import { Icon } from '@components'
  */
 export function CollectionUsers({ users }) {
   return (
-    <Stack
-      divider={
-        <StackDivider borderColor={useColorModeValue('gray.200', 'gray.700')} />
-      }
-    >
+    <SimpleGrid spacing={3} width="100%" minChildWidth={300}>
       {users.map((user, index) => {
         return (
           <NextLink key={user.handle} href={user.handle} passHref>
@@ -68,33 +65,11 @@ export function CollectionUsers({ users }) {
                     </Heading>
                   </Stack>
                 </HStack>
-
-                <HStack
-                  className="hidden-scrollbar"
-                  width="100%"
-                  overflowX="scroll"
-                >
-                  <Box bg="gray.500" height={100} width={200}>
-                    {' '}
-                  </Box>
-                  <Box bg="red.500" height={100} width={200}>
-                    {' '}
-                  </Box>
-                  <Box bg="blue.500" height={100} width={200}>
-                    {' '}
-                  </Box>
-                  <Box bg="green.500" height={100} width={200}>
-                    {' '}
-                  </Box>
-                  <Box bg="yellow.500" height={100} width={200}>
-                    {' '}
-                  </Box>
-                </HStack>
               </Stack>
             </Link>
           </NextLink>
         )
       })}
-    </Stack>
+    </SimpleGrid>
   )
 }

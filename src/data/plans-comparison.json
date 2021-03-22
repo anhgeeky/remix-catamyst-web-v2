@@ -28,6 +28,13 @@
     "super": true
   },
   {
+    "name": "Expert Level",
+    "description": "Get access to lessons for Expert level.",
+    "basic": false,
+    "pro": true,
+    "super": true
+  },
+  {
     "name": "Lifetime Access",
     "description": "Continue to have access to all the lessons even after you complete the track.",
     "basic": false,

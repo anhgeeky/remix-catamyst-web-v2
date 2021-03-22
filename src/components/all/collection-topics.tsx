@@ -15,7 +15,7 @@ export function CollectionTopics({ trackSlug, topics }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   if (!topics || topics.length === 0) {
-    return <AlertSoon text="No topics here yet. Coming soon!" />
+    return <AlertSoon text="No topics here yet. This track is coming soon!" />
   }
   return (
     <Stack spacing={5} width="100%">

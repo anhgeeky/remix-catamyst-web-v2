@@ -1,16 +1,8 @@
-import { Text, Heading, Stack } from '@chakra-ui/react'
+import { Text, Heading } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import {
-  CollectionOrganizations,
-  CollectionUsers,
-  Content,
-  HeadingStack,
-  Hero,
-} from '@components'
-
-import dataUsers from '@data/users.json'
-import dataOrganizations from '@data/organizations.json'
+import { Content, Hero } from '@components'
+import { DiscoverFeatured } from '@components/discover'
 
 export default function discoverPage() {
   return (
@@ -24,19 +16,8 @@ export default function discoverPage() {
           out their showcase projects!
         </Text>
       </Hero>
-
       <Content>
-        <Stack spacing={10} width="100%">
-          <Stack>
-            <HeadingStack>Featured Members</HeadingStack>
-            <CollectionUsers users={dataUsers} />
-          </Stack>
-
-          <Stack>
-            <HeadingStack>Featured Organizations</HeadingStack>
-            <CollectionOrganizations organizations={dataOrganizations} />
-          </Stack>
-        </Stack>
+        <DiscoverFeatured />
       </Content>
     </Layout>
   )
