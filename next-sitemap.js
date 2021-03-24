@@ -7,7 +7,9 @@ const excludes = [
   '/join',
   '/login',
   '/logout',
-  '/members/top'
+  '/members',
+  '/members/*',
+  '/members/top',
   '/onboard',
   '/onboard/*',
   '/projects',
