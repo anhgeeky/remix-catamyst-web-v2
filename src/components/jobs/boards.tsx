@@ -85,7 +85,11 @@ export function JobDetail({ job }) {
         direction={{ base: 'column', sm: 'row' }}
         flex={3}
       >
-        <JobOrganizationLogo org={job.organization} size="80px" />
+        <NextLink href={`/${job.organization.handle}`} passHref>
+          <Link height="80px">
+            <JobOrganizationLogo org={job.organization} size="80px" />
+          </Link>
+        </NextLink>
         <Stack className="job-info" spacing={1}>
           <Box>
             <HStack className="job-organization-name">

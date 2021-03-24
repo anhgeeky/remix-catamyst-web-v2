@@ -71,18 +71,39 @@ export function JobDetails({ jobParams }) {
           <Heading as="h1" size="xl">
             {job.title}
           </Heading>
-          {!job.organization.handle && (
-            <Text as="h2" fontSize="2xl" fontWeight="700" fontFamily="heading">
-              {job.organization.name}
-            </Text>
-          )}
-          {job.organization.handle && (
-            <NextLink href={`/${job.organization.handle}`} passHref>
-              <Link fontSize="2xl" fontWeight="700" fontFamily="heading">
-                {job.organization.name}
-              </Link>
-            </NextLink>
-          )}
+          <HStack>
+            <Heading as="h2">
+              {!job.organization.handle && (
+                <Link
+                  as="h2"
+                  fontSize="2xl"
+                  fontWeight="700"
+                  fontFamily="heading"
+                  href={job.organization.url}
+                  isExternal
+                >
+                  {job.organization.name}
+                </Link>
+              )}
+              {job.organization.handle && (
+                <NextLink href={`/${job.organization.handle}`} passHref>
+                  <Link fontSize="2xl" fontWeight="700" fontFamily="heading">
+                    {job.organization.name}
+                  </Link>
+                </NextLink>
+              )}
+            </Heading>
+            {job.organization.isVerified && (
+              <chakra.span
+                color={job.theme.textColor || 'teal.500'}
+                position="relative"
+                top="0px"
+                fontSize="xl"
+              >
+                <Icon name="verified" />
+              </chakra.span>
+            )}
+          </HStack>
           <Tag size="lg" colorScheme={job.status === 'Open' ? 'green' : 'red'}>
             {job.status || 'Closed'} Vacancy
           </Tag>
@@ -135,7 +156,7 @@ export function JobDetails({ jobParams }) {
                   <Text>
                     {job.positionTypes.map((position, index) => {
                       return (
-                        <span>
+                        <span key={index}>
                           {index > 0 && ' or '}
                           {position}
                           {' position'}
