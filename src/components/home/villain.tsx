@@ -19,8 +19,8 @@ export function HomeVillain() {
         </Heading>
         <NextImage
           priority
-          alt="Multiple cats learning"
           src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-last-desktop.png`}
+          alt="Cats doing high five"
           objectFit="contain"
           width={500}
           height={300}

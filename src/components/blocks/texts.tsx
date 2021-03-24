@@ -199,10 +199,12 @@ function CustomHeading(props) {
   const slug = slugify(props.children, { lower: true })
   return (
     <Heading
+      {...props}
+      id={slug}
       className="heading-with-anchor"
       fontFamily="body"
-      id={slug}
-      {...props}
+      pt={70}
+      mt={-50}
     >
       <span>{props.children}</span>
       <Link
