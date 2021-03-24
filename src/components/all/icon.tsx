@@ -66,6 +66,7 @@ import {
   FaComments as DiscussionsIcon,
   FaCertificate as CertificatesIcon,
   // Social icons
+  FaGlobe as WebsiteIcon,
   FaTwitter as TwitterIcon,
   FaGithub as GitHubIcon,
   FaLinkedin as LinkedInIcon,
@@ -234,8 +235,10 @@ export function Icon({ name }) {
     case 'bullet':
       return <BulletIcon />
     /**
-     * Social icons.
+     * Social link icons.
      */
+    case 'website':
+      return <WebsiteIcon />
     case 'twitter':
       return <TwitterIcon />
     case 'github':

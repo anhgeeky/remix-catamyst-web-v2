@@ -31,7 +31,6 @@ export function CollectionOrganizations({ organizations }) {
         return (
           <NextLink key={org.handle} href={org.handle} passHref>
             <Link
-              as="article"
               rounded="md"
               p={3}
               _hover={{ bg: useColorModeValue('gray.100', 'gray.800') }}

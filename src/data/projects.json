@@ -1,12 +1,187 @@
 [
   {
     "id": 1,
+    "isPublished": true,
+    "slug": "catamyst",
     "title": "Catamyst",
+    "description": "All-in-one platform to learn web development, UI/UX design, and software engineering.",
     "url": "https://catamyst.com",
     "contributors": [
-      { "userId": 2, "role": "Founder, Developer" },
-      { "userId": 3, "role": "Writer" },
-      { "userId": 4, "role": "Illustrator" }
+      { "userId": 3, "role": "Founder, Developer" },
+      { "userId": 4, "role": "Writer" }
+    ],
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/catamyst"
+      }
+    ],
+    "skills": [
+      "Linux",
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "Chakra UI",
+      "GraphQL API",
+      "Prisma ORM",
+      "PostgreSQL",
+      "Vercel",
+      "Railway.app",
+      "Google Cloud Platform"
+    ]
+  },
+  {
+    "id": 2,
+    "isPublished": true,
+    "slug": "nawaart",
+    "title": "Nawaart",
+    "description": "Discover authentic and valuable contemporary artworks from various artists in Myanmar, the Land of the Golden Pagodas.",
+    "coverUrl": "https://storage.catamyst.com/projects/nawaart.jpg",
+    "url": "https://nawaart.com",
+    "contributors": [
+      { "userId": 8, "role": "Ideator, Developer" },
+      { "userId": 3, "role": "Mentor" }
+    ],
+    "socialLinks": [
+      {
+        "name": "Website",
+        "url": "https://nawaart.com"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/jonathannicolasdev/nawaart"
+      }
+    ],
+    "skills": [
+      "Linux",
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "REST API",
+      "MongoDB",
+      "Mongoose",
+      "Netlify",
+      "Amazon Web Services"
+    ]
+  },
+  {
+    "id": 3,
+    "isPublished": true,
+    "slug": "saikou",
+    "title": "Saikou",
+    "description": "Find out the best anime and manga for your leisure entertainment variants originated from Japan, the Land of the Rising Sun.",
+    "coverUrl": "https://storage.catamyst.com/projects/saikou.jpg",
+    "url": "https://saikou.ahmadmarzuki.com",
+    "contributors": [
+      { "userId": 7, "role": "Ideator, Developer" },
+      { "userId": 3, "role": "Mentor" }
+    ],
+    "socialLinks": [
+      { "name": "GitHub", "url": "https://github.com/amadzuki/saikou" },
+      { "name": "GitHub", "url": "https://github.com/amadzuki/saikou-client" },
+      { "name": "GitHub", "url": "https://github.com/amadzuki/saikou-server" }
+    ],
+    "skills": [
+      "Linux",
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "REST API",
+      "MongoDB",
+      "Mongoose",
+      "Netlify",
+      "Google Cloud Platform"
+    ]
+  },
+  {
+    "id": 4,
+    "isPublished": true,
+    "slug": "zidence",
+    "title": "Zidence",
+    "description": "Simple residential property listing and comparison. Discover your next suitable home in Asia.",
+    "coverUrl": "https://storage.catamyst.com/projects/zidence.jpg",
+    "url": "https://zidence.com",
+    "contributors": [
+      { "userId": 9, "role": "Ideator, Developer" },
+      { "userId": 7, "role": "Developer" },
+      { "userId": 3, "role": "Mentor" }
+    ],
+    "skills": [
+      "Linux",
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "REST API",
+      "MongoDB",
+      "Mongoose",
+      "Netlify",
+      "Railway.app"
+    ]
+  },
+  {
+    "id": 5,
+    "isPublished": true,
+    "slug": "lelangbuana",
+    "title": "Lelangbuana",
+    "coverImageName": "lelangbuana.jpg",
+    "description": "Fast and free auction commerce site for interesting goods between islands.",
+    "coverUrl": "https://storage.catamyst.com/projects/lelangbuana.jpg",
+    "url": "https://lelangbuana.netlify.app",
+    "skills": [
+      "Linux",
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "REST API",
+      "MongoDB",
+      "Mongoose",
+      "Netlify",
+      "Heroku"
+    ]
+  },
+  {
+    "id": 6,
+    "isPublished": true,
+    "slug": "sneakergram",
+    "title": "Sneakergram",
+    "description": "Instagram-clone for sneakerheads.",
+    "url": "https://sneakergram.jonathannicolas.dev",
+    "contributors": [
+      { "userId": 8, "role": "Ideator, Developer" },
+      { "userId": 3, "role": "Mentor" }
+    ],
+    "socialLinks": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/jonathannicolasdev/sneakergram"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/jonathannicolasdev/sneakergram-client"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/jonathannicolasdev/sneakergram-server"
+      }
+    ],
+    "skills": [
+      "Linux",
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "REST API",
+      "MongoDB",
+      "Mongoose",
+      "Netlify",
+      "Heroku",
+      "Amazon Web Services"
     ]
   }
 ]

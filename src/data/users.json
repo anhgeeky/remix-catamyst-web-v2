@@ -13,7 +13,15 @@
     "role": "Admin",
     "isVerified": true,
     "isEmailConfirmed": true,
-    "joinedAt": "2020-01-01"
+    "joinedAt": "2020-01-01",
+    "organizations": [1],
+    "tracks": [],
+    "posts": [1],
+    "projects": [1],
+    "jobs": [],
+    "vacancies": [1],
+    "mentors": [],
+    "discussions": []
   },
   {
     "type": "User",
@@ -29,7 +37,14 @@
     "role": "Bot",
     "isVerified": true,
     "isEmailConfirmed": true,
-    "joinedAt": "2020-01-01"
+    "joinedAt": "2020-01-01",
+    "organizations": [1],
+    "tracks": [],
+    "posts": [],
+    "projects": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": []
   },
   {
     "type": "User",
@@ -44,7 +59,14 @@
     "role": "Learner",
     "plan": "Basic",
     "isEmailConfirmed": true,
-    "joinedAt": "2020-02-01"
+    "joinedAt": "2020-02-01",
+    "organizations": [],
+    "tracks": [],
+    "posts": [],
+    "projects": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": []
   },
   {
     "type": "User",
@@ -77,13 +99,15 @@
     "role": "Staff",
     "isVerified": true,
     "isEmailConfirmed": true,
+    "joinedAt": "2021-01-01",
+    "organizations": [1],
     "tracks": [1, 2],
-    "projects": [1],
+    "projects": [1, 2, 3, 4, 5, 6],
     "posts": [1],
-    "discussions": [1],
-    "mentors": [2],
-    "jobs": [1],
-    "joinedAt": "2021-01-01"
+    "jobs": [],
+    "vacancies": [1],
+    "mentors": [],
+    "discussions": [1]
   },
   {
     "type": "User",
@@ -113,14 +137,22 @@
     "role": "Staff",
     "isVerified": true,
     "isEmailConfirmed": true,
-    "joinedAt": "2021-01-01"
+    "joinedAt": "2021-01-01",
+    "organizations": [1],
+    "tracks": [1],
+    "projects": [1],
+    "posts": [2],
+    "jobs": [],
+    "vacancies": [1],
+    "mentors": [],
+    "discussions": []
   },
   {
     "type": "User",
     "id": 5,
     "email": "",
     "handle": "latifahdhia",
-    "name": "Latifah Dhia I",
+    "name": "Latifah Dhia",
     "nickname": "Latifah",
     "avatarUrl": "https://storage.catamyst.com/avatars/latifahdhia.jpg",
     "coverUrl": "https://storage.catamyst.com/covers/sheeps.jpg",
@@ -145,7 +177,15 @@
     "role": "Learner",
     "plan": "Super",
     "isEmailConfirmed": true,
-    "joinedAt": "2020-12-01"
+    "joinedAt": "2020-12-01",
+    "organizations": [],
+    "tracks": [1],
+    "projects": [],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": [],
+    "discussions": []
   },
   {
     "type": "User",
@@ -173,7 +213,15 @@
     "role": "Learner",
     "plan": "Super",
     "isEmailConfirmed": false,
-    "joinedAt": "2021-01-01"
+    "joinedAt": "2021-01-01",
+    "organizations": [],
+    "tracks": [1, 2],
+    "projects": [],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": [],
+    "discussions": []
   },
   {
     "type": "User",
@@ -200,7 +248,15 @@
     "role": "Learner",
     "plan": "Super",
     "isEmailConfirmed": false,
-    "joinedAt": "2020-03-01"
+    "joinedAt": "2020-03-01",
+    "organizations": [],
+    "tracks": [1, 2],
+    "projects": [3],
+    "posts": [],
+    "jobs": [1, 2],
+    "vacancies": [],
+    "mentors": [3],
+    "discussions": []
   },
   {
     "type": "User",
@@ -224,17 +280,25 @@
       "title": "Full Stack Web Developer",
       "name": "Freelance"
     },
+    "isEmailConfirmed": false,
     "role": "Learner",
     "plan": "Super",
-    "isEmailConfirmed": false,
-    "joinedAt": "2020-04-01"
+    "joinedAt": "2020-04-01",
+    "organizations": [2],
+    "tracks": [1, 2],
+    "projects": [2],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [3],
+    "mentors": [3],
+    "discussions": []
   },
   {
     "type": "User",
     "id": 9,
     "email": "",
     "handle": "mfarisgibran",
-    "name": "M Faris Gibran",
+    "name": "Faris Gibran",
     "nickname": "Gibran",
     "avatarUrl": "https://storage.catamyst.com/avatars/mfarisgibran.jpg",
     "coverUrl": "",
@@ -257,7 +321,15 @@
     "role": "Learner",
     "plan": "Super",
     "isEmailConfirmed": false,
-    "joinedAt": "2020-08-01"
+    "joinedAt": "2020-08-01",
+    "organizations": [],
+    "tracks": [1, 2],
+    "projects": [4],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": [3],
+    "discussions": []
   },
   {
     "type": "User",
@@ -279,7 +351,15 @@
     "role": "Learner",
     "plan": "Pro",
     "isEmailConfirmed": false,
-    "joinedAt": "2021-01-01"
+    "joinedAt": "2021-01-01",
+    "organizations": [],
+    "tracks": [1, 2],
+    "projects": [5],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": [3],
+    "discussions": []
   },
   {
     "type": "User",
@@ -300,7 +380,15 @@
     },
     "role": "Learner",
     "plan": "Pro",
-    "isEmailConfirmed": false
+    "isEmailConfirmed": false,
+    "organizations": [],
+    "tracks": [1, 2],
+    "projects": [5],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": [3],
+    "discussions": []
   },
   {
     "type": "User",
@@ -323,7 +411,15 @@
     "role": "Learner",
     "plan": "Pro",
     "isEmailConfirmed": false,
-    "joinedAt": "2021-01-01"
+    "joinedAt": "2021-01-01",
+    "organizations": [],
+    "tracks": [1, 2],
+    "projects": [],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": [3],
+    "discussions": []
   },
   {
     "type": "User",
@@ -346,6 +442,14 @@
     "role": "Employer",
     "plan": "Pro",
     "isEmailConfirmed": false,
-    "joinedAt": "2021-01-01"
+    "joinedAt": "2021-01-01",
+    "organizations": [],
+    "tracks": [],
+    "projects": [],
+    "posts": [],
+    "jobs": [],
+    "vacancies": [],
+    "mentors": [],
+    "discussions": []
   }
 ]

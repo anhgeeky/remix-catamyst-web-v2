@@ -39,7 +39,8 @@
     },
     "role": "Company",
     "joinedAt": "2020-06-01",
-    "people": []
+    "people": [8],
+    "projects": [2]
   },
   {
     "type": "Organization",

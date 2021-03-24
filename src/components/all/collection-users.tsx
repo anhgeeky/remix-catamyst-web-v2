@@ -28,7 +28,6 @@ export function CollectionUsers({ users }) {
         return (
           <NextLink key={user.handle} href={user.handle} passHref>
             <Link
-              as="article"
               rounded="md"
               p={3}
               _hover={{ bg: useColorModeValue('gray.100', 'gray.800') }}

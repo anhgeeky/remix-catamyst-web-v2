@@ -10,6 +10,7 @@ import {
   AccordionIcon,
   Link,
   useMediaQuery,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
@@ -29,12 +30,14 @@ export function HelpFaqs() {
       align={isTooSmall ? 'center' : 'flex-start'}
       justify="center"
     >
-      <NextImage
-        src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/help.png`}
-        alt="Cat confused need help"
-        width={isTooSmall ? 105 : 140}
-        height={isTooSmall ? 150 : 200}
-      />
+      <Box bg={useColorModeValue('white', 'gray.700')} rounded="full">
+        <NextImage
+          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/help.png`}
+          alt="Cat confused need help"
+          width={isTooSmall ? 105 : 140}
+          height={isTooSmall ? 150 : 200}
+        />
+      </Box>
       <Stack direction="column" align="center" spacing={10}>
         <FaqAccordion
           id="learners"

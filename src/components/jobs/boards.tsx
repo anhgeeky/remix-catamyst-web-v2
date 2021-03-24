@@ -286,7 +286,13 @@ export function JobOrganizationLogo({ org, size = 100 || '100px' }) {
   return null
 }
 
-export function JobSkillsTags({ isLimited = false, skills, actions }) {
+export function JobSkillsTags({
+  skills,
+  isLimited = false,
+  actions = {
+    handlePickSkill: (skill) => {},
+  },
+}) {
   return (
     <Flex flexWrap="wrap" className="job-skills-tags">
       {skills

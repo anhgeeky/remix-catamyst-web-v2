@@ -23,11 +23,13 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Country, Icon, SocialLinks, useToast } from '@components'
+import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
 import { OrganizationAvatar } from '@components/organizations'
 import { transformOptions } from '@components/blocks'
 import { trimUrl, getJoinedDate } from '@utils'
 import { useAuth } from '@hooks'
+
+import dataProjects from '@data/projects.json'
 
 /**
  * Organization profile.
@@ -153,148 +155,174 @@ function OrganizationProfileContent({ org, state, actions }) {
   }
 
   return (
-    <Flex justify="center" mt={-90}>
-      <Stack p={5} spacing={3} maxW="760px" width="100%">
-        <VStack id="org-names">
-          <Box
-            id="org-avatar"
-            rounded="md"
-            p={1}
-            zIndex={1}
-            bg={useColorModeValue('gray.50', 'gray.900')}
-          >
-            <OrganizationAvatar org={org} />
-          </Box>
-
-          <OrganizationNameHandle org={org} />
-
-          <Box id="org-actions" as={ButtonGroup} size="sm">
-            {!state.isFollowed && (
-              <Button
-                colorScheme="teal"
-                variant="outline"
-                onClick={actions.handleFollow}
-              >
-                Follow
-              </Button>
-            )}
-            {state.isFollowed && (
-              <Button
-                colorScheme="teal"
-                variant="solid"
-                onClick={actions.handleUnfollow}
-              >
-                Unfollow
-              </Button>
-            )}
-            {!state.isFavorited && (
-              <IconButton
-                aria-label="Favorite organization"
-                colorScheme="teal"
-                variant="outline"
-                icon={<Icon name="favorite" />}
-                onClick={actions.handleFavorite}
-              />
-            )}
-            {state.isFavorited && (
-              <IconButton
-                aria-label="Unfavorite organization"
-                colorScheme="teal"
-                variant="solid"
-                icon={<Icon name="favorite" />}
-                onClick={actions.handleUnfavorite}
-              />
-            )}
-          </Box>
-        </VStack>
-
-        <Stack id="org-info-1" spacing={0} pt={3}>
-          {org.headline && (
-            <Box id="org-headline">
-              <Heading as="h3" size="md" color="gray.500">
-                {org.headline}
-              </Heading>
+    <Flex justify="center" mt={-90} px={5}>
+      <Stack spacing={10} maxW={700} width="100%">
+        <Stack id="org-profile" spacing={3}>
+          <VStack id="org-info-0">
+            <Box
+              id="org-avatar"
+              rounded="md"
+              p={1}
+              zIndex={1}
+              bg={useColorModeValue('gray.50', 'gray.900')}
+            >
+              <OrganizationAvatar org={org} />
             </Box>
-          )}
-          <Box id="org-bio">
-            {ReactHtmlParser(org.bioHtml, transformOptions)}
-          </Box>
+
+            <OrganizationNameHandle org={org} />
+
+            <Box id="org-actions" as={ButtonGroup} size="sm">
+              {!state.isFollowed && (
+                <Button
+                  colorScheme="teal"
+                  variant="outline"
+                  onClick={actions.handleFollow}
+                >
+                  Follow
+                </Button>
+              )}
+              {state.isFollowed && (
+                <Button
+                  colorScheme="teal"
+                  variant="solid"
+                  onClick={actions.handleUnfollow}
+                >
+                  Unfollow
+                </Button>
+              )}
+              {!state.isFavorited && (
+                <IconButton
+                  aria-label="Favorite organization"
+                  colorScheme="teal"
+                  variant="outline"
+                  icon={<Icon name="favorite" />}
+                  onClick={actions.handleFavorite}
+                />
+              )}
+              {state.isFavorited && (
+                <IconButton
+                  aria-label="Unfavorite organization"
+                  colorScheme="teal"
+                  variant="solid"
+                  icon={<Icon name="favorite" />}
+                  onClick={actions.handleUnfavorite}
+                />
+              )}
+            </Box>
+          </VStack>
+
+          <Stack id="org-info-1" spacing={0} pt={3}>
+            {org.headline && (
+              <Box id="org-headline">
+                <Heading as="h3" size="md" color="gray.500">
+                  {org.headline}
+                </Heading>
+              </Box>
+            )}
+            <Box id="org-bio">
+              {ReactHtmlParser(org.bioHtml, transformOptions)}
+            </Box>
+          </Stack>
+
+          <Flex id="org-info-2" color="gray.500" align="center" flexWrap="wrap">
+            {state.hasCountry && (
+              <Box id="org-country" mr={5}>
+                <Country code={org.countryCode} />
+              </Box>
+            )}
+
+            {state.hasLocation && (
+              <Box id="org-location" mr={5} as={HStack} spacing={1}>
+                <Icon name="location" />
+                <span>{org.location}</span>
+              </Box>
+            )}
+
+            {state.hasWebsite && (
+              <Box id="org-website" mr={5} as={HStack} spacing={1}>
+                <Icon name="link" />
+                <Link
+                  isExternal
+                  href={org.website.url}
+                  fontWeight="500"
+                  color="teal.500"
+                >
+                  {trimUrl(org.website.url)}
+                </Link>
+              </Box>
+            )}
+
+            {state.hasSocialLinks && (
+              <Box id="org-social-links" mr={5} my={1}>
+                <SocialLinks links={org.socials} />
+              </Box>
+            )}
+          </Flex>
+
+          <Flex id="org-info-3" color="gray.500" align="center" flexWrap="wrap">
+            <Box id="org-following" mr={3} as={HStack} spacing={1}>
+              <chakra.span fontWeight="700">
+                {placeholder.totalFollowing}
+              </chakra.span>
+              <span>Following</span>
+            </Box>
+
+            <Box id="org-followers" mr={3} as={HStack} spacing={1}>
+              <chakra.span fontWeight="700">
+                {placeholder.totalFollowers}
+              </chakra.span>
+              <span>Followers</span>
+            </Box>
+
+            <Box id="org-posts" mr={3} as={HStack} spacing={1}>
+              <chakra.span fontWeight="700">
+                {placeholder.totalPosts}
+              </chakra.span>
+              <span>Posts</span>
+            </Box>
+
+            <Box id="org-projects" mr={3} as={HStack} spacing={1}>
+              <chakra.span fontWeight="700">
+                {placeholder.totalProjects}
+              </chakra.span>
+              <span>Projects</span>
+            </Box>
+
+            <Box id="org-favorites" mr={3} as={HStack} spacing={1}>
+              <chakra.span fontWeight="700">
+                {placeholder.totalFavorites}
+              </chakra.span>
+              <span>Favorites</span>
+            </Box>
+
+            <Box id="org-likes" mr={3} as={HStack} spacing={1}>
+              <chakra.span fontWeight="700">
+                {placeholder.totalLikes}
+              </chakra.span>
+              <span>Likes</span>
+            </Box>
+          </Flex>
         </Stack>
 
-        <Flex id="org-info-2" color="gray.500" align="center" flexWrap="wrap">
-          {state.hasCountry && (
-            <Box id="org-country" mr={5}>
-              <Country code={org.countryCode} />
-            </Box>
-          )}
-
-          {state.hasLocation && (
-            <Box id="org-location" mr={5} as={HStack} spacing={1}>
-              <Icon name="location" />
-              <span>{org.location}</span>
-            </Box>
-          )}
-
-          {state.hasWebsite && (
-            <Box id="org-website" mr={5} as={HStack} spacing={1}>
-              <Icon name="link" />
-              <Link
-                isExternal
-                href={org.website.url}
-                fontWeight="500"
-                color="teal.500"
-              >
-                {trimUrl(org.website.url)}
-              </Link>
-            </Box>
-          )}
-
-          {state.hasSocialLinks && (
-            <Box id="org-social-links" mr={5} my={1}>
-              <SocialLinks links={org.socials} />
-            </Box>
-          )}
-        </Flex>
-
-        <Flex id="org-info-3" color="gray.500" align="center" flexWrap="wrap">
-          <Box id="org-following" mr={3} as={HStack} spacing={1}>
-            <chakra.span fontWeight="700">
-              {placeholder.totalFollowing}
-            </chakra.span>
-            <span>Following</span>
-          </Box>
-
-          <Box id="org-followers" mr={3} as={HStack} spacing={1}>
-            <chakra.span fontWeight="700">
-              {placeholder.totalFollowers}
-            </chakra.span>
-            <span>Followers</span>
-          </Box>
-
-          <Box id="org-posts" mr={3} as={HStack} spacing={1}>
-            <chakra.span fontWeight="700">{placeholder.totalPosts}</chakra.span>
-            <span>Posts</span>
-          </Box>
-
-          <Box id="org-projects" mr={3} as={HStack} spacing={1}>
-            <chakra.span fontWeight="700">
-              {placeholder.totalProjects}
-            </chakra.span>
-            <span>Projects</span>
-          </Box>
-
-          <Box id="org-favorites" mr={3} as={HStack} spacing={1}>
-            <chakra.span fontWeight="700">
-              {placeholder.totalFavorites}
-            </chakra.span>
-            <span>Favorites</span>
-          </Box>
-
-          <Box id="org-likes" mr={3} as={HStack} spacing={1}>
-            <chakra.span fontWeight="700">{placeholder.totalLikes}</chakra.span>
-            <span>Likes</span>
-          </Box>
-        </Flex>
+        {org.projects && (
+          <Stack id="org-projects">
+            <HeadingStack>Projects</HeadingStack>
+            {org.projects.map((projectId, index) => {
+              const project = dataProjects.find(
+                (project) => project.id === projectId
+              )
+              return (
+                <NextLink
+                  key={index}
+                  href={`/projects/${project.slug}`}
+                  passHref
+                >
+                  <Link>{project.title}</Link>
+                </NextLink>
+              )
+            })}
+          </Stack>
+        )}
       </Stack>
     </Flex>
   )
