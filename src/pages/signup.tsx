@@ -12,7 +12,7 @@ export default function signUpPage() {
     <Layout title="Create your Catamyst account">
       {!isAuthorized && (
         <>
-          <Hero textAlign="center">
+          <Hero>
             <Heading as="h1" size="xl">
               Sign up
             </Heading>

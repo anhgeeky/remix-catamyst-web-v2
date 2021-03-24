@@ -14,7 +14,8 @@ import {
   WrapItem,
 } from '@chakra-ui/react'
 
-import { Hero, ContentWithSidebar, CollectionTopics } from '@components'
+import { ContentWithSidebar, CollectionTopics } from '@components'
+import { LearnHero } from '@components/learn'
 import { useAuth, useToast } from '@hooks'
 
 import dataTracks from '@data/tracks.json'
@@ -65,7 +66,7 @@ export function TrackDetails({ trackSlug }) {
 
 export function TrackHero({ track }) {
   return (
-    <Hero>
+    <LearnHero>
       <Wrap as={Flex} spacing={5}>
         <WrapItem>
           <NextImage
@@ -83,7 +84,7 @@ export function TrackHero({ track }) {
           <Text maxW="580px">{track.description}</Text>
         </WrapItem>
       </Wrap>
-    </Hero>
+    </LearnHero>
   )
 }
 

@@ -10,8 +10,8 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, LearningTag, PaginationLessons, AlertSoon } from '@components'
+import { LearningTag, PaginationLessons, AlertSoon } from '@components'
+import { LearnHero } from '@components/learn'
 import { Block } from '@components/blocks'
 import { usePaginationLessons } from '@hooks'
 
@@ -28,8 +28,8 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
         <title>{lesson.title} · Lesson · Catamyst</title>
       </NextHead>
 
-      <Hero>
-        <Box id="lesson-hero" align="center" py={5}>
+      <LearnHero>
+        <Stack id="lesson-hero" align="center" py={5} spacing={5}>
           <PaginationLessons
             mode="minimal"
             track={track}
@@ -37,8 +37,8 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
             prev={prev}
             next={next}
           >
-            <VStack>
-              <Heading as="h1" size="xl" textAlign="center">
+            <VStack textAlign="center">
+              <Heading as="h1" size="xl">
                 {lesson.title}
               </Heading>
               <HStack>
@@ -47,8 +47,9 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
               </HStack>
             </VStack>
           </PaginationLessons>
-        </Box>
-      </Hero>
+          {lesson.description && <Text>{lesson.description}</Text>}
+        </Stack>
+      </LearnHero>
 
       <Container id="lesson-content" width="100%" maxW="1500px" pt={5} px={0}>
         <Stack align="center" spacing={10}>

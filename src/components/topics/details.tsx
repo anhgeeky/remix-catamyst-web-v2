@@ -2,13 +2,12 @@ import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { Heading, Text, Stack } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
 import {
-  Hero,
   ContentWithSidebar,
   CollectionLessons,
   PaginationTopics,
 } from '@components'
+import { LearnHero } from '@components/learn'
 import { usePaginationTopics } from '@hooks'
 
 export function TopicDetails({ trackSlug, topicSlug }) {
@@ -54,12 +53,12 @@ export function TopicDetails({ trackSlug, topicSlug }) {
 
 export function TopicHero({ topic }) {
   return (
-    <Hero>
+    <LearnHero>
       <Heading as="h1" size="xl">
         {topic.iconEmoji} {topic.title}
       </Heading>
       <Text>{topic.description || 'No topic description yet.'}</Text>
-    </Hero>
+    </LearnHero>
   )
 }
 

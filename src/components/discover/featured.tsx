@@ -1,4 +1,5 @@
-import { Stack } from '@chakra-ui/react'
+import NextImage from 'next/image'
+import { Stack, Flex } from '@chakra-ui/react'
 
 import {
   CollectionOrganizations,
@@ -12,7 +13,16 @@ import dataOrganizations from '@data/organizations.json'
 export function DiscoverFeatured() {
   return (
     <>
-      <Stack spacing={10} width="100%">
+      <Stack spacing={20} width="100%">
+        <Flex justify="center" mb="-40px">
+          <NextImage
+            src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/projects.png`}
+            alt="Cat reading book with floating shapes"
+            width={200}
+            height={200}
+          />
+        </Flex>
+
         {/* <Stack>
           <HeadingStack>Featured Projects</HeadingStack>
           <CollectionProjects projects={dataProjects} />

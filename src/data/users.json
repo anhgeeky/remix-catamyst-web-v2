@@ -56,7 +56,7 @@
     "avatarUrl": "https://storage.catamyst.com/avatars/mhaidarhanif.jpg",
     "coverUrl": "https://storage.catamyst.com/covers/forest.jpg",
     "headline": "Engineering Educator",
-    "bioHtml": "<p>Hey! I'm <b>Haidar</b>. The founder of <a href='https://catamyst.com'>Catamyst</a>. Human-oriented software engineer and mentor. Helping people to learn and grow their career with web and software development.</p><p>Likes both design <i>and</i> code: UI/UX, illustrations, icons, Git, HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js, Express, Apollo, Prisma, PostgreSQL, MongoDB, REST API, GraphQL API, and the cloud infrastructure.</p><p>Please enjoy this site, thanks!</p>",
+    "bioHtml": "<p>Hey! I'm <b>Haidar</b>. The founder and mentor of <a href='https://catamyst.com'>Catamyst</a>. Human-oriented software engineer and mentor. Helping people to learn and grow their career with web and software development.</p><p>Likes both design <i>and</i> code: UI/UX, illustrations, icons, Git, HTML, CSS, JavaScript, TypeScript, Node.js, React, Next.js, Express, Apollo, Prisma, PostgreSQL, MongoDB, REST API, GraphQL API, and the cloud infrastructure.</p><p>Please enjoy this site, thanks!</p>",
     "countryCode": "EARTH",
     "location": "Worldwide",
     "website": { "url": "https://mhaidarhanif.com", "name": "Website" },

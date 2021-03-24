@@ -131,13 +131,14 @@ export function JobDetails({ jobParams }) {
             <HeadingStack>Position Type and Salary Rate</HeadingStack>
             <Card>
               <Stack>
-                {job?.positionTypes.length > 1 && (
+                {job?.positionTypes.length > 0 && (
                   <Text>
                     {job.positionTypes.map((position, index) => {
                       return (
                         <span>
                           {index > 0 && ' or '}
                           {position}
+                          {' position'}
                         </span>
                       )
                     })}
@@ -157,18 +158,23 @@ export function JobDetails({ jobParams }) {
                 ? 'This job vacancy is open to apply'
                 : 'This job vacancy is closed but you can still try to apply'}
             </Text>
-            <ButtonGroup>
+            <Stack direction={{ base: 'column', md: 'row' }}>
               <Button
                 variant="solid"
                 colorScheme={isApplied ? 'red' : 'teal'}
                 onClick={handleApplyJob}
               >
-                {isApplied ? 'Cancel apply' : 'Apply for this position'}
+                {isApplied ? 'Cancel apply' : 'Apply directly'}
               </Button>
+              {job.apply.url && (
+                <Button isExternal as={Link} href={job.apply.url}>
+                  Apply via external link
+                </Button>
+              )}
               <Button disabled variant="outline">
                 Share
               </Button>
-            </ButtonGroup>
+            </Stack>
           </Stack>
         </Stack>
       </Content>

@@ -12,8 +12,8 @@ export default function discoverPage() {
           Discover members and projects
         </Heading>
         <Text>
-          Connect with learners, developers, and designers on Catamyst. Check
-          out their showcase projects!
+          Connect with learners, developers, designers, and employers who are on
+          Catamyst.
         </Text>
       </Hero>
       <Content>

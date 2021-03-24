@@ -55,7 +55,7 @@ export function TagSkill({ skill }) {
           {skill}
         </Tag>
       )
-    case 'react' || 'reactjs':
+    case 'react':
       return <Tag colorScheme="cyan">{skill}</Tag>
     case 'reactjs':
       return <Tag colorScheme="cyan">{skill}</Tag>
@@ -67,6 +67,8 @@ export function TagSkill({ skill }) {
       return <Tag colorScheme="green">{skill}</Tag>
     case 'vuejs':
       return <Tag colorScheme="green">{skill}</Tag>
+    case 'redux':
+      return <Tag colorScheme="purple">{skill}</Tag>
     case 'chakra-ui':
       return <Tag colorScheme="teal">{skill}</Tag>
     case 'mongodb':

@@ -12,7 +12,7 @@ export default function signInPage() {
     <Layout title="Sign in to your Catamyst account">
       {!isAuthorized && (
         <>
-          <Hero textAlign="center">
+          <Hero>
             <Heading as="h1" size="xl">
               Sign in
             </Heading>

@@ -196,15 +196,21 @@ export function JobDetail({ job }) {
             {job.status || 'Closed'} Vacancy
           </Tag>
           <ButtonGroup size="sm" pt={1}>
-            <LinkButton variant="outline" href={`/jobs/${job.id}/${job.slug}`}>
+            <LinkButton
+              colorScheme="teal"
+              variant="outline"
+              href={`/jobs/${job.id}/${job.slug}`}
+            >
               Details
             </LinkButton>
-            <Button
-              colorScheme={isApplied ? 'red' : 'teal'}
-              onClick={handleApplyJob}
-            >
-              {isApplied ? 'Cancel' : 'Apply'}
-            </Button>
+            {job.status === 'Open' && (
+              <Button
+                colorScheme={isApplied ? 'red' : 'teal'}
+                onClick={handleApplyJob}
+              >
+                {isApplied ? 'Cancel' : 'Apply'}
+              </Button>
+            )}
           </ButtonGroup>
         </Stack>
       </Stack>

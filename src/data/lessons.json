@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Let's start here",
     "slug": "lets-start-here",
+    "title": "Let's start here",
     "level": "Newbie",
     "category": "Fundamental",
     "isPublished": true,
@@ -26,8 +26,9 @@
   },
   {
     "id": 2,
-    "title": "Web development introduction",
-    "slug": "web-development-introduction",
+    "slug": "website-introduction",
+    "title": "Website introduction",
+    "description": "Why understanding the use of a website.",
     "level": "Newbie",
     "category": "Fundamental",
     "isPublished": true,
@@ -156,8 +157,9 @@
   },
   {
     "id": 5,
-    "title": "Device requirements",
     "slug": "device-requirements",
+    "title": "Device requirements",
+    "description": "Check your available laptop and mobile.",
     "level": "Newbie",
     "category": "Specific",
     "isPublished": true,
@@ -177,7 +179,7 @@
       {
         "type": "Texts",
         "isPublished": true,
-        "html": "<h1>Laptop requirements</h1><p>Every laptop need an Operating System (OS), the system that being used to run your computer.</p><h2>If using Linux</h2><p>If you have a laptop with Linux OS like Ubuntu, it should be enough. Preferably using Ubuntu version 20.04 or later.</p><h2>If using Mac</h2><p>If you have a MacBook with macOS, it should be enough. Preferably bought on year 2015 or above, and using macOS Catalina or later.</p><h2>If using Windows</h2><p>If you have a laptop with Windows OS:</p><ul><li>Preferably bought on year 2015 or above, and using Windows 10.</li><li>Processor at least Intel Core i3 or AMD.</li><li>RAM at least 4 GB.</li><li>Hard drive at least 100 GB of space.</li></ul>"
+        "html": "<h1>Laptop requirements</h1><p>Every laptop need an Operating System (OS), the system that being used to run your computer. You can use your own laptop, borrow someone else's laptop, or using facilities from a library or Internet cafe.</p><h2>If using Linux</h2><p>If you have a laptop with Linux OS like Ubuntu, it should be enough. Preferably using Ubuntu version 20.04 or later.</p><h2>If using Mac</h2><p>If you have a MacBook with macOS, it should be enough. Preferably bought on year 2015 or above, and using macOS Catalina or later.</p><h2>If using Windows</h2><p>If you have a laptop with Windows OS:</p><ul><li>Preferably bought on year 2015 or above, and using Windows 10.</li><li>Processor at least Intel Core i3 or AMD.</li><li>RAM at least 4 GB.</li><li>Hard drive at least 100 GB of space.</li></ul>"
       },
       {
         "type": "Image",
@@ -338,7 +340,7 @@
       {
         "type": "Texts",
         "isPublished": true,
-        "html": "<h1>Password manager</h1><p>During your learning and professional work, you will eventually use a lot of online tools. To use them, most of the time you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it&#39;s free, safe, and easier to use than other alternatives.</p>"
+        "html": "<h1>Password manager</h1><p>During your learning and professional work, you will eventually use a lot of online tools. To use them, most of the time you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it's free, safe, and easier to use than other alternatives. It's fine too if you already use other tools like 1Password or LastPass.</p>"
       },
       {
         "type": "Texts",
@@ -379,6 +381,11 @@
             "title": "Bitwarden for Firefox",
             "category": "Plugin",
             "url": "https://addons.mozilla.org/firefox/addon/bitwarden-password-manager"
+          },
+          {
+            "title": "Bitwarden 101 tutorials",
+            "category": "Video",
+            "url": "https://youtube.com/watch?v=W6Miu-TJI1c&list=PL-IZTwAxWO4VKISOqPdMBXAtKBAu0gd4_"
           }
         ]
       },

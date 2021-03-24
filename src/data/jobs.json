@@ -13,9 +13,10 @@
       "handle": "catamyst",
       "name": "Catamyst",
       "avatarUrl": "/assets/logos/catamyst.png",
-      "countryCode": "ID",
+      "countryCode": "EARTH",
       "location": "Worldwide and Remote",
-      "isVerified": true
+      "isVerified": true,
+      "url": "https://catamyst.com"
     },
     "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
@@ -52,6 +53,7 @@
       "TypeScript",
       "Node.js",
       "React",
+      "Redux",
       "REST API",
       "GraphQL API",
       "MongoDB",
@@ -81,7 +83,8 @@
       "avatarUrl": "/assets/logos/catamyst.png",
       "countryCode": "ID",
       "location": "Worldwide and Remote",
-      "isVerified": true
+      "isVerified": true,
+      "url": "https://catamyst.com"
     },
     "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
@@ -106,6 +109,7 @@
       "TypeScript",
       "Node.js",
       "React.js",
+      "Redux",
       "Chakra UI",
       "GraphQL API",
       "Prisma ORM",
@@ -128,7 +132,8 @@
       "handle": "nawaart",
       "name": "Nawaart",
       "countryCode": "CA",
-      "location": "Canada/Myanmar"
+      "location": "Canada/Myanmar",
+      "url": "https://nawaart.com"
     },
     "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
@@ -162,6 +167,45 @@
   {
     "id": 4,
     "isPublished": true,
+    "publishedDate": "2021-03-24",
+    "status": "Open",
+    "slug": "full-stack-react-developer-digitalsistem",
+    "title": "Full Stack React Developer",
+    "descriptionHtml": "<p>Digital Sistem Indonesia is a limited liabilities company established in End of 2017 with focus on Digital Software Product and Technology Consulting.</p><p>We leverage our employee’s skills and knowledges in Emerging Technologies: Big Data, Machine Learning & AI, Data Analytics ad Internet of Thing (IoT) and Management Fields: Project Management, Scrum, Agile, and IT Service Management.</p>",
+    "organization": {
+      "name": "Digital Sistem Indonesia",
+      "countryCode": "ID",
+      "location": "Jakarta & Depok",
+      "url": "https://digitalsistem.co.id"
+    },
+    "positionTypes": ["Full-Time"],
+    "salary": {
+      "currencyCode": "IDR",
+      "currencySymbol": "Rp",
+      "monthlyMin": 8000000,
+      "monthlyMax": 15000000
+    },
+    "apply": {
+      "url": "https://apply.catamyst.com/400",
+      "email": "",
+      "phone": "+62-822-9913-5705"
+    },
+    "skills": [
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "REST API",
+      "Express.js",
+      "SQL Database",
+      "VPS",
+      "Cloud services",
+      "Scrum"
+    ]
+  },
+  {
+    "id": 5,
+    "isPublished": true,
     "publishedDate": "2021-02-25",
     "status": "Closed",
     "slug": "ux-designer-ux-army",
@@ -170,7 +214,8 @@
     "organization": {
       "name": "UX Army",
       "countryCode": "SG",
-      "location": "Singapore/Malaysia"
+      "location": "Singapore/Malaysia",
+      "url": "https://uxarmy.com"
     },
     "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
@@ -203,41 +248,6 @@
       "Sketch",
       "Figma",
       "End-to-End Testing"
-    ]
-  },
-  {
-    "id": 5,
-    "isPublished": true,
-    "publishedDate": "2021-03-24",
-    "status": "Open",
-    "slug": "full-stack-react-developer-digitalsistem",
-    "title": "Full Stack React Developer",
-    "descriptionHtml": "<p>We provide a remote user research platform.</p>",
-    "organization": {
-      "name": "Digital Sistem Indonesia",
-      "countryCode": "ID",
-      "location": "Indonesia"
-    },
-    "positionTypes": ["Full-Time"],
-    "salary": {
-      "currencyCode": "IDR",
-      "currencySymbol": "Rp",
-      "monthlyMin": 8000000,
-      "monthlyMax": 15000000
-    },
-    "apply": {
-      "url": "https://apply.catamyst.com/400",
-      "email": "",
-      "phone": "+62-822-9913-5705"
-    },
-    "skills": [
-      "JavaScript",
-      "Node.js",
-      "React.js",
-      "Redux",
-      "REST API",
-      "SQL Database",
-      "VPS"
     ]
   }
 ]

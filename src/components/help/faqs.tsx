@@ -1,10 +1,7 @@
 import NextImage from 'next/image'
 import {
-  chakra,
   Box,
-  Text,
   Stack,
-  VStack,
   Heading,
   Accordion,
   AccordionItem,
@@ -12,7 +9,6 @@ import {
   AccordionPanel,
   AccordionIcon,
   Link,
-  Flex,
   useMediaQuery,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
