@@ -6,6 +6,7 @@ import {
   HomeScreens,
   HomeFeatures,
   HomeReviews,
+  HomeVillain,
 } from '@components/home'
 
 export default function homePage() {
@@ -16,6 +17,7 @@ export default function homePage() {
         <HomeScreens />
         <HomeFeatures />
         <HomeReviews />
+        <HomeVillain />
       </VStack>
     </Layout>
   )

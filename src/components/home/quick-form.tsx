@@ -12,7 +12,7 @@ import {
 import { LinkButton } from '@components'
 import { useAuth } from '@hooks'
 
-export function QuickSignUpForm() {
+export function HomeQuickForm() {
   const { isAuthenticated } = useAuth()
   const [email, setEmail] = useState('')
   const router = useRouter()
