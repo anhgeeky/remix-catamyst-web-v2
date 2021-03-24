@@ -1,7 +1,13 @@
+import { Layout } from '@layouts'
+import { Content } from '@components'
+import { NewQuickPanel } from '@components/new'
+
 export default function newPage() {
   return (
-    <div>
-      <h1>Write a post or publish a project.</h1>
-    </div>
+    <Layout title="Create something new · Catamyst">
+      <Content>
+        <NewQuickPanel />
+      </Content>
+    </Layout>
   )
 }

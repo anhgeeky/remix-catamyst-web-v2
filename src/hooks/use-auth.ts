@@ -1,6 +1,8 @@
+import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 
 export function useAuth() {
+  const router = useRouter()
   const auth = useSelector((state) => state.auth)
 
   /**
@@ -14,6 +16,7 @@ export function useAuth() {
   const isAuthorized = auth.isAuthenticated && auth.user
 
   return {
+    router,
     auth,
     isAuthenticated,
     isAuthorized,

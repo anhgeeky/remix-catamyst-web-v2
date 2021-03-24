@@ -3,5 +3,6 @@
   "name": "Guest",
   "handle": "guest",
   "email": "guest@catamyst.com",
-  "plan": "Basic"
+  "plan": "Basic",
+  "role": "Learner"
 }
