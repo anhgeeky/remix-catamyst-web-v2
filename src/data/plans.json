@@ -7,7 +7,8 @@
       "Publish up to 3 projects",
       "Discuss and ask in forum",
       "Ability to apply for jobs",
-      "Suitable for your who just want to try out with community support"
+      "Suitable for learners who just want to try out with community support",
+      "Suitable for employers who need to scout talents"
     ],
     "price": {
       "cost": 0,
@@ -31,9 +32,10 @@
       "Everything in Basic",
       "Access to all levels: Newbie, Beginner, Intermediate, Advanced, Expert",
       "Publish unlimited projects",
-      "Ability to post for jobs",
+      "Ability to post job vacancies",
       "Get prioritized support from our team",
-      "Suitable for you who want to independently learn and practice more"
+      "Suitable for learners who want to independently learn and practice more",
+      "Suitable for employers who want to attract more talents and learners"
     ],
     "price": {
       "cost": 10,
@@ -56,8 +58,8 @@
     "benefits": [
       "Everything in Basic and Pro",
       "Lifetime Pro benefits",
-      "Dedicated private 1-on-1 mentorship sessions with real dedicated mentor for 150 hours",
-      "Suitable for you who want to get real serious on getting a professional job, freelancing, upgrading your career, or building a tech business"
+      "Dedicated private 1-on-1 mentorship sessions with real dedicated mentor for 150 hours, then unlimited direct discussion and chat with mentors",
+      "Suitable for learners who want to get real serious on getting a professional job, freelancing, upgrading your career, or building a tech business like SaaS (Software as a Service)"
     ],
     "price": {
       "cost": 2000,

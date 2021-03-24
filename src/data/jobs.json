@@ -25,8 +25,11 @@
       "hourlyMax": 25,
       "description": "Salary can grow significantly upon the growth of company revenue. Pay day is on every 1st day of the month."
     },
-    "applyUrl": "https://apply.catamyst.com/200",
-    "applyEmail": "",
+    "apply": {
+      "url": "https://apply.catamyst.com/100",
+      "email": "",
+      "phone": ""
+    },
     "theme": {
       "textColor": "#fff",
       "backgroundColor": "#0aa"
@@ -83,13 +86,16 @@
     "positionTypes": ["Quarter-Time", "Freelance"],
     "salary": {
       "currencyCode": "IDR",
-      "currencySymbol": "Rp ",
+      "currencySymbol": "Rp",
       "hourlyMin": 100000,
       "hourlyMax": 120000,
       "description": "Salary can grow significantly upon the growth of company revenue. Pay day is on every 1st day of the month."
     },
-    "applyUrl": "https://apply.catamyst.com/100",
-    "applyEmail": "",
+    "apply": {
+      "url": "https://apply.catamyst.com/200",
+      "email": "",
+      "phone": ""
+    },
     "theme": {
       "textColor": "#fff",
       "backgroundColor": "#0aa"
@@ -131,7 +137,11 @@
       "monthlyMin": 3500,
       "monthlyMax": 5000
     },
-    "applyUrl": "https://apply.catamyst.com/987",
+    "apply": {
+      "url": "https://apply.catamyst.com/300",
+      "email": "",
+      "phone": ""
+    },
     "applyEmail": "",
     "theme": {
       "textColor": "#fff",
@@ -173,8 +183,11 @@
       "yearlyMin": 30000,
       "yearlyMax": 40000
     },
-    "applyUrl": "https://apply.catamyst.com/400",
-    "applyEmail": "",
+    "apply": {
+      "url": "https://apply.catamyst.com/400",
+      "email": "",
+      "phone": ""
+    },
     "theme": {
       "textColor": "#fff",
       "backgroundColor": "blue.700"
@@ -190,6 +203,41 @@
       "Sketch",
       "Figma",
       "End-to-End Testing"
+    ]
+  },
+  {
+    "id": 5,
+    "isPublished": true,
+    "publishedDate": "2021-03-24",
+    "status": "Open",
+    "slug": "full-stack-react-developer-digitalsistem",
+    "title": "Full Stack React Developer",
+    "descriptionHtml": "<p>We provide a remote user research platform.</p>",
+    "organization": {
+      "name": "Digital Sistem Indonesia",
+      "countryCode": "ID",
+      "location": "Indonesia"
+    },
+    "positionTypes": ["Full-Time"],
+    "salary": {
+      "currencyCode": "IDR",
+      "currencySymbol": "Rp",
+      "monthlyMin": 8000000,
+      "monthlyMax": 15000000
+    },
+    "apply": {
+      "url": "https://apply.catamyst.com/400",
+      "email": "",
+      "phone": "+62-822-9913-5705"
+    },
+    "skills": [
+      "JavaScript",
+      "Node.js",
+      "React.js",
+      "Redux",
+      "REST API",
+      "SQL Database",
+      "VPS"
     ]
   }
 ]

@@ -83,7 +83,9 @@ export function JobDetails({ jobParams }) {
               </Link>
             </NextLink>
           )}
-          <Tag>{job.status || 'Closed'}</Tag>
+          <Tag size="lg" colorScheme={job.status === 'Open' ? 'green' : 'red'}>
+            {job.status || 'Closed'} Vacancy
+          </Tag>
         </VStack>
       </JobHero>
 
@@ -153,7 +155,7 @@ export function JobDetails({ jobParams }) {
             <Text color="gray.500">
               {job.status === 'Open'
                 ? 'This job vacancy is open to apply'
-                : 'This job vacancy is closed but you can try to apply'}
+                : 'This job vacancy is closed but you can still try to apply'}
             </Text>
             <ButtonGroup>
               <Button

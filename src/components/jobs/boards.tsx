@@ -19,9 +19,12 @@ import {
 } from '@chakra-ui/react'
 
 import { Card, Icon, TagSkill, Country, LinkButton } from '@components'
-import { getPublishedDate, getRelativePublishedDate } from '@utils'
 import { useToast, useAuth } from '@hooks'
-
+import {
+  getPublishedDate,
+  getRelativePublishedDate,
+  formatNumberCurrency,
+} from '@utils'
 import dataJobs from '@data/jobs.json'
 
 /**
@@ -178,9 +181,9 @@ export function JobDetail({ job }) {
       <Stack className="job-meta" minW={160}>
         <Stack
           className="job-date-actions"
+          textAlign={{ base: 'left', lg: 'right' }}
+          alignItems={{ base: 'flex-start', lg: 'flex-end' }}
           spacing={1}
-          textAlign={{ lg: 'right' }}
-          alignItems="flex-end"
         >
           <HStack spacing={1}>
             <Icon name="date" />
@@ -189,7 +192,10 @@ export function JobDetail({ job }) {
           <Text as="span" fontSize="sm" color="gray.500">
             {state.relativePublishedDate}
           </Text>
-          <ButtonGroup size="sm">
+          <Tag colorScheme={job.status === 'Open' ? 'green' : 'red'}>
+            {job.status || 'Closed'} Vacancy
+          </Tag>
+          <ButtonGroup size="sm" pt={1}>
             <LinkButton variant="outline" href={`/jobs/${job.id}/${job.slug}`}>
               Details
             </LinkButton>
@@ -216,22 +222,25 @@ export function JobSalaryRate({ salary }) {
       {hasHourly && !hasMonthly && !hasYearly && (
         <Text>
           {salary.currencyCode} {salary.currencySymbol}
-          {salary.hourlyMin}/hour – {salary.currencySymbol}
-          {salary.hourlyMax}/hour
+          {formatNumberCurrency(salary.hourlyMin)}/hour –{' '}
+          {salary.currencySymbol}
+          {formatNumberCurrency(salary.hourlyMax)}/hour
         </Text>
       )}
       {hasMonthly && !hasHourly && !hasYearly && (
         <Text>
           {salary.currencyCode} {salary.currencySymbol}
-          {salary.monthlyMin}/month – {salary.currencySymbol}
-          {salary.monthlyMax}/month
+          {formatNumberCurrency(salary.monthlyMin)}/month –{' '}
+          {salary.currencySymbol}
+          {formatNumberCurrency(salary.monthlyMax)}/month
         </Text>
       )}
       {hasYearly && (
         <Text>
           {salary.currencyCode} {salary.currencySymbol}
-          {salary.yearlyMin}/year – {salary.currencySymbol}
-          {salary.yearlyMax}/year
+          {formatNumberCurrency(salary.yearlyMin)}/year –{' '}
+          {salary.currencySymbol}
+          {formatNumberCurrency(salary.yearlyMax)}/year
         </Text>
       )}
     </Box>
