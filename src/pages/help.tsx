@@ -2,7 +2,7 @@ import { Heading, Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
-import { HelpFaqs } from '@components/help/faqs'
+import { HelpFaqs } from '@components/help'
 
 export default function helpPage() {
   return (
@@ -11,7 +11,10 @@ export default function helpPage() {
         <Heading as="h1" size="xl">
           Help Center
         </Heading>
-        <Text>Support and other helpful information.</Text>
+        <Text>
+          Support and helpful information such as frequently asked questions
+          (FAQ) for both learners and employers.
+        </Text>
       </Hero>
 
       <Content>

@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "employers-what",
+    "q": "What is Catamyst?",
+    "a": "Catamyst is an all-in-one platform for people to learn and practice web development and software engineering skills. But as an employer you can discover talented developers, designers, engineers, and other professionals in the tech industry."
+  },
+  {
+    "slug": "employers-free-paid",
+    "q": "Is Catamyst free or paid?",
+    "a": "We are both. You can start use this site for free, discovering talented people by yourself. But if you want to attract talents and post job vacancies, you can subscribe for the paid <alink href='/pricing'>Pro plan</alink> to <alink href='/jobs'>post a job vacancy</alink>."
+  },
+  {
+    "slug": "employers-different-bootcamp",
+    "q": "How is Catamyst different than collaborating or becoming a hiring partner with a coding bootcamp?",
+    "a": "As an employer you don't have to be a hiring partner or getting a strict rules in order to hire. You can just directly scout for talents. But if you need more, you can also <alink href='/jobs'>post a job vacancy</alink>."
+  },
+  {
+    "slug": "employers-different-platform",
+    "q": "How is Catamyst different than other learning platform?",
+    "a": "The learners are given the most comprehensive and guided learning experience, started from the absolute beginning. They also might come from different levels such as Newbie, Beginner, Intermediate, Advanced, and Expert. Similar on how you look for Junior, Intermediate, and Senior professionals). So you can adjust based on your hiring needs."
+  },
+  {
+    "slug": "employers-guarantee",
+    "q": "Do you guarantee me to get a hire?",
+    "a": "Catamyst would like to maximize your exposure to as much as talents as possible. But obviously in the end it's still your effort that make you really attractive for the talents to apply to you. So, we don't guarantee, but with us you increase the chance a lot more."
+  },
+  {
+    "slug": "employers-collaborate-scholarship",
+    "q": "Can we collaborate for providing a scholarship for learners? So my organization can hire them.",
+    "a": "Yes. But for the details, we'll be informing you about this later on."
+  }
+]
