@@ -1,6 +1,8 @@
 import { Heading, Text } from '@chakra-ui/react'
+
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
+import { ForumSections } from '@components/forum'
 
 export default function forumPage() {
   return (
@@ -13,7 +15,7 @@ export default function forumPage() {
       </Hero>
 
       <Content>
-        <Text>There will be forum discussions here.</Text>
+        <ForumSections />
       </Content>
     </Layout>
   )

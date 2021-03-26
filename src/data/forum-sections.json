@@ -1,0 +1,622 @@
+[
+  {
+    "isPublished": true,
+    "slug": "general",
+    "title": "General Support",
+    "description": "The place for discussing ideas, questions, and help in general. For all levels: Newbie, Beginner, Intermediate, Advanced, and Expert.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "teal.500",
+    "discussions": [1]
+  },
+  {
+    "isPublished": true,
+    "slug": "career",
+    "title": "Careers, Skills, and Principles",
+    "description": "The professional careers, skills, and principles. Stuffs like life, work, health, management, and communication. Could be related to Science, Technology, Reading, Writing, Engineering, Arts, and Mathematics.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "projects",
+    "title": "Projects and Products",
+    "description": "The implementation of website and application in general for any scale (tiny, small, medium, large, huge).",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "business",
+    "title": "Business",
+    "description": "The business-side of technology by making products or services. Related to startups and SaaS (Software as a Service) business.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "graphic-design",
+    "title": "Graphic Design",
+    "description": "The graphics for general purpose. Including typography, logo, icon, photos, illustration, and animation. This might be track-specific.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "web-design",
+    "title": "Web Design",
+    "description": "The UI (User Interface) and UX (User Experience) aspects for website and web application. Including things from graphic design, with layout and typography. This might be track-specific.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "web-development",
+    "title": "Web Development",
+    "description": "The actual creation of website. Combination of HTML and CSS to apply an existing UI/UX of a web design. This might be track-specific.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "web-app-development",
+    "title": "Web App Development",
+    "description": "The implementation of web application using web programming languages and platforms such as JavaScript, TypeScript, and Node.js. With any ECMAScript versions. This might be track-specific.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "apple",
+    "title": "Apple",
+    "description": "Apple-related stuffs such as macOS, Macbook, iMac, iOS, iPhone, and iPad.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "gray.300",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "linux",
+    "title": "Linux",
+    "description": "Linux-related such as Android, Ubuntu, Fedora, Arch, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "orange.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "windows",
+    "title": "Windows",
+    "description": "Microsoft Windows-related stuffs.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "blue.300",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "browser",
+    "title": "Web Browsers",
+    "description": "Web browser-related such as Google Chrome, Mozilla Firefox, Brave, Chromium, Microsoft Edge, and others. Including the developer tools.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "design-tools",
+    "title": "Design Tools",
+    "description": "Design tool-related such as Figma, Framer, Sketch, InVision, Marvel, and others. Including more specific ones like Zeplin and Origami.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "code-editor",
+    "title": "Code Editors",
+    "description": "Code editor-related such as VS Code, Sublime Text, Atom, and others. Including their derivatives like CodeSandbox, CodePen, REP",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "markdown",
+    "title": "Markdown",
+    "description": "The popular markup for text formatting and documentation like README. Including its derivatives such as MDX. Or alternativs like reStructuredText, AsciiDoc, Textile.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "terminal",
+    "title": "Terminal and Shell",
+    "description": "The app and system to handle CLI (command line interface) stuffs. Including bash, zsh, PowerShell, SSH, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "git",
+    "title": "Git",
+    "description": "Git-related stuffs such as Git workflow, GitHub, GitLab, Bitbucket, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "orange.800",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "html",
+    "title": "HTML",
+    "description": "The main markup of a website.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "orange.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "css",
+    "title": "CSS",
+    "description": "The main styling language of a website.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "blue.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "css-lf",
+    "title": "CSS Libraries and Frameworks",
+    "description": "The classic CSS design utilities and systems like Tailwind, Bootstrap, Foundation, Semantic UI, Bulma, Tachyons, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "css-in-js",
+    "title": "CSS-in-JS",
+    "description": "The next generation of styling and animation through and usually paired with JavaScript frameworks. Including Emotion, styled-components, Stitches, Framer Motion, Styled System, Chakra UI, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "javascript",
+    "title": "JavaScript",
+    "description": "The main programming language to build a website or web application.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "yellow.400",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "typescript",
+    "title": "TypeScript",
+    "description": "The superset and type-safe version of JavaScript programming language.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "blue.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "dart",
+    "title": "Dart",
+    "description": "The client-optimized programming language for apps on multiple platforms. Including Flutter.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "cyan.600",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "kotlin",
+    "title": "Kotlin",
+    "description": "The Kotlin programming language.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "purple.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "swift",
+    "title": "Swift",
+    "description": "The Swift programming language.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "orange.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "python",
+    "title": "Python",
+    "description": "The Python programming language. Including Django and Sinatra.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "ruby",
+    "title": "Ruby",
+    "description": "The Ruby programming language. Including Rails and Flask.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "red.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "java",
+    "title": "Java",
+    "description": "The Java programming language. Including Spring and JVM (Java Virtual Machine).",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "go",
+    "title": "Go",
+    "description": "The Go programming language.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "cyan.300",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "php",
+    "title": "PHP",
+    "description": "The PHP programming language. Including its frameworks and platforms such as WordPress, Laravel, Code Igniter, Drupal.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "purple.700",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "c",
+    "title": "C-family",
+    "description": "The C-related programming languages such as C, C++, C#, Objective-C.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "programming-languages",
+    "title": "Programming Languages",
+    "description": "The other coding and programming languages such as Elm, Scala, Rust, Clojure, Perl, R, F#, Elixir, Erlang, even BASIC and Assembly.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "deployment",
+    "title": "Deployment",
+    "description": "Deployment-related stuffs such as Netlify, Vercel, Heroku, Railway.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "nodejs",
+    "title": "Node.js",
+    "description": "The cross-platform JavaScript runtime environment. Including npm and yarn.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "green.600",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "deno",
+    "title": "Deno",
+    "description": "The Node.js alternative.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "react",
+    "title": "React.js",
+    "description": "The frontend JavaScript library for building UI components. Including Preact and React Router. Also its derivatives such as React Native, React VR, Expo, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "nextjs",
+    "title": "Next.js",
+    "description": "The full stack framework of React application.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "black",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "vue",
+    "title": "Vue.js",
+    "description": "The progressive frontend JavaScript framework.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "green.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "angular",
+    "title": "Angular",
+    "description": "The JavaScript framework, both the current Angular or older Angular.js version.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "red.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "frontend-lf",
+    "title": "Frontend Libraries and Frameworks",
+    "description": "The other JavaScript frontend libraries and frameworks (desktop or mobile) such as Electron, Svelte, Ember.js, NativeScript, Cordova, Xamarin.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "orange.500",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "redux",
+    "title": "Redux",
+    "description": "The popular state management library.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "purple.400",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "rest-api",
+    "title": "REST API",
+    "description": "The mechanism to exchange data via HTTP request and response. Including its tools like cURL, Postman, and Insomnia.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "graphql",
+    "title": "GraphQL",
+    "description": "The modern alternative of REST API. Including its tools like Apollo, urql, and Hasura.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "purple.600",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "expressjs",
+    "title": "Express.js",
+    "description": "The most popular Node.js backend/server framework. Including its middlewares such as Passport. Or derivatives like Feathers and Sails.js, Nest, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "nodejs-frameworks",
+    "title": "Node.js Frameworks",
+    "description": "The other Node.js backend/server or full stack frameworks such as LoopBack, Hapi, Fastify, Apollo, RedwoodJS, KeystoneJS, AdonisJs, Meteor, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "database",
+    "title": "Database",
+    "description": "The general database discussions, either SQL or NoSQL. Including ORMs and ODMS such as Prisma, Knex, Sequelize, and Mongoose. Also other DBMS such as SQLite, Firebase, Realm, Redis, Elasticsearch, Cassandra, FaunaDB, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "mongodb",
+    "title": "MongoDB",
+    "description": "The most popular NoSQL database.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "mysql",
+    "title": "MySQL",
+    "description": "The most popular SQL database. Including variant like MariaDB.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "postgresql",
+    "title": "PostgreSQL",
+    "description": "The other most popular SQL database.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "security",
+    "title": "Security",
+    "description": "The generic security discussions. Including authentication, authorization, OAuth, token, JWT, cookies, browser storage, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "docker",
+    "title": "Docker",
+    "description": "The most popular containerization platform. Including Kubernetes.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "testing",
+    "title": "Testing",
+    "description": "The generic testing discussions. Including Jest, Mocha, Chai, Cypress, testing-library, Puppeteer, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "infra",
+    "title": "Infrastructure and Servers",
+    "description": "The heavy infra and server-related discussions. Including PM2, Nginx, certbot, Google Cloud Platform, Amazon Web Services, Microsoft Azure, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "cicd",
+    "title": "CI/CD",
+    "description": "The practice of Continuous Integration and Deployment (CI/CD) of software craftmanship.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "accessibility",
+    "title": "Accessibility",
+    "description": "To make sure our website and application is accessible for everyone to use. Including internationalization, localization, dark mode, motion, voice interface, chat interface, and more.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "ar-vr",
+    "title": "AR and VR",
+    "description": "Augmented Reality (AR) and Virtual Reality (VR) stuffs.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "ai-ml",
+    "title": "AI and ML",
+    "description": "Artificial Intelligence (AI) and Machine Learning (ML). Including libraries such as TensorFlow.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "data-science",
+    "title": "Data Science",
+    "description": "Data science-related stuffs.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "game",
+    "title": "Games",
+    "description": "Game design and development-related stuffs. Including Unity 3D, Unreal Engine, Phaser, and others.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "blockchain-crypto",
+    "title": "Blockchain and Crypto",
+    "description": "Blockchain and cryptocurrency-related discussions. Including Bitcoin, Ethereum, and other derivatives.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  },
+  {
+    "isPublished": true,
+    "slug": "others",
+    "title": "Others",
+    "description": "The other uncategorized discussions such as feedbacks and bug reports.",
+    "logoUrl": "",
+    "coverUrl": "",
+    "coverColor": "",
+    "discussions": []
+  }
+]

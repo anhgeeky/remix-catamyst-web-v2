@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to Catamyst forum",
+    "html": "<p>Hey everyone! You can introduce yourself here.</p>",
+    "replies": [
+      {
+        "id": 1,
+        "userId": 3,
+        "html": "<p>Hi, I'm Haidar, the founder and this site. I'm doing almost everything from the UI/UX design, web development, software engineering, mentoring people, and handling some business side. Pleased to meet you.</p>"
+      }
+    ]
+  }
+]

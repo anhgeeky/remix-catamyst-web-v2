@@ -18,7 +18,6 @@ import { AlertSoon } from '@components'
 
 export function CollectionTracks({ tracks }) {
   const [isTooSmall] = useMediaQuery('(max-width: 1000px)')
-  const bg = useColorModeValue('white', 'gray.800')
 
   return (
     <VStack spacing={5}>
@@ -40,7 +39,7 @@ export function CollectionTracks({ tracks }) {
           return (
             <NextLink key={uuid} href={trackHref} passHref>
               <Link
-                bg={bg}
+                bg={useColorModeValue('white', 'gray.800')}
                 boxShadow="xs"
                 cursor="pointer"
                 direction={{ base: 'column', sm: 'row' }}

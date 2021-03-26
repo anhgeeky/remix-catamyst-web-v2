@@ -143,7 +143,10 @@ export function TrackSideBar({ track }) {
         <b>{track.totalLessons}</b> lessons
       </Text>
       <Text>
-        <b>{track.totalHours}</b> hours (estimated)
+        <b>{track.totalHours}</b> hours
+      </Text>
+      <Text>
+        <b>{track.totalMonths}</b> months (estimated)
       </Text>
     </Stack>
   )

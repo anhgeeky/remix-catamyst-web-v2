@@ -61,6 +61,7 @@
   {
     "type": "Organization",
     "id": 4,
+    "isPublished": false,
     "handle": "github",
     "name": "GitHub",
     "bioHtml": "<p>How people build software.</p>",
@@ -77,6 +78,7 @@
   {
     "type": "Organization",
     "id": 5,
+    "isPublished": false,
     "handle": "google",
     "name": "Google",
     "avatarUrl": "https://storage.catamyst.com/avatars/google.png",
@@ -93,6 +95,7 @@
   {
     "type": "Organization",
     "id": 6,
+    "isPublished": false,
     "handle": "facebook",
     "name": "Facebook",
     "avatarUrl": "https://storage.catamyst.com/avatars/facebook.png",
@@ -106,6 +109,7 @@
   {
     "type": "Organization",
     "id": 7,
+    "isPublished": false,
     "handle": "spotify",
     "name": "Spotify",
     "avatarUrl": "https://storage.catamyst.com/avatars/spotify.png",
@@ -119,6 +123,7 @@
   {
     "type": "Organization",
     "id": 8,
+    "isPublished": false,
     "handle": "impactbyte",
     "name": "Impact Byte",
     "bioHtml": "<p>Make impact with your code.</p>",

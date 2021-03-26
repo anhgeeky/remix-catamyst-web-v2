@@ -103,7 +103,6 @@ export function CMSTracks() {
                     <Text flex={2}>{track.slug}</Text>
                     <Text flex={1} textAlign="right">
                       {track.topics.length}
-                      {/* {track.totalTopics || '-'} */}
                     </Text>
                     <Text flex={1} textAlign="right">
                       {track.totalLessons || '-'}

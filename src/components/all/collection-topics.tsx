@@ -12,8 +12,6 @@ import slugify from 'slugify'
 import { AlertSoon, LearningTag } from '@components'
 
 export function CollectionTopics({ trackSlug, topics }) {
-  const bg = useColorModeValue('white', 'gray.800')
-
   if (!topics || topics.length === 0) {
     return <AlertSoon text="No topics here yet. This track is coming soon!" />
   }
@@ -29,7 +27,7 @@ export function CollectionTopics({ trackSlug, topics }) {
             <NextLink key={topic.id} href={topicHref} passHref>
               <HStack
                 as={Link}
-                bg={bg}
+                bg={useColorModeValue('white', 'gray.800')}
                 boxShadow="xs"
                 cursor="pointer"
                 direction={{ base: 'column', sm: 'row' }}

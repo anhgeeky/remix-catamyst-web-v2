@@ -18,7 +18,15 @@ import {
   ButtonGroup,
 } from '@chakra-ui/react'
 
-import { Card, Icon, TagSkill, Country, LinkButton } from '@components'
+import {
+  Card,
+  Icon,
+  TagSkill,
+  Country,
+  LinkButton,
+  HeadingStack,
+} from '@components'
+import { JobsToolbar } from '@components/jobs'
 import { useToast, useAuth } from '@hooks'
 import {
   getPublishedDate,
@@ -34,10 +42,14 @@ import dataJobs from '@data/jobs.json'
  */
 export function JobsBoards() {
   return (
-    <Stack spacing={3}>
-      {dataJobs.map((job, index) => {
-        return <JobDetail key={index} job={job} />
-      })}
+    <Stack>
+      <JobsToolbar />
+      <HeadingStack>Featured Jobs</HeadingStack>
+      <Stack spacing={3}>
+        {dataJobs.map((job, index) => {
+          return <JobDetail key={index} job={job} />
+        })}
+      </Stack>
     </Stack>
   )
 }

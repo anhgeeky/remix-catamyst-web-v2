@@ -1,8 +1,8 @@
-import { Stack, Heading, Text } from '@chakra-ui/react'
+import { Heading, Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, Content, HeadingStack } from '@components'
-import { JobsBoards, JobsToolbar } from '@components/jobs'
+import { Hero, Content } from '@components'
+import { JobsBoards } from '@components/jobs'
 
 export default function jobsPage() {
   return (
@@ -15,13 +15,8 @@ export default function jobsPage() {
           Search and apply your next opportunities. Or even post job vacancies.
         </Text>
       </Hero>
-
       <Content>
-        <Stack>
-          <JobsToolbar />
-          <HeadingStack>Featured Jobs</HeadingStack>
-          <JobsBoards />
-        </Stack>
+        <JobsBoards />
       </Content>
     </Layout>
   )
