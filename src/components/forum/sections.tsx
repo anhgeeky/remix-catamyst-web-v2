@@ -1,3 +1,4 @@
+import contrast from 'contrast'
 import { useState } from 'react'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
@@ -13,6 +14,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
+import { Icon } from '@components'
 import { ForumToolbar } from '@components/forum'
 import { dataForumSections } from '@data'
 
@@ -74,23 +76,28 @@ export function ForumSectionsGrid({ sections }) {
 
 export function ForumSectionsRow({ sections }) {
   return (
-    <Stack spacing={3}>
+    <Stack spacing={{ base: 1, sm: 2 }}>
       {sections.map((section, index) => {
         return (
           <NextLink key={index} href={`/forum/${section.slug}`} passHref>
-            <HStack
+            <Box
               as={Link}
+              pr={1}
               rounded="sm"
               boxShadow="base"
               bg={useColorModeValue('white', 'gray.800')}
               _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
             >
-              <ForumSectionLogo section={section} size={50} fontSize="md" />
-              <Heading as="h1" size="md">
-                {section.title}
-              </Heading>
-              <Text>{section.discussions.length} discussions</Text>
-            </HStack>
+              <HStack justify="flex-start" spacing={{ base: 1, sm: 3 }}>
+                <ForumSectionLogo section={section} size={50} fontSize="md" />
+                <Heading as="h1" size="sm">
+                  {section.title}
+                </Heading>
+                <Text lineHeight="initial" fontSize="sm">
+                  {section.discussions.length} discussions
+                </Text>
+              </HStack>
+            </Box>
           </NextLink>
         )
       })}
@@ -108,11 +115,13 @@ export function ForumSectionLogo({
       <Box bg={useColorModeValue('white', 'gray.800')} p={1} rounded="sm">
         <Avatar
           bg={section.color || 'gray.500'}
-          name={section.title}
           width={size}
           height={size}
           size={fontSize}
           rounded="sm"
+          icon={<Icon name={section.icon ? section.icon : section.slug} />}
+          // name={!section.icon && section.title}
+          color={contrast(section.color) === 'light' ? 'black' : 'white'}
         />
       </Box>
     )

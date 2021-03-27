@@ -6,9 +6,10 @@ import dataSocialLinks from '@data/social-links.json'
 export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
   return (
     <HStack spacing={2}>
-      {links.map((link) => {
+      {links.map((link, index) => {
         return (
           <Tooltip
+            key={index}
             hasArrow
             label={link.url}
             aria-label={link.url}

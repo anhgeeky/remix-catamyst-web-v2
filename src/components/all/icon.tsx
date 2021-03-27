@@ -11,6 +11,7 @@ import React from 'react'
 import {
   // General icons
   FaCircle as CircleIcon,
+  FaQuestionCircle as OthersIcon,
   FaCode as CodeIcon,
   FaCopyright as CopyrightIcon,
   FaDivide as DividerIcon,
@@ -35,6 +36,7 @@ import {
   FaEnvelope as EmailIcon,
   FaKey as PasswordIcon,
   FaFileInvoiceDollar as BillingIcon,
+  FaBuilding as BusinessIcon,
   // Navigation and mnu icons
   FaHome as HomeIcon,
   FaBookReader as LearnIcon,
@@ -78,7 +80,15 @@ import {
   FaStar as FavoriteIcon,
   FaMapMarkerAlt as LocationIcon,
   FaBuilding as OrganizationIcon,
+  // Tools and technologies
+  FaCloud as CloudIcon,
+  FaAsterisk as CareerIcon,
+  FaPalette as DesignIcon,
+  FaApple as AppleIcon,
+  FaTerminal as TerminalIcon,
+  FaDatabase as DatabaseIcon,
 } from 'react-icons/fa'
+import { FiMonitor as UIUXIcon } from 'react-icons/fi'
 import {
   RiRefreshLine as ResetIcon,
   RiDashboardFill as DashboardIcon,
@@ -86,11 +96,70 @@ import {
   RiLayoutGridLine as GridIcon,
   RiLayoutRowLine as RowIcon,
 } from 'react-icons/ri'
-import { IoTelescope as DiscoverIcon } from 'react-icons/io5'
+import {
+  IoTelescope as DiscoverIcon,
+  IoAccessibility as AccessibilityIcon,
+} from 'react-icons/io5'
 import {
   GoVerified as VerifiedIcon,
   GoShield as TrustedIcon,
 } from 'react-icons/go'
+import {
+  SiLinux as LinuxIcon,
+  SiWindows as WindowsIcon,
+  SiGooglechrome as BrowserIcon,
+  SiFigma as DesignToolsIcon,
+  SiVisualstudiocode as CodeEditorsIcon,
+  SiMarkdown as MarkdownIcon,
+  SiGit as GitIcon,
+  SiHtml5 as HTMLIcon,
+  SiCss3 as CSSIcon,
+  SiJavascript as JavaScriptIcon,
+  SiTypescript as TypeScriptIcon,
+  SiTailwindcss as CSSLFIcon,
+  SiStyledComponents as CSSInJSIcon,
+  SiDart as DartIcon,
+  SiKotlin as KotlinIcon,
+  SiSwift as SwiftIcon,
+  SiPython as PythonIcon,
+  SiRuby as RubyIcon,
+  SiJava as JavaIcon,
+  SiGo as GoIcon,
+  SiPhp as PHPIcon,
+  SiC as CIcon,
+  SiElm as ProgrammingLanguagesIcon,
+  SiNetlify as DeploymentIcon,
+  SiNodeDotJs as NodeJSIcon,
+  SiDeno as DenoIcon,
+  SiNpm as NPMIcon,
+  SiReact as ReactIcon,
+  SiNextDotJs as NextJSIcon,
+  SiVueDotJs as VueJSIcon,
+  SiAngular as AngularIcon,
+  SiSvelte as JavaScriptLFIcon,
+  SiRedux as ReduxIcon,
+  SiPostman as RESTAPIIcon,
+  SiGraphql as GraphQLIcon,
+  SiSocketDotIo as APIIcon,
+  SiApollographql as NodeJSLFIcon,
+  SiMongodb as MongoDBIcon,
+  SiMysql as MySQLIcon,
+  SiPostgresql as PostgreSQLIcon,
+  SiRedis as RedisIcon,
+  SiJsonwebtokens as SecurityIcon,
+  SiDocker as DockerIcon,
+  SiJest as TestingIcon,
+  SiSentry as APMIcon,
+  SiNginx as InfraIcon,
+  SiGooglecloud as GCPIcon,
+  SiAmazonaws as AWSIcon,
+  SiMicrosoftazure as AzureIcon,
+  SiCircleci as CICDIcon,
+  SiOculus as ARVRIcon,
+  SiTensorflow as AIMLIcon,
+  SiUnity as GamesIcon,
+  SiBitcoin as BlockchainCryptoIcon,
+} from 'react-icons/si'
 
 export function Icon({ name }) {
   switch (name) {
@@ -175,6 +244,18 @@ export function Icon({ name }) {
       return <GridIcon />
     case 'row':
       return <RowIcon />
+    case 'cloud':
+      return <CloudIcon />
+    case 'career':
+      return <CareerIcon />
+    case 'business':
+      return <BusinessIcon />
+    case 'uiux':
+      return <UIUXIcon />
+    case 'web':
+      return <span>W</span>
+    case 'web-app':
+      return <span>WA</span>
     /**
      * Navigation and menu icons.
      */
@@ -272,6 +353,131 @@ export function Icon({ name }) {
       return <VerifiedIcon />
     case 'trusted':
       return <TrustedIcon />
+    /**
+     * Tools and technologies
+     */
+    case 'graphic-design':
+      return <DesignIcon />
+    case 'apple':
+      return <AppleIcon />
+    case 'linux':
+      return <LinuxIcon />
+    case 'windows':
+      return <WindowsIcon />
+    case 'browser':
+      return <BrowserIcon />
+    case 'design-tool':
+      return <DesignToolsIcon />
+    case 'code-editor':
+      return <CodeEditorsIcon />
+    case 'markdown':
+      return <MarkdownIcon />
+    case 'terminal':
+      return <TerminalIcon />
+    case 'git':
+      return <GitIcon />
+    case 'html':
+      return <HTMLIcon />
+    case 'css':
+      return <CSSIcon />
+    case 'javascript':
+      return <JavaScriptIcon />
+    case 'typescript':
+      return <TypeScriptIcon />
+    case 'css-lf':
+      return <CSSLFIcon />
+    case 'css-in-js':
+      return <CSSInJSIcon />
+    case 'swift':
+      return <SwiftIcon />
+    case 'dart':
+      return <DartIcon />
+    case 'kotlin':
+      return <KotlinIcon />
+    case 'python':
+      return <PythonIcon />
+    case 'ruby':
+      return <RubyIcon />
+    case 'java':
+      return <JavaIcon />
+    case 'go':
+      return <GoIcon />
+    case 'php':
+      return <PHPIcon />
+    case 'c':
+      return <CIcon />
+    case 'programming-languages':
+      return <ProgrammingLanguagesIcon />
+    case 'deployment':
+      return <DeploymentIcon />
+    case 'nodejs':
+      return <NodeJSIcon />
+    case 'deno':
+      return <DenoIcon />
+    case 'packages':
+      return <NPMIcon />
+    case 'react':
+      return <ReactIcon />
+    case 'nextjs':
+      return <NextJSIcon />
+    case 'vue':
+      return <VueJSIcon />
+    case 'angular':
+      return <AngularIcon />
+    case 'javascript-lf':
+      return <JavaScriptLFIcon />
+    case 'redux':
+      return <ReduxIcon />
+    case 'rest-api':
+      return <RESTAPIIcon />
+    case 'graphql':
+      return <GraphQLIcon />
+    case 'api':
+      return <APIIcon />
+    case 'expressjs':
+      return <span>E</span>
+    case 'nodejs-lf':
+      return <NodeJSLFIcon />
+    case 'database':
+      return <DatabaseIcon />
+    case 'mongodb':
+      return <MongoDBIcon />
+    case 'mysql':
+      return <MySQLIcon />
+    case 'postgresql':
+      return <PostgreSQLIcon />
+    case 'redis':
+      return <RedisIcon />
+    case 'security':
+      return <SecurityIcon />
+    case 'docker':
+      return <DockerIcon />
+    case 'testing':
+      return <TestingIcon />
+    case 'apm':
+      return <APMIcon />
+    case 'infra':
+      return <InfraIcon />
+    case 'gcp':
+      return <GCPIcon />
+    case 'aws':
+      return <AWSIcon />
+    case 'azure':
+      return <AzureIcon />
+    case 'cicd':
+      return <CICDIcon />
+    case 'accessibility':
+      return <AccessibilityIcon />
+    case 'ar-vr':
+      return <ARVRIcon />
+    case 'ai-ml':
+      return <AIMLIcon />
+    case 'games':
+      return <GamesIcon />
+    case 'blockchain-crypto':
+      return <BlockchainCryptoIcon />
+    case 'others':
+      return <OthersIcon />
     /**
      * When nothing found
      */
