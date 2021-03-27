@@ -83,6 +83,8 @@ import {
   RiRefreshLine as ResetIcon,
   RiDashboardFill as DashboardIcon,
   RiLogoutBoxLine as SignOutIcon,
+  RiLayoutGridLine as GridIcon,
+  RiLayoutRowLine as RowIcon,
 } from 'react-icons/ri'
 import { IoTelescope as DiscoverIcon } from 'react-icons/io5'
 import {
@@ -169,6 +171,10 @@ export function Icon({ name }) {
       return <PasswordIcon />
     case 'billing':
       return <BillingIcon />
+    case 'grid':
+      return <GridIcon />
+    case 'row':
+      return <RowIcon />
     /**
      * Navigation and menu icons.
      */

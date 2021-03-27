@@ -57,7 +57,7 @@ export function JobsToolbar() {
             pointerEvents="none"
             children={<Icon name="search" />}
           />
-          <Input type="text" placeholder={`${labels.search}...`} />
+          <Input type="text" placeholder={labels.search} />
         </InputGroup>
       </Box>
     </Stack>

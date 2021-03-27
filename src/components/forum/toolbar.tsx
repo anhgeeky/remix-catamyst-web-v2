@@ -1,26 +1,49 @@
 import {
-  Flex,
-  Stack,
-  Avatar,
-  Box,
-  SimpleGrid,
-  Link,
-  Heading,
+  HStack,
   Text,
+  ButtonGroup,
+  IconButton,
+  Box,
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Tooltip,
 } from '@chakra-ui/react'
 
-import { Card } from '@components'
-import { dataForumSections } from '@data'
+import { Icon } from '@components'
 
-export function ForumToolbar() {
+export function ForumToolbar({ state, actions }) {
   return (
-    <Flex>
-      <Text>
-        <b>
-          {dataForumSections.filter((section) => section.isPublished).length}
-        </b>
-        <span> forum sections in total</span>
-      </Text>
-    </Flex>
+    <HStack>
+      <ButtonGroup colorScheme="teal">
+        <Tooltip hasArrow placement="top" label="Grid layout">
+          <IconButton
+            aria-label="Grid layout"
+            icon={<Icon name="grid" />}
+            onClick={() => actions.handleToggleLayout('grid')}
+            variant={state.layout === 'grid' ? 'solid' : 'outline'}
+          />
+        </Tooltip>
+        <Tooltip hasArrow placement="top" label="Row layout">
+          <IconButton
+            aria-label="Row layout"
+            icon={<Icon name="row" />}
+            onClick={() => actions.handleToggleLayout('row')}
+            variant={state.layout === 'row' ? 'solid' : 'outline'}
+          />
+        </Tooltip>
+      </ButtonGroup>
+
+      <InputGroup>
+        <InputLeftElement
+          pointerEvents="none"
+          children={<Icon name="search" />}
+        />
+        <Input
+          type="text"
+          placeholder={`Search from ${state.sections.length} forum sections...`}
+        />
+      </InputGroup>
+    </HStack>
   )
 }
