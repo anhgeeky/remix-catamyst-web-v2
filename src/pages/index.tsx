@@ -12,7 +12,7 @@ import {
 export default function homePage() {
   return (
     <Layout title="Catamyst · All-in-one platform to learn software development">
-      <VStack spacing={100}>
+      <VStack spacing={{ base: 25, sm: 50, md: 100 }}>
         <HomeHero />
         <HomeScreens />
         <HomeFeatures />

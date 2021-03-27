@@ -1,0 +1,29 @@
+[
+  {
+    "text": "Company",
+    "links": [
+      { "path": "/", "text": "Home" },
+      { "path": "/about", "text": "About" },
+      { "path": "/help", "text": "Help" }
+    ]
+  },
+  {
+    "text": "Features",
+    "links": [
+      { "path": "/learn", "text": "Learn" },
+      { "path": "/discover", "text": "Discover" },
+      { "path": "/forum", "text": "Forum" },
+      { "path": "/jobs", "text": "Jobs" },
+      { "path": "/pricing", "text": "Pricing" },
+      { "path": "/search", "text": "Search", "isEnabled": false }
+    ]
+  },
+  {
+    "text": "Account",
+    "links": [
+      { "path": "/signup", "text": "Sign Up" },
+      { "path": "/sigin", "text": "Sign In" },
+      { "path": "/dashboard", "text": "Dashboard" }
+    ]
+  }
+]

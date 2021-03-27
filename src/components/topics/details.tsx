@@ -75,7 +75,7 @@ export function TopicSidebar({ topic }) {
       )}
       {topic.totalHours && (
         <Text>
-          <b>{topic.totalHours}</b> hours (estimated)
+          <b>{topic.totalHours}</b> hours of content
         </Text>
       )}
     </Stack>

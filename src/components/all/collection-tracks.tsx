@@ -83,7 +83,11 @@ export function CollectionTracks({ tracks }) {
                           </span>
                           <span>
                             <b>{track.totalHours}</b>
-                            {' hours (estimated)'}
+                            {' hours of content'}
+                          </span>
+                          <span>
+                            <b>{track.totalMonths}</b>
+                            {' months (estimated)'}
                           </span>
                         </Text>
                       )}

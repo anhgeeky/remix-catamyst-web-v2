@@ -149,6 +149,7 @@ import {
   SiJsonwebtokens as SecurityIcon,
   SiDocker as DockerIcon,
   SiJest as TestingIcon,
+  SiGoogleanalytics as AnalyticsIcon,
   SiSentry as APMIcon,
   SiNginx as InfraIcon,
   SiGooglecloud as GCPIcon,
@@ -454,6 +455,8 @@ export function Icon({ name }) {
       return <DockerIcon />
     case 'testing':
       return <TestingIcon />
+    case 'analytics':
+      return <AnalyticsIcon />
     case 'apm':
       return <APMIcon />
     case 'infra':

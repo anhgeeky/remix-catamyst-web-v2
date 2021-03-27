@@ -11,8 +11,8 @@ export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
           <Tooltip
             key={index}
             hasArrow
-            label={link.url}
-            aria-label={link.url}
+            label={link.name}
+            aria-label={link.name}
             placement="top"
             fontSize="md"
           >
