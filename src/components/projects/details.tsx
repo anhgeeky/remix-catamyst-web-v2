@@ -61,7 +61,18 @@ export function ProjectDetails({ projectSlug }) {
           </NextHead>
 
           <Stack width="100%" spacing={5}>
-            {!project.coverUrl && <Flex mt={5} />}
+            {!project.coverUrl && (
+              <Flex className="next-image-container" justify="center">
+                <NextImage
+                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`}
+                  alt={project.title}
+                  layout="fixed"
+                  objectFit="cover"
+                  height={200}
+                  width={1440}
+                />
+              </Flex>
+            )}
             {project.coverUrl && (
               <Flex className="next-image-container" justify="center">
                 <NextImage
@@ -92,7 +103,7 @@ export function ProjectDetails({ projectSlug }) {
 
                 {project.skills && (
                   <Stack id="project-skills">
-                    <HeadingStack>Skill, Tools, and Technologies</HeadingStack>
+                    <HeadingStack>Skills, Tools, and Technologies</HeadingStack>
                     <JobSkillsTags skills={project.skills} />
                   </Stack>
                 )}
@@ -100,7 +111,7 @@ export function ProjectDetails({ projectSlug }) {
                 {project.socialLinks && (
                   <Stack id="project-social-links" mr={5} my={1}>
                     <HeadingStack>Links and Repositories</HeadingStack>
-                    <SocialLinks links={project.socialLinks} />
+                    <SocialLinks links={project.socialLinks} size="3xl" />
                   </Stack>
                 )}
 
@@ -128,16 +139,16 @@ function ProjectContributorsAvatars({ contributors }) {
           if (user) {
             return (
               <NextLink key={index} href={`/${user.handle}`} passHref>
-                <Link>
+                <Link mr={2} rounded="full">
                   <Tooltip
                     hasArrow
                     key={index}
-                    label={contributor.role}
                     aria-label="Contributor role"
                     placement="top"
                     fontSize="md"
+                    label={`${user.name} as ${contributor.role}`}
                   >
-                    <Avatar name={user.name} src={user.avatarUrl} mr={2} />
+                    <Avatar name={user.name} src={user.avatarUrl} />
                   </Tooltip>
                 </Link>
               </NextLink>

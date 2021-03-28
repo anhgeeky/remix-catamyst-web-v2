@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
@@ -6,6 +6,8 @@ import {
   VStack,
   ButtonGroup,
   Button,
+  Link,
+  Flex,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -15,8 +17,8 @@ import { Icon } from '@components'
 
 export function HomeScreens() {
   const { colorMode } = useColorMode()
-  const [selected, setSelected] = useState('track')
-  const buttons = [
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const screens = [
     { slug: 'track', name: 'Track', href: '/learn/web' },
     { slug: 'topic', name: 'Topic', href: '/learn/web/getting-started' },
     {
@@ -37,14 +39,14 @@ export function HomeScreens() {
       >
         <VStack>
           <ButtonGroup variant="ghost" mb={5}>
-            {buttons.map((button, index) => {
+            {screens.map((button, index) => {
               return (
                 <Button
                   key={button.slug}
-                  onClick={() => setSelected(button.slug)}
+                  onClick={() => setSelectedIndex(index)}
                   leftIcon={<Icon name={`${button.slug}s`} />}
                   bg={
-                    button.slug === selected
+                    index === selectedIndex
                       ? useColorModeValue('teal.100', 'teal.800')
                       : useColorModeValue('teal.50', 'teal.900')
                   }
@@ -56,46 +58,52 @@ export function HomeScreens() {
           </ButtonGroup>
         </VStack>
 
-        <Box
-          className="next-image-screenshot-container"
-          rounded="md"
-          boxShadow="lg"
-          bg={useColorModeValue('gray.50', 'gray.900')}
-        >
-          <AnimatePresence initial={false} exitBeforeEnter>
-            {selected && colorMode && (
-              <motion.div
-                key={`${selected}-${colorMode}`}
-                initial={{ opacity: 0.2 }}
-                exit={{ opacity: 0.2, transition: { duration: 0.1 } }}
-                animate={{
-                  opacity: 1,
-                  transition: {
-                    duration: 0.1,
-                    delay: 0.1,
-                    when: 'beforeChildren',
-                  },
-                }}
-              >
-                <NextImage
-                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/screenshots/${selected}-${colorMode}.png`}
-                  objectFit="contain"
-                  layout="responsive"
-                  width={936}
-                  height={585}
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </Box>
+        <NextLink href={screens[selectedIndex].href} passHref>
+          <Link>
+            <Flex justify="center">
+              <AnimatePresence initial={false} exitBeforeEnter>
+                <Box
+                  className="next-image-screenshot-container"
+                  key={`${screens[selectedIndex].slug}-${colorMode}`}
+                  as={motion.div}
+                  rounded="md"
+                  boxShadow="lg"
+                  transition="0.25s ease"
+                  _hover={{ boxShadow: 'outline' }}
+                  bg={useColorModeValue('gray.50', 'gray.900')}
+                  initial={{ opacity: 0.2 }}
+                  exit={{
+                    opacity: 0.2,
+                    transition: { duration: 0.1 },
+                  }}
+                  animate={{
+                    opacity: 1,
+                    transition: {
+                      duration: 0.1,
+                      delay: 0.1,
+                      when: 'beforeChildren',
+                    },
+                  }}
+                >
+                  <NextImage
+                    src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/screenshots/${screens[selectedIndex].slug}-${colorMode}.png`}
+                    objectFit="contain"
+                    width={936}
+                    height={585}
+                  />
+                </Box>
+              </AnimatePresence>
+            </Flex>
+          </Link>
+        </NextLink>
 
         <VStack mt={-5}>
-          {buttons.map((button) => {
-            if (button.slug === selected) {
+          {screens.map((button, index) => {
+            if (index === selectedIndex) {
               return (
                 <NextLink key={button.slug} href={button.href} passHref>
                   <Button as="a" colorScheme="teal" boxShadow="xl" size="lg">
-                    Check this {button.slug} for real
+                    Check the {button.slug} for real
                   </Button>
                 </NextLink>
               )

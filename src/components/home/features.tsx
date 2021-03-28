@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
   Box,
@@ -5,8 +6,10 @@ import {
   Text,
   VStack,
   Button,
+  Link,
   Flex,
   SimpleGrid,
+  useColorModeValue,
 } from '@chakra-ui/react'
 
 import { LinkButton, Card } from '@components'
@@ -32,11 +35,20 @@ export function HomeFeatures() {
         </Text>
       </VStack>
 
-      <VStack width="100%">
-        <SimpleGrid spacing={5} width="100%" minChildWidth={280}>
-          {dataFeatures.map((feature) => {
-            return (
-              <Card key={feature.slug}>
+      {/* <VStack width="100%"> */}
+      <SimpleGrid spacing={5} width="100%" minChildWidth={280}>
+        {dataFeatures.map((feature) => {
+          return (
+            <NextLink key={feature.slug} href={feature.href} passHref>
+              <Link
+                p={5}
+                rounded="md"
+                boxShadow="xs"
+                cursor="pointer"
+                bg={useColorModeValue('white', 'gray.800')}
+                direction={{ base: 'column', sm: 'row' }}
+                _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+              >
                 <Flex direction="column" align="center">
                   <NextImage
                     src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/${feature.imageName}`}
@@ -48,11 +60,12 @@ export function HomeFeatures() {
                   <Heading as="h3">{feature.name}</Heading>
                 </Flex>
                 <Text>{feature.description}</Text>
-              </Card>
-            )
-          })}
-        </SimpleGrid>
-      </VStack>
+              </Link>
+            </NextLink>
+          )
+        })}
+      </SimpleGrid>
+      {/* </VStack> */}
 
       <VStack>
         {!isAuthenticated && (

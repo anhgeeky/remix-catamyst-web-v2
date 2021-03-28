@@ -247,7 +247,19 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
             >
               <NumberInputField />
             </NumberInput>
-            <Text as="span">hours (estimated)</Text>
+            <Text as="span">hours</Text>
+          </HStack>
+          <HStack>
+            <NumberInput
+              name="totalMonths"
+              maxW={20}
+              min={10}
+              defaultValue={formTrack.totalMonths}
+              isDisabled
+            >
+              <NumberInputField />
+            </NumberInput>
+            <Text as="span">months</Text>
           </HStack>
         </Stack>
 

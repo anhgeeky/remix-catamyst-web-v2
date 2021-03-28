@@ -1,19 +1,22 @@
 [
   {
+    "href": "/learn",
     "slug": "tracks",
-    "name": "Tracks",
+    "name": "Learning Tracks",
     "imageName": "feature-tracks.png",
     "imageUrl": "https://storage.catamyst.com/illustrations/feature-tracks.png",
     "description": "Learn through a comprehensive series of topics, lessons, and projects. It is well-designed even for newcomers."
   },
   {
+    "href": "/discover",
     "slug": "projects",
-    "name": "Projects",
+    "name": "Real Projects",
     "imageName": "feature-projects.png",
     "imageUrl": "https://storage.catamyst.com/illustrations/feature-projects.png",
-    "description": "Build and showcase projects to display your actual skill. Share them as portfolio to attract employers or clients."
+    "description": "Build and showcase projects to display your actual skill with attention to quality. Share them as portfolio to attract employers or clients."
   },
   {
+    "href": "/pricing",
     "slug": "mentorship",
     "name": "Mentorship",
     "imageName": "feature-mentorship.png",
@@ -21,6 +24,7 @@
     "description": "Get dedicated 1-on-1 private mentor from the experienced professionals. Learning process can be customized to fit your needs."
   },
   {
+    "href": "/forum",
     "slug": "forum",
     "name": "Forum",
     "imageName": "feature-forum.png",
@@ -28,6 +32,7 @@
     "description": "Discuss a wide range of interesting topics. It is a safe and clean place for everyone to ask questions and answer them."
   },
   {
+    "href": "/discover",
     "slug": "collaboration",
     "name": "Collaboration",
     "imageName": "feature-collaboration.png",
@@ -35,6 +40,7 @@
     "description": "Collaborate with other community members. Build and showcase your projects together or with mentors."
   },
   {
+    "href": "/jobs",
     "slug": "opportunities",
     "name": "Opportunities",
     "imageName": "feature-opportunities.png",

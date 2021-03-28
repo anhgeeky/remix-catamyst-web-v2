@@ -10,11 +10,11 @@ export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
         return (
           <Tooltip
             key={index}
-            hasArrow
             label={link.name}
             aria-label={link.name}
             placement="top"
             fontSize="md"
+            hasArrow
           >
             <Link
               isExternal
@@ -22,7 +22,7 @@ export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
               key={link.name}
               href={link.url}
               color="gray.500"
-              fontSize="xl"
+              fontSize={size}
               _hover={{ color: useColorModeValue('gray.900', 'gray.100') }}
             >
               <Icon name={link.name.toLowerCase()} />

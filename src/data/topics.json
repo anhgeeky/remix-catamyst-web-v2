@@ -8,6 +8,8 @@
     "iconEmoji": "⭐",
     "totalLessons": 7,
     "totalHours": 2,
+    "totalDays": "1",
+    "levels": ["Newbie"],
     "sections": [
       { "title": "The beginning", "lessons": [1, 2, 3, 4] },
       { "title": "The requirements", "lessons": [5, 6, 7, 8] }
@@ -22,6 +24,8 @@
     "iconEmoji": "🧰",
     "totalLessons": 6,
     "totalHours": 3,
+    "totalDays": "1-2",
+    "levels": ["Newbie"],
     "sections": [
       { "title": "Learning principles", "lessons": [9, 10, 11, 12] },
       { "title": "Work and collaboration skills", "lessons": [13, 14] }
@@ -36,6 +40,8 @@
     "iconEmoji": "💡",
     "totalLessons": 6,
     "totalHours": 3,
+    "totalDays": "1-2",
+    "levels": ["Newbie"],
     "sections": [
       { "title": "Getting inspired", "lessons": [15] },
       { "title": "Website examples", "lessons": [16, 17, 18] }
@@ -50,6 +56,8 @@
     "iconEmoji": "💡",
     "totalLessons": 6,
     "totalHours": 3,
+    "totalDays": "1-2",
+    "levels": ["Newbie"],
     "sections": [
       { "title": "Getting inspired", "lessons": [15] },
       { "title": "Website examples", "lessons": [16, 17, 18] },
@@ -65,6 +73,8 @@
     "iconEmoji": "🧩",
     "totalLessons": 6,
     "totalHours": 3,
+    "totalDays": "1",
+    "levels": ["Newbie"],
     "sections": []
   },
   {
@@ -76,6 +86,8 @@
     "iconEmoji": "🧩",
     "totalLessons": 6,
     "totalHours": 3,
+    "totalDays": "1",
+    "levels": ["Newbie"],
     "sections": []
   },
   {
@@ -87,6 +99,8 @@
     "iconEmoji": "🎨",
     "totalLessons": 6,
     "totalHours": 3,
+    "totalDays": "1-5",
+    "levels": ["Newbie", "Beginner"],
     "sections": []
   },
   {
@@ -98,6 +112,8 @@
     "iconEmoji": "🎨",
     "totalLessons": 6,
     "totalHours": 3,
+    "totalDays": "2-10",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
     "sections": []
   },
   {
@@ -106,7 +122,12 @@
     "title": "Laptop setup",
     "description": "Setup the laptop for smoother technical learning and development.",
     "category": "Preparation",
-    "iconEmoji": "🏕️"
+    "iconEmoji": "🏕️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie"],
+    "sections": []
   },
   {
     "id": 10,
@@ -114,7 +135,12 @@
     "title": "Web development knowledge",
     "description": "Prepare the basic knowledge of web development.",
     "category": "Preparation",
-    "iconEmoji": "🕸️"
+    "iconEmoji": "🕸️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1",
+    "levels": ["Newbie"],
+    "sections": []
   },
   {
     "id": 100,
@@ -122,7 +148,12 @@
     "title": "Development with code editor",
     "description": "Use professional web development tools before building the actual website.",
     "category": "General",
-    "iconEmoji": "📝"
+    "iconEmoji": "📝",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 11,
@@ -130,7 +161,12 @@
     "title": "Documentation with markdown",
     "description": "Write the documentation with easy to use text format called Markdown.",
     "category": "General",
-    "iconEmoji": "📜"
+    "iconEmoji": "📜",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie"],
+    "sections": []
   },
   {
     "id": 12,
@@ -138,7 +174,12 @@
     "title": "Computer navigation with terminal",
     "description": "Navigate your computer file through a terminal.",
     "category": "General",
-    "iconEmoji": "🚏"
+    "iconEmoji": "🚏",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 13,
@@ -146,7 +187,12 @@
     "title": "Version control with Git",
     "description": "Manage source code and control the version of your project with Git.",
     "category": "General",
-    "iconEmoji": "⏳"
+    "iconEmoji": "⏳",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 14,
@@ -154,7 +200,12 @@
     "title": "Website content with HTML",
     "description": "Implement the content of a website with a markup language called HTML.",
     "category": "Frontend",
-    "iconEmoji": "🦴"
+    "iconEmoji": "🦴",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-5",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 15,
@@ -162,7 +213,12 @@
     "title": "Simple frontend or website deployment",
     "description": "Deploy and launch a live website on the Internet, accessible for everyone to see.",
     "category": "Frontend",
-    "iconEmoji": "🏝️"
+    "iconEmoji": "🏝️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 16,
@@ -170,7 +226,12 @@
     "title": "Website style with CSS",
     "description": "Implement the style of a website with styling language called CSS.",
     "category": "Frontend",
-    "iconEmoji": "🍖"
+    "iconEmoji": "🍖",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-7",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 17,
@@ -178,15 +239,25 @@
     "title": "Browser and developer tools",
     "description": "Understand different browsers and inspect live website code with developer tools.",
     "category": "Frontend",
-    "iconEmoji": "🍱"
+    "iconEmoji": "🍱",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 18,
-    "slug": "website-basic-layout-css",
-    "title": "Website basic layout with CSS",
+    "slug": "website-layout-css",
+    "title": "Website layout with CSS",
     "description": "Implement the layout of a website with CSS layout system.",
     "category": "Frontend",
-    "iconEmoji": "🥓"
+    "iconEmoji": "🥓",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-10",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 19,
@@ -194,7 +265,12 @@
     "title": "Website responsive layout with CSS",
     "description": "Implement the responsive style behavior of a website with CSS media query. So your website looks good on desktop, tablet, and mobile.",
     "category": "Frontend",
-    "iconEmoji": "🥩"
+    "iconEmoji": "🥩",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-10",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 20,
@@ -202,7 +278,12 @@
     "title": "Web networking and domain",
     "description": "Launching your website with an actual domain you own. Just like yourname.com",
     "category": "General",
-    "iconEmoji": "🗺️"
+    "iconEmoji": "🗺️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Beginner", "Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 200,
@@ -210,7 +291,12 @@
     "title": "Large scale website or frontend project",
     "description": "Creating a large-scale website or frontend that you will show as your primary portfolio. The focus is on the design and interactivity. Can be shown for future employers, potential clients, or even prospective customers.",
     "category": "Special",
-    "iconEmoji": "🏟️"
+    "iconEmoji": "🏟️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "3-10",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 21,
@@ -218,7 +304,12 @@
     "title": "Software engineering knowledge",
     "description": "Prepare the real-world knowledge of technology and software engineering.",
     "category": "General",
-    "iconEmoji": "🛠️"
+    "iconEmoji": "🛠️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 22,
@@ -226,7 +317,12 @@
     "title": "Logic and programming",
     "description": "Programing the logic and application.",
     "category": "General",
-    "iconEmoji": "🤖"
+    "iconEmoji": "🤖",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 23,
@@ -235,6 +331,10 @@
     "description": "Implementing program in a website.",
     "category": "General",
     "iconEmoji": "🐱",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
     "sections": [{ "title": "Test 1", "lessons": [100] }]
   },
   {
@@ -243,7 +343,12 @@
     "title": "JavaScript data operation",
     "description": "Operating data in JavaScript.",
     "category": "General",
-    "iconEmoji": "🗄️"
+    "iconEmoji": "🗄️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 25,
@@ -251,7 +356,12 @@
     "title": "JavaScript function",
     "description": "Calling repetitive tasks in JavaScript.",
     "category": "General",
-    "iconEmoji": "🖨️"
+    "iconEmoji": "🖨️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 26,
@@ -259,7 +369,12 @@
     "title": "JavaScript error handling",
     "description": "Handling mistakes or errors in JavaScript.",
     "category": "General",
-    "iconEmoji": "⚔️"
+    "iconEmoji": "⚔️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 27,
@@ -267,7 +382,12 @@
     "title": "JavaScript global objects",
     "description": "Utilizing built-in JavaScript objects and functions.",
     "category": "General",
-    "iconEmoji": "🌐"
+    "iconEmoji": "🌐",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 28,
@@ -275,7 +395,12 @@
     "title": "JavaScript browser storage and cookie",
     "description": "Storing data in browser's built in storage and cookie mechanism.",
     "category": "General",
-    "iconEmoji": "💽"
+    "iconEmoji": "💽",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 29,
@@ -283,7 +408,12 @@
     "title": "JavaScript modules",
     "description": "Organizing JavaScript code and files so you can get a cleaner project structure.",
     "category": "General",
-    "iconEmoji": "🔌"
+    "iconEmoji": "🔌",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Newbie", "Beginner"],
+    "sections": []
   },
   {
     "id": 30,
@@ -291,7 +421,12 @@
     "title": "JavaScript asynchronicity",
     "description": "Handling different JavaScript execution timing. Because sometimes a process executions are fast and slow.",
     "category": "General",
-    "iconEmoji": "⏱️"
+    "iconEmoji": "⏱️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 31,
@@ -299,7 +434,12 @@
     "title": "JavaScript DOM",
     "description": "Connecting JavaScript with HTML. So your website is now interactive, or can be a true web application!",
     "category": "Frontend",
-    "iconEmoji": "📜"
+    "iconEmoji": "📜",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-7",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 32,
@@ -307,7 +447,12 @@
     "title": "JavaScript with regex",
     "description": "Search, match, and test for a string pattern using regex. Such as validating name, email, and password.",
     "category": "General",
-    "iconEmoji": "🔠"
+    "iconEmoji": "🔠",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 33,
@@ -315,7 +460,12 @@
     "title": "REST API",
     "description": "Communicate between systems or web apps with the most highly used data communication format.",
     "category": "General",
-    "iconEmoji": "🛏️"
+    "iconEmoji": "🛏️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 34,
@@ -323,7 +473,12 @@
     "title": "GraphQL API",
     "description": "Communicate between systems or web apps with the newly effecient data communication strategy.",
     "category": "General",
-    "iconEmoji": "⛓️"
+    "iconEmoji": "⛓️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 350,
@@ -331,7 +486,12 @@
     "title": "Other API",
     "description": "Other ways to communicate between systems or web apps.",
     "category": "General",
-    "iconEmoji": "📊"
+    "iconEmoji": "📊",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Intermediate"],
+    "sections": []
   },
   {
     "id": 35,
@@ -339,7 +499,12 @@
     "title": "REST API with JavaScript",
     "description": "Using REST API in JavaScript or Node.js. So you app can interact with other apps!",
     "category": "General",
-    "iconEmoji": "🛏️"
+    "iconEmoji": "🛏️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 350,
@@ -347,7 +512,12 @@
     "title": "GraphQL API with JavaScript",
     "description": "Using REST API in JavaScript or Node.js. So you app can interact with other apps in a more efficient way!",
     "category": "General",
-    "iconEmoji": "⛓️"
+    "iconEmoji": "⛓️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 36,
@@ -355,7 +525,12 @@
     "title": "JavaScript runtime and Node.js",
     "description": "Running JavaScript outside of browser. Because now JavaScript can be run almost anywhere. This is similar how other programming languages such as Python, Ruby, Java, Golang, and others are run.",
     "category": "General",
-    "iconEmoji": "🐯"
+    "iconEmoji": "🐯",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 37,
@@ -363,7 +538,12 @@
     "title": "Node.js with npm",
     "description": "Managing and installing JavaScript or Node.js packages that made by the community. It's the software hub that used by millions of developers worldwide.",
     "category": "General",
-    "iconEmoji": "🦁"
+    "iconEmoji": "🦁",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 38,
@@ -371,7 +551,12 @@
     "title": "CSS library and framework",
     "description": "Enhancing your styling and CSS with community-made solutions. To be used with your design, so you don't have to design every little things.",
     "category": "Frontend",
-    "iconEmoji": "🍔"
+    "iconEmoji": "🍔",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-5",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 39,
@@ -379,7 +564,12 @@
     "title": "JavaScript library and framework",
     "description": "Utilizing popular JavaScript or Node.js packages. To be used with your app, so you don't have to create every app components from scratch.",
     "category": "General",
-    "iconEmoji": "🎩"
+    "iconEmoji": "🎩",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-7",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 40,
@@ -387,7 +577,12 @@
     "title": "JavaScript code quality",
     "description": "Improving code quality in JavaScript. So you can become better in development and reduce potential issues.",
     "category": "General",
-    "iconEmoji": "🦉"
+    "iconEmoji": "🦉",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 41,
@@ -395,7 +590,12 @@
     "title": "Programming paradigms, OOP, and FP",
     "description": "Improving programming techniques by stated paradigms like OOP (Object-Oriented Programming) and Functional Programming (FP).",
     "category": "General",
-    "iconEmoji": "🐻"
+    "iconEmoji": "🐻",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 42,
@@ -403,7 +603,12 @@
     "title": "JavaScript OOP and FP",
     "description": "Applying the most popular programming paradigms such as OOP and FP with JavaScript.",
     "category": "General",
-    "iconEmoji": "🐼"
+    "iconEmoji": "🐼",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-3",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 43,
@@ -411,7 +616,12 @@
     "title": "JavaScript transpiler and bundler",
     "description": "Converting JavaScript code and files. They can combine and transform project files as the input, then process them to get the output we want.",
     "category": "General",
-    "iconEmoji": "📦"
+    "iconEmoji": "📦",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 44,
@@ -419,7 +629,12 @@
     "title": "Software design and architecture",
     "description": "Constructing better web application structure. Especially if your app has becoming more complex or has a lot of moving parts.",
     "category": "General",
-    "iconEmoji": "🖼️"
+    "iconEmoji": "🖼️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Beginner", "Intermediate"],
+    "sections": []
   },
   {
     "id": 45,
@@ -427,7 +642,12 @@
     "title": "React UI library",
     "description": "Using the basics of React, one of the most popular UI library for the curent industrial-grade web application development.",
     "category": "Frontend",
-    "iconEmoji": "🧶"
+    "iconEmoji": "🧶",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 46,
@@ -435,7 +655,12 @@
     "title": "React data",
     "description": "Handling data in React with state and props, through JavaScript class and React hooks.",
     "category": "Frontend",
-    "iconEmoji": "🎽"
+    "iconEmoji": "🎽",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 47,
@@ -443,7 +668,12 @@
     "title": "React form handling",
     "description": "Handling form fields in React. Using plain functions or with some libraries.",
     "category": "Frontend",
-    "iconEmoji": "👖"
+    "iconEmoji": "👖",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 48,
@@ -451,7 +681,12 @@
     "title": "React routing",
     "description": "Handling multiple pages in React. So the users can navigate like how it should be.",
     "category": "Frontend",
-    "iconEmoji": "👗"
+    "iconEmoji": "👗",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 49,
@@ -459,7 +694,12 @@
     "title": "React styling",
     "description": "Styling React components with modern approach such as CSS-in-JS.",
     "category": "Frontend",
-    "iconEmoji": "👘"
+    "iconEmoji": "👘",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-5",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 50,
@@ -467,7 +707,12 @@
     "title": "React with REST API",
     "description": "Requesting REST API in React, with plain fetch or libraries.",
     "category": "Frontend",
-    "iconEmoji": "👕"
+    "iconEmoji": "👕",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 500,
@@ -475,7 +720,12 @@
     "title": "React with GraphQL API",
     "description": "Requesting GraphQL API in React, with plain fetch or libraries.",
     "category": "Frontend",
-    "iconEmoji": "👚"
+    "iconEmoji": "👚",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 51,
@@ -483,7 +733,12 @@
     "title": "React extras",
     "description": "Additional functionalities with React.",
     "category": "Frontend",
-    "iconEmoji": "🧤"
+    "iconEmoji": "🧤",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 52,
@@ -491,7 +746,12 @@
     "title": "Redux as state management",
     "description": "Architect data flow in JavaScript app.",
     "category": "General",
-    "iconEmoji": "🦆"
+    "iconEmoji": "🦆",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 53,
@@ -499,7 +759,12 @@
     "title": "React with Redux",
     "description": "Architect data flow in React app.",
     "category": "Frontend",
-    "iconEmoji": "👔"
+    "iconEmoji": "👔",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-7",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 54,
@@ -507,7 +772,12 @@
     "title": "Node.js with Express",
     "description": "Node.js to create web API, such as REST or GraphQL.",
     "category": "Backend",
-    "iconEmoji": "🐨"
+    "iconEmoji": "🐨",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 55,
@@ -515,7 +785,12 @@
     "title": "Simple backend deployment",
     "description": "Deploy backend and database in simple way.",
     "category": "Backend",
-    "iconEmoji": "🏝️"
+    "iconEmoji": "🏝️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-2",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 56,
@@ -523,7 +798,12 @@
     "title": "Database management system",
     "description": "Store persistent data that can be used over and over again across different space and time.",
     "category": "Backend",
-    "iconEmoji": "📕"
+    "iconEmoji": "📕",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 57,
@@ -531,7 +811,12 @@
     "title": "Non-relational database",
     "description": "Store data that non-relational.",
     "category": "Backend",
-    "iconEmoji": "📗"
+    "iconEmoji": "📗",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "2-5",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 58,
@@ -539,7 +824,12 @@
     "title": "Relational database",
     "description": "Store data that relational.",
     "category": "Backend",
-    "iconEmoji": "📘"
+    "iconEmoji": "📘",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "3-10",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 59,
@@ -547,7 +837,12 @@
     "title": "Web security",
     "description": "Secure application with authentication, encryption, and encoding. Such as password, access, and roles.",
     "category": "General",
-    "iconEmoji": "🔐"
+    "iconEmoji": "🔐",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "3-5",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 60,
@@ -555,7 +850,12 @@
     "title": "Testing and automation",
     "description": "Test and assure the app functionality and quality without having to do them manually.",
     "category": "General",
-    "iconEmoji": "🧪"
+    "iconEmoji": "🧪",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "3-5",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 61,
@@ -563,7 +863,12 @@
     "title": "Containerization",
     "description": "Manage software run on various platforms. Especially using Docker ecosystem tools.",
     "category": "General",
-    "iconEmoji": "🐳"
+    "iconEmoji": "🐳",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-3",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 62,
@@ -571,7 +876,12 @@
     "title": "Advanced application deployment and infrastructure",
     "description": "Deploy any web app with service or cloud computing.",
     "category": "General",
-    "iconEmoji": "🌴"
+    "iconEmoji": "🌴",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "3-10",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 620,
@@ -579,7 +889,12 @@
     "title": "Large-scale API or backend project",
     "description": "Creating a large-scale backend application as REST API or GraphQL, that you will show as your primary portfolio. The focus is on the data structure and interconnectivity with the potential frontend. Can be shown for future employers, potential clients, or even prospective customers.",
     "category": "Special",
-    "iconEmoji": "🏟️"
+    "iconEmoji": "🏟️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "3-10",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 63,
@@ -587,7 +902,12 @@
     "title": "Additional application features",
     "description": "More integration and deployment techniques for both frontend and backend to improve experience",
     "category": "General",
-    "iconEmoji": "🌳"
+    "iconEmoji": "🌳",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-5",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 64,
@@ -595,7 +915,12 @@
     "title": "Advanced algorithm and data structure",
     "description": "Practice with more computer science knowledge, especially algorithm problems and data structure.",
     "category": "General",
-    "iconEmoji": "🤖"
+    "iconEmoji": "🤖",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "3-10",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 65,
@@ -603,7 +928,12 @@
     "title": "Project development and management",
     "description": "Manage project the better way. Understand about project, product, software craftmanship, MVP, MLP, Agile, Scrum.",
     "category": "General",
-    "iconEmoji": "🏭"
+    "iconEmoji": "🏭",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "1-5",
+    "levels": ["Beginner", "Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 66,
@@ -611,7 +941,12 @@
     "title": "Special resources",
     "description": "Read and leverage books and more resources to give you more ideas and understanding. Could be helpful for job interview.",
     "category": "Special",
-    "iconEmoji": "🏗️"
+    "iconEmoji": "🏗️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "7-14",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 67,
@@ -619,7 +954,12 @@
     "title": "Large-scale web application project",
     "description": "Creating a large-scale web application, both frontend and backend, that you will show as your primary portfolio. The focus is everything you have learned. Can be shown for future employers, potential clients, or even prospective customers.",
     "category": "Special",
-    "iconEmoji": "🏟️"
+    "iconEmoji": "🏟️",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "7-30",
+    "levels": ["Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 68,
@@ -627,7 +967,12 @@
     "title": "Professional work",
     "description": "Do something real in the industry. You can choose to work, freelance, create content, or even start a business.",
     "category": "Career",
-    "iconEmoji": "💼"
+    "iconEmoji": "💼",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "14-60",
+    "levels": ["Beginner", "Intermediate", "Advanced"],
+    "sections": []
   },
   {
     "id": 69,
@@ -635,7 +980,12 @@
     "title": "Business and startup",
     "description": "Build something that you can monetize with the market of customers",
     "category": "Career",
-    "iconEmoji": "💸"
+    "iconEmoji": "💸",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "30-120",
+    "levels": ["Advanced", "Expert"],
+    "sections": []
   },
   {
     "id": 70,
@@ -643,6 +993,11 @@
     "title": "Consultation and discussion",
     "description": "What's next? Let's discuss the support to help your career and life beyond this.",
     "category": "Career",
-    "iconEmoji": "🧭"
+    "iconEmoji": "🧭",
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalDays": "∞",
+    "levels": ["Newbie"],
+    "sections": []
   }
 ]

@@ -3,10 +3,12 @@ import NextImage from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import {
+  chakra,
   Box,
   ButtonGroup,
   Button,
   Flex,
+  HStack,
   Heading,
   Stack,
   Text,
@@ -14,7 +16,7 @@ import {
   WrapItem,
 } from '@chakra-ui/react'
 
-import { ContentWithSidebar, CollectionTopics } from '@components'
+import { Icon, ContentWithSidebar, CollectionTopics } from '@components'
 import { LearnHero } from '@components/learn'
 import { useAuth, useToast } from '@hooks'
 
@@ -109,8 +111,8 @@ export function TrackSideBar({ track }) {
   }
 
   return (
-    <Stack maxW={{ lg: '280px' }} width="100%" spacing={0}>
-      {track.isAvailable && (
+    <Stack maxW={{ lg: '280px' }} width="100%" spacing={1}>
+      {track.isPublished && (
         <ButtonGroup pb={3}>
           <Button
             width="100%"
@@ -126,28 +128,34 @@ export function TrackSideBar({ track }) {
       <Heading as="h2" size="sm">
         About this track
       </Heading>
-      <Text>
-        {track.levels.map((level, index) => {
-          if (index === track.levels.length - 1) {
-            return <span key={index}>{level} level</span>
-          } else {
-            return <span key={index}>{level}, </span>
-          }
-        })}
-      </Text>
-      <Text>
-        {/* {track.totalTopics || '-'} */}
-        <b>{track.topics.length}</b> topics
-      </Text>
-      <Text>
-        <b>{track.totalLessons}</b> lessons
-      </Text>
-      <Text>
-        <b>{track.totalHours}</b> hours
-      </Text>
-      <Text>
-        <b>{track.totalMonths}</b> months (estimated)
-      </Text>
+      <HStack>
+        <Icon name="levels" />
+        <Text>
+          {track.levels.map((level, index) => {
+            if (index === track.levels.length - 1) {
+              return <span key={index}>{level}</span>
+            } else {
+              return <span key={index}>{level}, </span>
+            }
+          })}
+        </Text>
+      </HStack>
+      <HStack>
+        <Icon name="topics" />
+        <span>{track.topics.length || 0} topics</span>
+      </HStack>
+      <HStack>
+        <Icon name="lessons" />
+        <span>{track.totalLessons || 0} lessons</span>
+      </HStack>
+      <HStack>
+        <Icon name="hours" />
+        <span>{track.totalHours || 0} hours of content</span>
+      </HStack>
+      <HStack>
+        <Icon name="months" />
+        <span>{track.totalMonths || 0} months to complete</span>
+      </HStack>
     </Stack>
   )
 }

@@ -33,36 +33,41 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
             >
               <Stack>
                 {section.lessons.map((lessonId, index) => {
-                  const lesson = dataLessons.find((lesson, index) => {
-                    return lesson.id === lessonId
-                  })
+                  const lesson = dataLessons.find(
+                    (lesson, index) => lesson.id === lessonId
+                  )
+
                   if (lesson?.isPublished === false) {
                     return null
                   }
+
                   if (!lesson) {
-                    return (
-                      <Text key={index}>Lesson {index + 1} is coming soon</Text>
-                    )
+                    return <Text key={index}>Lesson {index + 1} is hidden</Text>
                   }
+
                   if (lesson) {
                     const lessonHref = `/learn/${trackSlug}/${topicSlug}/${lesson.slug}`
 
                     return (
-                      <>
+                      <Box key={lesson.slug}>
                         {index === 0 && (
-                          <Heading as="h3" size="md">
-                            <Link href={lessonHref}>{section.title}</Link>
-                          </Heading>
+                          <NextLink href={lessonHref} passHref>
+                            <Link display="block" rounded="md">
+                              <Heading as="h3" size="md" mb={3}>
+                                {section.title}
+                              </Heading>
+                            </Link>
+                          </NextLink>
                         )}
-                        <NextLink key={lesson.slug} href={lessonHref} passHref>
-                          <Link rounded="md">
+                        <NextLink href={lessonHref} passHref>
+                          <Link display="block" rounded="md">
                             <Flex align="center" cursor="pointer">
                               <LessonIcon type={lesson.category} />
                               <Text ml={2}>{lesson.title}</Text>
                             </Flex>
                           </Link>
                         </NextLink>
-                      </>
+                      </Box>
                     )
                   }
                   return null

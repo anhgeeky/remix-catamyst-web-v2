@@ -8,16 +8,19 @@ import {
   Stack,
   VStack,
   Wrap,
+  Box,
+  chakra,
   WrapItem,
+  SimpleGrid,
+  Flex,
   useColorModeValue,
   useMediaQuery,
 } from '@chakra-ui/react'
-import { v4 as uuidv4 } from 'uuid'
 
-import { AlertSoon } from '@components'
+import { Icon, AlertSoon } from '@components'
 
 export function CollectionTracks({ tracks }) {
-  const [isTooSmall] = useMediaQuery('(max-width: 1000px)')
+  const [isTooSmall] = useMediaQuery('(max-width: 767px)')
 
   return (
     <VStack spacing={5}>
@@ -30,78 +33,77 @@ export function CollectionTracks({ tracks }) {
         width={isTooSmall ? 170 : 200}
         height={isTooSmall ? 200 : 190}
       />
-      <VStack spacing={5} align="stretch">
+      <SimpleGrid
+        // width="100%"
+        spacing={5}
+        minChildWidth={{ base: 280, sm: 420 }}
+      >
         {tracks.map((track, index) => {
-          const uuid = uuidv4()
-          const trackHref = `/learn/${track.slug}`
-          // track.isAvailable
-
-          return (
-            <NextLink key={uuid} href={trackHref} passHref>
-              <Link
-                bg={useColorModeValue('white', 'gray.800')}
-                boxShadow="xs"
-                cursor="pointer"
-                direction={{ base: 'column', sm: 'row' }}
-                justify="space-between"
-                rounded="md"
-                p={5}
-                _hover={{
-                  boxShadow: 'outline',
-                  textDecoration: 'none',
-                }}
-              >
-                <Wrap
-                  as={HStack}
-                  spacing={5}
-                  direction={{ base: 'column', lg: 'row' }}
-                >
-                  <WrapItem>
-                    <NextImage
-                      alt={`Icon of ${track.title}`}
-                      src={track.iconUrl}
-                      width={100}
-                      height={100}
-                      layout="fixed"
-                    />
-                  </WrapItem>
-                  <WrapItem>
-                    <Stack align="flex-start">
-                      <Heading as="h2" size="xl">
-                        {track.title}
-                      </Heading>
-                      <Text maxW={550}>{track.description}</Text>
-                      {track.isAvailable && (
-                        <Text>
-                          <span>
-                            <b>{track.topics.length}</b>
-                            {' topics · '}
-                          </span>
-                          <span>
-                            <b>{track.totalLessons}</b>
-                            {' lessons · '}
-                          </span>
-                          <span>
-                            <b>{track.totalHours}</b>
-                            {' hours of content'}
-                          </span>
-                          <span>
-                            <b>{track.totalMonths}</b>
-                            {' months (estimated)'}
-                          </span>
-                        </Text>
-                      )}
-                      {!track.isAvailable && (
-                        <AlertSoon text="This track is coming soon!" />
-                      )}
-                    </Stack>
-                  </WrapItem>
-                </Wrap>
-              </Link>
-            </NextLink>
-          )
+          return <TrackCard key={track.id} track={track} />
         })}
-      </VStack>
+      </SimpleGrid>
     </VStack>
+  )
+}
+
+export function TrackCard({ track }) {
+  return (
+    <NextLink href={`/learn/${track.slug}`} passHref>
+      <Link
+        p={5}
+        rounded="md"
+        boxShadow="xs"
+        bg={useColorModeValue('white', 'gray.800')}
+        direction={{ base: 'column', sm: 'row' }}
+        _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+      >
+        <Wrap spacing={5} direction={{ base: 'column', lg: 'row' }}>
+          <WrapItem>
+            <NextImage
+              alt={`Icon of ${track.title}`}
+              src={track.iconUrl}
+              width={100}
+              height={100}
+              layout="fixed"
+            />
+          </WrapItem>
+          <WrapItem>
+            <Stack spacing={3}>
+              <Heading as="h2" size="lg">
+                {track.title}
+              </Heading>
+              <Text>{track.description}</Text>
+              {track.isPublished && <TrackStats track={track} />}
+              {!track.isPublished && (
+                <AlertSoon text="This track is coming soon." />
+              )}
+            </Stack>
+          </WrapItem>
+        </Wrap>
+      </Link>
+    </NextLink>
+  )
+}
+
+export function TrackStats({ track }) {
+  return (
+    <Flex flexWrap="wrap">
+      <HStack mr={3} mb={1}>
+        <Icon name="topics" />
+        <span>{track.topics.length || 0} topics</span>
+      </HStack>
+      <HStack mr={3} mb={1}>
+        <Icon name="lessons" />
+        <span>{track.totalLessons || 0} lessons</span>
+      </HStack>
+      <HStack mr={3} mb={1}>
+        <Icon name="hours" />
+        <span>{track.totalHours || 0} hours of content</span>
+      </HStack>
+      <HStack mr={3} mb={1}>
+        <Icon name="months" />
+        <span>{track.totalMonths || 0} months to complete</span>
+      </HStack>
+    </Flex>
   )
 }

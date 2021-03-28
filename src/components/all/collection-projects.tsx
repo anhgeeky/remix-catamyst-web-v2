@@ -49,7 +49,16 @@ function ProjectBoard({ project }) {
       >
         <Card as={Stack} p={3} spacing={3} height="100%">
           {!project.coverUrl && (
-            <Box minH={200} height="100%" width="100%" bg="teal.200"></Box>
+            <AspectRatio ratio={16 / 10}>
+              <Box className="next-image-container">
+                <NextImage
+                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </Box>
+            </AspectRatio>
           )}
           {project.coverUrl && (
             <AspectRatio ratio={16 / 10}>

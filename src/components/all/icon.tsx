@@ -58,8 +58,9 @@ import {
   // Dashboard icons
   FaBinoculars as OverviewIcon,
   FaChartLine as StatsIcon,
+  FaArrowAltCircleUp as LevelsIcon,
   FaMap as TracksIcon,
-  FaCubes as TopicsIcon,
+  FaBook as TopicsIcon,
   FaCube as LessonsIcon,
   FaShapes as ProjectsIcon,
   FaScroll as PostsIcon,
@@ -67,6 +68,8 @@ import {
   FaBriefcase as JobsIcon,
   FaComments as DiscussionsIcon,
   FaCertificate as CertificatesIcon,
+  FaClock as HoursIcon,
+  FaCalendarCheck as MonthsIcon,
   // Social icons
   FaGlobe as WebsiteIcon,
   FaTwitter as TwitterIcon,
@@ -281,6 +284,8 @@ export function Icon({ name }) {
       return <OverviewIcon />
     case 'stats':
       return <StatsIcon />
+    case 'levels':
+      return <LevelsIcon />
     case 'tracks':
       return <TracksIcon />
     case 'topics':
@@ -299,6 +304,10 @@ export function Icon({ name }) {
       return <DiscussionsIcon />
     case 'certificates':
       return <CertificatesIcon />
+    case 'hours':
+      return <HoursIcon />
+    case 'months':
+      return <MonthsIcon />
     /**
      * Editor button icons
      */
