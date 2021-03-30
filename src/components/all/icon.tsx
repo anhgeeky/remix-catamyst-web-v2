@@ -16,6 +16,10 @@ import {
   FaCopyright as CopyrightIcon,
   FaDivide as DividerIcon,
   FaExpandAlt as SizeIcon,
+  FaPencilAlt as EditIcon,
+  FaPaperPlane as SendIcon,
+  FaCheckCircle as CheckIcon,
+  FaDownload as ExportIcon,
   FaExternalLinkAlt as ExternalIcon,
   FaEye as MetaIcon,
   FaFont as TextsIcon,
@@ -188,8 +192,16 @@ export function Icon({ name }) {
       return <ColorIcon />
     case 'copyright':
       return <CopyrightIcon />
+    case 'export':
+      return <ExportIcon />
     case 'delete':
       return <DeleteIcon />
+    case 'edit':
+      return <EditIcon />
+    case 'send':
+      return <SendIcon />
+    case 'check':
+      return <CheckIcon />
     case 'divider':
       return <DividerIcon />
     case 'down':

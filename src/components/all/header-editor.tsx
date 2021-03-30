@@ -45,7 +45,7 @@ export function HeaderEditor({ name, item, register, actions }) {
             leftIcon={<Icon name="save" />}
             onClick={actions.handleSubmit(actions.handleSave)}
           >
-            Save Changes
+            Save changes
           </Button>
           <HStack>
             <Switch

@@ -13,7 +13,7 @@ import { AlertSoon, LearningTag } from '@components'
 
 export function CollectionTopics({ trackSlug, topics }) {
   if (!topics || topics.length === 0) {
-    return <AlertSoon text="No topics here yet. This track is coming soon." />
+    return <AlertSoon>No topics here yet. This track is coming soon.</AlertSoon>
   }
   return (
     <Stack spacing={5} width="100%">

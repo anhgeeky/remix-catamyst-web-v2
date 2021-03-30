@@ -11,7 +11,7 @@ import {
   RadioGroup,
 } from '@chakra-ui/react'
 
-import { Content, Card, LinkButton } from '@components'
+import { Content, Card, LinkButton, Icon } from '@components'
 import { SettingsHero } from '@components/settings'
 
 import dataUsers from '@data/users.json'
@@ -42,29 +42,37 @@ export function SettingsOverview({ auth }) {
           width="100%"
           minChildWidth={{ base: 280, sm: 400 }}
         >
-          <Card as={Stack} align="flex-start">
+          <Card as={Stack}>
             <Heading as="h2" size="md">
-              Profile
+              Account Type
             </Heading>
-            <Text>Name: {user.name}</Text>
-            <Text>Username: @{user.handle}</Text>
-            {user.isVerified && <Text>{'Account is verified'}</Text>}
             <RadioGroup defaultValue={user.role}>
-              <Text>Profile Type:</Text>
+              <Text></Text>
               <Stack direction="row">
                 <Radio value="Learner">Learner</Radio>
                 <Radio value="Employer">Employer</Radio>
               </Stack>
             </RadioGroup>
-            <ButtonGroup colorScheme="blue" size="sm">
-              <Button>Update profile type</Button>
-              <LinkButton variant="outline" href="/settings/profile">
-                Edit profile
+            <Stack direction={{ base: 'column', sm: 'row' }}>
+              <Button
+                colorScheme="blue"
+                size="sm"
+                leftIcon={<Icon name="save" />}
+              >
+                Change profile type
+              </Button>
+              <LinkButton
+                variant="outline"
+                size="sm"
+                href="/settings/profile"
+                leftIcon={<Icon name="edit" />}
+              >
+                Edit profile details
               </LinkButton>
-            </ButtonGroup>
+            </Stack>
           </Card>
 
-          <Card as={Stack} align="flex-start">
+          <Card as={Stack}>
             <Heading as="h2" size="md">
               Email
             </Heading>
@@ -74,17 +82,28 @@ export function SettingsOverview({ auth }) {
                 ? 'Your email is confirmed'
                 : 'Your email is not confirmed yet'}
             </Text>
-            <ButtonGroup colorScheme="blue" size="sm">
-              <LinkButton href="/settings/email">
+            <Stack direction={{ base: 'column', sm: 'row' }}>
+              {!user.isConfirmed && (
+                <Button
+                  size="sm"
+                  colorScheme="green"
+                  leftIcon={<Icon name="email" />}
+                >
+                  Resend confirmation email
+                </Button>
+              )}
+              <LinkButton
+                href="/settings/email"
+                variant="outline"
+                size="sm"
+                leftIcon={<Icon name="edit" />}
+              >
                 Edit email preferences
               </LinkButton>
-              {!user.isConfirmed && (
-                <Button variant="outline">Resend confirmation email</Button>
-              )}
-            </ButtonGroup>
+            </Stack>
           </Card>
 
-          <Card as={Stack} align="flex-start">
+          <Card as={Stack}>
             <Heading as="h2" size="md">
               Account Plan
             </Heading>
@@ -92,18 +111,30 @@ export function SettingsOverview({ auth }) {
               Your <b>{user.role}</b> account is on the <b>{user.plan}</b> plan.
               Free of charge.
             </Text>
-            <ButtonGroup colorScheme="yellow" size="sm">
-              {user.plan !== 'Pro' && user.plan !== 'Super' && (
-                <LinkButton href="/settings/pro">
-                  Upgrade to Pro plan
-                </LinkButton>
-              )}
+            <Stack direction={{ base: 'column', sm: 'row' }}>
               {user.plan !== 'Super' && (
-                <LinkButton href="/settings/super">
-                  Upgrade to Super plan
+                <LinkButton
+                  href="/settings/pro"
+                  colorScheme="yellow"
+                  size="sm"
+                  leftIcon={<Icon name="pro" />}
+                >
+                  {user.plan !== 'Pro'
+                    ? 'Upgrade to Pro plan'
+                    : 'Manage Pro plan'}
                 </LinkButton>
               )}
-            </ButtonGroup>
+              <LinkButton
+                href="/settings/super"
+                colorScheme="yellow"
+                size="sm"
+                leftIcon={<Icon name="super" />}
+              >
+                {user.plan !== 'Super'
+                  ? 'Upgrade to Super plan'
+                  : 'Manage Super plan'}
+              </LinkButton>
+            </Stack>
           </Card>
 
           <Card as={Stack}>
@@ -111,14 +142,14 @@ export function SettingsOverview({ auth }) {
               Billing and Payment
             </Heading>
             <Text>
-              If you already subscribed for a Pro plan or enrolled for a Super
-              plan, you can check your license key in your email.
+              If you already subscribed for a <b>Pro</b> plan or enrolled for a{' '}
+              <b>Super</b> plan, you can check your license key in your email.
             </Text>
             <Text>
-              You can also manage or cancel your ongoing subscription by
-              clicking the <b>View content</b> button, then click the{' '}
-              <b>Manage membership</b> button. There you will also see the{' '}
-              <b>Cancel membership</b> button. Alternatively, you can also{' '}
+              You can also manage or cancel your ongoing <b>Pro</b> plan
+              subscription by clicking the <b>View content</b> button, then
+              click the <b>Manage membership</b> button. There you will also see
+              the <b>Cancel membership</b> button. Alternatively, you can also{' '}
               <b>Update membership</b> information.
             </Text>
           </Card>
@@ -128,8 +159,10 @@ export function SettingsOverview({ auth }) {
               Account Data
             </Heading>
             <Text>Receive your whole owned data, because it's all yours.</Text>
-            <ButtonGroup colorScheme="teal" size="sm">
-              <Button>Export my account data</Button>
+            <ButtonGroup colorScheme="green" size="sm">
+              <Button isDisabled leftIcon={<Icon name="export" />}>
+                Export my account data
+              </Button>
             </ButtonGroup>
           </Card>
 
@@ -143,7 +176,9 @@ export function SettingsOverview({ auth }) {
               continue with caution.
             </Text>
             <ButtonGroup colorScheme="red" size="sm">
-              <Button>Delete my account</Button>
+              <Button isDisabled leftIcon={<Icon name="delete" />}>
+                Delete my account
+              </Button>
             </ButtonGroup>
           </Card>
         </SimpleGrid>

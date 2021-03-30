@@ -39,7 +39,7 @@
     ],
     "price": {
       "cost": 10,
-      "info": "month"
+      "info": "per month"
     },
     "buttons": {
       "isNotAuthenticated": {
@@ -63,7 +63,7 @@
     ],
     "price": {
       "cost": 2000,
-      "info": "1 person"
+      "info": "one time fee"
     },
     "buttons": {
       "isNotAuthenticated": {

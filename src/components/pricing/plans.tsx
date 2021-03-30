@@ -71,7 +71,7 @@ export function PricingPlans() {
                   {plan.price.cost > 0 ? `$${plan.price.cost}` : 'Free'}
                 </Heading>
                 <Heading as="h5" size="md">
-                  {plan.price.cost > 0 ? `per ${plan.price.info}` : 'Forever'}
+                  {plan.price.cost > 0 ? `${plan.price.info}` : 'Forever'}
                 </Heading>
               </VStack>
 

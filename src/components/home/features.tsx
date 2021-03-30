@@ -71,7 +71,7 @@ export function HomeFeatures() {
       {/* </VStack> */}
 
       <VStack>
-        <ButtonGroup>
+        <Stack direction={{ base: 'column', sm: 'row' }}>
           {!isAuthenticated && (
             <>
               <LinkButton href="/signup" colorScheme="teal">
@@ -87,7 +87,7 @@ export function HomeFeatures() {
               <LinkButton href="/pricing">Upgrade my account</LinkButton>
             </>
           )}
-        </ButtonGroup>
+        </Stack>
       </VStack>
     </VStack>
   )
