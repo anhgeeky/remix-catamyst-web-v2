@@ -75,16 +75,16 @@ export function DashboardOverview({ auth }) {
 
                     <UserNameHandle user={user} />
 
-                    <ButtonGroup size="xs">
+                    <ButtonGroup size="sm">
                       <LinkButton href={`/${user.handle}`} colorScheme="teal">
-                        Visit Profile
+                        Visit profile
                       </LinkButton>
                       <LinkButton
-                        href="/settings/profile"
+                        href="/settings/overview"
                         colorScheme="teal"
                         variant="outline"
                       >
-                        Edit Profile
+                        Go to settings
                       </LinkButton>
                     </ButtonGroup>
                   </VStack>
@@ -188,7 +188,7 @@ export function DashboardOverview({ auth }) {
                       mentorship from experienced professionals. This needs a{' '}
                       <b>Super</b> plan.
                     </Text>
-                    <LinkButton href="/settings/billing?plan=super">
+                    <LinkButton href="/settings/super">
                       Request Super plan
                     </LinkButton>
                   </CardPlaceholder>

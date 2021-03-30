@@ -67,7 +67,7 @@
     ],
     "role": "Learner",
     "plan": "Basic",
-    "isConfirmed": true,
+    "isConfirmed": false,
     "joinedAt": "2020-02-01",
     "organizations": [],
     "tracks": [],

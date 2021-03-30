@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.117",
+  "version": "0.1.118",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
@@ -34,11 +34,11 @@
     "react-hook-form": "6.15.4",
     "react-html-parser": "2.0.2",
     "react-icons": "4.2.0",
+    "react-load-script": "0.0.6",
     "react-redux": "7.2.2",
     "react-remove-scroll": "2.4.1",
     "react-syntax-highlighter": "15.4.3",
     "redux": "4.0.5",
-    "redux-devtools-extension": "2.13.8",
     "redux-logger": "3.0.6",
     "redux-persist": "6.0.0",
     "redux-thunk": "2.3.0",
@@ -52,6 +52,7 @@
     "yup": "0.32.9"
   },
   "devDependencies": {
-    "@hookform/devtools": "2.2.1"
+    "@hookform/devtools": "2.2.1",
+    "redux-devtools-extension": "2.13.8"
   }
 }

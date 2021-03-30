@@ -39,7 +39,7 @@ export function UserEmailForm({ user }) {
         leftIcon={<Icon name="save" />}
         colorScheme="blue"
       >
-        Save email
+        Update email
       </Button>
     </Card>
   )

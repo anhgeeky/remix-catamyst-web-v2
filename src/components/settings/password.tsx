@@ -19,7 +19,7 @@ export function SettingsPassword({ auth }) {
           Password Settings
         </Heading>
         <HStack>
-          <Text>Change your password if you need to.</Text>
+          <Text>Update your password if you need to.</Text>
         </HStack>
       </SettingsHero>
 

@@ -19,7 +19,7 @@ export function SettingsEmail({ auth }) {
           Email Settings
         </Heading>
         <HStack>
-          <Text>Change your email and notification preferences.</Text>
+          <Text>Update your email and notification preferences.</Text>
         </HStack>
       </SettingsHero>
 

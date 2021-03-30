@@ -47,10 +47,7 @@ export function DashboardMentors({ auth }) {
                   <Text>
                     Hey {auth.user.name}, you don't have any mentors yet.
                   </Text>
-                  <LinkButton
-                    colorScheme="teal"
-                    href="/settings/billing?plan=super"
-                  >
+                  <LinkButton colorScheme="teal" href="/settings/super">
                     Request Super plan
                   </LinkButton>
                 </CardPlaceholder>
@@ -65,10 +62,7 @@ export function DashboardMentors({ auth }) {
                     Here are the available mentors you can request when you
                     enroll in <b>Super</b> plan.
                   </Text>
-                  <LinkButton
-                    colorScheme="teal"
-                    href="/settings/billing?plan=super"
-                  >
+                  <LinkButton colorScheme="teal" href="/settings/super">
                     Request Super plan
                   </LinkButton>
                 </CardPlaceholder>

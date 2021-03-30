@@ -47,7 +47,7 @@
         "text": "Sign up for Pro plan"
       },
       "isAuthenticated": {
-        "href": "/settings/billing?plan=pro",
+        "href": "/settings/pro",
         "text": "Subscribe Pro plan"
       }
     }
@@ -71,7 +71,7 @@
         "text": "Sign up for Super plan"
       },
       "isAuthenticated": {
-        "href": "/settings/billing?plan=super",
+        "href": "/settings/pro",
         "text": "Request Super plan"
       }
     }

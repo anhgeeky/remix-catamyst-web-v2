@@ -7,6 +7,7 @@ export { SettingsPassword } from '@components/settings/password'
 export { SettingsPro } from '@components/settings/pro'
 export { SettingsSuper } from '@components/settings/super'
 export { SettingsBilling } from '@components/settings/billing'
+export { SettingsGumroad } from '@components/settings/gumroad'
 
 export { UserNameForm } from '@components/settings/user/name-form'
 export { UserHandleForm } from '@components/settings/user/handle-form'

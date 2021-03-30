@@ -10,7 +10,7 @@ import {
   SettingsPassword,
   SettingsPro,
   SettingsSuper,
-  SettingsBilling,
+  SettingsGumroad,
 } from '@components/settings'
 
 import dataSettingsLinks from '@data/settings-links.json'
@@ -27,6 +27,8 @@ export default function settingsSlug() {
     <Layout title="Loading settings... · Catamyst">
       {settingsSlug && isAuthenticated && auth && (
         <>
+          <SettingsGumroad />
+
           <HeaderTabs links={dataSettingsLinks} />
           {settingsSlug === 'overview' && <SettingsOverview auth={auth} />}
           {settingsSlug === 'profile' && <SettingsProfile auth={auth} />}
@@ -34,7 +36,6 @@ export default function settingsSlug() {
           {settingsSlug === 'password' && <SettingsPassword auth={auth} />}
           {settingsSlug === 'pro' && <SettingsPro auth={auth} />}
           {settingsSlug === 'super' && <SettingsSuper auth={auth} />}
-          {/* {settingsSlug === 'billing' && <SettingsBilling auth={auth} />} */}
         </>
       )}
     </Layout>
