@@ -8,6 +8,8 @@ import {
   SettingsProfile,
   SettingsEmail,
   SettingsPassword,
+  SettingsPro,
+  SettingsSuper,
   SettingsBilling,
 } from '@components/settings'
 
@@ -22,7 +24,7 @@ export default function settingsSlug() {
    * This pattern is used so the header tabs navigation seamless.
    */
   return (
-    <Layout>
+    <Layout title="Loading settings... · Catamyst">
       {settingsSlug && isAuthenticated && auth && (
         <>
           <HeaderTabs links={dataSettingsLinks} />
@@ -30,7 +32,9 @@ export default function settingsSlug() {
           {settingsSlug === 'profile' && <SettingsProfile auth={auth} />}
           {settingsSlug === 'email' && <SettingsEmail auth={auth} />}
           {settingsSlug === 'password' && <SettingsPassword auth={auth} />}
-          {settingsSlug === 'billing' && <SettingsBilling auth={auth} />}
+          {settingsSlug === 'pro' && <SettingsPro auth={auth} />}
+          {settingsSlug === 'super' && <SettingsSuper auth={auth} />}
+          {/* {settingsSlug === 'billing' && <SettingsBilling auth={auth} />} */}
         </>
       )}
     </Layout>

@@ -13,5 +13,9 @@ export default function settingsPage() {
     else router.replace('/signin')
   }, [isAuthenticated])
 
-  return <Layout>{auth.isLoading && <p>Loading settings...</p>}</Layout>
+  return (
+    <Layout title="Loading settings... · Catamyst">
+      {auth.isLoading && <p>Loading settings...</p>}
+    </Layout>
+  )
 }

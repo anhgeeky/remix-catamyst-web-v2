@@ -131,7 +131,7 @@ export default function lessonIdPage() {
    * Handlers should be grouped into actions later.
    */
   return (
-    <Layout>
+    <Layout title="Loading lesson in CMS... · Catamyst">
       {isAuthorized && lessonInitialValues && getValues() && (
         <>
           <NextHead>

@@ -36,6 +36,8 @@ import {
   FaEnvelope as EmailIcon,
   FaKey as PasswordIcon,
   FaFileInvoiceDollar as BillingIcon,
+  FaUserNinja as ProIcon,
+  FaUserAstronaut as SuperIcon,
   FaBuilding as BusinessIcon,
   // Navigation and mnu icons
   FaHome as HomeIcon,
@@ -244,6 +246,10 @@ export function Icon({ name }) {
       return <PasswordIcon />
     case 'billing':
       return <BillingIcon />
+    case 'pro':
+      return <ProIcon />
+    case 'super':
+      return <SuperIcon />
     case 'grid':
       return <GridIcon />
     case 'row':

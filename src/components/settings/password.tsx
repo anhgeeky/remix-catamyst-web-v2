@@ -1,10 +1,13 @@
 import NextHead from 'next/head'
-import { Stack, Heading, HStack, Text, Badge } from '@chakra-ui/react'
+import { Stack, Heading, HStack, Text } from '@chakra-ui/react'
 
 import { Content } from '@components'
-import { SettingsHero } from '@components/settings'
+import { SettingsHero, UserPasswordForm } from '@components/settings'
+import dataUsers from '@data/users.json'
 
 export function SettingsPassword({ auth }) {
+  const user = dataUsers.find((user) => user.id === auth.user.id)
+
   return (
     <>
       <NextHead>
@@ -21,10 +24,8 @@ export function SettingsPassword({ auth }) {
       </SettingsHero>
 
       <Content>
-        <Stack spacing={5} width="100%">
-          <Stack>
-            <p>Password</p>
-          </Stack>
+        <Stack spacing={5} width="100%" maxW={760}>
+          <UserPasswordForm user={user} />
         </Stack>
       </Content>
     </>

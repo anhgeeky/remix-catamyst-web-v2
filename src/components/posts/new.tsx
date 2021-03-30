@@ -36,10 +36,10 @@ export function PostNew() {
             </Button>
             <Button
               colorScheme="blue"
-              // onClick={handleSaveDraft}
+              // onClick={handleSave}
               leftIcon={<Icon name="save" />}
             >
-              Save as draft
+              Save
             </Button>
             <LinkButton href="/dashboard/posts">Cancel</LinkButton>
           </ButtonGroup>

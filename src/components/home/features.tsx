@@ -5,9 +5,9 @@ import {
   Heading,
   Text,
   VStack,
-  Button,
+  Stack,
   Link,
-  Flex,
+  ButtonGroup,
   SimpleGrid,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -49,7 +49,7 @@ export function HomeFeatures() {
                 direction={{ base: 'column', sm: 'row' }}
                 _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
               >
-                <Flex direction="column" align="center">
+                <Stack direction="column" align="center">
                   <NextImage
                     src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/${feature.imageName}`}
                     objectFit="contain"
@@ -57,8 +57,10 @@ export function HomeFeatures() {
                     height={100}
                     width={100}
                   />
-                  <Heading as="h3">{feature.name}</Heading>
-                </Flex>
+                  <Heading as="h3" size="lg" textAlign="center">
+                    {feature.name}
+                  </Heading>
+                </Stack>
                 <Text>{feature.description}</Text>
               </Link>
             </NextLink>
@@ -68,16 +70,23 @@ export function HomeFeatures() {
       {/* </VStack> */}
 
       <VStack>
-        {!isAuthenticated && (
-          <LinkButton href="/signup" size="lg" colorScheme="teal">
-            Awesome, I'm in
-          </LinkButton>
-        )}
-        {isAuthenticated && (
-          <LinkButton href="/dashboard/overview" size="lg" colorScheme="teal">
-            Continue my journey
-          </LinkButton>
-        )}
+        <ButtonGroup>
+          {!isAuthenticated && (
+            <>
+              <LinkButton href="/signup" colorScheme="teal">
+                Awesome, I want them
+              </LinkButton>
+            </>
+          )}
+          {isAuthenticated && (
+            <>
+              <LinkButton href="/dashboard/overview" colorScheme="teal">
+                Continue my journey
+              </LinkButton>
+              <LinkButton href="/pricing">Upgrade my account</LinkButton>
+            </>
+          )}
+        </ButtonGroup>
       </VStack>
     </VStack>
   )

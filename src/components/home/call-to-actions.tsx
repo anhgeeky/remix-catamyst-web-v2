@@ -13,9 +13,7 @@ export function HomeCTA() {
           <LinkButton href="/learn" colorScheme="teal">
             Start learning for free
           </LinkButton>
-          <LinkButton href="/signup" colorScheme="teal" variant="outline">
-            Sign up for an account
-          </LinkButton>
+          <LinkButton href="/signup">Sign up for an account</LinkButton>
         </>
       )}
       {isAuthenticated && (
@@ -23,13 +21,7 @@ export function HomeCTA() {
           <LinkButton href="/learn" colorScheme="teal">
             Continue learning
           </LinkButton>
-          <LinkButton
-            href="/dashboard/overview"
-            colorScheme="teal"
-            variant="outline"
-          >
-            Go to dashboard
-          </LinkButton>
+          <LinkButton href="/dashboard/overview">Go to dashboard</LinkButton>
         </>
       )}
     </Stack>

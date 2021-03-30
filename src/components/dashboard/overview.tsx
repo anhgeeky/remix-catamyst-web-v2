@@ -40,12 +40,12 @@ export function DashboardOverview({ auth }) {
         <>
           <DashboardHero>
             <Heading as="h1" size="xl">
-              Welcome, {user.name}!
+              Happy {dayNamePeriod}, {user.name}!
             </Heading>
             <HStack>
               <Text>
-                Happy {dayNamePeriod}. This is your dashboard. You are a{' '}
-                <b>{user.role}</b> with <b>{user.plan}</b> plan.
+                Welcome to the Dashboard. You are a <b>{user.role}</b> with{' '}
+                <b>{user.plan}</b> plan.
               </Text>
             </HStack>
           </DashboardHero>
@@ -74,9 +74,6 @@ export function DashboardOverview({ auth }) {
                     </Box>
 
                     <UserNameHandle user={user} />
-                    <Heading as="h3" size="xs" fontFamily="body">
-                      {user.email || 'name@example.com'}
-                    </Heading>
 
                     <ButtonGroup size="xs">
                       <LinkButton href={`/${user.handle}`} colorScheme="teal">
@@ -208,7 +205,7 @@ export function DashboardOverview({ auth }) {
 function CardOverview({ children }) {
   return (
     <Card
-      minH={300}
+      minH={250}
       height="100%"
       display="flex"
       justifyContent="center"

@@ -26,7 +26,7 @@ export function ProjectNew() {
   const handlePublish = () => {
     toast({ status: 'success', title: 'Published a project!' })
   }
-  const handleSaveDraft = () => {
+  const handleSave = () => {
     toast({ status: 'info', title: 'Saved project as draft!' })
   }
 
@@ -43,10 +43,10 @@ export function ProjectNew() {
           </Button>
           <Button
             colorScheme="blue"
-            onClick={handleSaveDraft}
+            onClick={handleSave}
             leftIcon={<Icon name="save" />}
           >
-            Save as draft
+            Save
           </Button>
           <LinkButton href="/dashboard/projects">Cancel</LinkButton>
         </ButtonGroup>

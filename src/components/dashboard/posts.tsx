@@ -53,7 +53,7 @@ export function DashboardPosts({ auth }) {
           </Stack>
 
           <Stack>
-            <HeadingStack>Draft Posts:</HeadingStack>
+            <HeadingStack>Drafted:</HeadingStack>
             <Card>
               <CardPlaceholder>
                 <Text>

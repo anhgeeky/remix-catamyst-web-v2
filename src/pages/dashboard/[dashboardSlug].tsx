@@ -24,7 +24,7 @@ export default function dashboardSlugPage() {
    * This pattern is used so the header tabs navigation seamless
    */
   return (
-    <Layout>
+    <Layout title="Loading dashboard... · Catamyst">
       {dashboardSlug && isAuthorized && auth && (
         <>
           <HeaderTabs links={dataDashboardLinks} />

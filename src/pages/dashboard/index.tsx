@@ -13,5 +13,9 @@ export default function dashboardPage() {
     else router.replace('/signin')
   }, [isAuthorized])
 
-  return <Layout>{auth.isLoading && <p>Loading...</p>}</Layout>
+  return (
+    <Layout title="Loading dashboard... · Catamyst">
+      {auth.isLoading && <p>Loading dashboard...</p>}
+    </Layout>
+  )
 }

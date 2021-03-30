@@ -16,7 +16,7 @@ export default function cmsSlugPage() {
    * This pattern is used so the header tabs navigation seamless.
    */
   return (
-    <Layout>
+    <Layout title="Loading CMS... · Catamyst">
       {cmsSlug && isAuthorized && auth && (
         <>
           <HeaderTabs links={dataCMSLinks} />

@@ -8,7 +8,7 @@ export default function jobIdPage() {
   const { jobParams } = router.query
 
   return (
-    <Layout title="Loading job details...">
+    <Layout title="Loading job details... · Catamyst">
       {jobParams && <JobDetails jobParams={jobParams} />}
     </Layout>
   )

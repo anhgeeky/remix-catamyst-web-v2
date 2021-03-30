@@ -23,8 +23,8 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
 import { transformOptions } from '@components/blocks'
+import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
 import { trimUrl, getJoinedDate } from '@utils'
 import { useAuth } from '@hooks'
 

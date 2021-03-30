@@ -18,15 +18,15 @@
   {
     "href": "/pricing",
     "slug": "mentorship",
-    "name": "Mentorship",
+    "name": "Live Mentorship",
     "imageName": "feature-mentorship.png",
     "imageUrl": "https://storage.catamyst.com/illustrations/feature-mentorship.png",
-    "description": "Get dedicated 1-on-1 private mentor from the experienced professionals. Learning process can be customized to fit your needs."
+    "description": "Get dedicated 1-on-1 private mentor from the truly experienced professionals. Learning process can be customized to fit your needs."
   },
   {
     "href": "/forum",
     "slug": "forum",
-    "name": "Forum",
+    "name": "Community Forum",
     "imageName": "feature-forum.png",
     "imageUrl": "https://storage.catamyst.com/illustrations/feature-forum.png",
     "description": "Discuss a wide range of interesting topics. It is a safe and clean place for everyone to ask questions and answer them."
@@ -34,15 +34,15 @@
   {
     "href": "/discover",
     "slug": "collaboration",
-    "name": "Collaboration",
+    "name": "Team Collaboration",
     "imageName": "feature-collaboration.png",
     "imageUrl": "https://storage.catamyst.com/illustrations/feature-collaboration.png",
-    "description": "Collaborate with other community members. Build and showcase your projects together or with mentors."
+    "description": "Collaborate with other community members as a team. Build and showcase your projects together or with mentors."
   },
   {
     "href": "/jobs",
     "slug": "opportunities",
-    "name": "Opportunities",
+    "name": "Job Opportunities",
     "imageName": "feature-opportunities.png",
     "imageUrl": "https://storage.catamyst.com/illustrations/feature-opportunities.png",
     "description": "Discover opportunities of full-time job or freelance work. Find the meaningful job you love doing."

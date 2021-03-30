@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+
 import { useAuth } from '@hooks'
 
 export function useRedirectSignIn() {
@@ -12,8 +13,8 @@ export function useRedirectSignIn() {
 
   return {
     router,
-    auth,
     isAuthenticated,
     isAuthorized,
+    auth,
   }
 }

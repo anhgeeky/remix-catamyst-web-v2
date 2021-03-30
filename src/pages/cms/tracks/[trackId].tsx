@@ -98,7 +98,7 @@ export default function trackIdPage() {
   }
 
   return (
-    <Layout>
+    <Layout title="Loading track in CMS... · Catamyst">
       {!formTrack && (
         <>
           <Text>Sorry, track with id #{trackId} is not found.</Text>

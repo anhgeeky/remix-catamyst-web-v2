@@ -8,7 +8,7 @@ export default function forumSectionSlug() {
   const { sectionSlug } = router.query
 
   return (
-    <Layout title="Loading forum section...">
+    <Layout title="Loading forum section... · Catamyst">
       {sectionSlug && <ForumSection sectionSlug={sectionSlug} />}
     </Layout>
   )

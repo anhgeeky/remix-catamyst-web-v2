@@ -1,10 +1,10 @@
 import Flag from 'react-flagkit'
 import { HStack } from '@chakra-ui/react'
 
-import dataCountries from '@data/countries.json'
+import { dataAppCountries } from '@data'
 
 export function Country({ code }) {
-  const country = dataCountries.find((country) => country.code === code)
+  const country = dataAppCountries.find((country) => country.code === code)
 
   if (country?.code === 'EARTH') {
     return (

@@ -21,7 +21,7 @@
     ],
     "role": "Company",
     "isVerified": true,
-    "isEmailConfirmed": true,
+    "isConfirmed": true,
     "joinedAt": "2020-01-01",
     "people": [1, 2, 3, 4]
   },

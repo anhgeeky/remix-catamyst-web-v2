@@ -1,10 +1,13 @@
 import NextHead from 'next/head'
-import { Stack, Heading, HStack, Text, Badge } from '@chakra-ui/react'
+import { Heading, HStack, Stack, Text } from '@chakra-ui/react'
 
 import { Content } from '@components'
-import { SettingsHero } from '@components/settings'
+import { SettingsHero, UserEmailForm } from '@components/settings'
+import dataUsers from '@data/users.json'
 
 export function SettingsEmail({ auth }) {
+  const user = dataUsers.find((user) => user.id === auth.user.id)
+
   return (
     <>
       <NextHead>
@@ -16,15 +19,13 @@ export function SettingsEmail({ auth }) {
           Email Settings
         </Heading>
         <HStack>
-          <Text>Change your email if you need to.</Text>
+          <Text>Change your email and notification preferences.</Text>
         </HStack>
       </SettingsHero>
 
       <Content>
-        <Stack spacing={5} width="100%">
-          <Stack>
-            <p>Email</p>
-          </Stack>
+        <Stack spacing={5} width="100%" maxW={760}>
+          <UserEmailForm user={user} />
         </Stack>
       </Content>
     </>
