@@ -16,7 +16,7 @@ export function UserPasswordForm({ user }) {
   return (
     <Card id="handle" as={Stack}>
       <FormControl as={Stack} align="flex-start">
-        <FormLabel fontSize="xl">Your Password</FormLabel>
+        <FormLabel fontSize="xl">Current password</FormLabel>
         <InputGroup>
           <Input type="password" />
           <InputRightElement
@@ -25,7 +25,8 @@ export function UserPasswordForm({ user }) {
           />
         </InputGroup>
         <FormHelperText>
-          Your password. Please manage it using password manager like{' '}
+          Your secret password or passphrase. Please manage it using password
+          manager like{' '}
           <Link isExternal href="https://bitwarden.com">
             Bitwarden
           </Link>{' '}
@@ -39,7 +40,7 @@ export function UserPasswordForm({ user }) {
         leftIcon={<Icon name="save" />}
         colorScheme="blue"
       >
-        Save email
+        Save password
       </Button>
     </Card>
   )

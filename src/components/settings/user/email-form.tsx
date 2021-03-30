@@ -15,7 +15,7 @@ export function UserEmailForm({ user }) {
   return (
     <Card id="handle" as={Stack}>
       <FormControl as={Stack} align="flex-start">
-        <FormLabel fontSize="xl">Your Email</FormLabel>
+        <FormLabel>Current email</FormLabel>
         <InputGroup>
           <Input
             type="email"

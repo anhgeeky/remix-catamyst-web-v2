@@ -99,6 +99,10 @@ p code {
   display: block !important;
 }
 
+.chakra-ui-dark .next-image.invertable {
+  filter: invert(1);
+}
+
 .next-image-screenshot-container > div {
   display: block !important;
 }

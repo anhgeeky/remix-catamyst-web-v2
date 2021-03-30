@@ -37,22 +37,17 @@ export function DashboardProjects({ auth }) {
             <Card>
               <CardPlaceholder>
                 <Box>
-                  {!isTablet && (
-                    <NextImage
-                      src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-projects-none-desktop.png`}
-                      alt="No Projects"
-                      width={200}
-                      height={200}
-                    />
-                  )}
-                  {isTablet && (
-                    <NextImage
-                      src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-projects-none-mobile.png`}
-                      alt="No Projects"
-                      width={200}
-                      height={200}
-                    />
-                  )}
+                  <NextImage
+                    className="invertable next-image"
+                    src={`${
+                      process.env.NEXT_PUBLIC_STORAGE_URL
+                    }/illustrations/dashboard-projects-none-${
+                      isTablet ? 'mobile' : 'desktop'
+                    }.png`}
+                    alt="No Projects"
+                    width={200}
+                    height={200}
+                  />
                 </Box>
                 <Text>
                   Hey {auth.user.name}, you don't have any published projects

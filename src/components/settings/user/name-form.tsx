@@ -19,7 +19,7 @@ export function UserNameForm({ user }) {
   return (
     <Card id="name" as={Stack}>
       <FormControl as={Stack}>
-        <FormLabel>Your Full Name</FormLabel>
+        <FormLabel>Full name</FormLabel>
         <InputGroup>
           <Input
             type="text"

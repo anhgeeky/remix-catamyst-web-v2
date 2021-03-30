@@ -1,5 +1,6 @@
 const excludes = [
   '/404',
+  '/500',
   '/cms',
   '/cms/*',
   '/dashboard',

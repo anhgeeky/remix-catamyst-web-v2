@@ -36,6 +36,7 @@ export function DashboardTracks({ auth }) {
               <CardPlaceholder>
                 <Box>
                   <NextImage
+                    className="invertable next-image"
                     src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-tracks-none.png`}
                     alt="No Tracks"
                     width={200}

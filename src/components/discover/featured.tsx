@@ -24,8 +24,9 @@ export function DiscoverFeatured() {
     <>
       <Stack spacing={20} width="100%">
         <Flex justify="center" mb="-40px">
-          <Box bg={useColorModeValue('white', 'gray.500')} rounded="full">
+          <Box>
             <NextImage
+              className="invertable next-image"
               src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/projects.png`}
               alt="Cat reading book with floating shapes"
               width={200}

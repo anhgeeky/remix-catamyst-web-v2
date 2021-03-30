@@ -30,8 +30,9 @@ export function HelpFaqs() {
       align={isTooSmall ? 'center' : 'flex-start'}
       justify="center"
     >
-      <Box bg={useColorModeValue('white', 'gray.700')} rounded="full">
+      <Box className="next-image-container">
         <NextImage
+          className="invertable next-image"
           src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/help.png`}
           alt="Cat confused need help"
           width={isTooSmall ? 105 : 140}

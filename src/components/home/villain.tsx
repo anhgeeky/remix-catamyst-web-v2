@@ -18,6 +18,7 @@ export function HomeVillain() {
           Ready for your journey in tech?
         </Heading>
         <NextImage
+          className="invertable next-image"
           priority
           src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-last-desktop.png`}
           alt="Cats doing high five"

@@ -36,6 +36,7 @@ export function DashboardDiscussions({ auth }) {
               <CardPlaceholder>
                 <Box>
                   <NextImage
+                    className="invertable next-image"
                     src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-discussions-none.png`}
                     alt="No Discussions"
                     width={200}

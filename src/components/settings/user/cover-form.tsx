@@ -15,7 +15,7 @@ export function UserCoverForm({ user }) {
   return (
     <Card id="cover">
       <FormControl as={Stack} align="flex-start">
-        <FormLabel>Your Cover</FormLabel>
+        <FormLabel>Cover</FormLabel>
         <Box
           zIndex={1}
           height={100}

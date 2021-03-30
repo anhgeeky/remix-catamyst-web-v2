@@ -36,6 +36,7 @@ export function DashboardJobs({ auth }) {
               <CardPlaceholder>
                 <Box>
                   <NextImage
+                    className="invertable next-image"
                     src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-jobs-none.png`}
                     alt="No Jobs"
                     width={200}

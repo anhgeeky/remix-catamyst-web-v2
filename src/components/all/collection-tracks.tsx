@@ -25,6 +25,7 @@ export function CollectionTracks({ tracks }) {
   return (
     <VStack spacing={5}>
       <NextImage
+        className="invertable next-image"
         key={isTooSmall ? 'mobile' : 'desktop'}
         src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/tracks-${
           isTooSmall ? 'mobile' : 'desktop'

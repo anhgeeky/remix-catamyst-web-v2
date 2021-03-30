@@ -19,7 +19,7 @@ export function UserAvatarForm({ user }) {
   return (
     <Card id="avatar">
       <FormControl as={Stack} align="flex-start">
-        <FormLabel>Your Avatar</FormLabel>
+        <FormLabel>Avatar</FormLabel>
         <Box
           p={1}
           zIndex={1}

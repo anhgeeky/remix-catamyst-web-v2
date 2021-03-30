@@ -4,16 +4,16 @@ import { Heading, Link, Button, Text } from '@chakra-ui/react'
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
 
-export default function custom404Page() {
+export default function custom500page() {
   return (
-    <Layout title="Page Not Found · Catamyst">
+    <Layout title="Error · Catamyst">
       <Hero color="red">
         <Heading as="h1" size="xl">
-          Sorry, page not found.
+          Sorry, something went wrong from our side.
         </Heading>
         <Text>
-          404 - Client-side error occurred.{' '}
-          <Link isExternal href="https://httpstatuses.com/404">
+          500 - Server-side error occurred.{' '}
+          <Link isExternal href="https://httpstatuses.com/500">
             Read more
           </Link>
           .

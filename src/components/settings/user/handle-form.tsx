@@ -16,7 +16,7 @@ export function UserHandleForm({ user }) {
   return (
     <Card id="handle" as={Stack}>
       <FormControl as={Stack} align="flex-start">
-        <FormLabel>Your Username</FormLabel>
+        <FormLabel>Username</FormLabel>
         <InputGroup>
           <InputLeftAddon children="catamyst.com/" />
           <Input
@@ -30,8 +30,8 @@ export function UserHandleForm({ user }) {
           />
         </InputGroup>
         <FormHelperText>
-          Profile handle. Only alphabets, numbers, and underscores are allowed.
-          Max 20 characters.
+          Your profile handle. Only alphabets, numbers, and underscores are
+          allowed. Max 20 characters.
         </FormHelperText>
       </FormControl>
 
