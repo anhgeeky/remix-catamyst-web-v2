@@ -83,7 +83,9 @@ export function SettingsSuper({ auth }) {
               <OrderedList>
                 <ListItem>
                   You only need to pay once for a lifetime, because this is not
-                  a subscription.
+                  a subscription. This will give you <b>Pro</b>-tier access
+                  forever, added with <b>150 hours</b> of live mentorship
+                  sessions.
                 </ListItem>
                 <ListItem>
                   Your payment information is processed and handled by{' '}
@@ -157,11 +159,9 @@ export function SettingsSuper({ auth }) {
               Manage, cancel, or refund your Super plan
             </Heading>
             <Text>
-              You can update your payment information by clicking the{' '}
-              <b>View content</b> button again from the purchase confirmation
-              email, then click the Manage membership button. There you will see
-              the Cancel membership button. Alternatively, you can also Update
-              membership information.
+              You can check your information by clicking the <b>View content</b>{' '}
+              button again from the purchase confirmation email. There you can
+              update your information.
             </Text>
             <Text>
               If you need help, chat directly with us. Before mentorship
@@ -176,7 +176,7 @@ export function SettingsSuper({ auth }) {
               Mentorship sessions quota
             </Heading>
             <Text>
-              You have <b>0 hour</b> of remaining mentorship sessions.
+              You have <b>0 hour</b> of remaining live mentorship sessions.
             </Text>
           </Card>
         </Stack>

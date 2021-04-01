@@ -37,7 +37,7 @@ export function UserNameForm({ user }) {
         <FormLabel>Nick name</FormLabel>
         <Input type="text" placeholder="Elon" defaultValue={user.nickname} />
         <FormHelperText>
-          Your nick name so we know what to call you.
+          Your nick name so we know what to call you. Max 10 characters.
         </FormHelperText>
       </FormControl>
 
