@@ -21,7 +21,7 @@ import {
 import { Content, Card, Icon } from '@components'
 import { SettingsHero, PayProButton } from '@components/settings'
 
-export function SettingsPro({ auth }) {
+export function SettingsPro({ state }) {
   return (
     <>
       <NextHead>
@@ -91,7 +91,6 @@ export function SettingsPro({ auth }) {
                 <Input
                   type="text"
                   placeholder="A1234567-B1234567-C1234567-D1234567"
-                  defaultValue="A1234567-B1234567-C1234567-D1234567"
                 />
                 <InputRightElement
                   color="green.500"

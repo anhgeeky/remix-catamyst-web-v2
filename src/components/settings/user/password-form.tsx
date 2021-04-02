@@ -34,17 +34,6 @@ export function UserPasswordForm({ user }) {
         </FormHelperText>
       </FormControl>
 
-      <FormControl as={Stack} align="flex-start">
-        <FormLabel>Confirm new password</FormLabel>
-        <InputGroup>
-          <Input type="password" />
-          <InputRightElement
-            color="green.500"
-            children={<Icon name="check" />}
-          />
-        </InputGroup>
-      </FormControl>
-
       <Button
         isDisabled
         alignSelf="flex-start"

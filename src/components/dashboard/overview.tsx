@@ -76,9 +76,11 @@ export function DashboardOverview({ auth }) {
                     <UserNameHandle user={user} />
 
                     <ButtonGroup size="sm">
-                      <LinkButton href={`/${user.handle}`} colorScheme="teal">
-                        Visit profile
-                      </LinkButton>
+                      {user.handle && (
+                        <LinkButton href={`/${user.handle}`} colorScheme="teal">
+                          Visit profile
+                        </LinkButton>
+                      )}
                       <LinkButton
                         href="/settings/overview"
                         colorScheme="teal"

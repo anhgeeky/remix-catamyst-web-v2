@@ -29,15 +29,15 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { Icon, useToast } from '@components'
 import { SignUpSchema } from '@utils/yup'
 import { signUp } from '@features/auth/actions'
 
-export function AuthSignUp({ router }) {
+export function AuthSignUp({ router, auth }) {
+  // const toast = useToast()
   const dispatch = useDispatch()
-  const toast = useToast()
   const [showPassword, setShowPassword] = useState(false)
   const {
     control,
@@ -62,7 +62,7 @@ export function AuthSignUp({ router }) {
      * Data will be passed as payload to signUp thunk
      */
     try {
-      await dispatch(signUp())
+      await dispatch(signUp(data))
       router.replace('/dashboard/overview')
     } catch (error) {
       console.error('Failed to sign up.')
@@ -126,7 +126,7 @@ export function AuthSignUp({ router }) {
         </FormControl>
 
         <Button type="submit" colorScheme="teal" width="100%">
-          Create my account
+          {auth.isLoading ? 'Creating account...' : 'Create my account'}
         </Button>
 
         <Stack fontSize="sm" opacity={0.75}>

@@ -13,22 +13,36 @@ import {
 
 import { Content, Card, LinkButton, Icon } from '@components'
 import { SettingsHero } from '@components/settings'
+import { getCompleteDateTime } from '@utils'
 
-import dataUsers from '@data/users.json'
-
-export function SettingsOverview({ auth }) {
-  const user = dataUsers.find((user) => user.id === auth.user.id)
-
+export function SettingsOverview({ state }) {
   return (
     <>
       <NextHead>
         <title>Overview Settings · Catamyst</title>
       </NextHead>
 
+      {state.loading && <p>Loading...</p>}
+      {!state.loading && state.user && state.profile && (
+        <SettingsOverviewContent user={state.user} profile={state.profile} />
+      )}
+    </>
+  )
+}
+
+export function SettingsOverviewContent({ user, profile }) {
+  return (
+    <>
       <SettingsHero>
-        <Heading as="h1" size="xl">
-          Hey, {user.name}
-        </Heading>
+        {profile.name ? (
+          <Heading as="h1" size="xl">
+            Hey, {profile.name}
+          </Heading>
+        ) : (
+          <Heading as="h1" size="xl">
+            Hello {user.email}
+          </Heading>
+        )}
         <HStack>
           <Text>
             Welcome to the Settings. This is your overal account information.
@@ -44,13 +58,32 @@ export function SettingsOverview({ auth }) {
         >
           <Card as={Stack}>
             <Heading as="h2" size="md">
-              Account Type
+              Raw User Data
             </Heading>
-            <RadioGroup defaultValue={user.role}>
+            <Text as="pre" fontSize="xs">
+              {JSON.stringify(user, null, 2)}
+            </Text>
+          </Card>
+
+          <Card as={Stack}>
+            <Heading as="h2" size="md">
+              Raw Profile Data
+            </Heading>
+            <Text as="pre" fontSize="xs">
+              {JSON.stringify(profile, null, 2)}
+            </Text>
+          </Card>
+
+          <Card as={Stack}>
+            <Heading as="h2" size="md">
+              Account Mode
+            </Heading>
+            <RadioGroup defaultValue={profile.mode}>
               <Text></Text>
               <Stack direction="row">
                 <Radio value="Learner">Learner</Radio>
                 <Radio value="Employer">Employer</Radio>
+                <Radio value="Investor">Investor</Radio>
               </Stack>
             </RadioGroup>
             <Stack direction={{ base: 'column', sm: 'row' }}>
@@ -59,7 +92,7 @@ export function SettingsOverview({ auth }) {
                 size="sm"
                 leftIcon={<Icon name="save" />}
               >
-                Change profile type
+                Change mode
               </Button>
               <LinkButton
                 variant="outline"
@@ -78,12 +111,17 @@ export function SettingsOverview({ auth }) {
             </Heading>
             <Text>{user.email || 'name@example.com'}</Text>
             <Text>
-              {user.isConfirmed
-                ? 'Your email is confirmed'
-                : 'Your email is not confirmed yet'}
+              {user.confirmed_at ? (
+                <span>
+                  Your email is confirmed on{' '}
+                  {getCompleteDateTime(user.confirmed_at)}
+                </span>
+              ) : (
+                <span>Your email is not confirmed yet</span>
+              )}
             </Text>
             <Stack direction={{ base: 'column', sm: 'row' }}>
-              {!user.isConfirmed && (
+              {!user.confirmed_at && (
                 <Button
                   size="sm"
                   colorScheme="green"
@@ -108,18 +146,18 @@ export function SettingsOverview({ auth }) {
               Account Plan
             </Heading>
             <Text>
-              Your <b>{user.role}</b> account is on the <b>{user.plan}</b> plan.
-              Free of charge.
+              Your <b>{profile.mode}</b> account is on the <b>{profile.plan}</b>{' '}
+              plan. Free of charge.
             </Text>
             <Stack direction={{ base: 'column', sm: 'row' }}>
-              {user.plan !== 'Super' && (
+              {profile.plan !== 'Super' && (
                 <LinkButton
                   href="/settings/pro"
                   colorScheme="yellow"
                   size="sm"
                   leftIcon={<Icon name="pro" />}
                 >
-                  {user.plan !== 'Pro'
+                  {profile.plan !== 'Pro'
                     ? 'Upgrade to Pro plan'
                     : 'Manage Pro plan'}
                 </LinkButton>
@@ -130,7 +168,7 @@ export function SettingsOverview({ auth }) {
                 size="sm"
                 leftIcon={<Icon name="super" />}
               >
-                {user.plan !== 'Super'
+                {profile.plan !== 'Super'
                   ? 'Upgrade to Super plan'
                   : 'Manage Super plan'}
               </LinkButton>

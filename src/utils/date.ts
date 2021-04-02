@@ -36,9 +36,12 @@ export const getJoinedDate = (date) => {
   return joinedDate
 }
 
-export const getPublishedDate = (date) => {
-  const publishedDate = dayjs(date).format('D MMMM YYYY')
-  return publishedDate
+export const getCompleteDate = (date) => {
+  return dayjs(date).format('D MMMM YYYY')
+}
+
+export const getCompleteDateTime = (date) => {
+  return dayjs(date).format('D MMMM YYYY hh:mm')
 }
 
 export const getRelativePublishedDate = (date) => {

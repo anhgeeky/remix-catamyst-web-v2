@@ -3,9 +3,11 @@ import { useEffect } from 'react'
 
 import { useAuth } from '@hooks'
 
-export function useRedirectSignIn() {
+export function useRedirectSignIn(
+  fields = `id, handle, name, role, mode, plan, avatar_url`
+) {
   const router = useRouter()
-  const { auth, isAuthenticated, isAuthorized } = useAuth()
+  const { auth, user, profile, isAuthenticated, isAuthorized } = useAuth(fields)
 
   useEffect(() => {
     if (!isAuthenticated) router.replace('/signin')
@@ -16,5 +18,7 @@ export function useRedirectSignIn() {
     isAuthenticated,
     isAuthorized,
     auth,
+    user,
+    profile,
   }
 }

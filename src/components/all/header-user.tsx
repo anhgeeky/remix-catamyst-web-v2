@@ -17,10 +17,12 @@ import {
 } from '@chakra-ui/react'
 
 import { Icon, LinkButton, useToast } from '@components'
+import { useAuth } from '@hooks'
 import { signOut } from '@features/auth/actions'
 
 export function HeaderUser() {
-  const auth = useSelector((state) => state.auth)
+  // const auth = useSelector((state) => state.auth)
+  const state = useAuth(`id, handle, name, avatar_url`)
 
   /**
    * The UserMenuButton has issue with SSR
@@ -28,8 +30,8 @@ export function HeaderUser() {
    */
   return (
     <>
-      {auth.isAuthenticated ? (
-        <UserMenuButton auth={auth} />
+      {state.auth.isAuthenticated && state.user && state.profile ? (
+        <UserMenuButton state={state} />
       ) : (
         <UserAuthButtons />
       )}
@@ -37,10 +39,9 @@ export function HeaderUser() {
   )
 }
 
-function UserMenuButton({ auth }) {
+function UserMenuButton({ state }) {
   const router = useRouter()
   const dispatch = useDispatch()
-  const toast = useToast({ duration: 3000, isClosable: true })
 
   async function handleSignOut() {
     dispatch(signOut())
@@ -57,15 +58,23 @@ function UserMenuButton({ auth }) {
             borderRadius: 'full',
           }}
         >
-          <Avatar name={auth.user.name} size="sm" />
+          <Avatar name={state.profile.name} size="sm" />
         </MenuButton>
 
         <MenuList boxShadow="lg">
-          <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
-            <Flex direction="column">
-              Signed in as <b>@{auth.user.handle}</b>
-            </Flex>
-          </MenuItem>
+          {state.profile.handle ? (
+            <MenuItem onClick={() => router.push(`/${state.profile.handle}`)}>
+              <Flex direction="column">
+                Signed in as <b>@{state.profile.handle}</b>
+              </Flex>
+            </MenuItem>
+          ) : (
+            <MenuItem>
+              <Flex direction="column">
+                Signed in as <b>{state.user.email}</b>
+              </Flex>
+            </MenuItem>
+          )}
           <MenuDivider />
           <MenuItem onClick={() => router.push('/dashboard/overview')}>
             <Icon name="dashboard" />
@@ -73,12 +82,14 @@ function UserMenuButton({ auth }) {
               Dashboard
             </Text>
           </MenuItem>
-          <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
-            <Icon name="profile" />
-            <Text as="span" ml={2}>
-              Profile
-            </Text>
-          </MenuItem>
+          {state.profile.handle && (
+            <MenuItem onClick={() => router.push(`/${state.profile.handle}`)}>
+              <Icon name="profile" />
+              <Text as="span" ml={2}>
+                Profile
+              </Text>
+            </MenuItem>
+          )}
           <MenuItem onClick={() => router.push('/settings/overview')}>
             <Icon name="settings" />
             <Text as="span" ml={2}>

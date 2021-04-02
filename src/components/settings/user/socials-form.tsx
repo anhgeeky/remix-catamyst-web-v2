@@ -14,7 +14,8 @@ import {
 
 import { Card, Icon } from '@components'
 
-export function UserSocialsForm({ user }) {
+export function UserSocialsForm({ state }) {
+  const { profile } = state
   const {
     register,
     control,
@@ -22,7 +23,7 @@ export function UserSocialsForm({ user }) {
     reset,
     trigger,
     setError,
-  } = useForm({ defaultValues: user })
+  } = useForm({ defaultValues: profile })
 
   const { fields, append, remove } = useFieldArray({ control, name: 'socials' })
 

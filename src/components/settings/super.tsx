@@ -23,7 +23,7 @@ import { Content, Card, Icon } from '@components'
 import { SettingsHero, PaySuperButton } from '@components/settings'
 import { dataApp } from '@data'
 
-export function SettingsSuper({ auth }) {
+export function SettingsSuper({ state }) {
   return (
     <>
       <NextHead>
@@ -133,7 +133,6 @@ export function SettingsSuper({ auth }) {
                 <Input
                   type="text"
                   placeholder="A1234567-B1234567-C1234567-D1234567"
-                  defaultValue="A1234567-B1234567-C1234567-D1234567"
                 />
                 <InputRightElement
                   color="green.500"

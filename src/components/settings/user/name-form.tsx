@@ -15,7 +15,9 @@ import {
 
 import { Card, Icon } from '@components'
 
-export function UserNameForm({ user }) {
+export function UserNameForm({ state }) {
+  const { profile } = state
+
   return (
     <Card id="name" as={Stack}>
       <FormControl as={Stack}>
@@ -24,7 +26,7 @@ export function UserNameForm({ user }) {
           <Input
             type="text"
             placeholder="Elon Reeve Musk"
-            defaultValue={user.name}
+            defaultValue={profile.name}
           />
         </InputGroup>
         <FormHelperText>
@@ -35,7 +37,7 @@ export function UserNameForm({ user }) {
 
       <FormControl as={Stack} spacing={1}>
         <FormLabel>Nick name</FormLabel>
-        <Input type="text" placeholder="Elon" defaultValue={user.nickname} />
+        <Input type="text" placeholder="Elon" defaultValue={profile.nickname} />
         <FormHelperText>
           Your nick name so we know what to call you. Max 10 characters.
         </FormHelperText>

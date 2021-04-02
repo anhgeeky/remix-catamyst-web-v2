@@ -8,6 +8,11 @@ export const SIGN_IN_BEGIN = 'auth/signin/begin'
 export const SIGN_IN_ERROR = 'auth/signin/error'
 export const SIGN_IN_SUCCESS = 'auth/signin/success'
 
+export const SIGN_IN_PASSWORDLESS = 'auth/signin/passwordless'
+export const SIGN_IN_PASSWORDLESS_BEGIN = 'auth/signin/passwordless/begin'
+export const SIGN_IN_PASSWORDLESS_ERROR = 'auth/signin/passwordless/error'
+export const SIGN_IN_PASSWORDLESS_SUCCESS = 'auth/signin/passwordless/success'
+
 export const SIGN_OUT = 'auth/signout'
 export const SIGN_OUT_BEGIN = 'auth/signout/begin'
 export const SIGN_OUT_ERROR = 'auth/signout/error'

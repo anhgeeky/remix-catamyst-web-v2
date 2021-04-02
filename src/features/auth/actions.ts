@@ -7,11 +7,15 @@ import {
   SIGN_IN_BEGIN,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
+  SIGN_IN_PASSWORDLESS_BEGIN,
+  SIGN_IN_PASSWORDLESS_ERROR,
+  SIGN_IN_PASSWORDLESS_SUCCESS,
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
 } from '@features/auth/types'
 import dataDefaultUser from '@data/user.json'
+import { supabase } from '@lib'
 
 const toast = createStandaloneToast()
 const toastOptions = {
@@ -20,19 +24,32 @@ const toastOptions = {
   // variant: 'solid',
 }
 
-export const signUp = () => {
+export const signUp = (data) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_UP_BEGIN })
-    toast({ title: 'Signing up...' })
+    toast({ title: 'Creating new account...' })
     /**
      * There will be the actual sign up process with API.
      */
     try {
-      const data = 'DATA_IS_HERE'
-      if (data) {
+      // Create user
+      let { user, session, error } = await supabase.auth.signUp({
+        email: data.email,
+        password: data.password,
+      })
+      if (error) throw error
+      if (user) {
+        // Create profile automatically
+        let { error } = await supabase
+          .from('profiles')
+          .upsert(
+            { id: user!.id, name: user.email, updated_at: new Date() },
+            { returning: 'minimal' }
+          )
+        if (error) throw error
         dispatch({
           type: SIGN_UP_SUCCESS,
-          payload: { user: dataDefaultUser },
+          payload: { user: user },
         })
         toast.closeAll()
         toast({
@@ -54,19 +71,29 @@ export const signUp = () => {
   }
 }
 
-export const signIn = () => {
+export const signIn = (data) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_IN_BEGIN })
-    toast({ title: 'Signing in...' })
+    toast({ title: 'Signing in...', duration: 1000, isClosable: true })
     /**
      * There will be the actual sign in process with API.
      */
+    // console.log({ data })
+
     try {
-      const data = 'DATA_IS_HERE'
-      if (data) {
+      const { error, user } = await supabase.auth.signIn({
+        email: data.email,
+        password: data.password,
+      })
+      // const user = 'DATA_IS_HERE'
+
+      if (error) throw error
+      if (user) {
         dispatch({
           type: SIGN_IN_SUCCESS,
-          payload: { user: dataDefaultUser },
+          payload: {
+            user: user,
+          },
         })
         toast.closeAll()
         toast({
@@ -83,6 +110,37 @@ export const signIn = () => {
         status: 'error',
         title: 'Failed to sign in.',
         description: 'Please try again and check your data.',
+      })
+    }
+  }
+}
+
+export const signInPasswordless = (email) => {
+  return async (dispatch) => {
+    dispatch({ type: SIGN_IN_PASSWORDLESS_BEGIN })
+    toast({
+      title: 'Signing in without password...',
+      duration: 1000,
+      isClosable: true,
+    })
+    // console.log({ email })
+
+    try {
+      const { error, user } = await supabase.auth.signIn({
+        email: email,
+      })
+      if (error) throw error
+      if (user) {
+        dispatch({ type: SIGN_IN_PASSWORDLESS_SUCCESS })
+        toast.closeAll()
+      }
+    } catch (error) {
+      dispatch({ type: SIGN_IN_PASSWORDLESS_ERROR })
+      toast({
+        ...toastOptions,
+        status: 'error',
+        title: 'Failed to sign in.',
+        description: 'Please try again and check your email.',
       })
     }
   }

@@ -29,7 +29,7 @@ import {
 import { JobsToolbar } from '@components/jobs'
 import { useToast, useAuth } from '@hooks'
 import {
-  getPublishedDate,
+  getCompleteDate,
   getRelativePublishedDate,
   formatNumberCurrency,
 } from '@utils'
@@ -65,7 +65,7 @@ export function JobDetail({ job }) {
   }
 
   const state = {
-    publishedDate: getPublishedDate(job.publishedDate),
+    publishedDate: getCompleteDate(job.publishedDate),
     relativePublishedDate: getRelativePublishedDate(job.publishedDate),
   }
 

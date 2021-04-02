@@ -4,7 +4,8 @@ export {
   getDayNamePeriod,
   getDayPeriod,
   getJoinedDate,
-  getPublishedDate,
+  getCompleteDate,
+  getCompleteDateTime,
   getRelativePublishedDate,
   getYear,
 } from '@utils/date'

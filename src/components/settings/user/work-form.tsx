@@ -12,7 +12,9 @@ import {
 
 import { Card, Icon } from '@components'
 
-export function UserWorkForm({ user }) {
+export function UserWorkForm({ state }) {
+  const { profile } = state
+
   return (
     <Card as={Stack}>
       <Heading as="h3" size="md">
@@ -31,13 +33,13 @@ export function UserWorkForm({ user }) {
         <Input type="text" placeholder="https://organization.com" />
       </FormControl>
       <FormControl as={Stack} spacing={1}>
-        <FormLabel>Organization Username</FormLabel>
+        <FormLabel>Organization Handle</FormLabel>
         <InputGroup>
           <InputLeftAddon children="catamyst.com/" />
           <Input
             type="text"
             placeholder="organization"
-            defaultValue={user.organization?.handle || ''}
+            defaultValue={profile.organization?.handle || ''}
           />
           <InputRightElement
             color="green.500"

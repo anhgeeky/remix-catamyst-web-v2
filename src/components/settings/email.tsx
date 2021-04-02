@@ -3,11 +3,8 @@ import { Heading, HStack, Stack, Text } from '@chakra-ui/react'
 
 import { Content } from '@components'
 import { SettingsHero, UserEmailForm } from '@components/settings'
-import dataUsers from '@data/users.json'
 
-export function SettingsEmail({ auth }) {
-  const user = dataUsers.find((user) => user.id === auth.user.id)
-
+export function SettingsEmail({ state }) {
   return (
     <>
       <NextHead>
@@ -25,7 +22,7 @@ export function SettingsEmail({ auth }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
-          <UserEmailForm user={user} />
+          {state.user && <UserEmailForm user={state.user} />}
         </Stack>
       </Content>
     </>

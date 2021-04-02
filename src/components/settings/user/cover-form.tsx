@@ -11,7 +11,9 @@ import {
 
 import { Card, Icon } from '@components'
 
-export function UserCoverForm({ user }) {
+export function UserCoverForm({ state }) {
+  const { profile } = state
+
   return (
     <Card id="cover">
       <FormControl as={Stack} align="flex-start">
@@ -26,10 +28,10 @@ export function UserCoverForm({ user }) {
           bg={useColorModeValue('gray.300', 'gray.500')}
         >
           <Box className="next-image-cover-container">
-            {user.coverUrl && (
+            {profile.coverUrl && (
               <NextImage
-                alt={`Cover picture of ${user.name}`}
-                src={user.coverUrl}
+                alt={`Cover picture of ${profile.name}`}
+                src={profile.coverUrl}
                 layout="fixed"
                 objectFit="cover"
                 width={720}

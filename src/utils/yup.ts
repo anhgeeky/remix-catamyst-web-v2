@@ -49,6 +49,10 @@ export const SignInSchema = Yup.object().shape({
   password: yupPasswordAlt,
 })
 
+export const SignInPasswordlessSchema = Yup.object().shape({
+  email: yupEmail,
+})
+
 export const UserNameHandleSchema = Yup.object().shape({
   name: yupName,
   handle: yupHandle,

@@ -18,24 +18,26 @@ import dataSettingsLinks from '@data/settings-links.json'
 export default function settingsSlug() {
   const router = useRouter()
   const { settingsSlug } = router.query
-  const { auth, isAuthenticated } = useRedirectSignIn()
+  const state = useRedirectSignIn(
+    `id, handle, name, nickname, role, mode, plan, is_public, is_verified, avatar_url, cover_url, headline, bio_html, country, location, website_url, work, socials, created_at, updated_at`
+  )
 
   /**
    * This pattern is used so the header tabs navigation seamless.
    */
   return (
     <Layout title="Loading settings... · Catamyst">
-      {settingsSlug && isAuthenticated && auth && (
+      {settingsSlug && state.profile && (
         <>
           <SettingsGumroad />
 
           <HeaderTabs links={dataSettingsLinks} />
-          {settingsSlug === 'overview' && <SettingsOverview auth={auth} />}
-          {settingsSlug === 'profile' && <SettingsProfile auth={auth} />}
-          {settingsSlug === 'email' && <SettingsEmail auth={auth} />}
-          {settingsSlug === 'password' && <SettingsPassword auth={auth} />}
-          {settingsSlug === 'pro' && <SettingsPro auth={auth} />}
-          {settingsSlug === 'super' && <SettingsSuper auth={auth} />}
+          {settingsSlug === 'overview' && <SettingsOverview state={state} />}
+          {settingsSlug === 'profile' && <SettingsProfile state={state} />}
+          {settingsSlug === 'email' && <SettingsEmail state={state} />}
+          {settingsSlug === 'password' && <SettingsPassword state={state} />}
+          {settingsSlug === 'pro' && <SettingsPro state={state} />}
+          {settingsSlug === 'super' && <SettingsSuper state={state} />}
         </>
       )}
     </Layout>

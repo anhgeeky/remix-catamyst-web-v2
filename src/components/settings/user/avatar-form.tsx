@@ -15,7 +15,9 @@ import {
 
 import { Card, Icon } from '@components'
 
-export function UserAvatarForm({ user }) {
+export function UserAvatarForm({ state }) {
+  const { profile } = state
+
   return (
     <Card id="avatar">
       <FormControl as={Stack} align="flex-start">
@@ -29,7 +31,7 @@ export function UserAvatarForm({ user }) {
           _hover={{ opacity: 0.75 }}
           bg={useColorModeValue('gray.50', 'gray.900')}
         >
-          <Avatar name={user.name} src={user.avatarUrl} size="lg" />
+          <Avatar name={profile.name} src={profile.avatarUrl} size="lg" />
         </Box>
         <FormHelperText>
           Profile picture. Click on the avatar to upload. Recommended size is

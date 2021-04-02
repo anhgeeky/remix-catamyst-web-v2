@@ -13,6 +13,7 @@ export {
   PaySuperButton,
 } from '@components/settings/gumroad'
 
+export { UserProfilePreview } from '@components/settings/user/profile-preview'
 export { UserNameForm } from '@components/settings/user/name-form'
 export { UserHandleForm } from '@components/settings/user/handle-form'
 export { UserAvatarForm } from '@components/settings/user/avatar-form'

@@ -5,9 +5,7 @@ import { Content } from '@components'
 import { SettingsHero, UserPasswordForm } from '@components/settings'
 import dataUsers from '@data/users.json'
 
-export function SettingsPassword({ auth }) {
-  const user = dataUsers.find((user) => user.id === auth.user.id)
-
+export function SettingsPassword({ state }) {
   return (
     <>
       <NextHead>
@@ -25,7 +23,7 @@ export function SettingsPassword({ auth }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
-          <UserPasswordForm user={user} />
+          <UserPasswordForm user={state.user} />
         </Stack>
       </Content>
     </>

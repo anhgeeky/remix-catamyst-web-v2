@@ -5,6 +5,9 @@ import {
   SIGN_IN_BEGIN,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
+  SIGN_IN_PASSWORDLESS_BEGIN,
+  SIGN_IN_PASSWORDLESS_ERROR,
+  SIGN_IN_PASSWORDLESS_SUCCESS,
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
@@ -14,6 +17,7 @@ const initialState = {
   isAuthenticated: false,
   isLoading: false,
   user: {},
+  session: {},
 }
 
 /**
@@ -71,6 +75,27 @@ export function authReducer(state = initialState, action) {
         isLoading: false,
         isAuthenticated: true,
         user: action.payload.user,
+      }
+    }
+    /**
+     * Sign in passwordless begin/error/success.
+     */
+    case SIGN_IN_PASSWORDLESS_BEGIN: {
+      return {
+        ...state,
+        isLoading: true,
+      }
+    }
+    case SIGN_IN_PASSWORDLESS_ERROR: {
+      return {
+        ...state,
+        isLoading: false,
+      }
+    }
+    case SIGN_IN_PASSWORDLESS_SUCCESS: {
+      return {
+        ...state,
+        isLoading: false,
       }
     }
     /**

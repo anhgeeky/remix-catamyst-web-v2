@@ -15,7 +15,9 @@ import {
 import { Card, Icon } from '@components'
 import { dataAppCountries } from '@data'
 
-export function UserPersonalForm({ user }) {
+export function UserPersonalForm({ state }) {
+  const { profile } = state
+
   return (
     <Card id="profile" as={Stack} align="flex-start">
       <Heading as="h3" size="md">
@@ -27,7 +29,7 @@ export function UserPersonalForm({ user }) {
         <Input
           type="text"
           placeholder="Your title or tagline"
-          defaultValue={user.headline}
+          defaultValue={profile.headline}
         />
         <FormHelperText>Your headline is for title or tagline.</FormHelperText>
       </FormControl>
@@ -37,14 +39,14 @@ export function UserPersonalForm({ user }) {
         <Textarea
           type="text"
           placeholder="Tell a bit about yourself."
-          defaultValue={user.bioHtml}
+          defaultValue={profile.bioHtml}
         />
         <FormHelperText>Your biography. Max 500 characters.</FormHelperText>
       </FormControl>
 
       <FormControl as={Stack} spacing={1}>
         <FormLabel>Country or Region</FormLabel>
-        <SelectCountries user={user} />
+        <SelectCountries profile={profile} />
         <FormHelperText>Your origin or current resided country.</FormHelperText>
       </FormControl>
 
@@ -53,7 +55,7 @@ export function UserPersonalForm({ user }) {
         <Input
           type="text"
           placeholder="City, State or Remote or Worldwide"
-          defaultValue={user.location}
+          defaultValue={profile.location}
         />
         <FormHelperText>
           Your location is flexible and can be more specific than country. Max
@@ -67,7 +69,7 @@ export function UserPersonalForm({ user }) {
           <Input
             type="text"
             placeholder="https://website.com"
-            defaultValue={user.website.url}
+            defaultValue={profile.website_url}
           />
           <InputRightElement
             color="green.500"
@@ -87,9 +89,9 @@ export function UserPersonalForm({ user }) {
   )
 }
 
-export function SelectCountries({ user }) {
+export function SelectCountries({ profile }) {
   return (
-    <Select placeholder="Select country" defaultValue={user.country}>
+    <Select placeholder="Select country" defaultValue={profile.country}>
       {dataAppCountries.map((country, index) => {
         return (
           <option key={index} value={country.code}>
