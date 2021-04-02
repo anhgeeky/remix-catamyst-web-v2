@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
     )
   }, [])
 
-  // console.log({ session })
+  console.log({ session })
 
   return (
     <>
