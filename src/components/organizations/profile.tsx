@@ -33,7 +33,7 @@ import dataProjects from '@data/projects.json'
 
 /**
  * Organization profile.
- * org.bioHtml is the same format with BlockTexts.
+ * org.bio_html is the same format with BlockTexts.
  * Because there is only one Organization, the identification is using id.
  */
 export function OrganizationProfile({ org }) {
@@ -47,7 +47,7 @@ export function OrganizationProfile({ org }) {
   const isActionsAllowed = isAuthenticated
   const isSameUser = org.handle === auth?.org?.handle
 
-  const hasCountry = Boolean(org.countryCode)
+  const hasCountry = Boolean(org.country)
   const hasLocation = Boolean(org.location)
   const hasSocialLinks = Boolean(org.socials?.length > 0)
   const hasWebsite = Boolean(org.website?.url)
@@ -171,7 +171,8 @@ function OrganizationProfileContent({ org, state, actions }) {
 
             <OrganizationNameHandle org={org} />
 
-            <Box id="org-actions" as={ButtonGroup} size="sm">
+            {/* Follow and favorite button */}
+            {/* <Box id="org-actions" as={ButtonGroup} size="sm">
               {!state.isFollowed && (
                 <Button
                   colorScheme="teal"
@@ -208,7 +209,7 @@ function OrganizationProfileContent({ org, state, actions }) {
                   onClick={actions.handleUnfavorite}
                 />
               )}
-            </Box>
+            </Box> */}
           </VStack>
 
           <Stack id="org-info-1" spacing={0} pt={3}>
@@ -220,14 +221,14 @@ function OrganizationProfileContent({ org, state, actions }) {
               </Box>
             )}
             <Box id="org-bio">
-              {ReactHtmlParser(org.bioHtml, transformOptions)}
+              {ReactHtmlParser(org.bio_html, transformOptions)}
             </Box>
           </Stack>
 
           <Flex id="org-info-2" color="gray.500" align="center" flexWrap="wrap">
             {state.hasCountry && (
               <Box id="org-country" mr={5}>
-                <Country code={org.countryCode} />
+                <Country code={org.country} />
               </Box>
             )}
 

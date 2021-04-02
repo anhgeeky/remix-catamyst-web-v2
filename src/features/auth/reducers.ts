@@ -17,7 +17,6 @@ const initialState = {
   isAuthenticated: false,
   isLoading: false,
   user: {},
-  session: {},
 }
 
 /**

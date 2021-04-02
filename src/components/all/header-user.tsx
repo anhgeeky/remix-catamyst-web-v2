@@ -17,12 +17,10 @@ import {
 } from '@chakra-ui/react'
 
 import { Icon, LinkButton, useToast } from '@components'
-import { useAuth } from '@hooks'
 import { signOut } from '@features/auth/actions'
 
 export function HeaderUser() {
-  // const auth = useSelector((state) => state.auth)
-  const state = useAuth(`id, handle, name, avatar_url`)
+  const auth = useSelector((state) => state.auth)
 
   /**
    * The UserMenuButton has issue with SSR
@@ -30,8 +28,8 @@ export function HeaderUser() {
    */
   return (
     <>
-      {state.auth.isAuthenticated && state.user && state.profile ? (
-        <UserMenuButton state={state} />
+      {auth.isAuthenticated ? (
+        <UserMenuButton auth={auth} />
       ) : (
         <UserAuthButtons />
       )}
@@ -39,7 +37,7 @@ export function HeaderUser() {
   )
 }
 
-function UserMenuButton({ state }) {
+function UserMenuButton({ auth }) {
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -58,20 +56,26 @@ function UserMenuButton({ state }) {
             borderRadius: 'full',
           }}
         >
-          <Avatar name={state.profile.name} size="sm" />
+          <Box border="1px solid" borderColor="gray.100" rounded="full">
+            <Avatar
+              src={auth.user.avatar_url}
+              name={auth.user.name}
+              size="sm"
+            />
+          </Box>
         </MenuButton>
 
         <MenuList boxShadow="lg">
-          {state.profile.handle ? (
-            <MenuItem onClick={() => router.push(`/${state.profile.handle}`)}>
+          {auth.user.handle ? (
+            <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
               <Flex direction="column">
-                Signed in as <b>@{state.profile.handle}</b>
+                Signed in as <b>@{auth.user.handle}</b>
               </Flex>
             </MenuItem>
           ) : (
             <MenuItem>
               <Flex direction="column">
-                Signed in as <b>{state.user.email}</b>
+                Signed in as <b>{auth.user.email}</b>
               </Flex>
             </MenuItem>
           )}
@@ -82,8 +86,8 @@ function UserMenuButton({ state }) {
               Dashboard
             </Text>
           </MenuItem>
-          {state.profile.handle && (
-            <MenuItem onClick={() => router.push(`/${state.profile.handle}`)}>
+          {auth.user.handle && (
+            <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
               <Icon name="profile" />
               <Text as="span" ml={2}>
                 Profile

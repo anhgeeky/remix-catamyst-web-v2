@@ -37,7 +37,7 @@ export function CollectionUsers({ users }) {
                 direction={{ base: 'column', lg: 'row' }}
               >
                 <HStack minW={300} spacing={3}>
-                  <Avatar name={user.name} src={user.avatarUrl} size="xl" />
+                  <Avatar name={user.name} src={user.avatar_url} size="xl" />
                   <Stack spacing={1}>
                     <Flex id="user-name-verified">
                       <Heading className="user-name" as="h3" size="md">

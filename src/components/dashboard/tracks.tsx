@@ -11,7 +11,7 @@ import {
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export function DashboardTracks({ auth }) {
+export function DashboardTracks({ state }) {
   return (
     <>
       <NextHead>
@@ -44,7 +44,8 @@ export function DashboardTracks({ auth }) {
                   />
                 </Box>
                 <Text>
-                  Hey {auth.user.name}, you haven't enrolled in any track yet.
+                  Hey {state.profile.name}, you haven't enrolled in any track
+                  yet.
                 </Text>
                 <LinkButton href="/learn" colorScheme="teal">
                   Choose a track
@@ -57,7 +58,7 @@ export function DashboardTracks({ auth }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {auth.user.name}, you haven't completed any track yet.
+                  Hey {state.profile.name}, you haven't completed any track yet.
                 </Text>
               </CardPlaceholder>
             </Card>

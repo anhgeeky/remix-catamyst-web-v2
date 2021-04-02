@@ -2,7 +2,7 @@
   {
     "handle": "haidar",
     "avatarName": "mhaidarhanif.jpg",
-    "avatarUrl": "https://storage.catamyst.com",
+    "avatar_url": "https://storage.catamyst.com",
     "name": "M Haidar Hanif",
     "title": "Founder, Engineer, Mentor",
     "bio": "Haidar is the founder of Catamyst. A lifelong learner, engineer, and educator. Actively mentoring people to help them transition into tech careers or upgrading their skills. Previously had several years experience of teaching, training, and building a coding school.",
@@ -12,12 +12,12 @@
       { "name": "GitHub", "url": "https://github.com/mhaidarhanif" }
     ],
     "websiteUrl": "https://mhaidarhanif.com",
-    "countryCode": "EARTH"
+    "country": "EARTH"
   },
   {
     "handle": "maya",
     "avatarName": "mayaasmara.jpg",
-    "avatarUrl": "https://storage.catamyst.com",
+    "avatar_url": "https://storage.catamyst.com",
     "name": "Maya Asmara",
     "title": "Co-Founder, Writer, Mentor",
     "bio": "Maya is the co-founder of Catamyst. An avid writer and content creator. Consistently spreading messages about the importance of happiness in work and life.",
@@ -27,12 +27,12 @@
       { "name": "GitHub", "url": "https://github.com/mayaasmara" }
     ],
     "websiteUrl": "https://mayaasmara.com",
-    "countryCode": "EARTH"
+    "country": "EARTH"
   },
   {
     "handle": "latifah",
     "avatarName": "latifahdhiai.jpg",
-    "avatarUrl": "https://storage.catamyst.com",
+    "avatar_url": "https://storage.catamyst.com",
     "name": "Latifah Dhia",
     "title": "Illustrator",
     "bio": "Latifah is the illustrator of Catamyst. Currently drawing interesting visuals on this platform.",
@@ -41,6 +41,6 @@
       { "name": "Instagram", "url": "https://instagram.com/hamozks" }
     ],
     "websiteUrl": "https://latifahdhiai.com",
-    "countryCode": "ID"
+    "country": "ID"
   }
 ]

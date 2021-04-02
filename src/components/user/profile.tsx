@@ -32,7 +32,7 @@ import dataProjects from '@data/projects.json'
 
 /**
  * User profile.
- * user.bioHtml is the same format with BlockTexts.
+ * user.bio_html is the same format with BlockTexts.
  * Because there is only one user, the identification is using id.
  */
 export function UserProfile({ user }) {
@@ -44,13 +44,14 @@ export function UserProfile({ user }) {
   const [isFavorited, setIsFavorited] = useState(false)
 
   const isActionsAllowed = isAuthenticated
-  const isSameUser = user.handle === auth?.user?.handle
+  const isSameUser = user.handle === auth?.profile?.handle
 
-  const hasCountry = Boolean(user.countryCode)
+  const hasCountry = Boolean(user.country)
   const hasLocation = Boolean(user.location)
   const hasOrganization = user.organization?.title && user.organization?.name
   const hasSocialLinks = Boolean(user.socials?.length > 0)
   const hasWebsite = Boolean(user.website?.url)
+  const hasProjects = Boolean(user.projects?.length)
   const joinedDate = getJoinedDate(user?.joinedAt)
 
   const handleFollow = () => {
@@ -107,6 +108,7 @@ export function UserProfile({ user }) {
           hasOrganization,
           hasSocialLinks,
           hasWebsite,
+          hasProjects,
           joinedDate,
         }}
         actions={{
@@ -169,7 +171,7 @@ function UserProfileContent({ user, state, actions }) {
               zIndex={1}
               bg={useColorModeValue('gray.50', 'gray.900')}
             >
-              <Avatar name={user.name} src={user.avatarUrl} size="2xl" />
+              <Avatar name={user.name} src={user.avatar_url} size="2xl" />
             </Box>
 
             <UserNameHandle user={user} />
@@ -184,7 +186,8 @@ function UserProfileContent({ user, state, actions }) {
                   Edit profile
                 </Button>
               )}
-              {!state.isSameUser && !state.isFollowed && (
+              {/* Follow and favorite button */}
+              {/* {!state.isSameUser && !state.isFollowed && (
                 <Button
                   colorScheme="teal"
                   variant="outline"
@@ -219,7 +222,7 @@ function UserProfileContent({ user, state, actions }) {
                   icon={<Icon name="favorite" />}
                   onClick={actions.handleUnfavorite}
                 />
-              )}
+              )} */}
             </Box>
           </VStack>
 
@@ -232,7 +235,7 @@ function UserProfileContent({ user, state, actions }) {
               </Box>
             )}
             <Box id="user-bio">
-              {ReactHtmlParser(user.bioHtml, transformOptions)}
+              {ReactHtmlParser(user.bio_html, transformOptions)}
             </Box>
           </Stack>
 
@@ -266,7 +269,7 @@ function UserProfileContent({ user, state, actions }) {
 
             {state.hasCountry && (
               <Box id="user-country" mr={5}>
-                <Country code={user.countryCode} />
+                <Country code={user.country} />
               </Box>
             )}
 
@@ -360,7 +363,7 @@ function UserProfileContent({ user, state, actions }) {
           </Flex>
         </Stack>
 
-        {user.projects.length > 0 && (
+        {state.hasProjects && (
           <Stack id="org-projects">
             <HeadingStack>Projects</HeadingStack>
             {user.projects.map((projectId, index) => {
@@ -385,8 +388,8 @@ function UserProfileContent({ user, state, actions }) {
 }
 
 export function UserNameHandle({ user }) {
-  const isVerified = user.isVerified
-  const isBasicPlan = user.plan === 'Basic' ? true : false
+  const isVerified = user?.is_verified || false
+  const isBasicPlan = user?.plan === 'Basic' ? true : false
 
   return (
     <Box id="user-name-handle" textAlign="center">

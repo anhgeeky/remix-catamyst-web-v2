@@ -148,7 +148,7 @@ function ProjectContributorsAvatars({ contributors }) {
                     fontSize="md"
                     label={`${user.name} as ${contributor.role}`}
                   >
-                    <Avatar name={user.name} src={user.avatarUrl} />
+                    <Avatar name={user.name} src={user.avatar_url} />
                   </Tooltip>
                 </Link>
               </NextLink>

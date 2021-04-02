@@ -6,12 +6,12 @@ import React from 'react'
 
 export default function dashboardPage() {
   const router = useRouter()
-  const { auth, isAuthorized } = useAuth()
+  const { auth, isAuthenticated } = useAuth()
 
   useEffect(() => {
-    if (isAuthorized) router.replace('/dashboard/overview')
+    if (isAuthenticated) router.replace('/dashboard/overview')
     else router.replace('/signin')
-  }, [isAuthorized])
+  }, [isAuthenticated])
 
   return (
     <Layout title="Loading dashboard... · Catamyst">

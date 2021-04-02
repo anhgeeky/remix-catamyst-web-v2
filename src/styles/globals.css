@@ -41,6 +41,7 @@ p code {
  */
 
 .card-placeholder p {
+  max-width: 360px;
   color: #999;
 }
 
@@ -54,10 +55,6 @@ p code {
 
 .heading-with-anchor a:focus {
   opacity: 1;
-}
-
-.card-placeholder p {
-  max-width: 400px;
 }
 
 /**
@@ -180,4 +177,8 @@ p code {
   padding: 0 15px !important;
   text-decoration: none !important;
   text-shadow: none !important;
+}
+
+.chakra-ui-dark .gumroad-button {
+  background-color: #111 !important;
 }

@@ -137,7 +137,7 @@ export function JobDetails({ jobParams }) {
               <Box id="job-country-location">
                 <Flex flexWrap="wrap">
                   <chakra.span mr={3}>
-                    <Country code={job.organization.countryCode} />
+                    <Country code={job.organization.country} />
                   </chakra.span>
                   <HStack id="jobs-location" spacing={1}>
                     <Icon name="location" />

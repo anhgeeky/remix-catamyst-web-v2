@@ -14,7 +14,6 @@ import {
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
 } from '@features/auth/types'
-import dataDefaultUser from '@data/user.json'
 import { supabase } from '@lib'
 
 const toast = createStandaloneToast()
@@ -43,7 +42,7 @@ export const signUp = (data) => {
         let { error } = await supabase
           .from('profiles')
           .upsert(
-            { id: user!.id, name: user.email, updated_at: new Date() },
+            { id: user!.id, updated_at: new Date() },
             { returning: 'minimal' }
           )
         if (error) throw error
@@ -75,24 +74,27 @@ export const signIn = (data) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_IN_BEGIN })
     toast({ title: 'Signing in...', duration: 1000, isClosable: true })
-    /**
-     * There will be the actual sign in process with API.
-     */
-    // console.log({ data })
 
     try {
-      const { error, user } = await supabase.auth.signIn({
+      // Sign in via Supabase/API
+      let { error, user } = await supabase.auth.signIn({
         email: data.email,
         password: data.password,
       })
-      // const user = 'DATA_IS_HERE'
-
       if (error) throw error
       if (user) {
+        // Get user's profile as well
+        let { data, error } = await supabase
+          .from('profiles')
+          .select(`id, handle, name, avatar_url`)
+          .eq('id', user!.id)
+          .single()
+
+        // Only apply profile to Redux store auth.user
         dispatch({
           type: SIGN_IN_SUCCESS,
           payload: {
-            user: user,
+            user: data,
           },
         })
         toast.closeAll()
@@ -154,8 +156,8 @@ export const signOut = () => {
      * There will be the actual sign out process with API.
      */
     try {
-      const data = 'DATA_IS_HERE'
-      if (data) {
+      const { error } = await supabase.auth.signOut()
+      if (!error) {
         dispatch({ type: SIGN_OUT_SUCCESS })
         toast.closeAll()
         toast({

@@ -11,7 +11,7 @@ import {
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export function DashboardJobs({ auth }) {
+export function DashboardJobs({ state }) {
   return (
     <>
       <NextHead>
@@ -44,7 +44,7 @@ export function DashboardJobs({ auth }) {
                   />
                 </Box>
                 <Text>
-                  Hey {auth.user.name}, you haven't applied to a job yet.
+                  Hey {state.profile.name}, you haven't applied to a job yet.
                 </Text>
                 <LinkButton colorScheme="teal" href="/jobs">
                   Search for a job

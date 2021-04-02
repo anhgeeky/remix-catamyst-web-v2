@@ -11,7 +11,7 @@ import {
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export function DashboardProjects({ auth }) {
+export function DashboardProjects({ state }) {
   const [isTablet] = useMediaQuery('(max-width: 768px)')
 
   return (
@@ -50,8 +50,8 @@ export function DashboardProjects({ auth }) {
                   />
                 </Box>
                 <Text>
-                  Hey {auth.user.name}, you don't have any published projects
-                  yet.
+                  Hey {state.profile.name}, you don't have any published
+                  projects yet.
                 </Text>
                 <LinkButton colorScheme="teal" href="/dashboard/projects/new">
                   Publish a project
@@ -65,7 +65,7 @@ export function DashboardProjects({ auth }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {auth.user.name}, you don't have any draft projects.
+                  Hey {state.profile.name}, you don't have any draft projects.
                 </Text>
                 <LinkButton colorScheme="teal" href="/dashboard/projects/new">
                   Publish a project

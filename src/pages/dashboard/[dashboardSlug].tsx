@@ -18,27 +18,29 @@ import dataDashboardLinks from '@data/dashboard-links.json'
 export default function dashboardSlugPage() {
   const router = useRouter()
   const { dashboardSlug } = router.query
-  const { auth, isAuthorized } = useRedirectSignIn()
+  const state = useRedirectSignIn(
+    `id, handle, name, nickname, role, mode, plan, is_public, is_verified, avatar_url, created_at, updated_at`
+  )
 
   /**
    * This pattern is used so the header tabs navigation seamless
    */
   return (
     <Layout title="Loading dashboard... · Catamyst">
-      {dashboardSlug && isAuthorized && auth && (
+      {dashboardSlug && state.profile && (
         <>
           <HeaderTabs links={dataDashboardLinks} />
-          {dashboardSlug === 'overview' && <DashboardOverview auth={auth} />}
-          {dashboardSlug === 'tracks' && <DashboardTracks auth={auth} />}
-          {dashboardSlug === 'projects' && <DashboardProjects auth={auth} />}
-          {dashboardSlug === 'posts' && <DashboardPosts auth={auth} />}
-          {dashboardSlug === 'mentors' && <DashboardMentors auth={auth} />}
-          {dashboardSlug === 'jobs' && <DashboardJobs auth={auth} />}
+          {dashboardSlug === 'overview' && <DashboardOverview state={state} />}
+          {dashboardSlug === 'tracks' && <DashboardTracks state={state} />}
+          {dashboardSlug === 'projects' && <DashboardProjects state={state} />}
+          {dashboardSlug === 'posts' && <DashboardPosts state={state} />}
+          {dashboardSlug === 'mentors' && <DashboardMentors state={state} />}
+          {dashboardSlug === 'jobs' && <DashboardJobs state={state} />}
           {dashboardSlug === 'discussions' && (
-            <DashboardDiscussions auth={auth} />
+            <DashboardDiscussions state={state} />
           )}
           {dashboardSlug === 'certificates' && (
-            <DashboardCertificates auth={auth} />
+            <DashboardCertificates state={state} />
           )}
         </>
       )}

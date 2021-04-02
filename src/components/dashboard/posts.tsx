@@ -11,7 +11,7 @@ import {
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export function DashboardPosts({ auth }) {
+export function DashboardPosts({ state }) {
   return (
     <>
       <NextHead>
@@ -44,7 +44,8 @@ export function DashboardPosts({ auth }) {
                   />
                 </Box>
                 <Text>
-                  Hey {auth.user.name}, you don't have any published posts yet.
+                  Hey {state.profile.name}, you don't have any published posts
+                  yet.
                 </Text>
                 <LinkButton href="/dashboard/posts/new" colorScheme="teal">
                   Write a post
@@ -58,7 +59,7 @@ export function DashboardPosts({ auth }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {auth.user.name}, you don't have any draft posts.
+                  Hey {state.profile.name}, you don't have any draft posts.
                 </Text>
                 <LinkButton href="/dashboard/posts/new" colorScheme="teal">
                   Write a post

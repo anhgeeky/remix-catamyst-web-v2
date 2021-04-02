@@ -12,8 +12,8 @@
     "organization": {
       "handle": "catamyst",
       "name": "Catamyst",
-      "avatarUrl": "/assets/logos/catamyst.png",
-      "countryCode": "EARTH",
+      "avatar_url": "/assets/logos/catamyst.png",
+      "country": "EARTH",
       "location": "Worldwide and Remote",
       "isVerified": true,
       "url": "https://catamyst.com"
@@ -80,8 +80,8 @@
     "organization": {
       "handle": "catamyst",
       "name": "Catamyst",
-      "avatarUrl": "/assets/logos/catamyst.png",
-      "countryCode": "ID",
+      "avatar_url": "/assets/logos/catamyst.png",
+      "country": "ID",
       "location": "Worldwide and Remote",
       "isVerified": true,
       "url": "https://catamyst.com"
@@ -131,7 +131,7 @@
     "organization": {
       "handle": "nawaart",
       "name": "Nawaart",
-      "countryCode": "CA",
+      "country": "CA",
       "location": "Canada/Myanmar",
       "url": "https://nawaart.com"
     },
@@ -174,7 +174,7 @@
     "descriptionHtml": "<p>Digital Sistem Indonesia is a limited liabilities company established in End of 2017 with focus on Digital Software Product and Technology Consulting.</p><p>We leverage our employee’s skills and knowledges in Emerging Technologies: Big Data, Machine Learning & AI, Data Analytics ad Internet of Thing (IoT) and Management Fields: Project Management, Scrum, Agile, and IT Service Management.</p>",
     "organization": {
       "name": "Digital Sistem Indonesia",
-      "countryCode": "ID",
+      "country": "ID",
       "location": "Jakarta & Depok",
       "url": "https://digitalsistem.co.id"
     },
@@ -213,7 +213,7 @@
     "descriptionHtml": "<p>We provide a remote user research platform.</p>",
     "organization": {
       "name": "UX Army",
-      "countryCode": "SG",
+      "country": "SG",
       "location": "Singapore/Malaysia",
       "url": "https://uxarmy.com"
     },

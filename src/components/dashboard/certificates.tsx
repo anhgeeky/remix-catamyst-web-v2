@@ -5,7 +5,7 @@ import { Box, Heading, Stack, Text } from '@chakra-ui/react'
 import { Card, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export function DashboardCertificates({ auth }) {
+export function DashboardCertificates({ state }) {
   return (
     <>
       <NextHead>
@@ -24,14 +24,14 @@ export function DashboardCertificates({ auth }) {
           <Stack>
             <HeadingStack>From Catamyst:</HeadingStack>
             <Card>
-              Hey {auth.user.name}, you haven't got any certificates yet.
+              Hey {state.profile.name}, you haven't got any certificates yet.
             </Card>
           </Stack>
 
           <Stack>
             <HeadingStack>From other place:</HeadingStack>
             <Card>
-              Hey {auth.user.name}, you haven't add any outside certificates
+              Hey {state.profile.name}, you haven't add any outside certificates
               yet.
             </Card>
           </Stack>

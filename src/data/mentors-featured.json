@@ -2,7 +2,7 @@
   {
     "handle": "haidar",
     "avatarName": "mhaidarhanif.jpg",
-    "avatarUrl": "https://storage.catamyst.com",
+    "avatar_url": "https://storage.catamyst.com",
     "name": "M Haidar Hanif",
     "title": "Software Engineer and Educator",
     "bio": "Haidar is a passionate educator who has more than 10 years of professional experience in both software engineering and mentoring. He has been helping hundreds of people transitioned into tech careers or upgrading their skills, by mentoring everything around web application design and development using various up-to-date fundamentals and technologies. Previously built a business of coding school or software engineering training.",
@@ -12,12 +12,12 @@
       { "name": "GitHub", "url": "https://github.com/mhaidarhanif" }
     ],
     "websiteUrl": "https://mhaidarhanif.com",
-    "countryCode": "EARTH"
+    "country": "EARTH"
   },
   {
     "handle": "maya",
     "avatarName": "mayaasmara.jpg",
-    "avatarUrl": "https://storage.catamyst.com",
+    "avatar_url": "https://storage.catamyst.com",
     "name": "Maya Asmara",
     "title": "UX Writer and Educator",
     "bio": "Maya is a content creator and mental health activist for several years. Her passion for education and well-being is what drives her to consistently spreading messages about the importance of happiness in work and life through the community-based organization she founded and the contents she makes. Currently mentoring beginner web design and development with touch of better user experience.",
@@ -26,6 +26,6 @@
       { "name": "GitHub", "url": "https://github.com/mayaasmara" }
     ],
     "websiteUrl": "https://mayaasmara.com",
-    "countryCode": "EARTH"
+    "country": "EARTH"
   }
 ]

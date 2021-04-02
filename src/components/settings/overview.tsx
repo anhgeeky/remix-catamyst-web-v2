@@ -58,24 +58,6 @@ export function SettingsOverviewContent({ user, profile }) {
         >
           <Card as={Stack}>
             <Heading as="h2" size="md">
-              Raw User Data
-            </Heading>
-            <Text as="pre" fontSize="xs">
-              {JSON.stringify(user, null, 2)}
-            </Text>
-          </Card>
-
-          <Card as={Stack}>
-            <Heading as="h2" size="md">
-              Raw Profile Data
-            </Heading>
-            <Text as="pre" fontSize="xs">
-              {JSON.stringify(profile, null, 2)}
-            </Text>
-          </Card>
-
-          <Card as={Stack}>
-            <Heading as="h2" size="md">
               Account Mode
             </Heading>
             <RadioGroup defaultValue={profile.mode}>
@@ -218,6 +200,26 @@ export function SettingsOverviewContent({ user, profile }) {
                 Delete my account
               </Button>
             </ButtonGroup>
+          </Card>
+
+          <Card as={Stack}>
+            <Heading as="h2" size="md">
+              Raw User Data
+            </Heading>
+            <Text>This is your user data that we store:</Text>
+            <Text as="pre" fontSize="xs">
+              {JSON.stringify(user, null, 2)}
+            </Text>
+          </Card>
+
+          <Card as={Stack}>
+            <Heading as="h2" size="md">
+              Raw Profile Data
+            </Heading>
+            <Text>This is your profile data that we store:</Text>
+            <Text as="pre" fontSize="xs">
+              {JSON.stringify(profile, null, 2)}
+            </Text>
           </Card>
         </SimpleGrid>
       </Content>

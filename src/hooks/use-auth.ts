@@ -14,7 +14,7 @@ export function useAuth(
   const user = supabase.auth.user()
 
   useEffect(() => {
-    getUserProfile()
+    user && getUserProfile()
   }, [])
 
   const getUserProfile = async () => {

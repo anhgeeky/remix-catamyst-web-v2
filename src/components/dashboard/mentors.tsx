@@ -11,7 +11,7 @@ import {
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export function DashboardMentors({ auth }) {
+export function DashboardMentors({ state }) {
   return (
     <>
       <NextHead>
@@ -45,7 +45,7 @@ export function DashboardMentors({ auth }) {
                     />
                   </Box>
                   <Text>
-                    Hey {auth.user.name}, you don't have any mentors yet.
+                    Hey {state.profile.name}, you don't have any mentors yet.
                   </Text>
                   <LinkButton colorScheme="teal" href="/settings/super">
                     Request Super plan

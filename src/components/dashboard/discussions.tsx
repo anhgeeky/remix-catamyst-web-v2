@@ -11,7 +11,7 @@ import {
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 
-export function DashboardDiscussions({ auth }) {
+export function DashboardDiscussions({ state }) {
   return (
     <>
       <NextHead>
@@ -44,8 +44,8 @@ export function DashboardDiscussions({ auth }) {
                   />
                 </Box>
                 <Text>
-                  Hey {auth.user.name}, you haven't involved in any discussions
-                  yet.
+                  Hey {state.profile.name}, you haven't involved in any
+                  discussions yet.
                 </Text>
                 <LinkButton href="/forum" colorScheme="teal">
                   Explore the forum

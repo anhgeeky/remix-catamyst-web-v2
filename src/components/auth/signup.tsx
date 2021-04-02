@@ -63,7 +63,8 @@ export function AuthSignUp({ router, auth }) {
      */
     try {
       await dispatch(signUp(data))
-      router.replace('/dashboard/overview')
+      // router.replace('/dashboard/overview')
+      // might not needed because of useRedirectDashboard when on /signup
     } catch (error) {
       console.error('Failed to sign up.')
     }

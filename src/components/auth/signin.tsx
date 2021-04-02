@@ -39,15 +39,9 @@ export function AuthSignIn({ router }) {
      * Data will be passed as payload to signIn thunk
      */
     try {
-      // const { error, user } = await supabase.auth.signIn({
-      //   email: data.email,
-      //   password: data.password,
-      // })
-      // if (error) throw error
-      // alert(user)
-
       await dispatch(signIn(data))
       // router.replace('/dashboard/overview')
+      // might not needed because of useRedirectDashboard when on /signup
     } catch (error) {
       console.error('Failed to sign in.')
     }

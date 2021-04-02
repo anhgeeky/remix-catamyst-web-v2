@@ -72,7 +72,7 @@ function UserReviews({ reviews }) {
                   >
                     <NextImage
                       className="next-image-avatar"
-                      src={user.avatarUrl}
+                      src={user.avatar_url}
                       alt={user.name}
                       objectFit="cover"
                       layout="fixed"
@@ -99,7 +99,7 @@ function UserReviews({ reviews }) {
                         )}
                       </Text>
                     </Box>
-                    <Country code={user.countryCode} />
+                    <Country code={user.country} />
                   </Box>
                 </HStack>
 

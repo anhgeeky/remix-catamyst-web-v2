@@ -39,9 +39,11 @@ export function UserPersonalForm({ state }) {
         <Textarea
           type="text"
           placeholder="Tell a bit about yourself."
-          defaultValue={profile.bioHtml}
+          defaultValue={profile.bio_html}
         />
-        <FormHelperText>Your biography. Max 500 characters.</FormHelperText>
+        <FormHelperText>
+          Your biography. You can use HTML here. Max 500 characters.
+        </FormHelperText>
       </FormControl>
 
       <FormControl as={Stack} spacing={1}>

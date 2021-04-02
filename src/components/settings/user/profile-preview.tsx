@@ -87,7 +87,7 @@ export function UserProfilePreview({ profile }) {
               zIndex={1}
               bg={useColorModeValue('gray.50', 'gray.900')}
             >
-              <Avatar name={profile.name} src={profile.avatarUrl} size="xl" />
+              <Avatar name={profile.name} src={profile.avatar_url} size="xl" />
             </Box>
             <Heading as="h2" size="lg">
               {profile.name}
@@ -112,7 +112,7 @@ export function UserProfilePreview({ profile }) {
                 {profile.headline}
               </Heading>
             )}
-            <Box>{ReactHtmlParser(profile.bioHtml)}</Box>
+            <Box>{ReactHtmlParser(profile.bio_html)}</Box>
           </Stack>
 
           <HStack spacing={1}>
@@ -159,9 +159,9 @@ export function UserProfilePreview({ profile }) {
           </HStack>
 
           <Flex>
-            {profile.countryCode && (
+            {profile.country && (
               <Box mr={5}>
-                <Country code={profile.countryCode} />
+                <Country code={profile.country} />
               </Box>
             )}
 

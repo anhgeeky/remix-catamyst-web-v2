@@ -173,7 +173,7 @@ export function JobDetail({ job }) {
           <Box className="job-country-location">
             <Flex flexWrap="wrap">
               <chakra.span mr={3}>
-                <Country code={job.organization.countryCode} />
+                <Country code={job.organization.country} />
               </chakra.span>
               <HStack className="jobs-location" spacing={1}>
                 <Icon name="location" />
@@ -270,11 +270,11 @@ export function JobSalaryRate({ salary }) {
 }
 
 export function JobOrganizationLogo({ org, size = 100 || '100px' }) {
-  if (!org.avatarUrl) {
+  if (!org.avatar_url) {
     return (
       <Avatar
         name={org.name}
-        src={org.avatarUrl}
+        src={org.avatar_url}
         width={size}
         height={size}
         size="xl"
@@ -282,12 +282,12 @@ export function JobOrganizationLogo({ org, size = 100 || '100px' }) {
       />
     )
   }
-  if (org.avatarUrl) {
+  if (org.avatar_url) {
     return (
       <Box className="next-image-container org-avatar" rounded="md">
         <NextImage
           className="next-image"
-          src={org.avatarUrl}
+          src={org.avatar_url}
           width={size}
           height={size}
           layout="fixed"
