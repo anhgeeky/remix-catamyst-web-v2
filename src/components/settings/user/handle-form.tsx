@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import {
   Button,
   FormControl,
+  FormErrorMessage,
   FormHelperText,
   FormLabel,
   Input,
@@ -8,57 +10,75 @@ import {
   InputLeftAddon,
   InputRightElement,
   Stack,
+  Text,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
 
 import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
+import { UserHandleSchema } from '@utils/yup'
+
+type Inputs = {
+  handle: string
+}
 
 export function UserHandleForm({ state }) {
-  const { profile } = state
+  const [loading, setLoading] = useState(false)
   const toast = useToast()
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, watch, errors } = useForm<Inputs>({
+    mode: 'onSubmit',
+    resolver: yupResolver(UserHandleSchema),
+  })
 
-  const handleChangeUsername = async (form) => {
+  const handleSubmitForm = async (form) => {
     try {
-      toast({ title: 'Changing username...' })
+      setLoading(true)
+      await new Promise((resolve) => setTimeout(resolve, 300))
       const { data, error } = await supabase
         .from('profiles')
         .upsert(
-          {
-            id: state.user!.id,
-            handle: form.handle,
-          },
+          { id: state.user!.id, handle: form.handle },
           { returning: 'minimal' }
         )
         .eq('id', state.user!.id)
-      if (error) throw error
-      toast({ status: 'success', title: 'Changed username!' })
+      toast({ status: 'success', title: 'Your username is changed' })
+      setLoading(false)
     } catch (error) {
-      toast({ status: 'error', title: 'Failed to change username!' })
+      toast({ status: 'error', title: 'Failed to change username' })
+      setLoading(false)
     }
   }
 
   return (
     <Card id="handle">
-      <Stack as="form" onSubmit={handleSubmit(handleChangeUsername)}>
-        <FormControl as={Stack} align="flex-start">
+      <Stack as="form" onSubmit={handleSubmit(handleSubmitForm)}>
+        <FormControl
+          as={Stack}
+          align="flex-start"
+          isInvalid={Boolean(errors.handle)}
+        >
           <FormLabel>Username</FormLabel>
           <InputGroup>
             <InputLeftAddon children="catamyst.com/" />
             <Input
               type="text"
               placeholder="username"
-              defaultValue={profile.handle}
+              defaultValue={state.profile.handle}
               name="handle"
               ref={register}
             />
             <InputRightElement
-              color="green.500"
-              children={<Icon name="check" />}
+              color={errors.handle ? 'red.500' : 'green.500'}
+              children={
+                errors.handle ? <Icon name="cross" /> : <Icon name="check" />
+              }
             />
           </InputGroup>
+          {errors.handle && (
+            <FormErrorMessage>{errors.handle?.message}</FormErrorMessage>
+          )}
           <FormHelperText>
             Your profile handle. Only alphabets, numbers, and underscores are
             allowed. Max 20 characters.
@@ -66,10 +86,14 @@ export function UserHandleForm({ state }) {
         </FormControl>
 
         <Button
-          type="submit"
           alignSelf="flex-start"
-          leftIcon={<Icon name="save" />}
           colorScheme="blue"
+          isDisabled={Boolean(errors.handle)}
+          isLoading={loading}
+          leftIcon={<Icon name="save" />}
+          loadingText="Saving..."
+          size="sm"
+          type="submit"
         >
           Save username
         </Button>

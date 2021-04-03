@@ -19,6 +19,7 @@ import {
   FaPencilAlt as EditIcon,
   FaPaperPlane as SendIcon,
   FaCheckCircle as CheckIcon,
+  FaTimesCircle as CrossIcon,
   FaDownload as ExportIcon,
   FaExternalLinkAlt as ExternalIcon,
   FaEye as MetaIcon,
@@ -202,6 +203,8 @@ export function Icon({ name }) {
       return <SendIcon />
     case 'check':
       return <CheckIcon />
+    case 'cross':
+      return <CrossIcon />
     case 'divider':
       return <DividerIcon />
     case 'down':

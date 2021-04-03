@@ -14,24 +14,28 @@ const urlMessage = 'Must be a valid URL using http:// or https://'
  * Yup validations.
  */
 export const yupEmail = Yup.string()
-  .email('Email address is invalid')
-  .required('Email is required')
+  .email('Email address is invalid.')
+  .required('Email is required.')
 
 export const yupPassword = Yup.string()
-  .min(10, 'Must be at least 10 characters')
-  .required('Password is required')
+  .min(10, 'Minimum of 10 characters.')
+  .required('Password is required.')
 
-export const yupPasswordAlt = Yup.string().required('Password is required')
+export const yupPasswordAlt = Yup.string().required('Password is required.')
 
 export const yupName = Yup.string()
-  .max(50, 'Must be 50 characters or less')
-  .required('Full name is required')
+  .max(50, 'Maximum of 50 characters.')
+  .required('Full name is required.')
+
+export const yupNickname = Yup.string()
+  .max(10, 'Maximum of 10 characters.')
+  .matches(/^[a-zA-Z]+$/, 'Can only use alphabets.')
 
 export const yupHandle = Yup.string()
-  .min(4, 'Must be at least 4 characters')
-  .max(50, 'Must be less than 50 characters')
-  .required('Username/handle is required')
-  .matches(/^[a-z0-9A-Z]+$/, 'Can only use alphabet and numbers')
+  .min(3, 'Minimum of 3 characters.')
+  .max(50, 'Maximum of 50 characters.')
+  .required('Username or handle is required.')
+  .matches(/^[a-zA-Z0-9_]+$/, 'Can only use alphabets, numbers, underscores.')
 
 /**
  * Yup objects.
@@ -40,8 +44,6 @@ export const yupHandle = Yup.string()
 export const SignUpSchema = Yup.object().shape({
   email: yupEmail,
   password: yupPassword,
-  // name: yupName,
-  // handle: yupHandle,
 })
 
 export const SignInSchema = Yup.object().shape({
@@ -56,6 +58,11 @@ export const SignInPasswordlessSchema = Yup.object().shape({
 export const UserNameHandleSchema = Yup.object().shape({
   name: yupName,
   handle: yupHandle,
+})
+
+export const UserNameNickSchema = Yup.object().shape({
+  name: yupName,
+  nick: yupNickname,
 })
 
 export const UserHandleSchema = Yup.object().shape({
