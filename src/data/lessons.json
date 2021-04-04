@@ -658,7 +658,7 @@
     "id": 16,
     "slug": "personal-websites",
     "title": "Personal websites",
-    "category": "Fundamental",
+    "category": "Specific",
     "level": "Newbie",
     "isPublished": true,
     "blocks": []
@@ -667,7 +667,7 @@
     "id": 17,
     "slug": "company-websites",
     "title": "Company websites",
-    "category": "Fundamental",
+    "category": "Specific",
     "level": "Newbie",
     "isPublished": true,
     "blocks": []
@@ -676,7 +676,16 @@
     "id": 18,
     "slug": "organization-websites",
     "title": "Organization websites",
-    "category": "Fundamental",
+    "category": "Specific",
+    "level": "Newbie",
+    "isPublished": true,
+    "blocks": []
+  },
+  {
+    "id": 20,
+    "slug": "app",
+    "title": "App",
+    "category": "Specific",
     "level": "Newbie",
     "isPublished": true,
     "blocks": []

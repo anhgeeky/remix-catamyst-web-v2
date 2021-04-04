@@ -41,8 +41,9 @@ import {
   FaEnvelope as EmailIcon,
   FaKey as PasswordIcon,
   FaFileInvoiceDollar as BillingIcon,
-  FaUserNinja as ProIcon,
-  FaUserAstronaut as SuperIcon,
+  FaPaw as BasicIcon,
+  FaUserAstronaut as ProIcon,
+  FaUserNinja as SuperIcon,
   FaBuilding as BusinessIcon,
   // Navigation and mnu icons
   FaHome as HomeIcon,
@@ -86,8 +87,9 @@ import {
   FaFacebook as FacebookIcon,
   FaYoutube as YouTubeIcon,
   // User profile and actions.
+  FaKey as KeyIcon,
+  FaStar as StarIcon,
   FaCalendar as DateIcon,
-  FaStar as FavoriteIcon,
   FaMapMarkerAlt as LocationIcon,
   FaBuilding as OrganizationIcon,
   // Tools and technologies
@@ -261,6 +263,8 @@ export function Icon({ name }) {
       return <PasswordIcon />
     case 'billing':
       return <BillingIcon />
+    case 'basic':
+      return <BasicIcon />
     case 'pro':
       return <ProIcon />
     case 'super':
@@ -372,10 +376,12 @@ export function Icon({ name }) {
     /**
      * User profile and actions.
      */
+    case 'key':
+      return <KeyIcon />
+    case 'star':
+      return <StarIcon />
     case 'date':
       return <DateIcon />
-    case 'favorite':
-      return <FavoriteIcon />
     case 'location':
       return <LocationIcon />
     case 'organization':

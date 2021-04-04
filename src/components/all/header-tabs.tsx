@@ -27,7 +27,6 @@ export function HeaderTabs({ links }) {
              * Later should also separate /path?query=name
              */
             const isActive = router.asPath === link.href
-
             return (
               <TabLink key={link.slug} href={link.href} isActive={isActive}>
                 <Icon name={link.slug} />

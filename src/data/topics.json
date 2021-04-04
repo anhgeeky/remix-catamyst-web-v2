@@ -61,7 +61,7 @@
     "sections": [
       { "title": "Getting inspired", "lessons": [15] },
       { "title": "Website examples", "lessons": [16, 17, 18] },
-      { "title": "Web application examples", "lessons": [] }
+      { "title": "Web application examples", "lessons": [20] }
     ]
   },
   {

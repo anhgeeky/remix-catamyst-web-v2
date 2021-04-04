@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
-import { HStack, Text, Link } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { HStack, Text, Link, chakra } from '@chakra-ui/react'
 
 import { Icon } from '@components'
 
@@ -7,16 +8,18 @@ import { Icon } from '@components'
  * nav-link needs CSS to retain accessibility on focus.
  */
 export function NavLink({ page }) {
+  const router = useRouter()
+  const isActive = router.asPath === page.href
   return (
-    <Link as={NextLink} href={page.href} aria-label={page.text}>
-      <a className="nav-link">
+    <NextLink href={page.href} aria-label={page.text} passHref>
+      <chakra.a color={isActive && 'teal.500'}>
         <HStack
           display="flex"
           padding="8px 6px"
-          opacity={0.5}
           transition="opacity 0.2s ease"
           cursor="pointer"
           align-items="center"
+          opacity={!isActive && 0.5}
           _hover={{ opacity: 1 }}
         >
           <Icon name={page.slug} />
@@ -24,7 +27,7 @@ export function NavLink({ page }) {
             {page.text}
           </Text>
         </HStack>
-      </a>
-    </Link>
+      </chakra.a>
+    </NextLink>
   )
 }

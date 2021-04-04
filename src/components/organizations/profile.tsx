@@ -196,7 +196,7 @@ function OrganizationProfileContent({ org, state, actions }) {
                   aria-label="Favorite organization"
                   colorScheme="teal"
                   variant="outline"
-                  icon={<Icon name="favorite" />}
+                  icon={<Icon name="star" />}
                   onClick={actions.handleFavorite}
                 />
               )}
@@ -205,7 +205,7 @@ function OrganizationProfileContent({ org, state, actions }) {
                   aria-label="Unfavorite organization"
                   colorScheme="teal"
                   variant="solid"
-                  icon={<Icon name="favorite" />}
+                  icon={<Icon name="star" />}
                   onClick={actions.handleUnfavorite}
                 />
               )}

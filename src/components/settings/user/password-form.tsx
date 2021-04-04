@@ -25,7 +25,7 @@ export function UserPasswordForm({ user }) {
           />
         </InputGroup>
         <FormHelperText>
-          Your secret password or passphrase. Use minimum of 10 characters. .
+          Your secret password or passphrase. Use minimum of 10 characters.
           Please manage it using password manager like{' '}
           <Link isExternal color="teal.500" href="https://bitwarden.com">
             Bitwarden

@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -79,13 +80,18 @@ function UserMenuButton({ auth }) {
               </Flex>
             </MenuItem>
           )}
+
           <MenuDivider />
-          <MenuItem onClick={() => router.push('/dashboard/overview')}>
-            <Icon name="dashboard" />
-            <Text as="span" ml={2}>
-              Dashboard
-            </Text>
-          </MenuItem>
+
+          <NextLink href="/dashboard/overview" passHref>
+            <MenuItem as="a">
+              <Icon name="dashboard" />
+              <Text as="span" ml={2}>
+                Dashboard
+              </Text>
+            </MenuItem>
+          </NextLink>
+
           {auth.user.handle && (
             <MenuItem onClick={() => router.push(`/${auth.user.handle}`)}>
               <Icon name="profile" />
@@ -94,13 +100,16 @@ function UserMenuButton({ auth }) {
               </Text>
             </MenuItem>
           )}
+
           <MenuItem onClick={() => router.push('/settings/overview')}>
             <Icon name="settings" />
             <Text as="span" ml={2}>
               Settings
             </Text>
           </MenuItem>
+
           <MenuDivider />
+
           <MenuItem onClick={handleSignOut} color="red.500">
             <Icon name="signout" />
             <Text as="span" ml={2}>

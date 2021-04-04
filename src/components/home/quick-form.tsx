@@ -9,7 +9,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 
-import { LinkButton } from '@components'
+import { LinkButton, Icon } from '@components'
 import { useAuth } from '@hooks'
 
 export function HomeQuickForm() {
@@ -51,7 +51,12 @@ export function HomeQuickForm() {
               minW={{ base: 200, sm: 240, md: 340 }}
             />
           </Box>
-          <Button type="submit" colorScheme="teal" px={5}>
+          <Button
+            type="submit"
+            colorScheme="teal"
+            px={5}
+            leftIcon={<Icon name="learn" />}
+          >
             Start learning for free
           </Button>
         </>

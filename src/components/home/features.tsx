@@ -1,18 +1,16 @@
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
-  Box,
   Heading,
   Text,
   VStack,
   Stack,
   Link,
-  ButtonGroup,
   SimpleGrid,
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { LinkButton, Card } from '@components'
+import { LinkButton, Icon } from '@components'
 import { useAuth } from '@hooks'
 import dataFeatures from '@data/features.json'
 
@@ -74,17 +72,31 @@ export function HomeFeatures() {
         <Stack direction={{ base: 'column', sm: 'row' }}>
           {!isAuthenticated && (
             <>
-              <LinkButton href="/signup" colorScheme="teal">
+              <LinkButton
+                href="/signup"
+                colorScheme="teal"
+                leftIcon={<Icon name="star" />}
+              >
                 Awesome, I want them
               </LinkButton>
             </>
           )}
           {isAuthenticated && (
             <>
-              <LinkButton href="/dashboard/overview" colorScheme="teal">
+              <LinkButton
+                href="/dashboard/overview"
+                colorScheme="teal"
+                leftIcon={<Icon name="learn" />}
+              >
                 Continue my journey
               </LinkButton>
-              <LinkButton href="/pricing">Upgrade my account</LinkButton>
+              <LinkButton
+                href="/pricing"
+                colorScheme="yellow"
+                leftIcon={<Icon name="star" />}
+              >
+                Upgrade my account
+              </LinkButton>
             </>
           )}
         </Stack>

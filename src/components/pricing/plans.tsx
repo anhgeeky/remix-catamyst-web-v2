@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { FaCheckCircle } from 'react-icons/fa'
 
-import { Card, LinkButton } from '@components'
+import { Card, LinkButton, Icon } from '@components'
 import { useAuth } from '@hooks'
 
 import dataPlans from '@data/plans.json'
@@ -79,6 +79,7 @@ export function PricingPlans() {
                 <LinkButton
                   href={plan.buttons.isNotAuthenticated.href}
                   colorScheme="teal"
+                  leftIcon={<Icon name={plan.slug} />}
                 >
                   {plan.buttons.isNotAuthenticated.text}
                 </LinkButton>
@@ -87,6 +88,7 @@ export function PricingPlans() {
                 <LinkButton
                   href={plan.buttons.isAuthenticated.href}
                   colorScheme="blue"
+                  leftIcon={<Icon name={plan.slug} />}
                 >
                   {plan.buttons.isAuthenticated.text}
                 </LinkButton>

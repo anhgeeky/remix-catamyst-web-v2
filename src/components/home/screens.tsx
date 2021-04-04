@@ -102,7 +102,12 @@ export function HomeScreens() {
             if (index === selectedIndex) {
               return (
                 <NextLink key={button.slug} href={button.href} passHref>
-                  <Button as="a" colorScheme="teal" boxShadow="xl" size="lg">
+                  <Button
+                    as="a"
+                    colorScheme="teal"
+                    boxShadow="xl"
+                    leftIcon={<Icon name="learn" />}
+                  >
                     Check the {button.slug} for real
                   </Button>
                 </NextLink>

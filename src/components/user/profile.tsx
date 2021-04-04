@@ -210,7 +210,7 @@ function UserProfileContent({ user, state, actions }) {
                   aria-label="Favorite user"
                   colorScheme="teal"
                   variant="outline"
-                  icon={<Icon name="favorite" />}
+                  icon={<Icon name="star" />}
                   onClick={actions.handleFavorite}
                 />
               )}
@@ -219,7 +219,7 @@ function UserProfileContent({ user, state, actions }) {
                   aria-label="Unfavorite user"
                   colorScheme="teal"
                   variant="solid"
-                  icon={<Icon name="favorite" />}
+                  icon={<Icon name="star" />}
                   onClick={actions.handleUnfavorite}
                 />
               )} */}
