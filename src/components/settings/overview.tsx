@@ -8,6 +8,7 @@ import {
   Button,
   SimpleGrid,
   Radio,
+  Link,
   RadioGroup,
 } from '@chakra-ui/react'
 
@@ -129,7 +130,7 @@ export function SettingsOverviewContent({ user, profile }) {
             </Heading>
             <Text>
               Your <b>{profile.mode}</b> account is on the <b>{profile.plan}</b>{' '}
-              plan. Free of charge.
+              plan. {profile.plan === 'Basic' && 'Free of charge.'}
             </Text>
             <Stack direction={{ base: 'column', sm: 'row' }}>
               {profile.plan !== 'Super' && (
@@ -171,6 +172,13 @@ export function SettingsOverviewContent({ user, profile }) {
               click the <b>Manage membership</b> button. There you will also see
               the <b>Cancel membership</b> button. Alternatively, you can also{' '}
               <b>Update membership</b> information.
+            </Text>
+            <Text>
+              If you didn't find it,{' '}
+              <Link isExternal href="https://gumroad.com/license-key-lookup">
+                check with license key lookup
+              </Link>
+              .
             </Text>
           </Card>
 

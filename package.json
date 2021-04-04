@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.126",
+  "version": "0.1.127",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
@@ -19,6 +19,7 @@
     "@svgr/webpack": "5.5.0",
     "@types/node": "14.14.28",
     "@types/react": "17.0.2",
+    "axios": "0.21.1",
     "chakra-ui-autocomplete": "1.2.6",
     "contrast": "1.0.1",
     "dayjs": "1.10.4",
@@ -29,6 +30,7 @@
     "is-url": "1.2.4",
     "next": "10.1.2",
     "next-sitemap": "1.5.18",
+    "qs": "6.10.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-flagkit": "2.0.4",
