@@ -221,7 +221,8 @@ function OrganizationProfileContent({ org, state, actions }) {
               </Box>
             )}
             <Box id="org-bio">
-              {ReactHtmlParser(org.bio_html, transformOptions)}
+              {!org.bio_html && <Text color="gray.500">No bio yet.</Text>}
+              {org.bio_html && ReactHtmlParser(org.bio_html, transformOptions)}
             </Box>
           </Stack>
 

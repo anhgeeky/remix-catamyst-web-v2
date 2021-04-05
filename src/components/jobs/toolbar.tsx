@@ -16,7 +16,7 @@ import { useToast, useAuth } from '@hooks'
 export function JobsToolbar() {
   const toast = useToast()
   const router = useRouter()
-  const { isAuthorized } = useAuth()
+  const { isAuthenticated } = useAuth()
 
   const labels = {
     create: 'Post a job',
@@ -24,7 +24,7 @@ export function JobsToolbar() {
   }
 
   const handleCreateJob = () => {
-    if (isAuthorized) {
+    if (isAuthenticated) {
       toast({ title: `Let's post a job.` })
     } else {
       router.push('/signin')

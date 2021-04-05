@@ -22,7 +22,7 @@ import {
   LinkButton,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
-import { UserNameHandle } from '@components/user'
+import { UserNameHandle } from '@components/users'
 import { dayNamePeriod } from '@utils'
 
 export function DashboardOverview({ state }) {

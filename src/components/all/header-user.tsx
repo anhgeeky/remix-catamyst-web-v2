@@ -22,7 +22,7 @@ import { signOut } from '@features/auth/actions'
 import { useAuth } from '@hooks'
 
 export function HeaderUser() {
-  const { auth } = useAuth()
+  const state = useAuth()
 
   /**
    * The UserMenuButton has issue with SSR
@@ -30,8 +30,8 @@ export function HeaderUser() {
    */
   return (
     <>
-      {auth.isAuthenticated && auth.profile ? (
-        <UserMenuButton auth={auth} />
+      {state.auth.isAuthenticated && state.auth.profile && state.user ? (
+        <UserMenuButton state={state} />
       ) : (
         <UserAuthButtons />
       )}
@@ -39,7 +39,8 @@ export function HeaderUser() {
   )
 }
 
-function UserMenuButton({ auth }) {
+function UserMenuButton({ state }) {
+  const { auth, user } = state
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -49,7 +50,7 @@ function UserMenuButton({ auth }) {
 
   return (
     <Box>
-      <Menu>
+      <Menu isLazy>
         <MenuButton
           aria-label="User menu button"
           cursor="pointer"

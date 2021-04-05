@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { HeaderTabs } from '@components'
@@ -17,6 +18,7 @@ export default function cmsSlugPage() {
    */
   return (
     <Layout title="Loading CMS... · Catamyst">
+      {!auth && <Text>Loading CMS...</Text>}
       {cmsSlug && isAuthorized && auth && (
         <>
           <HeaderTabs links={dataCMSLinks} />

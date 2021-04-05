@@ -18,17 +18,15 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
-import { UserHandleSchema } from '@utils/yup'
+import { HandleSchema } from '@utils/yup'
 
-type Inputs = {
-  handle: string
-}
+type Inputs = { handle: string }
 
 export function UserHandleForm({ state }) {
   const [loading, setLoading] = useState(false)
   const toast = useToast()
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
-    resolver: yupResolver(UserHandleSchema),
+    resolver: yupResolver(HandleSchema),
   })
 
   const handleSubmitForm = async (form) => {

@@ -235,7 +235,9 @@ function UserProfileContent({ user, state, actions }) {
               </Box>
             )}
             <Box id="user-bio">
-              {ReactHtmlParser(user.bio_html, transformOptions)}
+              {!user.bio_html && <Text color="gray.500">No bio yet.</Text>}
+              {user.bio_html &&
+                ReactHtmlParser(user.bio_html, transformOptions)}
             </Box>
           </Stack>
 

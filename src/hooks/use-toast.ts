@@ -5,7 +5,7 @@ export function useToast(options = null) {
     isClosable: true,
     duration: 3000,
     variant: 'solid',
-    position: 'bottom',
+    position: 'bottom-left',
     ...options,
   })
 }

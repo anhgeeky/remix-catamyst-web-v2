@@ -13,18 +13,16 @@ import { supabase } from '@lib'
 import { AuthSession } from '@supabase/supabase-js'
 
 export default function App({ Component, pageProps }: AppProps) {
-  // const [session, setSession] = useState<AuthSession | null>(null)
+  const [session, setSession] = useState<AuthSession | null>(null)
 
-  // useEffect(() => {
-  //   setSession(supabase.auth.session())
-  //   supabase.auth.onAuthStateChange(
-  //     (_event: string, session: AuthSession | null) => {
-  //       setSession(session)
-  //     }
-  //   )
-  // }, [])
-
-  // console.log({ session })
+  useEffect(() => {
+    setSession(supabase.auth.session())
+    supabase.auth.onAuthStateChange(
+      (_event: string, session: AuthSession | null) => {
+        setSession(session)
+      }
+    )
+  }, [])
 
   return (
     <>

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
-import { useAuth } from '@hooks'
+import { useAuthProfile } from '@hooks'
 
 /**
  * The CMS has different pattern with regular dashboard.
@@ -13,7 +13,7 @@ import { useAuth } from '@hooks'
  */
 export default function cmsPage() {
   const router = useRouter()
-  const { auth, isAuthorized } = useAuth()
+  const { auth, isAuthorized } = useAuthProfile()
 
   /**
    * To access CMS, user must both authenticated and authorized to do so.

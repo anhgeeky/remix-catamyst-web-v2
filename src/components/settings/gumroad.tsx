@@ -21,7 +21,6 @@ export function SettingsGumroad() {
   return (
     <NextHead>
       <script
-        async
         type="text/javascript"
         src="https://gumroad.com/js/gumroad.js"
       ></script>

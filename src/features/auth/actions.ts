@@ -90,10 +90,7 @@ export const signIn = (data) => {
          * Apply profile to Redux store auth.profile
          * So it's fast to display it in components
          */
-        dispatch({
-          type: SIGN_IN_SUCCESS,
-          payload: data,
-        })
+        dispatch({ type: SIGN_IN_SUCCESS, payload: data })
         toast.closeAll()
         toast({
           ...toastOptions,

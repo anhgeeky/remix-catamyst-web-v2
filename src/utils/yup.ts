@@ -37,6 +37,12 @@ export const yupHandle = Yup.string()
   .required('Username or handle is required.')
   .matches(/^[a-zA-Z0-9_]+$/, 'Can only use alphabets, numbers, underscores.')
 
+export const yupProfileMode = Yup.mixed().oneOf([
+  'Learner',
+  'Employer',
+  'Investor',
+])
+
 /**
  * Yup objects.
  */
@@ -55,30 +61,29 @@ export const SignInPasswordlessSchema = Yup.object().shape({
   email: yupEmail,
 })
 
-export const UserNameHandleSchema = Yup.object().shape({
-  name: yupName,
-  handle: yupHandle,
-})
-
-export const UserNameNickSchema = Yup.object().shape({
+export const NameNickSchema = Yup.object().shape({
   name: yupName,
   nick: yupNickname,
 })
 
-export const UserHandleSchema = Yup.object().shape({
+export const HandleSchema = Yup.object().shape({
   handle: yupHandle,
 })
 
-export const UserEmailSchema = Yup.object().shape({
+export const EmailSchema = Yup.object().shape({
   email: yupEmail,
 })
 
-export const UserPasswordChangeSchema = Yup.object().shape({
+export const PasswordChangeSchema = Yup.object().shape({
   currentPassword: Yup.string().required('Current password is required'),
   newPassword: yupPassword,
 })
 
-export const UserProfileSchema = Yup.object().shape({
+export const ProfileModeSchema = Yup.object().shape({
+  mode: yupProfileMode,
+})
+
+export const ProfileSchema = Yup.object().shape({
   name: yupName,
   headline: Yup.string().max(max, maxMessage),
   bio: Yup.string().max(1000, 'Max 1000 characters'),

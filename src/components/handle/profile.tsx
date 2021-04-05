@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { Link } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { UserProfile } from '@components/user'
+import { UserProfile } from '@components/users'
 import { OrganizationProfile } from '@components/organizations'
 
 import { supabase } from '@lib'

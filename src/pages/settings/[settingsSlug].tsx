@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import { Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { HeaderTabs } from '@components'
@@ -19,7 +20,7 @@ export default function settingsSlug() {
   const router = useRouter()
   const { settingsSlug } = router.query
   const state = useRedirectSignIn(
-    `id, handle, name, nickname, role, mode, plan, is_public, is_verified, avatar_url, cover_url, headline, bio_html, country, location, website_url, work, socials, created_at, updated_at`
+    `id, handle, name, nickname, role, mode, plan, is_public, is_verified, avatar_url, cover_url, headline, bio_html, country, location, website_url, work, socials, pro, super, created_at, updated_at`
   )
 
   /**
@@ -27,10 +28,9 @@ export default function settingsSlug() {
    */
   return (
     <Layout title="Loading settings... · Catamyst">
+      {!state.profile && <Text>Loading settings...</Text>}
       {settingsSlug && state.profile && (
         <>
-          <SettingsGumroad />
-
           <HeaderTabs links={dataSettingsLinks} />
           {settingsSlug === 'overview' && <SettingsOverview state={state} />}
           {settingsSlug === 'profile' && <SettingsProfile state={state} />}

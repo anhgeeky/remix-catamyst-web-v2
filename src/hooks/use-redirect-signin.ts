@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-import { useAuth } from '@hooks'
+import { useAuthProfile } from '@hooks'
 
-export function useRedirectSignIn() {
+export function useRedirectSignIn(fields = `id`) {
   const router = useRouter()
-  const { auth, user, isAuthenticated, isAuthorized } = useAuth()
+  const { auth, user, profile, isAuthenticated, isAuthorized } = useAuthProfile(
+    fields
+  )
 
   useEffect(() => {
     if (!isAuthenticated) router.replace('/signin')
@@ -17,5 +19,6 @@ export function useRedirectSignIn() {
     isAuthorized,
     auth,
     user,
+    profile,
   }
 }

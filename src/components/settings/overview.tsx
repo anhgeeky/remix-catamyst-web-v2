@@ -7,13 +7,11 @@ import {
   ButtonGroup,
   Button,
   SimpleGrid,
-  Radio,
   Link,
-  RadioGroup,
 } from '@chakra-ui/react'
 
 import { Content, Card, LinkButton, Icon } from '@components'
-import { SettingsHero } from '@components/settings'
+import { SettingsHero, ProfileModeForm } from '@components/settings'
 import { getCompleteDateTime } from '@utils'
 
 export function SettingsOverview({ state }) {
@@ -25,13 +23,15 @@ export function SettingsOverview({ state }) {
 
       {state.loading && <p>Loading...</p>}
       {!state.loading && state.user && state.profile && (
-        <SettingsOverviewContent user={state.user} profile={state.profile} />
+        <SettingsOverviewContent state={state} />
       )}
     </>
   )
 }
 
-export function SettingsOverviewContent({ user, profile }) {
+export function SettingsOverviewContent({ state }) {
+  const { user, profile } = state
+
   return (
     <>
       <SettingsHero>
@@ -57,36 +57,7 @@ export function SettingsOverviewContent({ user, profile }) {
           width="100%"
           minChildWidth={{ base: 280, sm: 400 }}
         >
-          <Card as={Stack}>
-            <Heading as="h2" size="md">
-              Account Mode
-            </Heading>
-            <RadioGroup defaultValue={profile.mode}>
-              <Text></Text>
-              <Stack direction="row">
-                <Radio value="Learner">Learner</Radio>
-                <Radio value="Employer">Employer</Radio>
-                <Radio value="Investor">Investor</Radio>
-              </Stack>
-            </RadioGroup>
-            <Stack direction={{ base: 'column', sm: 'row' }}>
-              <Button
-                colorScheme="blue"
-                size="sm"
-                leftIcon={<Icon name="save" />}
-              >
-                Change mode
-              </Button>
-              <LinkButton
-                variant="outline"
-                size="sm"
-                href="/settings/profile"
-                leftIcon={<Icon name="edit" />}
-              >
-                Edit profile details
-              </LinkButton>
-            </Stack>
-          </Card>
+          <ProfileModeForm state={state} />
 
           <Card as={Stack}>
             <Heading as="h2" size="md">
@@ -126,7 +97,7 @@ export function SettingsOverviewContent({ user, profile }) {
 
           <Card as={Stack}>
             <Heading as="h2" size="md">
-              Account Plan
+              Plan and Billing
             </Heading>
             <Text>
               Your <b>{profile.mode}</b> account is on the <b>{profile.plan}</b>{' '}
@@ -156,34 +127,6 @@ export function SettingsOverviewContent({ user, profile }) {
                   : 'Manage Super plan'}
               </LinkButton>
             </Stack>
-          </Card>
-
-          <Card as={Stack}>
-            <Heading as="h2" size="md">
-              Billing and Payment
-            </Heading>
-            <Text>
-              If you already subscribed for a <b>Pro</b> plan or enrolled for a{' '}
-              <b>Super</b> plan, you can check your license key in your email.
-            </Text>
-            <Text>
-              You can also manage or cancel your ongoing <b>Pro</b> plan
-              subscription by clicking the <b>View content</b> button, then
-              click the <b>Manage membership</b> button. There you will also see
-              the <b>Cancel membership</b> button. Alternatively, you can also{' '}
-              <b>Update membership</b> information.
-            </Text>
-            <Text>
-              If you didn't find it,{' '}
-              <Link
-                isExternal
-                color="teal.500"
-                href="https://gumroad.com/license-key-lookup"
-              >
-                check with license key lookup
-              </Link>
-              .
-            </Text>
           </Card>
 
           <Card as={Stack} align="flex-start">

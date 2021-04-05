@@ -1,7 +1,10 @@
 import NextHead from 'next/head'
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
+  ButtonGroup,
   Code,
   FormControl,
   FormHelperText,
@@ -12,16 +15,18 @@ import {
   InputGroup,
   InputRightElement,
   Link,
-  Stack,
-  Text,
   ListItem,
   OrderedList,
+  Stack,
+  Text,
 } from '@chakra-ui/react'
 
 import { Content, Card, Icon } from '@components'
 import { SettingsHero, PayProButton } from '@components/settings'
 
 export function SettingsPro({ state }) {
+  const subscription_id = state.profile?.pro?.subscription_id || ''
+
   return (
     <>
       <NextHead>
@@ -43,20 +48,25 @@ export function SettingsPro({ state }) {
             <Heading as="h3" size="md">
               Payment
             </Heading>
-            <Text>Click this button to pay for Pro account subscription.</Text>
-            <Box>
-              <PayProButton />
-            </Box>
+
+            {state.profile.plan !== 'Pro' ? (
+              <Stack>
+                <Text>
+                  Click this button to pay for Pro account subscription.
+                </Text>
+                <PayProButton />
+              </Stack>
+            ) : (
+              <Alert status="success" rounded="md">
+                <AlertIcon />
+                You've paid for Super plan.
+              </Alert>
+            )}
 
             <Box>
               <OrderedList>
                 <ListItem>
-                  You only need to process this once while your subscription or
-                  license key are still active. You will be charged
-                  automatically per month.
-                </ListItem>
-                <ListItem>
-                  Your payment information is processed and handled by{' '}
+                  The payment is processed and handled by{' '}
                   <Link isExternal href="https://gumroad.com" color="teal.500">
                     Gumroad
                   </Link>{' '}
@@ -64,13 +74,29 @@ export function SettingsPro({ state }) {
                   <Link isExternal href="https://stripe.com" color="teal.500">
                     Stripe
                   </Link>
-                  , the trusted online payment processor.
+                  , the trusted payment processor.
                 </ListItem>
                 <ListItem>
-                  After you paid for the membership, click <b>View content</b>{' '}
-                  or <b>check your email</b>. You will receive a license key
-                  that looks like this:{' '}
+                  You only need to process this once while your subscription or
+                  license key are still active. You will be charged
+                  automatically per month.
+                </ListItem>
+                <ListItem>
+                  After you paid for the membership, click the{' '}
+                  <b>View content</b> button or <b>check your email</b>. You
+                  will receive a license key that looks like this:{' '}
                   <Code>A1234567-B1234567-C1234567-D1234567</Code>
+                </ListItem>
+                <ListItem>
+                  If you didn't find the license key,{' '}
+                  <Link
+                    isExternal
+                    color="teal.500"
+                    href="https://gumroad.com/license-key-lookup"
+                  >
+                    check with license key lookup
+                  </Link>
+                  .
                 </ListItem>
                 <ListItem>
                   As long as the license key is active and valid, your account
@@ -105,9 +131,20 @@ export function SettingsPro({ state }) {
                 </Link>
                 .
               </FormHelperText>
-              <Button leftIcon={<Icon name="save" />} colorScheme="blue">
-                Save license key
-              </Button>
+              <ButtonGroup>
+                <Button leftIcon={<Icon name="save" />} colorScheme="blue">
+                  Save license key
+                </Button>
+                {subscription_id && (
+                  <Button
+                    isExternal
+                    as={Link}
+                    href={`https://gumroad.com/subscriptions/${subscription_id}/manage`}
+                  >
+                    Manage subscription
+                  </Button>
+                )}
+              </ButtonGroup>
             </FormControl>
           </Card>
 

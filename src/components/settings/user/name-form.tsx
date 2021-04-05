@@ -20,7 +20,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
-import { UserNameNickSchema } from '@utils/yup'
+import { NameNickSchema } from '@utils/yup'
 
 type Inputs = {
   name?: string
@@ -32,7 +32,7 @@ export function UserNameForm({ state }) {
   const toast = useToast()
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
     mode: 'onSubmit',
-    resolver: yupResolver(UserNameNickSchema),
+    resolver: yupResolver(NameNickSchema),
   })
 
   const handleSubmitForm = async (form) => {
