@@ -35,8 +35,7 @@ import { Icon, useToast } from '@components'
 import { SignUpSchema } from '@utils/yup'
 import { signUp } from '@features/auth/actions'
 
-export function AuthSignUp({ router, auth }) {
-  // const toast = useToast()
+export function AuthSignUp({ auth }) {
   const dispatch = useDispatch()
   const [showPassword, setShowPassword] = useState(false)
   const {

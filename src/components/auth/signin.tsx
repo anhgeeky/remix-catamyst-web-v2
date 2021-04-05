@@ -16,13 +16,12 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { SignInSchema } from '@utils/yup'
 import { signIn } from '@features/auth/actions'
 
-export function AuthSignIn({ router }) {
-  const auth = useSelector((state) => state.auth)
+export function AuthSignIn({ auth }) {
   const dispatch = useDispatch()
   const [showPassword, setShowPassword] = useState(false)
   const { errors, handleSubmit, register } = useForm({

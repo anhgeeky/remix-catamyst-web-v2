@@ -101,8 +101,8 @@ export function SettingsOverviewContent({ state }) {
               Plan and Billing
             </Heading>
             <Text>
-              Your <b>{profile.mode}</b> account is on the <b>{profile.plan}</b>{' '}
-              plan. {profile.plan === 'Basic' && 'Free of charge.'}
+              Your account is on the <b>{profile.plan}</b> plan.{' '}
+              {profile.plan === 'Basic' && 'Free of charge.'}
             </Text>
             <Stack direction={{ base: 'column', sm: 'row' }}>
               {profile.plan !== 'Super' && (

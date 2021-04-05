@@ -17,11 +17,7 @@ import {
 import { supabase } from '@lib'
 
 const toast = createStandaloneToast()
-const toastOptions = {
-  isClosable: true,
-  duration: 1000,
-  // variant: 'solid',
-}
+const toastOptions = { isClosable: true, duration: 3000 }
 
 export const signUp = (data) => {
   return async (dispatch) => {
@@ -44,7 +40,7 @@ export const signUp = (data) => {
          */
         let { data, error } = await supabase
           .from('profiles')
-          .upsert({ id: user!.id }, { returning: 'minimal' })
+          .upsert({ id: user!.id })
         if (error) throw error
         if (data) {
           /**
@@ -114,7 +110,7 @@ export const signIn = (data) => {
         ...toastOptions,
         status: 'error',
         title: 'Failed to sign in.',
-        description: 'Please try again and check your data.',
+        description: `${error.message}. Please try again.`,
       })
     }
   }
@@ -145,7 +141,7 @@ export const signInPasswordless = (email) => {
         ...toastOptions,
         status: 'error',
         title: 'Failed to sign in.',
-        description: 'Please try again and check your email.',
+        description: `${error.message}. Please try again.`,
       })
     }
   }
@@ -176,7 +172,7 @@ export const signOut = () => {
         ...toastOptions,
         status: 'error',
         title: 'Failed to signed out',
-        description: 'You might be offline.',
+        description: `${error.message}. Please try again.`,
       })
     }
   }
