@@ -15,7 +15,7 @@ export function useAuth(
 
   useEffect(() => {
     user && getUserProfile()
-  }, [])
+  }, [profile])
 
   const getUserProfile = async () => {
     try {
@@ -37,19 +37,20 @@ export function useAuth(
   /**
    * When user is signed in.
    */
-  const isAuthenticated = auth.isAuthenticated && auth.user
+  const isAuthenticated = auth.isAuthenticated && user
 
   /**
    * When user is allowed to access.
    */
-  const isAuthorized = auth.isAuthenticated && auth.user
+  const isAuthorized = auth.isAuthenticated && user
+  // && user.role === 'Admin'
 
   return {
-    loading,
     router,
+    auth,
     isAuthenticated,
     isAuthorized,
-    auth,
+    loading,
     user,
     profile,
   }

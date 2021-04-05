@@ -16,13 +16,13 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { SignInSchema } from '@utils/yup'
 import { signIn } from '@features/auth/actions'
-import { supabase } from '@lib'
 
 export function AuthSignIn({ router }) {
+  const auth = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   const [showPassword, setShowPassword] = useState(false)
   const { errors, handleSubmit, register } = useForm({
@@ -98,8 +98,13 @@ export function AuthSignIn({ router }) {
           )}
         </FormControl>
 
-        <Button type="submit" colorScheme="teal" width="100%">
-          Sign in
+        <Button
+          isDisabled={auth.isLoading}
+          type="submit"
+          colorScheme="teal"
+          width="100%"
+        >
+          {auth.isLoading ? 'Signing in...' : 'Sign in'}
         </Button>
 
         <Stack fontSize="sm" opacity={0.75}>

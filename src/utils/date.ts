@@ -16,7 +16,7 @@ export const getDayPeriod = () => {
   if (hour < 5) return 'dawn'
   else if (hour < 12) return 'morning'
   else if (hour < 17) return 'afternoon'
-  else if (hour < 20) return 'evening'
+  else if (hour < 21) return 'evening'
   else if (hour < 24) return 'night'
   else return ''
 }

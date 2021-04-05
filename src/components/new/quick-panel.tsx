@@ -4,7 +4,7 @@ import { Icon } from '@components'
 import { useAuth } from '@hooks'
 
 export function NewQuickPanel() {
-  const { router, auth, isAuthenticated } = useAuth()
+  const { router, isAuthenticated } = useAuth()
 
   const handleCreateNewPost = () => {
     if (isAuthenticated) router.push('/dashboard/posts/new')
@@ -31,6 +31,7 @@ export function NewQuickPanel() {
       >
         Create something new
       </Heading>
+
       <Stack>
         <Button onClick={handleCreateNewPost} leftIcon={<Icon name="posts" />}>
           Write new post
@@ -41,11 +42,9 @@ export function NewQuickPanel() {
         >
           Publish new project
         </Button>
-        {auth.user.role === 'Employer' && (
-          <Button leftIcon={<Icon name="jobs" />} onClick={handleCreateNewJob}>
-            Post new job vacancy
-          </Button>
-        )}
+        <Button leftIcon={<Icon name="jobs" />} onClick={handleCreateNewJob}>
+          Post new job vacancy
+        </Button>
       </Stack>
     </VStack>
   )

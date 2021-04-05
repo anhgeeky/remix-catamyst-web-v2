@@ -6,11 +6,11 @@ import { AuthSignIn } from '@components/auth'
 import { useRedirectDashboard } from '@hooks'
 
 export default function signInPage() {
-  const { router, isAuthorized } = useRedirectDashboard()
+  const { router, isAuthenticated } = useRedirectDashboard()
 
   return (
     <Layout title="Sign in to your Catamyst account">
-      {!isAuthorized && (
+      {!isAuthenticated && (
         <>
           <Hero>
             <Heading as="h1" size="xl">
@@ -18,7 +18,6 @@ export default function signInPage() {
             </Heading>
             <Text>Use your Catamyst account</Text>
           </Hero>
-
           <Content>
             <AuthSignIn router={router} />
           </Content>

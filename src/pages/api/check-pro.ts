@@ -22,11 +22,12 @@ export default async function checkProLicenseKey(
       const { data } = await axios(config)
       res.status(200).json({
         message: 'Pro license key is valid.',
-        created_at: data.purchase.created_at,
+        success: data.success,
         license_key: data.purchase.license_key,
+        created_at: data.purchase.created_at,
         recurrence: data.purchase.recurrence,
         referrer: data.purchase.referrer,
-        success: data.success,
+        refunded: data.purchase.refunded,
         ip_country: data.purchase.ip_country,
         data: data,
       })

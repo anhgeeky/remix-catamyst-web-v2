@@ -2,7 +2,6 @@
   {
     "type": "User",
     "id": 0,
-    "email": "",
     "handle": "admin",
     "name": "Administrator",
     "nickname": "Admin",
@@ -26,7 +25,6 @@
   {
     "type": "User",
     "id": 1,
-    "email": "",
     "handle": "spacecat",
     "name": "Space Cat",
     "avatar_url": "/assets/logos/catamyst-avatar.png",
@@ -49,7 +47,6 @@
   {
     "type": "User",
     "id": 2,
-    "email": "",
     "name": "Guest",
     "handle": "guest",
     "nickname": "Hey",
@@ -80,7 +77,6 @@
   {
     "type": "User",
     "id": 3,
-    "email": "",
     "handle": "haidar",
     "name": "M Haidar Hanif",
     "nickname": "Haidar",
@@ -121,7 +117,6 @@
   {
     "type": "User",
     "id": 4,
-    "email": "",
     "handle": "maya",
     "name": "Maya Asmara",
     "nickname": "Maya",
@@ -159,7 +154,6 @@
   {
     "type": "User",
     "id": 5,
-    "email": "",
     "handle": "latifahdhia",
     "name": "Latifah Dhia",
     "nickname": "Latifah",
@@ -199,7 +193,6 @@
   {
     "type": "User",
     "id": 6,
-    "email": "",
     "handle": "rahmanfadhil",
     "name": "Rahman Fadhil",
     "nickname": "Fadhil",
@@ -235,7 +228,6 @@
   {
     "type": "User",
     "id": 7,
-    "email": "",
     "handle": "ahmadmarzuki",
     "name": "Ahmad Marzuki",
     "nickname": "Marzuki",
@@ -270,7 +262,6 @@
   {
     "type": "User",
     "id": 8,
-    "email": "",
     "handle": "jonathannicolas",
     "name": "Jonathan Nicolas",
     "nickname": "Jo",
@@ -305,7 +296,6 @@
   {
     "type": "User",
     "id": 9,
-    "email": "",
     "handle": "mfarisgibran",
     "name": "Faris Gibran",
     "nickname": "Gibran",
@@ -343,7 +333,6 @@
   {
     "type": "User",
     "id": 10,
-    "email": "",
     "handle": "mayasopiah",
     "name": "Maya Sopiah",
     "nickname": "Sopi",
@@ -373,7 +362,6 @@
   {
     "type": "User",
     "id": 11,
-    "email": "",
     "handle": "fadillahbilqis",
     "name": "Fadillah Bilqis",
     "nickname": "Sopi",
@@ -402,7 +390,6 @@
   {
     "type": "User",
     "id": 12,
-    "email": "",
     "handle": "calvinwong",
     "name": "Calvin Wong",
     "nickname": "Calvin",
@@ -433,7 +420,6 @@
   {
     "type": "User",
     "id": 13,
-    "email": "",
     "handle": "digachandra",
     "name": "Diga Chandra",
     "nickname": "Sep",
@@ -464,7 +450,6 @@
   {
     "type": "User",
     "id": 14,
-    "email": "",
     "handle": "sahbanalubis",
     "name": "Sahbana Lubis",
     "nickname": "Sahbana",
@@ -495,7 +480,6 @@
   {
     "type": "User",
     "id": 15,
-    "email": "",
     "handle": "ariadiprana",
     "name": "Ari Adiprana",
     "nickname": "Ari",
@@ -526,7 +510,6 @@
   {
     "type": "User",
     "id": 16,
-    "email": "",
     "handle": "liliwibi",
     "name": "Lilianti Wibiesono",
     "nickname": "Lili",

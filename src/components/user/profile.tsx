@@ -388,9 +388,6 @@ function UserProfileContent({ user, state, actions }) {
 }
 
 export function UserNameHandle({ user }) {
-  const isVerified = user?.is_verified || false
-  const isBasicPlan = user?.plan === 'Basic' ? true : false
-
   return (
     <Box id="user-name-handle" textAlign="center">
       <Flex id="user-name-verified" justify="center">
@@ -398,7 +395,7 @@ export function UserNameHandle({ user }) {
           {user.name}
         </Heading>
 
-        {isVerified && (
+        {user?.is_verified && (
           <Tooltip
             hasArrow
             label="Verified user account"
@@ -427,10 +424,10 @@ export function UserNameHandle({ user }) {
           fontFamily="body"
           fontWeight="400"
         >
-          @{user.handle}
+          {user.handle ? `@${user.handle}` : '@username'}
         </Heading>
         <Badge variant="solid">{user.role}</Badge>
-        {!isBasicPlan && <Badge variant="solid">{user.plan}</Badge>}
+        <Badge variant="solid">{user.plan}</Badge>
       </HStack>
     </Box>
   )

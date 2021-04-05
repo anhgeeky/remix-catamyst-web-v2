@@ -175,7 +175,11 @@ export function SettingsOverviewContent({ user, profile }) {
             </Text>
             <Text>
               If you didn't find it,{' '}
-              <Link isExternal href="https://gumroad.com/license-key-lookup">
+              <Link
+                isExternal
+                color="teal.500"
+                href="https://gumroad.com/license-key-lookup"
+              >
                 check with license key lookup
               </Link>
               .

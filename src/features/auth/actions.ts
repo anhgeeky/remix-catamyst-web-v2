@@ -46,10 +46,7 @@ export const signUp = (data) => {
             { returning: 'minimal' }
           )
         if (error) throw error
-        dispatch({
-          type: SIGN_UP_SUCCESS,
-          payload: { user: user },
-        })
+        dispatch({ type: SIGN_UP_SUCCESS })
         toast.closeAll()
         toast({
           ...toastOptions,
@@ -77,7 +74,7 @@ export const signIn = (data) => {
 
     try {
       // Sign in via Supabase/API
-      let { error, user } = await supabase.auth.signIn({
+      let { user, error } = await supabase.auth.signIn({
         email: data.email,
         password: data.password,
       })
@@ -86,16 +83,16 @@ export const signIn = (data) => {
         // Get user's profile as well
         let { data, error } = await supabase
           .from('profiles')
-          .select(`id, handle, name, avatar_url`)
+          .select(`avatar_url, handle, name`)
           .eq('id', user!.id)
           .single()
-
-        // Only apply profile to Redux store auth.user
+        /**
+         * Apply profile to Redux store auth.profile
+         * So it's fast to display it in components
+         */
         dispatch({
           type: SIGN_IN_SUCCESS,
-          payload: {
-            user: data,
-          },
+          payload: data,
         })
         toast.closeAll()
         toast({

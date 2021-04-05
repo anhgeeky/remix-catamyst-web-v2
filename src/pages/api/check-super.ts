@@ -24,11 +24,18 @@ export default async function checkSuperLicenseKey(
 
       res.status(200).json({
         message: 'Super license key is valid.',
-        created_at: data.purchase.created_at,
+        success: data.success,
         license_key: data.purchase.license_key,
+        created_at: data.purchase.created_at,
         recurrence: data.purchase.recurrence,
         referrer: data.purchase.referrer,
-        success: data.success,
+        refunded: data.purchase.refunded,
+        ip_country: data.purchase.ip_country,
+        subscription: {
+          ended_at: data.purchase.subscription_ended_at,
+          cancelled_at: data.purchase.subscription_cancelled_at,
+          failed_at: data.purchase.subscription_failed_at,
+        },
         data: data,
       })
     } catch (error) {

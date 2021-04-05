@@ -34,11 +34,12 @@ export function DashboardOverview({ state }) {
 
       <DashboardHero>
         <Heading as="h1" size="xl">
-          Happy {dayNamePeriod}, {state.profile.name}!
+          Happy {dayNamePeriod}
+          {state.profile.name && `, ${state.profile.name}`}!
         </Heading>
         <HStack>
           <Text>
-            <span>Welcome to the Dashboard. You are </span>
+            <span>Welcome to the Dashboard. You are a </span>
             {state.profile.role !== 'Member' && (
               <span>
                 <b>{state.profile.role}</b> as
@@ -83,6 +84,11 @@ export function DashboardOverview({ state }) {
                       colorScheme="teal"
                     >
                       Visit profile
+                    </LinkButton>
+                  )}
+                  {!state.profile.handle && (
+                    <LinkButton href="/settings/profile" colorScheme="teal">
+                      Setup profile
                     </LinkButton>
                   )}
                   <LinkButton

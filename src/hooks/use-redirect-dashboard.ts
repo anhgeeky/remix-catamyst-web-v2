@@ -4,15 +4,15 @@ import { useAuth } from '@hooks'
 
 export function useRedirectDashboard() {
   const router = useRouter()
-  const { auth, isAuthorized } = useAuth()
+  const { auth, isAuthenticated } = useAuth()
 
   useEffect(() => {
-    if (isAuthorized) router.replace('/dashboard/overview')
-  }, [isAuthorized])
+    if (isAuthenticated) router.replace('/dashboard/overview')
+  }, [isAuthenticated])
 
   return {
     router,
     auth,
-    isAuthorized,
+    isAuthenticated,
   }
 }
