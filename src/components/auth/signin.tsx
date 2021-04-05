@@ -40,8 +40,6 @@ export function AuthSignIn({ router }) {
      */
     try {
       await dispatch(signIn(data))
-      // router.replace('/dashboard/overview')
-      // might not needed because of useRedirectDashboard when on /signup
     } catch (error) {
       console.error('Failed to sign in.')
     }

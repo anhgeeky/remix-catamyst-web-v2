@@ -45,7 +45,11 @@ export function authReducer(
         ...state,
         isLoading: false,
         isAuthenticated: true,
-        profile: action.payload,
+        profile: {
+          avatar_url: action.payload.avatar_url,
+          handle: action.payload.handle,
+          name: action.payload.name,
+        },
       }
     }
     /**

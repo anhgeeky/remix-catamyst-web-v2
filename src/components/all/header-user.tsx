@@ -1,13 +1,12 @@
+import NextImage from 'next/image'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import {
   Avatar,
   Flex,
   Box,
-  Button,
-  Link,
   Menu,
   MenuButton,
   MenuDivider,
@@ -17,12 +16,12 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 
-import { Icon, LinkButton, useToast } from '@components'
+import { Icon, LinkButton } from '@components'
 import { signOut } from '@features/auth/actions'
-import { useAuthProfile } from '@hooks'
+import { useAuth } from '@hooks'
 
 export function HeaderUser() {
-  const state = useAuthProfile(`id, handle, name, avatar_url, role, mode`)
+  const state = useAuth()
 
   /**
    * The UserMenuButton has issue with SSR
@@ -40,7 +39,7 @@ export function HeaderUser() {
 }
 
 function UserMenuButton({ state }) {
-  const { auth, user, profile } = state
+  const { auth, user } = state
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -48,12 +47,11 @@ function UserMenuButton({ state }) {
     dispatch(signOut())
   }
 
-  // console.log({ profile })
-
   return (
-    <Box>
+    <Box className="header-user" height={34}>
       <Menu>
         <MenuButton
+          className="header-user-menu-button"
           aria-label="User menu button"
           cursor="pointer"
           _focus={{
@@ -61,69 +59,83 @@ function UserMenuButton({ state }) {
             borderRadius: 'full',
           }}
         >
-          <Box border="1px solid" borderColor="gray.100" rounded="full">
-            <Avatar
-              src={auth.profile.avatar_url}
-              name={auth.profile.name}
-              size="sm"
-            />
+          <Box
+            border="1px solid"
+            borderColor="gray.100"
+            rounded="full"
+            className="next-image-avatar-container"
+          >
+            {!auth.profile.avatar_url && (
+              <Avatar name={auth.profile.name} size="sm" />
+            )}
+            {auth.profile.avatar_url && (
+              <NextImage
+                className="next-image-avatar"
+                src={auth.profile.avatar_url}
+                layout="fixed"
+                width={32}
+                height={32}
+              />
+            )}
           </Box>
         </MenuButton>
 
-        {profile && (
-          <MenuList boxShadow="lg">
-            {!profile.handle && user?.email && (
-              <MenuItem>
-                <Flex direction="column">
-                  Signed in as <b>{user.email}</b>
-                </Flex>
-              </MenuItem>
-            )}
-            {profile.handle && (
-              <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
-                <Flex direction="column">
-                  Signed in as <b>@{profile.handle}</b>
-                </Flex>
-              </MenuItem>
-            )}
+        <MenuList boxShadow="lg">
+          {!auth.profile.handle && user?.email && (
+            <MenuItem>
+              <Flex direction="column">
+                Signed in as <b>{user.email}</b>
+              </Flex>
+            </MenuItem>
+          )}
+          {auth.profile.handle && (
+            <MenuItem onClick={() => router.push(`/${auth.profile.handle}`)}>
+              <Flex direction="column">
+                Signed in as <b>@{auth.profile.handle}</b>
+              </Flex>
+            </MenuItem>
+          )}
 
-            <MenuDivider />
+          <MenuDivider />
 
-            <NextLink href="/dashboard/overview" passHref>
+          <NextLink href="/dashboard/overview" passHref>
+            <MenuItem as="a">
+              <Icon name="dashboard" />
+              <Text as="span" ml={2}>
+                Dashboard
+              </Text>
+            </MenuItem>
+          </NextLink>
+
+          {auth.profile.handle && (
+            <NextLink href={`/${auth.profile.handle}`} passHref>
               <MenuItem as="a">
-                <Icon name="dashboard" />
-                <Text as="span" ml={2}>
-                  Dashboard
-                </Text>
-              </MenuItem>
-            </NextLink>
-
-            {profile.handle && (
-              <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
                 <Icon name="profile" />
                 <Text as="span" ml={2}>
                   Profile
                 </Text>
               </MenuItem>
-            )}
+            </NextLink>
+          )}
 
-            <MenuItem onClick={() => router.push('/settings/overview')}>
+          <NextLink href="/settings/overview" passHref>
+            <MenuItem as="a">
               <Icon name="settings" />
               <Text as="span" ml={2}>
                 Settings
               </Text>
             </MenuItem>
+          </NextLink>
 
-            <MenuDivider />
+          <MenuDivider />
 
-            <MenuItem onClick={handleSignOut} color="red.500">
-              <Icon name="signout" />
-              <Text as="span" ml={2}>
-                Sign out
-              </Text>
-            </MenuItem>
-          </MenuList>
-        )}
+          <MenuItem onClick={handleSignOut} color="red.500">
+            <Icon name="signout" />
+            <Text as="span" ml={2}>
+              Sign out
+            </Text>
+          </MenuItem>
+        </MenuList>
       </Menu>
     </Box>
   )

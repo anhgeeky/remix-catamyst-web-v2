@@ -62,9 +62,7 @@ export function AuthSignUp({ router, auth }) {
      * Data will be passed as payload to signUp thunk
      */
     try {
-      await dispatch(signUp(data))
-      // router.replace('/dashboard/overview')
-      // might not needed because of useRedirectDashboard when on /signup
+      dispatch(signUp(data))
     } catch (error) {
       console.error('Failed to sign up.')
     }

@@ -17,16 +17,13 @@ import {
 import ReactHtmlParser from 'react-html-parser'
 
 import { Card, Country, Icon, SocialLinks } from '@components'
-import { trimUrl } from '@utils'
-// import { Profile } from '@lib/constants'
+import { trimUrl, getCompleteDateTime } from '@utils'
 import { supabase } from '@lib'
 
-type Action = {
-  type?: string
-  payload: any
-}
-
-const handleDatabaseEvent = (state, action: Action) => {
+const handleDatabaseEvent = (
+  state,
+  action: { type?: string; payload: any }
+) => {
   if (action.type === 'set') {
     return { profile: action.payload }
   }
@@ -38,7 +35,6 @@ export function UserProfilePreview({ profile }) {
   const [state, dispatch] = useReducer(handleDatabaseEvent, initialState)
 
   const defaultCoverUrl = `${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`
-  const lastUpdated = profile.updated_at ? new Date(profile.updated_at) : null
 
   useEffect(() => {
     const subscription = supabase
@@ -202,10 +198,7 @@ export function UserProfilePreview({ profile }) {
 
           <Box>
             <Text fontSize="xs">
-              Last updated{' '}
-              {lastUpdated
-                ? `${lastUpdated.toLocaleDateString()} ${lastUpdated.toLocaleTimeString()}`
-                : 'Never'}
+              Last updated {getCompleteDateTime(profile.updated_at)}
             </Text>
           </Box>
         </Stack>

@@ -92,14 +92,8 @@ p code {
  * NextImage container.
  */
 
-.next-image-container > div {
-  display: block !important;
-}
-
-.chakra-ui-dark .next-image.invertable {
-  filter: invert(1);
-}
-
+.next-image-container > div,
+.next-image-avatar-container > div,
 .next-image-screenshot-container > div {
   display: block !important;
 }
@@ -123,16 +117,16 @@ p code {
   display: none; /* Safari and Chrome */
 }
 
-.next-image-avatar-container > div {
-  display: block !important;
-}
-
 .next-image-avatar {
   border-radius: 100%;
 }
 
 .next-image-container.org-avatar > div {
   border-radius: 0.375rem;
+}
+
+.chakra-ui-dark .next-image.invertable {
+  filter: invert(1);
 }
 
 /**
