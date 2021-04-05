@@ -22,7 +22,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Content, Card, Icon } from '@components'
-import { SettingsHero, PaySuperButton } from '@components/settings'
+import { SettingsHero, GumroadButton } from '@components/settings'
 import { dataApp } from '@data'
 
 export function SettingsSuper({ state }) {
@@ -53,9 +53,11 @@ export function SettingsSuper({ state }) {
             </Heading>
 
             {state.profile.plan !== 'Super' ? (
-              <Stack>
+              <Stack align="flex-start">
                 <Text>Click this button to pay for Super account.</Text>
-                <PaySuperButton />
+                <GumroadButton productId="catamyst-super">
+                  $2000 one-time fee
+                </GumroadButton>
               </Stack>
             ) : (
               <Alert status="success" rounded="md">

@@ -22,7 +22,7 @@ import {
 } from '@chakra-ui/react'
 
 import { Content, Card, Icon } from '@components'
-import { SettingsHero, PayProButton } from '@components/settings'
+import { SettingsHero, GumroadButton } from '@components/settings'
 
 export function SettingsPro({ state }) {
   const subscription_id = state.profile?.pro?.subscription_id || ''
@@ -50,11 +50,13 @@ export function SettingsPro({ state }) {
             </Heading>
 
             {state.profile.plan !== 'Pro' ? (
-              <Stack>
+              <Stack align="flex-start">
                 <Text>
                   Click this button to pay for Pro account subscription.
                 </Text>
-                <PayProButton />
+                <GumroadButton productId="catamyst-pro">
+                  $10 per month
+                </GumroadButton>
               </Stack>
             ) : (
               <Alert status="success" rounded="md">

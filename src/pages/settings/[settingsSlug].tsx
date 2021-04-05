@@ -11,7 +11,6 @@ import {
   SettingsPassword,
   SettingsPro,
   SettingsSuper,
-  SettingsGumroad,
 } from '@components/settings'
 
 import dataSettingsLinks from '@data/settings-links.json'

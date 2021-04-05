@@ -7,11 +7,7 @@ export { SettingsPassword } from '@components/settings/password'
 export { SettingsPro } from '@components/settings/pro'
 export { SettingsSuper } from '@components/settings/super'
 export { SettingsBilling } from '@components/settings/billing'
-export {
-  SettingsGumroad,
-  PayProButton,
-  PaySuperButton,
-} from '@components/settings/gumroad'
+export { GumroadButton } from '@components/settings/gumroad'
 
 export { ProfileModeForm } from '@components/settings/profile/mode-form'
 
