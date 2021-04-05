@@ -28,7 +28,7 @@ export function HandleProfile({ handle }) {
       const { data, error } = await supabase
         .from('profiles')
         .select(
-          `id, handle, name, role, mode, plan, is_public, is_verified, avatar_url, cover_url, headline, bio_html, country, location, website_url, work, socials, created_at, updated_at`
+          `handle, name, role, mode, plan, is_public, is_verified, avatar_url, cover_url, headline, bio_html, country, location, website_url, work, socials, created_at, updated_at`
         )
         .eq('handle', handle)
         .single()
@@ -40,7 +40,8 @@ export function HandleProfile({ handle }) {
           setUserProfile(user)
           setLoading(false)
         }
-      } else if (data) {
+      }
+      if (data) {
         setUserProfile(data)
         setLoading(false)
       }
@@ -53,11 +54,11 @@ export function HandleProfile({ handle }) {
 
   const getOrgProfile = async () => {
     try {
-      // Search from organizations first
+      // Search from organizations second
       const { data, error } = await supabase
         .from('organizations')
         .select(
-          `id, handle, name, is_public, is_verified, logo_url, cover_url, headline, bio_html, country, location, website_url, socials, created_at, updated_at`
+          `handle, name, is_public, is_verified, logo_url, cover_url, headline, bio_html, country, location, website_url, socials, created_at, updated_at`
         )
         .eq('handle', handle)
         .single()

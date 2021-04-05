@@ -4,35 +4,10 @@ import { useSelector } from 'react-redux'
 
 import { supabase } from '@lib'
 
-export function useAuth(
-  fields = `id, handle, name, nickname, role, mode, plan, website_url, avatar_url`
-) {
-  const [loading, setLoading] = useState<boolean>(true)
-  const [profile, setProfile] = useState()
-  const router = useRouter()
+export function useAuth() {
   const auth = useSelector((state) => state.auth)
+  const router = useRouter()
   const user = supabase.auth.user()
-
-  useEffect(() => {
-    user && getUserProfile()
-  }, [profile])
-
-  const getUserProfile = async () => {
-    try {
-      setLoading(true)
-      const { data, error } = await supabase
-        .from('profiles')
-        .select(fields)
-        .eq('id', user!.id)
-        .single()
-      if (error) throw error
-      setProfile(data)
-    } catch (error) {
-      console.error('error', error.message)
-    } finally {
-      setLoading(false)
-    }
-  }
 
   /**
    * When user is signed in.
@@ -43,15 +18,13 @@ export function useAuth(
    * When user is allowed to access.
    */
   const isAuthorized = auth.isAuthenticated && user
-  // && user.role === 'Admin'
+  // && profile.role === 'Admin'
 
   return {
     router,
     auth,
     isAuthenticated,
     isAuthorized,
-    loading,
     user,
-    profile,
   }
 }

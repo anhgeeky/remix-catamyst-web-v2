@@ -19,7 +19,7 @@ export default function dashboardSlugPage() {
   const router = useRouter()
   const { dashboardSlug } = router.query
   const state = useRedirectSignIn(
-    `id, handle, name, nickname, role, mode, plan, is_public, is_verified, avatar_url, created_at, updated_at`
+    `handle, name, nickname, role, mode, plan, is_public, is_verified, avatar_url, created_at, updated_at`
   )
 
   /**

@@ -22,7 +22,7 @@ import { signOut } from '@features/auth/actions'
 import { useAuth } from '@hooks'
 
 export function HeaderUser() {
-  const { auth, user } = useAuth(`handle, name, avatar_url`)
+  const { auth } = useAuth()
 
   /**
    * The UserMenuButton has issue with SSR
@@ -31,7 +31,7 @@ export function HeaderUser() {
   return (
     <>
       {auth.isAuthenticated && auth.profile ? (
-        <UserMenuButton auth={auth} user={user} />
+        <UserMenuButton auth={auth} />
       ) : (
         <UserAuthButtons />
       )}
@@ -39,8 +39,7 @@ export function HeaderUser() {
   )
 }
 
-function UserMenuButton({ auth, user }) {
-  const { profile } = auth
+function UserMenuButton({ auth }) {
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -68,17 +67,17 @@ function UserMenuButton({ auth, user }) {
           </Box>
         </MenuButton>
         <MenuList boxShadow="lg">
-          {!profile.handle && user?.email && (
+          {!auth.profile.handle && user?.email && (
             <MenuItem>
               <Flex direction="column">
                 Signed in as <b>{user.email}</b>
               </Flex>
             </MenuItem>
           )}
-          {profile.handle && (
-            <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
+          {auth.profile.handle && (
+            <MenuItem onClick={() => router.push(`/${auth.profile.handle}`)}>
               <Flex direction="column">
-                Signed in as <b>@{profile.handle}</b>
+                Signed in as <b>@{auth.profile.handle}</b>
               </Flex>
             </MenuItem>
           )}
@@ -94,8 +93,8 @@ function UserMenuButton({ auth, user }) {
             </MenuItem>
           </NextLink>
 
-          {profile.handle && (
-            <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
+          {auth.profile.handle && (
+            <MenuItem onClick={() => router.push(`/${auth.profile.handle}`)}>
               <Icon name="profile" />
               <Text as="span" ml={2}>
                 Profile

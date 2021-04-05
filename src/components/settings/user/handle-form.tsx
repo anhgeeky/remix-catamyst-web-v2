@@ -28,7 +28,6 @@ export function UserHandleForm({ state }) {
   const [loading, setLoading] = useState(false)
   const toast = useToast()
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
-    mode: 'onSubmit',
     resolver: yupResolver(UserHandleSchema),
   })
 
@@ -36,13 +35,11 @@ export function UserHandleForm({ state }) {
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('profiles')
-        .upsert(
-          { id: state.user!.id, handle: form.handle },
-          { returning: 'minimal' }
-        )
+        .upsert({ handle: form.handle }, { returning: 'minimal' })
         .eq('id', state.user!.id)
+      if (error) throw error
       toast({ status: 'success', title: 'Your username is changed' })
       setLoading(false)
     } catch (error) {
