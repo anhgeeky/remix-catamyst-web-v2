@@ -41,7 +41,10 @@ export function ProfileModeForm({ state }) {
         .update({ mode: form.mode }, { returning: 'minimal' })
         .eq('id', state.user!.id)
       if (error) throw error
-      toast({ status: 'success', title: 'Profile mode is changed' })
+      toast({
+        status: 'success',
+        title: `Profile mode is changed to ${form.mode}`,
+      })
       setLoading(false)
     } catch (error) {
       console.error(error)
@@ -59,7 +62,7 @@ export function ProfileModeForm({ state }) {
         </Heading>
 
         <RadioGroup defaultValue={state.profile.mode} ref={register}>
-          <Stack direction="row">
+          <Stack>
             <Radio name="mode" ref={register} value="Learner">
               Learner
             </Radio>

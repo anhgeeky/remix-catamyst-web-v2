@@ -7,7 +7,10 @@ import { AlertSoon } from '@components'
 export function AboutHero() {
   return (
     <VStack p={5} pt={10}>
-      <motion.div
+      <Box
+        as={motion.div}
+        className="next-image-container"
+        cursor="pointer"
         initial={{ y: 0, rotate: 0 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 1 }}
@@ -23,12 +26,13 @@ export function AboutHero() {
         }}
       >
         <NextImage
+          className="invertable next-image"
           src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-about.png`}
           alt="Cat flying with a red cape"
           width={150}
           height={150}
         />
-      </motion.div>
+      </Box>
 
       <VStack maxW={760} spacing={5}>
         <Box textAlign="center">

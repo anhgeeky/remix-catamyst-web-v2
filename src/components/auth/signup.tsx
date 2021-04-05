@@ -126,7 +126,12 @@ export function AuthSignUp({ router, auth }) {
           )}
         </FormControl>
 
-        <Button type="submit" colorScheme="teal" width="100%">
+        <Button
+          isDisabled={auth.isLoading}
+          type="submit"
+          colorScheme="teal"
+          width="100%"
+        >
           {auth.isLoading ? 'Creating account...' : 'Create my account'}
         </Button>
 

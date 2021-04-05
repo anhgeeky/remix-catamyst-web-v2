@@ -19,10 +19,13 @@ export function GumroadButton({ productId, children }) {
         className="gumroad-button"
         href={`https://gum.co/${productId}?wanted=true`}
         data-display-style="overlay"
-        rounded="sm"
+        rounded="md"
+        boxShadow={useColorModeValue(
+          '0 0 2px rgba(0, 0, 0, 0.4)',
+          '0 0 2px rgba(255, 255, 255, 0.4)'
+        )}
         bg={useColorModeValue('white', 'gray.900')}
         bgImage={`url(https://gumroad.com/button/button_bar.jpg)`}
-        boxShadow="0 0 2px rgba(0, 0, 0, 0.4)"
         backgroundRepeat="repeat-x"
         _hover={{ textDecoration: 'none' }}
       >

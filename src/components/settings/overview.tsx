@@ -35,13 +35,14 @@ export function SettingsOverviewContent({ state }) {
   return (
     <>
       <SettingsHero>
-        {profile.name ? (
-          <Heading as="h1" size="xl">
-            Hey, {profile.name}
-          </Heading>
-        ) : (
+        {!profile.name && (
           <Heading as="h1" size="xl">
             Hello {user.email}
+          </Heading>
+        )}
+        {profile.name && (
+          <Heading as="h1" size="xl">
+            Hey, {profile.name}
           </Heading>
         )}
         <HStack>
@@ -157,25 +158,29 @@ export function SettingsOverviewContent({ state }) {
             </ButtonGroup>
           </Card>
 
-          <Card as={Stack}>
-            <Heading as="h2" size="md">
-              Raw User Data
-            </Heading>
-            <Text>This is your user data that we store:</Text>
-            <Text as="pre" fontSize="xs">
-              {JSON.stringify(user, null, 2)}
-            </Text>
-          </Card>
+          {process.env.NODE_ENV === 'test' && (
+            <>
+              <Card as={Stack}>
+                <Heading as="h2" size="md">
+                  Raw User Data
+                </Heading>
+                <Text>This is your user data that we store:</Text>
+                <Text as="pre" fontSize="xs">
+                  {JSON.stringify(user, null, 2)}
+                </Text>
+              </Card>
 
-          <Card as={Stack}>
-            <Heading as="h2" size="md">
-              Raw Profile Data
-            </Heading>
-            <Text>This is your profile data that we store:</Text>
-            <Text as="pre" fontSize="xs">
-              {JSON.stringify(profile, null, 2)}
-            </Text>
-          </Card>
+              <Card as={Stack}>
+                <Heading as="h2" size="md">
+                  Raw Profile Data
+                </Heading>
+                <Text>This is your profile data that we store:</Text>
+                <Text as="pre" fontSize="xs">
+                  {JSON.stringify(profile, null, 2)}
+                </Text>
+              </Card>
+            </>
+          )}
         </SimpleGrid>
       </Content>
     </>

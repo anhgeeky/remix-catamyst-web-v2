@@ -7,7 +7,7 @@ import { supabase } from '@lib'
 /**
  * Similar to useAuth but need profile fields.
  */
-export function useAuthProfile(fields = `id, role, mode`) {
+export function useAuthProfile(fields = `id,  role, mode`) {
   const router = useRouter()
   const user = supabase.auth.user()
   const auth = useSelector((state) => state.auth)

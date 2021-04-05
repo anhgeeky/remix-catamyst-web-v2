@@ -19,10 +19,10 @@ import {
 
 import { Icon, LinkButton, useToast } from '@components'
 import { signOut } from '@features/auth/actions'
-import { useAuth } from '@hooks'
+import { useAuthProfile } from '@hooks'
 
 export function HeaderUser() {
-  const state = useAuth()
+  const state = useAuthProfile(`id, handle, name, avatar_url, role, mode`)
 
   /**
    * The UserMenuButton has issue with SSR
@@ -30,7 +30,7 @@ export function HeaderUser() {
    */
   return (
     <>
-      {state.auth.isAuthenticated && state.auth.profile && state.user ? (
+      {state.auth.isAuthenticated ? (
         <UserMenuButton state={state} />
       ) : (
         <UserAuthButtons />
@@ -40,7 +40,7 @@ export function HeaderUser() {
 }
 
 function UserMenuButton({ state }) {
-  const { auth, user } = state
+  const { auth, user, profile } = state
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -48,9 +48,11 @@ function UserMenuButton({ state }) {
     dispatch(signOut())
   }
 
+  // console.log({ profile })
+
   return (
     <Box>
-      <Menu isLazy>
+      <Menu>
         <MenuButton
           aria-label="User menu button"
           cursor="pointer"
@@ -67,58 +69,61 @@ function UserMenuButton({ state }) {
             />
           </Box>
         </MenuButton>
-        <MenuList boxShadow="lg">
-          {!auth.profile.handle && user?.email && (
-            <MenuItem>
-              <Flex direction="column">
-                Signed in as <b>{user.email}</b>
-              </Flex>
-            </MenuItem>
-          )}
-          {auth.profile.handle && (
-            <MenuItem onClick={() => router.push(`/${auth.profile.handle}`)}>
-              <Flex direction="column">
-                Signed in as <b>@{auth.profile.handle}</b>
-              </Flex>
-            </MenuItem>
-          )}
 
-          <MenuDivider />
+        {profile && (
+          <MenuList boxShadow="lg">
+            {!profile.handle && user?.email && (
+              <MenuItem>
+                <Flex direction="column">
+                  Signed in as <b>{user.email}</b>
+                </Flex>
+              </MenuItem>
+            )}
+            {profile.handle && (
+              <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
+                <Flex direction="column">
+                  Signed in as <b>@{profile.handle}</b>
+                </Flex>
+              </MenuItem>
+            )}
 
-          <NextLink href="/dashboard/overview" passHref>
-            <MenuItem as="a">
-              <Icon name="dashboard" />
+            <MenuDivider />
+
+            <NextLink href="/dashboard/overview" passHref>
+              <MenuItem as="a">
+                <Icon name="dashboard" />
+                <Text as="span" ml={2}>
+                  Dashboard
+                </Text>
+              </MenuItem>
+            </NextLink>
+
+            {profile.handle && (
+              <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
+                <Icon name="profile" />
+                <Text as="span" ml={2}>
+                  Profile
+                </Text>
+              </MenuItem>
+            )}
+
+            <MenuItem onClick={() => router.push('/settings/overview')}>
+              <Icon name="settings" />
               <Text as="span" ml={2}>
-                Dashboard
+                Settings
               </Text>
             </MenuItem>
-          </NextLink>
 
-          {auth.profile.handle && (
-            <MenuItem onClick={() => router.push(`/${auth.profile.handle}`)}>
-              <Icon name="profile" />
+            <MenuDivider />
+
+            <MenuItem onClick={handleSignOut} color="red.500">
+              <Icon name="signout" />
               <Text as="span" ml={2}>
-                Profile
+                Sign out
               </Text>
             </MenuItem>
-          )}
-
-          <MenuItem onClick={() => router.push('/settings/overview')}>
-            <Icon name="settings" />
-            <Text as="span" ml={2}>
-              Settings
-            </Text>
-          </MenuItem>
-
-          <MenuDivider />
-
-          <MenuItem onClick={handleSignOut} color="red.500">
-            <Icon name="signout" />
-            <Text as="span" ml={2}>
-              Sign out
-            </Text>
-          </MenuItem>
-        </MenuList>
+          </MenuList>
+        )}
       </Menu>
     </Box>
   )
@@ -126,7 +131,6 @@ function UserMenuButton({ state }) {
 
 function UserAuthButtons() {
   const [isTooSmall] = useMediaQuery('(max-width: 350px)')
-
   return (
     <>
       <Box display={{ base: 'none', md: 'block' }}>
