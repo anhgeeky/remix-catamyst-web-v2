@@ -22,8 +22,9 @@
     "text": "Account",
     "links": [
       { "path": "/signup", "text": "Sign Up" },
-      { "path": "/sigin", "text": "Sign In" },
-      { "path": "/dashboard", "text": "Dashboard" }
+      { "path": "/signin", "text": "Sign In" },
+      { "path": "/dashboard/overview", "text": "Dashboard" },
+      { "path": "/settings/overview", "text": "Settings" }
     ]
   }
 ]

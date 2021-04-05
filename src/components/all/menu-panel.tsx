@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import {
-  Box,
+  chakra,
   HStack,
   Link,
   Button,
@@ -29,7 +29,7 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
   const bg = useColorModeValue('white', 'gray.900')
   const dividerBorderColor = useColorModeValue('gray.200', 'gray.700')
 
-  useRouteChanged(closeMenu)
+  const router = useRouteChanged(closeMenu)
 
   return (
     <>
@@ -58,7 +58,6 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
               <Stack>
                 <Flex justify="space-between">
                   <ColorModeToggle />
-
                   <IconButton
                     aria-label="Toggle menu"
                     variant="ghost"
@@ -74,14 +73,10 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
                   spacing={1}
                 >
                   {dataMenuLinks.map((page, index) => {
+                    const isActive = router.asPath === page.href
                     return (
-                      <Link
-                        key={page.slug}
-                        as={NextLink}
-                        href={page.href}
-                        _hover={{ bg: 'teal.500' }}
-                      >
-                        <a className="menu-link">
+                      <NextLink key={page.slug} href={page.href} passHref>
+                        <chakra.a color={isActive && 'teal.500'}>
                           <HStack
                             display="flex"
                             px={3}
@@ -90,7 +85,7 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
                             align="center"
                             borderRadius="md"
                             _hover={{
-                              bg: useColorModeValue('teal.400', 'teal.700'),
+                              bg: useColorModeValue('gray.200', 'gray.700'),
                             }}
                           >
                             <Icon name={page.slug} />
@@ -98,8 +93,8 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
                               {page.text}
                             </Text>
                           </HStack>
-                        </a>
-                      </Link>
+                        </chakra.a>
+                      </NextLink>
                     )
                   })}
                 </Stack>

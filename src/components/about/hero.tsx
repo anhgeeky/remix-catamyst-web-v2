@@ -1,8 +1,8 @@
 import NextImage from 'next/image'
 import { motion } from 'framer-motion'
-import { Heading, Text, VStack } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 
-import React from 'react'
+import { AlertSoon } from '@components'
 
 export function AboutHero() {
   return (
@@ -25,20 +25,20 @@ export function AboutHero() {
         <NextImage
           src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-about.png`}
           alt="Cat flying with a red cape"
-          width={200}
-          height={200}
+          width={150}
+          height={150}
         />
       </motion.div>
-      <Heading
-        as="h1"
-        textAlign="center"
-        size="3xl"
-        lineHeight="xl"
-        maxW="16ch"
-      >
-        On helping people with their career
-      </Heading>
-      <Text fontSize="2xl">A quick story about Catamyst</Text>
+
+      <VStack maxW={760} spacing={5}>
+        <Box textAlign="center">
+          <Heading as="h1" size="2xl" lineHeight="xl" maxW="16ch">
+            On helping people with their career
+          </Heading>
+          <Text fontSize="xl">A quick story about Catamyst</Text>
+        </Box>
+        <AlertSoon>We'll be telling this later :)</AlertSoon>
+      </VStack>
     </VStack>
   )
 }
