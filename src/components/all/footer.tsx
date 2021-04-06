@@ -13,6 +13,7 @@ import {
   Flex,
 } from '@chakra-ui/react'
 
+import dataPackage from '../../../package.json'
 import { SocialLinks } from '@components'
 import { getYear, getDayNamePeriod } from '@utils'
 import { dataAppSitemap } from '@data'
@@ -80,12 +81,15 @@ export function FooterExtra() {
       </Text>
       <VStack opacity={0.5} fontSize={15} spacing={0}>
         <Text>Enjoy your {dayNamePeriod}!</Text>
-      </VStack>
-      {NODE_ENV !== 'production' && (
-        <Code colorScheme="gray" fontWeight="700">
-          {NODE_ENV} && {API_URL}
+        <Code colorScheme="white" fontWeight="700">
+          v{dataPackage.version}
         </Code>
-      )}
+        {NODE_ENV !== 'production' && (
+          <Code colorScheme="white" fontWeight="700">
+            {NODE_ENV} && {API_URL}
+          </Code>
+        )}
+      </VStack>
     </Box>
   )
 }
