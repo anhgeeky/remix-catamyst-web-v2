@@ -23,13 +23,8 @@ export default async function checkProLicenseKey(
       res.status(200).json({
         message: 'Pro license key is valid.',
         success: data.success,
-        license_key: data.purchase.license_key,
-        created_at: data.purchase.created_at,
-        recurrence: data.purchase.recurrence,
-        referrer: data.purchase.referrer,
-        refunded: data.purchase.refunded,
-        ip_country: data.purchase.ip_country,
-        data: data,
+        uses: data.uses,
+        purchase: data.purchase,
       })
     } catch (error) {
       res.status(400).json({
