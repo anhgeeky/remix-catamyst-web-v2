@@ -15,6 +15,7 @@ export default async function pingHandler(
         permalink: req.body.permalink,
         key: req.body.license_key,
       })
+
       if (req.body.permalink === 'catamyst-pro') {
         await togglePro(req, res, data)
       } else if (req.body.permalink === 'catamyst-pro-lifetime') {
@@ -24,6 +25,8 @@ export default async function pingHandler(
       } else {
         res.status(400).json({ message: 'Not allowed' })
       }
+
+      // TODO Ping could handle cancellation event here
     } catch (error) {
       const response = {
         message: 'Failed to verify license key.',

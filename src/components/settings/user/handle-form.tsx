@@ -40,6 +40,7 @@ export function UserHandleForm({ state }) {
           { returning: 'minimal' }
         )
         .eq('id', state.user!.id)
+        .single()
       if (error) throw error
       toast({ status: 'success', title: 'Your username is changed' })
       setLoading(false)

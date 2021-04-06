@@ -134,7 +134,7 @@ p code {
  * Because the export components with theme defaultProps doesn't work.
  */
 
-.chakra-link.chakra-button {
+.chakra-link.chakra-button:hover {
   text-decoration: none;
 }
 

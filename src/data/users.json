@@ -62,7 +62,7 @@
       { "name": "Instagram", "url": "https://instagram.com/example" },
       { "name": "Facebook", "url": "https://facebook.com/example" }
     ],
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Basic",
     "isConfirmed": false,
     "joinedAt": "2020-02-01",
@@ -101,7 +101,8 @@
       "handle": "catamyst",
       "url": "https://catamyst.com"
     },
-    "role": "Staff",
+    "role": "Mentor",
+    "plan": "Super",
     "isVerified": true,
     "isConfirmed": true,
     "joinedAt": "2021-01-01",
@@ -177,7 +178,7 @@
       "handle": "catamyst",
       "url": "https://catamyst.com"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Super",
     "isConfirmed": true,
     "joinedAt": "2020-12-01",
@@ -246,7 +247,7 @@
       "title": "Software Engineer",
       "name": "AutoParts"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Super",
     "isConfirmed": false,
     "joinedAt": "2020-03-01",
@@ -281,7 +282,7 @@
       "name": "Freelance"
     },
     "isConfirmed": false,
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Super",
     "joinedAt": "2020-04-01",
     "organizations": [2],
@@ -317,7 +318,7 @@
       "title": "Web Developer",
       "name": "Freelance"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Super",
     "isConfirmed": false,
     "joinedAt": "2020-08-01",
@@ -346,7 +347,7 @@
       "title": "Software Engineer",
       "name": "Glee Trees"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Pro",
     "isConfirmed": false,
     "joinedAt": "2021-01-01",
@@ -375,7 +376,7 @@
       "title": "Developer",
       "name": "Company"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Pro",
     "isConfirmed": false,
     "organizations": [],
@@ -404,7 +405,7 @@
       "name": "Plater",
       "url": "https://plater.id"
     },
-    "role": "Employer",
+    "mode": "Employer",
     "plan": "Pro",
     "isConfirmed": false,
     "joinedAt": "2021-01-01",
@@ -434,7 +435,7 @@
       "title": "Web Developer",
       "name": "Vidio (KMK Labs)"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Pro",
     "isConfirmed": false,
     "joinedAt": "2021-01-01",
@@ -464,7 +465,7 @@
       "title": "Full Stack Engineer",
       "name": "Gibox Digital Asia"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Pro",
     "isConfirmed": false,
     "joinedAt": "2021-01-01",
@@ -494,7 +495,7 @@
       "title": "PEGA System Architect",
       "name": "PT Bank Mandiri (Persero) Tbk."
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Pro",
     "isConfirmed": false,
     "joinedAt": "2021-01-01",
@@ -524,7 +525,7 @@
       "title": "Web Developer",
       "name": "Gemilang Global Property"
     },
-    "role": "Learner",
+    "mode": "Learner",
     "plan": "Pro",
     "isConfirmed": false,
     "joinedAt": "2021-01-01",

@@ -103,7 +103,8 @@ export function SettingsSuper({ state }) {
                 </ListItem>
                 <ListItem>
                   If you need to pay via alternative methods such as direct bank
-                  transfer, please tell us in the discussion.
+                  transfer or even crypto like Bitcoin, please tell us in the
+                  discussion.
                 </ListItem>
                 <ListItem>
                   When you have paid or your license key is applied, you will be
