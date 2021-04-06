@@ -35,7 +35,7 @@ export function UserHandleForm({ state }) {
       await new Promise((resolve) => setTimeout(resolve, 300))
       const { error } = await supabase
         .from('profiles')
-        .upsert(
+        .update(
           { handle: form.handle, id: state.user!.id },
           { returning: 'minimal' }
         )

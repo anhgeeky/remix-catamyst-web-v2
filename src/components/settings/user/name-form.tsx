@@ -41,7 +41,7 @@ export function UserNameForm({ state }) {
       await new Promise((resolve) => setTimeout(resolve, 300))
       const { data, error } = await supabase
         .from('profiles')
-        .upsert(
+        .update(
           { id: state.user!.id, name: form.name, nickname: form.nickname },
           { returning: 'minimal' }
         )

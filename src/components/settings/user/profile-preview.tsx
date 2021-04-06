@@ -40,7 +40,7 @@ export function UserProfilePreview({ profile }) {
     const subscription = supabase
       .from('profiles')
       .on('*', (payload) => {
-        dispatch({ type: 'upsert', payload: payload.new })
+        dispatch({ type: 'update', payload: payload.new })
       })
       .subscribe()
     return () => {

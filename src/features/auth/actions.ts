@@ -44,6 +44,7 @@ export const signUp = (data) => {
         let { data, error } = await supabase
           .from('profiles')
           .upsert({ id: user!.id })
+          .single()
         if (error) throw error
         if (data) {
           /**
