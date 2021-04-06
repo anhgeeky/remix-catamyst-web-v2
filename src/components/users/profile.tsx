@@ -417,7 +417,7 @@ export function UserNameHandle({ user }) {
         )}
       </Flex>
 
-      <HStack id="user-handle-role-plan" justify="center">
+      <VStack id="user-handle-role-plan" justify="center">
         <Heading
           id="user-handle"
           as="h2"
@@ -428,9 +428,11 @@ export function UserNameHandle({ user }) {
         >
           {user.handle ? `@${user.handle}` : '@username'}
         </Heading>
-        <Badge variant="solid">{user.role}</Badge>
-        <Badge variant="solid">{user.plan}</Badge>
-      </HStack>
+        <HStack>
+          <Badge variant="solid">{user.mode}</Badge>
+          <Badge variant="solid">{user.plan}</Badge>
+        </HStack>
+      </VStack>
     </Box>
   )
 }

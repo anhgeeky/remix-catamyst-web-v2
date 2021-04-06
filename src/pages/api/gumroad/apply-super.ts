@@ -40,12 +40,13 @@ export default async function applySuperPlan(
             super: {
               email: data.purchase.email,
               license_key: data.purchase.license_key,
+              sessions_quota: 150,
             },
           })
           .eq('id', user[0]) // user.id in auth.users
           .single()
-
         if (error) throw error
+
         const response = {
           message: `Super plan is activated.`,
           success: true,

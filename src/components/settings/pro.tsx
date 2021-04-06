@@ -25,8 +25,6 @@ import { Content, Card, Icon } from '@components'
 import { SettingsHero, GumroadButton } from '@components/settings'
 
 export function SettingsPro({ state }) {
-  const subscription_id = state.profile?.pro?.subscription_id || ''
-
   return (
     <>
       <NextHead>
@@ -119,11 +117,14 @@ export function SettingsPro({ state }) {
                 <Input
                   type="text"
                   placeholder="A1234567-B1234567-C1234567-D1234567"
+                  defaultValue={state.profile.pro?.license_key}
                 />
-                <InputRightElement
-                  color="green.500"
-                  children={<Icon name="check" />}
-                />
+                {state.profile.pro?.license_key && (
+                  <InputRightElement
+                    color="green.500"
+                    children={<Icon name="check" />}
+                  />
+                )}
               </InputGroup>
               <FormHelperText>
                 Enter license key to activate your Pro plan. It is recommended
@@ -133,56 +134,56 @@ export function SettingsPro({ state }) {
                 </Link>
                 .
               </FormHelperText>
-              <ButtonGroup>
-                <Button leftIcon={<Icon name="save" />} colorScheme="blue">
+              <ButtonGroup colorScheme="blue">
+                <Button leftIcon={<Icon name="save" />}>
                   Save license key
                 </Button>
-                {subscription_id && (
-                  <Button
-                    isExternal
-                    as={Link}
-                    href={`https://gumroad.com/subscriptions/${subscription_id}/manage`}
-                  >
-                    Manage subscription
-                  </Button>
-                )}
               </ButtonGroup>
             </FormControl>
           </Card>
 
-          <Card as={Stack}>
-            <Heading as="h3" size="md">
-              Manage, cancel, or refund your Pro plan
-            </Heading>
-            <Text>
-              You can cancel your ongoing subscription by clicking the{' '}
-              <b>View content</b> button again from the purchase confirmation
-              email, then click the <b>Manage membership</b> button. There you
-              will see the <b>Cancel membership</b> button. Alternatively, you
-              can also <b>Update membership</b> information.
-            </Text>
-            <Text>
-              If you need help or want to refund, chat directly with us. We
-              offer a 7 day money-back guarantee. If you're not satisfied with
-              Catamyst after using it for a week, we'll refund your money.
-            </Text>
-          </Card>
+          {state.profile.pro?.license_key && (
+            <Card as={Stack}>
+              <Heading as="h3" size="md">
+                Manage, cancel, or refund your Pro plan
+              </Heading>
+              <ButtonGroup colorScheme="yellow">
+                <Button
+                  isExternal
+                  as={Link}
+                  href={`https://gumroad.com/subscriptions/${state.profile.pro?.subscription_id}/manage`}
+                  leftIcon={<Icon name="billing" />}
+                >
+                  Manage subscription
+                </Button>
+              </ButtonGroup>
+              <Text>
+                You can update or cancel subscription, like upgrade or downgrade
+                your plan. If you need help or want to refund, chat directly
+                with us. We offer a 7 day money-back guarantee. If you're not
+                satisfied with Catamyst after using it less than 7 days, we'll
+                refund your money.
+              </Text>
+            </Card>
+          )}
 
-          <Card as={Stack}>
-            <Heading as="h3" size="md">
-              Conditions if your subscription is ended
-            </Heading>
-            <Text>
-              If you had more than 3 published projects, all of those projects
-              are still available to see and edit. But you cannot publish more
-              unless you continue your subscription.
-            </Text>
-            <Text>
-              If you had posted some job vacancies, all of those vacancies are
-              still available to see and edit. But you cannot post more unless
-              you continue your subscription.
-            </Text>
-          </Card>
+          {state.profile.pro?.license_key && (
+            <Card as={Stack}>
+              <Heading as="h3" size="md">
+                Conditions if your Pro plan subscription is ended
+              </Heading>
+              <Text>
+                If you had more than 3 published projects, all of those projects
+                are still available to see and edit. But you cannot publish more
+                unless you continue your subscription.
+              </Text>
+              <Text>
+                If you had posted some job vacancies, all of those vacancies are
+                still available to see and edit. But you cannot post more unless
+                you continue your subscription.
+              </Text>
+            </Card>
+          )}
         </Stack>
       </Content>
     </>

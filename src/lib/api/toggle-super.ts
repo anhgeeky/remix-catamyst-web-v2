@@ -33,6 +33,7 @@ export const toggleSuper = async (req, res, data) => {
           super: {
             email: data.purchase.email,
             license_key: data.purchase.license_key,
+            sessions_quota: 150,
           },
         })
         .eq('id', user[0]) // user.id in auth.users

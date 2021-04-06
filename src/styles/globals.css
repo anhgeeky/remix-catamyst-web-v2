@@ -134,6 +134,10 @@ p code {
  * Because the export components with theme defaultProps doesn't work.
  */
 
+.chakra-link.chakra-button {
+  text-decoration: none;
+}
+
 .chakra-form__label {
   margin-bottom: 0 !important;
 }

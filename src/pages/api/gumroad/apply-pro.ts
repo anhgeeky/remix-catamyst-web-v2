@@ -45,8 +45,8 @@ export default async function applyProPlan(
           })
           .eq('id', user[0]) // user.id in auth.users
           .single()
-
         if (error) throw error
+
         const response = {
           message: `Pro plan is activated`,
           success: true,

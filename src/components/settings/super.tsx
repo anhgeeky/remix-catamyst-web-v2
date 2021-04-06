@@ -81,9 +81,8 @@ export function SettingsSuper({ state }) {
                 </ListItem>
                 <ListItem>
                   You only need to pay once for a lifetime, because this is not
-                  a subscription. This will give you <b>Pro</b>-tier access
-                  forever, added with <b>150 hours</b> of live mentorship
-                  sessions.
+                  a subscription. This will give you <b>Super</b> plan, added
+                  with <b>150 hours</b> of live mentorship sessions.
                 </ListItem>
                 <ListItem>
                   After you paid for the one-time fee, click the{' '}
@@ -136,11 +135,14 @@ export function SettingsSuper({ state }) {
                 <Input
                   type="text"
                   placeholder="A1234567-B1234567-C1234567-D1234567"
+                  defaultValue={state.profile.super?.license_key}
                 />
-                <InputRightElement
-                  color="green.500"
-                  children={<Icon name="check" />}
-                />
+                {state.profile.super?.license_key && (
+                  <InputRightElement
+                    color="green.500"
+                    children={<Icon name="check" />}
+                  />
+                )}
               </InputGroup>
               <FormHelperText>
                 Enter license key to activate your Super plan. It is recommended
@@ -156,31 +158,45 @@ export function SettingsSuper({ state }) {
             </FormControl>
           </Card>
 
-          <Card as={Stack}>
-            <Heading as="h3" size="md">
-              Manage, cancel, or refund your Super plan
-            </Heading>
-            <Text>
-              You can check your information by clicking the <b>View content</b>{' '}
-              button again from the purchase confirmation email. There you can
-              update your information.
-            </Text>
-            <Text>
-              If you need help, chat directly with us. Before mentorship
-              sessions are scheduled, if you want to cancel, we'll refund your
-              money. But if the mentorship is already scheduled or ongoing,
-              there is no refund.
-            </Text>
-          </Card>
+          {state.profile.super?.license_key && (
+            <Card as={Stack}>
+              <Heading as="h3" size="md">
+                Manage, cancel, or refund your Super plan
+              </Heading>
+              <Text>
+                You can check your information by clicking the{' '}
+                <b>View content</b> button again from the purchase confirmation
+                email. There you can update your information.
+              </Text>
+              <Text>
+                If you need help, chat directly with us. Before mentorship
+                sessions are scheduled, if you want to cancel, we'll refund your
+                money. But if the mentorship is already scheduled or ongoing,
+                there is no refund.
+              </Text>
+            </Card>
+          )}
 
           <Card as={Stack}>
             <Heading as="h3" size="md">
               Mentorship sessions quota
             </Heading>
             <Text>
-              You have <b>0 hour</b> of remaining live mentorship sessions.
+              You have <b>{state.profile.super?.sessions_quota || 0} hour(s)</b>{' '}
+              of live mentorship sessions.
             </Text>
           </Card>
+
+          {state.profile.mentors?.length && (
+            <Card as={Stack}>
+              <Heading as="h3" size="md">
+                Mentors
+              </Heading>
+              {state.profile.mentors?.map((mentor, index) => {
+                return <Text key={index}>{mentor}</Text>
+              })}
+            </Card>
+          )}
         </Stack>
       </Content>
     </>
