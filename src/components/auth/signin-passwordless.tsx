@@ -16,14 +16,14 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useDispatch } from 'react-redux'
 
-import { SignInPasswordlessSchema } from '@utils/yup'
-import { signInPasswordless } from '@features/auth/actions'
+import { SignInMagicSchema } from '@utils/yup'
+import { signInMagic } from '@features/auth/actions'
 
-export function AuthSignInPasswordless({ router }) {
+export function AuthSignInMagic({ router }) {
   const dispatch = useDispatch()
   const { errors, handleSubmit, register } = useForm({
     mode: 'onSubmit',
-    resolver: yupResolver(SignInPasswordlessSchema),
+    resolver: yupResolver(SignInMagicSchema),
   })
 
   const handleSignIn = async (data) => {
@@ -31,7 +31,7 @@ export function AuthSignInPasswordless({ router }) {
      * Data will be passed as payload to signIn thunk
      */
     try {
-      await dispatch(signInPasswordless(data.email))
+      await dispatch(signInMagic(data.email))
       // router.replace('/dashboard/overview')
     } catch (error) {
       console.error('Failed to sign in.')

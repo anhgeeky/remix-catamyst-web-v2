@@ -38,8 +38,9 @@ export function ProfileModeForm({ state }) {
       await new Promise((resolve) => setTimeout(resolve, 300))
       const { error } = await supabase
         .from('profiles')
-        .update({ mode: form.mode }, { returning: 'minimal' })
+        .upsert({ mode: form.mode }, { returning: 'minimal' })
         .eq('id', state.user!.id)
+        .single()
       if (error) throw error
       toast({
         status: 'success',

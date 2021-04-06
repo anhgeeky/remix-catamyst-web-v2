@@ -7,9 +7,9 @@ import {
   SIGN_IN_BEGIN,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
-  SIGN_IN_PASSWORDLESS_BEGIN,
-  SIGN_IN_PASSWORDLESS_ERROR,
-  SIGN_IN_PASSWORDLESS_SUCCESS,
+  SIGN_IN_MAGIC_BEGIN,
+  SIGN_IN_MAGIC_ERROR,
+  SIGN_IN_MAGIC_SUCCESS,
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
@@ -19,6 +19,9 @@ import { supabase } from '@lib'
 const toast = createStandaloneToast()
 const toastOptions = { isClosable: true, duration: 3000 }
 
+/**
+ * Sign up with email and password.
+ */
 export const signUp = (data) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_UP_BEGIN })
@@ -68,6 +71,9 @@ export const signUp = (data) => {
   }
 }
 
+/**
+ * Sign in with email and password.
+ */
 export const signIn = (data) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_IN_BEGIN })
@@ -116,26 +122,23 @@ export const signIn = (data) => {
   }
 }
 
-export const signInPasswordless = (email) => {
+/**
+ * Sign in passwordless with magic link sent to email.
+ */
+export const signInMagic = (email) => {
   return async (dispatch) => {
-    dispatch({ type: SIGN_IN_PASSWORDLESS_BEGIN })
-    toast({
-      title: 'Signing in without password...',
-      duration: 1000,
-      isClosable: true,
-    })
-
+    dispatch({ type: SIGN_IN_MAGIC_BEGIN })
     try {
       const { error, user } = await supabase.auth.signIn({
         email: email,
       })
       if (error) throw error
       if (user) {
-        dispatch({ type: SIGN_IN_PASSWORDLESS_SUCCESS })
+        dispatch({ type: SIGN_IN_MAGIC_SUCCESS })
         toast.closeAll()
       }
     } catch (error) {
-      dispatch({ type: SIGN_IN_PASSWORDLESS_ERROR })
+      dispatch({ type: SIGN_IN_MAGIC_ERROR })
       toast({
         ...toastOptions,
         status: 'error',
@@ -146,10 +149,12 @@ export const signInPasswordless = (email) => {
   }
 }
 
+/**
+ * Sign out session.
+ */
 export const signOut = () => {
   return async (dispatch) => {
     dispatch({ type: SIGN_OUT_BEGIN })
-    toast({ title: 'Signing out...' })
     /**
      * There will be the actual sign out process with API.
      */

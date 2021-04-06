@@ -5,9 +5,9 @@ import {
   SIGN_IN_BEGIN,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
-  SIGN_IN_PASSWORDLESS_BEGIN,
-  SIGN_IN_PASSWORDLESS_ERROR,
-  SIGN_IN_PASSWORDLESS_SUCCESS,
+  SIGN_IN_MAGIC_BEGIN,
+  SIGN_IN_MAGIC_ERROR,
+  SIGN_IN_MAGIC_SUCCESS,
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
@@ -70,15 +70,15 @@ export function authReducer(
       }
     }
     /**
-     * Sign in passwordless begin/error/success.
+     * Sign in magic begin/error/success.
      */
-    case SIGN_IN_PASSWORDLESS_BEGIN: {
+    case SIGN_IN_MAGIC_BEGIN: {
       return { ...state, isLoading: true }
     }
-    case SIGN_IN_PASSWORDLESS_ERROR: {
+    case SIGN_IN_MAGIC_ERROR: {
       return { ...state, isLoading: false, isAuthenticated: false, profile: {} }
     }
-    case SIGN_IN_PASSWORDLESS_SUCCESS: {
+    case SIGN_IN_MAGIC_SUCCESS: {
       return {
         ...state,
         isLoading: false,
