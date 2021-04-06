@@ -8,6 +8,7 @@ export default class Document extends NextDocument {
       <Html lang="en">
         <Head>
           <link rel="shortcut icon" href="/favicon.ico" />
+          <script async src="https://cdn.splitbee.io/sb.js"></script>
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
