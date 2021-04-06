@@ -30,7 +30,7 @@ export const signUp = (data) => {
        * Create new user with email and password
        */
       let { user, error } = await supabase.auth.signUp({
-        email: data.email,
+        email: data.email.toLowerCase(),
         password: data.password,
       })
       if (error) throw error
@@ -124,7 +124,6 @@ export const signInPasswordless = (email) => {
       duration: 1000,
       isClosable: true,
     })
-    // console.log({ email })
 
     try {
       const { error, user } = await supabase.auth.signIn({

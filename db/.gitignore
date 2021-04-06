@@ -2,3 +2,5 @@
 *.json
 *.sh
 *.sql
+*.backup
+*.dump

@@ -50,7 +50,6 @@ export function UserProfilePreview({ profile }) {
 
   useEffect(() => {
     dispatch({ type: 'set', payload: profile })
-    // console.log(state.profile)
   }, [profile])
 
   return (
