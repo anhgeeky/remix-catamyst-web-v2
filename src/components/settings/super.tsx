@@ -118,6 +118,11 @@ export function SettingsSuper({ state }) {
                   removed or invalid, your account should stay on <b>Super</b>{' '}
                   plan.
                 </ListItem>
+                <ListItem>
+                  If you previously had <b>Pro</b> plan, you should immediately
+                  cancel the subscription as this <b>Super</b> plan already has
+                  Pro-tier access forever.
+                </ListItem>
               </OrderedList>
             </Box>
           </Card>

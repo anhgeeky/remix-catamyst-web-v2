@@ -27,7 +27,7 @@ export default async function checkProLicenseKey(
     } catch (error) {
       res.status(400).json({
         message: 'Pro license key is invalid.',
-        ...data,
+        ...error,
       })
     }
   } else {

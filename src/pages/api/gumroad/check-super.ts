@@ -27,7 +27,7 @@ export default async function checkSuperLicenseKey(
     } catch (error) {
       res.status(400).json({
         message: 'Super license key is invalid.',
-        ...data,
+        ...error,
       })
     }
   } else {
