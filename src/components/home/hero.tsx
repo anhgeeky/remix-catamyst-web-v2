@@ -26,6 +26,7 @@ export function HomeHero() {
       >
         <Stack spacing={5}>
           <Heading
+            id="home-hero-title"
             as="h1"
             fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '5xl' }}
             bgGradient="linear(to-r, teal.400, green.400)"
@@ -34,7 +35,7 @@ export function HomeHero() {
           >
             {dataHeroHome.title}
           </Heading>
-          <Text maxW="40rem" fontSize={['md', 'lg']}>
+          <Text id="home-hero-subtitle" maxW="40rem" fontSize={['md', 'lg']}>
             {dataHeroHome.subtitle}
           </Text>
 

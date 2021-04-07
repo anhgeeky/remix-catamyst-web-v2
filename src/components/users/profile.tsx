@@ -429,9 +429,13 @@ export function UserNameHandle({ user }) {
           {user.handle ? `@${user.handle}` : '@username'}
         </Heading>
         <HStack>
-          {user.role !== 'Member' && <Badge variant="solid">{user.role}</Badge>}
-          <Badge variant="solid">{user.mode}</Badge>
-          {user.role !== 'Member' && <Badge variant="solid">{user.plan}</Badge>}
+          {user.role && user.role !== 'Member' && (
+            <Badge variant="solid">{user.role}</Badge>
+          )}
+          {user.mode && <Badge variant="solid">{user.mode}</Badge>}
+          {user.role && user.role !== 'Member' && (
+            <Badge variant="solid">{user.plan}</Badge>
+          )}
         </HStack>
       </VStack>
     </Box>

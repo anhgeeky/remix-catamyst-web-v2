@@ -371,7 +371,7 @@ export function OrganizationNameHandle({ org }) {
         >
           @{org.handle}
         </Heading>
-        <Badge variant="solid">{org.role}</Badge>
+        <Badge variant="solid">{org.mode}</Badge>
       </HStack>
     </Box>
   )
