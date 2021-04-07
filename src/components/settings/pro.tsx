@@ -44,22 +44,23 @@ export function SettingsPro({ state }) {
         <Stack spacing={5} width="100%" maxW={760}>
           <Card as={Stack}>
             <Heading as="h3" size="md">
-              Payment
+              Pro Plan Payment
             </Heading>
 
             {state.profile.plan !== 'Pro' ? (
               <Stack align="flex-start">
-                <Text>
-                  Click this button to pay for Pro account subscription.
-                </Text>
-                <GumroadButton productId="catamyst-pro">
-                  $10 per month
+                <GumroadButton
+                  productId="catamyst-pro"
+                  email={state.user.email}
+                  leftIcon={<Icon name="pro" />}
+                >
+                  Upgrade to Pro
                 </GumroadButton>
               </Stack>
             ) : (
               <Alert status="success" rounded="md">
                 <AlertIcon />
-                You've paid for Super plan.
+                You've paid for Pro plan.
               </Alert>
             )}
 
@@ -82,33 +83,15 @@ export function SettingsPro({ state }) {
                   automatically per month.
                 </ListItem>
                 <ListItem>
-                  After you paid for the membership, click the{' '}
-                  <b>View content</b> button or <b>check your email</b>. You
-                  will receive a license key that looks like this:{' '}
-                  <Code>A1234567-B1234567-C1234567-D1234567</Code>
-                </ListItem>
-                <ListItem>
-                  If you didn't find the license key,{' '}
-                  <Link
-                    isExternal
-                    color="teal.500"
-                    href="https://gumroad.com/license-key-lookup"
-                  >
-                    check with license key lookup
-                  </Link>
-                  .
-                </ListItem>
-                <ListItem>
-                  As long as the license key is active and valid, your account
-                  is on the <b>Pro</b> plan. If the license key is removed,
-                  expired, or your subscription is ended, your account will be
-                  downgraded to <b>Basic</b> plan.
+                  If your subscription is ended, your account will be downgraded
+                  to <b>Basic</b> plan. Then we will not charge you again unless
+                  you continue the subscription.
                 </ListItem>
               </OrderedList>
             </Box>
           </Card>
 
-          <Card as={Stack} align="flex-start">
+          {/* <Card as={Stack} align="flex-start">
             <Heading as="h3" size="md">
               License key
             </Heading>
@@ -140,7 +123,7 @@ export function SettingsPro({ state }) {
                 </Button>
               </ButtonGroup>
             </FormControl>
-          </Card>
+          </Card> */}
 
           {state.profile.pro?.license_key && (
             <Card as={Stack}>
@@ -159,10 +142,7 @@ export function SettingsPro({ state }) {
               </ButtonGroup>
               <Text>
                 You can update or cancel subscription, like upgrade or downgrade
-                your plan. If you need help or want to refund, chat directly
-                with us. We offer a 7 day money-back guarantee. If you're not
-                satisfied with Catamyst after using it less than 7 days, we'll
-                refund your money.
+                your plan. If you need help, chat directly with us.
               </Text>
             </Card>
           )}

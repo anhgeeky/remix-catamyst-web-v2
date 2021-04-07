@@ -1,11 +1,12 @@
 import NextHead from 'next/head'
+import NextLink from 'next/link'
 import {
   Avatar,
   Box,
-  Button,
   ButtonGroup,
   Heading,
   HStack,
+  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -20,6 +21,7 @@ import {
   CardPlaceholder,
   Icon,
   LinkButton,
+  MembershipButtons,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 import { UserNameHandle } from '@components/users'
@@ -35,19 +37,14 @@ export function DashboardOverview({ state }) {
       <DashboardHero>
         <Heading as="h1" size="xl">
           Happy {dayNamePeriod}
-          {state.profile.name && `, ${state.profile.name}`}!
+          {state.profile.nickname && `, ${state.profile.nickname}`}!
         </Heading>
         <HStack>
           <Text>
-            <span>Welcome to the Dashboard. You are a </span>
-            {state.profile.role !== 'Member' && (
-              <span>
-                <b>{state.profile.role}</b> as
-              </span>
-            )}{' '}
-            <span>
-              <b>{state.profile.mode}</b> with <b>{state.profile.plan}</b> plan.
-            </span>
+            Welcome to the Dashboard.{' '}
+            <NextLink href="/settings/overview" passHref>
+              <Link color="teal.500">Go to the Settings</Link>
+            </NextLink>
           </Text>
         </HStack>
       </DashboardHero>
@@ -82,12 +79,17 @@ export function DashboardOverview({ state }) {
                     <LinkButton
                       href={`/${state.profile.handle}`}
                       colorScheme="teal"
+                      leftIcon={<Icon name="profile" />}
                     >
                       Visit profile
                     </LinkButton>
                   )}
                   {!state.profile.handle && (
-                    <LinkButton href="/settings/profile" colorScheme="teal">
+                    <LinkButton
+                      href="/settings/profile"
+                      colorScheme="teal"
+                      leftIcon={<Icon name="edit" />}
+                    >
                       Setup profile
                     </LinkButton>
                   )}
@@ -95,12 +97,26 @@ export function DashboardOverview({ state }) {
                     href="/settings/overview"
                     colorScheme="teal"
                     variant="outline"
+                    leftIcon={<Icon name="settings" />}
                   >
-                    Go to settings
+                    Settings
                   </LinkButton>
                 </ButtonGroup>
               </VStack>
             </Card>
+          </Stack>
+
+          <Stack>
+            <HeadingStack>
+              <Icon name="cat" />
+              Membership
+            </HeadingStack>
+            <CardOverview>
+              <CardPlaceholder>
+                <Text>You're currently on {state.profile.plan} plan.</Text>
+                <MembershipButtons plan={state.profile.plan} />
+              </CardPlaceholder>
+            </CardOverview>
           </Stack>
 
           <Stack width="100%">

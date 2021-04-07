@@ -45,7 +45,8 @@ export function DashboardMentors({ state }) {
                     />
                   </Box>
                   <Text>
-                    Hey {state.profile.name}, you don't have any mentors yet.
+                    Hey {state.profile.nickname}, you don't have any mentors
+                    yet.
                   </Text>
                   <LinkButton colorScheme="teal" href="/settings/super">
                     Request Super plan

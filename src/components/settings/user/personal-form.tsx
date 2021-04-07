@@ -31,7 +31,9 @@ export function UserPersonalForm({ state }) {
           placeholder="Your title or tagline"
           defaultValue={profile.headline}
         />
-        <FormHelperText>Your headline is for title or tagline.</FormHelperText>
+        <FormHelperText>
+          Your headline is for your job title, tagline, or motto.
+        </FormHelperText>
       </FormControl>
 
       <FormControl as={Stack} spacing={1}>
@@ -56,7 +58,7 @@ export function UserPersonalForm({ state }) {
         <FormLabel>Location</FormLabel>
         <Input
           type="text"
-          placeholder="City, State or Remote or Worldwide"
+          placeholder="City, State / Remote / Worldwide"
           defaultValue={profile.location}
         />
         <FormHelperText>
@@ -84,6 +86,7 @@ export function UserPersonalForm({ state }) {
         alignSelf="flex-start"
         leftIcon={<Icon name="save" />}
         colorScheme="blue"
+        size="sm"
       >
         Save personal details
       </Button>

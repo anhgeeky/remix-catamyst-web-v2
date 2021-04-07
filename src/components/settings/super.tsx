@@ -1,19 +1,10 @@
-import { useEffect } from 'react'
 import NextHead from 'next/head'
 import {
   Alert,
   AlertIcon,
   Box,
-  Button,
-  Code,
-  FormControl,
-  FormHelperText,
-  FormLabel,
   Heading,
   HStack,
-  Input,
-  InputGroup,
-  InputRightElement,
   Link,
   ListItem,
   OrderedList,
@@ -22,8 +13,11 @@ import {
 } from '@chakra-ui/react'
 
 import { Content, Card, Icon } from '@components'
-import { SettingsHero, GumroadButton } from '@components/settings'
-import { dataApp } from '@data'
+import {
+  SettingsHero,
+  GumroadButton,
+  SuperPlanRequestForm,
+} from '@components/settings'
 
 export function SettingsSuper({ state }) {
   return (
@@ -49,14 +43,17 @@ export function SettingsSuper({ state }) {
 
           <Card as={Stack}>
             <Heading as="h3" size="md">
-              Payment
+              Super Plan Payment
             </Heading>
 
             {state.profile.plan !== 'Super' ? (
               <Stack align="flex-start">
-                <Text>Click this button to pay for Super account.</Text>
-                <GumroadButton productId="catamyst-super">
-                  $2000 one-time fee
+                <GumroadButton
+                  productId="catamyst-super"
+                  email={state.user.email}
+                  leftIcon={<Icon name="super" />}
+                >
+                  Upgrade to Super
                 </GumroadButton>
               </Stack>
             ) : (
@@ -85,49 +82,25 @@ export function SettingsSuper({ state }) {
                   with <b>150 hours</b> of live mentorship sessions.
                 </ListItem>
                 <ListItem>
-                  After you paid for the one-time fee, click the{' '}
-                  <b>View content</b> button or <b>check your email</b>. You
-                  will receive a license key that looks like this:{' '}
-                  <Code>A1234567-B1234567-C1234567-D1234567</Code>
-                </ListItem>
-                <ListItem>
-                  If you didn't find the license key,{' '}
-                  <Link
-                    isExternal
-                    color="teal.500"
-                    href="https://gumroad.com/license-key-lookup"
-                  >
-                    check with license key lookup
-                  </Link>
-                  .
-                </ListItem>
-                <ListItem>
                   If you need to pay via alternative methods such as direct bank
                   transfer or even crypto like Bitcoin, please tell us in the
                   discussion.
                 </ListItem>
                 <ListItem>
-                  When you have paid or your license key is applied, you will be
-                  automatically assigned with the available mentor and would be
-                  sent an email to proceed further. So you can immediately
-                  schedule the mentorship sessions.
+                  When you have paid, you will be automatically assigned with
+                  the available mentor and would be sent an email to proceed
+                  further. So you can immediately schedule the mentorship
+                  sessions.
                 </ListItem>
                 <ListItem>
-                  As you already paid and applied the license key, your account
-                  is on the <b>Super</b> plan forever. If the license key is
-                  removed or invalid, your account should stay on <b>Super</b>{' '}
-                  plan.
-                </ListItem>
-                <ListItem>
-                  If you previously had <b>Pro</b> plan, you should immediately
-                  cancel the subscription as this <b>Super</b> plan already has
-                  Pro-tier access forever.
+                  As you already paid, your account is on the <b>Super</b> plan
+                  forever.
                 </ListItem>
               </OrderedList>
             </Box>
           </Card>
 
-          <Card as={Stack} align="flex-start">
+          {/* <Card as={Stack} align="flex-start">
             <Heading as="h3" size="md">
               License key
             </Heading>
@@ -157,7 +130,7 @@ export function SettingsSuper({ state }) {
                 Save license key
               </Button>
             </FormControl>
-          </Card>
+          </Card> */}
 
           {state.profile.super?.license_key && (
             <Card as={Stack}>
@@ -201,33 +174,5 @@ export function SettingsSuper({ state }) {
         </Stack>
       </Content>
     </>
-  )
-}
-
-function SuperPlanRequestForm({ state }) {
-  return (
-    <Card as={Stack}>
-      <Heading as="h3" size="md">
-        Request for discussion
-      </Heading>
-      <Text>
-        Before you start for a <b>Super</b> plan, you can send a request to have
-        a discussion before the payment. To see whether this mentorship is
-        suitable for you and help you achieve your goals. You can also read the
-        details on benefits and conditions below.
-      </Text>
-      <Stack direction={{ base: 'column', sm: 'row' }}>
-        <Button size="sm" colorScheme="green" leftIcon={<Icon name="send" />}>
-          Send discussion request
-        </Button>
-        <Button size="sm" leftIcon={<Icon name="learn" />}>
-          Read the details
-        </Button>
-      </Stack>
-      <Text>
-        Currently we're available for <b>{dataApp.superQuotaLeft}</b> learners
-        out of <b>{dataApp.superQuotaTotal}</b> total learners quota.
-      </Text>
-    </Card>
   )
 }

@@ -54,6 +54,7 @@ export function UserAvatarForm({ state }) {
           alignSelf="flex-start"
           leftIcon={<Icon name="save" />}
           colorScheme="blue"
+          size="sm"
         >
           Save avatar
         </Button>

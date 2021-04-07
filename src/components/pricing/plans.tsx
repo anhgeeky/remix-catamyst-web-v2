@@ -87,7 +87,7 @@ export function PricingPlans() {
               {isAuthenticated && (
                 <LinkButton
                   href={plan.buttons.isAuthenticated.href}
-                  colorScheme="blue"
+                  colorScheme="teal"
                   leftIcon={<Icon name={plan.slug} />}
                 >
                   {plan.buttons.isAuthenticated.text}

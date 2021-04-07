@@ -1,8 +1,13 @@
 import { useEffect } from 'react'
 import NextHead from 'next/head'
-import { Link, useColorModeValue } from '@chakra-ui/react'
+import { Button, Link, useColorModeValue } from '@chakra-ui/react'
 
-export function GumroadButton({ productId, children }) {
+export function GumroadButton({
+  productId = 'catamyst-pro',
+  email = 'you@mail.com',
+  leftIcon,
+  children,
+}) {
   useEffect(() => {
     const script = document.createElement('script')
     script.src = '/scripts/gumroad.js'
@@ -15,22 +20,17 @@ export function GumroadButton({ productId, children }) {
 
   return (
     <>
-      <Link
+      <Button
+        as={Link}
         className="gumroad-button"
-        href={`https://gum.co/${productId}?wanted=true`}
+        colorScheme="teal"
+        href={`https://gum.co/${productId}?wanted=true&email=${email}`}
         data-display-style="overlay"
-        rounded="md"
-        boxShadow={useColorModeValue(
-          '0 0 2px rgba(0, 0, 0, 0.4)',
-          '0 0 2px rgba(255, 255, 255, 0.4)'
-        )}
-        bg={useColorModeValue('white', 'gray.900')}
-        bgImage={`url(https://gumroad.com/button/button_bar.jpg)`}
-        backgroundRepeat="repeat-x"
-        _hover={{ textDecoration: 'none' }}
+        leftIcon={leftIcon}
+        size="lg"
       >
         {children}
-      </Link>
+      </Button>
     </>
   )
 }

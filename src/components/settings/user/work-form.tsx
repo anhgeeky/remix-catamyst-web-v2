@@ -51,6 +51,7 @@ export function UserWorkForm({ state }) {
         alignSelf="flex-start"
         leftIcon={<Icon name="save" />}
         colorScheme="blue"
+        size="sm"
       >
         Save work details
       </Button>

@@ -43,7 +43,7 @@ export function CMSOverview() {
           Welcome to CMS
         </Heading>
         <HStack>
-          <Text>It's {dayNamePeriod} get looking and editing!</Text>
+          <Text>It's {dayNamePeriod}!</Text>
         </HStack>
       </CMSHero>
 

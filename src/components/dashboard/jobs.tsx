@@ -44,7 +44,8 @@ export function DashboardJobs({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.name}, you haven't applied to a job yet.
+                  Hey {state.profile.nickname}, you haven't applied to a job
+                  yet.
                 </Text>
                 <LinkButton colorScheme="teal" href="/jobs">
                   Search for a job

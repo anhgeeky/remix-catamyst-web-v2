@@ -50,7 +50,7 @@ export function DashboardProjects({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.name}, you don't have any published
+                  Hey {state.profile.nickname}, you don't have any published
                   projects yet.
                 </Text>
                 <LinkButton colorScheme="teal" href="/dashboard/projects/new">
@@ -65,7 +65,8 @@ export function DashboardProjects({ state }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {state.profile.name}, you don't have any draft projects.
+                  Hey {state.profile.nickname}, you don't have any draft
+                  projects.
                 </Text>
                 <LinkButton colorScheme="teal" href="/dashboard/projects/new">
                   Publish a project

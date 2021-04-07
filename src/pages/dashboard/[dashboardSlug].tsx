@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router'
-import { Text } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { HeaderTabs } from '@components'
 import {
+  DashboardHero,
   DashboardCertificates,
   DashboardDiscussions,
   DashboardJobs,
@@ -30,7 +31,14 @@ export default function dashboardSlugPage() {
   return (
     <Layout title="Loading dashboard... · Catamyst">
       <HeaderTabs links={dataDashboardLinks} />
-      {!state.profile && <Text>Loading dashboard...</Text>}
+      {!state.profile && (
+        <DashboardHero>
+          <Heading as="h1" size="xl">
+            Loading dashboard...
+          </Heading>
+        </DashboardHero>
+      )}
+
       {dashboardSlug && state.profile && (
         <>
           {dashboardSlug === 'overview' && <DashboardOverview state={state} />}

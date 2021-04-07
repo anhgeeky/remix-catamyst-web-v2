@@ -27,16 +27,16 @@ export function HeaderEditor({ name, item, register, actions }) {
             Back
           </Button>
           <Button
+            onClick={actions.handleDelete}
             colorScheme="red"
             leftIcon={<Icon name="delete" />}
-            onClick={actions.handleDelete}
           >
             Delete
           </Button>
           <Button
+            onClick={actions.handleReset}
             colorScheme="yellow"
             leftIcon={<Icon name="reset" />}
-            onClick={actions.handleReset}
           >
             Reset
           </Button>

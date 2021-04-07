@@ -1,7 +1,3 @@
-/**
- * components/all
- * Would be used without dynamic import.
- */
 export { AlertSoon } from '@components/all/alert-soon'
 export { Card } from '@components/all/card'
 export { CardArea } from '@components/all/card-area'
@@ -30,6 +26,7 @@ export { LearningTag } from '@components/all/learning-tag'
 export { LessonIcon } from '@components/all/lesson-icon'
 export { LinkButton } from '@components/all/link-button'
 export { Logo } from '@components/all/logo'
+export { MembershipButtons } from '@components/all/membership-buttons'
 export { MenuPanel } from '@components/all/menu-panel'
 export { MenuToggle } from '@components/all/menu-toggle'
 export { NavLink } from '@components/all/nav-link'

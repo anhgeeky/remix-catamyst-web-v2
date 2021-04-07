@@ -1,10 +1,11 @@
 import { useRouter } from 'next/router'
-import { Text } from '@chakra-ui/react'
+import { Heading } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { HeaderTabs } from '@components'
 import { useRedirectSignIn } from '@hooks'
 import {
+  SettingsHero,
   SettingsOverview,
   SettingsProfile,
   SettingsEmail,
@@ -27,10 +28,17 @@ export default function settingsSlug() {
    */
   return (
     <Layout title="Loading settings... · Catamyst">
-      {!state.profile && <Text>Loading settings...</Text>}
+      <HeaderTabs links={dataSettingsLinks} />
+      {!state.profile && (
+        <SettingsHero>
+          <Heading as="h1" size="xl">
+            Loading settings...
+          </Heading>
+        </SettingsHero>
+      )}
+
       {settingsSlug && state.profile && (
         <>
-          <HeaderTabs links={dataSettingsLinks} />
           {settingsSlug === 'overview' && <SettingsOverview state={state} />}
           {settingsSlug === 'profile' && <SettingsProfile state={state} />}
           {settingsSlug === 'email' && <SettingsEmail state={state} />}

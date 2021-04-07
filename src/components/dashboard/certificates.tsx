@@ -24,15 +24,16 @@ export function DashboardCertificates({ state }) {
           <Stack>
             <HeadingStack>From Catamyst:</HeadingStack>
             <Card>
-              Hey {state.profile.name}, you haven't got any certificates yet.
+              Hey {state.profile.nickname}, you haven't got any certificates
+              yet.
             </Card>
           </Stack>
 
           <Stack>
             <HeadingStack>From other place:</HeadingStack>
             <Card>
-              Hey {state.profile.name}, you haven't add any outside certificates
-              yet.
+              Hey {state.profile.nickname}, you haven't add any outside
+              certificates yet.
             </Card>
           </Stack>
         </Stack>

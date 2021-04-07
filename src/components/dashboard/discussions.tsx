@@ -44,7 +44,7 @@ export function DashboardDiscussions({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.name}, you haven't involved in any
+                  Hey {state.profile.nickname}, you haven't involved in any
                   discussions yet.
                 </Text>
                 <LinkButton href="/forum" colorScheme="teal">

@@ -48,6 +48,7 @@ export function UserCoverForm({ state }) {
           alignSelf="flex-start"
           leftIcon={<Icon name="save" />}
           colorScheme="blue"
+          size="sm"
         >
           Save cover image
         </Button>

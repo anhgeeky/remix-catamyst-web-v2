@@ -62,7 +62,7 @@ export function ProfileModeForm({ state }) {
     <Card id="profile-mode">
       <Stack as="form" onSubmit={handleSubmit(handleSubmitForm)}>
         <Heading as="h2" size="md">
-          Profile Mode
+          Account Mode
         </Heading>
 
         <RadioGroup defaultValue={state.profile.mode} ref={register}>
@@ -101,7 +101,7 @@ export function ProfileModeForm({ state }) {
             href="/settings/profile"
             leftIcon={<Icon name="edit" />}
           >
-            Edit profile details
+            Edit profile
           </LinkButton>
         </Stack>
       </Stack>

@@ -44,8 +44,8 @@ export function DashboardTracks({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.name}, you haven't enrolled in any track
-                  yet.
+                  Hey {state.profile.nickname}, you haven't enrolled in any
+                  track yet.
                 </Text>
                 <LinkButton href="/learn" colorScheme="teal">
                   Choose a track
@@ -58,7 +58,8 @@ export function DashboardTracks({ state }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {state.profile.name}, you haven't completed any track yet.
+                  Hey {state.profile.nickname}, you haven't completed any track
+                  yet.
                 </Text>
               </CardPlaceholder>
             </Card>

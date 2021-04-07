@@ -1,4 +1,5 @@
 import NextHead from 'next/head'
+import NextLink from 'next/link'
 import {
   Stack,
   Heading,
@@ -10,7 +11,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 
-import { Content, Card, LinkButton, Icon } from '@components'
+import { Content, Card, LinkButton, Icon, MembershipButtons } from '@components'
 import { SettingsHero, ProfileModeForm } from '@components/settings'
 import { getCompleteDateTime } from '@utils'
 
@@ -30,24 +31,30 @@ export function SettingsOverview({ state }) {
 }
 
 export function SettingsOverviewContent({ state }) {
-  const { user, profile } = state
-
   return (
     <>
       <SettingsHero>
-        {!profile.name && (
+        {!state.profile.name && (
           <Heading as="h1" size="xl">
-            Hello {user.email}
+            Hello {state.user.email}
           </Heading>
         )}
-        {profile.name && (
+        {state.profile.nickname && (
           <Heading as="h1" size="xl">
-            Hey, {profile.name}
+            Hey, {state.profile.nickname}
+          </Heading>
+        )}
+        {!state.profile.nickname && (
+          <Heading as="h1" size="xl">
+            Settings Overview
           </Heading>
         )}
         <HStack>
           <Text>
-            Welcome to the Settings. This is your overal account information.
+            Welcome to the Settings.{' '}
+            <NextLink href="/dashboard/overview" passHref>
+              <Link color="teal.500">Go back to dashboard</Link>
+            </NextLink>
           </Text>
         </HStack>
       </SettingsHero>
@@ -62,21 +69,21 @@ export function SettingsOverviewContent({ state }) {
 
           <Card as={Stack}>
             <Heading as="h2" size="md">
-              Email
+              Account Email
             </Heading>
-            <Text>{user.email || 'name@example.com'}</Text>
+            <Text>{state.user.email || 'name@example.com'}</Text>
             <Text>
-              {user.confirmed_at ? (
+              {state.user.confirmed_at ? (
                 <span>
                   Your email is confirmed on{' '}
-                  {getCompleteDateTime(user.confirmed_at)}
+                  {getCompleteDateTime(state.user.confirmed_at)}
                 </span>
               ) : (
                 <span>Your email is not confirmed yet</span>
               )}
             </Text>
             <Stack direction={{ base: 'column', sm: 'row' }}>
-              {!user.confirmed_at && (
+              {!state.user.confirmed_at && (
                 <Button
                   size="sm"
                   colorScheme="green"
@@ -91,43 +98,20 @@ export function SettingsOverviewContent({ state }) {
                 size="sm"
                 leftIcon={<Icon name="edit" />}
               >
-                Edit email preferences
+                Edit email
               </LinkButton>
             </Stack>
           </Card>
 
           <Card as={Stack}>
             <Heading as="h2" size="md">
-              Plan and Billing
+              Account Membership
             </Heading>
             <Text>
-              Your account is on the <b>{profile.plan}</b> plan.{' '}
-              {profile.plan === 'Basic' && 'Free of charge.'}
+              Your account is on the <b>{state.profile.plan}</b> plan.{' '}
+              {state.profile.plan === 'Basic' && 'Free of charge.'}
             </Text>
-            <Stack direction={{ base: 'column', sm: 'row' }}>
-              {profile.plan !== 'Super' && (
-                <LinkButton
-                  href="/settings/pro"
-                  colorScheme="yellow"
-                  size="sm"
-                  leftIcon={<Icon name="pro" />}
-                >
-                  {profile.plan !== 'Pro'
-                    ? 'Upgrade to Pro plan'
-                    : 'Manage Pro plan'}
-                </LinkButton>
-              )}
-              <LinkButton
-                href="/settings/super"
-                colorScheme="yellow"
-                size="sm"
-                leftIcon={<Icon name="super" />}
-              >
-                {profile.plan !== 'Super'
-                  ? 'Upgrade to Super plan'
-                  : 'Manage Super plan'}
-              </LinkButton>
-            </Stack>
+            <MembershipButtons plan={state.profile.plan} />
           </Card>
 
           <Card as={Stack} align="flex-start">
@@ -166,7 +150,7 @@ export function SettingsOverviewContent({ state }) {
                 </Heading>
                 <Text>This is your user data that we store:</Text>
                 <Text as="pre" fontSize="xs">
-                  {JSON.stringify(user, null, 2)}
+                  {JSON.stringify(state.user, null, 2)}
                 </Text>
               </Card>
 
@@ -176,7 +160,7 @@ export function SettingsOverviewContent({ state }) {
                 </Heading>
                 <Text>This is your profile data that we store:</Text>
                 <Text as="pre" fontSize="xs">
-                  {JSON.stringify(profile, null, 2)}
+                  {JSON.stringify(state.profile, null, 2)}
                 </Text>
               </Card>
             </>

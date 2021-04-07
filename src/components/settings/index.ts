@@ -22,3 +22,5 @@ export { UserEmailForm } from '@components/settings/user/email-form'
 export { UserPasswordForm } from '@components/settings/user/password-form'
 
 export { UserProfilePreview } from '@components/settings/user/profile-preview'
+
+export { SuperPlanRequestForm } from '@components/settings/super/request-form'
