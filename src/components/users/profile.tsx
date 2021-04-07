@@ -124,7 +124,7 @@ export function UserProfile({ user }) {
 }
 
 function UserProfileCover({ user }) {
-  const defaultCoverUrl = `${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`
+  const defaultCoverUrl = `https://storage.catamyst.com/covers/grass.jpg`
 
   return (
     <Flex justify="center" px={1}>

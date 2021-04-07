@@ -39,9 +39,7 @@ export function DashboardProjects({ state }) {
                 <Box>
                   <NextImage
                     className="invertable next-image"
-                    src={`${
-                      process.env.NEXT_PUBLIC_STORAGE_URL
-                    }/illustrations/dashboard-projects-none-${
+                    src={`https://storage.catamyst.com/illustrations/dashboard-projects-none-${
                       isTablet ? 'mobile' : 'desktop'
                     }.png`}
                     alt="No Projects"

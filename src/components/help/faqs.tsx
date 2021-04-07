@@ -33,7 +33,7 @@ export function HelpFaqs() {
       <Box className="next-image-container">
         <NextImage
           className="invertable next-image"
-          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/help.png`}
+          src={`https://storage.catamyst.com/illustrations/help.png`}
           alt="Cat confused need help"
           width={isTooSmall ? 105 : 140}
           height={isTooSmall ? 150 : 200}

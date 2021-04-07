@@ -37,7 +37,7 @@ export function DashboardJobs({ state }) {
                 <Box>
                   <NextImage
                     className="invertable next-image"
-                    src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-jobs-none.png`}
+                    src={`https://storage.catamyst.com/illustrations/dashboard-jobs-none.png`}
                     alt="No Jobs"
                     width={200}
                     height={200}

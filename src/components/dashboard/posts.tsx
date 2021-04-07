@@ -37,7 +37,7 @@ export function DashboardPosts({ state }) {
                 <Box>
                   <NextImage
                     className="invertable next-image"
-                    src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-posts-none.png`}
+                    src={`https://storage.catamyst.com/illustrations/dashboard-posts-none.png`}
                     alt="No Posts"
                     width={200}
                     height={200}

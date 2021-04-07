@@ -40,7 +40,7 @@ export function PricingPlans() {
               <Flex display="flex" width="100%" justify="center">
                 <NextImage
                   className="invertable next-image"
-                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/plan-${plan.slug}.png`}
+                  src={`https://storage.catamyst.com/illustrations/plan-${plan.slug}.png`}
                   alt={plan.name}
                   layout="fixed"
                   objectFit="contain"

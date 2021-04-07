@@ -12,7 +12,7 @@ export function MembershipButtons({ plan }) {
           size="sm"
           leftIcon={<Icon name="pro" />}
         >
-          {plan !== 'Pro' ? 'Upgrade to Pro' : 'Manage Pro plan'}
+          {plan !== 'Pro' ? 'Upgrade to Pro' : 'Manage Pro'}
         </LinkButton>
       )}
       <LinkButton
@@ -21,7 +21,7 @@ export function MembershipButtons({ plan }) {
         size="sm"
         leftIcon={<Icon name="super" />}
       >
-        {plan !== 'Super' ? 'Upgrade to Super' : 'Manage Super plan'}
+        {plan !== 'Super' ? 'Upgrade to Super' : 'Manage Super'}
       </LinkButton>
     </ButtonGroup>
   )

@@ -19,18 +19,14 @@ export function UserPasswordForm({ user }) {
         <FormLabel>New password</FormLabel>
         <InputGroup>
           <Input type="password" />
-          <InputRightElement
-            color="green.500"
-            children={<Icon name="check" />}
-          />
         </InputGroup>
         <FormHelperText>
-          Your secret password or passphrase. Use minimum of 10 characters.
-          Please manage it using password manager like{' '}
+          Minimum 10 characters. Please manage it using password manager of your
+          choice or{' '}
           <Link isExternal color="teal.500" href="https://bitwarden.com">
             Bitwarden
-          </Link>{' '}
-          or password management app of your choice.
+          </Link>
+          .
         </FormHelperText>
       </FormControl>
 
@@ -39,6 +35,7 @@ export function UserPasswordForm({ user }) {
         alignSelf="flex-start"
         leftIcon={<Icon name="save" />}
         colorScheme="blue"
+        size="sm"
       >
         Update password
       </Button>

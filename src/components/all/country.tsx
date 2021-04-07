@@ -10,7 +10,7 @@ export function Country({ code }) {
     return (
       <HStack>
         <img
-          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/flags/EARTH.svg`}
+          src={`https://storage.catamyst.com/flags/EARTH.svg`}
           role="flag"
           alt="Earth"
           width={21}
@@ -24,7 +24,7 @@ export function Country({ code }) {
     return (
       <HStack>
         <img
-          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/flags/MARS.svg`}
+          src={`https://storage.catamyst.com/flags/MARS.svg`}
           role="flag"
           alt="Mars"
           width={21}

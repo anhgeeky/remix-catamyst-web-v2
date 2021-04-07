@@ -34,7 +34,7 @@ export function UserProfilePreview({ profile }) {
   const initialState = { profile }
   const [state, dispatch] = useReducer(handleDatabaseEvent, initialState)
 
-  const defaultCoverUrl = `${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`
+  const defaultCoverUrl = `https://storage.catamyst.com/covers/grass.jpg`
 
   useEffect(() => {
     const subscription = supabase

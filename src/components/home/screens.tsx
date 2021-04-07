@@ -86,7 +86,7 @@ export function HomeScreens() {
                   }}
                 >
                   <NextImage
-                    src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/screenshots/${screens[selectedIndex].slug}-${colorMode}.png`}
+                    src={`https://storage.catamyst.com/screenshots/${screens[selectedIndex].slug}-${colorMode}.png`}
                     objectFit="contain"
                     width={936}
                     height={585}

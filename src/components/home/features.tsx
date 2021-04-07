@@ -50,7 +50,7 @@ export function HomeFeatures() {
                 <Stack direction="column" align="center">
                   <NextImage
                     className="invertable next-image"
-                    src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/${feature.imageName}`}
+                    src={`https://storage.catamyst.com/illustrations/${feature.imageName}`}
                     objectFit="contain"
                     layout="fixed"
                     height={100}

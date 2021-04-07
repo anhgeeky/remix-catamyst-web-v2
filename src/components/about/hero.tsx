@@ -27,7 +27,7 @@ export function AboutHero() {
       >
         <NextImage
           className="invertable next-image"
-          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-about.png`}
+          src={`https://storage.catamyst.com/illustrations/hero-about.png`}
           alt="Cat flying with a red cape"
           width={150}
           height={150}

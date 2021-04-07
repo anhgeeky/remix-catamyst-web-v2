@@ -1,6 +1,8 @@
 import NextHead from 'next/head'
 import NextLink from 'next/link'
+import NextImage from 'next/image'
 import {
+  Flex,
   Avatar,
   Box,
   ButtonGroup,
@@ -56,7 +58,10 @@ export function DashboardOverview({ state }) {
           minChildWidth={{ base: 280, sm: 350 }}
         >
           <Stack width="100%">
-            <HeadingStack>You</HeadingStack>
+            <HeadingStack>
+              <Icon name="profile" />
+              You
+            </HeadingStack>
             <Card>
               <VStack spacing={3}>
                 <Box
@@ -108,14 +113,27 @@ export function DashboardOverview({ state }) {
 
           <Stack>
             <HeadingStack>
-              <Icon name="cat" />
+              <Icon name="billing" />
               Membership
             </HeadingStack>
             <CardOverview>
-              <CardPlaceholder>
-                <Text>You're currently on {state.profile.plan} plan.</Text>
+              <VStack>
+                <Flex display="flex" width="100%" justify="center">
+                  <NextImage
+                    className="invertable next-image"
+                    src={`https://storage.catamyst.com/illustrations/plan-${state.profile.plan.toLowerCase()}.png`}
+                    alt={state.profile.plan}
+                    layout="fixed"
+                    objectFit="contain"
+                    width={150}
+                    height={96}
+                  />
+                </Flex>
+                <Text>
+                  You're currently on <b>{state.profile.plan}</b> plan.
+                </Text>
                 <MembershipButtons plan={state.profile.plan} />
-              </CardPlaceholder>
+              </VStack>
             </CardOverview>
           </Stack>
 

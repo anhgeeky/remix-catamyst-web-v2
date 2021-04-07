@@ -38,7 +38,7 @@ export function DashboardMentors({ state }) {
                   <Box>
                     <NextImage
                       className="invertable next-image"
-                      src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/dashboard-mentors-none.png`}
+                      src={`https://storage.catamyst.com/illustrations/dashboard-mentors-none.png`}
                       alt="No Mentors"
                       width={200}
                       height={200}

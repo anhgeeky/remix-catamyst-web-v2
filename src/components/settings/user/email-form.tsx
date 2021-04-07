@@ -37,6 +37,7 @@ export function UserEmailForm({ user }) {
         alignSelf="flex-start"
         leftIcon={<Icon name="save" />}
         colorScheme="blue"
+        size="sm"
       >
         Update email
       </Button>

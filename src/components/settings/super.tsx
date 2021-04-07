@@ -37,6 +37,20 @@ export function SettingsSuper({ state }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
+          {state.profile.super?.license_key && (
+            <Card as={Stack}>
+              <Heading as="h3" size="md">
+                Manage or cancel your Super plan
+              </Heading>
+              <Text>
+                If you need help, chat directly with us. If you want to cancel
+                before the mentorship sessions are scheduled, we'll refund your
+                money (partially deducted from the processing fee). But if the
+                mentorship is already scheduled or ongoing, there is no refund.
+              </Text>
+            </Card>
+          )}
+
           {state.profile.plan !== 'Super' && (
             <SuperPlanRequestForm state={state} />
           )}
@@ -86,7 +100,7 @@ export function SettingsSuper({ state }) {
                   If you need to pay via alternative methods such as direct bank
                   transfer, via{' '}
                   <Link isExternal color="teal.500" href="https://wise.com">
-                    Transferwise
+                    TransferWise
                   </Link>
                   , or even crypto like Bitcoin, please tell us in the
                   discussion.
@@ -99,25 +113,6 @@ export function SettingsSuper({ state }) {
               </OrderedList>
             </Box>
           </Card>
-
-          {state.profile.super?.license_key && (
-            <Card as={Stack}>
-              <Heading as="h3" size="md">
-                Manage, cancel, or refund your Super plan
-              </Heading>
-              <Text>
-                You can check your information by clicking the{' '}
-                <b>View content</b> button again from the purchase confirmation
-                email. There you can update your information.
-              </Text>
-              <Text>
-                If you need help, chat directly with us. Before mentorship
-                sessions are scheduled, if you want to cancel, we'll refund your
-                money. But if the mentorship is already scheduled or ongoing,
-                there is no refund.
-              </Text>
-            </Card>
-          )}
 
           <Card as={Stack}>
             <Heading as="h3" size="md">

@@ -20,7 +20,7 @@ export function HomeVillain() {
         <NextImage
           className="invertable next-image"
           priority
-          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/hero-last-desktop.png`}
+          src={`https://storage.catamyst.com/illustrations/hero-last-desktop.png`}
           alt="Cats doing high five"
           objectFit="contain"
           width={500}

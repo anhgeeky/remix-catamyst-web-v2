@@ -27,7 +27,7 @@ export function CollectionTracks({ tracks }) {
       <NextImage
         className="invertable next-image"
         key={isTooSmall ? 'mobile' : 'desktop'}
-        src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/illustrations/tracks-${
+        src={`https://storage.catamyst.com/illustrations/tracks-${
           isTooSmall ? 'mobile' : 'desktop'
         }.png`}
         alt="Cat reading book with floating shapes"

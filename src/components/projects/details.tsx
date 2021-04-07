@@ -64,7 +64,7 @@ export function ProjectDetails({ projectSlug }) {
             {!project.coverUrl && (
               <Flex className="next-image-container" justify="center">
                 <NextImage
-                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`}
+                  src={`https://storage.catamyst.com/covers/grass.jpg`}
                   alt={project.title}
                   layout="fixed"
                   objectFit="cover"

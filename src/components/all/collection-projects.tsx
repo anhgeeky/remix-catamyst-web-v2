@@ -52,7 +52,7 @@ function ProjectBoard({ project }) {
             <AspectRatio ratio={16 / 10}>
               <Box className="next-image-container">
                 <NextImage
-                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}/covers/grass.jpg`}
+                  src={`https://storage.catamyst.com/covers/grass.jpg`}
                   alt={project.title}
                   layout="fill"
                   objectFit="cover"

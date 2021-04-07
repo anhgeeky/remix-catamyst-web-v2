@@ -5,20 +5,14 @@ import {
   Box,
   Button,
   ButtonGroup,
-  Code,
-  FormControl,
-  FormHelperText,
-  FormLabel,
   Heading,
   HStack,
-  Input,
-  InputGroup,
-  InputRightElement,
   Link,
   ListItem,
   OrderedList,
   Stack,
   Text,
+  UnorderedList,
 } from '@chakra-ui/react'
 
 import { Content, Card, Icon } from '@components'
@@ -42,12 +36,51 @@ export function SettingsPro({ state }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
+          {state.profile.pro?.subscription_id && (
+            <Card as={Stack}>
+              <Heading as="h3" size="md">
+                Manage or cancel your Pro plan
+              </Heading>
+              <ButtonGroup colorScheme="teal" size="sm">
+                <Button
+                  isExternal
+                  as={Link}
+                  href={`https://gumroad.com/subscriptions/${state.profile.pro?.subscription_id}/manage`}
+                  leftIcon={<Icon name="billing" />}
+                >
+                  Manage subscription
+                </Button>
+              </ButtonGroup>
+              <Text>
+                You can update, cancel, upgrade, or downgrade your plan. If you
+                need help, chat directly with us.
+              </Text>
+              <Box>
+                <Heading as="h3" size="sm" pt={3}>
+                  Conditions if your Pro plan subscription is ended
+                </Heading>
+                <UnorderedList>
+                  <ListItem>
+                    If you had more than 3 published projects, all of those
+                    projects are still available to see and edit. But you cannot
+                    projects unless you continue your subscription.
+                  </ListItem>
+                  <ListItem>
+                    If you had posted some job vacancies, all of those vacancies
+                    are still available to see and edit. But you cannot post
+                    more vacancies unless you continue your subscription.
+                  </ListItem>
+                </UnorderedList>
+              </Box>
+            </Card>
+          )}
+
           <Card as={Stack}>
             <Heading as="h3" size="md">
               Pro Plan Payment
             </Heading>
 
-            {state.profile.plan !== 'Pro' ? (
+            {state.profile.plan === 'Basic' ? (
               <Stack align="flex-start">
                 <GumroadButton
                   productId="catamyst-pro"
@@ -57,10 +90,15 @@ export function SettingsPro({ state }) {
                   Upgrade to Pro
                 </GumroadButton>
               </Stack>
-            ) : (
+            ) : state.profile.plan === 'Pro' ? (
               <Alert status="success" rounded="md">
                 <AlertIcon />
                 You've paid for Pro plan.
+              </Alert>
+            ) : (
+              <Alert status="success" rounded="md">
+                <AlertIcon />
+                You've already in Super plan.
               </Alert>
             )}
 
@@ -79,7 +117,7 @@ export function SettingsPro({ state }) {
                   same within your Catamyst account.
                 </ListItem>
                 <ListItem>
-                  You only need to process this once while your subscriptionis
+                  You only need to process this once while your subscription is
                   still active. You will be charged automatically per month.
                 </ListItem>
                 <ListItem>
@@ -90,46 +128,6 @@ export function SettingsPro({ state }) {
               </OrderedList>
             </Box>
           </Card>
-
-          {state.profile.pro?.license_key && (
-            <Card as={Stack}>
-              <Heading as="h3" size="md">
-                Manage or cancel your Pro plan
-              </Heading>
-              <ButtonGroup colorScheme="yellow">
-                <Button
-                  isExternal
-                  as={Link}
-                  href={`https://gumroad.com/subscriptions/${state.profile.pro?.subscription_id}/manage`}
-                  leftIcon={<Icon name="billing" />}
-                >
-                  Manage subscription
-                </Button>
-              </ButtonGroup>
-              <Text>
-                You can update, cancel, upgrade, or downgrade your plan. If you
-                need help, chat directly with us.
-              </Text>
-            </Card>
-          )}
-
-          {state.profile.pro?.license_key && (
-            <Card as={Stack}>
-              <Heading as="h3" size="md">
-                Conditions if your Pro plan subscription is ended
-              </Heading>
-              <Text>
-                If you had more than 3 published projects, all of those projects
-                are still available to see and edit. But you cannot publish more
-                unless you continue your subscription.
-              </Text>
-              <Text>
-                If you had posted some job vacancies, all of those vacancies are
-                still available to see and edit. But you cannot post more unless
-                you continue your subscription.
-              </Text>
-            </Card>
-          )}
         </Stack>
       </Content>
     </>
