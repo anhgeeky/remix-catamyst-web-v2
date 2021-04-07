@@ -145,20 +145,11 @@ function OrganizationProfileCover({ org }) {
 }
 
 function OrganizationProfileContent({ org, state, actions }) {
-  const placeholder = {
-    totalFollowing: 10,
-    totalFollowers: 20,
-    totalPosts: 3,
-    totalProjects: 4,
-    totalFavorites: 50,
-    totalLikes: 60,
-  }
-
   return (
-    <Flex justify="center" mt={-90} px={5}>
+    <Flex justify="center" mt="-90px" px={5}>
       <Stack spacing={10} maxW={700} width="100%">
         <Stack id="org-profile" spacing={3}>
-          <VStack id="org-info-0">
+          <VStack id="org-info-names">
             <Box
               id="org-avatar"
               rounded="md"
@@ -171,48 +162,10 @@ function OrganizationProfileContent({ org, state, actions }) {
 
             <OrganizationNameHandle org={org} />
 
-            {/* Follow and favorite button */}
-            {/* <Box id="org-actions" as={ButtonGroup} size="sm">
-              {!state.isFollowed && (
-                <Button
-                  colorScheme="teal"
-                  variant="outline"
-                  onClick={actions.handleFollow}
-                >
-                  Follow
-                </Button>
-              )}
-              {state.isFollowed && (
-                <Button
-                  colorScheme="teal"
-                  variant="solid"
-                  onClick={actions.handleUnfollow}
-                >
-                  Unfollow
-                </Button>
-              )}
-              {!state.isFavorited && (
-                <IconButton
-                  aria-label="Favorite organization"
-                  colorScheme="teal"
-                  variant="outline"
-                  icon={<Icon name="star" />}
-                  onClick={actions.handleFavorite}
-                />
-              )}
-              {state.isFavorited && (
-                <IconButton
-                  aria-label="Unfavorite organization"
-                  colorScheme="teal"
-                  variant="solid"
-                  icon={<Icon name="star" />}
-                  onClick={actions.handleUnfavorite}
-                />
-              )}
-            </Box> */}
+            <ProfileActions state={state} actions={actions} />
           </VStack>
 
-          <Stack id="org-info-1" spacing={0} pt={3}>
+          <Stack id="org-info-bio" spacing={0} pt={3}>
             {org.headline && (
               <Box id="org-headline">
                 <Heading as="h3" size="md" color="gray.500">
@@ -226,7 +179,12 @@ function OrganizationProfileContent({ org, state, actions }) {
             </Box>
           </Stack>
 
-          <Flex id="org-info-2" color="gray.500" align="center" flexWrap="wrap">
+          <Flex
+            id="org-info-location"
+            color="gray.500"
+            align="center"
+            flexWrap="wrap"
+          >
             {state.hasCountry && (
               <Box id="org-country" mr={5}>
                 <Country code={org.country} />
@@ -261,49 +219,7 @@ function OrganizationProfileContent({ org, state, actions }) {
             )}
           </Flex>
 
-          <Flex id="org-info-3" color="gray.500" align="center" flexWrap="wrap">
-            <Box id="org-following" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalFollowing}
-              </chakra.span>
-              <span>Following</span>
-            </Box>
-
-            <Box id="org-followers" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalFollowers}
-              </chakra.span>
-              <span>Followers</span>
-            </Box>
-
-            <Box id="org-posts" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalPosts}
-              </chakra.span>
-              <span>Posts</span>
-            </Box>
-
-            <Box id="org-projects" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalProjects}
-              </chakra.span>
-              <span>Projects</span>
-            </Box>
-
-            <Box id="org-favorites" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalFavorites}
-              </chakra.span>
-              <span>Favorites</span>
-            </Box>
-
-            <Box id="org-likes" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalLikes}
-              </chakra.span>
-              <span>Likes</span>
-            </Box>
-          </Flex>
+          {/* <ProfileInfoStats /> */}
         </Stack>
 
         {org.projects && (
@@ -374,5 +290,94 @@ export function OrganizationNameHandle({ org }) {
         <Badge variant="solid">{org.mode}</Badge>
       </HStack>
     </Box>
+  )
+}
+
+export function ProfileActions({ state, actions }) {
+  //  Follow and favorite button
+  return (
+    <Box id="org-actions" as={ButtonGroup} size="sm">
+      {!state.isFollowed && (
+        <Button
+          colorScheme="teal"
+          variant="outline"
+          onClick={actions.handleFollow}
+        >
+          Follow
+        </Button>
+      )}
+      {state.isFollowed && (
+        <Button
+          colorScheme="teal"
+          variant="solid"
+          onClick={actions.handleUnfollow}
+        >
+          Unfollow
+        </Button>
+      )}
+      {!state.isFavorited && (
+        <IconButton
+          aria-label="Favorite organization"
+          colorScheme="teal"
+          variant="outline"
+          icon={<Icon name="star" />}
+          onClick={actions.handleFavorite}
+        />
+      )}
+      {state.isFavorited && (
+        <IconButton
+          aria-label="Unfavorite organization"
+          colorScheme="teal"
+          variant="solid"
+          icon={<Icon name="star" />}
+          onClick={actions.handleUnfavorite}
+        />
+      )}
+    </Box>
+  )
+}
+
+export function ProfileInfoStats({ data = {} }) {
+  const placeholder = {
+    totalFollowing: 10,
+    totalFollowers: 20,
+    totalPosts: 3,
+    totalProjects: 4,
+    totalFavorites: 50,
+    totalLikes: 60,
+  }
+
+  return (
+    <Flex id="org-info-stats" color="gray.500" align="center" flexWrap="wrap">
+      <Box id="org-following" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalFollowing}</chakra.span>
+        <span>Following</span>
+      </Box>
+
+      <Box id="org-followers" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalFollowers}</chakra.span>
+        <span>Followers</span>
+      </Box>
+
+      <Box id="org-posts" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalPosts}</chakra.span>
+        <span>Posts</span>
+      </Box>
+
+      <Box id="org-projects" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalProjects}</chakra.span>
+        <span>Projects</span>
+      </Box>
+
+      <Box id="org-favorites" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalFavorites}</chakra.span>
+        <span>Favorites</span>
+      </Box>
+
+      <Box id="org-likes" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalLikes}</chakra.span>
+        <span>Likes</span>
+      </Box>
+    </Flex>
   )
 }

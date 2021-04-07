@@ -64,7 +64,6 @@
     ],
     "mode": "Learner",
     "plan": "Basic",
-    "isConfirmed": false,
     "joinedAt": "2020-02-01",
     "organizations": [],
     "tracks": [],
@@ -95,13 +94,14 @@
       { "name": "Instagram", "url": "https://instagram.com/mhaidarhanif_" },
       { "name": "Facebook", "url": "https://facebook.com/mhaidarhanif" }
     ],
-    "organization": {
+    "work": {
       "title": "Founder",
       "name": "Catamyst",
       "handle": "catamyst",
       "url": "https://catamyst.com"
     },
     "role": "Mentor",
+    "mode": "Employer",
     "plan": "Super",
     "isVerified": true,
     "isConfirmed": true,
@@ -124,7 +124,7 @@
     "avatar_url": "https://storage.catamyst.com/avatars/mayaasmara.jpg",
     "coverUrl": "https://storage.catamyst.com/covers/cats.jpg",
     "headline": "The Writer",
-    "bio_html": "Writer, content creator, and mental health activist. My passion for education and well-being is what drives me to consistently spreading messages about the importance of happiness in work and life through the community-based organization I founded and the contents I made.",
+    "bio_html": "Writer, content creator, and mental health activist. My passion for education and well-being is what drives me to consistently spreading messages about the importance of happiness in work and life through the community-based work I founded and the contents I made.",
     "country": "EARTH",
     "location": "Worldwide",
     "website": { "url": "https://mayaasmara.com", "name": "Digital Garden" },
@@ -133,13 +133,15 @@
       { "name": "GitHub", "url": "https://github.com/mayaasmara" },
       { "name": "Instagram", "url": "https://instagram.com/mayaasmara_" }
     ],
-    "organization": {
+    "work": {
       "title": "Writer",
       "name": "Catamyst",
       "handle": "catamyst",
       "url": "https://catamyst.com"
     },
     "role": "Staff",
+    "mode": "Employer",
+    "plan": "Super",
     "isVerified": true,
     "isConfirmed": true,
     "joinedAt": "2021-01-01",
@@ -172,12 +174,13 @@
       { "name": "LinkedIn", "url": "https://linkedin.com/in/latifahdhia" },
       { "name": "Instagram", "url": "https://instagram.com/hamozks" }
     ],
-    "organization": {
+    "work": {
       "title": "Illustrator",
       "name": "Catamyst",
       "handle": "catamyst",
       "url": "https://catamyst.com"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Super",
     "isConfirmed": true,
@@ -208,14 +211,14 @@
       { "name": "LinkedIn", "url": "https://linkedin.com/in/rahmanfadhil" },
       { "name": "GitHub", "url": "https://github.com/rahmanfadhil" }
     ],
-    "organization": {
+    "work": {
       "title": "Software Engineer",
       "name": "Freelance",
       "url": "https://rahmanfadhil.com"
     },
     "role": "Mentor",
+    "mode": "Learner",
     "plan": "Super",
-    "isConfirmed": false,
     "joinedAt": "2021-01-01",
     "organizations": [],
     "tracks": [1, 2],
@@ -243,13 +246,13 @@
       { "name": "LinkedIn", "url": "https://linkedin.com/in/ahmadmarzuki" },
       { "name": "GitHub", "url": "https://github.com/amadzuki" }
     ],
-    "organization": {
+    "work": {
       "title": "Software Engineer",
       "name": "AutoParts"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Super",
-    "isConfirmed": false,
     "joinedAt": "2020-03-01",
     "organizations": [],
     "tracks": [1, 2],
@@ -277,11 +280,11 @@
       { "name": "LinkedIn", "url": "https://linkedin.com/in/jonathansnicolas" },
       { "name": "GitHub", "url": "https://github.com/jonathannicolasdev" }
     ],
-    "organization": {
+    "work": {
       "title": "Full Stack Web Developer",
       "name": "Freelance"
     },
-    "isConfirmed": false,
+    "role": "Member",
     "mode": "Learner",
     "plan": "Super",
     "joinedAt": "2020-04-01",
@@ -314,13 +317,13 @@
       },
       { "name": "GitHub", "url": "https://github.com/mfarisgibran" }
     ],
-    "organization": {
+    "work": {
       "title": "Web Developer",
       "name": "Freelance"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Super",
-    "isConfirmed": false,
     "joinedAt": "2020-08-01",
     "organizations": [],
     "tracks": [1, 2],
@@ -343,13 +346,13 @@
     "bio_html": "<p>Software Engineer</p>",
     "country": "SG",
     "location": "Singapore-Batam",
-    "organization": {
+    "work": {
       "title": "Software Engineer",
       "name": "Glee Trees"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Pro",
-    "isConfirmed": false,
     "joinedAt": "2021-01-01",
     "organizations": [],
     "tracks": [1, 2],
@@ -372,13 +375,13 @@
     "bio_html": "<p>Developer</p>",
     "country": "ID",
     "location": "Batam",
-    "organization": {
+    "work": {
       "title": "Developer",
       "name": "Company"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Pro",
-    "isConfirmed": false,
     "organizations": [],
     "tracks": [1, 2],
     "projects": [5],
@@ -400,14 +403,14 @@
     "bio_html": "<p>CEO of Plater, Member of Global Shapers and Founder of Mealennials. My team is building Indonesia food supply chain, in association Telesindo Group.</p>",
     "country": "ID",
     "location": "Tangerang",
-    "organization": {
+    "work": {
       "title": "CEO",
       "name": "Plater",
       "url": "https://plater.id"
     },
+    "role": "Member",
     "mode": "Employer",
     "plan": "Pro",
-    "isConfirmed": false,
     "joinedAt": "2021-01-01",
     "organizations": [],
     "tracks": [],
@@ -431,13 +434,13 @@
     "country": "ID",
     "location": "Tangerang",
     "website": { "url": "https://digachandra.com" },
-    "organization": {
+    "work": {
       "title": "Web Developer",
       "name": "Vidio (KMK Labs)"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Pro",
-    "isConfirmed": false,
     "joinedAt": "2021-01-01",
     "organizations": [],
     "tracks": [1, 2],
@@ -461,13 +464,13 @@
     "country": "ID",
     "location": "Padang → Jakarta",
     "website": { "url": "https://github.com/sahbanagold" },
-    "organization": {
+    "work": {
       "title": "Full Stack Engineer",
       "name": "Gibox Digital Asia"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Pro",
-    "isConfirmed": false,
     "joinedAt": "2021-01-01",
     "organizations": [],
     "tracks": [1, 2],
@@ -491,13 +494,13 @@
     "country": "ID",
     "location": "Tangerang",
     "website": { "url": "https://github.com/ariadiprana" },
-    "organization": {
+    "work": {
       "title": "PEGA System Architect",
       "name": "PT Bank Mandiri (Persero) Tbk."
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Pro",
-    "isConfirmed": false,
     "joinedAt": "2021-01-01",
     "organizations": [],
     "tracks": [1, 2],
@@ -521,13 +524,13 @@
     "country": "ID",
     "location": "Jakarta",
     "website": { "url": "https://lilianti.github.io" },
-    "organization": {
+    "work": {
       "title": "Web Developer",
       "name": "Gemilang Global Property"
     },
+    "role": "Member",
     "mode": "Learner",
     "plan": "Pro",
-    "isConfirmed": false,
     "joinedAt": "2021-01-01",
     "organizations": [],
     "tracks": [1, 2],

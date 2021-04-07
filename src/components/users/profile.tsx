@@ -48,7 +48,7 @@ export function UserProfile({ user }) {
 
   const hasCountry = Boolean(user.country)
   const hasLocation = Boolean(user.location)
-  const hasOrganization = user.organization?.title && user.organization?.name
+  const hasWork = user.work?.title && user.work?.name
   const hasSocialLinks = Boolean(user.socials?.length > 0)
   const hasWebsite = Boolean(user.website?.url)
   const hasProjects = Boolean(user.projects?.length)
@@ -105,7 +105,7 @@ export function UserProfile({ user }) {
           isFavorited,
           hasCountry,
           hasLocation,
-          hasOrganization,
+          hasWork,
           hasSocialLinks,
           hasWebsite,
           hasProjects,
@@ -128,7 +128,7 @@ function UserProfileCover({ user }) {
 
   return (
     <Flex justify="center" px={1}>
-      <Box
+      <Flex
         className="next-image-cover-container"
         maxW="1440px"
         overflow="auto"
@@ -144,7 +144,7 @@ function UserProfileCover({ user }) {
           width={1440}
           height={200}
         />
-      </Box>
+      </Flex>
     </Flex>
   )
 }
@@ -160,10 +160,10 @@ function UserProfileContent({ user, state, actions }) {
   }
 
   return (
-    <Flex justify="center" mt={-90} px={5}>
+    <Flex justify="center" mt="-100px" px={5}>
       <Stack spacing={10} maxW={700} width="100%">
         <Stack id="user-profile" spacing={3}>
-          <VStack id="user-info-0">
+          <VStack id="user-info-names">
             <Box
               id="user-avatar"
               rounded="full"
@@ -186,47 +186,11 @@ function UserProfileContent({ user, state, actions }) {
                   Edit profile
                 </Button>
               )}
-              {/* Follow and favorite button */}
-              {/* {!state.isSameUser && !state.isFollowed && (
-                <Button
-                  colorScheme="teal"
-                  variant="outline"
-                  onClick={actions.handleFollow}
-                >
-                  Follow
-                </Button>
-              )}
-              {!state.isSameUser && state.isFollowed && (
-                <Button
-                  colorScheme="teal"
-                  variant="solid"
-                  onClick={actions.handleUnfollow}
-                >
-                  Unfollow
-                </Button>
-              )}
-              {!state.isFavorited && (
-                <IconButton
-                  aria-label="Favorite user"
-                  colorScheme="teal"
-                  variant="outline"
-                  icon={<Icon name="star" />}
-                  onClick={actions.handleFavorite}
-                />
-              )}
-              {state.isFavorited && (
-                <IconButton
-                  aria-label="Unfavorite user"
-                  colorScheme="teal"
-                  variant="solid"
-                  icon={<Icon name="star" />}
-                  onClick={actions.handleUnfavorite}
-                />
-              )} */}
+              {/* <ProfileActions state={state} actions={actions} /> */}
             </Box>
           </VStack>
 
-          <Stack id="user-info-1" spacing={0} pt={3}>
+          <Stack id="user-info-bio" spacing={0} pt={3}>
             {user.headline && (
               <Box id="user-headline">
                 <Heading as="h3" size="md" color="gray.500">
@@ -242,29 +206,25 @@ function UserProfileContent({ user, state, actions }) {
           </Stack>
 
           <Flex
-            id="user-info-2"
+            id="user-info-work"
             color="gray.500"
             align="center"
             flexWrap="wrap"
           >
-            {state.hasOrganization && (
+            {state.hasWork && (
               <Box id="user-organization" mr={5} as={HStack} spacing={1}>
                 <Icon name="organization" />
-                <span>{user.organization.title}, </span>
-                {user.organization.handle ? (
-                  <NextLink href={user.organization.handle} passHref>
-                    <Link color="teal.500">{user.organization.name}</Link>
+                <span>{user.work.title}, </span>
+                {user.work.handle ? (
+                  <NextLink href={user.work.handle} passHref>
+                    <Link color="teal.500">{user.work.name}</Link>
                   </NextLink>
-                ) : user.organization.url ? (
-                  <Link
-                    isExternal
-                    href={user.organization.url}
-                    color="teal.500"
-                  >
-                    {user.organization.name}
+                ) : user.work.url ? (
+                  <Link isExternal href={user.work.url} color="teal.500">
+                    {user.work.name}
                   </Link>
                 ) : (
-                  <span>{user.organization.name}</span>
+                  <span>{user.work.name}</span>
                 )}
               </Box>
             )}
@@ -284,7 +244,7 @@ function UserProfileContent({ user, state, actions }) {
           </Flex>
 
           <Flex
-            id="user-info-3"
+            id="user-info-links"
             color="gray.500"
             align="center"
             flexWrap="wrap"
@@ -315,54 +275,7 @@ function UserProfileContent({ user, state, actions }) {
             </Box>
           </Flex>
 
-          <Flex
-            id="user-info-4"
-            color="gray.500"
-            align="center"
-            flexWrap="wrap"
-          >
-            <Box id="user-following" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalFollowing}
-              </chakra.span>
-              <span>Following</span>
-            </Box>
-
-            <Box id="user-followers" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalFollowers}
-              </chakra.span>
-              <span>Followers</span>
-            </Box>
-
-            <Box id="user-posts" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalPosts}
-              </chakra.span>
-              <span>Posts</span>
-            </Box>
-
-            <Box id="user-projects" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalProjects}
-              </chakra.span>
-              <span>Projects</span>
-            </Box>
-
-            <Box id="user-favorites" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalFavorites}
-              </chakra.span>
-              <span>Favorites</span>
-            </Box>
-
-            <Box id="user-likes" mr={3} as={HStack} spacing={1}>
-              <chakra.span fontWeight="700">
-                {placeholder.totalLikes}
-              </chakra.span>
-              <span>Likes</span>
-            </Box>
-          </Flex>
+          {/* <ProfileInfoStats /> */}
         </Stack>
 
         {state.hasProjects && (
@@ -433,11 +346,99 @@ export function UserNameHandle({ user }) {
             <Badge variant="solid">{user.role}</Badge>
           )}
           {user.mode && <Badge variant="solid">{user.mode}</Badge>}
-          {user.role && user.role !== 'Member' && (
+          {user.plan && user.plan !== 'Member' && (
             <Badge variant="solid">{user.plan}</Badge>
           )}
         </HStack>
       </VStack>
     </Box>
+  )
+}
+
+export function ProfileActions({ state, actions }) {
+  return (
+    <Box id="org-actions" as={ButtonGroup} size="sm">
+      {!state.isFollowed && (
+        <Button
+          colorScheme="teal"
+          variant="outline"
+          onClick={actions.handleFollow}
+        >
+          Follow
+        </Button>
+      )}
+      {state.isFollowed && (
+        <Button
+          colorScheme="teal"
+          variant="solid"
+          onClick={actions.handleUnfollow}
+        >
+          Unfollow
+        </Button>
+      )}
+      {!state.isFavorited && (
+        <IconButton
+          aria-label="Favorite organization"
+          colorScheme="teal"
+          variant="outline"
+          icon={<Icon name="star" />}
+          onClick={actions.handleFavorite}
+        />
+      )}
+      {state.isFavorited && (
+        <IconButton
+          aria-label="Unfavorite organization"
+          colorScheme="teal"
+          variant="solid"
+          icon={<Icon name="star" />}
+          onClick={actions.handleUnfavorite}
+        />
+      )}
+    </Box>
+  )
+}
+
+export function ProfileInfoStats({ data = {} }) {
+  const placeholder = {
+    totalFollowing: 10,
+    totalFollowers: 20,
+    totalPosts: 3,
+    totalProjects: 4,
+    totalFavorites: 50,
+    totalLikes: 60,
+  }
+
+  return (
+    <Flex id="org-info-stats" color="gray.500" align="center" flexWrap="wrap">
+      <Box id="org-following" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalFollowing}</chakra.span>
+        <span>Following</span>
+      </Box>
+
+      <Box id="org-followers" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalFollowers}</chakra.span>
+        <span>Followers</span>
+      </Box>
+
+      <Box id="org-posts" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalPosts}</chakra.span>
+        <span>Posts</span>
+      </Box>
+
+      <Box id="org-projects" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalProjects}</chakra.span>
+        <span>Projects</span>
+      </Box>
+
+      <Box id="org-favorites" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalFavorites}</chakra.span>
+        <span>Favorites</span>
+      </Box>
+
+      <Box id="org-likes" mr={3} as={HStack} spacing={1}>
+        <chakra.span fontWeight="700">{placeholder.totalLikes}</chakra.span>
+        <span>Likes</span>
+      </Box>
+    </Flex>
   )
 }

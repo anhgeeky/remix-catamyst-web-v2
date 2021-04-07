@@ -52,32 +52,33 @@ export function HandleProfile({ handle }) {
           setLoading(false)
         }
 
-        // public.organizations
-        const { data: orgData } = await supabase
-          .from('organizations')
-          .select(
-            `handle, name, is_public, is_verified, logo_url, cover_url, headline, bio_html, country, location, website_url, socials, created_at, updated_at`
-          )
-          .eq('handle', handle)
-          .single()
+        if (!user) {
+          // public.organizations
+          const { data: orgData } = await supabase
+            .from('organizations')
+            .select(
+              `handle, name, is_public, is_verified, logo_url, cover_url, headline, bio_html, country, location, website_url, socials, created_at, updated_at`
+            )
+            .eq('handle', handle)
+            .single()
 
-        if (orgData) {
-          setOrgProfile(orgData)
-          setLoading(false)
-        }
-
-        if (!orgData) {
-          // organizations.json
-          const org = dataOrganizations.find((org) => org.handle === handle)
-          if (org) {
-            // @ts-ignore
-            setOrgProfile(org)
+          if (orgData) {
+            setOrgProfile(orgData)
             setLoading(false)
           }
 
-          if (!org) {
-            throw new Error('No profile found.')
-            setLoading(false)
+          if (!orgData) {
+            // organizations.json
+            const org = dataOrganizations.find((org) => org.handle === handle)
+            if (org) {
+              // @ts-ignore
+              setOrgProfile(org)
+              setLoading(false)
+            }
+
+            if (!org) {
+              setLoading(false)
+            }
           }
         }
       }
