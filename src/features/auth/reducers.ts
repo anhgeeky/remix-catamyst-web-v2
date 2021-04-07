@@ -11,6 +11,9 @@ import {
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
+  UPDATE_PROFILE_HANDLE,
+  UPDATE_PROFILE_NAME,
+  UPDATE_PROFILE_AVATAR,
 } from '@features/auth/types'
 
 /**
@@ -23,9 +26,9 @@ export function authReducer(
     isAuthenticated: false,
     isLoading: false,
     profile: {
-      avatar_url: '',
       handle: '',
       name: '',
+      avatar_url: '',
     },
   },
   action
@@ -97,6 +100,27 @@ export function authReducer(
     }
     case SIGN_OUT_SUCCESS: {
       return { ...state, isLoading: false, isAuthenticated: false, profile: {} }
+    }
+    /**
+     * Update profile.
+     */
+    case UPDATE_PROFILE_HANDLE: {
+      return {
+        ...state,
+        profile: { ...state.profile, handle: action.payload },
+      }
+    }
+    case UPDATE_PROFILE_NAME: {
+      return {
+        ...state,
+        profile: { ...state.profile, name: action.payload },
+      }
+    }
+    case UPDATE_PROFILE_AVATAR: {
+      return {
+        ...state,
+        profile: { ...state.profile, avatar_url: action.payload },
+      }
     }
     /**
      * Default.

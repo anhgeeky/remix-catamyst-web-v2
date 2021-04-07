@@ -3,24 +3,21 @@ import {
   Button,
   FormControl,
   FormLabel,
-  Heading,
   Input,
-  ButtonGroup,
   InputGroup,
   FormHelperText,
-  IconButton,
-  HStack,
   FormErrorMessage,
-  Select,
   Stack,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useDispatch } from 'react-redux'
 
 import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
 import { NameNickSchema } from '@utils/yup'
+import { updateProfileName } from '@features/auth/actions'
 
 type Inputs = {
   name?: string
@@ -28,24 +25,25 @@ type Inputs = {
 }
 
 export function UserNameForm({ state }) {
-  const [loading, setLoading] = useState(false)
+  const dispatch = useDispatch()
   const toast = useToast()
+  const [loading, setLoading] = useState(false)
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
-    mode: 'onSubmit',
     resolver: yupResolver(NameNickSchema),
   })
 
   const handleSubmitForm = async (form) => {
     try {
       setLoading(true)
-      await new Promise((resolve) => setTimeout(resolve, 300))
       const { data, error } = await supabase
         .from('profiles')
         .update(
-          { id: state.user!.id, name: form.name, nickname: form.nickname },
+          { name: form.name, nickname: form.nickname },
           { returning: 'minimal' }
         )
         .eq('id', state.user!.id)
+      if (error) throw error
+      dispatch(updateProfileName(form.name))
       toast({ status: 'success', title: 'Your names are changed' })
       setLoading(false)
     } catch (error) {

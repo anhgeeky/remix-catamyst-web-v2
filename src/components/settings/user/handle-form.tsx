@@ -10,21 +10,23 @@ import {
   InputLeftAddon,
   InputRightElement,
   Stack,
-  Text,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useDispatch } from 'react-redux'
 
 import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
 import { HandleSchema } from '@utils/yup'
+import { updateProfileHandle } from '@features/auth/actions'
 
 type Inputs = { handle: string }
 
 export function UserHandleForm({ state }) {
-  const [loading, setLoading] = useState(false)
+  const dispatch = useDispatch()
   const toast = useToast()
+  const [loading, setLoading] = useState(false)
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
     resolver: yupResolver(HandleSchema),
   })
@@ -32,16 +34,13 @@ export function UserHandleForm({ state }) {
   const handleSubmitForm = async (form) => {
     try {
       setLoading(true)
-      await new Promise((resolve) => setTimeout(resolve, 300))
       const { error } = await supabase
         .from('profiles')
-        .update(
-          { handle: form.handle, id: state.user!.id },
-          { returning: 'minimal' }
-        )
+        .update({ handle: form.handle }, { returning: 'minimal' })
         .eq('id', state.user!.id)
         .single()
       if (error) throw error
+      dispatch(updateProfileHandle(form.handle))
       toast({ status: 'success', title: 'Your username is changed' })
       setLoading(false)
     } catch (error) {

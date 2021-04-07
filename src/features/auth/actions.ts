@@ -13,6 +13,9 @@ import {
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
+  UPDATE_PROFILE_HANDLE,
+  UPDATE_PROFILE_NAME,
+  UPDATE_PROFILE_AVATAR,
 } from '@features/auth/types'
 import { supabase } from '@lib'
 
@@ -180,5 +183,32 @@ export const signOut = () => {
         description: `${error.message}. Please try again.`,
       })
     }
+  }
+}
+
+/**
+ * Update auth.profile.handle
+ */
+export const updateProfileHandle = (handle) => {
+  return async (dispatch) => {
+    dispatch({ type: UPDATE_PROFILE_HANDLE, payload: handle })
+  }
+}
+
+/**
+ * Update auth.profile.name
+ */
+export const updateProfileName = (name) => {
+  return async (dispatch) => {
+    dispatch({ type: UPDATE_PROFILE_NAME, payload: name })
+  }
+}
+
+/**
+ * Update auth.profile.avatar_url
+ */
+export const updateProfileAvatar = (avatar_url) => {
+  return async (dispatch) => {
+    dispatch({ type: UPDATE_PROFILE_AVATAR, payload: avatar_url })
   }
 }

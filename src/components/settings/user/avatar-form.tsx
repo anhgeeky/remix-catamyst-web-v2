@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Button,
   FormControl,
@@ -5,17 +6,52 @@ import {
   FormLabel,
   Input,
   InputGroup,
-  InputLeftAddon,
   InputRightElement,
   Stack,
   Box,
   useColorModeValue,
   Avatar,
 } from '@chakra-ui/react'
+import { useDispatch } from 'react-redux'
 
 import { Card, Icon } from '@components'
+import { updateProfileAvatar } from '@features/auth/actions'
+
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+
+import { useToast } from '@hooks'
+import { supabase } from '@lib'
+import { NameNickSchema } from '@utils/yup'
+import { updateProfileName } from '@features/auth/actions'
+
+type Inputs = {
+  avatar_url?: string
+}
 
 export function UserAvatarForm({ state }) {
+  const dispatch = useDispatch()
+  const toast = useToast()
+  const [loading, setLoading] = useState(false)
+  const { register, handleSubmit, watch, errors } = useForm<Inputs>()
+
+  const handleSubmitForm = async (form) => {
+    try {
+      setLoading(true)
+      const { data, error } = await supabase
+        .from('profiles')
+        .update({ avatar_url: form.avatar_url }, { returning: 'minimal' })
+        .eq('id', state.user!.id)
+      if (error) throw error
+      dispatch(updateProfileAvatar(form.avatar_url))
+      toast({ status: 'success', title: 'Your avatar is changed' })
+      setLoading(false)
+    } catch (error) {
+      toast({ status: 'error', title: 'Failed to change avatar' })
+      setLoading(false)
+    }
+  }
+
   return (
     <Card id="avatar">
       <FormControl as={Stack} align="flex-start">

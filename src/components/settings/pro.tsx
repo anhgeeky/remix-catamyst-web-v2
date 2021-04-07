@@ -48,7 +48,7 @@ export function SettingsPro({ state }) {
                   href={`https://gumroad.com/subscriptions/${state.profile.pro?.subscription_id}/manage`}
                   leftIcon={<Icon name="billing" />}
                 >
-                  Manage subscription
+                  Manage Pro plan membership
                 </Button>
               </ButtonGroup>
               <Text>
