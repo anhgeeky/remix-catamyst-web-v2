@@ -340,7 +340,7 @@
       {
         "type": "Texts",
         "isPublished": true,
-        "html": "<h1>Password manager</h1><p>During your learning and professional work, you will eventually use a lot of online tools. To use them, most of the time you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it's free, safe, and easier to use than other alternatives. It's fine too if you already use other tools like 1Password or LastPass.</p>"
+        "html": "<h1>Password manager</h1><p>During your learning and professional work, you will eventually use a lot of online tools. To use those tools, usually you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it's free, safe, and easier to use than other alternatives. It's fine too if you already use other tools like 1Password or LastPass.</p>"
       },
       {
         "type": "Texts",
@@ -410,7 +410,7 @@
       {
         "type": "Texts",
         "isPublished": true,
-        "html": "<h2>Trello</h2><p>Trello is the most popular task management app, owned by Atlassian. You can use Trello to track your tasks and activities, for personal or work, both on desktop and mobile.</p>"
+        "html": "<h2>Trello</h2><p>Trello is a task management app, owned by Atlassian. You can use Trello to track your tasks and activities, for personal or work, both on desktop and mobile.</p>"
       },
       {
         "type": "Links",

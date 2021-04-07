@@ -9,7 +9,7 @@
     },
     "country": "ID",
     "review": {
-      "html": "<p>If you're looking to learn software engineering with a dedicated private mentor who have literally more than 10,000 hours of experience, Catamyst is the place. I didn’t have any coding background before. But here I've learned and comprehended a lot of software engineering materials to get a decent job! I made <alink href='/projects/saikou'>Saikou</alink> by the way.</p>"
+      "html": "<p>If you're looking to learn software engineering with a dedicated private mentor who have literally more than 10,000 hours of experience, Catamyst is the place. I didn’t have any coding background before. But here I've learned and comprehended a lot of software engineering materials to get a decent job. I made <alink href='/projects/saikou'>Saikou</alink> by the way.</p>"
     },
     "socialLinks": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/ahmadmarzuki" },

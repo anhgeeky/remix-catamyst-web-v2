@@ -29,7 +29,7 @@ export default async function pingHandler(
       // TODO Ping could handle cancellation event here
     } catch (error) {
       const response = {
-        message: 'Failed to verify license key.',
+        message: 'Failed to verify license_key.',
         via: 'ping',
         success: false,
         body: req.body,

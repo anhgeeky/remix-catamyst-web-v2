@@ -21,12 +21,12 @@ export default async function checkSuperLicenseKey(
       // @ts-ignore
       const { data } = await axios(config)
       res.status(200).json({
-        message: 'Super license key is valid.',
+        message: 'Super license_key is valid.',
         ...data,
       })
     } catch (error) {
       res.status(400).json({
-        message: 'Super license key is invalid.',
+        message: 'Super license_key is invalid.',
         success: false,
       })
     }

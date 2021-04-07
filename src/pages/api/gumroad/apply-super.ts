@@ -3,9 +3,9 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { verifyLicenseKey, supabaseAdmin } from '@lib/api'
 
 /**
- * 1. Verify license key based on permalink.
- * 2. Get user.id by email from data purchase.
- * 3. Toggle Super plan with data purchase.
+ * 1. Verify license_key based on permalink
+ * 2. Get user.id by email from data.purchase
+ * 3. Toggle Super plan with data.purchase
  *
  * Should later handle if the authenticated user is different with
  * the email in data purchase.

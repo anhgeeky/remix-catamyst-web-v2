@@ -57,7 +57,7 @@
   },
   {
     "name": "Exclusive Discussions",
-    "description": "Access to Super members-only discussions in the forum with the most exclusive network of members.",
+    "description": "Access to Super-only discussions in the forum with the exclusive network of members.",
     "basic": false,
     "pro": false,
     "super": true

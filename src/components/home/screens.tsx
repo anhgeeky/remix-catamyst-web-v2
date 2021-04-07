@@ -59,13 +59,13 @@ export function HomeScreens() {
         </VStack>
 
         <NextLink href={screens[selectedIndex].href} passHref>
-          <Link>
+          <a>
             <Flex justify="center">
               <AnimatePresence initial={false} exitBeforeEnter>
                 <Box
-                  className="next-image-screenshot-container"
                   key={`${screens[selectedIndex].slug}-${colorMode}`}
                   as={motion.div}
+                  className="next-image-screenshot-container"
                   rounded="md"
                   boxShadow="lg"
                   transition="0.25s ease"
@@ -94,7 +94,7 @@ export function HomeScreens() {
                 </Box>
               </AnimatePresence>
             </Flex>
-          </Link>
+          </a>
         </NextLink>
 
         <VStack mt={-5}>

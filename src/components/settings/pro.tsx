@@ -75,12 +75,12 @@ export function SettingsPro({ state }) {
                   <Link isExternal href="https://stripe.com" color="teal.500">
                     Stripe
                   </Link>
-                  , the trusted payment processor.
+                  , the trusted payment processor. Make sure the email is the
+                  same within your Catamyst account.
                 </ListItem>
                 <ListItem>
-                  You only need to process this once while your subscription or
-                  license key are still active. You will be charged
-                  automatically per month.
+                  You only need to process this once while your subscriptionis
+                  still active. You will be charged automatically per month.
                 </ListItem>
                 <ListItem>
                   If your subscription is ended, your account will be downgraded
@@ -91,44 +91,10 @@ export function SettingsPro({ state }) {
             </Box>
           </Card>
 
-          {/* <Card as={Stack} align="flex-start">
-            <Heading as="h3" size="md">
-              License key
-            </Heading>
-            <FormControl as={Stack} align="flex-start">
-              <InputGroup>
-                <Input
-                  type="text"
-                  placeholder="A1234567-B1234567-C1234567-D1234567"
-                  defaultValue={state.profile.pro?.license_key}
-                />
-                {state.profile.pro?.license_key && (
-                  <InputRightElement
-                    color="green.500"
-                    children={<Icon name="check" />}
-                  />
-                )}
-              </InputGroup>
-              <FormHelperText>
-                Enter license key to activate your Pro plan. It is recommended
-                for you to backup the key using password manager like{' '}
-                <Link isExternal color="teal.500" href="https://bitwarden.com">
-                  Bitwarden
-                </Link>
-                .
-              </FormHelperText>
-              <ButtonGroup colorScheme="blue">
-                <Button leftIcon={<Icon name="save" />}>
-                  Save license key
-                </Button>
-              </ButtonGroup>
-            </FormControl>
-          </Card> */}
-
           {state.profile.pro?.license_key && (
             <Card as={Stack}>
               <Heading as="h3" size="md">
-                Manage, cancel, or refund your Pro plan
+                Manage or cancel your Pro plan
               </Heading>
               <ButtonGroup colorScheme="yellow">
                 <Button
@@ -141,8 +107,8 @@ export function SettingsPro({ state }) {
                 </Button>
               </ButtonGroup>
               <Text>
-                You can update or cancel subscription, like upgrade or downgrade
-                your plan. If you need help, chat directly with us.
+                You can update, cancel, upgrade, or downgrade your plan. If you
+                need help, chat directly with us.
               </Text>
             </Card>
           )}

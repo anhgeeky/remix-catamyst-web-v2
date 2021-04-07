@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.148",
+  "version": "0.1.149",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",

@@ -74,7 +74,8 @@ export function SettingsSuper({ state }) {
                   <Link isExternal href="https://stripe.com" color="teal.500">
                     Stripe
                   </Link>
-                  , the trusted payment processor.
+                  , the trusted payment processor. Make sure the email is the
+                  same within your Catamyst account.
                 </ListItem>
                 <ListItem>
                   You only need to pay once for a lifetime, because this is not
@@ -83,54 +84,21 @@ export function SettingsSuper({ state }) {
                 </ListItem>
                 <ListItem>
                   If you need to pay via alternative methods such as direct bank
-                  transfer or even crypto like Bitcoin, please tell us in the
+                  transfer, via{' '}
+                  <Link isExternal color="teal.500" href="https://wise.com">
+                    Transferwise
+                  </Link>
+                  , or even crypto like Bitcoin, please tell us in the
                   discussion.
                 </ListItem>
                 <ListItem>
-                  When you have paid, you will be automatically assigned with
-                  the available mentor and would be sent an email to proceed
-                  further. So you can immediately schedule the mentorship
-                  sessions.
-                </ListItem>
-                <ListItem>
-                  As you already paid, your account is on the <b>Super</b> plan
-                  forever.
+                  When you have paid, you will be assigned with the available
+                  mentor and would be sent a confirmation to proceed further. So
+                  you can immediately schedule the mentorship sessions.
                 </ListItem>
               </OrderedList>
             </Box>
           </Card>
-
-          {/* <Card as={Stack} align="flex-start">
-            <Heading as="h3" size="md">
-              License key
-            </Heading>
-            <FormControl as={Stack} align="flex-start">
-              <InputGroup>
-                <Input
-                  type="text"
-                  placeholder="A1234567-B1234567-C1234567-D1234567"
-                  defaultValue={state.profile.super?.license_key}
-                />
-                {state.profile.super?.license_key && (
-                  <InputRightElement
-                    color="green.500"
-                    children={<Icon name="check" />}
-                  />
-                )}
-              </InputGroup>
-              <FormHelperText>
-                Enter license key to activate your Super plan. It is recommended
-                for you to backup the key using password manager like{' '}
-                <Link isExternal color="teal.500" href="https://bitwarden.com">
-                  Bitwarden
-                </Link>
-                .
-              </FormHelperText>
-              <Button leftIcon={<Icon name="save" />} colorScheme="blue">
-                Save license key
-              </Button>
-            </FormControl>
-          </Card> */}
 
           {state.profile.super?.license_key && (
             <Card as={Stack}>

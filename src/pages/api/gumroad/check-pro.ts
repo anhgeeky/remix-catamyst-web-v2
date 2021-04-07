@@ -21,12 +21,12 @@ export default async function checkProLicenseKey(
       // @ts-ignore
       const { data } = await axios(config)
       res.status(200).json({
-        message: 'Pro license key is valid.',
+        message: 'Pro license_key is valid.',
         ...data,
       })
     } catch (error) {
       res.status(400).json({
-        message: 'Pro license key is invalid.',
+        message: 'Pro license_key is invalid.',
         success: false,
       })
     }

@@ -28,8 +28,7 @@ export function UserEmailForm({ user }) {
           />
         </InputGroup>
         <FormHelperText>
-          Your most active email to use to sign in. We will email you to confirm
-          the change.
+          We will email you to confirm the change.
         </FormHelperText>
       </FormControl>
 
