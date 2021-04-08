@@ -34,11 +34,6 @@ export function SettingsOverviewContent({ state }) {
   return (
     <>
       <SettingsHero>
-        {!state.profile.name && (
-          <Heading as="h1" size="xl">
-            Hello {state.user.email}
-          </Heading>
-        )}
         {state.profile.nickname && (
           <Heading as="h1" size="xl">
             Hey, {state.profile.nickname}

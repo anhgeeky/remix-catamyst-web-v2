@@ -39,7 +39,7 @@ export function SettingsPro({ state }) {
           {state.profile.pro?.subscription_id && (
             <Card as={Stack}>
               <Heading as="h3" size="md">
-                Manage or cancel your Pro plan
+                Manage your Pro plan
               </Heading>
               <ButtonGroup colorScheme="teal" size="sm">
                 <Button
@@ -48,7 +48,7 @@ export function SettingsPro({ state }) {
                   href={`https://gumroad.com/subscriptions/${state.profile.pro?.subscription_id}/manage`}
                   leftIcon={<Icon name="billing" />}
                 >
-                  Manage Pro plan membership
+                  Manage membership
                 </Button>
               </ButtonGroup>
               <Text>
@@ -119,6 +119,11 @@ export function SettingsPro({ state }) {
                 <ListItem>
                   You only need to process this once while your subscription is
                   still active. You will be charged automatically per month.
+                </ListItem>
+                <ListItem>
+                  If you need to pay via alternative methods such as direct bank
+                  transfer, via TransferWise, or even crypto like Bitcoin, you
+                  can ask us via the chat.
                 </ListItem>
                 <ListItem>
                   If your subscription is ended, your account will be downgraded

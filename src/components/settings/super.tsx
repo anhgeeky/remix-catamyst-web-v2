@@ -40,7 +40,7 @@ export function SettingsSuper({ state }) {
           {state.profile.super?.license_key && (
             <Card as={Stack}>
               <Heading as="h3" size="md">
-                Manage or cancel your Super plan
+                Manage your Super plan
               </Heading>
               <Text>
                 If you need help, chat directly with us. If you want to cancel

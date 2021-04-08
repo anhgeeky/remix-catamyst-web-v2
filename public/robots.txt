@@ -7,6 +7,7 @@ Disallow: /cms
 Disallow: /cms/*
 Disallow: /dashboard
 Disallow: /dashboard/*
+Disallow: /debug
 Disallow: /join
 Disallow: /login
 Disallow: /logout

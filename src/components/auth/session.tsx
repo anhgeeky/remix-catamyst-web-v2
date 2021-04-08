@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-
-import { signOut } from '@features/auth/actions'
-import { supabase } from '@lib'
 import { AuthSession as SupabaseAuthSession } from '@supabase/supabase-js'
+
+import { supabase } from '@lib'
+import { signOut } from '@features/auth/actions'
 
 export function AuthSession() {
   const dispatch = useDispatch()
@@ -21,6 +21,7 @@ export function AuthSession() {
         )
       } else {
         supabase.auth.signOut()
+        // dispatch(signOut())
       }
     } catch (error) {
       console.error(error)
