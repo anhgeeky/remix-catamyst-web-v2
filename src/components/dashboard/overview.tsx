@@ -211,14 +211,26 @@ export function DashboardOverview({ state }) {
               Jobs
             </HeadingStack>
             <CardOverview>
-              <CardPlaceholder>
-                <Text>
-                  You can search and apply jobs that suits you. Either for a
-                  full-time, part-time, quarter-time, freelance, or
-                  project-based.
-                </Text>
-                <LinkButton href="/jobs">Search for a job</LinkButton>
-              </CardPlaceholder>
+              {state.profile.mode === 'Learner' && (
+                <CardPlaceholder>
+                  <Text>
+                    You can search and apply jobs that suits you. Either for a
+                    full-time, part-time, quarter-time, freelance, or
+                    project-based.
+                  </Text>
+                  <LinkButton href="/jobs">Search for a job</LinkButton>
+                </CardPlaceholder>
+              )}
+              {state.profile.mode !== 'Learner' && (
+                <CardPlaceholder>
+                  <Text>
+                    You can post job vacancies. Either for a full-time,
+                    part-time, quarter-time, freelance, or project-based. This
+                    needs a <b>Pro</b> plan.
+                  </Text>
+                  <LinkButton href="/jobs/new">Post a job vacancy</LinkButton>
+                </CardPlaceholder>
+              )}
             </CardOverview>
           </Stack>
 
@@ -234,9 +246,7 @@ export function DashboardOverview({ state }) {
                   from experienced professionals. This needs a <b>Super</b>{' '}
                   plan.
                 </Text>
-                <LinkButton href="/settings/super">
-                  Request Super plan
-                </LinkButton>
+                <LinkButton href="/settings/super">Upgrade to Super</LinkButton>
               </CardPlaceholder>
             </CardOverview>
           </Stack>

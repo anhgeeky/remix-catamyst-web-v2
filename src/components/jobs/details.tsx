@@ -18,7 +18,14 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Icon, Content, Card, HeadingStack, Country } from '@components'
+import {
+  Icon,
+  Content,
+  Card,
+  HeadingStack,
+  Country,
+  LinkButton,
+} from '@components'
 import { transformOptions } from '@components/blocks'
 import {
   JobHero,
@@ -57,6 +64,25 @@ export function JobDetails({ jobParams }) {
     }
   }
 
+  if (!job) {
+    return (
+      <>
+        <NextHead>
+          <title>Job not found · Catamyst</title>
+        </NextHead>
+        <JobHero>
+          <Heading as="h1" size="xl">
+            Sorry, job is not found.
+          </Heading>
+        </JobHero>
+        <Content display="flex" justifyContent="center">
+          <ButtonGroup>
+            <LinkButton href="/jobs">Back to Jobs list</LinkButton>
+          </ButtonGroup>
+        </Content>
+      </>
+    )
+  }
   return (
     <>
       <NextHead>
@@ -66,48 +92,46 @@ export function JobDetails({ jobParams }) {
       </NextHead>
 
       <JobHero theme={job.theme}>
-        <VStack>
-          <JobOrganizationLogo org={job.organization} size={100} />
-          <Heading as="h1" size="xl">
-            {job.title}
-          </Heading>
-          <HStack>
-            <Heading as="h2">
-              {!job.organization.handle && (
-                <Link
-                  as="h2"
-                  fontSize="2xl"
-                  fontWeight="700"
-                  fontFamily="heading"
-                  href={job.organization.url}
-                  isExternal
-                >
+        <JobOrganizationLogo org={job.organization} size={100} />
+        <Heading as="h1" size="xl">
+          {job.title}
+        </Heading>
+        <HStack>
+          <Heading as="h2">
+            {!job.organization.handle && (
+              <Link
+                as="h2"
+                fontSize="2xl"
+                fontWeight="700"
+                fontFamily="heading"
+                href={job.organization.url}
+                isExternal
+              >
+                {job.organization.name}
+              </Link>
+            )}
+            {job.organization.handle && (
+              <NextLink href={`/${job.organization.handle}`} passHref>
+                <Link fontSize="2xl" fontWeight="700" fontFamily="heading">
                   {job.organization.name}
                 </Link>
-              )}
-              {job.organization.handle && (
-                <NextLink href={`/${job.organization.handle}`} passHref>
-                  <Link fontSize="2xl" fontWeight="700" fontFamily="heading">
-                    {job.organization.name}
-                  </Link>
-                </NextLink>
-              )}
-            </Heading>
-            {job.organization.isVerified && (
-              <chakra.span
-                color={job.theme.textColor || 'teal.500'}
-                position="relative"
-                top="0px"
-                fontSize="xl"
-              >
-                <Icon name="verified" />
-              </chakra.span>
+              </NextLink>
             )}
-          </HStack>
-          <Tag size="lg" colorScheme={job.status === 'Open' ? 'green' : 'red'}>
-            {job.status || 'Closed'} Vacancy
-          </Tag>
-        </VStack>
+          </Heading>
+          {job.organization.isVerified && (
+            <chakra.span
+              color={job.theme.textColor || 'teal.500'}
+              position="relative"
+              top="0px"
+              fontSize="xl"
+            >
+              <Icon name="verified" />
+            </chakra.span>
+          )}
+        </HStack>
+        <Tag size="lg" colorScheme={job.status === 'Open' ? 'green' : 'red'}>
+          {job.status || 'Closed'} Vacancy
+        </Tag>
       </JobHero>
 
       <Content maxW={700}>

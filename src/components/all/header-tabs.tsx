@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import NextLink from 'next/link'
-import { Flex, Link, HStack, useColorModeValue } from '@chakra-ui/react'
+import { Flex, Box, Link, HStack, useColorModeValue } from '@chakra-ui/react'
 
 import { Icon } from '@components'
 
@@ -8,7 +8,7 @@ export function HeaderTabs({ links }) {
   const router = useRouter()
 
   return (
-    <Flex justify={{ base: 'flex-start', md: 'center' }} py={3} pr={5}>
+    <Flex justify={{ base: 'flex-start', md: 'center' }} py={3}>
       <HStack
         role="tablist"
         className="hidden-scrollbar"
@@ -35,6 +35,7 @@ export function HeaderTabs({ links }) {
             )
           }
         })}
+        <Box visibility="hidden">.</Box>
       </HStack>
     </Flex>
   )

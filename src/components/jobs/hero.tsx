@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
+import { Box, Flex, VStack, useColorModeValue } from '@chakra-ui/react'
 
 export function JobHero({
   theme = {
@@ -15,7 +15,7 @@ export function JobHero({
       justify="center"
     >
       <Box px={5} width="1200px">
-        {children}
+        <VStack>{children}</VStack>
       </Box>
     </Flex>
   )

@@ -5,6 +5,7 @@ const excludes = [
   '/cms/*',
   '/dashboard',
   '/dashboard/*',
+  '/debug',
   '/join',
   '/login',
   '/logout',

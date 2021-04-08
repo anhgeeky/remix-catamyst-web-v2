@@ -49,7 +49,7 @@ export function DashboardMentors({ state }) {
                     yet.
                   </Text>
                   <LinkButton colorScheme="teal" href="/settings/super">
-                    Request Super plan
+                    Upgrade to Super
                   </LinkButton>
                 </CardPlaceholder>
               </Card>
@@ -64,7 +64,7 @@ export function DashboardMentors({ state }) {
                     enroll in <b>Super</b> plan.
                   </Text>
                   <LinkButton colorScheme="teal" href="/settings/super">
-                    Request Super plan
+                    Upgrade to Super
                   </LinkButton>
                 </CardPlaceholder>
               </Card>

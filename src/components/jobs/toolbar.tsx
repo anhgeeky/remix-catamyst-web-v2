@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import {
   Box,
+  ButtonGroup,
   Button,
   FormLabel,
   Input,
@@ -11,12 +12,13 @@ import {
 } from '@chakra-ui/react'
 
 import { Icon } from '@components'
-import { useToast, useAuth } from '@hooks'
+import { useToast, useAuthProfile } from '@hooks'
+import React from 'react'
 
 export function JobsToolbar() {
   const toast = useToast()
   const router = useRouter()
-  const { isAuthenticated } = useAuth()
+  const { profile, isAuthenticated } = useAuthProfile()
 
   const labels = {
     create: 'Post a job',
@@ -38,15 +40,18 @@ export function JobsToolbar() {
 
   return (
     <Stack direction="row" mb={5}>
-      <Box>
-        <Button
-          colorScheme="teal"
-          leftIcon={<Icon name="add" />}
-          onClick={handleCreateJob}
-        >
-          {labels.create}
-        </Button>
-      </Box>
+      {/* @ts-ignore */}
+      {profile && profile?.mode !== 'Learner' && (
+        <ButtonGroup>
+          <Button
+            colorScheme="teal"
+            leftIcon={<Icon name="add" />}
+            onClick={handleCreateJob}
+          >
+            {labels.create}
+          </Button>
+        </ButtonGroup>
+      )}
 
       <Box as="form" width="100%" onSubmit={handleSearchJobs}>
         <VisuallyHidden>
