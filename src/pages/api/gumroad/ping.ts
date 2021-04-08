@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
 import { supabaseAdmin, upgradePro, upgradeSuper } from '@lib/api'
+import { getPlan } from '@utils'
 
 /**
  * Handle Gumroad Ping webhook.
@@ -38,7 +39,12 @@ export default async function pingHandler(
       const { error: customerError } = await supabaseAdmin
         .from('customers')
         .upsert(
-          { id: userId, customer_id: req.body.email, data: req.body },
+          {
+            id: userId,
+            customer_id: req.body.email || '',
+            plan: getPlan(req.body.permalink) || 'Pro',
+            data: req.body || {},
+          },
           { returning: 'minimal' }
         )
         .single()

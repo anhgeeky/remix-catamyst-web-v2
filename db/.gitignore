@@ -4,4 +4,4 @@
 *.json
 *.sh
 *.sql
-# !setup.sql
+!setup.sql
