@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
-import { supabaseAdmin, togglePro, toggleSuper } from '@lib/api'
+import { supabaseAdmin, upgradePro, upgradeSuper } from '@lib/api'
 
 /**
  * Handle Gumroad Ping webhook.
@@ -46,11 +46,11 @@ export default async function pingHandler(
 
       // 4. Determine and update corresponding profile.plan fields
       if (req.body.permalink === 'catamyst-pro') {
-        await togglePro(req, res, userId)
+        await upgradePro(req, res, userId)
       } else if (req.body.permalink === 'catamyst-pro-lifetime') {
-        await togglePro(req, res, userId)
+        await upgradePro(req, res, userId)
       } else if (req.body.permalink === 'catamyst-super') {
-        await toggleSuper(req, res, userId)
+        await upgradeSuper(req, res, userId)
       } else {
         res.status(400).json({ message: 'Not allowed' })
       }
@@ -58,7 +58,7 @@ export default async function pingHandler(
       // TODO Ping could handle cancellation event here
     } catch (error) {
       const response = {
-        message: 'Failed to verify license_key.',
+        message: 'Failed to upgrade.',
         via: 'ping',
         success: false,
         body: req.body,

@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.158",
+  "version": "0.1.159",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
@@ -30,6 +30,7 @@
     "immer": "5.3.6",
     "immutable": "4.0.0-rc.12",
     "is-url": "1.2.4",
+    "lower-case": "2.0.2",
     "next": "10.1.2",
     "next-sitemap": "1.5.18",
     "qs": "6.10.1",

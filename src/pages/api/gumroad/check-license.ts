@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import axios from 'axios'
-import qs from 'qs'
+import { lowerCase } from 'lower-case'
 
 import { verifyLicenseKey } from '@lib/api'
 
@@ -10,13 +9,12 @@ export default async function checkLicense(
 ) {
   if (
     req.method === 'GET' &&
-    // req.query.type
     req.query.token === process.env.PING_TOKEN &&
     req.query.key
   ) {
     try {
       const { data } = await verifyLicenseKey({
-        permalink: `catamyst-${req.query.type}`,
+        permalink: `catamyst-${lowerCase(String(req.query.plan))}`,
         key: req.query.key,
       })
       if (!data.success) throw new Error('Invalid.')
@@ -28,6 +26,7 @@ export default async function checkLicense(
       res.status(400).json({
         message: 'license_key is invalid.',
         success: false,
+        error: error.stack ? error.message : error,
       })
     }
   } else {

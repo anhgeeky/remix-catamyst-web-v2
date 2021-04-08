@@ -1,6 +1,7 @@
+*.backup
+*.dump
 *.js
 *.json
 *.sh
 *.sql
-*.backup
-*.dump
+# !setup.sql

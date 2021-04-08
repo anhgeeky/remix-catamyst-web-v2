@@ -1,4 +1,4 @@
 export { supabaseAdmin, getUser } from '@lib/api/supabase'
 export { verifyLicenseKey } from '@lib/api/gumroad'
-export { togglePro } from '@lib/api/toggle-pro'
-export { toggleSuper } from '@lib/api/toggle-super'
+export { upgradePro } from '@lib/api/upgrade-pro'
+export { upgradeSuper } from '@lib/api/upgrade-super'

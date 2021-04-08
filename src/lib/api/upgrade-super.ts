@@ -4,7 +4,7 @@ import { supabaseAdmin } from '@lib/api'
 /**
  * Toggle Super-related fields in profile.
  */
-export const toggleSuper = async (req, res, userId) => {
+export const upgradeSuper = async (req, res, userId) => {
   try {
     const { data: profileData, error: profileError } = await supabaseAdmin
       .from('profiles')
