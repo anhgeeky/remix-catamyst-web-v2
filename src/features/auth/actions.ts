@@ -23,7 +23,6 @@ const toast = createStandaloneToast()
 const toastOptions = {
   isClosable: true,
   duration: 3000,
-  position: 'bottom-left',
 }
 
 /**
