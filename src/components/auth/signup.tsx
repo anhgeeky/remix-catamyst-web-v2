@@ -29,9 +29,9 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
-import { Icon, useToast } from '@components'
+import { Icon } from '@components'
 import { SignUpSchema } from '@utils/yup'
 import { signUp } from '@features/auth/actions'
 

@@ -35,7 +35,8 @@ export function UserNameForm({ state }) {
   const handleSubmitForm = async (form) => {
     try {
       setLoading(true)
-      const { data, error } = await supabase
+      await new Promise((resolve) => setTimeout(resolve, 300))
+      const { error } = await supabase
         .from('profiles')
         .update(
           { name: form.name, nickname: form.nickname },

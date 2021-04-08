@@ -1,13 +1,3 @@
-import { useToast, createStandaloneToast } from '@chakra-ui/react'
-
-export function useCustomToast(options = null) {
-  return useToast({
-    isClosable: true,
-    duration: 1000,
-    variant: 'solid',
-    position: 'bottom-left',
-    ...options,
-  })
-}
+import { createStandaloneToast } from '@chakra-ui/react'
 
 export const toast = createStandaloneToast()

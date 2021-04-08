@@ -1,8 +1,8 @@
 import NextLink from 'next/link'
-import { Heading, Link, Button, Text } from '@chakra-ui/react'
+import { Heading, Link, ButtonGroup, Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
+import { Hero, Content, LinkButton } from '@components'
 
 export default function custom404Page() {
   return (
@@ -19,11 +19,10 @@ export default function custom404Page() {
           .
         </Text>
       </Hero>
-
-      <Content>
-        <NextLink href="/">
-          <Button as={Link}>Back to home</Button>
-        </NextLink>
+      <Content display="flex" justifyContent="center">
+        <ButtonGroup>
+          <LinkButton href="/">Back to Home</LinkButton>
+        </ButtonGroup>
       </Content>
     </Layout>
   )

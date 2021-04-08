@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react'
-import NextLink from 'next/link'
 import NextHead from 'next/head'
-import { Link, Heading, Text } from '@chakra-ui/react'
+import { Box, Heading, Text, ButtonGroup } from '@chakra-ui/react'
 
-import { Hero } from '@components'
+import { Hero, Content, LinkButton } from '@components'
 import { UserProfile } from '@components/users'
 import { OrganizationProfile } from '@components/organizations'
 
@@ -93,15 +92,25 @@ export function HandleProfile({ handle }) {
   return (
     <>
       {!loading && !userProfile && !orgProfile && (
-        <Hero>
-          <Heading as="h1" size="lg">
-            @{handle}
-          </Heading>
-          <Text>This account doesn’t exist.</Text>
-          <NextLink href="/discover" passHref>
-            <Link color="teal.500">Go back to Discover</Link>
-          </NextLink>
-        </Hero>
+        <>
+          <Hero>
+            <Heading as="h1" size="lg">
+              @{handle}
+            </Heading>
+            <Box mt={5}>
+              <Heading as="h2" size="sm">
+                This account doesn’t exist.
+              </Heading>
+              <Text>Try searching for another.</Text>
+            </Box>
+          </Hero>
+          <Content display="flex" justifyContent="center">
+            <ButtonGroup>
+              <LinkButton href="/">Back to Home</LinkButton>
+              <LinkButton href="/discover">Back to Discover</LinkButton>
+            </ButtonGroup>
+          </Content>
+        </>
       )}
       {!loading && userProfile && <HandleUserProfile profile={userProfile} />}
       {!loading && orgProfile && <HandleOrgProfile profile={orgProfile} />}

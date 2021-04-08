@@ -20,7 +20,11 @@ import {
 import { supabase } from '@lib'
 
 const toast = createStandaloneToast()
-const toastOptions = { isClosable: true, duration: 3000 }
+const toastOptions = {
+  isClosable: true,
+  duration: 3000,
+  position: 'bottom-left',
+}
 
 /**
  * Sign up with email and password.

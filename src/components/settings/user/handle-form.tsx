@@ -34,6 +34,7 @@ export function UserHandleForm({ state }) {
   const handleSubmitForm = async (form) => {
     try {
       setLoading(true)
+      await new Promise((resolve) => setTimeout(resolve, 300))
       const { error } = await supabase
         .from('profiles')
         .update({ handle: form.handle }, { returning: 'minimal' })

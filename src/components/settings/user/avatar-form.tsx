@@ -12,18 +12,13 @@ import {
   useColorModeValue,
   Avatar,
 } from '@chakra-ui/react'
+import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
 
 import { Card, Icon } from '@components'
-import { updateProfileAvatar } from '@features/auth/actions'
-
-import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
-import { NameNickSchema } from '@utils/yup'
-import { updateProfileName } from '@features/auth/actions'
+import { updateProfileAvatar } from '@features/auth/actions'
 
 type Inputs = {
   avatar_url?: string
@@ -38,7 +33,8 @@ export function UserAvatarForm({ state }) {
   const handleSubmitForm = async (form) => {
     try {
       setLoading(true)
-      const { data, error } = await supabase
+      await new Promise((resolve) => setTimeout(resolve, 300))
+      const { error } = await supabase
         .from('profiles')
         .update({ avatar_url: form.avatar_url }, { returning: 'minimal' })
         .eq('id', state.user!.id)
@@ -77,10 +73,12 @@ export function UserAvatarForm({ state }) {
             placeholder="https://website.com/path/to/image.jpg"
             defaultValue={state.profile.avatar_url}
           />
-          <InputRightElement
-            color="green.500"
-            children={<Icon name="check" />}
-          />
+          {state.profile.avatar_url && (
+            <InputRightElement
+              color="green.500"
+              children={<Icon name="check" />}
+            />
+          )}
         </InputGroup>
         <FormHelperText>
           Profile picture. Click on the avatar to upload and change. Or change
