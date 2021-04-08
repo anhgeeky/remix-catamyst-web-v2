@@ -123,7 +123,7 @@ export const signIn = (data) => {
         ...toastOptions,
         status: 'error',
         title: 'Failed to sign in.',
-        description: `${error.message}. Please try again.`,
+        description: `Invalid email or password. Please try again.`,
       })
     }
   }
