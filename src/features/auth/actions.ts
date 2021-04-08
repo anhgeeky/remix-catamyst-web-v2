@@ -89,7 +89,7 @@ export const signIn = (data) => {
        * Sign in via Supabase/API
        */
       let { user, error } = await supabase.auth.signIn({
-        email: data.email,
+        email: data.email.toLowerCase(),
         password: data.password,
       })
       if (error) throw error
@@ -137,7 +137,7 @@ export const signInMagic = (email) => {
     dispatch({ type: SIGN_IN_MAGIC_BEGIN })
     try {
       const { error, user } = await supabase.auth.signIn({
-        email: email,
+        email: email.toLowerCase(),
       })
       if (error) throw error
       if (user) {

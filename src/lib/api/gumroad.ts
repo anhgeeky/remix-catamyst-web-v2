@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 
-export const verifyLicenseKey = async ({ key, permalink }) => {
+export const verifyLicenseKey = async ({ permalink, key }) => {
   return await axios({
     method: 'POST',
     url: 'https://api.gumroad.com/v2/licenses/verify',
