@@ -11,7 +11,7 @@ import dataCMSLinks from '@data/cms-links.json'
 export default function cmsSlugPage() {
   const router = useRouter()
   const { cmsSlug } = router.query
-  const { auth, isAuthorized } = useRedirectSignIn()
+  const { auth, isAuthenticated } = useRedirectSignIn()
 
   /**
    * This pattern is used so the header tabs navigation seamless.
@@ -19,7 +19,7 @@ export default function cmsSlugPage() {
   return (
     <Layout title="Loading CMS... · Catamyst">
       {!auth && <Text>Loading CMS...</Text>}
-      {cmsSlug && isAuthorized && auth && (
+      {cmsSlug && isAuthenticated && (
         <>
           <HeaderTabs links={dataCMSLinks} />
           {cmsSlug === 'overview' && <CMSOverview />}
