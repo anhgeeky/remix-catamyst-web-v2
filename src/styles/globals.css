@@ -116,7 +116,7 @@ p code {
   display: none; /* Safari and Chrome */
 }
 
-.next-image-avatar {
+.next-image-container.user-avatar > div {
   border-radius: 100%;
 }
 

@@ -61,7 +61,7 @@ export default async function pingHandler(
         res.status(400).json({ message: 'Not allowed' })
       }
 
-      // TODO Ping could handle cancellation event here
+      // TODO: Ping could handle cancellation event here
     } catch (error) {
       const response = {
         message: 'Failed to upgrade.',

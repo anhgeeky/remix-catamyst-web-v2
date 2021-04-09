@@ -1,24 +1,24 @@
 import NextImage from 'next/image'
 import { Avatar, Box } from '@chakra-ui/react'
 
-export function OrganizationAvatar({ org, size = 100 }) {
+export function UserAvatar({ user, size = 100 }) {
   return (
     <>
-      {!org.avatar_url && (
+      {!user.avatar_url && (
         <Avatar
-          name={org.name}
-          src={org.avatar_url}
+          name={user.name}
+          src={user.avatar_url}
           width={size}
           height={size}
           size="2xl"
-          rounded="md"
+          rounded="full"
         />
       )}
-      {org.avatar_url && (
-        <Box className="next-image-container org-avatar" rounded="md">
+      {user.avatar_url && (
+        <Box className="next-image-container user-avatar" rounded="full">
           <NextImage
-            className="next-image"
-            src={org.avatar_url}
+            className="next-image-avatar"
+            src={user.avatar_url}
             width={size}
             height={size}
             layout="fixed"

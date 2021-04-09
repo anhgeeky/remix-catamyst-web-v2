@@ -23,8 +23,9 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { transformOptions } from '@components/blocks'
 import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
+import { UserAvatar } from '@components/users'
+import { transformOptions } from '@components/blocks'
 import { trimUrl, getJoinedDate } from '@utils'
 import { useAuth } from '@hooks'
 
@@ -160,18 +161,18 @@ function UserProfileContent({ user, state, actions }) {
   }
 
   return (
-    <Flex justify="center" mt="-100px" px={5}>
+    <Flex justify="center" mt="-90px" px={5}>
       <Stack spacing={10} maxW={700} width="100%">
         <Stack id="user-profile" spacing={3}>
           <VStack id="user-info-names">
             <Box
               id="user-avatar"
-              rounded="full"
               p={1}
               zIndex={1}
+              rounded="full"
               bg={useColorModeValue('gray.50', 'gray.900')}
             >
-              <Avatar name={user.name} src={user.avatar_url} size="2xl" />
+              <UserAvatar user={user} size={150} />
             </Box>
 
             <UserNameHandle user={user} />

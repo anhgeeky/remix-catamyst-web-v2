@@ -69,13 +69,15 @@ function UserMenuButton({ state }) {
               <Avatar name={auth.profile.name} size="sm" />
             )}
             {auth.profile.avatar_url && (
-              <NextImage
-                className="next-image-avatar"
-                src={auth.profile.avatar_url}
-                layout="fixed"
-                width={32}
-                height={32}
-              />
+              <Box className="next-image-container user-avatar" rounded="full">
+                <NextImage
+                  className="next-image"
+                  src={auth.profile.avatar_url}
+                  layout="fixed"
+                  width={32}
+                  height={32}
+                />
+              </Box>
             )}
           </Box>
         </MenuButton>

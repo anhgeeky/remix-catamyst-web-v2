@@ -123,7 +123,7 @@ function OrganizationProfileCover({ org }) {
 
   return (
     <Flex justify="center" px={1}>
-      <Box
+      <Flex
         className="next-image-cover-container"
         maxW="1440px"
         overflow="auto"
@@ -139,7 +139,7 @@ function OrganizationProfileCover({ org }) {
           width={1440}
           height={200}
         />
-      </Box>
+      </Flex>
     </Flex>
   )
 }
@@ -152,12 +152,12 @@ function OrganizationProfileContent({ org, state, actions }) {
           <VStack id="org-info-names">
             <Box
               id="org-avatar"
-              rounded="md"
               p={1}
               zIndex={1}
+              rounded="md"
               bg={useColorModeValue('gray.50', 'gray.900')}
             >
-              <OrganizationAvatar org={org} />
+              <OrganizationAvatar org={org} size={150} />
             </Box>
 
             <OrganizationNameHandle org={org} />
