@@ -67,11 +67,11 @@ export function PricingPlans() {
 
             <VStack spacing={5}>
               <VStack spacing={1}>
-                <Heading as="h4" size="2xl">
-                  {plan.price.cost > 0 ? `$${plan.price.cost}` : 'Free'}
-                </Heading>
                 <Heading as="h5" size="md">
                   {plan.price.cost > 0 ? `${plan.price.info}` : 'Forever'}
+                </Heading>
+                <Heading as="h4" size="2xl">
+                  {plan.price.cost > 0 ? `$${plan.price.cost}` : 'Free'}
                 </Heading>
               </VStack>
 

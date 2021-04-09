@@ -39,7 +39,7 @@
     ],
     "price": {
       "cost": 10,
-      "info": "per month"
+      "info": "monthly"
     },
     "buttons": {
       "isNotAuthenticated": {
@@ -62,8 +62,8 @@
       "Suitable for learners who want to get real serious on getting a professional job, freelancing, upgrading your career, or building a tech business like SaaS (Software as a Service)"
     ],
     "price": {
-      "cost": 2000,
-      "info": "one time fee"
+      "cost": 500,
+      "info": "one-time, starts from"
     },
     "buttons": {
       "isNotAuthenticated": {
