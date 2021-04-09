@@ -14,7 +14,7 @@ export default function signUpPage() {
         <>
           <Hero>
             <Heading as="h1" size="xl">
-              Sign up
+              Let's sign up
             </Heading>
             <Text>Create your Catamyst account</Text>
           </Hero>

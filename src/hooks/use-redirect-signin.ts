@@ -3,7 +3,10 @@ import { useEffect } from 'react'
 
 import { useAuthProfile } from '@hooks'
 
-export function useRedirectSignIn(fields = `id`) {
+/**
+ * Also using useAuthProfile that request to get profile from API.
+ */
+export function useRedirectSignIn(fields) {
   const router = useRouter()
   const { auth, user, profile, isAuthenticated, isAuthorized } = useAuthProfile(
     fields

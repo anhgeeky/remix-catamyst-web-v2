@@ -25,7 +25,7 @@ export const yupPasswordAlt = Yup.string().required('Password is required.')
 
 export const yupName = Yup.string()
   .max(50, 'Maximum of 50 characters.')
-  .required('Full name is required.')
+  .required('Name is required.')
 
 export const yupNickname = Yup.string()
   .max(10, 'Maximum of 10 characters.')
@@ -48,6 +48,7 @@ export const yupProfileMode = Yup.mixed().oneOf([
  */
 
 export const SignUpSchema = Yup.object().shape({
+  name: yupName,
   email: yupEmail,
   password: yupPassword,
 })

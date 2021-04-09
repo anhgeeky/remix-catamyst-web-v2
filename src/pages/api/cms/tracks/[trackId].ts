@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 // import { supabase } from '@lib'
 import dataTracks from '@data/tracks.json'
 
-export default async function getProfileById(
+export default async function trackId(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

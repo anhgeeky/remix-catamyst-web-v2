@@ -1,12 +1,13 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.169",
+  "version": "0.1.170",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
     "dev:lan": "next dev -p 8000 -H 192.168.100.18",
     "build": "next build",
-    "start": "next start -p 8000"
+    "start": "next start -p 8000",
+    "export": "next export"
   },
   "dependencies": {
     "@chakra-ui/icons": "1.0.5",

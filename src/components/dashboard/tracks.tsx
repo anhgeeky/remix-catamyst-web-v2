@@ -31,7 +31,7 @@ export function DashboardTracks({ state }) {
       <Content>
         <Stack spacing={5} width="100%">
           <Stack>
-            <HeadingStack>Enrolled</HeadingStack>
+            <HeadingStack>Favorited</HeadingStack>
             <Card>
               <CardPlaceholder>
                 <Box>
@@ -44,7 +44,7 @@ export function DashboardTracks({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.nickname}, you haven't enrolled in any
+                  Hey {state.profile.nickname}, you haven't favorited in any
                   track yet.
                 </Text>
                 <LinkButton href="/learn" colorScheme="teal">

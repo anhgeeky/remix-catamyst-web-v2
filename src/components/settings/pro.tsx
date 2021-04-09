@@ -57,9 +57,14 @@ export function SettingsPro({ state }) {
               </Text>
               <Box>
                 <Heading as="h3" size="sm" pt={3}>
-                  Conditions if your Pro plan subscription is ended
+                  Conditions if your subscription is cancelled or ended
                 </Heading>
                 <UnorderedList>
+                  <ListItem>
+                    If you paid in the beginning of the billing cycle, but then
+                    you cancelled it after, your subscription will be stopped in
+                    the end of the cycle after Pro plan is active for 30 days.
+                  </ListItem>
                   <ListItem>
                     If you had more than 3 published projects, all of those
                     projects are still available to see and edit. But you cannot

@@ -28,7 +28,7 @@ const toastOptions = {
 /**
  * Sign up with email and password.
  */
-export const signUp = (data) => {
+export const signUp = (form) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_UP_BEGIN })
     /**
@@ -39,8 +39,8 @@ export const signUp = (data) => {
        * Create new user with email and password
        */
       let { user, error } = await supabase.auth.signUp({
-        email: data.email.toLowerCase(),
-        password: data.password,
+        email: form.email.toLowerCase(),
+        password: form.password,
       })
       if (error) throw error
       if (user) {
@@ -49,7 +49,7 @@ export const signUp = (data) => {
          */
         let { data, error } = await supabase
           .from('profiles')
-          .upsert({ id: user!.id })
+          .upsert({ id: user!.id, name: form.name })
           .single()
         if (error) throw error
         if (data) {

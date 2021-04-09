@@ -25,8 +25,9 @@ import dataLessons from '@data/lessons.json'
 
 export function CMSOverview() {
   const dayNamePeriod = getDayNamePeriod()
+
   const dataStats = [
-    { label: 'Users', total: dataUsers.length, href: '/cms' },
+    { label: 'Users', total: dataUsers.length, href: '/cms/users' },
     { label: 'Tracks', total: dataTracks.length, href: '/cms/tracks' },
     { label: 'Topics', total: dataTopics.length, href: '/cms/topics' },
     { label: 'Lessons', total: dataLessons.length, href: '/cms/lessons' },
@@ -40,10 +41,10 @@ export function CMSOverview() {
 
       <CMSHero>
         <Heading as="h1" size="xl">
-          Welcome to CMS
+          Welcome to the CMS
         </Heading>
         <HStack>
-          <Text>It's {dayNamePeriod}!</Text>
+          <Text>Catamyst Management System. It's {dayNamePeriod}!</Text>
         </HStack>
       </CMSHero>
 

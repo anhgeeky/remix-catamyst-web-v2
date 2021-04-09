@@ -38,7 +38,6 @@ export default function dashboardSlugPage() {
           </Heading>
         </DashboardHero>
       )}
-
       {dashboardSlug && state.profile && (
         <>
           {dashboardSlug === 'overview' && <DashboardOverview state={state} />}

@@ -19,6 +19,12 @@ module.exports = {
       'res.cloudinary.com',
     ],
   },
+  async redirects() {
+    return [
+      { source: '/pro', destination: '/settings/pro', permanent: true },
+      { source: '/super', destination: '/settings/super', permanent: true },
+    ]
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

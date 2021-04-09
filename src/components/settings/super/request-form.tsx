@@ -1,6 +1,6 @@
 import { ButtonGroup, Button, Heading, Stack, Text } from '@chakra-ui/react'
 
-import { Card, Icon } from '@components'
+import { Card, Icon, LinkButton } from '@components'
 import { dataApp } from '@data'
 
 export function SuperPlanRequestForm({ state }) {
@@ -16,9 +16,14 @@ export function SuperPlanRequestForm({ state }) {
         and conditions below.
       </Text>
       <ButtonGroup>
-        <Button size="sm" leftIcon={<Icon name="learn" />}>
+        <LinkButton
+          href="/terms/super"
+          size="sm"
+          colorScheme="green"
+          leftIcon={<Icon name="learn" />}
+        >
           Read terms and conditions
-        </Button>
+        </LinkButton>
       </ButtonGroup>
       <Text>
         Currently we're available for <b>{dataApp.superQuotaLeft}</b> learners

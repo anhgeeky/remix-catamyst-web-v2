@@ -94,16 +94,16 @@ export function TrackSideBar({ track }) {
   const router = useRouter()
   const toast = useToast()
   const { isAuthenticated } = useAuth()
-  const [isEnrolled, setEnrolled] = useState(false)
+  const [isFavorited, setFavorited] = useState(false)
 
-  const handleToggleEnroll = () => {
+  const handleToggleFavorite = () => {
     if (isAuthenticated) {
-      if (isEnrolled) {
-        setEnrolled(false)
-        toast({ status: 'warning', title: 'Left track' })
+      if (isFavorited) {
+        setFavorited(false)
+        toast({ status: 'info', title: 'Unfavorited track' })
       } else {
-        setEnrolled(true)
-        toast({ status: 'success', title: 'Enrolled to this track!' })
+        setFavorited(true)
+        toast({ status: 'success', title: 'Favorited to this track!' })
       }
     } else {
       router.push('/signin')
@@ -117,11 +117,12 @@ export function TrackSideBar({ track }) {
           <Button
             width="100%"
             maxW={{ sm: '280px' }}
-            variant="solid"
-            colorScheme={isEnrolled ? 'red' : 'teal'}
-            onClick={handleToggleEnroll}
+            colorScheme="teal"
+            variant={isFavorited ? 'solid' : 'outline'}
+            onClick={handleToggleFavorite}
+            leftIcon={<Icon name="star" />}
           >
-            {isEnrolled ? 'Enrolled' : 'Enroll track'}
+            {isFavorited ? 'Favorited' : 'Favorite track'}
           </Button>
         </ButtonGroup>
       )}

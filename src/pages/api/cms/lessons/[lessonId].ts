@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 // import { supabase } from '@lib'
 import dataLessons from '@data/lessons.json'
 
-export default async function getProfileById(
+export default async function lessonId(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

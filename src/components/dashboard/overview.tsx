@@ -89,23 +89,25 @@ export function DashboardOverview({ state }) {
                       Visit profile
                     </LinkButton>
                   )}
+                  {state.profile.handle && (
+                    <LinkButton
+                      href="/settings/profile"
+                      colorScheme="teal"
+                      variant="outline"
+                      leftIcon={<Icon name="settings" />}
+                    >
+                      Edit profile
+                    </LinkButton>
+                  )}
                   {!state.profile.handle && (
                     <LinkButton
                       href="/settings/profile"
                       colorScheme="teal"
-                      leftIcon={<Icon name="edit" />}
+                      leftIcon={<Icon name="settings" />}
                     >
                       Setup profile
                     </LinkButton>
                   )}
-                  <LinkButton
-                    href="/settings/overview"
-                    colorScheme="teal"
-                    variant="outline"
-                    leftIcon={<Icon name="settings" />}
-                  >
-                    Settings
-                  </LinkButton>
                 </ButtonGroup>
               </VStack>
             </Card>
@@ -148,7 +150,9 @@ export function DashboardOverview({ state }) {
                   You can learn then practice from our guided curriculum called
                   tracks that contain various topics and lessons.
                 </Text>
-                <LinkButton href="/learn">Choose a track</LinkButton>
+                <LinkButton colorScheme="teal" href="/learn">
+                  Choose a track
+                </LinkButton>
               </CardPlaceholder>
             </CardOverview>
           </Stack>
@@ -164,7 +168,7 @@ export function DashboardOverview({ state }) {
                   You can publish your own or contributed projects. Whether from
                   the past, present, or still in development.
                 </Text>
-                <LinkButton href="/dashboard/projects/new">
+                <LinkButton colorScheme="teal" href="/dashboard/projects/new">
                   Publish a project
                 </LinkButton>
               </CardPlaceholder>
@@ -182,7 +186,7 @@ export function DashboardOverview({ state }) {
                   You can write a blog post, notes, tutorial, publication,
                   announcement, news, or a changelog.
                 </Text>
-                <LinkButton href="/dashboard/posts/new">
+                <LinkButton colorScheme="teal" href="/dashboard/posts/new">
                   Write a post
                 </LinkButton>
               </CardPlaceholder>
@@ -200,7 +204,9 @@ export function DashboardOverview({ state }) {
                   You can discuss ideas, ask questions, and answer things with
                   other community members in the forum.
                 </Text>
-                <LinkButton href="/forum">Explore the forum</LinkButton>
+                <LinkButton colorScheme="teal" href="/forum">
+                  Explore the forum
+                </LinkButton>
               </CardPlaceholder>
             </CardOverview>
           </Stack>
@@ -218,7 +224,9 @@ export function DashboardOverview({ state }) {
                     full-time, part-time, quarter-time, freelance, or
                     project-based.
                   </Text>
-                  <LinkButton href="/jobs">Search for a job</LinkButton>
+                  <LinkButton colorScheme="teal" href="/jobs">
+                    Search for a job
+                  </LinkButton>
                 </CardPlaceholder>
               )}
               {state.profile.mode !== 'Learner' && (
@@ -228,7 +236,9 @@ export function DashboardOverview({ state }) {
                     part-time, quarter-time, freelance, or project-based. This
                     needs a <b>Pro</b> plan.
                   </Text>
-                  <LinkButton href="/jobs/new">Post a job vacancy</LinkButton>
+                  <LinkButton colorScheme="teal" href="/jobs/new">
+                    Post a job vacancy
+                  </LinkButton>
                 </CardPlaceholder>
               )}
             </CardOverview>
@@ -246,7 +256,9 @@ export function DashboardOverview({ state }) {
                   from experienced professionals. This needs a <b>Super</b>{' '}
                   plan.
                 </Text>
-                <LinkButton href="/settings/super">Upgrade to Super</LinkButton>
+                <LinkButton colorScheme="teal" href="/settings/super">
+                  Upgrade to Super
+                </LinkButton>
               </CardPlaceholder>
             </CardOverview>
           </Stack>

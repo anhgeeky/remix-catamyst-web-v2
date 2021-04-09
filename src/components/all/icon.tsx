@@ -65,6 +65,7 @@ import {
   FaReceipt as InvoicesIcon,
   // Dashboard icons
   FaBinoculars as OverviewIcon,
+  FaUser as UsersIcon,
   FaChartLine as StatsIcon,
   FaArrowAltCircleUp as LevelsIcon,
   FaMap as TracksIcon,
@@ -309,6 +310,8 @@ export function Icon({ name }) {
       return <OverviewIcon />
     case 'stats':
       return <StatsIcon />
+    case 'users':
+      return <UsersIcon />
     case 'levels':
       return <LevelsIcon />
     case 'tracks':

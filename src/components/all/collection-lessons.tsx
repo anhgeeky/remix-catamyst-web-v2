@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
 import {
+  chakra,
   Box,
   Heading,
   Stack,
@@ -31,7 +32,7 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
               boxShadow="xs"
               p={5}
             >
-              <Stack>
+              <Stack spacing={0}>
                 {section.lessons.map((lessonId, index) => {
                   const lesson = dataLessons.find(
                     (lesson, index) => lesson.id === lessonId
@@ -53,19 +54,30 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
                         {index === 0 && (
                           <NextLink href={lessonHref} passHref>
                             <Link display="block" rounded="md">
-                              <Heading as="h3" size="md" mb={3}>
+                              <Heading as="h3" size="md" mb={1} p={1}>
                                 {section.title}
                               </Heading>
                             </Link>
                           </NextLink>
                         )}
                         <NextLink href={lessonHref} passHref>
-                          <Link display="block" rounded="md">
-                            <Flex align="center" cursor="pointer">
+                          <chakra.a display="block" rounded="md">
+                            <Flex
+                              rounded="md"
+                              p={1}
+                              align="center"
+                              cursor="pointer"
+                              _hover={{
+                                backgroundColor: useColorModeValue(
+                                  'gray.100',
+                                  'black'
+                                ),
+                              }}
+                            >
                               <LessonIcon type={lesson.category} />
                               <Text ml={2}>{lesson.title}</Text>
                             </Flex>
-                          </Link>
+                          </chakra.a>
                         </NextLink>
                       </Box>
                     )

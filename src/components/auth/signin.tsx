@@ -114,8 +114,8 @@ export function AuthSignIn({ auth }) {
           </Text>
           <Text>
             Forgot password?{' '}
-            <NextLink href="/reset" passHref>
-              <Link color="teal.500">Reset here</Link>
+            <NextLink href="/recover" passHref>
+              <Link color="teal.500">Recover here</Link>
             </NextLink>
           </Text>
         </Stack>

@@ -76,8 +76,21 @@ export function AuthSignUp({ auth }) {
         spacing={5}
         onSubmit={handleSubmit(handleSignUp)}
       >
+        <FormControl id="name" isInvalid={errors.name} as={Stack} spacing={1}>
+          <FormLabel>Your name</FormLabel>
+          <Input
+            name="name"
+            type="text"
+            placeholder="Your Full Name"
+            ref={register}
+          />
+          {errors.name && (
+            <FormErrorMessage>{errors.name?.message}</FormErrorMessage>
+          )}
+        </FormControl>
+
         <FormControl id="email" as={Stack} spacing={1} isInvalid={errors.email}>
-          <FormLabel>Email</FormLabel>
+          <FormLabel>Your email</FormLabel>
           <Input
             name="email"
             type="email"
@@ -97,7 +110,7 @@ export function AuthSignUp({ auth }) {
         >
           <FormLabel>
             <HStack spacing={1}>
-              <span>Password</span>
+              <span>Your password</span>
               <HelpPasswordButton />
             </HStack>
           </FormLabel>
