@@ -24,7 +24,7 @@ export function GumroadButton({
         as={Link}
         className="gumroad-button"
         colorScheme="teal"
-        href={`https://gum.co/${productId}?wanted=true&email=${email}`}
+        href={`https://gum.co/${productId}?email=${email}`}
         data-display-style="overlay"
         leftIcon={leftIcon}
         size="lg"
