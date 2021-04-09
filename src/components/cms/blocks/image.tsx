@@ -11,6 +11,7 @@ import {
   VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { useForm } from 'react-hook-form'
 
 import { Icon, CardArea } from '@components'
 import { BlockImage } from '@components/blocks'
@@ -27,25 +28,27 @@ export function CMSBlockImage({ index, block, actions }) {
   /**
    * Need to use RHF later.
    */
-  const [formBlock, setFormBlock] = useState(block)
-  const handleChange = (event) => {
-    setFormBlock({ ...formBlock, [event.target.name]: event.target.value })
+  const { register, handleSubmit, watch, errors } = useForm({
+    defaultValues: block,
+  })
+  const onSubmit = (data) => {
+    console.log(data)
   }
 
-  if (!formBlock) {
+  if (!block) {
     return <p>Loading image...</p>
   }
-  if (formBlock) {
+  if (block) {
     return (
       <CardArea>
         <CMSBlockModifierButtons
           name="Image"
           index={index}
-          block={formBlock}
+          block={block}
           actions={actions}
         />
 
-        <BlockImage block={formBlock} renderer="Image" />
+        <BlockImage block={block} renderer="Image" />
 
         <Flex
           bg={useColorModeValue('white', 'gray.800')}
@@ -70,8 +73,8 @@ export function CMSBlockImage({ index, block, actions }) {
                   variant="flushed"
                   resize="none"
                   placeholder="https://example.com"
-                  onChange={handleChange}
-                  value={formBlock.url}
+                  defaultValue={block.url}
+                  ref={register}
                 />
               </FormControl>
             </HStack>
@@ -88,7 +91,7 @@ export function CMSBlockImage({ index, block, actions }) {
                   type="text"
                   variant="flushed"
                   fontWeight="700"
-                  defaultValue={formBlock.title}
+                  defaultValue={block.title}
                   placeholder="Image Title"
                 />
               </FormControl>
@@ -103,14 +106,14 @@ export function CMSBlockImage({ index, block, actions }) {
                   size="sm"
                   type="text"
                   variant="flushed"
-                  defaultValue={formBlock.alt}
+                  defaultValue={block.alt}
                   placeholder="Alt Text"
                 />
               </FormControl>
             </HStack>
 
             <HStack spacing={3}>
-              <FormControl as={HStack}>
+              {/* <FormControl as={HStack}>
                 <VisuallyHidden>
                   <FormLabel>Author:</FormLabel>
                 </VisuallyHidden>
@@ -120,7 +123,7 @@ export function CMSBlockImage({ index, block, actions }) {
                   size="sm"
                   type="text"
                   variant="flushed"
-                  defaultValue={formBlock.author}
+                  defaultValue={block.author}
                   placeholder="Author Name"
                 />
               </FormControl>
@@ -135,10 +138,10 @@ export function CMSBlockImage({ index, block, actions }) {
                   size="sm"
                   type="text"
                   variant="flushed"
-                  defaultValue={formBlock.copyright}
+                  defaultValue={block.copyright}
                   placeholder="Copyright"
                 />
-              </FormControl>
+              </FormControl> */}
 
               <FormControl as={HStack}>
                 <VisuallyHidden>
@@ -149,7 +152,7 @@ export function CMSBlockImage({ index, block, actions }) {
                   name="size"
                   size="sm"
                   variant="flushed"
-                  defaultValue={formBlock.size || 'Small'}
+                  defaultValue={block.size || 'Small'}
                   placeholder="Select size"
                 >
                   <option value="Tiny">Tiny</option>
@@ -160,16 +163,16 @@ export function CMSBlockImage({ index, block, actions }) {
                 </Select>
               </FormControl>
 
-              <FormControl as={HStack}>
+              {/* <FormControl as={HStack}>
                 <VisuallyHidden>
                   <FormLabel>Meta</FormLabel>
                 </VisuallyHidden>
                 <Icon name="meta" />
                 <Switch name="showMeta" defaultValue={block.showMeta} />
-              </FormControl>
+              </FormControl> */}
             </HStack>
 
-            <FormControl as={HStack}>
+            {/* <FormControl as={HStack}>
               <VisuallyHidden>
                 <FormLabel>Source:</FormLabel>
               </VisuallyHidden>
@@ -179,10 +182,10 @@ export function CMSBlockImage({ index, block, actions }) {
                 size="sm"
                 type="text"
                 variant="flushed"
-                defaultValue={formBlock.source}
+                defaultValue={block.source}
                 placeholder="Source name or URL"
               />
-            </FormControl>
+            </FormControl> */}
           </Stack>
         </Flex>
       </CardArea>

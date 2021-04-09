@@ -1,9 +1,10 @@
 import {
+  Button,
   ButtonGroup,
-  IconButton,
   HStack,
-  Tag,
+  IconButton,
   Switch,
+  Tag,
   Text,
 } from '@chakra-ui/react'
 import { Card, Icon } from '@components'
@@ -28,7 +29,7 @@ export function CMSBlockModifierButtons({
     >
       <HStack>
         <Tag colorScheme="teal">{name}</Tag>
-        <Switch
+        {/* <Switch
           size="sm"
           name={`blocks[${block.index}].isPublished`}
           defaultChecked={block.isPublished}
@@ -36,7 +37,7 @@ export function CMSBlockModifierButtons({
         />
         <Text fontSize="xs">
           {block.isPublished ? 'Published' : 'Unpublished'}
-        </Text>
+        </Text> */}
         {children}
       </HStack>
 
@@ -51,6 +52,13 @@ export function CMSBlockModifierButtons({
           icon={<Icon name="down" />}
           onClick={() => actions.moveBlock(index, 'down')}
         />
+        <Button
+          colorScheme="blue"
+          leftIcon={<Icon name="save" />}
+          onClick={() => actions.saveBlock(index)}
+        >
+          Save
+        </Button>
         <IconButton
           aria-label="Delete block"
           colorScheme="red"

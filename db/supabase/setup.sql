@@ -49,7 +49,7 @@ create table profiles (
   location text,
   website_url text,
   work jsonb,
-  socials jsonb,
+  socials jsonb default '[]',
   organizations uuid [],
   tracks uuid [],
   posts uuid [],

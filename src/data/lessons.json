@@ -1,5 +1,14 @@
 [
   {
+    "id": 0,
+    "slug": "blank",
+    "title": "Blank",
+    "level": "Newbie",
+    "category": "Fundamental",
+    "isPublished": true,
+    "blocks": []
+  },
+  {
     "id": 1,
     "slug": "lets-start-here",
     "title": "Let's start here",
