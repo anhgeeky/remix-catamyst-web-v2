@@ -3,13 +3,13 @@
  */
 -- Enumerable types
 -- alter type enum_type add value 'Mentor';
-drop type user_role;
-drop type user_mode;
-drop type user_plan;
-drop type level;
-drop type track_category;
-drop type topic_category;
-drop type lesson_category;
+-- drop type user_role;
+-- drop type user_mode;
+-- drop type user_plan;
+-- drop type level;
+-- drop type track_category;
+-- drop type topic_category;
+-- drop type lesson_category;
 create type user_role as enum ('Admin', 'Bot', 'Staff', 'Mentor', 'Member');
 create type user_mode as enum ('Learner', 'Employer', 'Investor');
 create type user_plan as enum ('Basic', 'Pro', 'Super');
@@ -131,7 +131,7 @@ create table customers (
   -- The user's customer ID in Gumroad/Stripe
   -- User must not be able to update this
   customer_id text not null,
-  plan user_plan default 'Pro'::user_role,
+  plan user_plan default 'Pro'::user_plan,
   -- Purchase-related data
   data jsonb,
   -- Timestamps
@@ -184,23 +184,9 @@ create policy "Owners can update their own organization." on organizations for
 update using (auth.uid() = owner_id);
 create policy "Owners can delete their own organization." on organizations for delete using (auth.uid() = owner_id);
 --------------------------------------------------------------------------------
--- Set up Storage
-insert into storage.buckets (id, name)
-values ('avatars', 'avatars');
-insert into storage.buckets (id, name)
-values ('covers', 'covers');
-create policy "Avatar images are publicly accessible." on storage.objects for
-select using (bucket_id = 'avatars');
-create policy "Cover images are publicly accessible." on storage.objects for
-select using (bucket_id = 'covers');
-create policy "Anyone can upload an avatar image." on storage.objects for
-insert with check (bucket_id = 'avatars');
-create policy "Anyone can upload a cover image.." on storage.objects for
-insert with check (bucket_id = 'covers');
---------------------------------------------------------------------------------
 -- Create a table for Tracks
 create table tracks (
-  id uuid default extensions.uuid_generate_v4() as identity primary key,
+  id uuid default extensions.uuid_generate_v4() not null primary key,
   is_published boolean default false,
   slug text not null unique,
   title text not null,
@@ -222,12 +208,12 @@ comment on table public.tracks is 'Learning tracks.';
 alter table public.tracks enable row level security;
 create policy "Tracks are viewable by everyone." on tracks for
 select using (true);
-create policy "Only super users can create a track." on tracks for
-insert with check (auth.is_super_admin() = true);
+-- create policy "Only super users can create a track." on tracks for
+-- insert with check (auth.is_super_admin() = true);
 --------------------------------------------------------------------------------
 -- Create a table for Topics
 create table topics (
-  id uuid default extensions.uuid_generate_v4() NOT NULL,
+  id uuid default extensions.uuid_generate_v4() not null primary key,
   is_published boolean default false,
   slug text not null unique,
   title text,
@@ -240,7 +226,7 @@ create table topics (
   total_days text default '1-2',
   levels text [],
   sections jsonb,
-  -- Timestamps
+  -- timestamps
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
   updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
@@ -248,7 +234,7 @@ comment on table public.topics is 'Learning topics.';
 --------------------------------------------------------------------------------
 -- Create a table for Lessons
 create table lessons (
-  id uuid default extensions.uuid_generate_v4() NOT NULL,
+  id uuid default extensions.uuid_generate_v4() not null primary key,
   is_published boolean default false,
   slug text not null unique,
   title text,
@@ -267,13 +253,13 @@ alter table public.lessons enable row level security;
 -- Topics
 create policy "Topics are viewable by everyone." on topics for
 select using (true);
-create policy "Only super users can create a topic." on topics for
-insert with check (auth.is_super_admin() = true);
+-- create policy "Only super users can create a topic." on topics for
+-- insert with check (auth.is_super_admin() = true);
 -- Lessons
 create policy "Lessons are viewable by everyone." on lessons for
 select using (true);
-create policy "Only super users can create a lesson." on lessons for
-insert with check (auth.is_super_admin() = true);
+-- create policy "Only super users can create a lesson." on lessons for
+-- insert with check (auth.is_super_admin() = true);
 --------------------------------------------------------------------------------
 /**
  * Trigger updatet at
@@ -305,10 +291,10 @@ create trigger on_auth_user_created
 after
 insert on auth.users for each row execute procedure public.handle_new_user();
 -- Delete user by auth.id
-create or replace function delete_user_by_auth_id() returns void as $function$
-delete from auth.users
-where id = auth.uid();
-$function$ language plpgsql security definer;
+-- create or replace function delete_user_by_auth_id() returns void as $function$
+-- delete from auth.users
+-- where id = auth.uid();
+-- $function$ language plpgsql security definer;
 -- Get user.id by email
 create or replace function get_user_by_email (input text) returns table (id uuid) as $$ begin return query
 select users.id
