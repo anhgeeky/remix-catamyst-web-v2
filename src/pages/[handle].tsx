@@ -5,10 +5,10 @@ import { HandleProfile } from '@components/handle'
 
 /**
  * Handle page can check either for:
- * User from Supabase
- * Organization from Supabase
- * User from JSON
- * Organization from JSON
+ * 1. User from API/Supabase
+ * 2. Organization from API/Supabase
+ * 3. User from JSON
+ * 4. Organization from JSON
  */
 export default function handlePage() {
   const router = useRouter()

@@ -346,7 +346,7 @@ export function UserNameHandle({ user }) {
             <Badge variant="solid">{user.role}</Badge>
           )}
           {user.mode && <Badge variant="solid">{user.mode}</Badge>}
-          {user.plan && user.plan !== 'Member' && (
+          {user.plan && user.plan !== 'Basic' && (
             <Badge variant="solid">{user.plan}</Badge>
           )}
         </HStack>

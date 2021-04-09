@@ -92,28 +92,34 @@ export function HandleProfile({ handle }) {
   return (
     <>
       {!loading && !userProfile && !orgProfile && (
-        <>
-          <Hero>
-            <Heading as="h1" size="lg">
-              @{handle}
-            </Heading>
-            <Box mt={5}>
-              <Heading as="h2" size="sm">
-                This account doesn’t exist.
-              </Heading>
-              <Text>Try searching for another.</Text>
-            </Box>
-          </Hero>
-          <Content display="flex" justifyContent="center">
-            <ButtonGroup>
-              <LinkButton href="/">Back to Home</LinkButton>
-              <LinkButton href="/discover">Back to Discover</LinkButton>
-            </ButtonGroup>
-          </Content>
-        </>
+        <HandleNotFound handle={handle} />
       )}
       {!loading && userProfile && <HandleUserProfile profile={userProfile} />}
       {!loading && orgProfile && <HandleOrgProfile profile={orgProfile} />}
+    </>
+  )
+}
+
+export function HandleNotFound({ handle }) {
+  return (
+    <>
+      <Hero>
+        <Heading as="h1" size="lg">
+          @{handle}
+        </Heading>
+        <Box mt={5}>
+          <Heading as="h2" size="sm">
+            This account doesn’t exist.
+          </Heading>
+          <Text>Try searching for another.</Text>
+        </Box>
+      </Hero>
+      <Content display="flex" justifyContent="center">
+        <ButtonGroup>
+          <LinkButton href="/">Back to Home</LinkButton>
+          <LinkButton href="/discover">Back to Discover</LinkButton>
+        </ButtonGroup>
+      </Content>
     </>
   )
 }
