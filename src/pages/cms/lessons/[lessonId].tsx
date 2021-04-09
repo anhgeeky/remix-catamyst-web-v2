@@ -29,7 +29,7 @@ import dataLessons from '@data/lessons.json'
  * CMS Lesson editor, with UI and logic
  -----------------------------------------------------------------------------*/
 export default function lessonIdPage() {
-  const { router, isAuthorized } = useRedirectSignIn()
+  const { router, isAuthenticated } = useRedirectSignIn()
   const { lessonId } = router.query
   const toast = useToast({ duration: 1000 })
 
@@ -46,6 +46,8 @@ export default function lessonIdPage() {
   const lessonInitialValues = dataLessons.find(
     (lesson) => lesson.id === Number(lessonId)
   )
+
+  console.log(lessonInitialValues)
 
   /**
    * Initialize RHF values with data from API.
@@ -132,7 +134,7 @@ export default function lessonIdPage() {
    */
   return (
     <Layout title="Loading lesson in CMS... · Catamyst">
-      {isAuthorized && lessonInitialValues && getValues() && (
+      {isAuthenticated && lessonInitialValues && getValues() && (
         <>
           <NextHead>
             <title>Lesson #{lessonInitialValues.id} · Catamyst</title>

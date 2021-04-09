@@ -47,7 +47,7 @@ import dataTopics from '@data/topics.json'
 
 export default function trackIdPage() {
   const router = useRouter()
-  const { isAuthorized } = useRedirectSignIn()
+  const { isAuthenticated } = useRedirectSignIn()
   const [viewMode, setViewMode] = useState('result')
   const toast = useToast({ duration: 1000 })
   const { trackId } = router.query
@@ -104,7 +104,7 @@ export default function trackIdPage() {
           <Text>Sorry, track with id #{trackId} is not found.</Text>
         </>
       )}
-      {isAuthorized && formTrack && formTopics && (
+      {isAuthenticated && formTrack && formTopics && (
         <>
           <NextHead>
             <title>Lesson #{formTrack.id} · Catamyst</title>
