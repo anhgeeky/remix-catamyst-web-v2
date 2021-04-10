@@ -11,7 +11,6 @@ import {
   SettingsSuper,
 } from '@components/settings'
 
-import { supabase } from '@lib'
 import dataSettingsLinks from '@data/settings-links.json'
 
 export function SettingsAll({ settingsSlug, state }) {
@@ -23,15 +22,7 @@ export function SettingsAll({ settingsSlug, state }) {
     <>
       <HeaderTabs links={dataSettingsLinks} />
 
-      {state.isError && (
-        <SettingsHero>
-          <Heading as="h1" size="xl">
-            Failed to load settings
-          </Heading>
-        </SettingsHero>
-      )}
-
-      {!state.user && !state.profile && (
+      {state.isLoading && (
         <SettingsHero>
           <Heading as="h1" size="xl">
             Loading settings...
@@ -39,7 +30,15 @@ export function SettingsAll({ settingsSlug, state }) {
         </SettingsHero>
       )}
 
-      {state.user && state.profile && (
+      {!state.isLoading && state.isError && (
+        <SettingsHero>
+          <Heading as="h1" size="xl">
+            Failed to load settings
+          </Heading>
+        </SettingsHero>
+      )}
+
+      {!state.isLoading && state.user && state.profile && (
         <>
           {settingsSlug === 'overview' && <SettingsOverview state={state} />}
           {settingsSlug === 'profile' && <SettingsProfile state={state} />}

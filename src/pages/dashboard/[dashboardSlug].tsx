@@ -11,7 +11,7 @@ export default function dashboardSlugPage() {
 
   return (
     <Layout title="Loading dashboard... · Catamyst">
-      {dashboardSlug && !state.isError && !state.isLoading && state.profile && (
+      {dashboardSlug && (
         <DashboardAll dashboardSlug={dashboardSlug} state={state} />
       )}
     </Layout>

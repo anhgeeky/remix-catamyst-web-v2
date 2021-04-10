@@ -18,21 +18,13 @@ import dataDashboardLinks from '@data/dashboard-links.json'
 export function DashboardAll({ dashboardSlug, state }) {
   /**
    * This pattern is used so the header tabs navigation seamless.
-   * Conditions are inside because there is HeaderTabs.
+   * Conditions are inside because there is HeaderTabs on each.
    */
   return (
     <>
       <HeaderTabs links={dataDashboardLinks} />
 
-      {state.isError && (
-        <DashboardHero>
-          <Heading as="h1" size="xl">
-            Failed to load dashboard
-          </Heading>
-        </DashboardHero>
-      )}
-
-      {!state.profile && (
+      {state.isLoading && (
         <DashboardHero>
           <Heading as="h1" size="xl">
             Loading dashboard...
@@ -40,7 +32,15 @@ export function DashboardAll({ dashboardSlug, state }) {
         </DashboardHero>
       )}
 
-      {state.profile && (
+      {!state.isLoading && state.isError && (
+        <DashboardHero>
+          <Heading as="h1" size="xl">
+            Failed to load dashboard
+          </Heading>
+        </DashboardHero>
+      )}
+
+      {!state.isLoading && state.profile && (
         <>
           {dashboardSlug === 'overview' && <DashboardOverview state={state} />}
           {dashboardSlug === 'tracks' && <DashboardTracks state={state} />}
