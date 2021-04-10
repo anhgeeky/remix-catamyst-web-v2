@@ -7,12 +7,11 @@ import { useUserSession, useAuthProfileSWR } from '@hooks'
  * Similar to useAuth but fetch a profile.
  * Combines router, profile, and various conditions.
  */
-export function useProfile(fields = 'id') {
+export function useProfile() {
   const auth = useSelector((state) => state.auth)
   const { user, session } = useUserSession()
 
   const { profile, isLoading, isError } = useAuthProfileSWR(
-    fields,
     session?.access_token
   )
 

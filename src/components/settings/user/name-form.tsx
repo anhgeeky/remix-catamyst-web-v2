@@ -14,9 +14,9 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useDispatch } from 'react-redux'
 
 import { Card, Icon } from '@components'
+import { NameNickSchema } from '@utils/yup'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
-import { NameNickSchema } from '@utils/yup'
 
 type Inputs = {
   name?: string

@@ -3,9 +3,11 @@ import qs from 'qs'
 
 export const verifyLicenseKey = async ({ permalink, key }) => {
   return await axios({
-    method: 'POST',
     url: 'https://api.gumroad.com/v2/licenses/verify',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
     data: qs.stringify({
       increment_uses_count: false,
       product_permalink: permalink,

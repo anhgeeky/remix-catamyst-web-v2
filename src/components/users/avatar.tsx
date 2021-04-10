@@ -18,7 +18,7 @@ export function UserAvatar({ user, size = 100 }) {
         <Box
           className="next-image-container user-avatar"
           rounded="full"
-          bg={useColorModeValue('gray.100', 'gray.700')}
+          bg={useColorModeValue('gray.100', 'gray.500')}
         >
           <NextImage
             className="next-image-avatar"

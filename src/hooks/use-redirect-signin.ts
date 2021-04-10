@@ -6,7 +6,7 @@ import { useProfile } from '@hooks'
  * Using useProfile that request to get profile from API.
  * But immediately redirect if not authenticated.
  */
-export function useRedirectSignIn(fields = '') {
+export function useRedirectSignIn() {
   const {
     auth,
     user,
@@ -16,7 +16,7 @@ export function useRedirectSignIn(fields = '') {
     isLoading,
     isError,
     router,
-  } = useProfile(fields)
+  } = useProfile()
 
   // FIXME: Issue with cleanup
   useEffect(() => {

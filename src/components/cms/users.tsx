@@ -13,7 +13,7 @@ import {
 
 import { Content } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-import { useSWR, fetcherWithToken } from '@hooks'
+import { useSWR, fetcherWithTokenSWR } from '@hooks'
 import { getCompleteDateTime } from '@utils'
 import { supabase } from '@lib'
 
@@ -21,7 +21,7 @@ export function CMSUsers() {
   const session = supabase.auth.session()
   const { data, error } = useSWR(
     ['/api/auth/users', session?.access_token],
-    fetcherWithToken
+    fetcherWithTokenSWR
   )
 
   const handleSearchItems = () => {

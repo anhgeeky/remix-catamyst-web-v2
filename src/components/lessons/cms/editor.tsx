@@ -20,7 +20,7 @@ import { Icon, LearningTag, HeaderEditor, Hero, useToast } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
 import { slugify, initBlock } from '@utils'
-import { useSWR, fetcher } from '@hooks'
+import { useSWR, fetcherSWR } from '@hooks'
 
 /**-----------------------------------------------------------------------------
  * CMS Lesson editor, with UI and logic
@@ -28,7 +28,7 @@ import { useSWR, fetcher } from '@hooks'
 export function LessonEditor({ router, lessonId }) {
   const { data: initialData, error } = useSWR(
     `/api/cms/lessons/${lessonId}`,
-    fetcher
+    fetcherSWR
   )
   const toast = useToast({ duration: 300 })
 

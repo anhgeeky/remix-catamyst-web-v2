@@ -14,11 +14,11 @@ import {
 
 import { Content, LinkButton, Card } from '@components'
 import { CMSHero } from '@components/cms'
-import { useSWR, fetcher } from '@hooks'
+import { useSWR, fetcherSWR } from '@hooks'
 import { getDayNamePeriod } from '@utils'
 
 export function CMSOverview() {
-  const { data, error } = useSWR('/api/cms/stats', fetcher)
+  const { data, error } = useSWR('/api/cms/stats', fetcherSWR)
   const dayNamePeriod = getDayNamePeriod()
 
   if (error) {

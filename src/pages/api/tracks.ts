@@ -8,11 +8,6 @@ export default async function tracks(
   res: NextApiResponse
 ) {
   try {
-    // const { data, error } = await supabase
-    //   .from('tracks')
-    //   .select('id, title, slug, category, level, is_published', {
-    //     count: 'exact',
-    //   })
     res.status(200).json({
       message: 'Get all tracks',
       tracks: dataTracks,

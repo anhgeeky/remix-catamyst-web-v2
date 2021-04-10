@@ -7,9 +7,7 @@ import { useRedirectSignIn } from '@hooks'
 export default function dashboardSlugPage() {
   const router = useRouter()
   const { dashboardSlug } = router.query
-  const state = useRedirectSignIn(
-    `id,handle,name,nickname,role,mode,plan,is_verified,avatar_url,created_at,updated_at`
-  )
+  const state = useRedirectSignIn()
 
   return (
     <Layout title="Loading dashboard... · Catamyst">

@@ -42,9 +42,9 @@ export function SettingsAll({ settingsSlug, state }) {
       {state.user && state.profile && (
         <>
           {settingsSlug === 'overview' && <SettingsOverview state={state} />}
+          {settingsSlug === 'profile' && <SettingsProfile state={state} />}
           {settingsSlug === 'email' && <SettingsEmail state={state} />}
           {settingsSlug === 'password' && <SettingsPassword state={state} />}
-          {settingsSlug === 'profile' && <SettingsProfile state={state} />}
           {settingsSlug === 'pro' && <SettingsPro state={state} />}
           {settingsSlug === 'super' && <SettingsSuper state={state} />}
         </>

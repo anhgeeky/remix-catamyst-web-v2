@@ -4,7 +4,7 @@ import { Box, Heading, Text, ButtonGroup } from '@chakra-ui/react'
 import { Hero, Content, LinkButton } from '@components'
 import { UserProfile } from '@components/users'
 import { OrganizationProfile } from '@components/organizations'
-import { useSWR, fetcher } from '@hooks'
+import { useSWR, fetcherSWR } from '@hooks'
 
 /**
  * Fetch sequentially:
@@ -14,7 +14,7 @@ import { useSWR, fetcher } from '@hooks'
  * org <- organizations.json
  */
 export function HandleProfile({ handle }) {
-  const { data, error } = useSWR(`/api/handle/${handle}`, fetcher)
+  const { data, error } = useSWR(`/api/handle/${handle}`, fetcherSWR)
 
   if (error) {
     return <HandleNotFound handle={handle} />

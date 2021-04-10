@@ -23,9 +23,7 @@ import { useProfile } from '@hooks'
 // FIXME: Has issue with unknown hook, maybe because of supabase signout.
 // Should back with redux auth.profile ?
 export function HeaderUser() {
-  const { isAuthenticated, isError, profile } = useProfile(
-    'id,handle,name,avatar_url'
-  )
+  const { isAuthenticated, isError, profile } = useProfile()
 
   /**
    * Both checks are necessary because need to wait for async profile

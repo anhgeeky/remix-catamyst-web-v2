@@ -8,11 +8,6 @@ export default async function topics(
   res: NextApiResponse
 ) {
   try {
-    // const { data, error } = await supabase
-    //   .from('topics')
-    //   .select('id, title, slug, category, level, is_published', {
-    //     count: 'exact',
-    //   })
     res.status(200).json({
       message: 'Get all topics',
       topics: dataTopics,
