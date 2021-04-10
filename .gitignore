@@ -35,7 +35,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# folders
+_notes
+
 # misc
-_*
-_.*
+_*.md
 public/sitemap.xml
