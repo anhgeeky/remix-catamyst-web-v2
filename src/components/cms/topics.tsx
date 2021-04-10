@@ -24,7 +24,7 @@ export function CMSTopics() {
   }
 
   const handleSearchItems = () => {
-    // Don't do toast
+    /* Handle function */
   }
 
   if (error) {

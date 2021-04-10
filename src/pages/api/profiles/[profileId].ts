@@ -7,6 +7,10 @@ export default async function profileById(
   res: NextApiResponse
 ) {
   const { profileId } = req.query
+
+  /**
+   * Omit pro, super
+   */
   const { data: profile } = await supabase
     .from('profiles')
     .select(

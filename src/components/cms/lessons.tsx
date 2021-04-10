@@ -23,7 +23,7 @@ export function CMSLessons() {
   }
 
   const handleSearchItems = () => {
-    // Don't do toast
+    /* Handle function */
   }
 
   if (error) {

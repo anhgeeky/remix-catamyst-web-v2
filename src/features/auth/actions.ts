@@ -1,4 +1,5 @@
 import { createStandaloneToast } from '@chakra-ui/react'
+import useSWR, { mutate } from 'swr'
 
 import {
   SIGN_UP_BEGIN,
@@ -92,14 +93,18 @@ export const signIn = (data) => {
       if (error) throw error
       if (user) {
         /**
-         * Get user's profile is done via SWR
+         * Get user's profile is done via SWR.
          */
         if (error) throw error
         if (data) {
+          mutate(`/api/auth/me?fields=id,handle,name,avatar_url`)
+
           /**
            * Apply profile to Redux store auth.profile
            */
+
           dispatch({ type: SIGN_IN_SUCCESS })
+
           toast.closeAll()
           toast({
             ...toastOptions,
@@ -150,26 +155,29 @@ export const signInMagic = (email) => {
 
 /**
  * Sign out session.
+ * Still needed to change auth.isAuthenticated so the HeaderUser is changed.
  */
 export const signOut = () => {
   return async (dispatch) => {
     dispatch({ type: SIGN_OUT_BEGIN })
+    supabase.auth.signOut()
+
     /**
      * There will be the actual sign out process with API.
      */
     try {
-      const { error } = await supabase.auth.signOut()
-      if (!error) {
-        dispatch({ type: SIGN_OUT_SUCCESS })
-        toast.closeAll()
-        toast({
-          ...toastOptions,
-          title: 'Signed out',
-          description: 'See you later!',
-        })
-      }
+      dispatch({ type: SIGN_OUT_SUCCESS })
+      mutate(`/api/auth/me?fields=id,handle,name,avatar_url`)
+
+      toast.closeAll()
+      toast({
+        ...toastOptions,
+        title: 'Signed out',
+        description: 'See you later!',
+      })
     } catch (error) {
       dispatch({ type: SIGN_OUT_ERROR })
+
       toast.closeAll()
       toast({
         ...toastOptions,

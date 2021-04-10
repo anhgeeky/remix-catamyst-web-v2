@@ -84,7 +84,7 @@ export function FooterExtra() {
         <Code colorScheme="white" fontWeight="700">
           v{dataPackage.version}
         </Code>
-        {NODE_ENV !== 'production' && (
+        {NODE_ENV !== 'production' && process.env.VERCEL && (
           <Code colorScheme="white" fontWeight="700">
             {NODE_ENV} && {API_URL}
           </Code>

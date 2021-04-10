@@ -40,11 +40,6 @@ export function authReducer(
         ...state,
         isLoading: false,
         isAuthenticated: true,
-        profile: {
-          avatar_url: action.payload.avatar_url,
-          handle: action.payload.handle,
-          name: action.payload.name,
-        },
       }
     }
     /**
@@ -61,7 +56,6 @@ export function authReducer(
         ...state,
         isLoading: false,
         isAuthenticated: true,
-        profile: action.payload,
       }
     }
     /**
@@ -71,14 +65,13 @@ export function authReducer(
       return { ...state, isLoading: true }
     }
     case SIGN_IN_MAGIC_ERROR: {
-      return { ...state, isLoading: false, isAuthenticated: false, profile: {} }
+      return { ...state, isLoading: false, isAuthenticated: false }
     }
     case SIGN_IN_MAGIC_SUCCESS: {
       return {
         ...state,
         isLoading: false,
         isAuthenticated: true,
-        profile: action.payload,
       }
     }
     /**
@@ -88,10 +81,10 @@ export function authReducer(
       return { ...state, isLoading: true }
     }
     case SIGN_OUT_ERROR: {
-      return { ...state, isLoading: false }
+      return { ...state, isLoading: false, isAuthenticated: false }
     }
     case SIGN_OUT_SUCCESS: {
-      return { ...state, isLoading: false, isAuthenticated: false, profile: {} }
+      return { ...state, isLoading: false, isAuthenticated: false }
     }
     /**
      * Default.

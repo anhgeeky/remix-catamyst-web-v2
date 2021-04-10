@@ -2,7 +2,7 @@ import NextHead from 'next/head'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
 
-import { Header, Footer } from '@components'
+// import { Header, Footer } from '@components'
 import dataSite from '@data/site.json'
 
 export function Layout({ title = 'Catamyst', children = null }) {
@@ -43,13 +43,13 @@ export function Layout({ title = 'Catamyst', children = null }) {
         <meta name="theme-color" content="#00aaaa" />
       </NextHead>
 
-      <Header />
+      {/* <Header /> */}
 
       <Box as="main" pt={{ base: 45, sm: 55 }} minH="80vh">
         <SkipNavContent>{children}</SkipNavContent>
       </Box>
 
-      <Footer />
+      {/* <Footer /> */}
     </Box>
   )
 }

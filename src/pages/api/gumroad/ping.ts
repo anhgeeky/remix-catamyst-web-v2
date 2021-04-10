@@ -13,7 +13,9 @@ export default async function gumroadPing(
 ) {
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
-      process.env.NODE_ENV === 'production' && console.info(req.body)
+      process.env.NODE_ENV === 'production' &&
+        process.env.VERCEL &&
+        console.info(req.body)
 
       // Set userId either from existing user (database) or new user (sign up)
       let userId
@@ -67,6 +69,7 @@ export default async function gumroadPing(
       }
 
       // TODO: Ping could handle cancellation event here
+      // But only check after the next billing cycle
     } catch (error) {
       const response = {
         message: 'Failed to upgrade.',

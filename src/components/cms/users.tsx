@@ -25,7 +25,7 @@ export function CMSUsers() {
   )
 
   const handleSearchItems = () => {
-    // Don't do toast
+    /* Handle function */
   }
 
   if (error) {

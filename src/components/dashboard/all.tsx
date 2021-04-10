@@ -23,6 +23,7 @@ export function DashboardAll({ dashboardSlug, state }) {
   return (
     <>
       <HeaderTabs links={dataDashboardLinks} />
+
       {state.isError && (
         <DashboardHero>
           <Heading as="h1" size="xl">
@@ -30,6 +31,7 @@ export function DashboardAll({ dashboardSlug, state }) {
           </Heading>
         </DashboardHero>
       )}
+
       {!state.profile && (
         <DashboardHero>
           <Heading as="h1" size="xl">
@@ -37,6 +39,7 @@ export function DashboardAll({ dashboardSlug, state }) {
           </Heading>
         </DashboardHero>
       )}
+
       {state.profile && (
         <>
           {dashboardSlug === 'overview' && <DashboardOverview state={state} />}

@@ -24,7 +24,7 @@ export function CMSTracks() {
   }
 
   const handleSearchItems = () => {
-    // Don't do toast
+    /* Handle function */
   }
 
   if (error) {

@@ -1,8 +1,8 @@
 import axios from 'axios'
 import useSWR from 'swr'
-import qs from 'qs'
 
 import { supabase } from '@lib'
+export { useSWR }
 
 export const fetcher = async (url) => {
   const response = await axios.get(url)
@@ -13,8 +13,6 @@ export const fetcherWithToken = async (url, token) => {
   const response = await axios.get(url, { headers: { Authorization: token } })
   return response.data
 }
-
-export { useSWR }
 
 export const useUserSWR = (userId) => {
   const { data, error } = useSWR(`/api/user/${userId}`, fetcher)
@@ -36,7 +34,7 @@ export const useProfileSWR = (profileId) => {
 
 /**
  * Just focus on fetching with token.
- * But only attempt to request with SWR if there is a session.
+ * But only attempt to request with SWR if there is a session token.
  * SWR should only return data, loading, error.
  */
 export const useAuthProfileSWR = (fields = 'id') => {
@@ -46,20 +44,25 @@ export const useAuthProfileSWR = (fields = 'id') => {
 
     // Be careful when setting up the key.
     const { data, error } = useSWR(
-      [`/api/auth/me?fields=${fields}`, session?.access_token || null],
+      session?.access_token
+        ? [`/api/auth/me?fields=${fields}`, session?.access_token]
+        : null,
       fetcherWithToken
     )
+    if (error) throw error
 
     return {
       profile: data?.profile,
       isLoading: !error && !data,
-      isError: error,
+      isError: Boolean(error),
     }
   } catch (error) {
+    // console.error(error.message)
     return {
       profile: null,
       isLoading: false,
-      isError: false,
+      isError: true,
+      error: error,
     }
   }
 }

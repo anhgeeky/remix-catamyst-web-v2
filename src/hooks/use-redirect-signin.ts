@@ -1,14 +1,13 @@
 import { useEffect } from 'react'
 
-import { useProfile } from '@hooks'
-import { supabase } from '@lib'
+import { useSession, useProfile } from '@hooks'
 
 /**
- * Also using useProfile that request to get profile from API.
+ * Using useProfile that request to get profile from API.
  * But immediately redirect if not authenticated.
  */
 export function useRedirectSignIn(fields = '') {
-  const user = supabase.auth.user()
+  const session = useSession()
   const {
     auth,
     profile,
@@ -20,11 +19,10 @@ export function useRedirectSignIn(fields = '') {
   } = useProfile(fields)
 
   useEffect(() => {
-    if (!auth.isAuthenticated) router.replace('/signin')
-  }, [auth])
+    !isAuthenticated && !session && router.replace('/signin')
+  }, [isAuthenticated, session])
 
   return {
-    user,
     auth,
     profile,
     isAuthenticated,

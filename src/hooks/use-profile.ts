@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 
-import { supabase } from '@lib'
 import { useAuthProfileSWR } from '@hooks'
 
 /**
@@ -11,11 +10,12 @@ import { useAuthProfileSWR } from '@hooks'
 export function useProfile(fields = 'id') {
   const auth = useSelector((state) => state.auth)
   const { profile, isLoading, isError } = useAuthProfileSWR(fields)
+  // Previously was => await supabase.from('profiles')
 
   return {
     router: useRouter(),
     auth,
-    profile,
+    profile: profile || null,
     isAuthenticated: auth.isAuthenticated,
     isAuthorized:
       profile?.role === 'Admin' ||

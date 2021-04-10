@@ -18,39 +18,9 @@ import ReactHtmlParser from 'react-html-parser'
 
 import { Card, Country, Icon, SocialLinks } from '@components'
 import { trimUrl, getCompleteDateTime } from '@utils'
-import { supabase } from '@lib'
-
-const handleDatabaseEvent = (
-  state,
-  action: { type?: string; payload: any }
-) => {
-  if (action.type === 'set') {
-    return { profile: action.payload }
-  }
-  return { profile: {} }
-}
 
 export function UserProfilePreview({ profile }) {
-  const initialState = { profile }
-  const [state, dispatch] = useReducer(handleDatabaseEvent, initialState)
-
   const defaultCoverUrl = `https://storage.catamyst.com/covers/grass.jpg`
-
-  useEffect(() => {
-    const subscription = supabase
-      .from('profiles')
-      .on('*', (payload) => {
-        dispatch({ type: 'update', payload: payload.new })
-      })
-      .subscribe()
-    return () => {
-      supabase.removeSubscription(subscription)
-    }
-  }, [])
-
-  useEffect(() => {
-    dispatch({ type: 'set', payload: profile })
-  }, [profile])
 
   return (
     <Card id="preview" maxW={{ lg: '420px' }} width="100%" p={0}>

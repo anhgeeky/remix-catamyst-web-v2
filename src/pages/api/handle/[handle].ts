@@ -13,7 +13,7 @@ export default async function handleProfile(
     /**
      * public.profiles
      */
-    const { data: userData } = await supabase
+    const { data: profile } = await supabase
       .from('profiles')
       .select(
         `handle, name, role, mode, plan, is_public, is_verified, avatar_url, cover_url, headline, bio_html, country, location, website_url, work, socials, created_at, updated_at`
@@ -21,32 +21,32 @@ export default async function handleProfile(
       .eq('handle', handle)
       .single()
 
-    if (userData) {
+    if (profile) {
       res.status(200).json({
         message: 'User found from API',
         type: 'user',
-        profile: userData,
+        profile: profile,
       })
     }
 
-    if (!userData) {
+    if (!profile) {
       /**
        * users.json
        */
-      const user = dataUsers.find((user) => user.handle === handle)
-      if (user) {
+      const userJSON = dataUsers.find((user) => user.handle === handle)
+      if (userJSON) {
         res.status(200).json({
           message: 'User found from JSON',
           type: 'user',
-          profile: user,
+          profile: userJSON,
         })
       }
 
-      if (!userData && !user) {
+      if (!profile && !userJSON) {
         /**
          * public.organizations
          */
-        const { data: orgData } = await supabase
+        const { data: organization } = await supabase
           .from('organizations')
           .select(
             `handle, name, is_public, is_verified, logo_url, cover_url, headline, bio_html, country, location, website_url, socials, created_at, updated_at`
@@ -54,28 +54,30 @@ export default async function handleProfile(
           .eq('handle', handle)
           .single()
 
-        if (orgData) {
+        if (organization) {
           res.status(200).json({
             message: 'Org found from API',
             type: 'org',
-            profile: orgData,
+            profile: organization,
           })
         }
 
-        if (!orgData) {
+        if (!organization) {
           /**
            * organizations.json
            */
-          const org = dataOrganizations.find((org) => org.handle === handle)
-          if (org) {
+          const organizationJSON = dataOrganizations.find(
+            (org) => org.handle === handle
+          )
+          if (organizationJSON) {
             res.status(200).json({
               message: 'Org found from JSON',
               type: 'org',
-              profile: org,
+              profile: organizationJSON,
             })
           }
 
-          if (!org) throw new Error('Profile not found.')
+          if (!organizationJSON) throw new Error('Profile not found anywhere.')
         }
       }
     }
