@@ -15,6 +15,7 @@ import {
 import ReactHtmlParser from 'react-html-parser'
 
 import { Card, Country, SocialLinks, Icon } from '@components'
+import { UserAvatar } from '@components/users'
 import { transformOptions } from '@components/blocks'
 import { trimUrl } from '@utils'
 import dataFeaturedReviews from '@data/reviews-featured.json'
@@ -65,21 +66,7 @@ function UserReviews({ reviews }) {
             >
               <Stack spacing={3}>
                 <HStack spacing={5}>
-                  <Box
-                    className="next-image-avatar-container"
-                    rounded="full"
-                    bg={useColorModeValue('gray.100', 'gray.500')}
-                  >
-                    <NextImage
-                      className="next-image-avatar"
-                      src={user.avatar_url}
-                      alt={user.name}
-                      objectFit="cover"
-                      layout="fixed"
-                      width={100}
-                      height={100}
-                    />
-                  </Box>
+                  <UserAvatar user={user} />
                   <Box>
                     <Heading as="h3" size="lg">
                       <NextLink href={`/${user.handle}`}>

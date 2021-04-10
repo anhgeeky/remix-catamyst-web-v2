@@ -38,10 +38,11 @@ export default async function gumroadPing(
         console.info(response)
       }
 
-      // 3. Upsert ping data into customers table.
+      // 3. Insert ping data into new row of customers table.
+      // Don't upsert, because we want to store all history.
       const { error: customerError } = await supabaseAdmin
         .from('customers')
-        .upsert(
+        .insert(
           {
             id: userId,
             customer_id: req.body.email || '',

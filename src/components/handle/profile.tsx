@@ -14,7 +14,7 @@ import { useSWR, fetcher } from '@utils'
  * org <- organizations.json
  */
 export function HandleProfile({ handle }) {
-  const { data, error } = useSWR(`/api/${handle}`, fetcher)
+  const { data, error } = useSWR(`/api/handle/${handle}`, fetcher)
 
   if (error) {
     return <HandleNotFound handle={handle} />

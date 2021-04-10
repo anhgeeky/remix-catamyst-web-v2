@@ -36,7 +36,6 @@ export function HeaderUser() {
 
 function UserMenuButton({ state }) {
   const { auth, user, profile } = state
-  console.log({ auth, user, profile })
 
   const router = useRouter()
   const dispatch = useDispatch()
