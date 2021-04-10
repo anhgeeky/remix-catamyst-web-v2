@@ -30,7 +30,7 @@ export function LessonEditor({ router, lessonId }) {
     `/api/cms/lessons/${lessonId}`,
     fetcher
   )
-  const toast = useToast({ duration: 100 })
+  const toast = useToast({ duration: 300 })
 
   /**
    * State to change UI view mode.
@@ -171,7 +171,7 @@ export function LessonEditor({ router, lessonId }) {
  * The actual lesson content that utilize RHF field array helpers.
  -----------------------------------------------------------------------------*/
 function CMSViewResultLesson({ initialData, control, register, actions }) {
-  const toast = useToast({ duration: 100 })
+  const toast = useToast({ duration: 300 })
 
   /**
    * RHF (React Hook Form) field array with helpers.

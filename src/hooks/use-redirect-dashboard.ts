@@ -1,25 +1,24 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import { useSession, useAuth } from '@hooks'
+import { useUserSession, useAuth } from '@hooks'
 
 /**
- * Using useAuth without fetching anything
+ * Using useAuth without fetching profile
  * Redirect to dashboard if authenticatated
  * Only used for signup and signin
  */
 export function useRedirectDashboard() {
-  const session = useSession()
-  const router = useRouter()
   const { auth, isAuthenticated } = useAuth()
+  const router = useRouter()
 
   useEffect(() => {
-    isAuthenticated && session && router.replace('/dashboard/overview')
-  }, [isAuthenticated, session])
+    isAuthenticated && router.replace('/dashboard/overview')
+  }, [isAuthenticated])
 
   return {
-    router,
     auth,
     isAuthenticated,
+    router,
   }
 }

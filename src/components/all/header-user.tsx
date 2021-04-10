@@ -18,12 +18,12 @@ import {
 
 import { Icon, LinkButton } from '@components'
 import { signOut } from '@features/auth/actions'
-import { useAuthProfileSWR } from '@hooks'
+import { useProfile } from '@hooks'
 
 // FIXME: Has issue with unknown hook, maybe because of supabase signout.
 // Should back with redux auth.profile ?
 export function HeaderUser() {
-  const { isLoading, isError, profile } = useAuthProfileSWR(
+  const { isLoading, isError, profile } = useProfile(
     'id,handle,name,avatar_url'
   )
 

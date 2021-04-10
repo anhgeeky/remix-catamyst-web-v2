@@ -37,16 +37,11 @@ export const useProfileSWR = (profileId) => {
  * But only attempt to request with SWR if there is a session token.
  * SWR should only return data, loading, error.
  */
-export const useAuthProfileSWR = (fields = 'id') => {
+export const useAuthProfileSWR = (fields = 'id', token) => {
   try {
-    const session = supabase.auth.session()
-    if (!session) throw new Error('No session')
-
     // Be careful when setting up the key.
     const { data, error } = useSWR(
-      session?.access_token
-        ? [`/api/auth/me?fields=${fields}`, session?.access_token]
-        : null,
+      token ? [`/api/auth/me?fields=${fields}`, token] : null,
       fetcherWithToken
     )
     if (error) throw error

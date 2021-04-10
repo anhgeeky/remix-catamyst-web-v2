@@ -31,25 +31,22 @@ export function SettingsProfile({ state }) {
       </SettingsHero>
 
       <Content>
-        {state.loading && <Text>Loading user profile...</Text>}
-        {!state.loading && (
-          <Stack
-            direction={{ base: 'column', lg: 'row' }}
-            align={{ lg: 'flex-start' }}
-            spacing={5}
-          >
-            <UserProfilePreview profile={state.profile} />
-            <Stack flex={1} spacing={5} maxW={760}>
-              <UserHandleForm state={state} />
-              <UserNameForm state={state} />
-              <UserAvatarForm state={state} />
-              <UserCoverForm state={state} />
-              <UserPersonalForm state={state} />
-              <UserWorkForm state={state} />
-              <UserSocialsForm state={state} />
-            </Stack>
+        <Stack
+          direction={{ base: 'column', lg: 'row' }}
+          align={{ lg: 'flex-start' }}
+          spacing={5}
+        >
+          <UserProfilePreview profile={state.profile} />
+          <Stack flex={1} spacing={5} maxW={760}>
+            <UserHandleForm state={state} />
+            <UserNameForm state={state} />
+            <UserAvatarForm state={state} />
+            <UserCoverForm state={state} />
+            <UserPersonalForm state={state} />
+            <UserWorkForm state={state} />
+            <UserSocialsForm state={state} />
           </Stack>
-        )}
+        </Stack>
       </Content>
     </>
   )

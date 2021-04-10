@@ -1,4 +1,5 @@
 import '@styles/globals.css'
+
 import type { AppProps } from 'next/app'
 import { Provider as ReduxProvider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -7,9 +8,9 @@ import * as Sentry from '@sentry/react'
 import { Integrations } from '@sentry/tracing'
 
 import theme from '@theme'
-import { Fonts, Header, Footer } from '@components'
+import { Fonts, Header } from '@components'
 import { store, persistor } from '@features/store'
-import { useSession } from '@hooks'
+import { useUserSession } from '@hooks'
 
 export default function App({ Component, pageProps }: AppProps) {
   if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
@@ -23,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
     })
   }
 
-  useSession()
+  useUserSession()
 
   return (
     <>
@@ -33,7 +34,6 @@ export default function App({ Component, pageProps }: AppProps) {
           <PersistGate loading={null} persistor={persistor}>
             <Header />
             <Component {...pageProps} />
-            <Footer />
           </PersistGate>
         </ReduxProvider>
       </ChakraProvider>

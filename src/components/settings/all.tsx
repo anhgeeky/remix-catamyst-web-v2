@@ -16,11 +16,6 @@ import dataSettingsLinks from '@data/settings-links.json'
 
 export function SettingsAll({ settingsSlug, state }) {
   /**
-   * Settings need user data, not just profile.
-   */
-  const user = supabase.auth.user()
-
-  /**
    * This pattern is used so the header tabs navigation seamless.
    * Conditions are inside because there is HeaderTabs for each.
    */
@@ -36,7 +31,7 @@ export function SettingsAll({ settingsSlug, state }) {
         </SettingsHero>
       )}
 
-      {!user && !state.profile && (
+      {!state.user && !state.profile && (
         <SettingsHero>
           <Heading as="h1" size="xl">
             Loading settings...
@@ -44,14 +39,10 @@ export function SettingsAll({ settingsSlug, state }) {
         </SettingsHero>
       )}
 
-      {user && state.profile && (
+      {state.user && state.profile && (
         <>
-          {settingsSlug === 'overview' && (
-            <SettingsOverview state={state} user={user} />
-          )}
-          {settingsSlug === 'email' && (
-            <SettingsEmail state={state} user={user} />
-          )}
+          {settingsSlug === 'overview' && <SettingsOverview state={state} />}
+          {settingsSlug === 'email' && <SettingsEmail state={state} />}
           {settingsSlug === 'password' && <SettingsPassword state={state} />}
           {settingsSlug === 'profile' && <SettingsProfile state={state} />}
           {settingsSlug === 'pro' && <SettingsPro state={state} />}

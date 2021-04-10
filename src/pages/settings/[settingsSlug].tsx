@@ -14,9 +14,13 @@ export default function settingsSlugPage() {
 
   return (
     <Layout title="Loading settings... · Catamyst">
-      {settingsSlug && !state.isError && !state.isLoading && state.profile && (
-        <SettingsAll settingsSlug={settingsSlug} state={state} />
-      )}
+      {settingsSlug &&
+        state.user &&
+        !state.isError &&
+        !state.isLoading &&
+        state.profile && (
+          <SettingsAll settingsSlug={settingsSlug} state={state} />
+        )}
     </Layout>
   )
 }

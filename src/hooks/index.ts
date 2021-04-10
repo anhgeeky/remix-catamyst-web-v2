@@ -6,7 +6,7 @@ export { useRedirectDashboard } from '@hooks/use-redirect-dashboard'
 export { useRedirectSignIn } from '@hooks/use-redirect-signin'
 export { useRouteChanged } from '@hooks/use-route-changed'
 export { useToast } from '@hooks/use-toast'
-export { useSession } from '@hooks/use-session'
+export { useUserSession } from '@hooks/use-user-session'
 export {
   useSWR,
   useUserSWR,

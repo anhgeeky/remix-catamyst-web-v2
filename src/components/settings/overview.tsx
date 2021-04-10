@@ -15,18 +15,18 @@ import { Content, Card, LinkButton, Icon, MembershipButtons } from '@components'
 import { SettingsHero, ProfileModeForm } from '@components/settings'
 import { getCompleteDateTime } from '@utils'
 
-export function SettingsOverview({ state, user }) {
+export function SettingsOverview({ state }) {
   return (
     <>
       <NextHead>
         <title>Overview Settings · Catamyst</title>
       </NextHead>
-      <SettingsOverviewContent state={state} user={user} />
+      <SettingsOverviewContent state={state} />
     </>
   )
 }
 
-export function SettingsOverviewContent({ state, user }) {
+export function SettingsOverviewContent({ state }) {
   return (
     <>
       <SettingsHero>
@@ -62,19 +62,19 @@ export function SettingsOverviewContent({ state, user }) {
             <Heading as="h2" size="md">
               Account Email
             </Heading>
-            <Text>{user.email || 'name@example.com'}</Text>
+            <Text>{state.user.email || 'name@example.com'}</Text>
             <Text>
-              {user.confirmed_at ? (
+              {state.user.confirmed_at ? (
                 <span>
                   Your email is confirmed on{' '}
-                  {getCompleteDateTime(user.confirmed_at)}
+                  {getCompleteDateTime(state.user.confirmed_at)}
                 </span>
               ) : (
                 <span>Your email is not confirmed yet</span>
               )}
             </Text>
             <Stack direction={{ base: 'column', sm: 'row' }}>
-              {!user.confirmed_at && (
+              {!state.user.confirmed_at && (
                 <Button
                   size="sm"
                   colorScheme="green"

@@ -4,7 +4,7 @@ import { Heading, HStack, Stack, Text } from '@chakra-ui/react'
 import { Content } from '@components'
 import { SettingsHero, UserEmailForm } from '@components/settings'
 
-export function SettingsEmail({ state, user }) {
+export function SettingsEmail({ state }) {
   return (
     <>
       <NextHead>
@@ -22,7 +22,7 @@ export function SettingsEmail({ state, user }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
-          <UserEmailForm user={user} />
+          <UserEmailForm user={state.user} />
         </Stack>
       </Content>
     </>

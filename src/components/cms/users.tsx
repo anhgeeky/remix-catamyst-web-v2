@@ -20,7 +20,7 @@ import { supabase } from '@lib'
 export function CMSUsers() {
   const session = supabase.auth.session()
   const { data, error } = useSWR(
-    ['/api/auth/users', session.access_token],
+    ['/api/auth/users', session?.access_token],
     fetcherWithToken
   )
 
