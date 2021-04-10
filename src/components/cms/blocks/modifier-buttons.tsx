@@ -31,12 +31,12 @@ export function CMSBlockModifierButtons({
         <Tag colorScheme="teal">{name}</Tag>
         {/* <Switch
           size="sm"
-          name={`blocks[${block.index}].isPublished`}
-          defaultChecked={block.isPublished}
+          name={`blocks[${block.index}].is_published`}
+          defaultChecked={block.is_published}
           onChange={actions.togglePublishBlock}
         />
         <Text fontSize="xs">
-          {block.isPublished ? 'Published' : 'Unpublished'}
+          {block.is_published ? 'Published' : 'Unpublished'}
         </Text> */}
         {children}
       </HStack>

@@ -88,7 +88,7 @@ export function LessonEditor({ router, lessonId }) {
   const togglePublishLesson = (event) => {
     try {
       if (event.target.checked) {
-        // Change lesson.isPublished here
+        // Change lesson.is_published here
         toast({ title: 'Published lesson', status: 'success' })
       } else {
         toast({ title: 'Unpublished lesson', status: 'warning' })
@@ -183,12 +183,12 @@ function CMSViewResultLesson({ initialData, control, register, actions }) {
   })
 
   /**
-   * Toggle block by index to change isPublished true or false.
+   * Toggle block by index to change is_published true or false.
    */
   const togglePublishBlock = (event) => {
     try {
       if (event.target.checked) {
-        // Change block.isPublished here
+        // Change block.is_published here
         toast({ title: 'Published block', status: 'success' })
       } else {
         toast({ title: 'Unpublished block', status: 'warning' })

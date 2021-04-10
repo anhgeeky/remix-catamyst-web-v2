@@ -1,6 +1,6 @@
 [
   {
-    "isPublished": true,
+    "is_published": true,
     "icon": "cloud",
     "slug": "general",
     "title": "General Support",
@@ -11,7 +11,7 @@
     "discussions": [1]
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "career",
     "title": "Careers, Skills, and Principles",
     "description": "The professional careers, skills, and principles. Stuffs like life, work, health, management, and communication. Could be related to Science, Technology, Reading, Writing, Engineering, Arts, and Mathematics.",
@@ -21,7 +21,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "projects",
     "title": "Projects and Products",
     "description": "The implementation of website and application in general for any scale (tiny, small, medium, large, huge).",
@@ -31,7 +31,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "business",
     "title": "Business",
     "description": "The business-side of technology by making products or services. Related to startups and SaaS (Software as a Service) business.",
@@ -41,7 +41,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "icon": "graphic-design",
     "slug": "graphic-design",
     "title": "Graphic Design",
@@ -52,7 +52,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "uiux",
     "title": "UI/UX and Web Design",
     "description": "The UI (User Interface) and UX (User Experience) aspects for website, web app, and mobile app. Including things from graphic design, with layout and typography.",
@@ -62,7 +62,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "web",
     "title": "Website Development",
     "description": "The actual creation of website. Combination of HTML and CSS to apply an existing UI/UX of a web design. Including browser developer tools.",
@@ -72,7 +72,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "web-app",
     "title": "Web App Development",
     "description": "The implementation of web application using web programming languages and platforms such as JavaScript, TypeScript, and Node.js. With any ECMAScript versions. Including debuggers. ",
@@ -82,7 +82,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "apple",
     "title": "Apple",
     "description": "Apple-related stuffs such as macOS, Macbook, iMac, iOS, iPhone, and iPad.",
@@ -92,7 +92,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "linux",
     "title": "Linux",
     "description": "Linux-related such as Android, Ubuntu, Fedora, Linux Mint, elementary OS, Arch Linux, and others.",
@@ -103,7 +103,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "windows",
     "title": "Windows",
     "description": "Microsoft Windows-related stuffs.",
@@ -113,7 +113,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "browser",
     "title": "Web Browsers",
     "description": "Web browser-related such as Google Chrome, Mozilla Firefox, Brave, Chromium, Microsoft Edge, and others. Including the developer tools.",
@@ -123,7 +123,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "design-tool",
     "title": "Design Tools",
     "description": "Design tool-related such as Figma, Framer, Sketch, InVision, Marvel, Adobe XD, and others. Including more specific ones like Zeplin and Origami.",
@@ -134,7 +134,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "code-editor",
     "title": "Code Editors",
     "description": "Code editor and IDE (Integrated Development Environment) related such as VS Code, Sublime Text, and Atom. Including their derivatives like CodeSandbox, CodePen, Glitch, Replit, JSFiddle, and others.",
@@ -144,7 +144,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "markdown",
     "title": "Markdown",
     "description": "The popular markup for text formatting and documentation like README. Including its derivatives such as MDX. Or alternativs like reStructuredText, AsciiDoc, Textile.",
@@ -154,7 +154,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "terminal",
     "title": "Terminal and Shell",
     "description": "The app and system to handle CLI (command line interface) stuffs. Including bash, zsh, PowerShell, SSH, and others.",
@@ -164,7 +164,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "git",
     "title": "Git",
     "description": "Git-related stuffs such as Git workflow, GitHub, GitLab, Bitbucket, and others.",
@@ -174,7 +174,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "html",
     "title": "HTML",
     "description": "The main markup of a website.",
@@ -184,7 +184,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "css",
     "title": "CSS",
     "description": "The main styling language of a website.",
@@ -194,7 +194,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "css-lf",
     "title": "CSS Libraries and Frameworks",
     "description": "The classic CSS design utilities and systems like Tailwind, Bootstrap, Foundation, Semantic UI, Bulma, Tachyons, and others.",
@@ -204,7 +204,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "css-in-js",
     "title": "CSS-in-JS",
     "description": "The next generation of styling and animation through and usually paired with JavaScript frameworks. Including Emotion, styled-components, Stitches, Framer Motion, Styled System, Chakra UI, and others.",
@@ -214,7 +214,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "analytics",
     "title": "Analytics",
     "description": "The data from visitors and users. Including Google Analytics, Simple Analytics, Fathom Analytics, Splitbee, and others.",
@@ -224,7 +224,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "javascript",
     "title": "JavaScript",
     "description": "The main programming language to build a website or web application.",
@@ -234,7 +234,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "typescript",
     "title": "TypeScript",
     "description": "The superset and type-safe version of JavaScript programming language.",
@@ -244,7 +244,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "dart",
     "title": "Dart",
     "description": "The client-optimized programming language for apps on multiple platforms. Including Flutter.",
@@ -255,7 +255,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "kotlin",
     "title": "Kotlin",
     "description": "The Kotlin programming language.",
@@ -266,7 +266,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "swift",
     "title": "Swift",
     "description": "The Swift programming language.",
@@ -276,7 +276,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "python",
     "title": "Python",
     "description": "The Python programming language. Including Django and Sinatra.",
@@ -287,7 +287,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "ruby",
     "title": "Ruby",
     "description": "The Ruby programming language. Including Rails and Flask.",
@@ -297,7 +297,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "java",
     "title": "Java",
     "description": "The Java programming language. Including Spring and JVM (Java Virtual Machine).",
@@ -308,7 +308,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "go",
     "title": "Go",
     "description": "The Go programming language.",
@@ -318,7 +318,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "php",
     "title": "PHP",
     "description": "The PHP programming language. Including its frameworks and platforms such as WordPress, Laravel, Code Igniter, Drupal.",
@@ -328,7 +328,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "c",
     "title": "C-family",
     "description": "The C-family programming languages such as C, C++, C#, Objective-C.",
@@ -338,7 +338,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "programming-languages",
     "title": "Programming Languages",
     "description": "The other coding and programming languages such as Elm, Scala, Rust, Clojure, Perl, R, F#, Elixir, Erlang, even BASIC and Assembly.",
@@ -348,7 +348,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "deployment",
     "title": "Deployment",
     "description": "Deployment-related stuffs and PaaS (Platform as a Service) such as Vercel, Netlify, Heroku, Railway, OpenShift, and others.",
@@ -359,7 +359,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "nodejs",
     "title": "Node.js",
     "description": "The cross-platform JavaScript runtime environment. Including npm and yarn, also things like I/O, file system, and networking.",
@@ -369,7 +369,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "deno",
     "title": "Deno",
     "description": "The Node.js alternative.",
@@ -379,7 +379,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "packages",
     "title": "Packages",
     "description": "The variety of mostly Node.js packages or modules you can get and use from npm. Including things like formatter (Prettier), static analysis or linter (ESLint), transpiler (Babel), module bundler (Webpack, Rollup), hooks (Husky), and others.",
@@ -389,7 +389,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "react",
     "title": "React.js",
     "description": "The frontend JavaScript library for building UI components. Including Preact, React Router, and React Helmet. Also its derivatives such as React Native, React VR, Expo, and others.",
@@ -399,7 +399,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "nextjs",
     "title": "Next.js",
     "description": "The full stack framework of React application.",
@@ -409,7 +409,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "vue",
     "title": "Vue.js",
     "description": "The progressive frontend JavaScript framework.",
@@ -420,7 +420,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "angular",
     "title": "Angular",
     "description": "The JavaScript framework, both the current Angular or older Angular.js version.",
@@ -430,7 +430,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "javascript-lf",
     "title": "JavaScript UI Libraries/Frameworks",
     "description": "The other JavaScript frontend libraries and frameworks (desktop or mobile) such as Electron, Svelte, Ember.js, NativeScript, Cordova, Xamarin.",
@@ -441,7 +441,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "redux",
     "title": "Redux",
     "description": "The popular state management library. Including its middlewares such as logger, Redux Thunk, Redux Saga, and others.",
@@ -451,7 +451,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "rest-api",
     "title": "REST API",
     "description": "The mechanism to exchange data via HTTP request and response. Including its tools like cURL, Postman, and Insomnia. Or standards like HTTPS and HTTP/2.",
@@ -462,7 +462,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "graphql",
     "title": "GraphQL",
     "description": "The modern alternative of REST API. Including its tools like Apollo, urql, Relay, and Hasura.",
@@ -472,7 +472,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "api",
     "title": "Other APIs",
     "description": "The general discussions on other APIs such as WebSocket, Socket.IO, WebRTC, gRPC, Pub/Sub, SSE (Server-Sent Events), and others.",
@@ -482,7 +482,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "expressjs",
     "title": "Express.js",
     "description": "The popular Node.js backend/server framework. Including its middlewares such as parsers, Helmet, and Passport. Or derivatives like Feathers, Sails.js, Nest, and others.",
@@ -492,7 +492,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "nodejs-lf",
     "title": "Node.js Libraries and Frameworks",
     "description": "The other Node.js backend, server, or full stack libraries and frameworks such as LoopBack, Hapi, Fastify, Apollo, RedwoodJS, KeystoneJS, AdonisJs, Meteor, and others.",
@@ -502,7 +502,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "database",
     "title": "Database",
     "description": "The general database discussions, either SQL or NoSQL. Including ORMs and ODMS such as Prisma, Knex, Sequelize, and Mongoose. Also other DBMS such as SQLite, Firebase, Realm, Redis, Elasticsearch, Cassandra, FaunaDB, and others.",
@@ -512,7 +512,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "mongodb",
     "title": "MongoDB",
     "description": "The popular NoSQL database.",
@@ -522,7 +522,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "mysql",
     "title": "MySQL",
     "description": "The popular SQL database. Including variant like MariaDB.",
@@ -533,7 +533,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "postgresql",
     "title": "PostgreSQL",
     "description": "The other popular SQL database.",
@@ -543,7 +543,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "security",
     "title": "Security",
     "description": "The generic security discussions. Including authentication, authorization, OAuth, token, JWT, cookies, browser storage, 2FA/MFA, and others.",
@@ -554,7 +554,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "docker",
     "title": "Docker",
     "description": "The popular containerization platform. Including Kubernetes.",
@@ -564,7 +564,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "testing",
     "title": "Testing",
     "description": "The generic testing discussions. Including Jest, Mocha, Chai, Cypress, testing-library, Puppeteer, and others.",
@@ -575,7 +575,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "apm",
     "title": "APM",
     "description": "The APM (Application Performance Monitoring) and reporting such as Sentry, New Relic, Splunk, Datadog, and others.",
@@ -585,7 +585,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "infra",
     "title": "Infrastructure and Servers",
     "description": "The variety of heavy infra and server-related discussions. Including things for IaaS (Infrastructure as a Service) like OS (Operating System), PM2, Nginx, Apache, certbot, monitoring, and others. Or packaged stack like LAMP-like variants.",
@@ -595,7 +595,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "gcp",
     "title": "Google Cloud Platform",
     "description": "The infra from Google.",
@@ -606,7 +606,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "aws",
     "title": "Amazon Web Services",
     "description": "The infra from Amazon.",
@@ -616,7 +616,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "azure",
     "title": "Microsoft Azure",
     "description": "The infra from Microsoft.",
@@ -626,7 +626,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "cicd",
     "title": "CI/CD",
     "description": "The practice of Continuous Integration and Deployment (CI/CD) of software craftmanship. Inlcuding tools like Circle CI, Jenkins, Travis CI, and others.",
@@ -636,7 +636,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "accessibility",
     "title": "Accessibility",
     "description": "To make sure our website and application is accessible for everyone to use. Including internationalization, localization, dark mode, motion, voice interface, chat interface, and more.",
@@ -646,7 +646,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "ar-vr",
     "title": "AR and VR",
     "description": "Augmented Reality (AR) and Virtual Reality (VR) stuffs. Including Oculus, Daydream, and others.",
@@ -656,7 +656,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "ai-ml",
     "title": "AI and ML",
     "description": "Artificial Intelligence (AI) and Machine Learning (ML). Including libraries such as TensorFlow.",
@@ -667,7 +667,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "ds-bi",
     "title": "Data Science and Business Intelligence",
     "description": "Data science (DS) and Business Intelligence (BI) discussions. Including tools like Metabase.",
@@ -677,7 +677,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "games",
     "title": "Game Design and Development",
     "description": "Game design and development-related stuffs. Including Unity 3D, Unreal Engine, Phaser, and others.",
@@ -687,7 +687,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "blockchain-crypto",
     "title": "Blockchain and Crypto",
     "description": "Blockchain and cryptocurrency-related discussions. Including Bitcoin, Ethereum, and other derivatives.",
@@ -698,7 +698,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "management",
     "title": "Project and Product Management",
     "description": "The way of handling project and product development for teams. Including waterfall, Agile, Scrum, XP, and others.",
@@ -708,7 +708,7 @@
     "discussions": []
   },
   {
-    "isPublished": true,
+    "is_published": true,
     "slug": "others",
     "title": "Others",
     "description": "The other uncategorized discussions such as feedbacks and bug reports.",

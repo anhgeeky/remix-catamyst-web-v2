@@ -114,7 +114,7 @@ export function CMSLessons() {
                       <LearningTag category={lesson.level} />
                     </Text>
                     <Text flex={1} textAlign="center">
-                      {lesson.isPublished ? (
+                      {lesson.is_published ? (
                         <ViewIcon color="green.500" />
                       ) : (
                         <ViewOffIcon color="red.500" />

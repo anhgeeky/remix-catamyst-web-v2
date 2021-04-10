@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "isPublished": true,
+    "is_published": true,
     "slug": "web",
     "title": "Website Development",
     "description": "Learn and practice the fundamental concepts and specific tools you can use to build basic websites. This track focuses on the design and frontend (what your website visitor would see). Mostly using tools like Figma and Git, then technologies like HTML and CSS.",
@@ -36,7 +36,7 @@
   },
   {
     "id": 2,
-    "isPublished": true,
+    "is_published": true,
     "slug": "web-app",
     "title": "Web Application Development",
     "description": "Learn and practice the fundamental concepts and specific tools you can use to build high-quality websites and web applications. This cover everything from the design and frontend (what users would see and use) to the backend (where data of the users are managed). Combining both frontend and backend mostly called full stack web application development.  Mostly using tools like Figma and Git, then technologies like HTML, CSS, JavaScript, APIs, Node.js, React.js, databases, and servers.",
@@ -120,7 +120,7 @@
   },
   {
     "id": 3,
-    "isPublished": false,
+    "is_published": false,
     "slug": "mobile-android",
     "title": "Mobile Android Development",
     "description": "Learn and practice the fundamental concepts and Android-specific tools you can use to build mobile apps for Android. This track focuses on the design and app implementation.",
@@ -134,7 +134,7 @@
   },
   {
     "id": 4,
-    "isPublished": false,
+    "is_published": false,
     "slug": "mobile-ios",
     "title": "Mobile iOS Development",
     "description": "Learn and practice the fundamental concepts and Apple-specific tools you can use to build mobile apps for iOS such as iPhone and iPad. This track focuses on the design and app implementation.",
@@ -148,7 +148,7 @@
   },
   {
     "id": 5,
-    "isPublished": false,
+    "is_published": false,
     "slug": "graphic-design",
     "title": "Graphic Design",
     "description": "Learn to draw graphics with vector design tools. Which assets can be used for any purpose like aesthetics, logos, illustrations, and story telling through design.",
@@ -162,7 +162,7 @@
   },
   {
     "id": 6,
-    "isPublished": false,
+    "is_published": false,
     "slug": "uiux-design",
     "title": "UI and UX Design",
     "description": "Learn to draw and layout websites and web application with specialized web design tools. As well as making an experience journey for the user to use the website and application.",

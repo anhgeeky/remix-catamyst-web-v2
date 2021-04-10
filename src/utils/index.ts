@@ -10,7 +10,13 @@ export {
   getYear,
 } from '@utils/date'
 export { createSlug as slugify } from '@utils/slugify'
-export { useSWR, fetcher, fetcherWithToken } from '@utils/fetcher'
+export {
+  useSWR,
+  useUser,
+  useProfile,
+  fetcher,
+  fetcherWithToken,
+} from '@utils/swr'
 export { formatNumberCurrency } from '@utils/currency'
 export { getPlan } from '@utils/plan'
 export { initBlock } from '@utils/blocks'

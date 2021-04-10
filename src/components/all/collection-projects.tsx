@@ -29,7 +29,7 @@ export function CollectionProjects({ projects }) {
   return (
     <SimpleGrid spacing={3} minChildWidth={320}>
       {projects
-        .filter((project) => project.isPublished)
+        .filter((project) => project.is_published)
         .map((project, index) => {
           return <ProjectBoard key={project.slug} project={project} />
         })}

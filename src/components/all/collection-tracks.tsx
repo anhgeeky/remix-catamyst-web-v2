@@ -77,8 +77,8 @@ export function TrackCard({ track }) {
                 {track.title}
               </Heading>
               <Text>{track.description}</Text>
-              {track.isPublished && <TrackStats track={track} />}
-              {!track.isPublished && (
+              {track.is_published && <TrackStats track={track} />}
+              {!track.is_published && (
                 <AlertSoon>This track is coming soon.</AlertSoon>
               )}
             </Stack>

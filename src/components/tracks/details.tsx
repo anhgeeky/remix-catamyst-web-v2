@@ -112,7 +112,7 @@ export function TrackSideBar({ track }) {
 
   return (
     <Stack maxW={{ lg: '280px' }} width="100%" spacing={1}>
-      {track.isPublished && (
+      {track.is_published && (
         <ButtonGroup pb={3}>
           <Button
             width="100%"

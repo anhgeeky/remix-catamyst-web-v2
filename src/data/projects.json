@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "isPublished": true,
+    "is_published": true,
     "slug": "catamyst",
     "title": "Catamyst",
     "description": "All-in-one platform to learn web development, UI/UX design, and software engineering.",
@@ -34,7 +34,7 @@
   },
   {
     "id": 2,
-    "isPublished": true,
+    "is_published": true,
     "slug": "nawaart",
     "title": "Nawaart",
     "description": "Discover authentic and valuable contemporary artworks from various artists in Myanmar, the Land of the Golden Pagodas.",
@@ -69,7 +69,7 @@
   },
   {
     "id": 3,
-    "isPublished": true,
+    "is_published": true,
     "slug": "saikou",
     "title": "Saikou",
     "description": "Find out the recommended anime and manga for your leisure entertainment variants originated from Japan, the Land of the Rising Sun.",
@@ -99,7 +99,7 @@
   },
   {
     "id": 4,
-    "isPublished": true,
+    "is_published": true,
     "slug": "zidence",
     "title": "Zidence",
     "description": "Simple residential property listing and comparison. Discover your next suitable home in Asia.",
@@ -125,7 +125,7 @@
   },
   {
     "id": 5,
-    "isPublished": true,
+    "is_published": true,
     "slug": "lelangbuana",
     "title": "Lelangbuana",
     "description": "Fast and free auction commerce site for interesting goods between islands.",
@@ -146,7 +146,7 @@
   },
   {
     "id": 6,
-    "isPublished": true,
+    "is_published": true,
     "slug": "sneakergram",
     "title": "Sneakergram",
     "description": "Instagram-clone for sneakerheads.",

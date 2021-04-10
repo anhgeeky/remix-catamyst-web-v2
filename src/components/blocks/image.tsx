@@ -72,7 +72,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
         </Box>
       )}
 
-      {block.showMeta !== false && block.title && (
+      {block.show_meta !== false && block.title && (
         <Box opacity={0.5} align="center" mt={2}>
           <Text fontSize="sm">{block.title}</Text>
           {block.source && (

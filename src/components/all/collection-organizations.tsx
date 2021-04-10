@@ -28,7 +28,7 @@ export function CollectionOrganizations({ organizations }) {
   return (
     <SimpleGrid spacing={3} width="100%" minChildWidth={250}>
       {organizations
-        .filter((org) => org.isPublished)
+        .filter((org) => org.is_published)
         .map((org, index) => {
           return (
             <NextLink key={org.handle} href={org.handle} passHref>

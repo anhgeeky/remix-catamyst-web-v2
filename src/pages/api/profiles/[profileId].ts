@@ -6,7 +6,7 @@ export default async function profileById(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { id } = req.query
+  const { profileId } = req.query
   const { data: profile } = await supabase
     .from('profiles')
     .select(
@@ -40,7 +40,7 @@ export default async function profileById(
        mode,
        plan`
     )
-    .eq('id', id)
+    .eq('id', profileId)
     .single()
 
   res.status(200).json(profile)

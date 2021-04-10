@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "isPublished": true,
+    "is_published": true,
     "isVerified": true,
     "publishedDate": "2021-03-10",
     "status": "Closed",
@@ -69,7 +69,7 @@
   },
   {
     "id": 2,
-    "isPublished": true,
+    "is_published": true,
     "isVerified": true,
     "publishedDate": "2021-03-10",
     "status": "Closed",
@@ -121,7 +121,7 @@
   },
   {
     "id": 3,
-    "isPublished": true,
+    "is_published": true,
     "isVerified": true,
     "publishedDate": "2021-01-14",
     "status": "Closed",
@@ -166,7 +166,7 @@
   },
   {
     "id": 4,
-    "isPublished": true,
+    "is_published": true,
     "publishedDate": "2021-03-24",
     "status": "Open",
     "slug": "full-stack-react-developer-digitalsistem",
@@ -205,7 +205,7 @@
   },
   {
     "id": 5,
-    "isPublished": true,
+    "is_published": true,
     "publishedDate": "2021-02-25",
     "status": "Closed",
     "slug": "ux-designer-ux-army",

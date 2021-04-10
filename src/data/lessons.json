@@ -5,7 +5,7 @@
     "title": "Blank",
     "level": "Newbie",
     "category": "Fundamental",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -14,21 +14,21 @@
     "title": "Let's start here",
     "level": "Newbie",
     "category": "Fundamental",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "url": "https://storage.catamyst.com/illustrations/hero-last-mobile.png",
         "size": "Small",
         "alt": "Cats are celebrating",
         "author": "Latifah Dhia",
         "source": "https://catamyst.com",
-        "showMeta": false
+        "show_meta": false
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<p>Welcome aboard! It's a good time to learn.</p><p>But first, take our time to understand how we're going to learn here.</p><h1>Learning Structure</h1><p>In Catamyst, learning and practicing are bundled together with this structure:</p><ul><li><strong>Track</strong>: The learning roadmaps which you can choose based on your interest. Everything starts from the very beginning, continuing up to a more challenging ones. Each Track contains several Topics that already in order.</li><li><strong>Topic</strong>: The subjects that nicely arranged based on the track. Each Topic contains multiple Lessons that are grouped together. Topics are also categorized based on the similarities or discipline with other topics such as Preparation, General, Frontend, Backend, Career, and Special.</li><li><strong>Lesson</strong>: The actual materials from which you can learn. It could contains texts to read, images to see, video to watch, links to visit, demo to try, activity to enjoy, project to practice, tutorial to follow, problem to solve, design to analyze, source code to work on, and other references to learn more. Feel free to use the provided materials based on your preference in learning.</li></ul><p>Most of the lessons are given in text format because that is the primary format of resources you're going to get in real-world situation. Also, it's a lot faster to read and copy from text than from videos.</p><p>You can also notice that in every <strong>Topic</strong> and <strong>Lesson</strong>, there are navigation buttons to either go to the previous or the next one.</p><p>Here you are actually free to start almost anywhere, or jump between different topics and lessons as you wish. But recommend you to follow through from the very beginning, sequentially, unless you already know what you're doing by yourself.</p><h1>Lesson Category</h1><p>Each lessons have their category:</p><ul><li><strong>Fundamental</strong>: Mostly theories or very important things you need to understand at first before moving into something more specific or going into practical project.</li><li><strong>Specific</strong>: Mostly implementations or what are the specific tools or technologies to choose. Then how they are useful in a project.</li><li><strong>Project</strong>: Practical activity to build something that apply both the fundamental knowledge and specific skill. The scale could vary betweens Tiny, Small, Medium, Large, and Huge.</li></ul><h1>Lesson Level</h1><p>Each lessons have their level:</p><ul><li><strong>Newbie</strong></li><li><strong>Beginner</strong></li><li><strong>Intermediate</strong></li><li><strong>Advanced</strong></li><li><strong>Expert</strong></li></ul><p>They are what they are, just like in a game, or real-life references. If you're just getting started in learning the chosen track, you would start from Newbie level lessons. If you already had prior experience, you might continue from either Beginner, Intermediate, Advanced, or Expert level.</p><p>Currently, the Newbie lessons are the only free lessons, that even you can access directly without signing up. If you want to access beyond that, then you have to sign up for an account, then upgrade to Pro plan.</p><h1>Your Contents</h1><p>Since Catamyst is an all-in-one platform, you are able to do these other than just learning if you created an account:</p><ol><li>Profile that can be used for your homepage or resume. Just like Twitter, Instagram, or LinkedIn.</li><li>Publish projects as your portfolio to prove your knowledge or work experience.</li><li>Create discussions or ask and answer questions with the other community members.</li><li>Get a dedicated experienced mentor to help you directly, live 1-on-1 privately, with a customized schedule (This require you to enroll in <alink href='/pricing'>Super plan</alink>).</li><li>Apply for jobs, either full-time or freelance. Or if you are an employer from a company, you can also post a job vacancy (This require you to subscribe for a <alink href='/pricing'>Pro plan</alink>).</li></ol><p>Alright, that's all you have to know to start. Please enjoy the journey!</p>"
       }
     ]
@@ -40,42 +40,42 @@
     "description": "Why understanding the use of a website.",
     "level": "Newbie",
     "category": "Fundamental",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
         "size": "Small",
         "alt": "Cat sitting in front of artworks",
         "title": "Neko the painter",
         "author": "Latifah Dhia",
         "source": "https://catamyst.com",
-        "showMeta": false
+        "show_meta": false
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<p>Meet Neko. Neko is a painter from Japan. Neko has been painting for 10 years. Since Neko has many paintings at home, Neko wants to share his artworks with many people around the world, beyond just Japan.</p><p>What do you think is the best way for Neko to share them?</p><p>A. Travel to all countries in the world and bring all of the artworks directly.</p><p>B. Publish the artworks on a website.</p><p>Of course, if Neko wants to share the artworks with people around the world, it will be faster and cheaper if they are published on a website. A website makes it possible for Neko to reach many people without visiting all countries by himself.</p><p>But to learn how to build the website, Neko needs to learn about web development. After Neko learn and practice the basics of web development, now Neko can publish the artworks on a website.</p><p>Below is an example of nice-looking website, called <a href='https://artsandculture.google.com'>Google Arts & Culture</a>:</p>"
       },
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "size": "Huge",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086326/google-arts-culture.jpg",
         "alt": "Artworks with cats on Google Arts & Culture website",
         "title": "Google Arts & Culture website · Cats in culture",
         "source": "https://artsandculture.google.com",
-        "showMeta": true
+        "show_meta": true
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>What is web development?</h1><p>Web development is the process of building websites that run in a web browser. Web development powers popular sites like Google, Wikipedia, Twitter, YouTube, Facebook, Instagram, LinkedIn, Airbnb, and more. Even systems on software from Apple and Microsoft. And obviously, your favorite websites included!</p><p>In this learning track, you will obtain fundamental concepts and specific tools to build high-quality websites and web applications. Ultimately, you will be able to master your strengths in problem-solving and showcasing a portfolio that could leverage you to land a decent job or a freelance offer. You can even build your own tech business using the knowledge and skillset you obtain here.</p><h1>Who is a web developer?</h1><p>A web developer is the one who builds and maintains websites or web applications. They are also sometimes responsible to design how you would see and experience a website. Although, the work for the design can also be given to the dedicated web designers instead.</p><h1>Who can learn web development?</h1><p>Even though Neko is a painter, Neko can learn web development and build a website. So, no matter what your education and career background are, you can learn to build your own websites and web applications as long as you make the effort.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "isReferences": true,
         "links": [
           {
@@ -94,20 +94,20 @@
     "slug": "activities-overview",
     "level": "Newbie",
     "category": "Fundamental",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
         "size": "Small",
         "title": "Cat reading a book",
         "source": "https://catamyst.com",
-        "showMeta": false
+        "show_meta": false
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Learn the fundamentals and specific tools</h1><p>You have to learn the fundamentals first to have a strong foundation in learning web development. After mastering the fundamentals, you will learn the skills to use the tools for building websites and web applications.</p><h1>Practice building a lot of projects</h1><p>When learning fundamentals and specific tools, you will also practice implementing the knowledge you have gained by building your own projects. The scale of the projects ranges from tiny, small, medium, to large.</p><h1>Gain career skills</h1><p>Finally, after gaining the skills and practicing the projects, it is important to know how to sell yourself and your crafts to future employers, clients, or customers. These career skills are essential to prepare you to enter the professional web and software development industry.</p>"
       }
     ]
@@ -118,25 +118,25 @@
     "slug": "time-duration-to-complete",
     "level": "Newbie",
     "category": "Fundamental",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "title": "Hour glass",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
         "size": "Tiny",
         "source": "https://catamyst.com",
-        "showMeta": false
+        "show_meta": false
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Learning and time expectation</h1><p>We're aiming for you to achieve mastery of your learning. Which means you would learn gradually. You prove to yourself that you already understand the particular lesson first, before moving on to the next.</p><p>All of the activities are expected to be completed within 3 to 6 months, depending on your learning pace and effort. You can finish earlier in 2 months or longer in 1 year.</p><p>If you decide to spend at least 1 to 3 hours on weekdays and 5 to 8 hours on weekends, we can assume that you can finish them in 3 to 6 months. Of course, it would be more efficient if you spend more time per day.</p><h1>Faster is not always better</h1><p>To finish faster, some people might skip learning the knowledge and doing the projects directly. We do not recommend this way as each of them will give you the proper foundation to go to the next lessons. However, it is okay to skip some parts only if you already master them. Remember, the journey could take a while. Even after you have done them, you are still required to &quot;do the work&quot; because you need to always keep practicing.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "isReferences": true,
         "links": [
           {
@@ -171,11 +171,11 @@
     "description": "Check your available laptop and mobile.",
     "level": "Newbie",
     "category": "Specific",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "title": "Cat with laptop",
         "alt": "Cat typing on laptop animated",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614258939/cat-typing-laptop.gif",
@@ -183,16 +183,16 @@
         "author": "Latifah Dhia",
         "copyright": "Catamyst",
         "source": "https://catamyst.com",
-        "showMeta": false
+        "show_meta": false
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Laptop requirements</h1><p>Every laptop need an Operating System (OS), the system that being used to run your computer. You can use your own laptop, borrow someone else's laptop, or using facilities from a library or Internet cafe.</p><h2>If using Linux</h2><p>If you have a laptop with Linux OS like Ubuntu, it should be enough. Preferably using Ubuntu version 20.04 or later.</p><h2>If using Mac</h2><p>If you have a MacBook with macOS, it should be enough. Preferably bought on year 2015 or above, and using macOS Catalina or later.</p><h2>If using Windows</h2><p>If you have a laptop with Windows OS:</p><ul><li>Preferably bought on year 2015 or above, and using Windows 10.</li><li>Processor at least Intel Core i3 or AMD.</li><li>RAM at least 4 GB.</li><li>Hard drive at least 100 GB of space.</li></ul>"
       },
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "url": "https://apple.com/v/macos/big-sur/b/images/overview/hero/hero_fallback__fi60jv86taem_medium_2x.png",
         "source": "https://apple.com/macos/big-sur",
         "title": "Macbook Pro with macOS Big Sur",
@@ -203,12 +203,12 @@
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Mobile requirements</h1><p>Every mobile phone or tablet usually already comes with their OS too.</p><ul><li>If you have an iPhone or iPad, it should be enough.</li><li>If you have an Android phone or tablet, it should have minimum Android version 4.0 or above.</li></ul>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "isReferences": true,
         "links": [
           {
@@ -242,30 +242,30 @@
     "slug": "essential-software-tools",
     "level": "Newbie",
     "category": "Specific",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<p>There are 5 essential software tools you should prepare:</p><ol><li>Web browser</li><li>Password manager</li><li>Task manager</li><li>Note taker</li><li>Grammar checker</li></ol><p>If you somehow already know or use them all, you are free to skip this. Otherwise, please check them first.</p>"
       },
       {
         "type": "Divider",
-        "isPublished": true
+        "is_published": true
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Web browser</h1><p>With web browser, you can access websites and web applications via the Internet. Here are the recommended web browsers you can use:</p><ul><li>Google Chrome</li><li>Mozilla Firefox</li><li>Brave Browser</li></ul><p>All of these browsers are available on desktop and mobile.</p>"
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h2>Google Chrome</h2><p>Google Chrome is a fast and secure web browser developed by Google. It uses Chromium project under the hood.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "title": "Google Chrome",
@@ -288,12 +288,12 @@
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h2>Mozilla Firefox</h2><p>Firefox is a free web browser backed by Mozilla, dedicated to internet health and privacy.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "title": "Mozilla Firefox",
@@ -316,12 +316,12 @@
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h2>Brave Browser</h2><p>Brave allows you to browse or loads content 3x faster than Chrome, while stops online surveillance and uses less battery. Despite its difference with Google Chrome, Brave uses Chromium as well.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "title": "Brave Browser",
@@ -344,21 +344,21 @@
       },
       {
         "type": "Divider",
-        "isPublished": true
+        "is_published": true
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Password manager</h1><p>During your learning and professional work, you will eventually use a lot of online tools. To use those tools, usually you are required to use email and password to create an account on each of them. To keep all of your account credentials secured and to avoid forgetting them, you can use a password manager instead of saving them on a regular writing application, on a paper, or even worse... trying to remember them all in your head.</p><p>We recommend using Bitwarden to save all of your account credentials across multiple devices. Because it's free, safe, and easier to use than other alternatives. It's fine too if you already use other tools like 1Password or LastPass.</p>"
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h2>Bitwarden</h2><p>Bitwarden makes it easy to generate and store unique passwords. It is available for any browser or device.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "title": "Bitwarden",
@@ -400,30 +400,30 @@
       },
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "size": "Huge",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614267865/bitwarden-home.jpg",
         "title": "Bitwarden website",
         "source": "https://bitwarden.com",
-        "showMeta": true
+        "show_meta": true
       },
       {
         "type": "Divider",
-        "isPublished": true
+        "is_published": true
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Task manager</h1><p>A task manager is essential to keep you on track and productive. Task management helps you to manage your projects so much easier. There are many task management apps you can use, but we recommend you to use Trello.</p>"
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h2>Trello</h2><p>Trello is a task management app, owned by Atlassian. You can use Trello to track your tasks and activities, for personal or work, both on desktop and mobile.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "title": "Trello",
@@ -455,21 +455,21 @@
       },
       {
         "type": "Divider",
-        "isPublished": true
+        "is_published": true
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Note taker</h1><p>Note taker or note-taking app helps you to record your own information over time while learning. There are also many note-taking apps, but we recommend you to use Notion if you want more capabilities.</p>"
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h2>Notion</h2><p>Notion is an all-in-one workspace for your notes, tasks, wikis, and databases. It is a new kind of tool that blends your everyday apps into one. Available on web, desktop, and mobile.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "title": "Notion",
@@ -486,21 +486,21 @@
       },
       {
         "type": "Divider",
-        "isPublished": true
+        "is_published": true
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h1>Grammar checker</h1><p>To learn anything these days, you are also required to write a lot in English within various tools and media. While writing, a grammar checker helps you to write flawlessly. We recommend you to use Grammarly.</p>"
       },
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<h2>Grammarly</h2><p>Grammarly is a free online writing assistant that powered with AI. Available on desktop and mobile, also as browser plugin.</p>"
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "title": "Grammarly",
@@ -533,7 +533,7 @@
     "slug": "other-software-tools",
     "category": "Specific",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -542,7 +542,7 @@
     "slug": "managing-your-tasks",
     "category": "Project",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -551,29 +551,29 @@
     "title": "Learning process",
     "category": "Fundamental",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Texts",
-        "isPublished": true,
+        "is_published": true,
         "html": "<p>Learning things like technology, design, web development, and software engineering are rarely a linear process. There is actually no 1-2-3 order like a formal educational stage such as elementary school, middle school, high school, then university.</p><p>In real life, the actual learning itself has no beginning, a middle, and an end. Sometimes you have to go back and forth from concept to concept to understand something. It&#39;s obviously impossible to know everything perfectly, but you should embrace that imperfection.</p><p>There is no need to memorize everything too, as you can look up the information you need again and again whenever you need them. Even if you already learned about something some time ago, you can still re-learn it today.</p>"
       },
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
         "title": " Linear vs Non-linear learning · Inspired by Visual Thinkery",
         "source": "https://visualthinkery.com",
         "size": "Large",
-        "showMeta": true
+        "show_meta": true
       },
       {
         "type": "Divider",
-        "isPublished": true
+        "is_published": true
       },
       {
         "type": "Links",
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "url": "https://bryanmmathers.com/linear-vs-non-linear-learning",
@@ -592,11 +592,11 @@
     "title": "Learning with first principles thinking",
     "category": "Fundamental",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": [
       {
         "type": "Image",
-        "isPublished": true,
+        "is_published": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614961932/cat-painting-shapes.png",
         "title": "Just like a painter!",
         "alt": "Cat painting some shapes",
@@ -605,7 +605,7 @@
       {
         "type": "Links",
         "isReferences": true,
-        "isPublished": true,
+        "is_published": true,
         "links": [
           {
             "url": "https://youtube.com/watch?v=ZqhN2YWTw0M",
@@ -624,7 +624,7 @@
     "title": "Learning ways and mediums",
     "category": "Fundamental",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -633,7 +633,7 @@
     "title": "Fixed vs growth mindset",
     "category": "Fundamental",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -642,7 +642,7 @@
     "title": "Good communication skills",
     "category": "Fundamental",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -651,7 +651,7 @@
     "title": "Technical writing skills",
     "category": "Fundamental",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -660,7 +660,7 @@
     "title": "Website vs web application",
     "category": "Fundamental",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -669,7 +669,7 @@
     "title": "Personal websites",
     "category": "Specific",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -678,7 +678,7 @@
     "title": "Company websites",
     "category": "Specific",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -687,7 +687,7 @@
     "title": "Organization websites",
     "category": "Specific",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   },
   {
@@ -696,7 +696,7 @@
     "title": "App",
     "category": "Specific",
     "level": "Newbie",
-    "isPublished": true,
+    "is_published": true,
     "blocks": []
   }
 ]

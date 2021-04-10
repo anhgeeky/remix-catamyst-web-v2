@@ -2,7 +2,7 @@
   {
     "type": "Organization",
     "id": 1,
-    "isPublished": true,
+    "is_published": true,
     "handle": "catamyst",
     "name": "Catamyst",
     "avatar_url": "/assets/logos/catamyst.png",
@@ -29,7 +29,7 @@
   {
     "type": "Organization",
     "id": 2,
-    "isPublished": true,
+    "is_published": true,
     "handle": "nawaart",
     "name": "Nawaart",
     "bio_html": "<p>Promoting local artists of South East Asia.</p>",
@@ -47,7 +47,7 @@
   {
     "type": "Organization",
     "id": 3,
-    "isPublished": true,
+    "is_published": true,
     "handle": "saikou",
     "name": "Saikou",
     "bio_html": "<p>We celebrate the modern pop culture of Japan.</p>",
@@ -65,7 +65,7 @@
   {
     "type": "Organization",
     "id": 4,
-    "isPublished": true,
+    "is_published": true,
     "handle": "zidence",
     "name": "Zidence",
     "bio_html": "<p>Simple property listing for everyone.</p>",
@@ -83,7 +83,7 @@
   {
     "type": "Organization",
     "id": 5,
-    "isPublished": false,
+    "is_published": false,
     "handle": "github",
     "name": "GitHub",
     "bio_html": "<p>How people build software.</p>",
@@ -100,7 +100,7 @@
   {
     "type": "Organization",
     "id": 6,
-    "isPublished": false,
+    "is_published": false,
     "handle": "google",
     "name": "Google",
     "avatar_url": "https://storage.catamyst.com/avatars/google.png",
@@ -117,7 +117,7 @@
   {
     "type": "Organization",
     "id": 7,
-    "isPublished": false,
+    "is_published": false,
     "handle": "facebook",
     "name": "Facebook",
     "avatar_url": "https://storage.catamyst.com/avatars/facebook.png",
@@ -131,7 +131,7 @@
   {
     "type": "Organization",
     "id": 8,
-    "isPublished": false,
+    "is_published": false,
     "handle": "spotify",
     "name": "Spotify",
     "avatar_url": "https://storage.catamyst.com/avatars/spotify.png",
@@ -145,7 +145,7 @@
   {
     "type": "Organization",
     "id": 9,
-    "isPublished": false,
+    "is_published": false,
     "handle": "impactbyte",
     "name": "Impact Byte",
     "bio_html": "<p>Make impact with your code.</p>",

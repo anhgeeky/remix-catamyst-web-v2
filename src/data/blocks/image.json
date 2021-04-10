@@ -1,6 +1,6 @@
 {
   "type": "Image",
-  "isPublished": true,
+  "is_published": true,
   "url": "https://placekitten.com/300/300",
   "size": "Small",
   "title": "",
@@ -8,5 +8,5 @@
   "author": "",
   "copyright": "",
   "source": "",
-  "showMeta": true
+  "show_meta": true
 }

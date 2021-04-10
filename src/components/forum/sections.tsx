@@ -19,7 +19,7 @@ import { ForumToolbar } from '@components/forum'
 import { dataForumSections } from '@data'
 
 export function ForumSections() {
-  const sections = dataForumSections.filter((section) => section.isPublished)
+  const sections = dataForumSections.filter((section) => section.is_published)
   const [layout, setLayout] = useState('grid') // grid | row
 
   const handleToggleLayout = (layout) => {

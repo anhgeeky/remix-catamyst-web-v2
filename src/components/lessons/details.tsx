@@ -53,7 +53,7 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
 
       <Container id="lesson-content" width="100%" maxW="1500px" pt={5} px={0}>
         <Stack align="center" spacing={10}>
-          {lesson.isPublished !== false && (
+          {lesson.is_published !== false && (
             <Stack id="lesson-blocks" align="center" width="100%" spacing={5}>
               {/* No maxW in Stack, ImageBlock could be full width */}
               {lesson?.blocks &&
@@ -67,7 +67,7 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
               )}
             </Stack>
           )}
-          {lesson.isPublished === false && (
+          {lesson.is_published === false && (
             <Stack id="lesson-blocks" align="center" width="100%" spacing={5}>
               <AlertSoon />
             </Stack>

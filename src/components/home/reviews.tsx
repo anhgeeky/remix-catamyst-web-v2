@@ -53,7 +53,7 @@ function UserReviews({ reviews }) {
   return (
     <>
       {reviews.map((user) => {
-        if (user.isPublished !== false) {
+        if (user.is_published !== false) {
           return (
             <Card
               key={user.handle}

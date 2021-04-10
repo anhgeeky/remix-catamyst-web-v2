@@ -166,7 +166,7 @@ export function CMSBlockImage({ index, block, actions }) {
                   <FormLabel>Meta</FormLabel>
                 </VisuallyHidden>
                 <Icon name="meta" />
-                <Switch name="showMeta" defaultValue={block.showMeta} />
+                <Switch name="show_meta" defaultValue={block.show_meta} />
               </FormControl> */}
             </HStack>
 

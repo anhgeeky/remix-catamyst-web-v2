@@ -38,7 +38,7 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
                     (lesson, index) => lesson.id === lessonId
                   )
 
-                  if (lesson?.isPublished === false) {
+                  if (lesson?.is_published === false) {
                     return null
                   }
 

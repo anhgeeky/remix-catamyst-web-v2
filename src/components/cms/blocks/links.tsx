@@ -58,7 +58,7 @@ export function CMSBlockLinks({ index, block, actions }) {
             />
 
             <Stack spacing={1} p={2} width="99%">
-              {/* Need Link-specific modifer buttons without isPublished */}
+              {/* Need Link-specific modifer buttons without is_published */}
               {/* <CMSBlockModifierButtons block={link} name="Link" /> */}
 
               <FormControl as={HStack}>

@@ -49,12 +49,12 @@ export function HeaderEditor({ name, item, register, actions }) {
           </Button>
           <HStack>
             <Switch
-              defaultChecked={item.isPublished}
-              name="isPublished"
+              defaultChecked={item.is_published}
+              name="is_published"
               ref={register}
               onChange={actions.togglePublishLesson}
             />
-            <Text>{item.isPublished ? 'Published' : 'Unpublished'}</Text>
+            <Text>{item.is_published ? 'Published' : 'Unpublished'}</Text>
           </HStack>
         </ButtonGroup>
 
