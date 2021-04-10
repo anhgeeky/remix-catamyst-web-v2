@@ -7,6 +7,7 @@ export { useRedirectSignIn } from '@hooks/use-redirect-signin'
 export { useRouteChanged } from '@hooks/use-route-changed'
 export { useToast } from '@hooks/use-toast'
 export { useUserSession } from '@hooks/use-user-session'
+export { useAppDispatch, useAppSelector } from '@hooks/use-redux'
 
 /**
  * Name convention for all SWR-relate to easily identify.

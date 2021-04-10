@@ -2,13 +2,15 @@ import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 
 import { useUserSession, useAuthProfileSWR } from '@hooks'
+import type { RootState } from '@features/store'
 
 /**
  * Similar to useAuth but fetch a profile.
  * Combines router, profile, and various conditions.
  */
 export function useProfile() {
-  const auth = useSelector((state) => state.auth)
+  // @ts-ignore
+  const auth = useSelector((state: RootState) => state.auth)
   const { user, session } = useUserSession()
 
   const { profile, isLoading, isError } = useAuthProfileSWR(

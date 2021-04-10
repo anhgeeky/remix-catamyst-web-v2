@@ -1,9 +1,9 @@
 import { applyMiddleware, createStore } from 'redux'
-import { createLogger } from 'redux-logger'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import { persistStore, persistReducer } from 'redux-persist'
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
+// import { createLogger } from 'redux-logger'
 
 import storage from '@features/reduxPersist' // custom localStorage for web
 
@@ -44,3 +44,7 @@ export const store = createStore(
 )
 
 export const persistor = persistStore(store)
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
