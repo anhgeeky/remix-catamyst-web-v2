@@ -7,7 +7,7 @@ import * as Sentry from '@sentry/react'
 import { Integrations } from '@sentry/tracing'
 
 import theme from '@theme'
-import { Fonts } from '@components'
+import { Fonts, Header, Footer } from '@components'
 import { AuthSession } from '@components/auth'
 import { store, persistor } from '@features/store'
 
@@ -30,7 +30,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <Fonts />
           <AuthSession />
           <PersistGate loading={null} persistor={persistor}>
+            <Header />
             <Component {...pageProps} />
+            <Footer />
           </PersistGate>
         </ReduxProvider>
       </ChakraProvider>

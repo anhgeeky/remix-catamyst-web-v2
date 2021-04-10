@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
 import { AuthSession as SupabaseAuthSession } from '@supabase/supabase-js'
+// import { useDispatch } from 'react-redux'
 
 import { supabase } from '@lib'
-import { signOut } from '@features/auth/actions'
+// import { signOut } from '@features/auth/actions'
 
 export function AuthSession() {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const [session, setSession] = useState<SupabaseAuthSession | null>(null)
 
   useEffect(() => {
