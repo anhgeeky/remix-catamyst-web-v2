@@ -13,7 +13,7 @@ export { useUserSession } from '@hooks/use-user-session'
  */
 export {
   useSWR,
-  useProfileSWR,
+  useProfileHandleSWR,
   useAuthProfileSWR,
   fetcherSWR,
   fetcherWithTokenSWR,

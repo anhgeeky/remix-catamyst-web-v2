@@ -26,20 +26,19 @@ export const fetcherWithTokenSWR = async (url, token) => {
  * Hooks
  */
 
-export const useProfileSWR = (profileId) => {
-  const { data, error } = useSWR(`/api/profiles/${profileId}`, fetcherSWR)
+export const useProfileHandleSWR = (handle) => {
+  const { data, error } = useSWR(`/api/handle/${handle}`, fetcherSWR)
   return {
-    profile: data,
+    data: data,
     isLoading: !error && !data,
     isError: error,
   }
 }
 
-/**
- * Only attempt to request with SWR if there is a session token.
- * SWR should only return data, loading, error.
- */
 export const useAuthProfileSWR = (token) => {
+  /**
+   * Attempt to request with session.access_token.
+   */
   const { data, error } = useSWR(
     token ? ['/api/auth/me', token] : null,
     fetcherWithTokenSWR

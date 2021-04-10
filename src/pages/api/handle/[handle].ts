@@ -4,6 +4,12 @@ import { supabase } from '@lib'
 import dataUsers from '@data/users.json'
 import dataOrganizations from '@data/organizations.json'
 
+export type ResponseProfile = {
+  message: string
+  type: 'user' | 'org'
+  profile: object
+}
+
 export default async function handleProfile(
   req: NextApiRequest,
   res: NextApiResponse

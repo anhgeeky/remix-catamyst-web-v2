@@ -6,7 +6,7 @@ export default async function profileById(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { profileId } = req.query
+  const { handle } = req.query
 
   /**
    * Omit pro, super
@@ -44,7 +44,7 @@ export default async function profileById(
        mode,
        plan`
     )
-    .eq('id', profileId)
+    .eq('handle', handle)
     .single()
 
   res.status(200).json(profile)
