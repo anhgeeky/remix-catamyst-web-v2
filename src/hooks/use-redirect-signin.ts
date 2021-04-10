@@ -6,7 +6,7 @@ import { useAuthProfile } from '@hooks'
 /**
  * Also using useAuthProfile that request to get profile from API.
  */
-export function useRedirectSignIn(fields) {
+export function useRedirectSignIn(fields = `id`) {
   const router = useRouter()
   const { auth, user, profile, isAuthenticated, isAuthorized } = useAuthProfile(
     fields

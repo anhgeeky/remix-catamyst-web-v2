@@ -25,14 +25,12 @@ import { CMSBlockModifierButtons } from '@components/cms/blocks'
  * when changing the image URL.
  */
 export function CMSBlockImage({ index, block, actions }) {
-  /**
-   * Need to use RHF later.
-   */
   const { register, handleSubmit, watch, errors } = useForm({
     defaultValues: block,
   })
+
   const onSubmit = (data) => {
-    console.log(data)
+    console.info(data)
   }
 
   if (!block) {

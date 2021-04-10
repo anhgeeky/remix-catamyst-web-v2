@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
 
-export default async function getProfileById(
+export default async function profileById(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

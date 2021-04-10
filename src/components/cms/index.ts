@@ -1,4 +1,5 @@
 export { CMSOverview } from '@components/cms/overview'
+export { CMSUsers } from '@components/cms/users'
 export { CMSTracks } from '@components/cms/tracks'
 export { CMSTopics } from '@components/cms/topics'
 export { CMSLessons } from '@components/cms/lessons'

@@ -3,12 +3,8 @@ import NextImage from 'next/image'
 import NextLink from 'next/link'
 import {
   Box,
-  FormControl,
-  FormLabel,
   Heading,
   HStack,
-  Image,
-  Input,
   Stack,
   StackDivider,
   Text,
@@ -17,10 +13,10 @@ import {
 
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-
-import dataTopics from '@data/topics.json'
+import { useSWR, fetcher } from '@utils'
 
 export function CMSTopics() {
+  const { data, error } = useSWR('/api/topics', fetcher)
   const toast = useToast()
 
   const handleCreateItem = () => {
@@ -31,6 +27,26 @@ export function CMSTopics() {
     // Don't do toast
   }
 
+  if (error) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Topics not found
+        </Heading>
+        <Text>Topics are empty.</Text>
+      </CMSHero>
+    )
+  }
+  if (!data) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Topics CMS
+        </Heading>
+        <Text>Loading all topics...</Text>
+      </CMSHero>
+    )
+  }
   return (
     <>
       <NextHead>
@@ -41,7 +57,7 @@ export function CMSTopics() {
         <Heading as="h1" size="xl">
           Topics CMS
         </Heading>
-        <Text>All {dataTopics.length} topics.</Text>
+        <Text>All {data.topics.length} topics.</Text>
       </CMSHero>
 
       <Content>
@@ -81,7 +97,7 @@ export function CMSTopics() {
             </Text>
           </HStack>
 
-          {dataTopics.map((topic) => {
+          {data.topics.map((topic) => {
             return (
               <NextLink
                 key={topic.slug}

@@ -42,7 +42,7 @@ export function BlockTexts({ block }) {
 export const transformOptions = {
   decodeEntities: true,
   transform: function transform(node, index) {
-    const fontSizes = ['sm', 'lg']
+    const fontSizes = ['md', 'lg']
 
     /**
      * HTML inline elements such as: a, span, b, strong, i, em, code, kbd.

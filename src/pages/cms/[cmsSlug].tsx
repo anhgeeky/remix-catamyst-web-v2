@@ -7,6 +7,7 @@ import { HeaderTabs } from '@components'
 import {
   CMSHero,
   CMSOverview,
+  CMSUsers,
   CMSTracks,
   CMSTopics,
   CMSLessons,
@@ -41,7 +42,7 @@ export default function cmsSlugPage() {
       {cmsSlug && isAuthorized && (
         <>
           {cmsSlug === 'overview' && <CMSOverview />}
-          {cmsSlug === 'users' && <p>Still in development.</p>}
+          {cmsSlug === 'users' && <CMSUsers />}
           {cmsSlug === 'tracks' && <CMSTracks />}
           {cmsSlug === 'topics' && <CMSTopics />}
           {cmsSlug === 'lessons' && <CMSLessons />}

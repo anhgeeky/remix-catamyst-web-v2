@@ -1,30 +1,21 @@
 import NextLink from 'next/link'
 import NextHead from 'next/head'
 import {
-  Box,
-  Button,
-  Flex,
-  FormControl,
-  FormLabel,
   Heading,
   HStack,
-  Input,
-  InputGroup,
   Stack,
   StackDivider,
   Text,
-  InputLeftElement,
-  VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
-import { Icon, Content, LearningTag, useToast } from '@components'
+import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-
-import dataLessons from '@data/lessons.json'
+import { useSWR, fetcher } from '@utils'
 
 export function CMSLessons() {
+  const { data, error } = useSWR('/api/lessons', fetcher)
   const toast = useToast()
 
   const handleCreateItem = () => {
@@ -35,6 +26,26 @@ export function CMSLessons() {
     // Don't do toast
   }
 
+  if (error) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Lessons not found
+        </Heading>
+        <Text>Lessons are empty.</Text>
+      </CMSHero>
+    )
+  }
+  if (!data) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Lessons CMS
+        </Heading>
+        <Text>Loading all lessons...</Text>
+      </CMSHero>
+    )
+  }
   return (
     <>
       <NextHead>
@@ -45,7 +56,7 @@ export function CMSLessons() {
         <Heading as="h1" size="xl">
           Lessons CMS
         </Heading>
-        <Text>All {dataLessons.length} (300+) lessons.</Text>
+        <Text>All {data.lessons.length} (300+) lessons.</Text>
       </CMSHero>
 
       <Content>
@@ -78,7 +89,7 @@ export function CMSLessons() {
             </Text>
           </HStack>
 
-          {dataLessons.map((lesson) => {
+          {data.lessons.map((lesson) => {
             return (
               <NextLink
                 key={lesson.slug}

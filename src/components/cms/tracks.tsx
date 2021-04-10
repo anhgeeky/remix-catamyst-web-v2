@@ -8,15 +8,15 @@ import {
   Text,
   Stack,
   StackDivider,
-  Image,
   useColorModeValue,
 } from '@chakra-ui/react'
 
 import { Content, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-import dataTracks from '@data/tracks.json'
+import { useSWR, fetcher } from '@utils'
 
 export function CMSTracks() {
+  const { data, error } = useSWR('/api/tracks', fetcher)
   const toast = useToast()
 
   const handleCreateItem = () => {
@@ -27,6 +27,26 @@ export function CMSTracks() {
     // Don't do toast
   }
 
+  if (error) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Tracks not found
+        </Heading>
+        <Text>Tracks are empty.</Text>
+      </CMSHero>
+    )
+  }
+  if (!data) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Tracks CMS
+        </Heading>
+        <Text>Loading all tracks...</Text>
+      </CMSHero>
+    )
+  }
   return (
     <>
       <NextHead>
@@ -37,7 +57,7 @@ export function CMSTracks() {
         <Heading as="h1" size="xl">
           Tracks CMS
         </Heading>
-        <Text>All {dataTracks.length} tracks.</Text>
+        <Text>All {data.tracks.length} tracks.</Text>
       </CMSHero>
 
       <Content>
@@ -75,7 +95,7 @@ export function CMSTracks() {
             </Text>
           </HStack>
 
-          {dataTracks.map((track) => {
+          {data.tracks.map((track) => {
             return (
               <NextLink
                 key={track.slug}

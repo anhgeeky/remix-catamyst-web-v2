@@ -5,34 +5,40 @@ import {
   Stack,
   HStack,
   Text,
-  Badge,
   Stat,
   StatLabel,
   StatNumber,
   StatHelpText,
   StatArrow,
-  StatGroup,
 } from '@chakra-ui/react'
 
 import { Content, LinkButton, Card } from '@components'
 import { CMSHero } from '@components/cms'
-import { getDayNamePeriod } from '@utils'
-
-import dataUsers from '@data/users.json'
-import dataTracks from '@data/tracks.json'
-import dataTopics from '@data/topics.json'
-import dataLessons from '@data/lessons.json'
+import { useSWR, fetcher, getDayNamePeriod } from '@utils'
 
 export function CMSOverview() {
+  const { data, error } = useSWR('/api/cms/stats', fetcher)
   const dayNamePeriod = getDayNamePeriod()
 
-  const dataStats = [
-    { label: 'Users', total: dataUsers.length, href: '/cms/users' },
-    { label: 'Tracks', total: dataTracks.length, href: '/cms/tracks' },
-    { label: 'Topics', total: dataTopics.length, href: '/cms/topics' },
-    { label: 'Lessons', total: dataLessons.length, href: '/cms/lessons' },
-  ]
-
+  if (error) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Stats error
+        </Heading>
+      </CMSHero>
+    )
+  }
+  if (!data) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Welcome to the CMS
+        </Heading>
+        <Text>Loading all stats...</Text>
+      </CMSHero>
+    )
+  }
   return (
     <>
       <NextHead>
@@ -50,7 +56,7 @@ export function CMSOverview() {
 
       <Content>
         <Stack as={Flex} spacing={5} direction={{ base: 'column', sm: 'row' }}>
-          {dataStats.map((stat) => {
+          {data.stats.map((stat) => {
             return (
               <Stat
                 as={Card}

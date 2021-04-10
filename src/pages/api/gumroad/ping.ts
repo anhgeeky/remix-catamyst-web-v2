@@ -7,7 +7,7 @@ import { getPlan } from '@utils'
 /**
  * Handle Gumroad Ping webhook.
  */
-export default async function pingHandler(
+export default async function gumroadPing(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

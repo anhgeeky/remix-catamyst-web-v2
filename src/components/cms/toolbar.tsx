@@ -14,31 +14,36 @@ import { Icon } from '@components'
 export function CMSToolbar({ labels, actions }) {
   return (
     <Stack direction="row" mb={5}>
-      <Box>
-        <Button
-          colorScheme="teal"
-          leftIcon={<Icon name="add" />}
-          onClick={actions.handleCreateItem}
-        >
-          {labels.create}
-        </Button>
-      </Box>
-      <Box width="100%">
-        <VisuallyHidden>
-          <FormLabel>{labels.search}</FormLabel>
-        </VisuallyHidden>
-        <InputGroup>
-          <InputLeftElement
-            pointerEvents="none"
-            children={<Icon name="search" />}
-          />
-          <Input
-            type="text"
-            placeholder={`${labels.search}...`}
-            onChange={actions.handleSearchItems}
-          />
-        </InputGroup>
-      </Box>
+      {labels.create && (
+        <Box>
+          <Button
+            colorScheme="teal"
+            leftIcon={<Icon name="add" />}
+            onClick={actions.handleCreateItem}
+          >
+            {labels.create}
+          </Button>
+        </Box>
+      )}
+
+      {labels.search && (
+        <Box width="100%">
+          <VisuallyHidden>
+            <FormLabel>{labels.search}</FormLabel>
+          </VisuallyHidden>
+          <InputGroup>
+            <InputLeftElement
+              pointerEvents="none"
+              children={<Icon name="search" />}
+            />
+            <Input
+              type="text"
+              placeholder={`${labels.search}...`}
+              onChange={actions.handleSearchItems}
+            />
+          </InputGroup>
+        </Box>
+      )}
     </Stack>
   )
 }

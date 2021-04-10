@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react'
 import NextHead from 'next/head'
 import { Box, Heading, Text, ButtonGroup } from '@chakra-ui/react'
-import useSWR from 'swr'
 
 import { Hero, Content, LinkButton } from '@components'
 import { UserProfile } from '@components/users'
 import { OrganizationProfile } from '@components/organizations'
-import { fetcher } from '@utils'
+import { useSWR, fetcher } from '@utils'
 
 /**
  * Fetch sequentially:
