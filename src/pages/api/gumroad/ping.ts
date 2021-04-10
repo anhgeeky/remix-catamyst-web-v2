@@ -14,6 +14,8 @@ export default async function gumroadPing(
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
       process.env.NODE_ENV === 'production' && console.info(req.body)
+
+      // Set userId either from existing user (database) or new user (sign up)
       let userId
 
       // 1. Get existing user.id by email.

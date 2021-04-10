@@ -1,4 +1,3 @@
-import { supabase } from '@lib'
 import { supabaseAdmin } from '@lib/api'
 
 /**
@@ -6,6 +5,14 @@ import { supabaseAdmin } from '@lib/api'
  */
 export const upgradeSuper = async (req, res, userId) => {
   try {
+    const { data: currentData, error: currentError } = await supabaseAdmin
+      .from('profiles')
+      .select('super')
+      .eq('id', userId)
+      .single()
+    if (currentError) throw currentError
+
+    const newQuota = Number(req.body.variants.Hours.split(' ')[0])
     const { data: profileData, error: profileError } = await supabaseAdmin
       .from('profiles')
       .upsert({
@@ -14,7 +21,9 @@ export const upgradeSuper = async (req, res, userId) => {
         super: {
           email: req.body.email || '',
           license_key: req.body.license_key || '',
-          sessions_quota: 150,
+          sale_timestamp: req.body.sale_timestamp || '',
+          variants: req.body.variants || '',
+          sessions_quota: currentData.super.sessions_quota + newQuota || 0,
         },
       })
       .single()
