@@ -20,25 +20,19 @@ import { Icon, LinkButton } from '@components'
 import { signOut } from '@features/auth/actions'
 import { useAuthProfileSWR } from '@hooks'
 
+/**
+ * Has issue with unknown hook
+ */
 export function HeaderUser() {
-  console.log('>>> Header User')
+  const { profile, isLoading } = useAuthProfileSWR('id,handle,name,avatar_url')
 
-  const state = useAuthProfileSWR(`id, handle, name, avatar_url`)
-
-  /**
-   * The UserMenuButton has issue with SSR
-   * because auth.isAuthenticated condition
-   */
-  return (
-    <>
-      {state.profile ? <UserMenuButton state={state} /> : <UserAuthButtons />}
-    </>
-  )
+  if (!isLoading && profile) {
+    return <UserMenuButton profile={profile} />
+  }
+  return <UserAuthButtons />
 }
 
-function UserMenuButton({ state }) {
-  const { user, profile } = state
-
+function UserMenuButton({ profile }) {
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -80,10 +74,10 @@ function UserMenuButton({ state }) {
         </MenuButton>
 
         <MenuList boxShadow="lg">
-          {!profile.handle && user?.email && (
+          {!profile.handle && profile.name && (
             <MenuItem>
               <Flex direction="column">
-                Signed in as <b>{user.email}</b>
+                Signed in as <b>{profile.name}</b>
               </Flex>
             </MenuItem>
           )}

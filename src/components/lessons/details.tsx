@@ -60,7 +60,7 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
                 (lesson.blocks as any[]).map((block, index) => {
                   return <Block key={index} block={block} />
                 })}
-              {(!lesson?.blocks || lesson.blocks.length === 0) && (
+              {(!lesson?.blocks || lesson.blocks?.length === 0) && (
                 <Box width="100%" maxW={760} px={5}>
                   <AlertSoon />
                 </Box>

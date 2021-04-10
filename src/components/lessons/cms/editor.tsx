@@ -30,7 +30,7 @@ export function LessonEditor({ router, lessonId }) {
     `/api/cms/lessons/${lessonId}`,
     fetcher
   )
-  const toast = useToast({ duration: 1000 })
+  const toast = useToast({ duration: 100 })
 
   /**
    * State to change UI view mode.
@@ -171,7 +171,7 @@ export function LessonEditor({ router, lessonId }) {
  * The actual lesson content that utilize RHF field array helpers.
  -----------------------------------------------------------------------------*/
 function CMSViewResultLesson({ initialData, control, register, actions }) {
-  const toast = useToast({ duration: 1000 })
+  const toast = useToast({ duration: 100 })
 
   /**
    * RHF (React Hook Form) field array with helpers.
@@ -246,7 +246,7 @@ function CMSViewResultLesson({ initialData, control, register, actions }) {
         move(index, index - 1)
         toast({ title: `Moved block ${direction}` })
       }
-      if (direction === 'down' && index !== fields.length) {
+      if (direction === 'down' && index !== fields?.length) {
         move(index, index + 1)
         toast({ title: `Moved block ${direction}` })
       }
@@ -322,7 +322,7 @@ function CMSViewResultLesson({ initialData, control, register, actions }) {
           })}
           <CMSBlockAdderButtons
             name="append"
-            index={fields.length}
+            index={fields?.length}
             actions={{ addBlock: appendBlock }}
           />
         </Stack>

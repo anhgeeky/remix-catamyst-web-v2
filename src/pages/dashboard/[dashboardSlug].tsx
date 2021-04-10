@@ -1,23 +1,20 @@
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
 import { DashboardAll } from '@components/dashboard'
-import { useAuth } from '@hooks'
+import { useRedirectSignIn } from '@hooks'
 
 export default function dashboardSlugPage() {
   const router = useRouter()
   const { dashboardSlug } = router.query
-  const { isAuthenticated } = useAuth()
-
-  useEffect(() => {
-    if (!isAuthenticated) router.replace('/signin')
-  }, [isAuthenticated])
+  const state = useRedirectSignIn(
+    `id,handle,name,nickname,role,mode,plan,is_verified,avatar_url,created_at,updated_at`
+  )
 
   return (
     <Layout title="Loading dashboard... · Catamyst">
-      {isAuthenticated && dashboardSlug && (
-        <DashboardAll dashboardSlug={dashboardSlug} />
+      {dashboardSlug && !state.isLoading && (
+        <DashboardAll dashboardSlug={dashboardSlug} state={state} />
       )}
     </Layout>
   )

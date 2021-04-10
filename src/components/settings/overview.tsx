@@ -22,8 +22,8 @@ export function SettingsOverview({ state }) {
         <title>Overview Settings · Catamyst</title>
       </NextHead>
 
-      {state.loading && <p>Loading...</p>}
-      {!state.loading && state.user && state.profile && (
+      {state.isLoading && <p>Loading...</p>}
+      {!state.isLoading && state.user && state.profile && (
         <SettingsOverviewContent state={state} />
       )}
     </>

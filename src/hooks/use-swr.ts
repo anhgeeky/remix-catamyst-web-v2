@@ -37,38 +37,27 @@ export const useProfileSWR = (profileId) => {
 /**
  * Just focus on fetching with token.
  * But only attempt to request with SWR if there is a session.
+ * SWR should only return data, loading, error.
  */
 export const useAuthProfileSWR = (fields = 'id') => {
-  console.info(`>>> SWR ${fields}`)
-
   try {
     const session = supabase.auth.session()
     if (!session) throw new Error('No session')
 
+    // Be careful when setting up the key.
     const { data, error } = useSWR(
-      [`/api/auth/me?fields=${fields || 'id'}`, session?.access_token || null],
+      [`/api/auth/me?fields=${fields}`, session?.access_token || null],
       fetcherWithToken
     )
-    if (error) throw error
-
-    const isAuthenticated = Boolean(session)
-    const isAuthorized =
-      data?.profile?.role === 'Admin' ||
-      data?.profile?.role === 'Staff' ||
-      data?.profile?.role === 'Mentor'
 
     return {
-      profile: data?.profile || null,
-      isAuthenticated: isAuthenticated || false,
-      isAuthorized: isAuthorized || false,
-      isLoading: !error && !data?.profile,
-      isError: error || false,
+      profile: data?.profile,
+      isLoading: !error && !data,
+      isError: error,
     }
   } catch (error) {
     return {
       profile: null,
-      isAuthenticated: false,
-      isAuthorized: false,
       isLoading: false,
       isError: false,
     }

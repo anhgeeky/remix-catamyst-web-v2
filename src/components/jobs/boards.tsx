@@ -324,8 +324,8 @@ export function JobSkillsTags({
           )
         })}
 
-      {isLimited && skills.length > 12 && (
-        <Tag variant="ghost">+{skills.length - 12} more</Tag>
+      {isLimited && skills?.length > 12 && (
+        <Tag variant="ghost">+{skills?.length - 12} more</Tag>
       )}
     </Flex>
   )

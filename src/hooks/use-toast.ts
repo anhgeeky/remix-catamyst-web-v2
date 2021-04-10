@@ -3,7 +3,7 @@ import { useToast as useChakraToast } from '@chakra-ui/react'
 export function useToast(options = null) {
   return useChakraToast({
     isClosable: true,
-    duration: 1000,
+    duration: 300,
     variant: 'solid',
     position: 'bottom-left',
     ...options,

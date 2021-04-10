@@ -1,23 +1,20 @@
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
 import { SettingsAll } from '@components/settings'
-import { useAuth } from '@hooks'
+import { useRedirectSignIn } from '@hooks'
 
 export default function settingsSlugPage() {
   const router = useRouter()
   const { settingsSlug } = router.query
-  const { isAuthenticated } = useAuth()
-
-  useEffect(() => {
-    if (!isAuthenticated) router.replace('/signin')
-  }, [isAuthenticated])
+  const state = useRedirectSignIn(
+    `mode,role,id,handle,name,nickname,plan,is_public,is_verified,avatar_url,cover_url,headline,bio_html,country,location,website_url,work,socials,pro,super,created_at,updated_at`
+  )
 
   return (
     <Layout title="Loading settings... · Catamyst">
-      {isAuthenticated && settingsSlug && (
-        <SettingsAll settingsSlug={settingsSlug} />
+      {settingsSlug && !state.isLoading && (
+        <SettingsAll settingsSlug={settingsSlug} state={state} />
       )}
     </Layout>
   )

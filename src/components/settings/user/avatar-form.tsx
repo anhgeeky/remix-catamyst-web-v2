@@ -18,7 +18,6 @@ import { useDispatch } from 'react-redux'
 import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
-import { updateProfileAvatar } from '@features/auth/actions'
 
 type Inputs = {
   avatar_url?: string
@@ -39,7 +38,6 @@ export function UserAvatarForm({ state }) {
         .update({ avatar_url: form.avatar_url }, { returning: 'minimal' })
         .eq('id', state.user!.id)
       if (error) throw error
-      dispatch(updateProfileAvatar(form.avatar_url))
       toast({ status: 'success', title: 'Your avatar is changed' })
       setLoading(false)
     } catch (error) {

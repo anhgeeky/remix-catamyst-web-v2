@@ -133,7 +133,7 @@ export function TrackSideBar({ track }) {
         <Icon name="levels" />
         <Text>
           {track.levels.map((level, index) => {
-            if (index === track.levels.length - 1) {
+            if (index === track.levels?.length - 1) {
               return <span key={index}>{level}</span>
             } else {
               return <span key={index}>{level}, </span>
@@ -143,7 +143,7 @@ export function TrackSideBar({ track }) {
       </HStack>
       <HStack>
         <Icon name="topics" />
-        <span>{track.topics.length || 0} topics</span>
+        <span>{track.topics?.length || 0} topics</span>
       </HStack>
       <HStack>
         <Icon name="lessons" />

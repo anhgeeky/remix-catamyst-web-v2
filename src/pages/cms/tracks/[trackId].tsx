@@ -279,7 +279,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
             </Button>
           </HStack>
 
-          {formTopics.length < 1 && <Text>No topics yet.</Text>}
+          {formTopics?.length < 1 && <Text>No topics yet.</Text>}
 
           {formTopics.map((topic) => {
             return (

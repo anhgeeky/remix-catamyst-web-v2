@@ -13,16 +13,13 @@ import {
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
-  UPDATE_PROFILE_HANDLE,
-  UPDATE_PROFILE_NAME,
-  UPDATE_PROFILE_AVATAR,
 } from '@features/auth/types'
 import { supabase } from '@lib'
 
 const toast = createStandaloneToast()
 const toastOptions = {
   isClosable: true,
-  duration: 3000,
+  duration: 1000,
 }
 
 /**
@@ -56,7 +53,7 @@ export const signUp = (form) => {
           /**
            * Apply the new profile to Redux store auth.profile
            */
-          dispatch({ type: SIGN_UP_SUCCESS, payload: data })
+          dispatch({ type: SIGN_UP_SUCCESS })
           toast.closeAll()
           toast({
             ...toastOptions,
@@ -95,19 +92,14 @@ export const signIn = (data) => {
       if (error) throw error
       if (user) {
         /**
-         * Get user's profile as well
+         * Get user's profile is done via SWR
          */
-        let { data, error } = await supabase
-          .from('profiles')
-          .select(`avatar_url, handle, name`)
-          .eq('id', user!.id)
-          .single()
         if (error) throw error
         if (data) {
           /**
            * Apply profile to Redux store auth.profile
            */
-          dispatch({ type: SIGN_IN_SUCCESS, payload: data })
+          dispatch({ type: SIGN_IN_SUCCESS })
           toast.closeAll()
           toast({
             ...toastOptions,
@@ -186,32 +178,5 @@ export const signOut = () => {
         description: `${error.message}. Please try again.`,
       })
     }
-  }
-}
-
-/**
- * Update auth.profile.handle
- */
-export const updateProfileHandle = (handle) => {
-  return async (dispatch) => {
-    dispatch({ type: UPDATE_PROFILE_HANDLE, payload: handle })
-  }
-}
-
-/**
- * Update auth.profile.name
- */
-export const updateProfileName = (name) => {
-  return async (dispatch) => {
-    dispatch({ type: UPDATE_PROFILE_NAME, payload: name })
-  }
-}
-
-/**
- * Update auth.profile.avatar_url
- */
-export const updateProfileAvatar = (avatar_url) => {
-  return async (dispatch) => {
-    dispatch({ type: UPDATE_PROFILE_AVATAR, payload: avatar_url })
   }
 }

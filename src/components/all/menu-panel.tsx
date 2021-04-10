@@ -12,12 +12,11 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { useSelector } from 'react-redux'
 import { RemoveScroll } from 'react-remove-scroll'
 import { FaTimes } from 'react-icons/fa'
 
 import { ColorModeToggle, Icon, SocialLinks } from '@components'
-import { useRouteChanged } from '@hooks'
+import { useAuth, useRouteChanged } from '@hooks'
 
 import dataMenuLinks from '@data/menu-links.json'
 
@@ -25,11 +24,14 @@ import dataMenuLinks from '@data/menu-links.json'
  * menu-link needs CSS to retain accessibility on focus.
  */
 export function MenuPanel({ closeMenu, isMenuOpen }) {
-  const auth = useSelector((state) => state.auth)
+  const { router, isAuthenticated } = useAuth()
   const bg = useColorModeValue('white', 'gray.900')
   const dividerBorderColor = useColorModeValue('gray.200', 'gray.700')
 
-  const router = useRouteChanged(closeMenu)
+  /**
+   * When menu button is clicked or route is changed, close menu
+   */
+  useRouteChanged(closeMenu)
 
   return (
     <>
@@ -99,7 +101,7 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
                   })}
                 </Stack>
 
-                {!auth.isAuthenticated && (
+                {!isAuthenticated && (
                   <Stack
                     align="stretch"
                     justify=""

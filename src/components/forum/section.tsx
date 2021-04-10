@@ -33,7 +33,7 @@ export function ForumSection({ sectionSlug }) {
             <Icon name={section.icon ? section.icon : section.slug} />
           </Text>
           <Heading as="h1">{section.title}</Heading>
-          <Text>{section.discussions.length} discussions</Text>
+          <Text>{section.discussions?.length} discussions</Text>
         </VStack>
       </ForumHero>
     </>

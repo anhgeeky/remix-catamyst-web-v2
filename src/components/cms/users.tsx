@@ -58,7 +58,7 @@ export function CMSUsers() {
         <Heading as="h1" size="xl">
           Users CMS
         </Heading>
-        <Text>All {data.users.length} users.</Text>
+        <Text>All {data.users?.length} users.</Text>
       </CMSHero>
 
       <Content>

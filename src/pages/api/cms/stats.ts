@@ -11,10 +11,10 @@ export default async function lessons(
 ) {
   try {
     const dataStats = [
-      { label: 'Users', total: dataUsers.length, href: '/cms/users' },
-      { label: 'Tracks', total: dataTracks.length, href: '/cms/tracks' },
-      { label: 'Topics', total: dataTopics.length, href: '/cms/topics' },
-      { label: 'Lessons', total: dataLessons.length, href: '/cms/lessons' },
+      { label: 'Users', total: dataUsers?.length, href: '/cms/users' },
+      { label: 'Tracks', total: dataTracks?.length, href: '/cms/tracks' },
+      { label: 'Topics', total: dataTopics?.length, href: '/cms/topics' },
+      { label: 'Lessons', total: dataLessons?.length, href: '/cms/lessons' },
     ]
 
     res.status(200).json({

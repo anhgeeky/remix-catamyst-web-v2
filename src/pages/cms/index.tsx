@@ -13,7 +13,7 @@ import { useProfile } from '@hooks'
  */
 export default function cmsPage() {
   const router = useRouter()
-  const { isAuthorized } = useProfile()
+  const { auth, isAuthorized } = useProfile()
 
   /**
    * To access CMS, user must both authenticated and authorized to do so.
@@ -23,5 +23,9 @@ export default function cmsPage() {
     else router.replace('/signin')
   }, [isAuthorized])
 
-  return <Layout title="Loading CMS... · Catamyst" />
+  return (
+    <Layout title="Loading CMS... · Catamyst">
+      {auth.isLoading && <p>Loading CMS...</p>}
+    </Layout>
+  )
 }

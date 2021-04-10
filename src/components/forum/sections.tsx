@@ -67,7 +67,7 @@ export function ForumSectionsGrid({ sections }) {
                   {section.title}
                 </Heading>
                 <Text fontSize="xs">{section.description}</Text>
-                <Text>{section.discussions.length} discussions</Text>
+                <Text>{section.discussions?.length} discussions</Text>
               </Stack>
             </Box>
           </NextLink>
@@ -100,7 +100,7 @@ export function ForumSectionsRow({ sections }) {
                   {section.title}
                 </Heading>
                 <Text lineHeight="initial" fontSize="sm">
-                  {section.discussions.length} discussions
+                  {section.discussions?.length} discussions
                 </Text>
               </HStack>
             </Box>

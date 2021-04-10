@@ -94,7 +94,7 @@ export function TrackStats({ track }) {
     <Flex flexWrap="wrap">
       <HStack mr={3} mb={1}>
         <Icon name="topics" />
-        <span>{track.topics.length || 0} topics</span>
+        <span>{track.topics?.length || 0} topics</span>
       </HStack>
       <HStack mr={3} mb={1}>
         <Icon name="lessons" />

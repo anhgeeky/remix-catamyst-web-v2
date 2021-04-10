@@ -37,7 +37,7 @@ export function SettingsSuper({ state }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
-          {state.profile.super?.license_key && (
+          {state.profile.plan === 'Super' && (
             <Card as={Stack}>
               <Heading as="h3" size="md">
                 Manage your Super plan
@@ -47,6 +47,19 @@ export function SettingsSuper({ state }) {
                 before the mentorship sessions are scheduled, we'll refund your
                 money (partially deducted from the processing fee). But if the
                 mentorship is already scheduled or ongoing, there is no refund.
+              </Text>
+            </Card>
+          )}
+
+          {state.profile.plan === 'Super' && (
+            <Card as={Stack}>
+              <Heading as="h3" size="md">
+                Mentorship sessions quota
+              </Heading>
+              <Text>
+                You have{' '}
+                <b>{state.profile.super?.sessions_quota || 0} hour(s)</b> of
+                live mentorship sessions.
               </Text>
             </Card>
           )}
@@ -113,16 +126,6 @@ export function SettingsSuper({ state }) {
                 </ListItem>
               </OrderedList>
             </Box>
-          </Card>
-
-          <Card as={Stack}>
-            <Heading as="h3" size="md">
-              Mentorship sessions quota
-            </Heading>
-            <Text>
-              You have <b>{state.profile.super?.sessions_quota || 0} hour(s)</b>{' '}
-              of live mentorship sessions.
-            </Text>
           </Card>
 
           {state.profile.mentors?.length && (

@@ -17,7 +17,3 @@ export const SIGN_OUT = 'auth/signout'
 export const SIGN_OUT_BEGIN = 'auth/signout/begin'
 export const SIGN_OUT_ERROR = 'auth/signout/error'
 export const SIGN_OUT_SUCCESS = 'auth/signout/success'
-
-export const UPDATE_PROFILE_HANDLE = 'auth/profile/handle'
-export const UPDATE_PROFILE_NAME = 'auth/profile/name'
-export const UPDATE_PROFILE_AVATAR = 'auth/profile/avatar'

@@ -41,7 +41,7 @@ export function ForumToolbar({ state, actions }) {
         />
         <Input
           type="text"
-          placeholder={`Search from ${state.sections.length} forum sections...`}
+          placeholder={`Search from ${state.sections?.length} forum sections...`}
         />
       </InputGroup>
     </HStack>

@@ -17,7 +17,6 @@ import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
 import { NameNickSchema } from '@utils/yup'
-import { updateProfileName } from '@features/auth/actions'
 
 type Inputs = {
   name?: string
@@ -44,7 +43,6 @@ export function UserNameForm({ state }) {
         )
         .eq('id', state.user!.id)
       if (error) throw error
-      dispatch(updateProfileName(form.name))
       toast({ status: 'success', title: 'Your names are changed' })
       setLoading(false)
     } catch (error) {

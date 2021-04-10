@@ -57,7 +57,7 @@ export function CMSTopics() {
         <Heading as="h1" size="xl">
           Topics CMS
         </Heading>
-        <Text>All {data.topics.length} topics.</Text>
+        <Text>All {data.topics?.length} topics.</Text>
       </CMSHero>
 
       <Content>

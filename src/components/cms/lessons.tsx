@@ -56,7 +56,7 @@ export function CMSLessons() {
         <Heading as="h1" size="xl">
           Lessons CMS
         </Heading>
-        <Text>All {data.lessons.length} (300+) lessons.</Text>
+        <Text>All {data.lessons?.length} (300+) lessons.</Text>
       </CMSHero>
 
       <Content>

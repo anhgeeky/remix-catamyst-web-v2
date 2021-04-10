@@ -96,7 +96,7 @@ export function ProjectDetails({ projectSlug }) {
                   </Stack>
                 )}
 
-                {project.socials.length > 0 && project.socials && (
+                {project.socials && project.socials?.length > 0 && (
                   <Stack id="project-social-links" mr={5} my={1}>
                     <HeadingStack>Links and Repositories</HeadingStack>
                     <SocialLinks links={project.socials} size="3xl" />

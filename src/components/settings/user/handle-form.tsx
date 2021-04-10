@@ -19,7 +19,6 @@ import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
 import { HandleSchema } from '@utils/yup'
-import { updateProfileHandle } from '@features/auth/actions'
 
 type Inputs = { handle: string }
 
@@ -41,7 +40,6 @@ export function UserHandleForm({ state }) {
         .eq('id', state.user!.id)
         .single()
       if (error) throw error
-      dispatch(updateProfileHandle(form.handle))
       toast({ status: 'success', title: 'Your username is changed' })
       setLoading(false)
     } catch (error) {

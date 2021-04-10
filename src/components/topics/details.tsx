@@ -72,7 +72,7 @@ export function TopicSidebar({ topic }) {
         <Icon name="levels" />
         <Text>
           {topic.levels.map((level, index) => {
-            if (index === topic.levels.length - 1) {
+            if (index === topic.levels?.length - 1) {
               return <span key={index}>{level}</span>
             } else {
               return <span key={index}>{level}, </span>

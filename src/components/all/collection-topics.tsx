@@ -12,7 +12,7 @@ import slugify from 'slugify'
 import { AlertSoon, LearningTag } from '@components'
 
 export function CollectionTopics({ trackSlug, topics }) {
-  if (!topics || topics.length === 0) {
+  if (!topics || topics?.length === 0) {
     return <AlertSoon>No topics here yet. This track is coming soon.</AlertSoon>
   }
   return (

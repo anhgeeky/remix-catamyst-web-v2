@@ -15,6 +15,4 @@ export function useRouteChanged(callback: () => void) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events, callback])
-
-  return router
 }

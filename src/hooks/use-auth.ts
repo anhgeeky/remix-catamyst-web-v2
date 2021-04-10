@@ -7,11 +7,10 @@ import { useSelector } from 'react-redux'
 export function useAuth() {
   const router = useRouter()
   const auth = useSelector((state) => state.auth)
-  const isAuthenticated = auth.isAuthenticated
 
   return {
     router,
     auth,
-    isAuthenticated,
+    isAuthenticated: auth.isAuthenticated,
   }
 }

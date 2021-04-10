@@ -57,7 +57,7 @@ export function CMSTracks() {
         <Heading as="h1" size="xl">
           Tracks CMS
         </Heading>
-        <Text>All {data.tracks.length} tracks.</Text>
+        <Text>All {data.tracks?.length} tracks.</Text>
       </CMSHero>
 
       <Content>
@@ -122,7 +122,7 @@ export function CMSTracks() {
                     <Text flex={6}>{track.title}</Text>
                     <Text flex={2}>{track.slug}</Text>
                     <Text flex={1} textAlign="right">
-                      {track.topics.length}
+                      {track.topics?.length}
                     </Text>
                     <Text flex={1} textAlign="right">
                       {track.totalLessons || '-'}
