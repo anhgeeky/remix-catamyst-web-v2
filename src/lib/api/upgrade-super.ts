@@ -12,7 +12,9 @@ export const upgradeSuper = async (req, res, userId) => {
       .single()
     if (currentError) throw currentError
 
-    const newQuota = Number(req.body['variants[Hours]'].split(' ')[0])
+    const variant = String(req.body['variants[Hours]'])
+    const quota = Number(variant.split(' ')[0])
+
     const { data: profileData, error: profileError } = await supabaseAdmin
       .from('profiles')
       .upsert({
@@ -23,7 +25,7 @@ export const upgradeSuper = async (req, res, userId) => {
           license_key: req.body.license_key || '',
           sale_timestamp: req.body.sale_timestamp || '',
           variants: req.body['variants[Hours]'] || '',
-          sessions_quota: currentData.super.sessions_quota + newQuota || 0,
+          sessions_quota: currentData.super.sessions_quota + quota || 0,
         },
       })
       .single()
