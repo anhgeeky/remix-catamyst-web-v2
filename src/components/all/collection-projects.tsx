@@ -48,7 +48,7 @@ function ProjectBoard({ project }) {
         }}
       >
         <Card as={Stack} p={3} spacing={3} height="100%">
-          {!project.coverUrl && (
+          {!project.cover_url && (
             <AspectRatio ratio={16 / 10}>
               <Box className="next-image-container">
                 <NextImage
@@ -60,11 +60,11 @@ function ProjectBoard({ project }) {
               </Box>
             </AspectRatio>
           )}
-          {project.coverUrl && (
+          {project.cover_url && (
             <AspectRatio ratio={16 / 10}>
               <Box className="next-image-container">
                 <NextImage
-                  src={project.coverUrl}
+                  src={project.cover_url}
                   alt={project.title}
                   layout="fill"
                   objectFit="cover"

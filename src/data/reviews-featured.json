@@ -11,7 +11,7 @@
     "review": {
       "html": "<p>If you're looking to learn software engineering with a dedicated private mentor who have literally more than 10,000 hours of experience, Catamyst is the place. I didn’t have any coding background before. But here I've learned and comprehended a lot of software engineering materials to get a decent job. I made <alink href='/projects/saikou'>Saikou</alink> by the way.</p>"
     },
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/ahmadmarzuki" },
       { "name": "GitHub", "url": "https://github.com/amadzuki" }
     ],
@@ -26,7 +26,7 @@
     "review": {
       "html": "<p>With Catamyst I've learned and practiced a lot of latest web development stack such as JavaScript, Node.js, React, Redux, database, deployment, Amazon Web Services, Docker, and more. Using them I created my own projects, <alink href='/projects/nawaart'>Nawaart</alink> and <b>Sneakergram</b>. All of these even I'm more of a finance guy.</p>"
     },
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/jonathannicolas" },
       { "name": "GitHub", "url": "https://github.com/jonathannicolasdev" }
     ],
@@ -41,7 +41,7 @@
     "review": {
       "html": "<p>Even though I wasn't coming from technical background, but during the learning I can follow through the lessons. Any questions I had, both technical and non-technical were answered by the mentor. Finally I'm able to made my own creative work, <alink href='/projects/zidence'>Zidence</alink>, the property listing hub.</p>"
     },
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/mfarisgibran" },
       { "name": "GitHub", "url": "https://github.com/mfarisgibran" }
     ],
@@ -56,7 +56,7 @@
     "review": {
       "html": "<p>As someone who has no basic knowledge of web development before, learning in Catamyst has taught me a lot of things. The lessons are easy to follow and were taught in an articulate manner. It motivates me to learn more about web and software development in general. Now I'm able to build my own website and it helps me to grow my career as an artist.</p>"
     },
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/latifahdhia" },
       { "name": "GitHub", "url": "https://github.com/latifahdhia" }
     ],
@@ -76,7 +76,7 @@
     "review": {
       "html": "<p>The learning experience motivates me to learn more. It enhanced my confidence in variety of work and life aspects. Now I'm working as a software developer with modern web technologies. Previously my project <b>Lelangbuana</b> helped to me to tackle the job matching process.</p>"
     },
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/mayasopiah" },
       { "name": "GitHub", "url": "https://github.com/mayasopiie" }
     ],

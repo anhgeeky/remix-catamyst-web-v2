@@ -2,7 +2,7 @@
   {
     "slug": "nawaart",
     "coverImageName": "nawaart.jpg",
-    "coverUrl": "https://storage.catamyst.com",
+    "cover_url": "https://storage.catamyst.com",
     "name": "Nawaart",
     "description": "Discover authentic and valuable contemporary artworks from various artists in Myanmar, the Land of the Golden Pagodas.",
     "websiteUrl": "https://nawaart.com",
@@ -17,7 +17,7 @@
   {
     "slug": "saikou",
     "coverImageName": "saikou.jpg",
-    "coverUrl": "https://storage.catamyst.com",
+    "cover_url": "https://storage.catamyst.com",
     "name": "Saikou",
     "description": "Find out the recommended anime and manga for your leisure entertainment variants originated from Japan, the Land of the Rising Sun.",
     "websiteUrl": "https://saikou.ahmadmarzuki.com",
@@ -32,7 +32,7 @@
   {
     "slug": "zidence",
     "coverImageName": "zidence.jpg",
-    "coverUrl": "https://storage.catamyst.com",
+    "cover_url": "https://storage.catamyst.com",
     "name": "Zidence",
     "description": "Simple residential property listing and comparison. Discover your next suitable home in Asia.",
     "websiteUrl": "https://zidence.com",
@@ -52,7 +52,7 @@
   {
     "slug": "lelangbuana",
     "coverImageName": "lelangbuana.jpg",
-    "coverUrl": "https://storage.catamyst.com",
+    "cover_url": "https://storage.catamyst.com",
     "name": "Lelangbuana",
     "description": "Fast and free auction commerce site for interesting goods between islands.",
     "websiteUrl": "https://lelangbuana.com",

@@ -10,7 +10,7 @@
       { "userId": 3, "role": "Founder, Developer" },
       { "userId": 4, "role": "Writer" }
     ],
-    "socialLinks": [
+    "socials": [
       {
         "name": "GitHub",
         "url": "https://github.com/catamyst"
@@ -38,13 +38,13 @@
     "slug": "nawaart",
     "title": "Nawaart",
     "description": "Discover authentic and valuable contemporary artworks from various artists in Myanmar, the Land of the Golden Pagodas.",
-    "coverUrl": "https://storage.catamyst.com/projects/nawaart.jpg",
+    "cover_url": "https://storage.catamyst.com/projects/nawaart.jpg",
     "url": "https://nawaart.com",
     "contributors": [
       { "userId": 8, "role": "Ideator, Developer" },
       { "userId": 3, "role": "Mentor" }
     ],
-    "socialLinks": [
+    "socials": [
       {
         "name": "Website",
         "url": "https://nawaart.com"
@@ -73,13 +73,13 @@
     "slug": "saikou",
     "title": "Saikou",
     "description": "Find out the recommended anime and manga for your leisure entertainment variants originated from Japan, the Land of the Rising Sun.",
-    "coverUrl": "https://storage.catamyst.com/projects/saikou.jpg",
+    "cover_url": "https://storage.catamyst.com/projects/saikou.jpg",
     "url": "https://saikou.ahmadmarzuki.com",
     "contributors": [
       { "userId": 7, "role": "Ideator, Developer" },
       { "userId": 3, "role": "Mentor" }
     ],
-    "socialLinks": [
+    "socials": [
       { "name": "GitHub", "url": "https://github.com/amadzuki/saikou" },
       { "name": "GitHub", "url": "https://github.com/amadzuki/saikou-client" },
       { "name": "GitHub", "url": "https://github.com/amadzuki/saikou-server" }
@@ -103,7 +103,7 @@
     "slug": "zidence",
     "title": "Zidence",
     "description": "Simple residential property listing and comparison. Discover your next suitable home in Asia.",
-    "coverUrl": "https://storage.catamyst.com/projects/zidence.jpg",
+    "cover_url": "https://storage.catamyst.com/projects/zidence.jpg",
     "url": "https://zidence.com",
     "contributors": [
       { "userId": 9, "role": "Ideator, Developer" },
@@ -129,7 +129,7 @@
     "slug": "lelangbuana",
     "title": "Lelangbuana",
     "description": "Fast and free auction commerce site for interesting goods between islands.",
-    "coverUrl": "https://storage.catamyst.com/projects/lelangbuana.jpg",
+    "cover_url": "https://storage.catamyst.com/projects/lelangbuana.jpg",
     "url": "https://lelangbuana.netlify.app",
     "skills": [
       "Linux",
@@ -155,7 +155,7 @@
       { "userId": 8, "role": "Ideator, Developer" },
       { "userId": 3, "role": "Mentor" }
     ],
-    "socialLinks": [
+    "socials": [
       {
         "name": "GitHub",
         "url": "https://github.com/jonathannicolasdev/sneakergram"

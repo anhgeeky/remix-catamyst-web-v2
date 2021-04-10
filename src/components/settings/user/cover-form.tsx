@@ -28,10 +28,10 @@ export function UserCoverForm({ state }) {
           bg={useColorModeValue('gray.300', 'gray.500')}
         >
           <Box className="next-image-cover-container">
-            {profile.coverUrl && (
+            {profile.cover_url && (
               <NextImage
                 alt={`Cover picture of ${profile.name}`}
-                src={profile.coverUrl}
+                src={profile.cover_url}
                 layout="fixed"
                 objectFit="cover"
                 width={720}

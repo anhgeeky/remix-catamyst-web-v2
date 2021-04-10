@@ -133,7 +133,7 @@ function OrganizationProfileCover({ org }) {
       >
         <NextImage
           alt={`Cover picture of ${org.name}`}
-          src={org.coverUrl || defaultCoverUrl}
+          src={org.cover_url || defaultCoverUrl}
           layout="fixed"
           objectFit="cover"
           width={1440}

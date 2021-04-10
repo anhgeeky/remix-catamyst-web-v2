@@ -1,5 +1,5 @@
 import NextImage from 'next/image'
-import { Avatar, Box } from '@chakra-ui/react'
+import { Avatar, Box, useColorModeValue } from '@chakra-ui/react'
 
 export function UserAvatar({ user, size = 100 }) {
   return (
@@ -15,7 +15,11 @@ export function UserAvatar({ user, size = 100 }) {
         />
       )}
       {user.avatar_url && (
-        <Box className="next-image-container user-avatar" rounded="full">
+        <Box
+          className="next-image-container user-avatar"
+          rounded="full"
+          bg={useColorModeValue('gray.100', 'gray.700')}
+        >
           <NextImage
             className="next-image-avatar"
             src={user.avatar_url}

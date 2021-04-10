@@ -122,7 +122,7 @@ function UserReviews({ reviews }) {
               </Stack>
 
               <HStack>
-                <SocialLinks links={user.socialLinks} />
+                <SocialLinks links={user.socials} />
                 <Link isExternal href={user.websiteUrl} color="teal.500">
                   {trimUrl(user.websiteUrl)}
                 </Link>

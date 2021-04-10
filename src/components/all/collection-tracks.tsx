@@ -56,7 +56,10 @@ export function TrackCard({ track }) {
         boxShadow="xs"
         bg={useColorModeValue('white', 'gray.800')}
         direction={{ base: 'column', sm: 'row' }}
-        _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+        _hover={{
+          boxShadow: 'outline',
+          textDecoration: 'none',
+        }}
       >
         <Wrap spacing={5} direction={{ base: 'column', lg: 'row' }}>
           <WrapItem>

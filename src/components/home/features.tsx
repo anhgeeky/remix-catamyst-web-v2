@@ -45,7 +45,10 @@ export function HomeFeatures() {
                 cursor="pointer"
                 bg={useColorModeValue('white', 'gray.800')}
                 direction={{ base: 'column', sm: 'row' }}
-                _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+                _hover={{
+                  boxShadow: 'outline',
+                  textDecoration: 'none',
+                }}
               >
                 <Stack direction="column" align="center">
                   <NextImage

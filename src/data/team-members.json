@@ -6,7 +6,7 @@
     "name": "M Haidar Hanif",
     "title": "Founder, Engineer, Mentor",
     "bio": "Haidar is the founder of Catamyst. A lifelong learner, engineer, and educator. Actively mentoring people to help them transition into tech careers or upgrading their skills. Previously had several years experience of teaching, training, and building a coding school.",
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/mhaidarhanif" },
       { "name": "Twitter", "url": "https://twitter.com/mhaidarh" },
       { "name": "GitHub", "url": "https://github.com/mhaidarhanif" }
@@ -21,7 +21,7 @@
     "name": "Maya Asmara",
     "title": "Co-Founder, Writer, Mentor",
     "bio": "Maya is the co-founder of Catamyst. An avid writer and content creator. Consistently spreading messages about the importance of happiness in work and life.",
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/mayaasmara" },
       { "name": "Instagram", "url": "https://instagram.com/mayaasmara" },
       { "name": "GitHub", "url": "https://github.com/mayaasmara" }
@@ -36,7 +36,7 @@
     "name": "Latifah Dhia",
     "title": "Illustrator",
     "bio": "Latifah is the illustrator of Catamyst. Currently drawing interesting visuals on this platform.",
-    "socialLinks": [
+    "socials": [
       { "name": "LinkedIn", "url": "https://linkedin.com/in/latifahdhiai" },
       { "name": "Instagram", "url": "https://instagram.com/hamozks" }
     ],

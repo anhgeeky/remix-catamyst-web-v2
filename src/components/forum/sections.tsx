@@ -50,7 +50,10 @@ export function ForumSectionsGrid({ sections }) {
               rounded="sm"
               boxShadow="base"
               bg={useColorModeValue('white', 'gray.800')}
-              _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+              _hover={{
+                boxShadow: 'outline',
+                textDecoration: 'none',
+              }}
             >
               <Box
                 height="50px"
@@ -86,7 +89,10 @@ export function ForumSectionsRow({ sections }) {
               rounded="sm"
               boxShadow="base"
               bg={useColorModeValue('white', 'gray.800')}
-              _hover={{ boxShadow: 'outline', textDecoration: 'none' }}
+              _hover={{
+                boxShadow: 'outline',
+                textDecoration: 'none',
+              }}
             >
               <HStack justify="flex-start" spacing={{ base: 1, sm: 3 }}>
                 <ForumSectionLogo section={section} size={50} fontSize="md" />

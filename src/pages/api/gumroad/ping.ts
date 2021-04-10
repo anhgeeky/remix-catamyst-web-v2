@@ -17,6 +17,7 @@ export default async function gumroadPing(
       let userId
 
       // 1. Get existing user.id by email.
+      // CAUTION: Only use get_user_by_email in API/backend
       const { data: users, error: userError } = await supabaseAdmin.rpc(
         'get_user_by_email',
         {

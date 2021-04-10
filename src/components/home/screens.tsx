@@ -69,8 +69,10 @@ export function HomeScreens() {
                   rounded="md"
                   boxShadow="lg"
                   transition="0.25s ease"
-                  _hover={{ boxShadow: 'outline' }}
                   bg={useColorModeValue('gray.50', 'gray.900')}
+                  _hover={{
+                    boxShadow: 'outline',
+                  }}
                   initial={{ opacity: 0.2 }}
                   exit={{
                     opacity: 0.2,

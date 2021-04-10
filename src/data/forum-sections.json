@@ -6,7 +6,7 @@
     "title": "General Support",
     "description": "The place for discussing ideas, questions, and help in general. For Fundamental and Specific lessons. For Newbie, Beginner, Intermediate, Advanced, and Expert levels.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#0aa",
     "discussions": [1]
   },
@@ -16,7 +16,7 @@
     "title": "Careers, Skills, and Principles",
     "description": "The professional careers, skills, and principles. Stuffs like life, work, health, management, and communication. Could be related to Science, Technology, Reading, Writing, Engineering, Arts, and Mathematics.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#aca",
     "discussions": []
   },
@@ -26,7 +26,7 @@
     "title": "Projects and Products",
     "description": "The implementation of website and application in general for any scale (tiny, small, medium, large, huge).",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "pink.500",
     "discussions": []
   },
@@ -36,7 +36,7 @@
     "title": "Business",
     "description": "The business-side of technology by making products or services. Related to startups and SaaS (Software as a Service) business.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "gray.700",
     "discussions": []
   },
@@ -47,7 +47,7 @@
     "title": "Graphic Design",
     "description": "The graphics for general purpose. Including typography, logo, icon, photos, illustration, and animation.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "red.500",
     "discussions": []
   },
@@ -57,7 +57,7 @@
     "title": "UI/UX and Web Design",
     "description": "The UI (User Interface) and UX (User Experience) aspects for website, web app, and mobile app. Including things from graphic design, with layout and typography.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "yellow.500",
     "discussions": []
   },
@@ -67,7 +67,7 @@
     "title": "Website Development",
     "description": "The actual creation of website. Combination of HTML and CSS to apply an existing UI/UX of a web design. Including browser developer tools.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "green.500",
     "discussions": []
   },
@@ -77,7 +77,7 @@
     "title": "Web App Development",
     "description": "The implementation of web application using web programming languages and platforms such as JavaScript, TypeScript, and Node.js. With any ECMAScript versions. Including debuggers. ",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "blue.500",
     "discussions": []
   },
@@ -87,7 +87,7 @@
     "title": "Apple",
     "description": "Apple-related stuffs such as macOS, Macbook, iMac, iOS, iPhone, and iPad.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#ADADAD",
     "discussions": []
   },
@@ -97,7 +97,7 @@
     "title": "Linux",
     "description": "Linux-related such as Android, Ubuntu, Fedora, Linux Mint, elementary OS, Arch Linux, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#F37320",
     "gradient": "linear(to-r, #F37320, #294072, #46B764)",
     "discussions": []
@@ -108,7 +108,7 @@
     "title": "Windows",
     "description": "Microsoft Windows-related stuffs.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#00a4ef",
     "discussions": []
   },
@@ -118,7 +118,7 @@
     "title": "Web Browsers",
     "description": "Web browser-related such as Google Chrome, Mozilla Firefox, Brave, Chromium, Microsoft Edge, and others. Including the developer tools.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "orange.800",
     "discussions": []
   },
@@ -128,7 +128,7 @@
     "title": "Design Tools",
     "description": "Design tool-related such as Figma, Framer, Sketch, InVision, Marvel, Adobe XD, and others. Including more specific ones like Zeplin and Origami.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#A358FE",
     "gradient": "linear(to-r, #A358FE, #40a4f0, #F7772E, #E11F5E)",
     "discussions": []
@@ -139,7 +139,7 @@
     "title": "Code Editors",
     "description": "Code editor and IDE (Integrated Development Environment) related such as VS Code, Sublime Text, and Atom. Including their derivatives like CodeSandbox, CodePen, Glitch, Replit, JSFiddle, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#0076c6",
     "discussions": []
   },
@@ -149,7 +149,7 @@
     "title": "Markdown",
     "description": "The popular markup for text formatting and documentation like README. Including its derivatives such as MDX. Or alternativs like reStructuredText, AsciiDoc, Textile.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "discussions": []
   },
@@ -159,7 +159,7 @@
     "title": "Terminal and Shell",
     "description": "The app and system to handle CLI (command line interface) stuffs. Including bash, zsh, PowerShell, SSH, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#06f702",
     "discussions": []
   },
@@ -169,7 +169,7 @@
     "title": "Git",
     "description": "Git-related stuffs such as Git workflow, GitHub, GitLab, Bitbucket, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#e84e32",
     "discussions": []
   },
@@ -179,7 +179,7 @@
     "title": "HTML",
     "description": "The main markup of a website.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#F26624",
     "discussions": []
   },
@@ -189,7 +189,7 @@
     "title": "CSS",
     "description": "The main styling language of a website.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#369CD5",
     "discussions": []
   },
@@ -199,7 +199,7 @@
     "title": "CSS Libraries and Frameworks",
     "description": "The classic CSS design utilities and systems like Tailwind, Bootstrap, Foundation, Semantic UI, Bulma, Tachyons, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#16BDCA",
     "discussions": []
   },
@@ -209,7 +209,7 @@
     "title": "CSS-in-JS",
     "description": "The next generation of styling and animation through and usually paired with JavaScript frameworks. Including Emotion, styled-components, Stitches, Framer Motion, Styled System, Chakra UI, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#DB7192",
     "discussions": []
   },
@@ -219,7 +219,7 @@
     "title": "Analytics",
     "description": "The data from visitors and users. Including Google Analytics, Simple Analytics, Fathom Analytics, Splitbee, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "yellow.500",
     "discussions": []
   },
@@ -229,7 +229,7 @@
     "title": "JavaScript",
     "description": "The main programming language to build a website or web application.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#EFD819",
     "discussions": []
   },
@@ -239,7 +239,7 @@
     "title": "TypeScript",
     "description": "The superset and type-safe version of JavaScript programming language.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#3074BF",
     "discussions": []
   },
@@ -249,7 +249,7 @@
     "title": "Dart",
     "description": "The client-optimized programming language for apps on multiple platforms. Including Flutter.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#27B8F6",
     "gradient": "linear(to-r, #27B8F6, #00589C)",
     "discussions": []
@@ -260,7 +260,7 @@
     "title": "Kotlin",
     "description": "The Kotlin programming language.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#1AA2D4",
     "gradient": "linear(to-r, #1AA2D4, #766DB2, #B75EA4, #F6891F)",
     "discussions": []
@@ -271,7 +271,7 @@
     "title": "Swift",
     "description": "The Swift programming language.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "orange.500",
     "discussions": []
   },
@@ -281,7 +281,7 @@
     "title": "Python",
     "description": "The Python programming language. Including Django and Sinatra.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#4584b6",
     "gradient": "linear(to-r, #4584b6, #ffde57)",
     "discussions": []
@@ -292,7 +292,7 @@
     "title": "Ruby",
     "description": "The Ruby programming language. Including Rails and Flask.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#cc342d",
     "discussions": []
   },
@@ -302,7 +302,7 @@
     "title": "Java",
     "description": "The Java programming language. Including Spring and JVM (Java Virtual Machine).",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#5184A2",
     "gradient": "linear(to-r, #5184A2, #F89916)",
     "discussions": []
@@ -313,7 +313,7 @@
     "title": "Go",
     "description": "The Go programming language.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#00AED8",
     "discussions": []
   },
@@ -323,7 +323,7 @@
     "title": "PHP",
     "description": "The PHP programming language. Including its frameworks and platforms such as WordPress, Laravel, Code Igniter, Drupal.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#787BB3",
     "discussions": []
   },
@@ -333,7 +333,7 @@
     "title": "C-family",
     "description": "The C-family programming languages such as C, C++, C#, Objective-C.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#1A77DD",
     "discussions": []
   },
@@ -343,7 +343,7 @@
     "title": "Programming Languages",
     "description": "The other coding and programming languages such as Elm, Scala, Rust, Clojure, Perl, R, F#, Elixir, Erlang, even BASIC and Assembly.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "",
     "discussions": []
   },
@@ -353,7 +353,7 @@
     "title": "Deployment",
     "description": "Deployment-related stuffs and PaaS (Platform as a Service) such as Vercel, Netlify, Heroku, Railway, OpenShift, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "gradient": "linear(to-r, black, teal.500, purple.500)",
     "discussions": []
@@ -364,7 +364,7 @@
     "title": "Node.js",
     "description": "The cross-platform JavaScript runtime environment. Including npm and yarn, also things like I/O, file system, and networking.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#7FC728",
     "discussions": []
   },
@@ -374,7 +374,7 @@
     "title": "Deno",
     "description": "The Node.js alternative.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "discussions": []
   },
@@ -384,7 +384,7 @@
     "title": "Packages",
     "description": "The variety of mostly Node.js packages or modules you can get and use from npm. Including things like formatter (Prettier), static analysis or linter (ESLint), transpiler (Babel), module bundler (Webpack, Rollup), hooks (Husky), and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#C43635",
     "discussions": []
   },
@@ -394,7 +394,7 @@
     "title": "React.js",
     "description": "The frontend JavaScript library for building UI components. Including Preact, React Router, and React Helmet. Also its derivatives such as React Native, React VR, Expo, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#00d8ff",
     "discussions": []
   },
@@ -404,7 +404,7 @@
     "title": "Next.js",
     "description": "The full stack framework of React application.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "discussions": []
   },
@@ -414,7 +414,7 @@
     "title": "Vue.js",
     "description": "The progressive frontend JavaScript framework.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#42b883",
     "gradient": "linear(to-r, #42b883, #35495e)",
     "discussions": []
@@ -425,7 +425,7 @@
     "title": "Angular",
     "description": "The JavaScript framework, both the current Angular or older Angular.js version.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#b52e31",
     "discussions": []
   },
@@ -435,7 +435,7 @@
     "title": "JavaScript UI Libraries/Frameworks",
     "description": "The other JavaScript frontend libraries and frameworks (desktop or mobile) such as Electron, Svelte, Ember.js, NativeScript, Cordova, Xamarin.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#FF3C03",
     "gradient": "linear(to-r, #FF3C03, #E05C43)",
     "discussions": []
@@ -446,7 +446,7 @@
     "title": "Redux",
     "description": "The popular state management library. Including its middlewares such as logger, Redux Thunk, Redux Saga, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#7248B6",
     "discussions": []
   },
@@ -456,7 +456,7 @@
     "title": "REST API",
     "description": "The mechanism to exchange data via HTTP request and response. Including its tools like cURL, Postman, and Insomnia. Or standards like HTTPS and HTTP/2.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#FE6C37",
     "gradient": "linear(to-r, #FE6C37, #5848C0)",
     "discussions": []
@@ -467,7 +467,7 @@
     "title": "GraphQL",
     "description": "The modern alternative of REST API. Including its tools like Apollo, urql, Relay, and Hasura.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#DE35A6",
     "discussions": []
   },
@@ -477,7 +477,7 @@
     "title": "Other APIs",
     "description": "The general discussions on other APIs such as WebSocket, Socket.IO, WebRTC, gRPC, Pub/Sub, SSE (Server-Sent Events), and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "",
     "discussions": []
   },
@@ -487,7 +487,7 @@
     "title": "Express.js",
     "description": "The popular Node.js backend/server framework. Including its middlewares such as parsers, Helmet, and Passport. Or derivatives like Feathers, Sails.js, Nest, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#ccc",
     "discussions": []
   },
@@ -497,7 +497,7 @@
     "title": "Node.js Libraries and Frameworks",
     "description": "The other Node.js backend, server, or full stack libraries and frameworks such as LoopBack, Hapi, Fastify, Apollo, RedwoodJS, KeystoneJS, AdonisJs, Meteor, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#7FC728",
     "discussions": []
   },
@@ -507,7 +507,7 @@
     "title": "Database",
     "description": "The general database discussions, either SQL or NoSQL. Including ORMs and ODMS such as Prisma, Knex, Sequelize, and Mongoose. Also other DBMS such as SQLite, Firebase, Realm, Redis, Elasticsearch, Cassandra, FaunaDB, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#0D3249",
     "discussions": []
   },
@@ -517,7 +517,7 @@
     "title": "MongoDB",
     "description": "The popular NoSQL database.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#589636",
     "discussions": []
   },
@@ -527,7 +527,7 @@
     "title": "MySQL",
     "description": "The popular SQL database. Including variant like MariaDB.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#00758f",
     "gradient": "linear(to-r, #00758f, #f29111)",
     "discussions": []
@@ -538,7 +538,7 @@
     "title": "PostgreSQL",
     "description": "The other popular SQL database.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#31648C",
     "discussions": []
   },
@@ -548,7 +548,7 @@
     "title": "Security",
     "description": "The generic security discussions. Including authentication, authorization, OAuth, token, JWT, cookies, browser storage, 2FA/MFA, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#00F2E7",
     "gradient": "linear(to-l, #FB015B, #D739FE, #06B9F1, #00F2E7)",
     "discussions": []
@@ -559,7 +559,7 @@
     "title": "Docker",
     "description": "The popular containerization platform. Including Kubernetes.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#0db7ed",
     "discussions": []
   },
@@ -569,7 +569,7 @@
     "title": "Testing",
     "description": "The generic testing discussions. Including Jest, Mocha, Chai, Cypress, testing-library, Puppeteer, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#954158",
     "gradient": "linear(to-r, #954158, #896546)",
     "discussions": []
@@ -580,7 +580,7 @@
     "title": "APM",
     "description": "The APM (Application Performance Monitoring) and reporting such as Sentry, New Relic, Splunk, Datadog, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#F32D23",
     "discussions": []
   },
@@ -590,7 +590,7 @@
     "title": "Infrastructure and Servers",
     "description": "The variety of heavy infra and server-related discussions. Including things for IaaS (Infrastructure as a Service) like OS (Operating System), PM2, Nginx, Apache, certbot, monitoring, and others. Or packaged stack like LAMP-like variants.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#009237",
     "discussions": []
   },
@@ -600,7 +600,7 @@
     "title": "Google Cloud Platform",
     "description": "The infra from Google.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#4285f4",
     "gradient": "linear(to-r, #4285f4, #34a853, #fbbc05, #ea4335)",
     "discussions": []
@@ -611,7 +611,7 @@
     "title": "Amazon Web Services",
     "description": "The infra from Amazon.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#F69400",
     "discussions": []
   },
@@ -621,7 +621,7 @@
     "title": "Microsoft Azure",
     "description": "The infra from Microsoft.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#0585CF",
     "discussions": []
   },
@@ -631,7 +631,7 @@
     "title": "CI/CD",
     "description": "The practice of Continuous Integration and Deployment (CI/CD) of software craftmanship. Inlcuding tools like Circle CI, Jenkins, Travis CI, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "discussions": []
   },
@@ -641,7 +641,7 @@
     "title": "Accessibility",
     "description": "To make sure our website and application is accessible for everyone to use. Including internationalization, localization, dark mode, motion, voice interface, chat interface, and more.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "blue.700",
     "discussions": []
   },
@@ -651,7 +651,7 @@
     "title": "AR and VR",
     "description": "Augmented Reality (AR) and Virtual Reality (VR) stuffs. Including Oculus, Daydream, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "discussions": []
   },
@@ -661,7 +661,7 @@
     "title": "AI and ML",
     "description": "Artificial Intelligence (AI) and Machine Learning (ML). Including libraries such as TensorFlow.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#F8BF3C",
     "gradient": "linear(to-r, #F8BF3C, #ED8E23, #E55C2D)",
     "discussions": []
@@ -672,7 +672,7 @@
     "title": "Data Science and Business Intelligence",
     "description": "Data science (DS) and Business Intelligence (BI) discussions. Including tools like Metabase.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "",
     "discussions": []
   },
@@ -682,7 +682,7 @@
     "title": "Game Design and Development",
     "description": "Game design and development-related stuffs. Including Unity 3D, Unreal Engine, Phaser, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "discussions": []
   },
@@ -692,7 +692,7 @@
     "title": "Blockchain and Crypto",
     "description": "Blockchain and cryptocurrency-related discussions. Including Bitcoin, Ethereum, and other derivatives.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "#F68F14",
     "gradient": "linear(to-r, #F68F14, #5F658B)",
     "discussions": []
@@ -703,7 +703,7 @@
     "title": "Project and Product Management",
     "description": "The way of handling project and product development for teams. Including waterfall, Agile, Scrum, XP, and others.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "black",
     "discussions": []
   },
@@ -713,7 +713,7 @@
     "title": "Others",
     "description": "The other uncategorized discussions such as feedbacks and bug reports.",
     "logoUrl": "",
-    "coverUrl": "",
+    "cover_url": "",
     "color": "",
     "discussions": []
   }

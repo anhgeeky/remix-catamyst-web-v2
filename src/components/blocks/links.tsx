@@ -62,7 +62,10 @@ export function BlockLinks({ block }) {
                 key={index}
                 rounded="md"
                 spacing={0}
-                _hover={{ textDecoration: 'none', boxShadow: 'outline' }}
+                _hover={{
+                  textDecoration: 'none',
+                  boxShadow: 'outline',
+                }}
               >
                 <Box
                   bg={link.color || 'transparent'}

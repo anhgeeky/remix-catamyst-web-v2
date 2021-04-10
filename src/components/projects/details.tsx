@@ -1,48 +1,28 @@
-import { useState } from 'react'
-import { useRouter } from 'next/router'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 import NextHead from 'next/head'
 import {
   Avatar,
-  AvatarBadge,
-  AvatarGroup,
-  Box,
-  Button,
-  ButtonGroup,
-  chakra,
   Flex,
   Heading,
   Tooltip,
-  HStack,
   Link,
   Stack,
-  Tag,
   Text,
-  VStack,
+  useColorModeValue,
+  useMediaQuery,
 } from '@chakra-ui/react'
 
-import {
-  Icon,
-  Content,
-  Card,
-  HeadingStack,
-  Country,
-  SocialLinks,
-} from '@components'
+import { HeadingStack, SocialLinks } from '@components'
 import { JobSkillsTags } from '@components/jobs'
-import { useAuth, useToast } from '@hooks'
 import { trimUrl } from '@utils'
 
 import dataProjects from '@data/projects.json'
 import dataUsers from '@data/users.json'
 
 export function ProjectDetails({ projectSlug }) {
-  const toast = useToast()
-  const router = useRouter()
+  const [isTooSmall] = useMediaQuery('(max-width: 600px)')
   const project = dataProjects.find((project) => project.slug === projectSlug)
-
-  const hasSocialLinks = Boolean(project?.socialLinks?.length > 0)
 
   return (
     <>
@@ -61,30 +41,38 @@ export function ProjectDetails({ projectSlug }) {
           </NextHead>
 
           <Stack width="100%" spacing={5}>
-            {!project.coverUrl && (
+            {!project.cover_url && (
               <Flex className="next-image-container" justify="center">
                 <NextImage
                   src={`https://storage.catamyst.com/covers/grass.jpg`}
                   alt={project.title}
                   layout="fixed"
                   objectFit="cover"
+                  width={1440}
                   height={200}
-                  width={1440}
                 />
               </Flex>
             )}
-            {project.coverUrl && (
-              <Flex className="next-image-container" justify="center">
-                <NextImage
-                  src={project.coverUrl}
-                  alt={project.title}
-                  layout="fixed"
-                  objectFit="cover"
-                  height={400}
-                  width={1440}
-                />
+
+            {project.cover_url && (
+              <Flex justify="center">
+                <Flex
+                  className="next-image-container"
+                  justify="center"
+                  bg={useColorModeValue('gray.100', 'gray.500')}
+                >
+                  <NextImage
+                    src={project.cover_url}
+                    alt={project.title}
+                    width={1440}
+                    height={400}
+                    layout="fixed"
+                    objectFit={isTooSmall ? 'contain' : 'scale-down'}
+                  />
+                </Flex>
               </Flex>
             )}
+
             <Flex justify="center" px={5}>
               <Stack maxW={700} spacing={10}>
                 <Stack id="project-info">
@@ -108,10 +96,10 @@ export function ProjectDetails({ projectSlug }) {
                   </Stack>
                 )}
 
-                {project.socialLinks && (
+                {project.socials.length > 0 && project.socials && (
                   <Stack id="project-social-links" mr={5} my={1}>
                     <HeadingStack>Links and Repositories</HeadingStack>
-                    <SocialLinks links={project.socialLinks} size="3xl" />
+                    <SocialLinks links={project.socials} size="3xl" />
                   </Stack>
                 )}
 

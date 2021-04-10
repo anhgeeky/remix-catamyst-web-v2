@@ -65,7 +65,7 @@ export function UserProfilePreview({ profile }) {
           >
             <NextImage
               alt={`Cover picture of ${profile.name}`}
-              src={profile.coverUrl || defaultCoverUrl}
+              src={profile.cover_url || defaultCoverUrl}
               layout="fixed"
               objectFit="cover"
               width={420}

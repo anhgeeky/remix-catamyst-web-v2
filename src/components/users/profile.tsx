@@ -53,7 +53,7 @@ export function UserProfile({ user }) {
   const hasSocialLinks = Boolean(user.socials?.length > 0)
   const hasWebsite = Boolean(user.website?.url)
   const hasProjects = Boolean(user.projects?.length)
-  const joinedDate = getJoinedDate(user?.joinedAt)
+  const joinedDate = getJoinedDate(user?.created_at)
 
   const handleFollow = () => {
     if (isActionsAllowed) {
@@ -139,7 +139,7 @@ function UserProfileCover({ user }) {
       >
         <NextImage
           alt={`Cover picture of ${user.name}`}
-          src={user.coverUrl || defaultCoverUrl}
+          src={user.cover_url || defaultCoverUrl}
           layout="fixed"
           objectFit="cover"
           width={1440}

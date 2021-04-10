@@ -6,3 +6,5 @@ export { useRedirectDashboard } from '@hooks/use-redirect-dashboard'
 export { useRedirectSignIn } from '@hooks/use-redirect-signin'
 export { useRouteChanged } from '@hooks/use-route-changed'
 export { useToast } from '@hooks/use-toast'
+
+export { useApiProfile } from '@hooks/use-api-profile'

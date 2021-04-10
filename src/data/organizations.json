@@ -6,7 +6,7 @@
     "handle": "catamyst",
     "name": "Catamyst",
     "avatar_url": "/assets/logos/catamyst.png",
-    "coverUrl": "https://storage.catamyst.com/covers/iceberg.jpg",
+    "cover_url": "https://storage.catamyst.com/covers/iceberg.jpg",
     "headline": "The Company of This Site",
     "bio_html": "<p>Learning, growing, and working with software. Helping people like you to learn and grow with web development and software engineering.</p>",
     "location": "Remote",
@@ -23,7 +23,7 @@
     "mode": "Company",
     "isVerified": true,
     "isConfirmed": true,
-    "joinedAt": "2020-01-01",
+    "created_at": "2020-01-01",
     "people": [1, 2, 3, 4]
   },
   {
@@ -40,7 +40,7 @@
       "name": "Nawaart"
     },
     "mode": "Company",
-    "joinedAt": "2020-06-01",
+    "created_at": "2020-06-01",
     "people": [8],
     "projects": [2]
   },
@@ -58,7 +58,7 @@
       "name": "Saikou"
     },
     "mode": "Team",
-    "joinedAt": "2020-10-01",
+    "created_at": "2020-10-01",
     "people": [7],
     "projects": [3]
   },
@@ -76,7 +76,7 @@
       "name": "Zidence"
     },
     "mode": "Team",
-    "joinedAt": "2020-12-01",
+    "created_at": "2020-12-01",
     "people": [9],
     "projects": [4]
   },
@@ -94,7 +94,7 @@
       "name": "GitHub"
     },
     "mode": "Company",
-    "joinedAt": "2021-01-03",
+    "created_at": "2021-01-03",
     "people": []
   },
   {
@@ -111,7 +111,7 @@
       "name": "Google Open Source"
     },
     "mode": "Company",
-    "joinedAt": "2021-01-03",
+    "created_at": "2021-01-03",
     "people": []
   },
   {
@@ -125,7 +125,7 @@
     "country": "US",
     "location": "Menlo Park, California",
     "mode": "Company",
-    "joinedAt": "2021-01-03",
+    "created_at": "2021-01-03",
     "people": []
   },
   {
@@ -139,7 +139,7 @@
     "country": "SE",
     "location": "Stockholm",
     "mode": "Company",
-    "joinedAt": "2021-01-03",
+    "created_at": "2021-01-03",
     "people": []
   },
   {
@@ -152,7 +152,7 @@
     "country": "ID",
     "location": "Jakarta",
     "mode": "Company",
-    "joinedAt": "2021-01-03",
+    "created_at": "2021-01-03",
     "people": []
   }
 ]

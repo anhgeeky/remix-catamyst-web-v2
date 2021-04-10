@@ -18,10 +18,10 @@ import {
 
 import { Icon, LinkButton } from '@components'
 import { signOut } from '@features/auth/actions'
-import { useAuth } from '@hooks'
+import { useApiProfile } from '@hooks'
 
 export function HeaderUser() {
-  const state = useAuth()
+  const state = useApiProfile()
 
   /**
    * The UserMenuButton has issue with SSR
@@ -29,17 +29,15 @@ export function HeaderUser() {
    */
   return (
     <>
-      {state.auth.isAuthenticated ? (
-        <UserMenuButton state={state} />
-      ) : (
-        <UserAuthButtons />
-      )}
+      {state.profile ? <UserMenuButton state={state} /> : <UserAuthButtons />}
     </>
   )
 }
 
 function UserMenuButton({ state }) {
-  const { auth, user } = state
+  const { auth, user, profile } = state
+  console.log({ auth, user, profile })
+
   const router = useRouter()
   const dispatch = useDispatch()
 
@@ -65,14 +63,12 @@ function UserMenuButton({ state }) {
             rounded="full"
             className="next-image-avatar-container"
           >
-            {!auth.profile.avatar_url && (
-              <Avatar name={auth.profile.name} size="sm" />
-            )}
-            {auth.profile.avatar_url && (
+            {!profile.avatar_url && <Avatar name={profile.name} size="sm" />}
+            {profile.avatar_url && (
               <Box className="next-image-container user-avatar" rounded="full">
                 <NextImage
                   className="next-image"
-                  src={auth.profile.avatar_url}
+                  src={profile.avatar_url}
                   layout="fixed"
                   width={32}
                   height={32}
@@ -83,17 +79,17 @@ function UserMenuButton({ state }) {
         </MenuButton>
 
         <MenuList boxShadow="lg">
-          {!auth.profile.handle && user?.email && (
+          {!profile.handle && user?.email && (
             <MenuItem>
               <Flex direction="column">
                 Signed in as <b>{user.email}</b>
               </Flex>
             </MenuItem>
           )}
-          {auth.profile.handle && (
-            <MenuItem onClick={() => router.push(`/${auth.profile.handle}`)}>
+          {profile.handle && (
+            <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
               <Flex direction="column">
-                Signed in as <b>@{auth.profile.handle}</b>
+                Signed in as <b>@{profile.handle}</b>
               </Flex>
             </MenuItem>
           )}
@@ -109,8 +105,8 @@ function UserMenuButton({ state }) {
             </MenuItem>
           </NextLink>
 
-          {auth.profile.handle && (
-            <NextLink href={`/${auth.profile.handle}`} passHref>
+          {profile.handle && (
+            <NextLink href={`/${profile.handle}`} passHref>
               <MenuItem as="a">
                 <Icon name="profile" />
                 <Text as="span" ml={2}>

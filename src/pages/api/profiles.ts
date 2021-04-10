@@ -8,7 +8,10 @@ export default async function profiles(
 ) {
   const { data } = await supabase
     .from('profiles')
-    .select('handle', { count: 'exact' })
+    .select('id, handle, name, avatar_url, created_at, updated_at', {
+      count: 'exact',
+    })
+    .order('created_at', { ascending: true })
 
   res.status(200).json({
     message: 'All profiles',
