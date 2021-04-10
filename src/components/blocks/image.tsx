@@ -44,6 +44,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       {renderer === 'Image' && (
         <Flex justify="center">
           <Image
+            className={`${block.is_invertable && 'invertable'}`}
             src={block.url || `https://example.com`}
             alt={block.alt || block.title || 'Unknown'}
             width={block.width || autoWidth}
@@ -62,6 +63,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
           {/* Need URL validaton later */}
           <NextImage
             key={uuid}
+            className={`next-image${block.is_invertable ? ' invertable' : ''}`}
             src={block.url || `https://example.com`}
             alt={block.alt || block.title || 'Unknown'}
             width={block.width || autoWidth}

@@ -129,7 +129,7 @@ function OrganizationProfileCover({ org }) {
         overflow="auto"
         borderBottomLeftRadius="md"
         borderBottomRightRadius="md"
-        bg={useColorModeValue('gray.100', 'gray.500')}
+        bg={useColorModeValue('gray.200', 'gray.500')}
       >
         <NextImage
           alt={`Cover picture of ${org.name}`}

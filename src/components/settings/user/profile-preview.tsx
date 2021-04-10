@@ -31,7 +31,7 @@ export function UserProfilePreview({ profile }) {
             width="100%"
             overflow="auto"
             borderTopRadius="md"
-            bg={useColorModeValue('gray.100', 'gray.500')}
+            bg={useColorModeValue('gray.200', 'gray.500')}
           >
             <NextImage
               alt={`Cover picture of ${profile.name}`}

@@ -19,6 +19,7 @@
       {
         "type": "Image",
         "is_published": true,
+        "is_invertable": true,
         "url": "https://storage.catamyst.com/illustrations/hero-last-mobile.png",
         "size": "Small",
         "alt": "Cats are celebrating",
@@ -45,6 +46,7 @@
       {
         "type": "Image",
         "is_published": true,
+        "is_invertable": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614086320/cat-with-artworks.png",
         "size": "Small",
         "alt": "Cat sitting in front of artworks",
@@ -99,6 +101,7 @@
       {
         "type": "Image",
         "is_published": true,
+        "is_invertable": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614160954/cat-reading-book.png",
         "size": "Small",
         "title": "Cat reading a book",
@@ -123,6 +126,7 @@
       {
         "type": "Image",
         "is_published": true,
+        "is_invertable": true,
         "title": "Hour glass",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614161224/hour-glass.png",
         "size": "Tiny",
@@ -176,6 +180,7 @@
       {
         "type": "Image",
         "is_published": true,
+        "is_invertable": true,
         "title": "Cat with laptop",
         "alt": "Cat typing on laptop animated",
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614258939/cat-typing-laptop.gif",
@@ -561,6 +566,7 @@
       {
         "type": "Image",
         "is_published": true,
+        "is_invertable": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614879488/non-linear-learning-combined.png",
         "title": " Linear vs Non-linear learning · Inspired by Visual Thinkery",
         "source": "https://visualthinkery.com",
@@ -597,6 +603,7 @@
       {
         "type": "Image",
         "is_published": true,
+        "is_invertable": true,
         "url": "https://res.cloudinary.com/catamyst/image/upload/v1614961932/cat-painting-shapes.png",
         "title": "Just like a painter!",
         "alt": "Cat painting some shapes",

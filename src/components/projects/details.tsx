@@ -59,7 +59,7 @@ export function ProjectDetails({ projectSlug }) {
                 <Flex
                   className="next-image-container"
                   justify="center"
-                  bg={useColorModeValue('gray.100', 'gray.500')}
+                  bg={useColorModeValue('gray.200', 'gray.500')}
                 >
                   <NextImage
                     src={project.cover_url}

@@ -18,7 +18,7 @@ export function OrganizationAvatar({ org, size = 100 }) {
         <Box
           className="next-image-container org-avatar"
           rounded="md"
-          bg={useColorModeValue('gray.100', 'gray.500')}
+          bg={useColorModeValue('gray.200', 'gray.500')}
         >
           <NextImage
             className="next-image"
