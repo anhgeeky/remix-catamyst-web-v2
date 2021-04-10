@@ -1,4 +1,8 @@
 import useSWR, { mutate as mutateSWR } from 'swr'
+import { useDispatch } from 'react-redux'
+
+import { supabase } from '@lib'
+import { signOut } from '@features/auth/actions'
 
 /**
  * Named exports
@@ -10,16 +14,39 @@ export { useSWR, mutateSWR }
  * Fetchers
  * @param url
  * @param token
- * @returns json
  */
 
-export const fetcherSWR = (url) => fetch(url).then((res) => res.json())
+export const fetcherSWR = async (url) => {
+  const res = await fetch(url)
+
+  // If the status code is not in the range 200-299,
+  if (!res.ok) {
+    const error = new Error('Fetch error.')
+    // @ts-ignore
+    error.info = await res.json()
+    // @ts-ignore
+    error.status = res.status
+    throw error
+  }
+
+  return res.json()
+}
 
 export const fetcherWithTokenSWR = async (url, token) => {
-  const response = await fetch(url, {
+  const res = await fetch(url, {
     headers: { Authorization: `${token}` },
   })
-  return response.json()
+
+  if (!res.ok) {
+    const error = new Error('Fetch with token error.')
+    // @ts-ignore
+    error.info = await res.json()
+    // @ts-ignore
+    error.status = res.status
+    throw error
+  }
+
+  return res.json()
 }
 
 /**
@@ -36,6 +63,8 @@ export const useProfileHandleSWR = (handle) => {
 }
 
 export const useAuthProfileSWR = (token) => {
+  const dispatch = useDispatch()
+
   /**
    * Attempt to request with session.access_token.
    */
@@ -43,6 +72,14 @@ export const useAuthProfileSWR = (token) => {
     token ? ['/api/auth/me', token] : null,
     fetcherWithTokenSWR
   )
+
+  /**
+   * When user might have been deleted.
+   */
+  if (error?.status === 401) {
+    dispatch(signOut(false))
+    supabase.auth.signOut()
+  }
 
   return {
     profile: data?.profile,

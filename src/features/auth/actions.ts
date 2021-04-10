@@ -66,12 +66,13 @@ export const signUp = (form) => {
         }
       }
     } catch (error) {
+      console.error({ error })
       dispatch({ type: SIGN_UP_ERROR })
       toast({
         ...toastOptions,
         status: 'error',
-        title: 'Failed to sign up.',
-        description: 'Please try again and check your data.',
+        title: 'Failed to sign up. Please try again',
+        description: 'You might already have an account.',
       })
     }
   }
@@ -104,6 +105,7 @@ export const signIn = (data) => {
         }
       }
     } catch (error) {
+      console.error({ error })
       dispatch({ type: SIGN_IN_ERROR })
       toast({
         ...toastOptions,
@@ -131,6 +133,7 @@ export const signInMagic = (email) => {
         toast.closeAll()
       }
     } catch (error) {
+      console.error({ error })
       dispatch({ type: SIGN_IN_MAGIC_ERROR })
       toast({
         ...toastOptions,
@@ -161,6 +164,7 @@ export const signOut = (notify = true) => {
           description: 'See you later!',
         })
     } catch (error) {
+      console.error({ error })
       dispatch({ type: SIGN_OUT_ERROR })
       toast.closeAll()
       notify &&
