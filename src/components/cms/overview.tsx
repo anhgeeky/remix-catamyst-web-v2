@@ -14,7 +14,8 @@ import {
 
 import { Content, LinkButton, Card } from '@components'
 import { CMSHero } from '@components/cms'
-import { useSWR, fetcher, getDayNamePeriod } from '@utils'
+import { useSWR, fetcher } from '@hooks'
+import { getDayNamePeriod } from '@utils'
 
 export function CMSOverview() {
   const { data, error } = useSWR('/api/cms/stats', fetcher)

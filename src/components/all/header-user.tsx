@@ -18,10 +18,12 @@ import {
 
 import { Icon, LinkButton } from '@components'
 import { signOut } from '@features/auth/actions'
-import { useApiProfile } from '@hooks'
+import { useAuthProfileSWR } from '@hooks'
 
 export function HeaderUser() {
-  const state = useApiProfile()
+  console.log('>>> Header User')
+
+  const state = useAuthProfileSWR(`id, handle, name, avatar_url`)
 
   /**
    * The UserMenuButton has issue with SSR
@@ -35,7 +37,7 @@ export function HeaderUser() {
 }
 
 function UserMenuButton({ state }) {
-  const { auth, user, profile } = state
+  const { user, profile } = state
 
   const router = useRouter()
   const dispatch = useDispatch()

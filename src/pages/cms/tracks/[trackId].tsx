@@ -39,18 +39,21 @@ import {
   useToast,
 } from '@components'
 import { CMSViewJSON } from '@components/cms'
-import { useRedirectSignIn } from '@hooks'
 import { slugify } from '@utils'
+import { useProfile } from '@hooks'
 
 import dataTracks from '@data/tracks.json'
 import dataTopics from '@data/topics.json'
 
 export default function trackIdPage() {
-  const router = useRouter()
-  const { isAuthenticated } = useRedirectSignIn()
-  const [viewMode, setViewMode] = useState('result')
   const toast = useToast({ duration: 1000 })
+  const [viewMode, setViewMode] = useState('result')
+  const { router, isAuthorized } = useProfile()
   const { trackId } = router.query
+
+  useEffect(() => {
+    if (!isAuthorized) router.replace('/dashboard/overview')
+  }, [isAuthorized])
 
   /**
    * Should be from API later
@@ -104,7 +107,7 @@ export default function trackIdPage() {
           <Text>Sorry, track with id #{trackId} is not found.</Text>
         </>
       )}
-      {isAuthenticated && formTrack && formTopics && (
+      {isAuthorized && formTrack && formTopics && (
         <>
           <NextHead>
             <title>Lesson #{formTrack.id} · Catamyst</title>

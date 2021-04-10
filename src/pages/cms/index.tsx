@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
-import { useAuthProfile } from '@hooks'
+import { useProfile } from '@hooks'
 
 /**
  * The CMS has different pattern with regular dashboard.
@@ -13,7 +13,7 @@ import { useAuthProfile } from '@hooks'
  */
 export default function cmsPage() {
   const router = useRouter()
-  const { auth, isAuthorized } = useAuthProfile()
+  const { isAuthorized } = useProfile()
 
   /**
    * To access CMS, user must both authenticated and authorized to do so.
@@ -23,9 +23,5 @@ export default function cmsPage() {
     else router.replace('/signin')
   }, [isAuthorized])
 
-  return (
-    <Layout title="Loading CMS... · Catamyst">
-      {auth.isLoading && <p>Loading CMS...</p>}
-    </Layout>
-  )
+  return <Layout title="Loading CMS... · Catamyst" />
 }

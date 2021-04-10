@@ -3,15 +3,12 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { supabaseAdmin, getUser } from '@lib/api'
 
 export default async function users(req: NextApiRequest, res: NextApiResponse) {
-  const authorizationToken = req.headers.authorization
-  const isAuthorized = req.query.api_key === process.env.PING_TOKEN
+  // const isAuthorized = req.query.api_key === process.env.PING_TOKEN
 
-  // if (req.method === 'GET' && req.query.token === process.env.PING_TOKEN) {
   if (req.method === 'GET') {
     try {
-      const user = await getUser(authorizationToken)
+      const user = await getUser(req.headers.authorization)
 
-      // const { data, error } = await supabaseAdmin.from('users').select()
       const { data, error } = await supabaseAdmin.rpc('get_users')
       if (error) throw error
 

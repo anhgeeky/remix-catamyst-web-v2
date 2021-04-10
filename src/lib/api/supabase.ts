@@ -6,7 +6,7 @@ export const supabaseAdmin = createClient(
 )
 
 export const getUser = async (token) => {
-  const { data, error } = await supabaseAdmin.auth.api.getUser(token)
+  const { data: user, error } = await supabaseAdmin.auth.api.getUser(token)
   if (error) throw error
-  return data
+  return user
 }

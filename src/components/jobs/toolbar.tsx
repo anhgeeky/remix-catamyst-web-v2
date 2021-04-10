@@ -12,13 +12,13 @@ import {
 } from '@chakra-ui/react'
 
 import { Icon } from '@components'
-import { useToast, useAuthProfile } from '@hooks'
+import { useToast, useProfile } from '@hooks'
 import React from 'react'
 
 export function JobsToolbar() {
   const toast = useToast()
   const router = useRouter()
-  const { profile, isAuthenticated } = useAuthProfile()
+  const { profile, isAuthenticated } = useProfile()
 
   const labels = {
     create: 'Post a job',

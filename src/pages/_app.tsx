@@ -30,9 +30,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <Fonts />
           <AuthSession />
           <PersistGate loading={null} persistor={persistor}>
-            <Header />
+            {/* <Header /> */}
             <Component {...pageProps} />
-            <Footer />
+            {/* <Footer /> */}
           </PersistGate>
         </ReduxProvider>
       </ChakraProvider>

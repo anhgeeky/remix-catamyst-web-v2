@@ -1,16 +1,21 @@
-import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 
-import { useAuthProfile } from '@hooks'
+import { useProfile } from '@hooks'
 
 /**
- * Also using useAuthProfile that request to get profile from API.
+ * Also using useProfile that request to get profile from API.
+ * But immediately redirect if not authenticated.
  */
-export function useRedirectSignIn(fields = `id`) {
-  const router = useRouter()
-  const { auth, user, profile, isAuthenticated, isAuthorized } = useAuthProfile(
-    fields
-  )
+export function useRedirectSignIn(fields = '') {
+  const {
+    router,
+    user,
+    profile,
+    isAuthenticated,
+    isAuthorized,
+    isLoading,
+    isError,
+  } = useProfile(fields)
 
   useEffect(() => {
     if (!isAuthenticated) router.replace('/signin')
@@ -18,10 +23,11 @@ export function useRedirectSignIn(fields = `id`) {
 
   return {
     router,
-    isAuthenticated,
-    isAuthorized,
-    auth,
     user,
     profile,
+    isAuthenticated,
+    isAuthorized,
+    isLoading,
+    isError,
   }
 }

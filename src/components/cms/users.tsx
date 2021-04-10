@@ -11,9 +11,10 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Content, useToast } from '@components'
+import { Content } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-import { useSWR, fetcherWithToken, getCompleteDateTime } from '@utils'
+import { useSWR, fetcherWithToken } from '@hooks'
+import { getCompleteDateTime } from '@utils'
 import { supabase } from '@lib'
 
 export function CMSUsers() {

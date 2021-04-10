@@ -15,12 +15,12 @@ import {
 } from '@chakra-ui/react'
 import { Fragment, useState, useEffect } from 'react'
 import { useForm, useFieldArray } from 'react-hook-form'
-import useSWR from 'swr'
 
 import { Icon, LearningTag, HeaderEditor, Hero, useToast } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
-import { fetcher, slugify, initBlock } from '@utils'
+import { slugify, initBlock } from '@utils'
+import { useSWR, fetcher } from '@hooks'
 
 /**-----------------------------------------------------------------------------
  * CMS Lesson editor, with UI and logic

@@ -73,6 +73,11 @@ create table profiles (
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
   updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
+-- Keys
+-- alter table public.profiles
+-- add constraint fk_user_id foreign key (id) references auth.users(id);
+-- alter table public.profiles
+-- add constraint fk_user_id foreign key (id) references auth.users;
 -- Comments
 comment on table public.profiles is 'User profile attached to a user.';
 comment on column public.profiles.id is 'References to auth.users id.';

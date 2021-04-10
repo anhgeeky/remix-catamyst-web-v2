@@ -22,7 +22,7 @@ export const upgradeSuper = async (req, res, userId) => {
           email: req.body.email || '',
           license_key: req.body.license_key || '',
           sale_timestamp: req.body.sale_timestamp || '',
-          variants: req.body.variants || '',
+          variants: req.body['variants[Hours]'] || '',
           sessions_quota: currentData.super.sessions_quota + newQuota || 0,
         },
       })

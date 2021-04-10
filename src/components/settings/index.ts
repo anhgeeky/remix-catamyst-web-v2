@@ -1,5 +1,5 @@
+export { SettingsAll } from '@components/settings/all'
 export { SettingsHero } from '@components/settings/hero'
-
 export { SettingsOverview } from '@components/settings/overview'
 export { SettingsProfile } from '@components/settings/profile'
 export { SettingsEmail } from '@components/settings/email'

@@ -1,3 +1,4 @@
+export { DashboardAll } from '@components/dashboard/all'
 export { DashboardCertificates } from '@components/dashboard/certificates'
 export { DashboardDiscussions } from '@/components/dashboard/discussions'
 export { DashboardHero } from '@components/dashboard/hero'

@@ -12,7 +12,7 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-import { useSWR, fetcher } from '@utils'
+import { useSWR, fetcher } from '@hooks'
 
 export function CMSLessons() {
   const { data, error } = useSWR('/api/lessons', fetcher)

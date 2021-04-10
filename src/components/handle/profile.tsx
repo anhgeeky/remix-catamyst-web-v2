@@ -4,7 +4,7 @@ import { Box, Heading, Text, ButtonGroup } from '@chakra-ui/react'
 import { Hero, Content, LinkButton } from '@components'
 import { UserProfile } from '@components/users'
 import { OrganizationProfile } from '@components/organizations'
-import { useSWR, fetcher } from '@utils'
+import { useSWR, fetcher } from '@hooks'
 
 /**
  * Fetch sequentially:
