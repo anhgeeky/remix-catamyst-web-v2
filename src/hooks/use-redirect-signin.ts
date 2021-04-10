@@ -18,6 +18,7 @@ export function useRedirectSignIn(fields = '') {
     router,
   } = useProfile(fields)
 
+  // FIXME: Issue with cleanup
   useEffect(() => {
     !isAuthenticated && isError && router.replace('/signin')
   }, [isAuthenticated, isError])

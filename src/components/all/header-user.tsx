@@ -23,11 +23,14 @@ import { useProfile } from '@hooks'
 // FIXME: Has issue with unknown hook, maybe because of supabase signout.
 // Should back with redux auth.profile ?
 export function HeaderUser() {
-  const { isLoading, isError, profile } = useProfile(
+  const { isAuthenticated, isError, profile } = useProfile(
     'id,handle,name,avatar_url'
   )
 
-  if (!isLoading && !isError && profile) {
+  /**
+   * Both checks are necessary because need to wait for async profile
+   */
+  if (isAuthenticated && !isError) {
     return <UserMenuButton profile={profile} />
   }
   return <UserAuthButtons />

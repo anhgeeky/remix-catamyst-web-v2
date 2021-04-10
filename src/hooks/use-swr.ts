@@ -38,26 +38,16 @@ export const useProfileSWR = (profileId) => {
  * SWR should only return data, loading, error.
  */
 export const useAuthProfileSWR = (fields = 'id', token) => {
-  try {
-    // Be careful when setting up the key.
-    const { data, error } = useSWR(
-      token ? [`/api/auth/me?fields=${fields}`, token] : null,
-      fetcherWithToken
-    )
-    if (error) throw error
+  // Be careful when setting up the key.
+  const { data, error } = useSWR(
+    token ? [`/api/auth/me?fields=${fields}`, token] : null,
+    fetcherWithToken
+  )
 
-    return {
-      profile: data?.profile,
-      isLoading: !error && !data,
-      isError: Boolean(error),
-    }
-  } catch (error) {
-    // console.error(error.message)
-    return {
-      profile: null,
-      isLoading: false,
-      isError: true,
-      error: error,
-    }
+  return {
+    profile: data?.profile,
+    isLoading: !error && !data,
+    isError: Boolean(!data),
+    error: error,
   }
 }
