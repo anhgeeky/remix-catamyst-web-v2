@@ -12,7 +12,7 @@ export const upgradeSuper = async (req, res, userId) => {
       .single()
     if (currentError) throw currentError
 
-    const newQuota = Number(req.body.variants.Hours.split(' ')[0])
+    const newQuota = Number(req.body['variants[Hours]'].split(' ')[0])
     const { data: profileData, error: profileError } = await supabaseAdmin
       .from('profiles')
       .upsert({
