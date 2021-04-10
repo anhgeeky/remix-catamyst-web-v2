@@ -2,7 +2,6 @@
  * DATA TYPES
  */
 -- Enumerable types
--- alter type enum_type add value 'Mentor';
 -- drop type user_role;
 -- drop type user_mode;
 -- drop type user_plan;
@@ -10,6 +9,7 @@
 -- drop type track_category;
 -- drop type topic_category;
 -- drop type lesson_category;
+-- alter type enum_type add value 'Mentor';
 create type user_role as enum ('Admin', 'Bot', 'Staff', 'Mentor', 'Member');
 create type user_mode as enum ('Learner', 'Employer', 'Investor');
 create type user_plan as enum ('Basic', 'Pro', 'Super');
@@ -127,7 +127,10 @@ insert with check (bucket_id = 'covers');
  * Private table that maps user IDs to customer IDs in payment processor
  */
 create table customers (
-  id uuid references auth.users not null primary key,
+  -- Generate new id because it needs history
+  id uuid default extensions.uuid_generate_v4() not null primary key,
+  -- Reference public.customers.user_id to auth.users.id
+  user_id uuid references auth.users not null,
   -- The user's customer ID in Gumroad/Stripe
   -- User must not be able to update this
   customer_id text not null,

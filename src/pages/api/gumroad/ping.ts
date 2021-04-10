@@ -44,7 +44,8 @@ export default async function gumroadPing(
         .from('customers')
         .insert(
           {
-            id: userId,
+            // id is auto generated
+            user_id: userId,
             customer_id: req.body.email || '',
             plan: getPlan(req.body.permalink) || 'Pro',
             data: req.body || {},
