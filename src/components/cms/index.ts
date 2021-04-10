@@ -1,3 +1,4 @@
+export { CMSAll } from '@components/cms/all'
 export { CMSOverview } from '@components/cms/overview'
 export { CMSUsers } from '@components/cms/users'
 export { CMSTracks } from '@components/cms/tracks'
