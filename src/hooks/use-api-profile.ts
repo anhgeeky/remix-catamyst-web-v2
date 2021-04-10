@@ -10,7 +10,7 @@ export function useApiProfile(fields = `id, role, mode`) {
   const router = useRouter()
   const auth = useSelector((state) => state.auth)
 
-  const { data, error } = useSWR(`/api/auth/profile/${user.id}`, fetcher)
+  const { data, error } = useSWR(`/api/auth/profile/${user?.id}`, fetcher)
 
   const isAuthenticated = auth.isAuthenticated && user
   const isAuthorized =
@@ -21,9 +21,9 @@ export function useApiProfile(fields = `id, role, mode`) {
   return {
     router,
     auth,
-    isAuthenticated,
-    isAuthorized,
-    user,
+    isAuthenticated: isAuthenticated || false,
+    isAuthorized: isAuthorized || false,
+    user: user || null,
     profile: data?.profile || null,
   }
 }

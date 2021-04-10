@@ -94,7 +94,7 @@ export function SettingsSuper({ state }) {
                 <ListItem>
                   You only need to pay once for a lifetime, because this is not
                   a subscription. This will give you <b>Super</b> plan, added
-                  with private mentorship sessions, between <b>50-150 hours</b>{' '}
+                  with private mentorship sessions, between <b>50-200 hours</b>{' '}
                   (depending on your payment).
                 </ListItem>
                 <ListItem>
