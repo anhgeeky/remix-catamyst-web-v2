@@ -11,7 +11,6 @@ import { Integrations } from '@sentry/tracing'
 import theme from '@theme'
 import { Fonts, Header } from '@components'
 import { store, persistor } from '@features/store'
-import { useUserSession } from '@hooks'
 
 const swrConfig = {
   onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
@@ -38,15 +37,13 @@ export default function App({ Component, pageProps }: AppProps) {
     })
   }
 
-  useUserSession()
-
   return (
     <>
       <ChakraProvider theme={theme}>
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
-            <Fonts />
             <PersistGate loading={null} persistor={persistor}>
+              <Fonts />
               <Header />
               <Component {...pageProps} />
             </PersistGate>

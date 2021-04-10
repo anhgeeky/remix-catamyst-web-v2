@@ -8,6 +8,7 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 import { SkipNavLink } from '@chakra-ui/skip-nav'
+import { useUserSession } from '@hooks'
 
 import {
   ColorModeToggle,
@@ -20,6 +21,11 @@ import {
 import dataNavLinks from '@data/nav-links.json'
 
 export function Header() {
+  /**
+   * Initiate check user and session.
+   */
+  useUserSession()
+
   const bg = useColorModeValue('white', 'gray.900')
   const borderBg = useColorModeValue('white', 'gray.700')
   const [isMenuOpen, setMenuOpen] = useState(false)

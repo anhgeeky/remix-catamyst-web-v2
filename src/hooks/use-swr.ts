@@ -1,11 +1,17 @@
 import useSWR, { mutate as mutateSWR } from 'swr'
 
 /**
- * If possible, avoid calling Supabase in SWR.
- * It could cause a hard to track bugs.
+ * Named exports
  */
 
 export { useSWR, mutateSWR }
+
+/**
+ * Fetchers
+ * @param url
+ * @param token
+ * @returns json
+ */
 
 export const fetcherSWR = (url) => fetch(url).then((res) => res.json())
 
@@ -16,10 +22,14 @@ export const fetcherWithTokenSWR = async (url, token) => {
   return response.json()
 }
 
+/**
+ * Hooks
+ */
+
 export const useProfileSWR = (profileId) => {
   const { data, error } = useSWR(`/api/profiles/${profileId}`, fetcherSWR)
   return {
-    user: data,
+    profile: data,
     isLoading: !error && !data,
     isError: error,
   }
@@ -30,9 +40,8 @@ export const useProfileSWR = (profileId) => {
  * SWR should only return data, loading, error.
  */
 export const useAuthProfileSWR = (token) => {
-  // Be careful when setting up the key.
   const { data, error } = useSWR(
-    token ? [`/api/auth/me`, token] : null,
+    token ? ['/api/auth/me', token] : null,
     fetcherWithTokenSWR
   )
 

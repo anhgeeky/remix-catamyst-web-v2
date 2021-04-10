@@ -92,7 +92,7 @@ export const signIn = (data) => {
       if (user) {
         if (error) throw error
         if (data) {
-          mutateSWR(`/api/auth/me`)
+          mutateSWR('/api/auth/me')
           dispatch({ type: SIGN_IN_SUCCESS })
           toast.closeAll()
           toast({
@@ -146,28 +146,30 @@ export const signInMagic = (email) => {
  * Sign out session.
  * Still needed to change auth.isAuthenticated so the HeaderUser is changed.
  */
-export const signOut = () => {
+export const signOut = (notify = true) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_OUT_BEGIN })
     supabase.auth.signOut()
     try {
       dispatch({ type: SIGN_OUT_SUCCESS })
-      mutateSWR(`/api/auth/me`)
+      mutateSWR('/api/auth/me')
       toast.closeAll()
-      toast({
-        ...toastOptions,
-        title: 'Signed out',
-        description: 'See you later!',
-      })
+      notify &&
+        toast({
+          ...toastOptions,
+          title: 'Signed out',
+          description: 'See you later!',
+        })
     } catch (error) {
       dispatch({ type: SIGN_OUT_ERROR })
       toast.closeAll()
-      toast({
-        ...toastOptions,
-        status: 'error',
-        title: 'Failed to signed out',
-        description: `${error.message}. Please try again.`,
-      })
+      notify &&
+        toast({
+          ...toastOptions,
+          status: 'error',
+          title: 'Failed to signed out',
+          description: `${error.message}. Please try again.`,
+        })
     }
   }
 }

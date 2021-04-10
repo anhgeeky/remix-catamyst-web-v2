@@ -16,13 +16,10 @@ import {
 /**
  * Reducer only used for UI/UX purpose.
  * Not for the actual authentication/authorization process.
- * Because we would use Cookie and HTTP headers.
+ * Currently used for maintaining the legacy auth data within components.
  */
 export function authReducer(
-  state = {
-    isAuthenticated: false,
-    isLoading: false,
-  },
+  state = { isLoading: false, isAuthenticated: false },
   action
 ) {
   switch (action.type) {
@@ -30,61 +27,49 @@ export function authReducer(
      * Sign up begin/error/success.
      */
     case SIGN_UP_BEGIN: {
-      return { ...state, isLoading: true }
+      return { isLoading: true, isAuthenticated: false }
     }
     case SIGN_UP_ERROR: {
-      return { ...state, isLoading: false, isAuthenticated: false }
+      return { isLoading: false, isAuthenticated: false }
     }
     case SIGN_UP_SUCCESS: {
-      return {
-        ...state,
-        isLoading: false,
-        isAuthenticated: true,
-      }
+      return { isLoading: false, isAuthenticated: true }
     }
     /**
      * Sign in begin/error/success.
      */
     case SIGN_IN_BEGIN: {
-      return { ...state, isLoading: true }
+      return { isLoading: true, isAuthenticated: false }
     }
     case SIGN_IN_ERROR: {
-      return { ...state, isLoading: false, isAuthenticated: false }
+      return { isLoading: false, isAuthenticated: false }
     }
     case SIGN_IN_SUCCESS: {
-      return {
-        ...state,
-        isLoading: false,
-        isAuthenticated: true,
-      }
+      return { isLoading: false, isAuthenticated: true }
     }
     /**
      * Sign in magic begin/error/success.
      */
     case SIGN_IN_MAGIC_BEGIN: {
-      return { ...state, isLoading: true }
+      return { isLoading: true }
     }
     case SIGN_IN_MAGIC_ERROR: {
-      return { ...state, isLoading: false, isAuthenticated: false }
+      return { isLoading: false, isAuthenticated: false }
     }
     case SIGN_IN_MAGIC_SUCCESS: {
-      return {
-        ...state,
-        isLoading: false,
-        isAuthenticated: true,
-      }
+      return { isLoading: false, isAuthenticated: true }
     }
     /**
      * Sign out begin/error/success.
      */
     case SIGN_OUT_BEGIN: {
-      return { ...state, isLoading: true }
+      return { isLoading: true }
     }
     case SIGN_OUT_ERROR: {
-      return { ...state, isLoading: false, isAuthenticated: false }
+      return { isLoading: false, isAuthenticated: false }
     }
     case SIGN_OUT_SUCCESS: {
-      return { ...state, isLoading: false, isAuthenticated: false }
+      return { isLoading: false, isAuthenticated: false }
     }
     /**
      * Default.
