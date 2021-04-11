@@ -20,13 +20,21 @@ export const upgradeSuper = async (req, res, userId) => {
       .upsert({
         id: userId,
         plan: 'Super',
-        super: {
-          email: req.body.email || '',
-          license_key: req.body.license_key || '',
-          sale_timestamp: req.body.sale_timestamp || '',
-          variants: req.body['variants[Hours]'] || '',
-          sessions_quota: currentData.super.sessions_quota + quota || 0,
-        },
+        super: currentData?.super
+          ? {
+              email: req.body.email || '',
+              license_key: req.body.license_key || '',
+              sale_timestamp: req.body.sale_timestamp || '',
+              variants: req.body['variants[Hours]'] || '',
+              sessions_quota: currentData.super.sessions_quota + quota || 0,
+            }
+          : {
+              email: req.body.email || '',
+              license_key: req.body.license_key || '',
+              sale_timestamp: req.body.sale_timestamp || '',
+              variants: req.body['variants[Hours]'] || '',
+              sessions_quota: quota || 0,
+            },
       })
       .single()
     if (profileError) throw profileError
