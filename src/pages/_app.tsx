@@ -9,7 +9,7 @@ import * as Sentry from '@sentry/react'
 import { Integrations } from '@sentry/tracing'
 
 import theme from '@theme'
-import { Fonts, Header } from '@components'
+import { Header } from '@components'
 import { store, persistor } from '@features/store'
 
 const swrConfig = {
@@ -40,7 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider theme={theme}>
-        <Fonts />
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
             <PersistGate loading={null} persistor={persistor}>
