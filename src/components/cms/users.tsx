@@ -17,10 +17,9 @@ import { useSWR, fetcherWithTokenSWR } from '@hooks'
 import { getCompleteDateTime } from '@utils'
 import { supabase } from '@lib'
 
-export function CMSUsers() {
-  const session = supabase.auth.session()
+export function CMSUsers({ state }) {
   const { data, error } = useSWR(
-    ['/api/auth/users', session?.access_token],
+    ['/api/auth/users', state.session?.access_token],
     fetcherWithTokenSWR
   )
 

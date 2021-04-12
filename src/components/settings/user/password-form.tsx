@@ -18,7 +18,7 @@ export function UserPasswordForm({ user }) {
       <FormControl as={Stack} align="flex-start">
         <FormLabel>New password</FormLabel>
         <InputGroup>
-          <Input type="password" />
+          <Input type="password" autoFocus />
         </InputGroup>
         <FormHelperText>
           Minimum 10 characters. Please manage it using password manager of your

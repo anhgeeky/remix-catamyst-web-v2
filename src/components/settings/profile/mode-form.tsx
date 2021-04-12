@@ -1,15 +1,9 @@
 import { useState } from 'react'
 import {
   Button,
-  FormControl,
   FormErrorMessage,
-  FormHelperText,
-  FormLabel,
   Heading,
   Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightElement,
   Radio,
   RadioGroup,
   Stack,
@@ -26,8 +20,8 @@ import { ProfileModeSchema } from '@utils/yup'
 type Inputs = { mode: string }
 
 export function ProfileModeForm({ state }) {
-  const [loading, setLoading] = useState(false)
   const toast = useToast()
+  const [loading, setLoading] = useState(false)
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
     resolver: yupResolver(ProfileModeSchema),
   })
@@ -65,19 +59,25 @@ export function ProfileModeForm({ state }) {
           Account Mode
         </Heading>
 
-        <RadioGroup defaultValue={state.profile.mode} ref={register}>
-          <Stack>
-            <Radio name="mode" ref={register} value="Learner">
-              Learner
-            </Radio>
-            <Radio name="mode" ref={register} value="Employer">
-              Employer
-            </Radio>
-            <Radio name="mode" ref={register} value="Investor">
-              Investor
-            </Radio>
-          </Stack>
-        </RadioGroup>
+        <Stack
+          as={RadioGroup}
+          name="mode"
+          defaultValue={state.profile.mode}
+          ref={register}
+        >
+          <Radio ref={register} value="Learner">
+            Learner
+          </Radio>
+          <Radio ref={register} value="Teacher">
+            Teacher
+          </Radio>
+          <Radio ref={register} value="Employer">
+            Employer
+          </Radio>
+          <Radio ref={register} value="Investor">
+            Investor
+          </Radio>
+        </Stack>
         {errors.mode && (
           <FormErrorMessage>{errors.mode?.message}</FormErrorMessage>
         )}

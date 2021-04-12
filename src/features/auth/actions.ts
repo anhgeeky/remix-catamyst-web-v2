@@ -17,6 +17,7 @@ import {
   SIGN_OUT_SUCCESS,
 } from '@features/auth/types'
 import { supabase } from '@lib'
+import { getNickname } from '@utils'
 
 const toast = createStandaloneToast()
 const toastOptions = {
@@ -48,7 +49,11 @@ export const signUp = (form) => {
          */
         let { data, error } = await supabase
           .from('profiles')
-          .upsert({ id: user!.id, name: form.name })
+          .upsert({
+            id: user!.id,
+            name: form.name,
+            nickname: getNickname(form.name),
+          })
           .single()
         if (error) throw error
         if (data) {

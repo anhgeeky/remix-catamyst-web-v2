@@ -15,7 +15,7 @@ import { Content, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
 import { useSWR, fetcherSWR } from '@hooks'
 
-export function CMSTracks() {
+export function CMSTracks({ state }) {
   const { data, error } = useSWR('/api/tracks', fetcherSWR)
   const toast = useToast()
 

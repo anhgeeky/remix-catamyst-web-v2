@@ -17,7 +17,7 @@ export function AuthRecoverPassword() {
         </Text>
 
         <Stack>
-          <Input placeholder="yourname@example.com" />
+          <Input placeholder="yourname@example.com" autoFocus />
           <Button
             // isDisabled={auth.isLoading}
             type="submit"

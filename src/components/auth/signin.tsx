@@ -60,6 +60,7 @@ export function AuthSignIn({ auth }) {
             type="email"
             placeholder="yourname@example.com"
             ref={register}
+            autoFocus
           />
           {errors.email && (
             <FormErrorMessage>{errors.email?.message}</FormErrorMessage>

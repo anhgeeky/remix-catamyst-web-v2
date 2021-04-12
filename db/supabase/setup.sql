@@ -10,8 +10,9 @@
 -- drop type topic_category;
 -- drop type lesson_category;
 -- alter type enum_type add value 'Mentor';
+-- alter type user_mode add value 'Teacher';
 create type user_role as enum ('Admin', 'Bot', 'Staff', 'Mentor', 'Member');
-create type user_mode as enum ('Learner', 'Employer', 'Investor');
+create type user_mode as enum ('Learner', 'Teacher', 'Employer', 'Investor');
 create type user_plan as enum ('Basic', 'Pro', 'Super');
 create type level as enum (
   'Newbie',
@@ -60,6 +61,7 @@ create table profiles (
   mentors uuid [],
   is_public boolean default true,
   is_verified boolean default false,
+  theme text default 'default',
   language text default 'en-US',
   timezone text default 'Etc/UTC',
   currency text default 'USD',

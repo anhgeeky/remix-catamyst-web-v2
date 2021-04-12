@@ -1,0 +1,5 @@
+export { OnboardAll } from '@components/onboard/all'
+export { OnboardContainer } from '@components/onboard/container'
+export { OnboardWelcome } from '@components/onboard/welcome'
+export { OnboardMode } from '@components/onboard/mode'
+export { OnboardReady } from '@components/onboard/ready'

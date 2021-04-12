@@ -28,18 +28,18 @@ export function CMSAll({ cmsSlug, state }) {
       {!state.isLoading && state.isError && (
         <CMSHero>
           <Heading as="h1" size="xl">
-            Failed to load CMS
+            Failed to load CMS. Please refresh to try again.
           </Heading>
         </CMSHero>
       )}
 
       {!state.isLoading && state.user && state.profile && (
         <>
-          {cmsSlug === 'overview' && <CMSOverview />}
-          {cmsSlug === 'users' && <CMSUsers />}
-          {cmsSlug === 'tracks' && <CMSTracks />}
-          {cmsSlug === 'topics' && <CMSTopics />}
-          {cmsSlug === 'lessons' && <CMSLessons />}
+          {cmsSlug === 'overview' && <CMSOverview state={state} />}
+          {cmsSlug === 'users' && <CMSUsers state={state} />}
+          {cmsSlug === 'tracks' && <CMSTracks state={state} />}
+          {cmsSlug === 'topics' && <CMSTopics state={state} />}
+          {cmsSlug === 'lessons' && <CMSLessons state={state} />}
         </>
       )}
     </>

@@ -33,7 +33,7 @@ export function SettingsAll({ settingsSlug, state }) {
       {!state.isLoading && state.isError && (
         <SettingsHero>
           <Heading as="h1" size="xl">
-            Failed to load settings
+            Failed to load settings. Please refresh to try again.
           </Heading>
         </SettingsHero>
       )}

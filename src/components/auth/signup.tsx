@@ -83,6 +83,7 @@ export function AuthSignUp({ auth }) {
             type="text"
             placeholder="Your Full Name"
             ref={register}
+            autoFocus
           />
           {errors.name && (
             <FormErrorMessage>{errors.name?.message}</FormErrorMessage>

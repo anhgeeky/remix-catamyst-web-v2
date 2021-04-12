@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 
 import {
   Avatar,
+  HStack,
   Flex,
   Box,
   Menu,
@@ -35,13 +36,24 @@ export function HeaderUser() {
 function UserMenuButton({ profile }) {
   const router = useRouter()
   const dispatch = useDispatch()
+  const [isTooSmall] = useMediaQuery('(max-width: 350px)')
 
   async function handleSignOut() {
     dispatch(signOut())
   }
 
   return (
-    <Box className="header-user" height={34}>
+    <HStack className="header-user" height={34}>
+      <Box display={isTooSmall ? 'none' : 'block'}>
+        <LinkButton
+          href="/dashboard/overview"
+          leftIcon={<Icon name="dashboard" />}
+          colorScheme="teal"
+        >
+          Dashboard
+        </LinkButton>
+      </Box>
+
       <Menu>
         <MenuButton
           className="header-user-menu-button"
@@ -130,12 +142,13 @@ function UserMenuButton({ profile }) {
           </MenuItem>
         </MenuList>
       </Menu>
-    </Box>
+    </HStack>
   )
 }
 
 function UserAuthButtons() {
   const [isTooSmall] = useMediaQuery('(max-width: 350px)')
+
   return (
     <>
       <Box display={{ base: 'none', md: 'block' }}>

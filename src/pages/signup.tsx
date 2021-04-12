@@ -3,10 +3,10 @@ import { Heading, Text } from '@chakra-ui/react'
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
 import { AuthSignUp } from '@components/auth'
-import { useRedirectDashboard } from '@hooks'
+import { useRedirectOnboard } from '@hooks'
 
 export default function signUpPage() {
-  const { auth, isAuthenticated } = useRedirectDashboard()
+  const { auth, isAuthenticated } = useRedirectOnboard()
 
   return (
     <Layout title="Create your Catamyst account">
@@ -18,7 +18,6 @@ export default function signUpPage() {
             </Heading>
             <Text>Create your Catamyst account</Text>
           </Hero>
-
           <Content>
             <AuthSignUp auth={auth} />
           </Content>

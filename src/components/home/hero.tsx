@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { FaCheckCircle as CheckIcon } from 'react-icons/fa'
 
-import { HomeQuickForm, HomeCTA } from '@components/home'
+import { HomeCTA } from '@components/home'
 import dataHeroHome from '@data/hero-home.json'
 
 export function HomeHero() {
@@ -26,7 +26,6 @@ export function HomeHero() {
       >
         <Stack spacing={5}>
           <Heading
-            id="home-hero-title"
             as="h1"
             fontSize={{ base: '2xl', sm: '3xl', md: '4xl', xl: '5xl' }}
             bgGradient="linear(to-r, teal.400, green.400)"

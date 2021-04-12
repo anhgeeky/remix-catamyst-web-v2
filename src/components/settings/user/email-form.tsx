@@ -21,6 +21,7 @@ export function UserEmailForm({ user }) {
             type="email"
             placeholder="you@example.com"
             defaultValue={user.email || 'name@example.com'}
+            autoFocus
           />
           <InputRightElement
             color="green.500"

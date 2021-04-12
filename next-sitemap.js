@@ -13,6 +13,8 @@ const excludes = [
   '/members/*',
   '/members/top',
   '/onboard',
+  '/onboard',
+  '/onboard/*',
   '/onboard/*',
   '/projects',
   '/register',

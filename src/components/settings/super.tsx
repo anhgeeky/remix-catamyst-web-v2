@@ -111,7 +111,7 @@ export function SettingsSuper({ state }) {
                   (depending on your payment).
                 </ListItem>
                 <ListItem>
-                  If you need to pay via alternative methods such as direct bank
+                  If you need to pay via other methods such as direct bank
                   transfer, via{' '}
                   <Link isExternal color="teal.500" href="https://wise.com">
                     TransferWise

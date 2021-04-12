@@ -17,7 +17,7 @@ import { CMSHero } from '@components/cms'
 import { useSWR, fetcherSWR } from '@hooks'
 import { getDayNamePeriod } from '@utils'
 
-export function CMSOverview() {
+export function CMSOverview({ state }) {
   const { data, error } = useSWR('/api/cms/stats', fetcherSWR)
   const dayNamePeriod = getDayNamePeriod()
 

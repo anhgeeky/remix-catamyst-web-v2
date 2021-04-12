@@ -35,7 +35,7 @@ export function DashboardAll({ dashboardSlug, state }) {
       {!state.isLoading && state.isError && (
         <DashboardHero>
           <Heading as="h1" size="xl">
-            Failed to load dashboard
+            Failed to load dashboard. Please refresh to try again.
           </Heading>
         </DashboardHero>
       )}

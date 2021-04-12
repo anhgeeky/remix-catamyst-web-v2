@@ -12,17 +12,17 @@ export function SuperPlanRequestForm({ state }) {
       <Text>
         Before you pay for a <b>Super</b> plan, you can send a request to have a
         discussion first, to see whether this mentorship is suitable for you and
-        help you achieve your goals. You can also read the details on benefits
-        and conditions below.
+        help you achieve your goals. You can also read the guide on benefits ,
+        terms, and conditions below.
       </Text>
       <ButtonGroup>
         <LinkButton
-          href="/terms/super"
+          href="/guide/super"
           size="sm"
           colorScheme="green"
           leftIcon={<Icon name="learn" />}
         >
-          Read terms and conditions
+          Read guide
         </LinkButton>
       </ButtonGroup>
       <Text>

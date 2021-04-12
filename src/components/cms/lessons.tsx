@@ -14,7 +14,7 @@ import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
 import { useSWR, fetcherSWR } from '@hooks'
 
-export function CMSLessons() {
+export function CMSLessons({ state }) {
   const { data, error } = useSWR('/api/lessons', fetcherSWR)
   const toast = useToast()
 

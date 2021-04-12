@@ -17,7 +17,9 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   if (!sections || sections?.length === 0) {
-    return <AlertSoon>The lessons in this topic are coming soon!</AlertSoon>
+    return (
+      <AlertSoon>The lessons in this topic are still in progress.</AlertSoon>
+    )
   }
   return (
     <Stack spacing={5} width="100%">

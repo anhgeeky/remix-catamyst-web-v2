@@ -32,7 +32,6 @@ export function AuthSignInMagic({ router }) {
      */
     try {
       await dispatch(signInMagic(data.email))
-      // router.replace('/dashboard/overview')
     } catch (error) {
       console.error('Failed to sign in.')
     }

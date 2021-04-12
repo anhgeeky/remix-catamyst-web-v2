@@ -126,7 +126,7 @@ export function SettingsPro({ state }) {
                   still active. You will be charged automatically per month.
                 </ListItem>
                 <ListItem>
-                  If you need to pay via alternative methods such as direct bank
+                  If you need to pay via other methods such as direct bank
                   transfer, via TransferWise, or even crypto like Bitcoin, you
                   can ask us via the chat.
                 </ListItem>

@@ -39,6 +39,7 @@ export const yupHandle = Yup.string()
 
 export const yupProfileMode = Yup.mixed().oneOf([
   'Learner',
+  'Teacher',
   'Employer',
   'Investor',
 ])

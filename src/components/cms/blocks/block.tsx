@@ -30,7 +30,7 @@ export function CMSBlock(props) {
     <CardArea>
       <CMSBlockModifierButtons name={props.block.type} {...props} />
       <Alert status="warning" rounded="md">
-        Block {props.block.type} is coming soon.
+        Block {props.block.type} is still in progress.
       </Alert>
     </CardArea>
   )

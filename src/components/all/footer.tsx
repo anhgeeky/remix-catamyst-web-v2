@@ -25,7 +25,7 @@ export function Footer() {
   return (
     <VStack
       as="footer"
-      mt={200}
+      mt={100}
       p={10}
       spacing={10}
       color={useColorModeValue('gray.600', 'gray.100')}

@@ -174,6 +174,12 @@ import {
   SiUnity as GamesIcon,
   SiBitcoin as BlockchainCryptoIcon,
 } from 'react-icons/si'
+import {
+  GiCycling as LearnerIcon,
+  GiStrong as EmployerIcon,
+  GiTeacher as TeacherIcon,
+  GiInnerSelf as InvestorIcon,
+} from 'react-icons/gi'
 
 export function Icon({ name }) {
   switch (name) {
@@ -520,6 +526,17 @@ export function Icon({ name }) {
       return <BlockchainCryptoIcon />
     case 'others':
       return <OthersIcon />
+    /**
+     * Mode or profession
+     */
+    case 'learner':
+      return <LearnerIcon />
+    case 'teacher':
+      return <TeacherIcon />
+    case 'employer':
+      return <EmployerIcon />
+    case 'investor':
+      return <InvestorIcon />
     /**
      * When nothing found
      */

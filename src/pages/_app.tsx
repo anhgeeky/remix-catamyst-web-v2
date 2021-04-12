@@ -40,10 +40,10 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider theme={theme}>
+        <Fonts />
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
             <PersistGate loading={null} persistor={persistor}>
-              <Fonts />
               <Header />
               <Component {...pageProps} />
             </PersistGate>
