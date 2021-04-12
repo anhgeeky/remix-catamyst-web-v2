@@ -39,20 +39,21 @@ import dataProjects from '@data/projects.json'
 export function UserProfile({ user }) {
   const toast = useToast()
   const router = useRouter()
-  const { auth, isAuthenticated } = useAuth()
+  const { handle } = router.query
+  const { isAuthenticated } = useAuth()
 
   const [isFollowed, setIsFollowed] = useState(false)
   const [isFavorited, setIsFavorited] = useState(false)
 
   const isActionsAllowed = isAuthenticated
-  const isSameUser = user.handle === auth?.profile?.handle
+  const isSameUser = user.handle === handle
 
   const hasCountry = Boolean(user.country)
   const hasLocation = Boolean(user.location)
-  const hasWork = user.work?.title && user.work?.name
+  const hasProjects = Boolean(user.projects?.length)
   const hasSocialLinks = Boolean(user.socials?.length > 0)
   const hasWebsite = Boolean(user.website?.url)
-  const hasProjects = Boolean(user.projects?.length)
+  const hasWork = user.work?.title && user.work?.name
   const joinedDate = getJoinedDate(user?.created_at)
 
   const handleFollow = () => {

@@ -10,7 +10,7 @@ export default function onboardPage() {
   const { auth, isAuthenticated } = useAuth()
 
   useEffect(() => {
-    if (isAuthenticated) router.replace('/onboard/hello')
+    if (isAuthenticated) router.replace('/onboard/welcome')
     else router.replace('/signin')
   }, [isAuthenticated])
 

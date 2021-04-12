@@ -28,11 +28,12 @@ export function OnboardReady({ state }) {
         <Stack
           size="sm"
           colorScheme="blue"
+          direction="column"
+          alignItems="flex-start"
           as={ButtonGroup}
-          direction={{ base: 'column', sm: 'row' }}
         >
           <LinkButton href="/learn" leftIcon={<Icon name="learn" />}>
-            Let's learn!
+            Let's learn something!
           </LinkButton>
           <LinkButton
             variant="outline"
@@ -41,6 +42,15 @@ export function OnboardReady({ state }) {
           >
             Go to dashboard
           </LinkButton>
+          {state.profile.handle && (
+            <LinkButton
+              variant="ghost"
+              href={`/${state.profile.handle}`}
+              leftIcon={<Icon name="profile" />}
+            >
+              Check my profile
+            </LinkButton>
+          )}
           <LinkButton
             variant="ghost"
             href="/onboard/mode"

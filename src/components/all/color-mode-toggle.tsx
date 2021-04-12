@@ -13,6 +13,7 @@ export function ColorModeToggle() {
       color="current"
       icon={<SwitchIcon opacity={0.5} />}
       variant="ghost"
+      size="sm"
     >
       {colorMode === 'light' ? '🌙' : '☀️'}
     </IconButton>

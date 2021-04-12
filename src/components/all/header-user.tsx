@@ -36,7 +36,7 @@ export function HeaderUser() {
 function UserMenuButton({ profile }) {
   const router = useRouter()
   const dispatch = useDispatch()
-  const [isTooSmall] = useMediaQuery('(max-width: 350px)')
+  const [isTooSmall] = useMediaQuery('(max-width: 425px)')
 
   async function handleSignOut() {
     dispatch(signOut())
@@ -49,6 +49,7 @@ function UserMenuButton({ profile }) {
           href="/dashboard/overview"
           leftIcon={<Icon name="dashboard" />}
           colorScheme="teal"
+          size="sm"
         >
           Dashboard
         </LinkButton>
@@ -152,12 +153,12 @@ function UserAuthButtons() {
   return (
     <>
       <Box display={{ base: 'none', md: 'block' }}>
-        <LinkButton href="/signup" variant="ghost">
+        <LinkButton href="/signup" variant="ghost" size="sm">
           Sign up
         </LinkButton>
       </Box>
       <Box display={isTooSmall ? 'none' : 'block'}>
-        <LinkButton href="/signin" colorScheme="teal">
+        <LinkButton href="/signin" colorScheme="teal" size="sm">
           Sign in
         </LinkButton>
       </Box>

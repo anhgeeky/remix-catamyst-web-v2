@@ -22,7 +22,7 @@ export function SuperPlanRequestForm({ state }) {
           colorScheme="green"
           leftIcon={<Icon name="learn" />}
         >
-          Read guide
+          Read the guide
         </LinkButton>
       </ButtonGroup>
       <Text>
