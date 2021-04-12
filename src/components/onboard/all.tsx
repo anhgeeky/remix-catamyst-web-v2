@@ -1,14 +1,25 @@
 import { Spinner, Text } from '@chakra-ui/react'
 
-import { OnboardWelcome, OnboardMode, OnboardReady } from '@components/onboard'
+import {
+  OnboardContainer,
+  OnboardWelcome,
+  OnboardMode,
+  OnboardReady,
+} from '@components/onboard'
 
 export function OnboardAll({ onboardSlug, state }) {
   return (
     <>
-      {state.isLoading && <Spinner color="teal.500" />}
+      {state.isLoading && (
+        <OnboardContainer>
+          <Spinner color="teal.500" />
+        </OnboardContainer>
+      )}
 
       {!state.isLoading && state.isError && (
-        <Text>Failed to onboard. Please refresh to try again.</Text>
+        <OnboardContainer>
+          <Text>Failed to onboard. Please refresh to try again.</Text>
+        </OnboardContainer>
       )}
 
       {!state.isLoading && state.profile && (

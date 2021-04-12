@@ -30,6 +30,9 @@ export function HandleProfile({ handle }) {
   if (isLoading) {
     return <HandleLoading />
   }
+  if (isError) {
+    return <HandleNotFound handle={handle} />
+  }
   if (data.type === 'user') {
     return <HandleUserProfile profile={data.profile} />
   }

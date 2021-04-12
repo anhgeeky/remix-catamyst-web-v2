@@ -28,7 +28,7 @@ export default async function authMe(
       profile,
     })
   } catch (error) {
-    res.status(401).json({
+    res.status(200).json({
       message: 'Failed to get profile by authenticated id',
     })
   }

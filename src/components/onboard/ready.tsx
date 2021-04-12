@@ -22,7 +22,7 @@ export function OnboardReady({ state }) {
           >
             Congratulations!
           </Heading>
-          <Text>You are ready to continue.</Text>
+          <Text>You are ready to continue. Choose your adventure:</Text>
         </Stack>
 
         <Stack
@@ -42,9 +42,16 @@ export function OnboardReady({ state }) {
           >
             Go to dashboard
           </LinkButton>
+          <LinkButton
+            variant="outline"
+            href="/settings/overview"
+            leftIcon={<Icon name="settings" />}
+          >
+            Go to settings
+          </LinkButton>
           {state.profile.handle && (
             <LinkButton
-              variant="ghost"
+              variant="outline"
               href={`/${state.profile.handle}`}
               leftIcon={<Icon name="profile" />}
             >

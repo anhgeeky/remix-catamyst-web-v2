@@ -3,7 +3,12 @@ import { FaTimes, FaGripLines } from 'react-icons/fa'
 
 export function MenuToggle({ openMenu, isMenuOpen = false }) {
   return (
-    <IconButton aria-label="Toggle menu" variant="ghost" onClick={openMenu}>
+    <IconButton
+      aria-label="Toggle menu"
+      variant="ghost"
+      onClick={openMenu}
+      size="sm"
+    >
       {isMenuOpen ? <FaTimes /> : <FaGripLines />}
     </IconButton>
   )

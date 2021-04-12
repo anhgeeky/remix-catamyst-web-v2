@@ -11,7 +11,6 @@ export function Layout({ title = 'Catamyst', children = null }) {
   return (
     <Box bg={bg}>
       <NextHead>
-        <meta charSet="utf-8" />
         <title>{title || dataSite.title}</title>
         <meta name="description" content={dataSite.description} />
         <meta property="og:locale" content="en_US" />
