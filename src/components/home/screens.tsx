@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import NextLink from 'next/link'
-import NextImage from 'next/image'
 import {
   Box,
   VStack,
@@ -13,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import { Icon } from '@components'
+import { NextImage, Icon } from '@components'
 
 export function HomeScreens() {
   const { colorMode } = useColorMode()
@@ -63,9 +62,9 @@ export function HomeScreens() {
             <Flex justify="center">
               <AnimatePresence initial={false} exitBeforeEnter>
                 <Box
+                  className="next-image-screenshot-container"
                   key={`${screens[selectedIndex].slug}-${colorMode}`}
                   as={motion.div}
-                  className="next-image-screenshot-container"
                   rounded="md"
                   boxShadow="lg"
                   transition="0.25s ease"

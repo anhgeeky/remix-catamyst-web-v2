@@ -1,6 +1,6 @@
-import NextImage from 'next/image'
 import { Heading, Stack, Flex } from '@chakra-ui/react'
 
+import { NextImage } from '@components'
 import { HomeCTA } from '@components/home'
 
 export function HomeVillain() {
@@ -20,7 +20,7 @@ export function HomeVillain() {
         <NextImage
           className="invertable next-image"
           priority
-          src={`https://storage.catamyst.com/illustrations/hero-last-desktop.png`}
+          src={`https://res.cloudinary.com/catamyst/image/upload/v1618336282/villain-home.png`}
           alt="Cats doing high five"
           objectFit="contain"
           width={500}

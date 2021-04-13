@@ -6,7 +6,7 @@ import { PricingPlans } from '@components/pricing'
 
 export default function pricingPage() {
   return (
-    <Layout title="Pricing · Catamyst">
+    <Layout title="Pricing for Catamyst's Basic, Pro, and Super plans">
       <Hero>
         <Heading as="h1" size="xl">
           Pricing Plans

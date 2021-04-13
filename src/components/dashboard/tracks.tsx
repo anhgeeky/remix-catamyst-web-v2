@@ -49,7 +49,7 @@ export function DashboardTracks({ state }) {
                   track yet.
                 </Text>
                 <LinkButton href="/learn" colorScheme="teal">
-                  Choose a track
+                  Learn with track
                 </LinkButton>
               </CardPlaceholder>
             </Card>

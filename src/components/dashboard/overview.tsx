@@ -169,7 +169,7 @@ export function DashboardOverview({ state }) {
                   tracks that contain various topics and lessons.
                 </Text>
                 <LinkButton colorScheme="teal" variant="outline" href="/learn">
-                  Choose a track
+                  Learn with track
                 </LinkButton>
               </CardPlaceholder>
             </CardOverview>

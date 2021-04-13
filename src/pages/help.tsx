@@ -6,7 +6,7 @@ import { HelpFaqs } from '@components/help'
 
 export default function helpPage() {
   return (
-    <Layout title="Help Center · Catamyst">
+    <Layout title="Help Center and Frequently Asked Questions (FAQ) · Catamyst">
       <Hero>
         <Heading as="h1" size="xl">
           Help Center

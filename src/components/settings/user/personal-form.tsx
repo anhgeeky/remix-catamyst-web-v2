@@ -42,7 +42,7 @@ export function UserPersonalForm({ state }) {
             id: state.user!.id,
             ...form,
             updated_at: new Date(),
-            url: form.url ? checkUrl(form.url) : '',
+            website_url: form.website_url ? checkUrl(form.website_url) : '',
           },
           { returning: 'minimal' }
         )
