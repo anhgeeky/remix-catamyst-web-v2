@@ -8,5 +8,10 @@ export default (req, res) => {
     name: 'Catamyst',
     version: `v${dataPackage.version}`,
     ...dataHeroHome,
+    env: {
+      node_env: process.env.NODE_ENV,
+      web_url: process.env.NEXT_PUBLIC_WEB_URL,
+      api_url: process.env.NEXT_PUBLIC_API_URL,
+    },
   })
 }

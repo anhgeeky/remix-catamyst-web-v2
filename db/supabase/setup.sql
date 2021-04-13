@@ -140,7 +140,7 @@ create table customers (
   user_id uuid references auth.users not null,
   -- The user's customer ID in Gumroad/Stripe
   -- User must not be able to update this
-  customer_id text not null,
+  customer_email citext not null,
   plan user_plan default 'Pro'::user_plan,
   -- Purchase-related data
   data jsonb,

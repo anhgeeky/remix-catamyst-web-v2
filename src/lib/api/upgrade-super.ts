@@ -3,8 +3,8 @@ import { supabaseAdmin } from '@lib/api'
 /**
  * Toggle Super-related fields in profile.
  */
-export const upgradeSuper = async (req, res, userId) => {
-  console.info(`>>> userId: ${userId}`)
+export const upgradeSuper = async (req, res, profile) => {
+  console.info({ profile })
 
   try {
     const {
@@ -13,19 +13,20 @@ export const upgradeSuper = async (req, res, userId) => {
     } = await supabaseAdmin
       .from('profiles')
       .select('super')
-      .eq('id', userId)
+      .eq('id', profile.id)
       .single()
     if (currentProfileError) {
-      console.error('>>> Error when select profile by userId')
+      console.error('>>> Error when select profile by profile.id')
       throw currentProfileError
     }
 
     const variant = String(req.body['variants[Hours]'])
-    const quota = Number(variant.split(' ')[0])
+    const newQuota = Number(variant.split(' ')[0])
 
     const { data: newProfileData, error: newProfileError } = await supabaseAdmin
       .from('profiles')
       .upsert({
+        id: profile.id,
         plan: 'Super',
         super: currentProfile?.super
           ? {
@@ -33,17 +34,17 @@ export const upgradeSuper = async (req, res, userId) => {
               license_key: req.body.license_key || '',
               sale_timestamp: req.body.sale_timestamp || '',
               variants: req.body['variants[Hours]'] || '',
-              sessions_quota: currentProfile.super.sessions_quota + quota || 0,
+              sessions_quota:
+                currentProfile.super.sessions_quota + newQuota || 0,
             }
           : {
               email: req.body.email || '',
               license_key: req.body.license_key || '',
               sale_timestamp: req.body.sale_timestamp || '',
               variants: req.body['variants[Hours]'] || '',
-              sessions_quota: quota || 0,
+              sessions_quota: newQuota || 0,
             },
       })
-      .eq('id', userId)
       .single()
     if (newProfileError) {
       console.error('>>> Error when upsert profile to super')
@@ -54,13 +55,13 @@ export const upgradeSuper = async (req, res, userId) => {
       message: 'Super plan is activated.',
       via: 'ping',
       success: true,
-      email: req.body.email,
+      profile: profile,
       newProfileData: {
         plan: newProfileData.plan,
         super: newProfileData.super,
       },
     }
-    console.info(response)
+    console.info('>>>', { response })
     res.status(200).json(response)
   } catch (newProfileError) {
     const response = {

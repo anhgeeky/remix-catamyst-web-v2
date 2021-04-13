@@ -19,10 +19,6 @@ export default async function gumroadPing(
 
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
-      // Set userId either from existing user (database) or new user (sign up)
-      // let userId
-      // users[0]
-
       if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
         console.info(req.body)
       }
@@ -38,7 +34,7 @@ export default async function gumroadPing(
         }
       )
       profile.id = users[0]
-      console.info({ profile })
+      console.info('>>> Get user by email', { profile })
 
       /**
        * 2. Create new user if user by email is not found.
@@ -48,7 +44,7 @@ export default async function gumroadPing(
         let { user } = await supabase.auth.signUp({
           email: profile.email.toLowerCase(),
         })
-        const response = { message: 'Created a new account', user }
+        const response = { message: 'Created a new account', user, profile }
         console.info(response)
       }
 
@@ -56,13 +52,14 @@ export default async function gumroadPing(
        * 3. Insert ping data into new row of customers table.
        * Don't update/upsert, because we want to store all history.
        */
+      console.log('>>> Before insert customer', { profile })
       const { error: customerError } = await supabaseAdmin
         .from('customers')
         .insert(
           {
+            // FIXME: Why
             // id is auto generated
-            user_id: profile.id,
-            customer_id: profile.email || '',
+            customer_email: profile.email || '',
             plan: getPlan(req.body.permalink) || 'Pro',
             data: req.body || {},
           },
@@ -78,11 +75,11 @@ export default async function gumroadPing(
        * 4. Determine and update corresponding profile.plan data
        */
       if (req.body.permalink === 'catamyst-pro') {
-        await upgradePro(req, res, profile.id)
+        await upgradePro(req, res, profile)
       } else if (req.body.permalink === 'catamyst-pro-lifetime') {
-        await upgradePro(req, res, profile.id)
+        await upgradePro(req, res, profile)
       } else if (req.body.permalink === 'catamyst-super') {
-        await upgradeSuper(req, res, profile.id)
+        await upgradeSuper(req, res, profile)
       } else {
         res.status(400).json({ message: 'Not allowed' })
       }
@@ -92,6 +89,7 @@ export default async function gumroadPing(
     } catch (error) {
       const response = {
         message: 'Failed to upgrade because of mixed problems.',
+        profile: profile,
         via: 'ping',
         success: false,
         body: req.body,

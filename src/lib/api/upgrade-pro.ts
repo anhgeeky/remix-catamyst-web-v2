@@ -4,13 +4,14 @@ import { supabaseAdmin } from '@lib/api'
 /**
  * Toggle Pro-related fields in profile.
  */
-export const upgradePro = async (req, res, userId) => {
-  console.info(`>>> userId: ${userId}`)
+export const upgradePro = async (req, res, profile) => {
+  console.info({ profile })
 
   try {
     const { data: newProfileData, error: newProfileError } = await supabaseAdmin
       .from('profiles')
-      .update({
+      .upsert({
+        id: profile.id,
         plan: 'Pro',
         pro: {
           email: req.body.email || '',
@@ -18,7 +19,6 @@ export const upgradePro = async (req, res, userId) => {
           subscription_id: req.body.subscription_id || '',
         },
       })
-      .eq('id', userId)
       .single()
     if (newProfileError) {
       console.error('>>> Error when upsert profile to pro')
@@ -27,8 +27,9 @@ export const upgradePro = async (req, res, userId) => {
 
     const response = {
       message: 'Pro plan is activated.',
-      email: req.body.email,
       via: 'ping',
+      success: true,
+      profile: profile,
       newProfileData: {
         plan: newProfileData.plan,
         pro: newProfileData.pro,
@@ -41,7 +42,7 @@ export const upgradePro = async (req, res, userId) => {
       message: 'Failed to activate Pro plan.',
       via: 'ping',
       success: false,
-      body: req.body,
+      profile: profile,
       newProfileError: newProfileError,
     }
     console.error('>>>', { response })

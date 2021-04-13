@@ -7,20 +7,24 @@ export default async function testHandler(
   res: NextApiResponse
 ) {
   // Need to convert first before using toLowerCase
-  const email = String(req.body.email)
+  const profile = {
+    id: '',
+    email: String(req.body.email),
+  }
 
   try {
     const { data: users, error: userError } = await supabaseAdmin.rpc(
       'get_user_by_email',
       {
-        input: email.toLowerCase(),
+        input: profile.email.toLowerCase(),
       }
     )
+    profile.id = users[0]
     if (userError) {
       console.info('>>> Error when getting user by email')
       throw userError
     }
-    const response = { users, userId: users[0] }
+    const response = { users, profile }
     console.info(response)
     res.status(200).json(response)
   } catch (error) {
