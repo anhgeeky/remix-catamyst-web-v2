@@ -13,41 +13,47 @@ export default async function gumroadPing(
 ) {
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
+      // Set userId either from existing user (database) or new user (sign up)
+      // let userId
+      // users[0]
+
       if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
         console.info(req.body)
       }
 
-      // Set userId either from existing user (database) or new user (sign up)
-      let userId
-
-      // 1. Get existing user.id by email.
+      /**
+       * 1. Get existing user.id by email.
       // CAUTION: Only use get_user_by_email in API/backend
+       */
       const { data: users, error: userError } = await supabaseAdmin.rpc(
         'get_user_by_email',
         {
           input: req.body.email.toLowerCase(),
         }
       )
-      userId = users[0]
+      console.info({ users, userId: users[0] })
 
-      // 2. Create new user if user by email is not found.
+      /**
+       * 2. Create new user if user by email is not found.
+       */
       if (userError) {
         let { user } = await supabase.auth.signUp({
           email: req.body.email.toLowerCase(),
         })
-        userId = user.id
         const response = { message: 'Created a new account', user }
         console.info(response)
       }
 
-      // 3. Insert ping data into new row of customers table.
-      // Don't upsert, because we want to store all history.
+      /**
+       * 3. Insert ping data into new row of customers table.
+       * Don't update/upsert, because we want to store all history.
+       */
       const { error: customerError } = await supabaseAdmin
         .from('customers')
         .insert(
           {
             // id is auto generated
-            user_id: userId,
+            user_id: users[0],
             customer_id: req.body.email || '',
             plan: getPlan(req.body.permalink) || 'Pro',
             data: req.body || {},
@@ -55,15 +61,20 @@ export default async function gumroadPing(
           { returning: 'minimal' }
         )
         .single()
-      if (customerError) throw customerError
+      if (customerError) {
+        console.log('>>> customerError')
+        throw customerError
+      }
 
-      // 4. Determine and update corresponding profile.plan data
+      /**
+       * 4. Determine and update corresponding profile.plan data
+       */
       if (req.body.permalink === 'catamyst-pro') {
-        await upgradePro(req, res, userId)
+        await upgradePro(req, res, users[0])
       } else if (req.body.permalink === 'catamyst-pro-lifetime') {
-        await upgradePro(req, res, userId)
+        await upgradePro(req, res, users[0])
       } else if (req.body.permalink === 'catamyst-super') {
-        await upgradeSuper(req, res, userId)
+        await upgradeSuper(req, res, users[0])
       } else {
         res.status(400).json({ message: 'Not allowed' })
       }
@@ -72,7 +83,7 @@ export default async function gumroadPing(
       // But only check after the next billing cycle
     } catch (error) {
       const response = {
-        message: 'Failed to upgrade.',
+        message: 'Failed to upgrade because of mixed problems.',
         via: 'ping',
         success: false,
         body: req.body,

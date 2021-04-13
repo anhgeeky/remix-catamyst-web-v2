@@ -7,29 +7,33 @@ export const upgradeSuper = async (req, res, userId) => {
   console.info(`>>> userId: ${userId}`)
 
   try {
-    const { data: currentData, error: currentError } = await supabaseAdmin
+    const {
+      data: currentProfile,
+      error: currentProfileError,
+    } = await supabaseAdmin
       .from('profiles')
       .select('super')
       .eq('id', userId)
       .single()
-    if (currentError) throw currentError
+    if (currentProfileError) {
+      console.error('>>> Error when select profile by userId')
+      throw currentProfileError
+    }
 
     const variant = String(req.body['variants[Hours]'])
     const quota = Number(variant.split(' ')[0])
 
-    const { data: profileData, error: profileError } = await supabaseAdmin
+    const { data: newProfileData, error: newProfileError } = await supabaseAdmin
       .from('profiles')
       .upsert({
-        id: userId,
         plan: 'Super',
-        super: currentData?.super
+        super: currentProfile?.super
           ? {
               email: req.body.email || '',
               license_key: req.body.license_key || '',
               sale_timestamp: req.body.sale_timestamp || '',
               variants: req.body['variants[Hours]'] || '',
-              sessions_quota: currentData.super.sessions_quota + quota || 0,
-              updated_at: new Date(),
+              sessions_quota: currentProfile.super.sessions_quota + quota || 0,
             }
           : {
               email: req.body.email || '',
@@ -37,13 +41,13 @@ export const upgradeSuper = async (req, res, userId) => {
               sale_timestamp: req.body.sale_timestamp || '',
               variants: req.body['variants[Hours]'] || '',
               sessions_quota: quota || 0,
-              updated_at: new Date(),
             },
       })
+      .eq('id', userId)
       .single()
-    if (profileError) {
+    if (newProfileError) {
       console.error('>>> Error when upsert profile to super')
-      throw profileError
+      throw newProfileError
     }
 
     const response = {
@@ -51,20 +55,20 @@ export const upgradeSuper = async (req, res, userId) => {
       via: 'ping',
       success: true,
       email: req.body.email,
-      profileData: {
-        plan: profileData.plan,
-        super: profileData.super,
+      newProfileData: {
+        plan: newProfileData.plan,
+        super: newProfileData.super,
       },
     }
     console.info(response)
     res.status(200).json(response)
-  } catch (profileError) {
+  } catch (newProfileError) {
     const response = {
       message: 'Failed to activate Super plan.',
       via: 'ping',
       success: false,
       body: req.body,
-      profileError: profileError,
+      newProfileError: newProfileError,
     }
     console.error('>>>', { response })
     res.status(500).json(response)
