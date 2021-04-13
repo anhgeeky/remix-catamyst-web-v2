@@ -33,7 +33,7 @@ export function CMSBlockLinks({ index, block, actions }) {
         <Button
           size="xs"
           leftIcon={<Icon name="add" />}
-          onClick={() => console.info('Added new link')}
+          onClick={() => console.info('>>> Added new link')}
         >
           Add new link
         </Button>

@@ -125,18 +125,18 @@ export const signIn = (data) => {
 /**
  * Sign in passwordless with magic link sent to email.
  */
-export const signInMagic = (email) => {
+export const signInMagic = () => {
   return async (dispatch) => {
     dispatch({ type: SIGN_IN_MAGIC_BEGIN })
     try {
-      const { error, user } = await supabase.auth.signIn({
-        email: email.toLowerCase(),
+      dispatch({ type: SIGN_IN_MAGIC_SUCCESS })
+      toast.closeAll()
+      toast({
+        ...toastOptions,
+        status: 'success',
+        title: 'Signed in.',
+        description: 'Welcome back!',
       })
-      if (error) throw error
-      if (user) {
-        dispatch({ type: SIGN_IN_MAGIC_SUCCESS })
-        toast.closeAll()
-      }
     } catch (error) {
       console.error({ error })
       dispatch({ type: SIGN_IN_MAGIC_ERROR })

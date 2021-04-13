@@ -19,7 +19,7 @@ export function PostNew() {
     '<p>Hey! Write your post content here.</p><p>You can write it as a blog post, notes, tutorial, publication, announcement, news, or a changelog.</p><p>Feel free to delete this help text.</p>'
 
   const handleSave = () => {
-    console.info('Handle save for debugging.')
+    console.info('>>> Handle save for debugging.')
   }
 
   return (

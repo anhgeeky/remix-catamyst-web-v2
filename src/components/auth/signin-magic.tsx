@@ -31,7 +31,7 @@ export function AuthSignInMagic({ router }) {
      * Data will be passed as payload to signIn thunk
      */
     try {
-      await dispatch(signInMagic(data.email))
+      await dispatch(signInMagic())
     } catch (error) {
       console.error('Failed to sign in.')
     }

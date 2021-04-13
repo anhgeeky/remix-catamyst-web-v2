@@ -7,7 +7,7 @@ export default function editorPage() {
   const htmlString = '<p>Write something here.</p>'
 
   const handleSave = () => {
-    console.info('Handle save for debugging.')
+    console.info('>>> Handle save for debugging.')
   }
 
   return (
