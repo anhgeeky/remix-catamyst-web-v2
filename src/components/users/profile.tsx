@@ -218,7 +218,7 @@ function UserProfileContent({ user, state, actions }) {
                 <Icon name="organization" />
                 <span>{user.work.title}, </span>
                 {user.work.handle ? (
-                  <NextLink href={user.work.handle} passHref>
+                  <NextLink href={`/${user.work.handle}`} passHref>
                     <Link color="teal.500">{user.work.name}</Link>
                   </NextLink>
                 ) : user.work.url ? (

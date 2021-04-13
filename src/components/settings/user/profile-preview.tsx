@@ -70,7 +70,6 @@ export function UserProfilePreview({ profile }) {
     }
   }, [profile])
 
-  // return <pre>{JSON.stringify(localState, null, 2)}</pre>
   if (!localState.profile) {
     return <div>Loading...</div>
   }
@@ -149,30 +148,26 @@ export default function ProfileCard({ profile }) {
           <HStack spacing={1}>
             <Icon name="organization" />
             <span>
-              {profile.organization?.title || (
+              {profile.work?.title || (
                 <chakra.span fontStyle="italic" color="gray.500">
                   Title
                 </chakra.span>
               )}
-              ,{' '}
+              {', '}
             </span>
-            {profile.organization?.handle ? (
-              <NextLink href={profile.organization?.handle} passHref>
+            {profile.work?.handle ? (
+              <NextLink href={`/${profile.work?.handle}`} passHref>
                 <Link color="teal.500">
-                  {profile.organization?.name || (
+                  {profile.work?.name || (
                     <chakra.span fontStyle="italic" color="gray.500">
                       Organization
                     </chakra.span>
                   )}
                 </Link>
               </NextLink>
-            ) : profile.organization?.url ? (
-              <Link
-                isExternal
-                href={profile.organization?.url}
-                color="teal.500"
-              >
-                {profile.organization?.name || (
+            ) : profile.work?.url ? (
+              <Link isExternal href={profile.work?.url} color="teal.500">
+                {profile.work?.name || (
                   <chakra.span fontStyle="italic" color="gray.500">
                     Organization
                   </chakra.span>
@@ -180,7 +175,7 @@ export default function ProfileCard({ profile }) {
               </Link>
             ) : (
               <span>
-                {profile.organization?.name || (
+                {profile.work?.name || (
                   <chakra.span fontStyle="italic" color="gray.500">
                     Organization
                   </chakra.span>

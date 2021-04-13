@@ -14,8 +14,8 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
-import { Card, Icon } from '@components'
 import { dataAppCountries } from '@data'
+import { Card, Icon } from '@components'
 import { supabase } from '@lib'
 
 type Inputs = {
@@ -29,21 +29,9 @@ type Inputs = {
 export function UserPersonalForm({ state }) {
   const { profile } = state
   const [loading, setLoading] = useState<boolean>(false)
-  const {
-    control,
-    errors,
-    getValues,
-    handleSubmit,
-    register,
-    reset,
-    setValue,
-    setError,
-    watch,
-  } = useForm<Inputs>({ mode: 'onSubmit' })
+  const { handleSubmit, register } = useForm<Inputs>({ mode: 'onSubmit' })
 
   const handleSubmitForm = async (form) => {
-    console.log(form)
-
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
@@ -153,7 +141,6 @@ export function UserPersonalForm({ state }) {
           loadingText="Saving..."
           size="sm"
           type="submit"
-          // isDisabled={Boolean(errors)}
         >
           Save personal details
         </Button>
