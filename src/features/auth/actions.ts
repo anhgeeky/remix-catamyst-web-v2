@@ -38,9 +38,11 @@ export const signUp = (form) => {
       /**
        * Create new user with email and password
        */
+      const userEmail = String(form.email)
+      const userPassword = String(form.password)
       let { user, error } = await supabase.auth.signUp({
-        email: form.email.toLowerCase(),
-        password: form.password,
+        email: userEmail.toLowerCase(),
+        password: userPassword,
       })
       if (error) throw error
       if (user) {

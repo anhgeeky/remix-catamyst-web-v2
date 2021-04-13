@@ -16,7 +16,10 @@ export default async function testHandler(
         input: email.toLowerCase(),
       }
     )
-    if (userError) throw userError
+    if (userError) {
+      console.info('>>> Error when getting user by email')
+      throw userError
+    }
     const response = { users, userId: users[0] }
     console.info(response)
     res.status(200).json(response)
