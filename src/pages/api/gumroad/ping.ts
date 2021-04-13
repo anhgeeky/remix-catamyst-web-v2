@@ -11,6 +11,9 @@ export default async function gumroadPing(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // Need to convert first before using toLowerCase
+  const email = String(req.body.email)
+
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
       // Set userId either from existing user (database) or new user (sign up)
@@ -28,7 +31,7 @@ export default async function gumroadPing(
       const { data: users, error: userError } = await supabaseAdmin.rpc(
         'get_user_by_email',
         {
-          input: req.body.email.toLowerCase(),
+          input: email.toLowerCase(),
         }
       )
       console.info({ users, userId: users[0] })

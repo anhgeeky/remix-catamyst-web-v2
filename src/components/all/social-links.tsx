@@ -7,6 +7,8 @@ export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
   return (
     <HStack spacing={2}>
       {links.map((link, index) => {
+        const linkName = String(link.name)
+
         return (
           // <Tooltip
           //   key={index}
@@ -26,7 +28,7 @@ export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
             fontSize={size}
             _hover={{ color: useColorModeValue('gray.900', 'gray.100') }}
           >
-            <Icon name={link.name.toLowerCase()} />
+            <Icon name={linkName.toLowerCase()} />
           </Link>
           // </Tooltip>
         )

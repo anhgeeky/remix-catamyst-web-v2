@@ -42,6 +42,8 @@ import { dayNamePeriod, getName } from '@utils'
  * - Mentors
  */
 export function DashboardOverview({ state }) {
+  const planString = String(state.profile.plan)
+
   return (
     <>
       <NextHead>
@@ -141,7 +143,7 @@ export function DashboardOverview({ state }) {
                 <Flex display="flex" width="100%" justify="center">
                   <NextImage
                     className="invertable next-image"
-                    src={`https://storage.catamyst.com/illustrations/plan-${state.profile.plan.toLowerCase()}.png`}
+                    src={`https://storage.catamyst.com/illustrations/plan-${planString.toLowerCase()}.png`}
                     alt={state.profile.plan}
                     layout="fixed"
                     objectFit="contain"
