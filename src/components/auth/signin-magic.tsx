@@ -26,12 +26,10 @@ export function AuthSignInMagic({ router }) {
     resolver: yupResolver(SignInMagicSchema),
   })
 
-  const handleSignIn = async (data) => {
-    /**
-     * Data will be passed as payload to signIn thunk
-     */
+  const handleSubmitForm = async (data) => {
     try {
       await dispatch(signInMagic())
+      router.push('/dashboard/overview')
     } catch (error) {
       console.error('Failed to sign in.')
     }
@@ -44,7 +42,7 @@ export function AuthSignInMagic({ router }) {
         width="100%"
         maxW={360}
         spacing={5}
-        onSubmit={handleSubmit(handleSignIn)}
+        onSubmit={handleSubmit(handleSubmitForm)}
       >
         <FormControl id="email" as={Stack} spacing={1} isInvalid={errors.email}>
           <FormLabel>Email</FormLabel>

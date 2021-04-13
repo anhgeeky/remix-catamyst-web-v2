@@ -7,3 +7,11 @@ export function trimUrl(text) {
     return text
   }
 }
+
+export function checkUrl(text) {
+  if (text.includes('http://') || text.includes('https://')) {
+    return text
+  } else {
+    return 'https://' + text
+  }
+}

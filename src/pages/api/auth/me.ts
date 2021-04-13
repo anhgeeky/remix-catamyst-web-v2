@@ -12,9 +12,9 @@ export default async function authMe(
   res: NextApiResponse
 ) {
   try {
-    // console.log({ token: req.headers.authorization })
+    // console.warn({ token: req.headers.authorization })
     const user = await getUser(req.headers.authorization)
-    // console.log({ user })
+    // console.warn({ user })
 
     // 'id,handle,name,avatar_url'
     const { data: profile } = await supabase

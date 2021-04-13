@@ -1,4 +1,4 @@
-import '@styles/fonts.css'
+// import '@styles/fonts.css'
 import '@styles/globals.css'
 
 import type { AppProps } from 'next/app'
@@ -10,7 +10,7 @@ import * as Sentry from '@sentry/react'
 import { Integrations } from '@sentry/tracing'
 
 import theme from '@theme'
-import { Header } from '@components'
+import { Fonts, Header } from '@components'
 import { AuthProvider } from '@components/auth'
 import { store, persistor } from '@features/store'
 
@@ -50,6 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <ChakraProvider theme={theme}>
+        <Fonts />
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
             <PersistGate loading={null} persistor={persistor}>

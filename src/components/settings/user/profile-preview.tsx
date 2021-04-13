@@ -117,7 +117,7 @@ export default function ProfileCard({ profile }) {
               zIndex={1}
               bg={useColorModeValue('gray.50', 'gray.900')}
             >
-              <Avatar name={profile.name} src={profile.avatar_url} size="xl" />
+              <Avatar name={profile.name} src={profile?.avatar_url} size="xl" />
             </Box>
             <Heading as="h2" size="lg">
               {profile.name}
@@ -196,7 +196,7 @@ export default function ProfileCard({ profile }) {
               <Text>
                 {profile.location || (
                   <chakra.span fontStyle="italic" color="gray.500">
-                    Location Details
+                    Location
                   </chakra.span>
                 )}
               </Text>

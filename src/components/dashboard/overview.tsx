@@ -83,8 +83,8 @@ export function DashboardOverview({ state }) {
                   bg={useColorModeValue('gray.50', 'gray.900')}
                 >
                   <Avatar
-                    name={state.profile.name}
-                    src={state.profile.avatar_url}
+                    name={state.profile?.name}
+                    src={state.profile?.avatar_url}
                     size="2xl"
                   />
                 </Box>

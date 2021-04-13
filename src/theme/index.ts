@@ -1,8 +1,8 @@
 import { extendTheme } from '@chakra-ui/react'
 
+import fonts from '@theme/fonts'
 import styles from '@theme/styles'
 import colors from '@theme/colors'
-import fonts from '@theme/fonts'
 import config from '@theme/config'
 import {
   Button,
@@ -15,10 +15,10 @@ import {
 } from '@theme/components'
 
 const overrides = {
+  fonts,
   config,
   styles,
   colors,
-  fonts,
   shadows: { outline: '0 0 0 3px #aca' },
   components: {
     Button,

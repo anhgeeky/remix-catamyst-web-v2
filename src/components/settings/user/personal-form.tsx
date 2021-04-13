@@ -6,7 +6,6 @@ import {
   FormLabel,
   Input,
   InputGroup,
-  InputRightElement,
   Stack,
   Textarea,
   Heading,
@@ -17,6 +16,7 @@ import { useForm } from 'react-hook-form'
 import { dataAppCountries } from '@data'
 import { Card, Icon } from '@components'
 import { supabase } from '@lib'
+import { checkUrl } from '@utils'
 
 type Inputs = {
   headline?: string
@@ -40,8 +40,9 @@ export function UserPersonalForm({ state }) {
         .upsert(
           {
             id: state.user!.id,
-            updated_at: new Date(),
             ...form,
+            updated_at: new Date(),
+            url: form.url ? checkUrl(form.url) : '',
           },
           { returning: 'minimal' }
         )
@@ -126,10 +127,6 @@ export function UserPersonalForm({ state }) {
               name="website_url"
               ref={register}
             />
-            {/* <InputRightElement
-            color="green.500"
-            children={<Icon name="check" />}
-          /> */}
           </InputGroup>
         </FormControl>
 

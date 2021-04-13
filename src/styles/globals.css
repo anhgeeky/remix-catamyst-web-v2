@@ -38,12 +38,12 @@ h6 {
   font-family: 'Epilogue', sans-serif;
 }
 
-a {
-  outline-color: var(--color-secondary);
-}
-
 p code {
   font-size: 0.8em;
+}
+
+a {
+  outline-color: var(--color-secondary);
 }
 
 /**

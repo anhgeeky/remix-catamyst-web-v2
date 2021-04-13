@@ -14,6 +14,7 @@ import { useForm } from 'react-hook-form'
 
 import { Card, Icon } from '@components'
 import { supabase } from '@lib'
+import { checkUrl } from '@utils'
 
 type Inputs = {
   title?: string
@@ -32,12 +33,16 @@ export function UserWorkForm({ state }) {
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
+
       const { data, error } = await supabase
         .from('profiles')
         .upsert(
           {
             id: state.user!.id,
-            work: { ...form },
+            work: {
+              ...form,
+              url: form.url ? checkUrl(form.url) : '',
+            },
           },
           { returning: 'minimal' }
         )

@@ -27,7 +27,7 @@ export function useProfile() {
   //     isLoading: isLoading,
   //     isError: isError,
   //   }
-  //   console.log(debugUseProfile)
+  //   console.warn(debugUseProfile)
   // }
 
   return {

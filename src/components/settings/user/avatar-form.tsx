@@ -57,19 +57,16 @@ export function UserAvatarForm({ state }) {
           _hover={{ opacity: 0.75 }}
           bg={useColorModeValue('gray.50', 'gray.900')}
         >
-          <Avatar
-            name={state.profile.name}
-            src={state.profile.avatar_url}
-            size="lg"
-          />
+          <Avatar size="lg" />
         </Box>
-        <InputGroup isDisabled size="sm">
+        <InputGroup size="xs">
           <Input
+            isDisabled
             type="text"
             placeholder="https://website.com/path/to/image.jpg"
-            defaultValue={state.profile.avatar_url}
+            defaultValue={state.profile?.avatar_url}
           />
-          {state.profile.avatar_url && (
+          {state.profile?.avatar_url && (
             <InputRightElement
               color="green.500"
               children={<Icon name="check" />}

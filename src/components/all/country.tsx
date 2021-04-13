@@ -2,6 +2,7 @@ import Flag from 'react-flagkit'
 import { HStack } from '@chakra-ui/react'
 
 import { dataAppCountries } from '@data'
+import { Icon } from '@components'
 
 export function Country({ code }) {
   const country = dataAppCountries.find((country) => country.code === code)
@@ -16,6 +17,14 @@ export function Country({ code }) {
           height={14}
         />
         <span>Earth</span>
+      </HStack>
+    )
+  }
+  if (country?.code === 'MOON') {
+    return (
+      <HStack>
+        <Icon name="moon" />
+        <span>Moon</span>
       </HStack>
     )
   }

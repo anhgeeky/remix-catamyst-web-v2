@@ -64,7 +64,7 @@ export const useProfileHandleSWR = (handle) => {
 
 export const useAuthProfileSWR = (token) => {
   const dispatch = useDispatch()
-  // console.log({ token })
+  // console.warn({ token })
 
   /**
    * Attempt to request with session.access_token.
@@ -73,8 +73,7 @@ export const useAuthProfileSWR = (token) => {
     token ? ['/api/auth/me', token] : null,
     fetcherWithTokenSWR
   )
-
-  // console.log({ data, error })
+  // console.warn({ data, error })
 
   /**
    * When user might have been deleted.
