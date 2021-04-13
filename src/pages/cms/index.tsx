@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
-import { useProfile } from '@hooks'
+import { useAuth } from '@hooks'
+import { supabase } from '@lib'
 
 /**
  * The CMS has different pattern with regular dashboard.
@@ -11,21 +11,23 @@ import { useProfile } from '@hooks'
  * `/cms/topics/[topicId]` to handle editing the topic by id.
  * `/cms/lessons/[trackId]` to handle editing the lesson by id.
  */
-export default function cmsPage() {
+export default function cmsPage({ user }) {
   const router = useRouter()
-  const { auth, isAuthorized } = useProfile()
-
-  /**
-   * To access CMS, user must both authenticated and authorized to do so.
-   */
-  useEffect(() => {
-    if (isAuthorized) router.replace('/cms/overview')
-    else router.replace('/signin')
-  }, [isAuthorized])
+  const { auth } = useAuth()
 
   return (
     <Layout title="Loading CMS... · Catamyst">
       {auth.isLoading && <p>Loading CMS...</p>}
     </Layout>
   )
+}
+
+export async function getServerSideProps({ req }) {
+  const { user } = await supabase.auth.api.getUserByCookie(req)
+  if (user && user?.role === 'admin') {
+    console.info(`>>> User ${user.email} is admin`)
+    return { props: { user } }
+  } else {
+    return { props: {}, redirect: { destination: '/about', permanent: false } }
+  }
 }

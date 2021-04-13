@@ -2,13 +2,13 @@ import { useRouter } from 'next/router'
 
 import { Layout } from '@layouts'
 import { CMSAll } from '@components/cms'
-import { useProfile } from '@hooks'
+import { useRedirectSignIn } from '@hooks'
 import { supabase } from '@lib'
 
 export default function cmsSlugPage({ user }) {
   const router = useRouter()
   const { cmsSlug } = router.query
-  const state = useProfile()
+  const state = useRedirectSignIn()
 
   return (
     <Layout title="Loading CMS... · Catamyst">
@@ -19,10 +19,10 @@ export default function cmsSlugPage({ user }) {
 
 export async function getServerSideProps({ req }) {
   const { user } = await supabase.auth.api.getUserByCookie(req)
-  console.info({ user })
-
-  if (!user) {
+  if (user && user?.role === 'admin') {
+    console.info(`>>> User ${user.email} is admin`)
+    return { props: { user } }
+  } else {
     return { props: {}, redirect: { destination: '/about', permanent: false } }
   }
-  return { props: { user } }
 }
