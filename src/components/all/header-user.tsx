@@ -23,15 +23,6 @@ import { useProfile } from '@hooks'
 import { Profile } from '@types'
 import { supabase } from '@lib'
 
-export function HeaderUser() {
-  const { isAuthenticated, profile } = useProfile()
-
-  if (isAuthenticated && profile) {
-    return <UserMenuButton profile={profile} />
-  }
-  return <UserAuthButtons />
-}
-
 type State = { profile: Profile }
 type Action = { type?: string; payload: any }
 
@@ -45,7 +36,14 @@ export const profileEventReducer = (state: State, action: Action) => {
   }
 }
 
-export function UserMenu({ profile }) {
+export function HeaderUser({ state }) {
+  if (state.isAuthenticated && state.profile) {
+    return <UserRealtimeBridge profile={state.profile} />
+  }
+  return <UserAuthButtons />
+}
+
+export function UserRealtimeBridge({ profile }) {
   const initialState: State = profile
   const [localState, localDispatch] = useReducer(
     profileEventReducer,

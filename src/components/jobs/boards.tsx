@@ -125,7 +125,7 @@ export function JobDetail({ job }) {
               {job.organization.isVerified && (
                 <Tooltip
                   hasArrow
-                  label="Verified organization account"
+                  label="Verified organization"
                   aria-label="Verified"
                   placement="top"
                 >

@@ -17,15 +17,15 @@ export function useUserSession() {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    if (isDev) console.info('>>> useEffect in useUserSession is run.')
+    // if (isDev) console.info('>>> useEffect in useUserSession is run.')
 
     try {
       const session = supabase.auth.session()
 
       if (auth.isAuthenticated && !session) {
         if (isDev) console.info('>>> User is actually not authenticated')
-        dispatch(signOut(false))
-        throw new Error('Not authenticated')
+        // dispatch(signOut(false))
+        // throw new Error('Not authenticated')
       }
 
       setSession(session)
@@ -45,8 +45,8 @@ export function useUserSession() {
       }
     } catch (error) {
       if (isDev) console.info('>>> Error on Supabase happened')
-      dispatch(signOut(false))
-      supabase.auth.signOut()
+      // dispatch(signOut(false))
+      // supabase.auth.signOut()
       setUser(null)
       setSession(null)
     }

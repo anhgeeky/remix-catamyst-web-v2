@@ -18,11 +18,10 @@ import {
   HeaderUser,
 } from '@components'
 import dataNavLinks from '@data/nav-links.json'
+import { useProfile } from '@hooks'
 
 export function Header() {
-  /**
-   * Initiate check user and session.
-   */
+  const state = useProfile()
   const bg = useColorModeValue('white', 'gray.900')
   const borderBg = useColorModeValue('white', 'gray.700')
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -88,7 +87,7 @@ export function Header() {
 
           <Flex flex={1} justify="flex-end">
             <HStack spacing={1}>
-              <HeaderUser />
+              <HeaderUser state={state} />
               {isTooSmall && (
                 <MenuToggle openMenu={openMenu} isMenuOpen={isMenuOpen} />
               )}

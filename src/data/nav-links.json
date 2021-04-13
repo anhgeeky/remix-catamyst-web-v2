@@ -28,5 +28,10 @@
     "slug": "help",
     "text": "Help",
     "href": "/help"
+  },
+  {
+    "slug": "about",
+    "text": "About",
+    "href": "/about"
   }
 ]

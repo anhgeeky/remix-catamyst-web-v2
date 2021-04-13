@@ -82,8 +82,8 @@ export const useAuthProfileSWR = (token) => {
    */
   if (error || data?.error === 401) {
     console.warn('Signing out because of expired session...')
-    dispatch(signOut(false))
-    supabase.auth.signOut()
+    // dispatch(signOut(false))
+    // supabase.auth.signOut()
   }
 
   return {

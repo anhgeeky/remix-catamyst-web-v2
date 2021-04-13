@@ -315,7 +315,7 @@ export function UserNameHandle({ user }) {
         {user?.is_verified && (
           <Tooltip
             hasArrow
-            label="Verified user account"
+            label="Verified user"
             aria-label="Verified"
             placement="top"
           >
