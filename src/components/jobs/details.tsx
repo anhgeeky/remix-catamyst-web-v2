@@ -93,14 +93,13 @@ export function JobDetails({ jobParams }) {
 
       <JobHero theme={job.theme}>
         <JobOrganizationLogo org={job.organization} size={100} />
-        <Heading as="h1" size="xl">
+        <Heading as="h1" size="lg">
           {job.title}
         </Heading>
         <HStack>
-          <Heading as="h2">
+          <Heading as="h2" size="sm" lineHeight={1}>
             {!job.organization.handle && (
               <Link
-                as="h2"
                 fontSize="2xl"
                 fontWeight="700"
                 fontFamily="heading"
@@ -203,22 +202,31 @@ export function JobDetails({ jobParams }) {
                 ? 'This job vacancy is open to apply'
                 : 'This job vacancy is closed but you can still try to apply'}
             </Text>
-            <Stack direction={{ base: 'column', md: 'row' }}>
-              <Button
+            <Stack
+              direction={{ base: 'column', md: 'row' }}
+              as={ButtonGroup}
+              colorScheme="teal"
+            >
+              {/* <Button
                 variant="solid"
                 colorScheme={isApplied ? 'red' : 'teal'}
                 onClick={handleApplyJob}
               >
                 {isApplied ? 'Cancel apply' : 'Apply directly'}
-              </Button>
+              </Button> */}
               {job.apply.url && (
-                <Button isExternal as={Link} href={job.apply.url}>
+                <Button
+                  isExternal
+                  variant="solid"
+                  as={Link}
+                  href={job.apply.url}
+                >
                   Apply via external link
                 </Button>
               )}
-              <Button disabled variant="outline">
+              {/* <Button disabled variant="outline">
                 Share
-              </Button>
+              </Button> */}
             </Stack>
           </Stack>
         </Stack>

@@ -15,7 +15,9 @@ export function JobHero({
       justify="center"
     >
       <Box px={5} width="1200px">
-        <VStack>{children}</VStack>
+        <VStack textAlign="center" spacing={5}>
+          {children}
+        </VStack>
       </Box>
     </Flex>
   )

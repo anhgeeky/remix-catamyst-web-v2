@@ -14,6 +14,7 @@ export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
             aria-label={link.name}
             placement="top"
             fontSize="md"
+            my={1}
             hasArrow
           >
             <Link
