@@ -7,6 +7,7 @@ import {
   HStack,
   Link,
   ListItem,
+  ButtonGroup,
   OrderedList,
   Stack,
   Text,
@@ -54,13 +55,22 @@ export function SettingsSuper({ state }) {
           {state.profile.plan === 'Super' && (
             <Card as={Stack}>
               <Heading as="h3" size="md">
-                Mentorship sessions quota
+                Mentorship hours (sessions quota)
               </Heading>
               <Text>
                 You have{' '}
                 <b>{state.profile.super?.sessions_quota || 0} hour(s)</b> of
                 live mentorship sessions.
               </Text>
+              <ButtonGroup>
+                <GumroadButton
+                  productId="catamyst-super"
+                  email={state.user.email}
+                  leftIcon={<Icon name="super" />}
+                >
+                  Add mentorship hours
+                </GumroadButton>
+              </ButtonGroup>
             </Card>
           )}
 
@@ -103,6 +113,10 @@ export function SettingsSuper({ state }) {
                   </Link>
                   , the trusted payment processor. Make sure the email is the
                   same within your Catamyst account.
+                </ListItem>
+                <ListItem>
+                  Keep in mind that the payment confirmation takes time, about
+                  several seconds. If you have any trouble, please chat us.
                 </ListItem>
                 <ListItem>
                   You only need to pay once for a lifetime, because this is not

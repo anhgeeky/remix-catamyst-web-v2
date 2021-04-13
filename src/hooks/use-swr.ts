@@ -76,13 +76,15 @@ export const useAuthProfileSWR = (token) => {
   // console.warn({ data, error })
 
   /**
-   * When user might have been deleted.
+   * When user might have been deleted or signed out somewhere else.
    * FIXME: Could cause early signout when session is still revalidating.
    */
   if (error || data?.error === 401) {
     console.warn('Signing out because of expired session...')
-    // dispatch(signOut(false))
-    // supabase.auth.signOut()
+    console.warn({ data, error })
+    dispatch(signOut(false))
+    supabase.auth.signOut()
+    // This could happen when switching between development and production.
   }
 
   return {

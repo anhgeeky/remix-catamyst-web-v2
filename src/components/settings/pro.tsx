@@ -103,7 +103,8 @@ export function SettingsPro({ state }) {
             ) : (
               <Alert status="success" rounded="md">
                 <AlertIcon />
-                You've already in Super plan.
+                You've already in Super plan. It's the same with lifetime Pro
+                plan.
               </Alert>
             )}
 
@@ -120,6 +121,10 @@ export function SettingsPro({ state }) {
                   </Link>
                   , the trusted payment processor. Make sure the email is the
                   same within your Catamyst account.
+                </ListItem>
+                <ListItem>
+                  Keep in mind that the payment confirmation takes time, about
+                  several seconds. If you have any trouble, please chat us.
                 </ListItem>
                 <ListItem>
                   You only need to process this once while your subscription is

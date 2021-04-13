@@ -11,37 +11,41 @@ import { isDev } from '@utils'
  * Don't do Redux dispatch because it will pollute the actions.
  */
 export function useUserSession() {
-  const { auth } = useAuth()
   const dispatch = useDispatch()
+  const { auth } = useAuth()
   const [session, setSession] = useState<SupabaseAuthSession | null>(null)
   const [user, setUser] = useState(null)
 
+  /**
+   * FIXME: Probably had bugs before because the same session name variables.
+   */
   useEffect(() => {
-    // if (isDev) console.info('>>> useEffect in useUserSession is run.')
-
     try {
-      const session = supabase.auth.session()
+      const globalSession = supabase.auth.session()
 
-      if (auth.isAuthenticated && !session) {
-        if (isDev) console.info('>>> User is actually not authenticated')
+      // Auto sign out expired session
+      if (auth.isAuthenticated && !globalSession) {
+        if (isDev) {
+          console.info('>>> Indicator user is actually not authenticated')
+        }
         dispatch(signOut(false))
-        throw new Error('Not authenticated')
+        throw new Error('User not authenticated')
       }
 
-      setSession(session)
-      setUser(session?.user ?? null)
+      setSession(globalSession)
+      setUser(globalSession?.user ?? null)
 
       const { data: supabaseAuthListener } = supabase.auth.onAuthStateChange(
         async (event: string, session: SupabaseAuthSession | null) => {
           if (isDev) {
-            console.info('>>> Supabase auth state has changed.')
+            console.info('>>> Auth state has changed.')
             console.info({ event })
           }
 
-          setSession(session)
-          setUser(session?.user ?? null)
+          setSession(globalSession)
+          setUser(globalSession?.user ?? null)
 
-          if (session) {
+          if (globalSession) {
             dispatch(signInMagic())
           }
 

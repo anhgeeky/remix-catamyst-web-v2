@@ -5,7 +5,7 @@ import { supabaseAdmin } from '@lib/api'
  * Toggle Pro-related fields in profile.
  */
 export const upgradePro = async (req, res, profile) => {
-  console.info({ profile })
+  // console.info('>>> Upgrade Pro', { profile })
 
   try {
     const { data: newProfileData, error: newProfileError } = await supabaseAdmin

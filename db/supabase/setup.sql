@@ -131,17 +131,18 @@ insert with check (bucket_id = 'covers');
 /**
  * CUSTOMERS / PINGS / WEBHOOKS
  * For Gumroad / Stripe
- * Private table that maps user IDs to customer IDs in payment processor
+ * Private table that maps user email/ID to customer ID in payment processor
  */
 create table customers (
   -- Generate new id because it needs history
   id uuid default extensions.uuid_generate_v4() not null primary key,
-  -- Reference public.customers.user_id to auth.users.id
-  user_id uuid references auth.users not null,
-  -- The user's customer ID in Gumroad/Stripe
+  -- The user's customer email or ID in Gumroad/Stripe
   -- User must not be able to update this
-  customer_email citext not null,
+  customer_email citext,
+  customer_id text,
   plan user_plan default 'Pro'::user_plan,
+  -- Reference public.customers.user_id to auth.users.id
+  user_id uuid references auth.users,
   -- Purchase-related data
   data jsonb,
   -- Timestamps
