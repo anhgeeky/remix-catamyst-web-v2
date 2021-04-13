@@ -22,17 +22,17 @@ export function useUserSession() {
     try {
       const session = supabase.auth.session()
 
-      // if (auth.isAuthenticated && !session) {
-      //   if (isDev) console.info('>>> User is actually not authenticated')
-      //   dispatch(signOut(false))
-      //   throw new Error('Not authenticated')
-      // }
+      if (auth.isAuthenticated && !session) {
+        if (isDev) console.info('>>> User is actually not authenticated')
+        dispatch(signOut(false))
+        throw new Error('Not authenticated')
+      }
 
       setSession(session)
       setUser(session?.user ?? null)
 
       const { data: authListener } = supabase.auth.onAuthStateChange(
-        async (event: string, session: SupabaseAuthSession | null) => {
+        async (_event: string, session: SupabaseAuthSession | null) => {
           if (isDev) console.info('>>> Supabase auth state has changed.')
           if (session) dispatch(signInMagic())
           setSession(session)

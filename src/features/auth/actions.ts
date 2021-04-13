@@ -61,13 +61,13 @@ export const signUp = (form) => {
            * Apply the new profile to Redux store auth.profile
            */
           dispatch({ type: SIGN_UP_SUCCESS })
-          toast.closeAll()
-          toast({
-            ...toastOptions,
-            status: 'success',
-            title: 'Signed up.',
-            description: 'Welcome onboard!',
-          })
+          // toast.closeAll()
+          // toast({
+          //   ...toastOptions,
+          //   status: 'success',
+          //   title: 'Signed up.',
+          //   description: 'Welcome onboard!',
+          // })
         }
       }
     } catch (error) {
@@ -99,7 +99,7 @@ export const signIn = (data) => {
         if (error) throw error
         if (data) {
           dispatch({ type: SIGN_IN_SUCCESS })
-          mutateSWR('/api/auth/me')
+          // mutateSWR('/api/auth/me')
           toast.closeAll()
           toast({
             ...toastOptions,
@@ -116,7 +116,8 @@ export const signIn = (data) => {
         ...toastOptions,
         status: 'error',
         title: 'Failed to sign in.',
-        description: `Invalid email or password. Please try again.`,
+        description:
+          error?.status === 400 && `${error.message}. Please try again.`,
       })
     }
   }

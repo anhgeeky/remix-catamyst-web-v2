@@ -91,11 +91,10 @@ export function DashboardOverview({ state }) {
 
                 <UserNameHandle user={state.profile} />
 
-                <ButtonGroup size="sm">
+                <ButtonGroup size="sm" colorScheme="teal">
                   {state.profile.handle && (
                     <LinkButton
                       href={`/${state.profile.handle}`}
-                      colorScheme="teal"
                       leftIcon={<Icon name="profile" />}
                     >
                       Visit profile
@@ -104,7 +103,6 @@ export function DashboardOverview({ state }) {
                   {state.profile.handle && (
                     <LinkButton
                       href="/settings/profile"
-                      colorScheme="teal"
                       variant="outline"
                       leftIcon={<Icon name="settings" />}
                     >
@@ -114,10 +112,18 @@ export function DashboardOverview({ state }) {
                   {!state.profile.handle && (
                     <LinkButton
                       href="/settings/profile"
-                      colorScheme="teal"
                       leftIcon={<Icon name="settings" />}
                     >
                       Setup profile
+                    </LinkButton>
+                  )}
+                  {!state.profile.handle && (
+                    <LinkButton
+                      href="/onboard/welcome"
+                      variant="outline"
+                      leftIcon={<Icon name="onboard" />}
+                    >
+                      Onboard again
                     </LinkButton>
                   )}
                 </ButtonGroup>

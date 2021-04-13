@@ -1,8 +1,8 @@
+import { useEffect, useReducer } from 'react'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
-
 import {
   Avatar,
   HStack,
@@ -20,17 +20,66 @@ import {
 import { Icon, LinkButton } from '@components'
 import { signOut } from '@features/auth/actions'
 import { useProfile } from '@hooks'
+import { Profile } from '@types'
+import { supabase } from '@lib'
 
 export function HeaderUser() {
-  const { isAuthenticated, isError, profile } = useProfile()
+  const { isAuthenticated, profile } = useProfile()
 
-  /**
-   * Both checks are necessary because need to wait for async profile
-   */
-  if (isAuthenticated && !isError && profile) {
+  if (isAuthenticated && profile) {
     return <UserMenuButton profile={profile} />
   }
   return <UserAuthButtons />
+}
+
+type State = { profile: Profile }
+type Action = { type?: string; payload: any }
+
+export const profileEventReducer = (state: State, action: Action) => {
+  if (action.type === 'update') {
+    return { profile: action.payload }
+  } else if (action.type === 'set') {
+    return { profile: action.payload }
+  } else {
+    return { profile: {} }
+  }
+}
+
+export function UserMenu({ profile }) {
+  const initialState: State = profile
+  const [localState, localDispatch] = useReducer(
+    profileEventReducer,
+    initialState
+  )
+
+  useEffect(() => {
+    try {
+      const subscription = supabase
+        .from(`profiles:id=eq.${profile.id}`)
+        .on('*', (payload) => {
+          localDispatch({ type: 'update', payload: payload.new })
+        })
+        .subscribe()
+      return () => {
+        supabase.removeSubscription(subscription)
+      }
+    } catch (error) {
+      console.error(`>>> ${error.message}`)
+    }
+  }, [])
+
+  useEffect(() => {
+    try {
+      localDispatch({ type: 'set', payload: profile })
+    } catch (error) {
+      console.error(`>>> ${error.message}`)
+    }
+  }, [profile])
+
+  if (!localState.profile) {
+    return null
+  }
+  return <UserMenuButton profile={localState.profile} />
 }
 
 function UserMenuButton({ profile }) {

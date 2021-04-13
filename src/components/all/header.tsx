@@ -18,7 +18,6 @@ import {
   HeaderUser,
 } from '@components'
 import dataNavLinks from '@data/nav-links.json'
-import { useUserSession } from '@hooks'
 
 export function Header() {
   /**
@@ -36,11 +35,6 @@ export function Header() {
   function closeMenu() {
     setMenuOpen(false)
   }
-
-  /**
-   * Call useUserSession to fetch /api/auth/me
-   */
-  useUserSession()
 
   return (
     <>

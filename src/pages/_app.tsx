@@ -1,3 +1,4 @@
+import '@styles/fonts.css'
 import '@styles/globals.css'
 
 import type { AppProps } from 'next/app'
@@ -10,16 +11,15 @@ import { Integrations } from '@sentry/tracing'
 
 import theme from '@theme'
 import { Header } from '@components'
+import { AuthProvider } from '@components/auth'
 import { store, persistor } from '@features/store'
 
 const swrConfig = {
   onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
     // Never retry on 404 error.
     if (error.status === 404) return
-
     // Only retry several times.
     if (retryCount >= 3) return
-
     // Retry after 3 seconds.
     setTimeout(() => revalidate({ retryCount: retryCount + 1 }), 3000)
   },
@@ -53,6 +53,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
             <PersistGate loading={null} persistor={persistor}>
+              <AuthProvider />
+              <Header />
               <Component {...pageProps} />
             </PersistGate>
           </SWRConfig>

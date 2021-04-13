@@ -64,6 +64,7 @@ import {
   FaUser as ProfileIcon,
   FaReceipt as InvoicesIcon,
   // Dashboard icons
+  FaChild as OnboardIcon,
   FaBinoculars as OverviewIcon,
   FaUser as UsersIcon,
   FaChartLine as StatsIcon,
@@ -254,6 +255,8 @@ export function Icon({ name }) {
       return <TitleIcon />
     case 'up':
       return <UpIcon />
+    case 'onboard':
+      return <OnboardIcon />
     case 'dashboard':
       return <DashboardIcon />
     case 'profile':

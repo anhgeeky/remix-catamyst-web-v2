@@ -40,6 +40,7 @@ export { ReferenceIcon } from '@components/all/reference-icon'
 export { SocialLinks } from '@components/all/social-links'
 export { TagSkill } from '@components/all/tag-skill'
 export { Debug } from '@components/all/debug'
+export { Fonts } from '@components/all/fonts'
 
 export { toast } from '@components/all/toast'
 export { useToast } from '@hooks/use-toast'

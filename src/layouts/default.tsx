@@ -2,7 +2,7 @@ import NextHead from 'next/head'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
 
-import { Header, Footer } from '@components'
+import { Footer } from '@components'
 import dataSite from '@data/site.json'
 
 export function Layout({ title = 'Catamyst', children = null }) {
@@ -41,8 +41,6 @@ export function Layout({ title = 'Catamyst', children = null }) {
         <meta name="msapplication-TileColor" content="#00aaaa" />
         <meta name="theme-color" content="#00aaaa" />
       </NextHead>
-
-      <Header />
 
       {/* Affected by the height change in header. */}
       <Box as="main" pt={{ base: 45, lg: 55 }} minH="80vh">
