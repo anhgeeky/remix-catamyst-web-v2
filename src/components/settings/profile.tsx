@@ -32,8 +32,8 @@ export function SettingsProfile({ state }) {
 
       <Content>
         <Stack
-          direction={{ base: 'column', lg: 'row' }}
-          align={{ lg: 'flex-start' }}
+          direction={{ base: 'column', md: 'row' }}
+          align={{ md: 'flex-start' }}
           spacing={5}
         >
           <UserProfilePreview profile={state.profile} />

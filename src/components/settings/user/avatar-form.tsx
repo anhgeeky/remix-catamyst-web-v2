@@ -77,9 +77,8 @@ export function UserAvatarForm({ state }) {
           )}
         </InputGroup>
         <FormHelperText>
-          Profile picture. Click on the avatar to upload and change. Or change
-          the avatar URL directly. Your image should be square, recommended size
-          is 300×300px, with format of JPG, PNG, or GIF.
+          Profile picture. Click on the avatar to upload and change. Image
+          should be square, recommended size is 300×300px (JPG/PNG/GIF).
         </FormHelperText>
         <Button
           alignSelf="flex-start"

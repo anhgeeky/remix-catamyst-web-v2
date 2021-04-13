@@ -90,33 +90,44 @@ export function UserProfilePreview({ profile }) {
   )
 
   useEffect(() => {
-    // https://supabase.io/docs/reference/javascript/subscribe#listening-to-row-level-changes
-    const subscription = supabase
-      .from(`profiles:id=eq.${profile.id}`)
-      .on('*', (payload) => {
-        /**
-         * Handle record updated using dispatch action.
-         */
-        localDispatch({ type: 'update', payload: payload.new })
-      })
-      .subscribe()
+    try {
+      // https://supabase.io/docs/reference/javascript/subscribe#listening-to-row-level-changes
+      const subscription = supabase
+        .from(`profiles:id=eq.${profile.id}`)
+        .on('*', (payload) => {
+          /**
+           * Handle record updated using dispatch action.
+           */
+          localDispatch({ type: 'update', payload: payload.new })
+        })
+        .subscribe()
 
-    return () => {
-      supabase.removeSubscription(subscription)
+      return () => {
+        supabase.removeSubscription(subscription)
+      }
+    } catch (error) {
+      console.error(`>>> ${error.message}`)
     }
   }, [])
 
   useEffect(() => {
-    localDispatch({ type: 'set', payload: profile })
+    try {
+      localDispatch({ type: 'set', payload: profile })
+    } catch (error) {
+      console.error(`>>> ${error.message}`)
+    }
   }, [profile])
 
   // return <pre>{JSON.stringify(localState, null, 2)}</pre>
+  if (!localState.profile) {
+    return <div>Loading...</div>
+  }
   return <ProfileCard profile={localState.profile} />
 }
 
 export default function ProfileCard({ profile }) {
   return (
-    <Card id="preview" maxW={{ lg: '420px' }} width="100%" p={0}>
+    <Card id="preview" maxW={{ md: '420px' }} width="100%" p={0}>
       <Box>
         <Flex justify="center">
           <Box

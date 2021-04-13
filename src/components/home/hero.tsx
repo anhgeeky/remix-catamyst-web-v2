@@ -1,4 +1,3 @@
-import NextImage from 'next/image'
 import {
   Heading,
   Stack,
@@ -10,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { FaCheckCircle as CheckIcon } from 'react-icons/fa'
 
+import { NextImage } from '@components'
 import { HomeCTA } from '@components/home'
 import dataHeroHome from '@data/hero-home.json'
 

@@ -1,5 +1,4 @@
 import NextLink from 'next/link'
-import NextImage from 'next/image'
 import {
   Heading,
   Text,
@@ -10,7 +9,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { LinkButton, Icon } from '@components'
+import { NextImage, LinkButton, Icon } from '@components'
 import { useAuth } from '@hooks'
 import dataFeatures from '@data/features.json'
 

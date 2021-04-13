@@ -22,11 +22,11 @@ export function useUserSession() {
     try {
       const session = supabase.auth.session()
 
-      if (auth.isAuthenticated && !session) {
-        if (isDev) console.info('>>> User is actually not authenticated')
-        dispatch(signOut(false))
-        throw new Error('Not authenticated')
-      }
+      // if (auth.isAuthenticated && !session) {
+      //   if (isDev) console.info('>>> User is actually not authenticated')
+      //   dispatch(signOut(false))
+      //   throw new Error('Not authenticated')
+      // }
 
       setSession(session)
       setUser(session?.user ?? null)
