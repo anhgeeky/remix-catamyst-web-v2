@@ -2,6 +2,7 @@ import { useEffect, useReducer } from 'react'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 import {
+  chakra,
   Link,
   Flex,
   Box,
@@ -12,7 +13,7 @@ import {
   VStack,
   Avatar,
   useColorModeValue,
-  chakra,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
@@ -91,13 +92,9 @@ export function UserProfilePreview({ profile }) {
 
   useEffect(() => {
     try {
-      // https://supabase.io/docs/reference/javascript/subscribe#listening-to-row-level-changes
       const subscription = supabase
         .from(`profiles:id=eq.${profile.id}`)
         .on('*', (payload) => {
-          /**
-           * Handle record updated using dispatch action.
-           */
           localDispatch({ type: 'update', payload: payload.new })
         })
         .subscribe()
@@ -126,11 +123,18 @@ export function UserProfilePreview({ profile }) {
 }
 
 export default function ProfileCard({ profile }) {
+  const [isTooSmall] = useMediaQuery('(max-width: 48em)')
+
   return (
-    <Card id="preview" maxW={{ md: '420px' }} width="100%" p={0}>
+    <Card
+      className={`profile-preview ${!isTooSmall && 'sticky'}`}
+      maxW={{ md: '420px' }}
+      width="100%"
+      p={0}
+    >
       <Box>
         <Flex justify="center">
-          <Box
+          <Flex
             className="next-image-container"
             width="100%"
             overflow="auto"
@@ -145,10 +149,10 @@ export default function ProfileCard({ profile }) {
               }
               layout="fixed"
               objectFit="cover"
-              width={420}
+              width={720}
               height={100}
             />
-          </Box>
+          </Flex>
         </Flex>
 
         <Stack p={5}>

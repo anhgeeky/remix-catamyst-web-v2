@@ -10,6 +10,7 @@ import {
   InputLeftAddon,
   InputRightElement,
   Stack,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -22,6 +23,7 @@ import { HandleSchema } from '@utils/yup'
 type Inputs = { handle: string }
 
 export function UserHandleForm({ state }) {
+  const [isTooSmall] = useMediaQuery('(max-width: 62em)')
   const toast = useToast()
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
@@ -56,7 +58,7 @@ export function UserHandleForm({ state }) {
         >
           <FormLabel>Username</FormLabel>
           <InputGroup>
-            <InputLeftAddon children="catamyst.com/" />
+            {!isTooSmall && <InputLeftAddon children="catamyst.com/" />}
             <Input
               type="text"
               placeholder="username"

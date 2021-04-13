@@ -108,6 +108,16 @@ p code {
 }
 
 /**
+ * Profile preview sticky
+ */
+
+.profile-preview.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+/**
  * NextImage container.
  */
 
