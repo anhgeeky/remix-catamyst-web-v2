@@ -1,4 +1,4 @@
-import { Box, Flex, useColorModeValue } from '@chakra-ui/react'
+import { Stack, Flex, useColorModeValue } from '@chakra-ui/react'
 
 export function LearnHero(props) {
   const color = props.color || 'cyan'
@@ -6,10 +6,10 @@ export function LearnHero(props) {
   const bg = useColorModeValue(`${color}.100`, `${color}.900`)
 
   return (
-    <Flex py={10} color={textColor} bg={bg} justify="center">
-      <Box px={5} width="1200px" {...props}>
+    <Flex py={10} pb={16} color={textColor} bg={bg} justify="center">
+      <Stack px={5} width="1200px" {...props}>
         {props.children}
-      </Box>
+      </Stack>
     </Flex>
   )
 }

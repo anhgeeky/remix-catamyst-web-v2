@@ -13,16 +13,36 @@ export function LessonIcon({ type, size = 4 }) {
         aria-label="Fundamental lesson"
         as={FundamentalIcon}
         boxSize={size}
+        color="yellow.500"
       />
     )
   }
   if (type === 'Specific') {
     return (
-      <Icon aria-label="Specific lesson" as={SpecificIcon} boxSize={size} />
+      <Icon
+        aria-label="Specific lesson"
+        as={SpecificIcon}
+        boxSize={size}
+        color="blue.500"
+      />
     )
   }
   if (type === 'Project') {
-    return <Icon aria-label="Project lesson" as={ProjectIcon} boxSize={size} />
+    return (
+      <Icon
+        aria-label="Project lesson"
+        as={ProjectIcon}
+        boxSize={size}
+        color="green.500"
+      />
+    )
   }
-  return <Icon aria-label="Unknown category" as={UnknownIcon} boxSize={size} />
+  return (
+    <Icon
+      aria-label="Unknown category"
+      as={UnknownIcon}
+      boxSize={size}
+      color="gray.500"
+    />
+  )
 }

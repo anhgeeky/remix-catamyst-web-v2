@@ -44,7 +44,8 @@ export function Layout({ title = 'Catamyst', children = null }) {
 
       <Header />
 
-      <Box as="main" pt={{ base: 45, sm: 55 }} minH="80vh">
+      {/* Affected by the height change in header. */}
+      <Box as="main" pt={{ base: 45, lg: 55 }} minH="80vh">
         <SkipNavContent>{children}</SkipNavContent>
       </Box>
 

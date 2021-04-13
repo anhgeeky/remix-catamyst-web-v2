@@ -1,5 +1,4 @@
 import NextHead from 'next/head'
-import { useRouter } from 'next/router'
 import {
   Box,
   Container,
@@ -10,7 +9,12 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-import { LearningTag, PaginationLessons, AlertSoon } from '@components'
+import {
+  BreadcrumbLinkButtons,
+  LearningTag,
+  PaginationLessons,
+  AlertSoon,
+} from '@components'
 import { LearnHero } from '@components/learn'
 import { Block } from '@components/blocks'
 import { usePaginationLessons } from '@hooks'
@@ -30,6 +34,13 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
 
       <LearnHero>
         <Stack id="lesson-hero" align="center" py={5} spacing={5}>
+          <BreadcrumbLinkButtons
+            breadcrumbs={[
+              { href: `/learn`, title: 'Learn' },
+              { href: `/learn/web`, title: 'Web' },
+              { href: `/learn/web/getting-started`, title: 'Getting started' },
+            ]}
+          />
           <PaginationLessons
             mode="minimal"
             track={track}

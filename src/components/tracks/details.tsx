@@ -3,8 +3,6 @@ import NextImage from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import {
-  chakra,
-  Box,
   ButtonGroup,
   Button,
   Flex,
@@ -16,7 +14,12 @@ import {
   WrapItem,
 } from '@chakra-ui/react'
 
-import { Icon, ContentWithSidebar, CollectionTopics } from '@components'
+import {
+  BreadcrumbLinkButtons,
+  Icon,
+  ContentWithSidebar,
+  CollectionTopics,
+} from '@components'
 import { LearnHero } from '@components/learn'
 import { useAuth, useToast } from '@hooks'
 
@@ -69,6 +72,9 @@ export function TrackDetails({ trackSlug }) {
 export function TrackHero({ track }) {
   return (
     <LearnHero>
+      <BreadcrumbLinkButtons
+        breadcrumbs={[{ href: `/learn`, title: 'Learn' }]}
+      />
       <Wrap as={Flex} spacing={5}>
         <WrapItem>
           <NextImage

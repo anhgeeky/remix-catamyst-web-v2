@@ -1,7 +1,8 @@
 import NextHead from 'next/head'
-import { Flex, HStack, chakra, Heading, Text, Stack } from '@chakra-ui/react'
+import { Heading, HStack, Stack, Text } from '@chakra-ui/react'
 
 import {
+  BreadcrumbLinkButtons,
   Icon,
   ContentWithSidebar,
   CollectionLessons,
@@ -30,10 +31,12 @@ export function TopicDetails({ trackSlug, topicSlug }) {
         <>
           <NextHead>
             <title>
-              {topic.title} · {trackSlug} · Catamyst
+              {topic.title} · {track.title} · Catamyst
             </title>
           </NextHead>
-          <TopicHero topic={topic} />
+
+          <TopicHero track={track} topic={topic} />
+
           <ContentWithSidebar>
             <TopicSidebar topic={topic} />
             <Stack spacing={5} width="100%">
@@ -51,9 +54,15 @@ export function TopicDetails({ trackSlug, topicSlug }) {
   )
 }
 
-export function TopicHero({ topic }) {
+export function TopicHero({ track, topic }) {
   return (
     <LearnHero>
+      <BreadcrumbLinkButtons
+        breadcrumbs={[
+          { href: `/learn`, title: 'Learn' },
+          { href: `/learn/web`, title: 'Web' },
+        ]}
+      />
       <Heading as="h1" size="xl">
         {topic.iconEmoji} {topic.title}
       </Heading>

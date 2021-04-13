@@ -23,7 +23,11 @@ export { Hero } from '@components/all/hero'
 export { Icon } from '@components/all/icon'
 export { LearningTag } from '@components/all/learning-tag'
 export { LessonIcon } from '@components/all/lesson-icon'
-export { LinkButton } from '@components/all/link-button'
+export {
+  LinkButton,
+  BreadcrumbLinkButtons,
+  BreadcrumbLinkButton,
+} from '@components/all/link-button'
 export { Logo } from '@components/all/logo'
 export { MembershipButtons } from '@components/all/membership-buttons'
 export { MenuPanel } from '@components/all/menu-panel'
