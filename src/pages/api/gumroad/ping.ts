@@ -74,9 +74,9 @@ export default async function gumroadPing(
        * 4. Determine and update corresponding profile.plan data
        */
       if (req.body.permalink === 'catamyst-pro') {
-        await upgradePro(req, res, profile)
+        await upgradePro(req, res, profile, false)
       } else if (req.body.permalink === 'catamyst-pro-lifetime') {
-        await upgradePro(req, res, profile)
+        await upgradePro(req, res, profile, true)
       } else if (req.body.permalink === 'catamyst-super') {
         await upgradeSuper(req, res, profile)
       } else {

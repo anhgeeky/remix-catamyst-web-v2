@@ -1,10 +1,17 @@
+import { NextApiRequest, NextApiResponse } from 'next'
+
 import { supabase } from '@lib'
 import { supabaseAdmin } from '@lib/api'
 
 /**
  * Toggle Pro-related fields in profile.
  */
-export const upgradePro = async (req, res, profile) => {
+export const upgradePro = async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+  profile,
+  lifetime = false
+) => {
   // console.info('>>> Upgrade Pro', { profile })
 
   try {
@@ -14,9 +21,10 @@ export const upgradePro = async (req, res, profile) => {
         id: profile.id,
         plan: 'Pro',
         pro: {
-          email: req.body.email || '',
-          license_key: req.body.license_key || '',
-          subscription_id: req.body.subscription_id || '',
+          email: req.body?.email || '',
+          license_key: req.body?.license_key || '',
+          subscription_id: req.body?.subscription_id || '',
+          lifetime: lifetime,
         },
       })
       .single()

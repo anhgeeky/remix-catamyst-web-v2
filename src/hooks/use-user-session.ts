@@ -50,12 +50,12 @@ export function useUserSession() {
           }
 
           if (event === 'PASSWORD_RECOVERY') {
-            if (isDev) console.log('update_password')
+            if (isDev) console.info('update_password')
           }
 
           if (event === 'USER_UPDATED')
             setTimeout(() => {
-              if (isDev) console.log('sign_in')
+              if (isDev) console.info('sign_in')
             }, 1000)
 
           /**

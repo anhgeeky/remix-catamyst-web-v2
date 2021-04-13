@@ -96,7 +96,7 @@ export function SettingsSuper({ state }) {
             ) : (
               <Alert status="success" rounded="md">
                 <AlertIcon />
-                You've paid for Super plan.
+                You are in Super plan.
               </Alert>
             )}
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const dataCode = {
-  code: `console.log("Hello world");\n\nfunction hello() {}`,
+  code: `alert("Hello world");\n\nfunction hello() {}`,
   type: 'code',
   language: 'javascript',
   highlight: [0, 2],

@@ -1,9 +1,14 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import { supabaseAdmin } from '@lib/api'
 
 /**
  * Toggle Super-related fields in profile.
  */
-export const upgradeSuper = async (req, res, profile) => {
+export const upgradeSuper = async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+  profile
+) => {
   // console.info('>>> Upgrade Super', { profile })
 
   try {
