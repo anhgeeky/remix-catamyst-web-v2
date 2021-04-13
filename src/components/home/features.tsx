@@ -35,7 +35,7 @@ export function HomeFeatures() {
 
       {/* <VStack width="100%"> */}
       <SimpleGrid spacing={5} width="100%" minChildWidth={280}>
-        {dataFeatures.map((feature) => {
+        {dataFeatures.map((feature, index) => {
           return (
             <NextLink key={feature.slug} href={feature.href} passHref>
               <Link

@@ -10,6 +10,7 @@ import {
   LinkButton,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getName } from '@utils'
 
 export function DashboardJobs({ state }) {
   return (
@@ -44,7 +45,7 @@ export function DashboardJobs({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.nickname}, you haven't applied to a job
+                  Hey {getName(state.profile)}, you haven't applied to a job
                   yet.
                 </Text>
                 <LinkButton colorScheme="teal" href="/jobs">

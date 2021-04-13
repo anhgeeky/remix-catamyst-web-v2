@@ -64,6 +64,7 @@ export const useProfileHandleSWR = (handle) => {
 
 export const useAuthProfileSWR = (token) => {
   const dispatch = useDispatch()
+  // console.log({ token })
 
   /**
    * Attempt to request with session.access_token.
@@ -73,10 +74,13 @@ export const useAuthProfileSWR = (token) => {
     fetcherWithTokenSWR
   )
 
+  // console.log({ data, error })
+
   /**
    * When user might have been deleted.
    */
-  if (error?.status === 401) {
+  if (error || data?.error === 401) {
+    console.error('Signing out...')
     dispatch(signOut(false))
     supabase.auth.signOut()
   }

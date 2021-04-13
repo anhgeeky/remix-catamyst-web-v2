@@ -81,7 +81,12 @@ export function ProjectDetails({ projectSlug }) {
                   </Heading>
                   {project.url && (
                     <Heading as="h2" size="lg">
-                      <Link isExternal href={project.url}>
+                      <Link
+                        isExternal
+                        href={project.url}
+                        wordWrap="break-word"
+                        wordBreak="break-word"
+                      >
                         {trimUrl(project.url)}
                       </Link>
                     </Heading>

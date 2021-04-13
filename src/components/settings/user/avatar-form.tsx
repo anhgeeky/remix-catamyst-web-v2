@@ -19,9 +19,7 @@ import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
 
-type Inputs = {
-  avatar_url?: string
-}
+type Inputs = { avatar_url?: string }
 
 export function UserAvatarForm({ state }) {
   const dispatch = useDispatch()

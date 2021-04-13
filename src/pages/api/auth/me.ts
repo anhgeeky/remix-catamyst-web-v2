@@ -12,7 +12,9 @@ export default async function authMe(
   res: NextApiResponse
 ) {
   try {
+    // console.log({ token: req.headers.authorization })
     const user = await getUser(req.headers.authorization)
+    // console.log({ user })
 
     // 'id,handle,name,avatar_url'
     const { data: profile } = await supabase
@@ -28,8 +30,12 @@ export default async function authMe(
       profile,
     })
   } catch (error) {
-    res.status(200).json({
+    /**
+     * Don't change status as useAuthProfileSWR use this.
+     */
+    res.status(401).json({
       message: 'Failed to get profile by authenticated id',
+      error: true,
     })
   }
 }

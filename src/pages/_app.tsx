@@ -25,7 +25,17 @@ const swrConfig = {
   },
 }
 
+const consoleColor = `background: #00aaaa; color: #ffffff;`
+
 export default function App({ Component, pageProps }: AppProps) {
+  if (process.env.NODE_ENV !== 'production') {
+    console.info(`%c Let's have some debugging! `, consoleColor)
+  }
+
+  if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
+    console.info('%c Hello, fellow developers! ', consoleColor)
+  }
+
   if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
     Sentry.init({
       dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
@@ -43,7 +53,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
             <PersistGate loading={null} persistor={persistor}>
-              <Header />
               <Component {...pageProps} />
             </PersistGate>
           </SWRConfig>

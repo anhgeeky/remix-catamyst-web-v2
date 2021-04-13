@@ -57,7 +57,7 @@ export function CMSOverview({ state }) {
 
       <Content>
         <Stack as={Flex} spacing={5} direction={{ base: 'column', sm: 'row' }}>
-          {data.stats.map((stat) => {
+          {data.stats.map((stat, index) => {
             return (
               <Stat
                 as={Card}

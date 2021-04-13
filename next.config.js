@@ -47,19 +47,23 @@ module.exports = {
   },
 }
 
-const gumroad = `gumroad.com *.gumroad.com gum.co`
+const sites = `*.google.com *.youtube.com *.twitter.com`
+const supabase = `supabase.io supabase.co *.supabase.io *.supabase.co`
+const splitbee = `splitbee.io cdn.splitbee.io hive.splitbee.io *.splitbee.io`
+const sentry = `sentry.io *.sentry.io *.getsentry.net`
+const gumroad = `gumroad.com gum.co *.gumroad.com *.gum.co`
 const stripe = `stripe.com *.stripe.com`
 const paypal = `paypal.com *.paypal.com`
 
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google.com *.youtube.com *.twitter.com cdn.splitbee.io *.sentry.io *.getsentry.net ${gumroad} ${stripe} ${paypal};
-  frame-src 'self' ${gumroad} ${paypal};
-  child-src 'self' *.google.com *.youtube.com *.twitter.com ${gumroad} ${stripe} ${paypal};
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' ${sites} ${supabase} ${splitbee} ${sentry} ${gumroad} ${stripe} ${paypal};
+  frame-src 'self' ${supabase} ${gumroad} ${paypal};
+  child-src 'self' ${sites} ${supabase} ${gumroad} ${stripe} ${paypal};
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   img-src * blob: data:;
-  media-src 'self' 'none';
+  media-src 'self';
   font-src 'self';
   connect-src *;
 `

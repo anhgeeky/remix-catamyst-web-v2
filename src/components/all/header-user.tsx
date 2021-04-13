@@ -27,7 +27,7 @@ export function HeaderUser() {
   /**
    * Both checks are necessary because need to wait for async profile
    */
-  if (isAuthenticated && !isError) {
+  if (isAuthenticated && !isError && profile) {
     return <UserMenuButton profile={profile} />
   }
   return <UserAuthButtons />
@@ -71,12 +71,12 @@ function UserMenuButton({ profile }) {
             rounded="full"
             className="next-image-avatar-container"
           >
-            {!profile.avatar_url && <Avatar name={profile.name} size="sm" />}
-            {profile.avatar_url && (
+            {!profile?.avatar_url && <Avatar name={profile.name} size="sm" />}
+            {profile?.avatar_url && (
               <Box className="next-image-container user-avatar" rounded="full">
                 <NextImage
                   className="next-image"
-                  src={profile.avatar_url}
+                  src={profile?.avatar_url}
                   layout="fixed"
                   width={32}
                   height={32}
@@ -87,17 +87,17 @@ function UserMenuButton({ profile }) {
         </MenuButton>
 
         <MenuList boxShadow="lg">
-          {!profile.handle && profile.name && (
+          {!profile?.handle && profile?.name && (
             <MenuItem>
               <Flex direction="column">
-                Signed in as <b>{profile.name}</b>
+                Signed in as <b>{profile?.name}</b>
               </Flex>
             </MenuItem>
           )}
-          {profile.handle && (
-            <MenuItem onClick={() => router.push(`/${profile.handle}`)}>
+          {profile?.handle && (
+            <MenuItem onClick={() => router.push(`/${profile?.handle}`)}>
               <Flex direction="column">
-                Signed in as <b>@{profile.handle}</b>
+                Signed in as <b>@{profile?.handle}</b>
               </Flex>
             </MenuItem>
           )}

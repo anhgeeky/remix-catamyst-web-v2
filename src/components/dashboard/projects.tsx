@@ -10,6 +10,7 @@ import {
   LinkButton,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getName } from '@utils'
 
 export function DashboardProjects({ state }) {
   const [isTablet] = useMediaQuery('(max-width: 768px)')
@@ -48,7 +49,7 @@ export function DashboardProjects({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.nickname}, you don't have any published
+                  Hey {getName(state.profile)}, you don't have any published
                   projects yet.
                 </Text>
                 <LinkButton colorScheme="teal" href="/dashboard/projects/new">
@@ -63,7 +64,7 @@ export function DashboardProjects({ state }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {state.profile.nickname}, you don't have any draft
+                  Hey {getName(state.profile)}, you don't have any draft
                   projects.
                 </Text>
                 <LinkButton colorScheme="teal" href="/dashboard/projects/new">

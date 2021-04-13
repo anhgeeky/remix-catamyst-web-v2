@@ -10,6 +10,7 @@ import {
   LinkButton,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getName } from '@utils'
 
 export function DashboardPosts({ state }) {
   return (
@@ -44,7 +45,7 @@ export function DashboardPosts({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.nickname}, you don't have any published
+                  Hey {getName(state.profile)}, you don't have any published
                   posts yet.
                 </Text>
                 <LinkButton href="/dashboard/posts/new" colorScheme="teal">
@@ -59,7 +60,7 @@ export function DashboardPosts({ state }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {state.profile.nickname}, you don't have any draft posts.
+                  Hey {getName(state.profile)}, you don't have any draft posts.
                 </Text>
                 <LinkButton href="/dashboard/posts/new" colorScheme="teal">
                   Write a post

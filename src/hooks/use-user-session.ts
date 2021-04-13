@@ -4,18 +4,26 @@ import { useDispatch } from 'react-redux'
 
 import { supabase } from '@lib'
 import { signOut } from '@features/auth/actions'
+import { useAuth } from '@hooks'
 
 /**
  * Don't do Redux dispatch because it will pollute the actions.
  */
 export function useUserSession() {
+  const { auth } = useAuth()
   const dispatch = useDispatch()
-  const [user, setUser] = useState(null)
   const [session, setSession] = useState<SupabaseAuthSession | null>(null)
+  const [user, setUser] = useState(null)
+
+  // console.info({ session, user })
 
   useEffect(() => {
     try {
+      // console.log('useEffect in useUserSession...')
+      if (!auth.isAuthenticated) throw new Error('Not authenticated')
+
       const session = supabase.auth.session()
+      if (!session) throw new Error('Not authenticated')
 
       setSession(session)
       setUser(session?.user ?? null)

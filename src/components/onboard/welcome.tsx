@@ -36,7 +36,7 @@ import { supabase } from '@lib'
 type Inputs = { handle: string }
 
 export function OnboardWelcome({ state }) {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState<boolean>(false)
   const { register, handleSubmit, watch, setError, errors } = useForm<Inputs>({
     resolver: yupResolver(HandleSchema),
   })

@@ -20,8 +20,8 @@ export function useRedirectSignIn() {
 
   // FIXME: Issue with cleanup
   useEffect(() => {
-    !isAuthenticated && isError && router.replace('/signin')
-  }, [isAuthenticated, isError])
+    !isAuthenticated && router.replace('/signin')
+  }, [isAuthenticated])
 
   return {
     auth,

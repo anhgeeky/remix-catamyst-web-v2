@@ -2,29 +2,49 @@
   {
     "text": "Company",
     "links": [
-      { "path": "/", "text": "Home" },
-      { "path": "/about", "text": "About" },
-      { "path": "/help", "text": "Help" }
+      { "path": "/", "text": "Home", "isEnabled": true },
+      { "path": "/about", "text": "About", "isEnabled": true },
+      { "path": "/help", "text": "Help", "isEnabled": true }
     ]
   },
   {
     "text": "Features",
     "links": [
-      { "path": "/learn", "text": "Learn" },
-      { "path": "/discover", "text": "Discover" },
-      { "path": "/forum", "text": "Forum" },
-      { "path": "/jobs", "text": "Jobs" },
-      { "path": "/pricing", "text": "Pricing" },
+      { "path": "/learn", "text": "Learn", "isEnabled": true },
+      { "path": "/discover", "text": "Discover", "isEnabled": true },
+      { "path": "/forum", "text": "Forum", "isEnabled": true },
+      { "path": "/jobs", "text": "Jobs", "isEnabled": true },
+      { "path": "/pricing", "text": "Pricing", "isEnabled": true },
       { "path": "/search", "text": "Search", "isEnabled": false }
     ]
   },
   {
     "text": "Account",
     "links": [
-      { "path": "/signup", "text": "Sign Up" },
-      { "path": "/signin", "text": "Sign In" },
-      { "path": "/dashboard/overview", "text": "Dashboard" },
-      { "path": "/settings/overview", "text": "Settings" }
+      {
+        "path": "/signup",
+        "text": "Sign Up",
+        "isEnabled": true,
+        "isAuthenticated": false
+      },
+      {
+        "path": "/signin",
+        "text": "Sign In",
+        "isEnabled": true,
+        "isAuthenticated": false
+      },
+      {
+        "path": "/dashboard/overview",
+        "text": "Dashboard",
+        "isEnabled": true,
+        "isAuthenticated": true
+      },
+      {
+        "path": "/settings/overview",
+        "text": "Settings",
+        "isEnabled": true,
+        "isAuthenticated": true
+      }
     ]
   }
 ]

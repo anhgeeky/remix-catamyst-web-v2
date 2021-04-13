@@ -10,6 +10,7 @@ import {
   LinkButton,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getName } from '@utils'
 
 export function DashboardDiscussions({ state }) {
   return (
@@ -44,7 +45,7 @@ export function DashboardDiscussions({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.nickname}, you haven't involved in any
+                  Hey {getName(state.profile)}, you haven't involved in any
                   discussions yet.
                 </Text>
                 <LinkButton href="/forum" colorScheme="teal">

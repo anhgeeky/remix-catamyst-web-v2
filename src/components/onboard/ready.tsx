@@ -35,6 +35,15 @@ export function OnboardReady({ state }) {
           <LinkButton href="/learn" leftIcon={<Icon name="learn" />}>
             Let's learn something!
           </LinkButton>
+          {state.profile.handle && (
+            <LinkButton
+              variant="outline"
+              href={`/${state.profile.handle}`}
+              leftIcon={<Icon name="profile" />}
+            >
+              Check my profile
+            </LinkButton>
+          )}
           <LinkButton
             variant="outline"
             href="/dashboard/overview"
@@ -49,15 +58,6 @@ export function OnboardReady({ state }) {
           >
             Go to settings
           </LinkButton>
-          {state.profile.handle && (
-            <LinkButton
-              variant="outline"
-              href={`/${state.profile.handle}`}
-              leftIcon={<Icon name="profile" />}
-            >
-              Check my profile
-            </LinkButton>
-          )}
           <LinkButton
             variant="ghost"
             href="/onboard/mode"

@@ -18,10 +18,7 @@ import { NameNickSchema } from '@utils/yup'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
 
-type Inputs = {
-  name?: string
-  nickname?: string
-}
+type Inputs = { name?: string; nickname?: string }
 
 export function UserNameForm({ state }) {
   const dispatch = useDispatch()

@@ -6,3 +6,11 @@ export function getNickname(name: string): string {
     return name
   }
 }
+
+export function getName(profile): string {
+  try {
+    return profile.nickname || profile.name || 'You'
+  } catch (error) {
+    return 'You'
+  }
+}

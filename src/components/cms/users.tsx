@@ -88,7 +88,7 @@ export function CMSUsers({ state }) {
             <Text flex={1}>Updated</Text>
           </HStack>
 
-          {data.users.map((user) => {
+          {data.users.map((user, index) => {
             return (
               <NextLink key={user.id} href={`/cms/users/${user.id}`} passHref>
                 <a>

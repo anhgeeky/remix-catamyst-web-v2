@@ -98,8 +98,8 @@ export const signIn = (data) => {
       if (user) {
         if (error) throw error
         if (data) {
-          mutateSWR('/api/auth/me')
           dispatch({ type: SIGN_IN_SUCCESS })
+          mutateSWR('/api/auth/me')
           toast.closeAll()
           toast({
             ...toastOptions,
@@ -160,7 +160,6 @@ export const signOut = (notify = true) => {
     supabase.auth.signOut()
     try {
       dispatch({ type: SIGN_OUT_SUCCESS })
-      mutateSWR('/api/auth/me')
       toast.closeAll()
       notify &&
         toast({

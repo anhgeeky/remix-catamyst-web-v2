@@ -281,7 +281,7 @@ function ViewResult({ toast, handleChange, formTrack, formTopics }) {
 
           {formTopics?.length < 1 && <Text>No topics yet.</Text>}
 
-          {formTopics.map((topic) => {
+          {formTopics.map((topic, index) => {
             return (
               <Card p={2} key={topic.id}>
                 <HStack justify="space-between">

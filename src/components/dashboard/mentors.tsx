@@ -10,6 +10,7 @@ import {
   LinkButton,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getName } from '@utils'
 
 export function DashboardMentors({ state }) {
   return (
@@ -45,7 +46,7 @@ export function DashboardMentors({ state }) {
                     />
                   </Box>
                   <Text>
-                    Hey {state.profile.nickname}, you don't have any mentors
+                    Hey {getName(state.profile)}, you don't have any mentors
                     yet.
                   </Text>
                   <LinkButton colorScheme="teal" href="/settings/super">

@@ -53,7 +53,7 @@ export function HomeReviews() {
 function UserReviews({ reviews }) {
   return (
     <>
-      {reviews.map((user) => {
+      {reviews.map((user, index) => {
         if (user.is_published !== false) {
           return (
             <Card

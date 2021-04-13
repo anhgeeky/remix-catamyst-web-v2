@@ -89,7 +89,7 @@ export function CMSLessons({ state }) {
             </Text>
           </HStack>
 
-          {data.lessons.map((lesson) => {
+          {data.lessons.map((lesson, index) => {
             return (
               <NextLink
                 key={lesson.slug}

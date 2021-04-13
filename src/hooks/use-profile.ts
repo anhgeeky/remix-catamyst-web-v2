@@ -17,6 +17,19 @@ export function useProfile() {
     session?.access_token
   )
 
+  if (!process.env.VERCEL) {
+    const debugUseProfile = {
+      auth: auth,
+      user: user,
+      profile: profile,
+      isAuthenticated: auth.isAuthenticated,
+      isAuthorized: profile?.role,
+      isLoading: isLoading,
+      isError: isError,
+    }
+    // console.log(debugUseProfile)
+  }
+
   return {
     auth: auth,
     user: user,

@@ -97,7 +97,7 @@ export function CMSTopics({ state }) {
             </Text>
           </HStack>
 
-          {data.topics.map((topic) => {
+          {data.topics.map((topic, index) => {
             return (
               <NextLink
                 key={topic.slug}

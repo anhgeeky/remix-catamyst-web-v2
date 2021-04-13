@@ -95,7 +95,7 @@ export function CMSTracks({ state }) {
             </Text>
           </HStack>
 
-          {data.tracks.map((track) => {
+          {data.tracks.map((track, index) => {
             return (
               <NextLink
                 key={track.slug}

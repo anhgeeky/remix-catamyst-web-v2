@@ -13,9 +13,9 @@ export default async function gumroadPing(
 ) {
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
-      process.env.NODE_ENV === 'production' &&
-        process.env.VERCEL &&
+      if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
         console.info(req.body)
+      }
 
       // Set userId either from existing user (database) or new user (sign up)
       let userId

@@ -32,7 +32,7 @@ export function SettingsOverviewContent({ state }) {
       <SettingsHero>
         {state.profile.nickname && (
           <Heading as="h1" size="xl">
-            Hey, {state.profile.nickname}
+            Hey, {state.profile.nickname || state.profile.name}
           </Heading>
         )}
         {!state.profile.nickname && (

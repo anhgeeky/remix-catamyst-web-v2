@@ -7,7 +7,6 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <title>Catamyst</title>
           <link rel="shortcut icon" href="/favicon.ico" />
           {process.env.NODE_ENV === 'production' && process.env.VERCEL && (
             <script async src="https://cdn.splitbee.io/sb.js"></script>

@@ -19,23 +19,12 @@ import { Icon, LinkButton } from '@components'
 import { OnboardContainer } from '@components/onboard'
 import { supabase } from '@lib'
 
-type Mode = string
-type Inputs = { mode: string }
-
 export function OnboardMode({ state }) {
-  const [loading, setLoading] = useState(false)
-  const [selectedMode, setSelectedMode] = useState<Mode>()
-  const options = ['Learner', 'Teacher', 'Employer', 'Investor']
-  const { register, handleSubmit, watch, setError, errors } = useForm<Inputs>()
+  const [loading, setLoading] = useState<boolean>(false)
+  const [selectedMode, setSelectedMode] = useState<string>('')
 
-  const { getRootProps, getRadioProps } = useRadioGroup({
-    name: 'mode',
-    onChange: setSelectedMode,
-  })
-
-  const group = getRootProps()
-
-  const handleSubmitForm = async (form) => {
+  const handleSubmitForm = async (event) => {
+    event.preventDefault()
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
@@ -74,38 +63,17 @@ export function OnboardMode({ state }) {
           <Text>You can change this later in your settings.</Text>
         </Stack>
 
-        <Stack as="form" onSubmit={handleSubmit(handleSubmitForm)}>
-          <FormControl
-            as={Stack}
-            align="flex-start"
-            isInvalid={Boolean(errors.mode)}
-            autoFocus
-          >
-            <Stack
-              {...group}
-              direction={{ base: 'column', sm: 'row' }}
-              name="mode"
-            >
-              {options.map((value) => {
-                const radio = getRadioProps({ value })
-                return (
-                  <ModeRadioCard key={value} {...radio}>
-                    {value}
-                  </ModeRadioCard>
-                )
-              })}
-            </Stack>
-          </FormControl>
-
+        <Stack as="form" onSubmit={handleSubmitForm}>
+          <ProfileModeForm actions={{ handleSubmitForm, setSelectedMode }} />
           <ButtonGroup size="sm" colorScheme="blue">
             <Button
               type="submit"
+              loadingText="Saving..."
+              leftIcon={<Icon name="save" />}
+              isLoading={loading}
               isDisabled={
                 Boolean(!state.profile.mode) || Boolean(!selectedMode)
               }
-              isLoading={loading}
-              loadingText="Saving..."
-              leftIcon={<Icon name="save" />}
             >
               Next
             </Button>
@@ -123,9 +91,32 @@ export function OnboardMode({ state }) {
   )
 }
 
-export function ModeRadioCard(props) {
-  const { getInputProps, getCheckboxProps } = useRadio(props)
+export function ProfileModeForm({ actions }) {
+  const options = ['Learner', 'Teacher', 'Employer', 'Investor']
+  const { getRootProps, getRadioProps } = useRadioGroup({
+    name: 'mode',
+    onChange: actions.setSelectedMode,
+  })
+  const group = getRootProps()
 
+  return (
+    <FormControl as={Stack} align="flex-start" autoFocus>
+      <Stack {...group} direction={{ base: 'column', sm: 'row' }} name="mode">
+        {options.map((value, index) => {
+          const radio = getRadioProps({ value })
+          return (
+            <ProfileModeRadio key={value} {...radio}>
+              {value}
+            </ProfileModeRadio>
+          )
+        })}
+      </Stack>
+    </FormControl>
+  )
+}
+
+export function ProfileModeRadio(props) {
+  const { getInputProps, getCheckboxProps } = useRadio(props)
   const input = getInputProps()
   const checkbox = getCheckboxProps()
 

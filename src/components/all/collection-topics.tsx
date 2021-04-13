@@ -22,7 +22,7 @@ export function CollectionTopics({ trackSlug, topics }) {
   return (
     <Stack spacing={5} width="100%">
       {topics &&
-        topics.map((topic) => {
+        topics.map((topic, index) => {
           const topicSlug =
             topic.slug || slugify(topic.title || '', { lower: true })
           const topicHref = `${trackSlug}/${topicSlug}`

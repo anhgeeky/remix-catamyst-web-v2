@@ -10,6 +10,7 @@ import {
   LinkButton,
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getName } from '@utils'
 
 export function DashboardTracks({ state }) {
   return (
@@ -44,7 +45,7 @@ export function DashboardTracks({ state }) {
                   />
                 </Box>
                 <Text>
-                  Hey {state.profile.nickname}, you haven't favorited in any
+                  Hey {getName(state.profile)}, you haven't favorited in any
                   track yet.
                 </Text>
                 <LinkButton href="/learn" colorScheme="teal">
@@ -58,7 +59,7 @@ export function DashboardTracks({ state }) {
             <Card>
               <CardPlaceholder>
                 <Text>
-                  Hey {state.profile.nickname}, you haven't completed any track
+                  Hey {getName(state.profile)}, you haven't completed any track
                   yet.
                 </Text>
               </CardPlaceholder>

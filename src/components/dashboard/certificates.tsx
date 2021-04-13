@@ -4,6 +4,7 @@ import { Box, Heading, Stack, Text } from '@chakra-ui/react'
 
 import { Card, Content, HeadingStack } from '@components'
 import { DashboardHero } from '@components/dashboard'
+import { getName } from '@utils'
 
 export function DashboardCertificates({ state }) {
   return (
@@ -24,7 +25,7 @@ export function DashboardCertificates({ state }) {
           <Stack>
             <HeadingStack>From Catamyst:</HeadingStack>
             <Card>
-              Hey {state.profile.nickname}, you haven't got any certificates
+              Hey {getName(state.profile)}, you haven't got any certificates
               yet.
             </Card>
           </Stack>
@@ -32,7 +33,7 @@ export function DashboardCertificates({ state }) {
           <Stack>
             <HeadingStack>From other place:</HeadingStack>
             <Card>
-              Hey {state.profile.nickname}, you haven't add any outside
+              Hey {getName(state.profile)}, you haven't add any outside
               certificates yet.
             </Card>
           </Stack>
