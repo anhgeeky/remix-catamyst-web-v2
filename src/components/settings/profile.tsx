@@ -40,8 +40,8 @@ export function SettingsProfile({ state }) {
           <Stack flex={1} spacing={5} maxW={760}>
             <UserHandleForm state={state} />
             <UserNameForm state={state} />
-            <UserAvatarForm state={state} />
-            <UserCoverForm state={state} />
+            {/* <UserAvatarForm state={state} /> */}
+            {/* <UserCoverForm state={state} /> */}
             <UserPersonalForm state={state} />
             <UserWorkForm state={state} />
             <UserSocialsForm state={state} />

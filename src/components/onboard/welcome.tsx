@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import NextHead from 'next/head'
-import NextLink from 'next/link'
-import NextImage from 'next/image'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 

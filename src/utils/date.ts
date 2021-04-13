@@ -41,7 +41,7 @@ export const getCompleteDate = (date) => {
 }
 
 export const getCompleteDateTime = (date) => {
-  return dayjs(date).format('D MMMM YYYY hh:mm')
+  return dayjs(date).format('D MMMM YYYY HH:mm')
 }
 
 export const getRelativePublishedDate = (date) => {

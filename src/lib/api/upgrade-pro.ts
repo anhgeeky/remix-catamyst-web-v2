@@ -15,7 +15,9 @@ export const upgradePro = async (req, res, userId) => {
           email: req.body.email || '',
           license_key: req.body.license_key || '',
           subscription_id: req.body.subscription_id || '',
+          updated_at: new Date(),
         },
+        updated_at: new Date(),
       })
       .single()
     if (profileError) throw profileError

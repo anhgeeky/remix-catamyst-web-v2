@@ -27,6 +27,7 @@ export const upgradeSuper = async (req, res, userId) => {
               sale_timestamp: req.body.sale_timestamp || '',
               variants: req.body['variants[Hours]'] || '',
               sessions_quota: currentData.super.sessions_quota + quota || 0,
+              updated_at: new Date(),
             }
           : {
               email: req.body.email || '',
@@ -34,6 +35,7 @@ export const upgradeSuper = async (req, res, userId) => {
               sale_timestamp: req.body.sale_timestamp || '',
               variants: req.body['variants[Hours]'] || '',
               sessions_quota: quota || 0,
+              updated_at: new Date(),
             },
       })
       .single()

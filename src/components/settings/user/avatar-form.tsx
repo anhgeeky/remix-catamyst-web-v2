@@ -63,7 +63,7 @@ export function UserAvatarForm({ state }) {
             size="lg"
           />
         </Box>
-        <InputGroup>
+        <InputGroup isDisabled size="sm">
           <Input
             type="text"
             placeholder="https://website.com/path/to/image.jpg"

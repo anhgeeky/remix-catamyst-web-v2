@@ -31,7 +31,11 @@ export function OnboardMode({ state }) {
       const { error } = await supabase
         .from('profiles')
         .upsert(
-          { id: state.user!.id, mode: selectedMode },
+          {
+            id: state.user!.id,
+            mode: selectedMode,
+            updated_at: new Date(),
+          },
           { returning: 'minimal' }
         )
         .single()
