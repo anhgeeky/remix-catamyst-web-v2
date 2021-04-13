@@ -4,6 +4,8 @@ import { supabaseAdmin } from '@lib/api'
  * Toggle Super-related fields in profile.
  */
 export const upgradeSuper = async (req, res, userId) => {
+  console.info(`>>> userId: ${userId}`)
+
   try {
     const { data: currentData, error: currentError } = await supabaseAdmin
       .from('profiles')
@@ -39,7 +41,10 @@ export const upgradeSuper = async (req, res, userId) => {
             },
       })
       .single()
-    if (profileError) throw profileError
+    if (profileError) {
+      console.error('>>> Error when upsert profile to super')
+      throw profileError
+    }
 
     const response = {
       message: 'Super plan is activated.',
@@ -61,7 +66,7 @@ export const upgradeSuper = async (req, res, userId) => {
       body: req.body,
       profileError: profileError,
     }
-    console.error(response)
+    console.error('>>>', { response })
     res.status(500).json(response)
   }
 }

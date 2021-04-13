@@ -5,6 +5,8 @@ import { supabaseAdmin } from '@lib/api'
  * Toggle Pro-related fields in profile.
  */
 export const upgradePro = async (req, res, userId) => {
+  console.info(`>>> userId: ${userId}`)
+
   try {
     const { data: profileData, error: profileError } = await supabaseAdmin
       .from('profiles')
@@ -20,7 +22,10 @@ export const upgradePro = async (req, res, userId) => {
         updated_at: new Date(),
       })
       .single()
-    if (profileError) throw profileError
+    if (profileError) {
+      console.error('>>> Error when upsert profile to pro')
+      throw profileError
+    }
 
     const response = {
       message: 'Pro plan is activated.',
@@ -41,7 +46,7 @@ export const upgradePro = async (req, res, userId) => {
       body: req.body,
       profileError: profileError,
     }
-    console.error(response)
+    console.error('>>>', { response })
     res.status(500).json(response)
   }
 }
