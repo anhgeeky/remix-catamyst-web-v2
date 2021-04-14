@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { supabase } from '@lib'
 import { signInMagic, signOut } from '@features/auth/actions'
 import { useAuth } from '@hooks'
-import { isDev } from '@utils'
+import { isDev, isVercel } from '@utils'
 
 export function useUserSession() {
   const dispatch = useDispatch()
@@ -14,36 +14,32 @@ export function useUserSession() {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    handleUserSession()
     handleUserSessionChange()
   }, [])
 
-  const handleUserSession = async () => {
+  const handleUserSessionChange = () => {
     try {
       const globalSession = supabase.auth.session()
+      // if (!isVercel) console.log({ globalSession })
 
-      // Auto sign out expired session
+      /**
+       * Set data from database to be used for the entire app.
+       */
+      setSession(globalSession)
+      setUser(globalSession?.user ?? null)
+
+      /**
+       * Auto signout expired session when isAuthenticated is still true/
+       */
       if (auth.isAuthenticated && !globalSession) {
         if (isDev) console.info('>>> Indicates actually not authenticated')
         dispatch(signOut(false))
         throw new Error('User not authenticated')
       }
 
-      setSession(globalSession)
-      setUser(globalSession?.user ?? null)
-    } catch (error) {
-      if (isDev) console.info('>>> Error on handleUserSession')
-      // dispatch(signOut(false))
-      // supabase.auth.signOut()
-      setUser(null)
-      setSession(null)
-    }
-  }
-
-  const handleUserSessionChange = async () => {
-    try {
-      const globalSession = supabase.auth.session()
-
+      /**
+       * Handle when auth state has changed.
+       */
       const { data: supabaseAuthListener } = supabase.auth.onAuthStateChange(
         async (event: string, session: SupabaseAuthSession | null) => {
           if (isDev) {
@@ -81,8 +77,8 @@ export function useUserSession() {
       }
     } catch (error) {
       if (isDev) console.info('>>> Error on handleUserSessionChange')
-      // dispatch(signOut(false))
-      // supabase.auth.signOut()
+      dispatch(signOut(false))
+      supabase.auth.signOut()
       setUser(null)
       setSession(null)
     }

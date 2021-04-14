@@ -18,13 +18,12 @@ import {
   HeaderUser,
 } from '@components'
 import dataNavLinks from '@data/nav-links.json'
-import { useProfile } from '@hooks'
 
+/**
+ * Should only used inside of the actual app Component, not _app.tsx
+ * Because it needs to trigger the useProfile/useProfile every app re-render.
+ */
 export function Header() {
-  /**
-   * Already handle the check authentication
-   */
-  const state = useProfile()
   const bg = useColorModeValue('white', 'gray.900')
   const borderBg = useColorModeValue('white', 'gray.700')
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -90,7 +89,7 @@ export function Header() {
 
           <Flex flex={1} justify="flex-end">
             <HStack spacing={1}>
-              <HeaderUser state={state} />
+              <HeaderUser />
               {isTooSmall && (
                 <MenuToggle openMenu={openMenu} isMenuOpen={isMenuOpen} />
               )}

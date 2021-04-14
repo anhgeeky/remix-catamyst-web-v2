@@ -7,18 +7,19 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { SWRConfig } from 'swr'
 
-import { theme, consoleColor } from '@theme'
-import { Fonts, Header } from '@components'
+import { theme } from '@theme'
+import { Fonts } from '@components'
+import { AuthProvider } from '@components/auth'
 import { store, persistor } from '@features/store'
 import { swrConfig, splitbee, Sentry, Integrations } from '@lib'
-import { isDev, isProd, isVercel } from '@utils'
+import { env, isDev, isProd, isVercel } from '@utils'
 
 export default function App({ Component, pageProps }: AppProps) {
   if (isDev) {
-    console.info(`%c Let's have some debugging! `, consoleColor)
+    console.info(`🐈 Let's have some debugging!`, env)
   }
   if (isProd && !isVercel) {
-    console.info('%c Hello, fellow developers! ', consoleColor)
+    console.info(`🐈 Hello, fellow developers!`, env)
   }
   if (isProd && isVercel) {
     /**
@@ -46,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
             <PersistGate loading={null} persistor={persistor}>
-              <Header />
+              <AuthProvider />
               <Component {...pageProps} />
             </PersistGate>
           </SWRConfig>

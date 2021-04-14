@@ -17,11 +17,12 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 
-import { Icon, LinkButton } from '@components'
 import { signOut } from '@features/auth/actions'
+import { Icon, LinkButton } from '@components'
 import { useProfile } from '@hooks'
 import { Profile } from '@types'
 import { supabase } from '@lib'
+import { isVercel } from '@utils'
 
 type State = { profile: Profile }
 type Action = { type?: string; payload: any }
@@ -36,8 +37,13 @@ export const profileEventReducer = (state: State, action: Action) => {
   }
 }
 
-export function HeaderUser({ state }) {
-  console.log({ state })
+export function HeaderUser() {
+  /**
+   * Already handle the check authentication for global use
+   */
+  const state = useProfile()
+  // if (!isVercel) console.log({ state })
+
   if (state.isAuthenticated && state.profile) {
     return <UserRealtimeBridge state={state} />
   }

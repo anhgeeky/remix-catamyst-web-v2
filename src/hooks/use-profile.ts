@@ -20,6 +20,7 @@ export function useProfile() {
   return {
     auth: auth,
     user: user,
+    session: session,
     profile: profile,
     isAuthenticated: auth.isAuthenticated,
     isAuthorized:
