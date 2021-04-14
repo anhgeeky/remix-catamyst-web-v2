@@ -173,5 +173,19 @@
     "totalHours": 0,
     "totalMonths": "2-5",
     "topics": []
+  },
+  {
+    "id": 6,
+    "is_published": false,
+    "slug": "blockchain",
+    "title": "Blockchain and Cryptocurrency",
+    "description": "Learn and implement a blockchain system, a digital record of transactions maintained across several computers that are linked in a peer-to-peer network. Usually used within cryptocurrencies such as Bitcoin and Ethereum.",
+    "levels": ["Newbie", "Beginner", "Intermediate"],
+    "iconUrl": "/assets/logos/catamyst-avatar.svg",
+    "totalTopics": 0,
+    "totalLessons": 0,
+    "totalHours": 0,
+    "totalMonths": "2-5",
+    "topics": []
   }
 ]

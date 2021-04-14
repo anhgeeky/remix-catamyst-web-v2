@@ -3,11 +3,11 @@ import { Stack } from '@chakra-ui/react'
 import { LinkButton, Icon } from '@components'
 import { useAuth } from '@hooks'
 
-export function HomeCTA() {
+export function HomeVillainCTA() {
   const { isAuthenticated } = useAuth()
 
   return (
-    <Stack direction={{ base: 'column', sm: 'row' }}>
+    <Stack direction="column">
       {!isAuthenticated && (
         <>
           <LinkButton

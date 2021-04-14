@@ -1,7 +1,7 @@
 import { Heading, Stack, Flex } from '@chakra-ui/react'
 
 import { NextImage } from '@components'
-import { HomeCTA } from '@components/home'
+import { HomeVillainCTA } from '@components/home'
 
 export function HomeVillain() {
   return (
@@ -26,7 +26,7 @@ export function HomeVillain() {
           width={500}
           height={300}
         />
-        <HomeCTA />
+        <HomeVillainCTA />
       </Stack>
     </Flex>
   )

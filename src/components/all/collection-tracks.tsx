@@ -18,8 +18,9 @@ import {
 } from '@chakra-ui/react'
 
 import { Icon, AlertSoon } from '@components'
+import dataTracks from '@data/tracks.json'
 
-export function CollectionTracks({ tracks }) {
+export function CollectionTracks({ tracks = dataTracks }) {
   const [isTooSmall] = useMediaQuery('(max-width: 767px)')
 
   return (

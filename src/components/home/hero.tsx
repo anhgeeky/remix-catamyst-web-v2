@@ -10,7 +10,7 @@ import {
 import { FaCheckCircle as CheckIcon } from 'react-icons/fa'
 
 import { NextImage } from '@components'
-import { HomeCTA } from '@components/home'
+import { HomeHeroCTA } from '@components/home'
 import dataHeroHome from '@data/hero-home.json'
 
 export function HomeHero() {
@@ -49,7 +49,7 @@ export function HomeHero() {
             })}
           </List>
 
-          <HomeCTA />
+          <HomeHeroCTA />
         </Stack>
 
         <NextImage

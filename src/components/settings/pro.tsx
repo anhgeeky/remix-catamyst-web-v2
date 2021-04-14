@@ -132,8 +132,8 @@ export function SettingsPro({ state }) {
                 </ListItem>
                 <ListItem>
                   If you need to pay via other methods such as direct bank
-                  transfer, via TransferWise, or even crypto like Bitcoin, you
-                  can ask us via the chat.
+                  transfer, via TransferWise, or even cryptocurrency like
+                  Bitcoin, you can ask us via the chat.
                 </ListItem>
                 <ListItem>
                   If your subscription is ended, your account will be downgraded
