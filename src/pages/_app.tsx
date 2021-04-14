@@ -16,10 +16,10 @@ import { env, isDev, isProd, isVercel } from '@utils'
 
 export default function App({ Component, pageProps }: AppProps) {
   if (isDev) {
-    console.info(`🐈 Let's have some debugging!`, env)
+    console.info(`🐈 Let's have some debugging!`)
   }
   if (isProd && !isVercel) {
-    console.info(`🐈 Hello, fellow developers!`, env)
+    console.info(`🐈 Hello, fellow developers!`)
   }
   if (isProd && isVercel) {
     /**
