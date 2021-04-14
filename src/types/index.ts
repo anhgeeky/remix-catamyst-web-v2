@@ -1,3 +1,11 @@
+// export type Profile = {
+//   id: string
+//   handle: string
+//   name: string
+//   avatar_url: string
+//   website_url: string
+// }
+
 export type Profile = {
   id: string
   handle?: string

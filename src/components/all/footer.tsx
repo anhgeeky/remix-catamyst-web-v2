@@ -14,11 +14,10 @@ import {
 } from '@chakra-ui/react'
 
 import dataPackage from '../../../package.json'
-
 import { SocialLinks } from '@components'
-import { getYear, getDayNamePeriod } from '@utils'
 import { dataAppSitemap } from '@data'
 import { useAuth } from '@hooks'
+import { getYear, getDayNamePeriod, isDev, isProd, isVercel } from '@utils'
 
 const NODE_ENV = process.env.NODE_ENV
 const API_URL = process.env.NEXT_PUBLIC_API_URL
@@ -97,10 +96,9 @@ export function FooterExtra() {
       <VStack opacity={0.5} fontSize={15} spacing={0}>
         <Text>Enjoy your {dayNamePeriod}!</Text>
         <Code colorScheme="white" fontWeight="700">
-          v{dataPackage.version}{' '}
-          {process.env.NODE_ENV !== 'production' && process.env.NODE_ENV}
+          v{dataPackage.version} {!isProd && NODE_ENV}
         </Code>
-        {NODE_ENV !== 'production' && process.env.VERCEL && (
+        {isDev && isVercel && (
           <Code colorScheme="white" fontWeight="700">
             {NODE_ENV} && {API_URL}
           </Code>

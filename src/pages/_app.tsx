@@ -6,37 +6,30 @@ import { Provider as ReduxProvider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { SWRConfig } from 'swr'
-import * as Sentry from '@sentry/react'
-import { Integrations } from '@sentry/tracing'
 
-import theme from '@theme'
+import { theme, consoleColor } from '@theme'
 import { Fonts, Header } from '@components'
 import { AuthProvider } from '@components/auth'
 import { store, persistor } from '@features/store'
-
-const swrConfig = {
-  onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
-    // Never retry on 404 error.
-    if (error.status === 404) return
-    // Only retry several times.
-    if (retryCount >= 3) return
-    // Retry after 3 seconds.
-    setTimeout(() => revalidate({ retryCount: retryCount + 1 }), 3000)
-  },
-}
-
-const consoleColor = `background: #00aaaa; color: #ffffff;`
+import { swrConfig, splitbee, Sentry, Integrations } from '@lib'
+import { isDev, isProd, isVercel } from '@utils'
 
 export default function App({ Component, pageProps }: AppProps) {
-  if (process.env.NODE_ENV !== 'production') {
+  if (isDev) {
     console.info(`%c Let's have some debugging! `, consoleColor)
   }
-
-  if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
+  if (isProd && !isVercel) {
     console.info('%c Hello, fellow developers! ', consoleColor)
   }
+  if (isProd && isVercel) {
+    /**
+     * Splitbee for regular analytics.
+     */
+    splitbee.init()
 
-  if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
+    /**
+     * Sentry for app monitoring and error tracking.
+     */
     Sentry.init({
       dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
       integrations: [new Integrations.BrowserTracing()],

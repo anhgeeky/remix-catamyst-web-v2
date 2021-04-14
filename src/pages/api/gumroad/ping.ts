@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
 import { supabaseAdmin, upgradePro, upgradeSuper } from '@lib/api'
-import { getPlan } from '@utils'
+import { getPlan, isProd, isVercel } from '@utils'
 
 /**
  * Handle Gumroad Ping webhook.
@@ -19,7 +19,7 @@ export default async function gumroadPing(
 
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
-      if (process.env.NODE_ENV === 'production' && process.env.VERCEL) {
+      if (isProd && isVercel) {
         console.info({ body: req.body })
       }
 

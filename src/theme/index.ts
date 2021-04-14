@@ -31,4 +31,5 @@ const overrides = {
   },
 }
 
-export default extendTheme(overrides)
+export const theme = extendTheme(overrides)
+export const consoleColor = `background: #00aaaa; color: #ffffff;`
