@@ -34,6 +34,7 @@ export function CMSUsers({ state }) {
           Users not found
         </Heading>
         <Text>Users are empty.</Text>
+        <Text>{JSON.stringify(error, null, 2)}</Text>
       </CMSHero>
     )
   }

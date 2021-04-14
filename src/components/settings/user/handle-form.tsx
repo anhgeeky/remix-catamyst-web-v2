@@ -65,7 +65,7 @@ export function UserHandleForm({ state }) {
               defaultValue={state.profile.handle}
               name="handle"
               ref={register}
-              autoFocus
+              autoFocus={!isTooSmall}
             />
             <InputRightElement
               color={errors.handle ? 'red.500' : 'green.500'}

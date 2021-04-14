@@ -1,7 +1,5 @@
-import { useRouter } from 'next/router'
-
 import { Layout } from '@layouts'
-import { useAuth } from '@hooks'
+import { useRedirectHome } from '@hooks'
 import { supabase } from '@lib'
 
 /**
@@ -12,8 +10,7 @@ import { supabase } from '@lib'
  * `/cms/lessons/[trackId]` to handle editing the lesson by id.
  */
 export default function cmsPage({ user }) {
-  const router = useRouter()
-  const { auth } = useAuth()
+  const { auth } = useRedirectHome()
 
   return (
     <Layout title="Loading CMS... · Catamyst">
@@ -24,8 +21,7 @@ export default function cmsPage({ user }) {
 
 export async function getServerSideProps({ req }) {
   const { user } = await supabase.auth.api.getUserByCookie(req)
-  if (user && user?.user_metadata.access === 'cms') {
-    // console.info({ user })
+  if (user?.user_metadata.access === 'cms') {
     return { props: { user } }
   } else {
     return { props: {}, redirect: { destination: '/about', permanent: false } }

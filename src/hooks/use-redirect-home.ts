@@ -2,11 +2,7 @@ import { useEffect } from 'react'
 
 import { useProfile } from '@hooks'
 
-/**
- * Using useProfile that request to get profile from API.
- * But immediately redirect if not authenticated.
- */
-export function useRedirectSignIn() {
+export function useRedirectHome() {
   const {
     router,
     auth,
@@ -14,13 +10,15 @@ export function useRedirectSignIn() {
     profile,
     isAuthenticated,
     isAuthorized,
-    isLoading,
     isError,
+    isLoading,
   } = useProfile()
 
   useEffect(() => {
-    if (!isAuthenticated) router.replace('/signin')
-  }, [isAuthenticated])
+    if (user?.role && user?.role === 'Member') {
+      router.replace('/')
+    }
+  }, [user])
 
   return {
     router,
@@ -29,7 +27,7 @@ export function useRedirectSignIn() {
     profile,
     isAuthenticated,
     isAuthorized,
-    isLoading,
     isError,
+    isLoading,
   }
 }

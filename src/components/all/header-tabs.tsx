@@ -35,6 +35,7 @@ export function HeaderTabs({ links }) {
             )
           }
         })}
+        {/* So the right part of the header tabs can get a margin */}
         <Box visibility="hidden">.</Box>
       </HStack>
     </Flex>

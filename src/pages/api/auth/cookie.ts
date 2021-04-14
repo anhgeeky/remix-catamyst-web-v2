@@ -3,7 +3,7 @@ import { supabase } from '@lib'
 /**
  * Just to set cookie in server-side, so it works with getServerSideProps.
  */
-export default function handleAuth(req, res) {
+export default function authCookie(req, res) {
   supabase.auth.api.setAuthCookie(req, res)
 }
 

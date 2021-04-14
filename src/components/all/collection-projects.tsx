@@ -27,7 +27,7 @@ import { trimUrl } from '@utils'
  */
 export function CollectionProjects({ projects }) {
   return (
-    <SimpleGrid spacing={3} minChildWidth={320}>
+    <SimpleGrid spacing={3} minChildWidth={300}>
       {projects
         .filter((project) => project.is_published)
         .map((project, index) => {

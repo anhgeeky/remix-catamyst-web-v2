@@ -22,15 +22,15 @@ import { Icon, LinkButton } from '@components'
 import { useProfile } from '@hooks'
 import { Profile } from '@types'
 import { supabase } from '@lib'
-import { isVercel } from '@utils'
+import { isDev } from '@utils'
 
 type State = { profile: Profile }
 type Action = { type?: string; payload: any }
 
 export const profileEventReducer = (state: State, action: Action) => {
-  if (action.type === 'update') {
+  if (action.type === 'SET_INITIAL_PROFILE') {
     return { profile: action.payload }
-  } else if (action.type === 'set') {
+  } else if (action.type === 'UPDATE_PROFILE') {
     return { profile: action.payload }
   } else {
     return { profile: {} }
@@ -39,7 +39,7 @@ export const profileEventReducer = (state: State, action: Action) => {
 
 export function HeaderUser() {
   /**
-   * Already handle the check authentication for global use
+   * Already handle the check authentication for global use.
    */
   const state = useProfile()
   // if (!isVercel) console.log({ state })
@@ -58,11 +58,21 @@ export function UserRealtimeBridge({ state }) {
   )
 
   useEffect(() => {
+    if (isDev) console.log('SET_INITIAL_PROFILE', 'header')
+    try {
+      localDispatch({ type: 'SET_INITIAL_PROFILE', payload: state.profile })
+    } catch (error) {
+      console.error(`>>> ${error.message}`)
+    }
+  }, [state])
+
+  useEffect(() => {
+    if (isDev) console.log('UPDATE_PROFILE', 'header')
     try {
       const subscription = supabase
         .from(`profiles:id=eq.${state.profile.id}`)
         .on('*', (payload) => {
-          localDispatch({ type: 'update', payload: payload.new })
+          localDispatch({ type: 'UPDATE_PROFILE', payload: payload.new })
         })
         .subscribe()
       return () => {
@@ -73,28 +83,20 @@ export function UserRealtimeBridge({ state }) {
     }
   }, [])
 
-  useEffect(() => {
-    try {
-      localDispatch({ type: 'set', payload: state.profile })
-    } catch (error) {
-      console.error(`>>> ${error.message}`)
-    }
-  }, [state])
-
-  if (localState?.profile) {
-    return <UserMenuButton profile={localState?.profile} />
+  /**
+   * Only use from localState, not from state.profile
+   * as there will be race condition.
+   */
+  if (!localState.profile) {
+    return null
   }
-  return <UserMenuButton profile={state.profile} />
+  return <UserMenuButton profile={localState?.profile} />
 }
 
 function UserMenuButton({ profile }) {
   const router = useRouter()
   const dispatch = useDispatch()
   const [isTooSmallDashboard] = useMediaQuery('(max-width: 425px)')
-
-  async function handleSignOut() {
-    dispatch(signOut())
-  }
 
   return (
     <HStack className="header-user" height={34}>
@@ -132,8 +134,8 @@ function UserMenuButton({ profile }) {
                   className="next-image"
                   src={profile?.avatar_url}
                   layout="fixed"
-                  width={32}
-                  height={32}
+                  width={30}
+                  height={30}
                 />
               </Box>
             )}
@@ -189,7 +191,7 @@ function UserMenuButton({ profile }) {
 
           <MenuDivider />
 
-          <MenuItem onClick={handleSignOut} color="red.500">
+          <MenuItem onClick={() => dispatch(signOut())} color="red.500">
             <Icon name="signout" />
             <Text as="span" ml={2}>
               Sign out

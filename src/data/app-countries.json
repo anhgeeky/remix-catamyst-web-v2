@@ -253,7 +253,7 @@
   { "code": "YE", "name": "Yemen" },
   { "code": "ZM", "name": "Zambia" },
   { "code": "ZW", "name": "Zimbabwe" },
-  { "code": "EARTH", "name": "Worldwide" },
+  { "code": "EARTH", "name": "Earth" },
   { "code": "MOON", "name": "Moon" },
   { "code": "MARS", "name": "Mars" }
 ]

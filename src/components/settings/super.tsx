@@ -13,7 +13,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-import { Content, Card, Icon } from '@components'
+import { Content, Card, Icon, LinkButton } from '@components'
 import {
   SettingsHero,
   GumroadButton,
@@ -49,6 +49,16 @@ export function SettingsSuper({ state }) {
                 money (partially deducted from the processing fee). But if the
                 mentorship is already scheduled or ongoing, there is no refund.
               </Text>
+              <ButtonGroup>
+                <LinkButton
+                  href="/guide/super"
+                  size="sm"
+                  colorScheme="green"
+                  leftIcon={<Icon name="learn" />}
+                >
+                  Read the guide
+                </LinkButton>
+              </ButtonGroup>
             </Card>
           )}
 

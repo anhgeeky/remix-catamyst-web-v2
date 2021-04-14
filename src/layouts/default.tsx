@@ -21,7 +21,7 @@ export function Layout({ title = 'Catamyst', children = null }) {
 
 export function Main({ children }) {
   return (
-    <Box as="main" pt={{ base: 45, lg: 55 }} minH="80vh">
+    <Box as="main" pt={{ base: '42px', lg: '52px' }} minH="80vh">
       <SkipNavContent>{children}</SkipNavContent>
     </Box>
   )

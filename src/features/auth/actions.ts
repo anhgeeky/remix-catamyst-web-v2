@@ -22,7 +22,7 @@ import { getNickname } from '@utils'
 const toast = createStandaloneToast()
 const toastOptions = {
   isClosable: true,
-  duration: 1000,
+  duration: 3000,
 }
 
 /**

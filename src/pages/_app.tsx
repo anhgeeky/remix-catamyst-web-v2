@@ -15,12 +15,9 @@ import { swrConfig, splitbee, Sentry, Integrations } from '@lib'
 import { env, isDev, isProd, isVercel } from '@utils'
 
 export default function App({ Component, pageProps }: AppProps) {
-  if (isDev) {
-    console.info(`🐈 Let's have some debugging!`)
-  }
-  if (isProd && !isVercel) {
-    console.info(`🐈 Hello, fellow developers!`)
-  }
+  // if (isDev) console.info(`🐈 Let's have some debugging!`)
+  // if (isProd && !isVercel) console.info(`🐈 Hello, fellow developers!`)
+
   if (isProd && isVercel) {
     /**
      * Splitbee for regular analytics.
