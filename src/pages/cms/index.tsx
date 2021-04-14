@@ -24,8 +24,8 @@ export default function cmsPage({ user }) {
 
 export async function getServerSideProps({ req }) {
   const { user } = await supabase.auth.api.getUserByCookie(req)
-  if (user && user?.role === 'admin') {
-    // console.info(`>>> User ${user.email} is admin`)
+  if (user && user?.user_metadata.access === 'cms') {
+    // console.info({ user })
     return { props: { user } }
   } else {
     return { props: {}, redirect: { destination: '/about', permanent: false } }

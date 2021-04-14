@@ -12,6 +12,8 @@ import {
   // General icons
   FaCircle as CircleIcon,
   FaQuestionCircle as OthersIcon,
+  FaMoon as MoonIcon, // Light Icon
+  FaSun as SunIcon, // Dark Icon
   FaCode as CodeIcon,
   FaCopyright as CopyrightIcon,
   FaDivide as DividerIcon,
@@ -187,6 +189,14 @@ export function Icon({ name }) {
     /**
      * General icons
      */
+    case 'circle':
+      return <CircleIcon />
+    case 'sun':
+      return <SunIcon />
+    case 'moon':
+      return <MoonIcon />
+    case 'others':
+      return <OthersIcon />
     case 'add':
       return <AddIcon />
     case 'alt':
@@ -527,8 +537,6 @@ export function Icon({ name }) {
       return <GamesIcon />
     case 'blockchain-crypto':
       return <BlockchainCryptoIcon />
-    case 'others':
-      return <OthersIcon />
     /**
      * Mode or profession
      */

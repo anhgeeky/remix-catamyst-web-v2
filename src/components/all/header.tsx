@@ -21,6 +21,9 @@ import dataNavLinks from '@data/nav-links.json'
 import { useProfile } from '@hooks'
 
 export function Header() {
+  /**
+   * Already handle the check authentication
+   */
   const state = useProfile()
   const bg = useColorModeValue('white', 'gray.900')
   const borderBg = useColorModeValue('white', 'gray.700')

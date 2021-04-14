@@ -9,7 +9,6 @@ import { SWRConfig } from 'swr'
 
 import { theme, consoleColor } from '@theme'
 import { Fonts, Header } from '@components'
-import { AuthProvider } from '@components/auth'
 import { store, persistor } from '@features/store'
 import { swrConfig, splitbee, Sentry, Integrations } from '@lib'
 import { isDev, isProd, isVercel } from '@utils'
@@ -47,7 +46,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <ReduxProvider store={store}>
           <SWRConfig value={swrConfig}>
             <PersistGate loading={null} persistor={persistor}>
-              <AuthProvider />
               <Header />
               <Component {...pageProps} />
             </PersistGate>

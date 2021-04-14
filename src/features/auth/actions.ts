@@ -137,7 +137,7 @@ export const signInMagic = () => {
       toast({
         ...toastOptions,
         status: 'success',
-        title: 'Signed in.',
+        title: 'Signed in via magic link.',
         description: 'Welcome back!',
       })
     } catch (error) {
@@ -146,7 +146,7 @@ export const signInMagic = () => {
       toast({
         ...toastOptions,
         status: 'error',
-        title: 'Failed to sign in.',
+        title: 'Failed to sign in via magic link.',
         description: `${error.message}. Please try again.`,
       })
     }

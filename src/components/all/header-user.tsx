@@ -37,14 +37,15 @@ export const profileEventReducer = (state: State, action: Action) => {
 }
 
 export function HeaderUser({ state }) {
+  console.log({ state })
   if (state.isAuthenticated && state.profile) {
-    return <UserRealtimeBridge profile={state.profile} />
+    return <UserRealtimeBridge state={state} />
   }
   return <UserAuthButtons />
 }
 
-export function UserRealtimeBridge({ profile }) {
-  const initialState: State = profile
+export function UserRealtimeBridge({ state }) {
+  const initialState: State = state.profile
   const [localState, localDispatch] = useReducer(
     profileEventReducer,
     initialState
@@ -53,7 +54,7 @@ export function UserRealtimeBridge({ profile }) {
   useEffect(() => {
     try {
       const subscription = supabase
-        .from(`profiles:id=eq.${profile.id}`)
+        .from(`profiles:id=eq.${state.profile.id}`)
         .on('*', (payload) => {
           localDispatch({ type: 'update', payload: payload.new })
         })
@@ -68,16 +69,16 @@ export function UserRealtimeBridge({ profile }) {
 
   useEffect(() => {
     try {
-      localDispatch({ type: 'set', payload: profile })
+      localDispatch({ type: 'set', payload: state.profile })
     } catch (error) {
       console.error(`>>> ${error.message}`)
     }
-  }, [profile])
+  }, [state])
 
-  if (!localState.profile) {
-    return null
+  if (localState?.profile) {
+    return <UserMenuButton profile={localState?.profile} />
   }
-  return <UserMenuButton profile={localState.profile} />
+  return <UserMenuButton profile={state.profile} />
 }
 
 function UserMenuButton({ profile }) {
