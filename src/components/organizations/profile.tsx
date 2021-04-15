@@ -173,7 +173,7 @@ function OrganizationProfileContent({ org, state, actions }) {
                 </Heading>
               </Box>
             )}
-            <Box id="org-bio">
+            <Box id="org-bio" fontSize={['md', 'lg']} pt={2} pb={2}>
               {!org.bio_html && <Text color="gray.500">No bio yet.</Text>}
               {org.bio_html && ReactHtmlParser(org.bio_html, transformOptions)}
             </Box>

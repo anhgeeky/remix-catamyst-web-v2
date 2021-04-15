@@ -1,5 +1,6 @@
 import NextImage from 'next/image'
 import {
+  chakra,
   Box,
   Stack,
   Flex,
@@ -9,6 +10,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  HStack,
 } from '@chakra-ui/react'
 import { FaCheckCircle } from 'react-icons/fa'
 
@@ -21,82 +23,160 @@ export function PricingPlans() {
   const { isAuthenticated } = useAuth()
 
   return (
-    <Stack
-      spacing={5}
-      direction={{ base: 'column', lg: 'row' }}
-      align={{ base: 'center', lg: 'stretch' }}
-    >
-      {dataPlans.map((plan, index) => {
-        return (
-          <Card
-            key={plan.slug}
-            as={VStack}
-            flex={1}
-            maxW={420}
-            spacing={10}
-            justify="space-between"
-          >
-            <VStack>
-              <Flex display="flex" width="100%" justify="center">
-                <NextImage
-                  className="invertable next-image"
-                  src={`https://storage.catamyst.com/illustrations/plan-${plan.slug}.png`}
-                  alt={plan.name}
-                  layout="fixed"
-                  objectFit="contain"
-                  width={200}
-                  height={128}
-                />
-              </Flex>
+    <VStack spacing={5} align="stretch">
+      <Stack
+        spacing={5}
+        direction={{ base: 'column', lg: 'row' }}
+        align={{ base: 'center', lg: 'stretch' }}
+      >
+        {dataPlans.map((plan, index) => {
+          return (
+            <Card
+              key={plan.slug}
+              as={VStack}
+              flex={1}
+              maxW={420}
+              spacing={10}
+              justify="space-between"
+            >
+              <VStack>
+                <Flex display="flex" width="100%" justify="center">
+                  <NextImage
+                    className="invertable next-image"
+                    src={`https://storage.catamyst.com/illustrations/plan-${plan.slug}.png`}
+                    alt={plan.name}
+                    layout="fixed"
+                    objectFit="contain"
+                    width={200}
+                    height={128}
+                  />
+                </Flex>
 
-              <Heading as="h3" size="xl" color="teal.500">
-                {plan.name}
-              </Heading>
-
-              <List spacing={1}>
-                {plan.benefits.map((benefit, index) => {
-                  return (
-                    <ListItem key={index}>
-                      <ListIcon as={FaCheckCircle} color="teal.500" />
-                      {benefit}
-                    </ListItem>
-                  )
-                })}
-              </List>
-            </VStack>
-
-            <VStack spacing={5}>
-              <VStack spacing={1}>
-                <Heading as="h5" size="md">
-                  {plan.price.cost > 0 ? `${plan.price.info}` : 'Forever'}
+                <Heading as="h3" size="2xl" color="teal.500">
+                  {plan.name}
                 </Heading>
-                <Heading as="h4" size="2xl">
-                  {plan.price.cost > 0 ? `$${plan.price.cost}` : 'Free'}
-                </Heading>
+
+                <List spacing={1}>
+                  {plan.benefits.map((benefit, index) => {
+                    return (
+                      <ListItem key={index}>
+                        <ListIcon as={FaCheckCircle} color="teal.500" />
+                        {benefit}
+                      </ListItem>
+                    )
+                  })}
+                </List>
               </VStack>
 
-              {!isAuthenticated && (
-                <LinkButton
-                  href={plan.buttons.isNotAuthenticated.href}
-                  colorScheme="teal"
-                  leftIcon={<Icon name={plan.slug} />}
-                >
-                  {plan.buttons.isNotAuthenticated.text}
-                </LinkButton>
-              )}
-              {isAuthenticated && (
-                <LinkButton
-                  href={plan.buttons.isAuthenticated.href}
-                  colorScheme="teal"
-                  leftIcon={<Icon name={plan.slug} />}
-                >
-                  {plan.buttons.isAuthenticated.text}
-                </LinkButton>
-              )}
+              <VStack spacing={5}>
+                <VStack spacing={1}>
+                  <Heading as="h5" size="md">
+                    {plan.price.cost > 0 ? `${plan.price.info}` : 'Forever'}
+                  </Heading>
+                  <Heading as="h4" size="2xl">
+                    {plan.price.cost > 0 ? `$${plan.price.cost}` : 'Free'}
+                  </Heading>
+                </VStack>
+
+                {!isAuthenticated && (
+                  <LinkButton
+                    href={plan.buttons.isNotAuthenticated.href}
+                    colorScheme="teal"
+                    leftIcon={<Icon name={plan.slug} />}
+                  >
+                    {plan.buttons.isNotAuthenticated.text}
+                  </LinkButton>
+                )}
+                {isAuthenticated && (
+                  <LinkButton
+                    href={plan.buttons.isAuthenticated.href}
+                    colorScheme="teal"
+                    leftIcon={<Icon name={plan.slug} />}
+                  >
+                    {plan.buttons.isAuthenticated.text}
+                  </LinkButton>
+                )}
+              </VStack>
+            </Card>
+          )
+        })}
+      </Stack>
+
+      <VStack id="stack-business">
+        <Card
+          id="business-plan"
+          as={Stack}
+          flex={1}
+          spacing={10}
+          align="center"
+          justify="space-between"
+          direction={{ base: 'column', lg: 'row' }}
+          maxW={{ base: '420px', lg: '100%' }}
+          py={10}
+        >
+          <Stack>
+            <Stack>
+              <Heading
+                as="h3"
+                size="2xl"
+                color="teal.500"
+                textAlign={{ base: 'center', lg: 'left' }}
+                bgClip="text"
+                bgGradient="linear(to-r, yellow.400, yellow.900)"
+              >
+                Business
+              </Heading>
+            </Stack>
+
+            <List spacing={1}>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="teal.500" />
+                Custom training or mentorship for your existing or new team
+                members
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="teal.500" />
+                Campaign for a scholarship program
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="teal.500" />
+                Recruitment for curated developers
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="teal.500" />
+                Technical consultation. Catamyst as a CTO.
+              </ListItem>
+            </List>
+          </Stack>
+
+          <VStack spacing={5}>
+            <VStack spacing={1}>
+              <Heading as="h4" size="xl">
+                Custom
+              </Heading>
             </VStack>
-          </Card>
-        )
-      })}
-    </Stack>
+
+            {!isAuthenticated && (
+              <LinkButton
+                href={`/signin`}
+                colorScheme="teal"
+                leftIcon={<Icon name="business" />}
+              >
+                Sign up for businss
+              </LinkButton>
+            )}
+            {isAuthenticated && (
+              <LinkButton
+                href={`/guide/business`}
+                colorScheme="teal"
+                leftIcon={<Icon name="business" />}
+              >
+                Contact us
+              </LinkButton>
+            )}
+          </VStack>
+        </Card>
+      </VStack>
+    </VStack>
   )
 }

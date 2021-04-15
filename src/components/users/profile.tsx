@@ -200,7 +200,7 @@ function UserProfileContent({ profile, state, actions }) {
                 </Heading>
               </Box>
             )}
-            <Box id="user-bio" fontSize={['md', 'lg']}>
+            <Box id="user-bio" fontSize={['md', 'lg']} pt={2} pb={2}>
               {!profile.bio_html && <Text color="gray.500">No bio yet.</Text>}
               {profile.bio_html &&
                 ReactHtmlParser(profile.bio_html, transformOptions)}

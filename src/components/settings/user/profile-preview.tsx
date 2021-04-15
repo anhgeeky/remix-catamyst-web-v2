@@ -143,7 +143,7 @@ export default function ProfileCard({ profile }) {
 
             <Stack spacing={2} py={3} width="100%">
               {profile.headline && (
-                <Heading as="h4" size="sm" color="gray.500">
+                <Heading as="h4" size="md" color="gray.500">
                   {profile.headline}
                 </Heading>
               )}
