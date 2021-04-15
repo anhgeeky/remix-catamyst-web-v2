@@ -40,9 +40,10 @@ export default async function gumroadPing(
        */
       if (!profile.id) {
         console.info('>>> Error when getting user by email')
-        let { user } = await supabase.auth.signUp({
+        let { user, session, error: signUpError } = await supabase.auth.signUp({
           email: profile.email.toLowerCase(),
         })
+        if (signUpError) throw signUpError
         const response = { message: 'Created a new account', user, profile }
         console.info(response)
       }

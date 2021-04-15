@@ -40,7 +40,7 @@ export const signUp = (form) => {
        */
       const userEmail = String(form.email)
       const userPassword = String(form.password)
-      let { user, error } = await supabase.auth.signUp({
+      let { user, session, error } = await supabase.auth.signUp({
         email: userEmail.toLowerCase(),
         password: userPassword,
       })

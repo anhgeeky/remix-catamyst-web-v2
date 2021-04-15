@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.231",
+  "version": "0.1.232",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
@@ -16,9 +16,12 @@
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.3.0",
     "@hookform/resolvers": "2.0.0-beta.3",
+    "@sentry/browser": "6.2.5",
+    "@sentry/integrations": "6.2.5",
     "@sentry/node": "6.2.5",
     "@sentry/react": "6.2.5",
     "@sentry/tracing": "6.2.5",
+    "@sentry/webpack-plugin": "1.15.0",
     "@splitbee/web": "0.2.4",
     "@supabase/supabase-js": "1.11.0",
     "@svgr/webpack": "5.5.0",
