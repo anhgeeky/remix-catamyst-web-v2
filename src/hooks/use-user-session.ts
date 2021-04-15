@@ -40,21 +40,25 @@ export function useUserSession() {
        * Handle when auth state has changed.
        */
       const { data: supabaseAuthListener } = supabase.auth.onAuthStateChange(
-        async (event: string, session: SupabaseAuthSession | null) => {
+        async (event: string, newGlobalSession: SupabaseAuthSession | null) => {
           if (isDev) {
-            console.info('>>> Auth state has changed with event.', { event })
+            console.info('>>>', { event })
           }
 
-          setSession(globalSession)
-          setUser(globalSession?.user ?? null)
-          if (globalSession) dispatch(signInMagic())
+          setSession(newGlobalSession)
+          setUser(newGlobalSession?.user ?? null)
 
+          if (newGlobalSession) dispatch(signInMagic())
+          if (event === 'SIGNED_IN') {
+            if (isDev) console.info('SIGNED_IN')
+            dispatch(signInMagic())
+          }
           if (event === 'PASSWORD_RECOVERY') {
-            if (isDev) console.info('update_password')
+            if (isDev) console.info('PASSWORD_RECOVERY')
           }
           if (event === 'USER_UPDATED')
             setTimeout(() => {
-              if (isDev) console.info('sign_in')
+              if (isDev) console.info('USER_UPDATED')
             }, 1000)
         }
       )

@@ -28,8 +28,8 @@ export function AuthSignInMagic({ router }) {
 
   const handleSubmitForm = async (data) => {
     try {
-      await dispatch(signInMagic())
-      router.push('/dashboard/overview')
+      // await dispatch(signInMagic())
+      // router.push('/dashboard/overview')
     } catch (error) {
       console.error('Failed to sign in.')
     }
