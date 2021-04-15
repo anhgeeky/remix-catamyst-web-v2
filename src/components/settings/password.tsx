@@ -23,6 +23,7 @@ export function SettingsPassword({ state }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
+          {/* user, not profile */}
           <UserPasswordForm user={state.user} />
         </Stack>
       </Content>

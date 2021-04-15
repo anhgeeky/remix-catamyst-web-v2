@@ -42,7 +42,6 @@ export function HeaderUser() {
    * Already handle the check authentication for global use.
    */
   const state = useProfile()
-  // if (!isVercel) console.log({ state })
 
   if (state.isAuthenticated && state.profile) {
     return <UserRealtimeBridge state={state} />
@@ -58,7 +57,6 @@ export function UserRealtimeBridge({ state }) {
   )
 
   useEffect(() => {
-    // if (isDev) console.log('SET_INITIAL_PROFILE', 'header')
     try {
       localDispatch({ type: 'SET_INITIAL_PROFILE', payload: state.profile })
     } catch (error) {
@@ -67,7 +65,6 @@ export function UserRealtimeBridge({ state }) {
   }, [state])
 
   useEffect(() => {
-    // if (isDev) console.log('UPDATE_PROFILE', 'header')
     try {
       const subscription = supabase
         .from(`profiles:id=eq.${state.profile.id}`)

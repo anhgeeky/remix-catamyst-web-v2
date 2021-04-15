@@ -47,7 +47,6 @@ export function UserProfilePreview({ profile }) {
   )
 
   useEffect(() => {
-    // if (isDev) console.log('SET_INITIAL_PROFILE', 'preview')
     try {
       localDispatch({ type: 'SET_INITIAL_PROFILE', payload: profile })
     } catch (error) {
@@ -56,7 +55,6 @@ export function UserProfilePreview({ profile }) {
   }, [profile])
 
   useEffect(() => {
-    // if (isDev) console.log('UPDATE_PROFILE', 'preview')
     try {
       const subscription = supabase
         .from(`profiles:id=eq.${profile.id}`)
@@ -80,10 +78,6 @@ export function UserProfilePreview({ profile }) {
 
 export default function ProfileCard({ profile }) {
   const [isTooSmall] = useMediaQuery('(max-width: 48em)')
-
-  if (isDev) {
-    console.log({ profile })
-  }
 
   return (
     <Stack className={!isTooSmall && 'sticky'} spacing={5}>
@@ -153,7 +147,9 @@ export default function ProfileCard({ profile }) {
                   {profile.headline}
                 </Heading>
               )}
-              <Box>{ReactHtmlParser(profile.bio_html)}</Box>
+              <Box fontSize={['md', 'lg']}>
+                {ReactHtmlParser(profile.bio_html)}
+              </Box>
             </Stack>
 
             <Flex>

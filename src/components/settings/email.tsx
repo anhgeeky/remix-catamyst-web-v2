@@ -22,6 +22,7 @@ export function SettingsEmail({ state }) {
 
       <Content>
         <Stack spacing={5} width="100%" maxW={760}>
+          {/* user, not profile */}
           <UserEmailForm user={state.user} />
         </Stack>
       </Content>

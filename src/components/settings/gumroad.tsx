@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import NextHead from 'next/head'
-import { Button, Link, useColorModeValue } from '@chakra-ui/react'
+import { Button, Link } from '@chakra-ui/react'
 
 export function GumroadButton({
   productId = 'catamyst-pro',
@@ -8,6 +8,8 @@ export function GumroadButton({
   leftIcon,
   children,
 }) {
+  const encoded_email = encodeURIComponent(email)
+
   useEffect(() => {
     const script = document.createElement('script')
     script.src = '/scripts/gumroad.js'
@@ -24,7 +26,7 @@ export function GumroadButton({
         as={Link}
         className="gumroad-button"
         colorScheme="teal"
-        href={`https://gum.co/${productId}?email=${email}`}
+        href={`https://gum.co/${productId}?email=${encoded_email}`}
         data-display-style="overlay"
         leftIcon={leftIcon}
         size="lg"

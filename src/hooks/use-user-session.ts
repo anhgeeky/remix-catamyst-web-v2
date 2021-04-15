@@ -20,7 +20,6 @@ export function useUserSession() {
   const handleUserSessionChange = () => {
     try {
       const globalSession = supabase.auth.session()
-      // if (!isVercel) console.log({ globalSession })
 
       /**
        * Set data from database to be used for the entire app.

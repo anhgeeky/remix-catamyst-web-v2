@@ -66,7 +66,7 @@ function UserReviews({ reviews }) {
             >
               <Stack spacing={3}>
                 <HStack spacing={5}>
-                  <UserAvatar user={user} />
+                  <UserAvatar profile={user} />
                   <Box>
                     <Heading as="h3" size="lg">
                       <NextLink href={`/${user.handle}`}>

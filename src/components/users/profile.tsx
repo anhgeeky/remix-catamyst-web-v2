@@ -26,40 +26,40 @@ import ReactHtmlParser from 'react-html-parser'
 import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
 import { UserAvatar } from '@components/users'
 import { transformOptions } from '@components/blocks'
-import { trimUrl, getJoinedDate } from '@utils'
-import { useAuth } from '@hooks'
+import { isDev, trimUrl, getJoinedDate } from '@utils'
+import { useProfile } from '@hooks'
 
 import dataProjects from '@data/projects.json'
 
 /**
- * User profile.
- * user.bio_html is the same format with BlockTexts.
+ * User profile details.
+ * profile.bio_html is the same format with BlockTexts.
  * Because there is only one user, the identification is using id.
  */
-export function UserProfile({ user }) {
+export function UserProfile({ profile }) {
   const toast = useToast()
   const router = useRouter()
   const { handle } = router.query
-  const { isAuthenticated } = useAuth()
+  const globalState = useProfile()
 
   const [isFollowed, setIsFollowed] = useState(false)
   const [isFavorited, setIsFavorited] = useState(false)
 
-  const isActionsAllowed = isAuthenticated
-  const isSameUser = user.handle === handle
+  const isActionsAllowed = globalState.isAuthenticated
+  const isSameUser = globalState?.profile?.handle === handle
 
-  const hasCountry = Boolean(user.country)
-  const hasLocation = Boolean(user.location)
-  const hasProjects = Boolean(user.projects?.length)
-  const hasSocialLinks = Boolean(user.socials?.length > 0)
-  const hasWebsite = Boolean(user.website?.url)
-  const hasWork = user.work?.title && user.work?.name
-  const joinedDate = getJoinedDate(user?.created_at)
+  const hasCountry = Boolean(profile.country)
+  const hasLocation = Boolean(profile.location)
+  const hasProjects = Boolean(profile.projects?.length)
+  const hasSocialLinks = Boolean(profile.socials?.length > 0)
+  const hasWebsite = Boolean(profile.website?.url)
+  const hasWork = profile.work?.title && profile.work?.name
+  const joinedDate = getJoinedDate(profile?.created_at)
 
   const handleFollow = () => {
     if (isActionsAllowed) {
       setIsFollowed(true)
-      toast({ status: 'success', title: `Followed ${user.name}` })
+      toast({ status: 'success', title: `Followed ${profile.name}` })
     } else {
       router.push('/signin')
     }
@@ -68,7 +68,7 @@ export function UserProfile({ user }) {
   const handleUnfollow = () => {
     if (isActionsAllowed) {
       setIsFollowed(false)
-      toast({ status: 'warning', title: `Unfollowed ${user.name}` })
+      toast({ status: 'warning', title: `Unfollowed ${profile.name}` })
     } else {
       router.push('/signin')
     }
@@ -77,7 +77,7 @@ export function UserProfile({ user }) {
   const handleFavorite = () => {
     if (isActionsAllowed) {
       setIsFavorited(true)
-      toast({ title: `Favorited ${user.name}` })
+      toast({ title: `Favorited ${profile.name}` })
     } else {
       router.push('/signin')
     }
@@ -86,7 +86,7 @@ export function UserProfile({ user }) {
   const handleUnfavorite = () => {
     if (isActionsAllowed) {
       setIsFavorited(false)
-      toast({ status: 'warning', title: `Unfavorited ${user.name}` })
+      toast({ status: 'warning', title: `Unfavorited ${profile.name}` })
     } else {
       router.push('/signin')
     }
@@ -98,9 +98,9 @@ export function UserProfile({ user }) {
 
   return (
     <>
-      <UserProfileCover user={user} />
+      <UserProfileCover profile={profile} />
       <UserProfileContent
-        user={user}
+        profile={profile}
         state={{
           isSameUser,
           isFollowed,
@@ -125,7 +125,7 @@ export function UserProfile({ user }) {
   )
 }
 
-function UserProfileCover({ user }) {
+function UserProfileCover({ profile }) {
   const defaultCoverUrl = `https://storage.catamyst.com/covers/grass.jpg`
 
   return (
@@ -139,8 +139,8 @@ function UserProfileCover({ user }) {
         bg={useColorModeValue('gray.200', 'gray.500')}
       >
         <NextImage
-          alt={`Cover picture of ${user.name}`}
-          src={user.cover_url || defaultCoverUrl}
+          alt={`Cover picture of ${profile.name}`}
+          src={profile.cover_url || defaultCoverUrl}
           layout="fixed"
           objectFit="cover"
           width={1440}
@@ -151,7 +151,7 @@ function UserProfileCover({ user }) {
   )
 }
 
-function UserProfileContent({ user, state, actions }) {
+function UserProfileContent({ profile, state, actions }) {
   const placeholder = {
     totalFollowing: 10,
     totalFollowers: 20,
@@ -173,10 +173,10 @@ function UserProfileContent({ user, state, actions }) {
               rounded="full"
               bg={useColorModeValue('gray.50', 'gray.900')}
             >
-              <UserAvatar user={user} size={150} />
+              <UserAvatar profile={profile} size={150} />
             </Box>
 
-            <UserNameHandle user={user} />
+            <UserNameHandle profile={profile} />
 
             <Box id="user-actions" as={ButtonGroup} size="sm">
               {state.isSameUser && (
@@ -193,17 +193,17 @@ function UserProfileContent({ user, state, actions }) {
           </VStack>
 
           <Stack id="user-info-bio" spacing={0} pt={3}>
-            {user.headline && (
+            {profile.headline && (
               <Box id="user-headline">
                 <Heading as="h3" size="md" color="gray.500">
-                  {user.headline}
+                  {profile.headline}
                 </Heading>
               </Box>
             )}
-            <Box id="user-bio">
-              {!user.bio_html && <Text color="gray.500">No bio yet.</Text>}
-              {user.bio_html &&
-                ReactHtmlParser(user.bio_html, transformOptions)}
+            <Box id="user-bio" fontSize={['md', 'lg']}>
+              {!profile.bio_html && <Text color="gray.500">No bio yet.</Text>}
+              {profile.bio_html &&
+                ReactHtmlParser(profile.bio_html, transformOptions)}
             </Box>
           </Stack>
 
@@ -216,31 +216,31 @@ function UserProfileContent({ user, state, actions }) {
             {state.hasWork && (
               <Box id="user-organization" mr={5} as={HStack} spacing={1}>
                 <Icon name="organization" />
-                <span>{user.work.title}, </span>
-                {user.work.handle ? (
-                  <NextLink href={`/${user.work.handle}`} passHref>
-                    <Link color="teal.500">{user.work.name}</Link>
+                <span>{profile.work.title}, </span>
+                {profile.work.handle ? (
+                  <NextLink href={`/${profile.work.handle}`} passHref>
+                    <Link color="teal.500">{profile.work.name}</Link>
                   </NextLink>
-                ) : user.work.url ? (
-                  <Link isExternal href={user.work.url} color="teal.500">
-                    {user.work.name}
+                ) : profile.work.url ? (
+                  <Link isExternal href={profile.work.url} color="teal.500">
+                    {profile.work.name}
                   </Link>
                 ) : (
-                  <span>{user.work.name}</span>
+                  <span>{profile.work.name}</span>
                 )}
               </Box>
             )}
 
             {state.hasCountry && (
               <Box id="user-country" mr={5}>
-                <Country code={user.country} />
+                <Country code={profile.country} />
               </Box>
             )}
 
             {state.hasLocation && (
               <Box id="user-location" mr={5} as={HStack} spacing={1}>
                 <Icon name="location" />
-                <span>{user.location}</span>
+                <span>{profile.location}</span>
               </Box>
             )}
           </Flex>
@@ -256,18 +256,18 @@ function UserProfileContent({ user, state, actions }) {
                 <Icon name="link" />
                 <Link
                   isExternal
-                  href={user.website.url}
+                  href={profile.website.url}
                   fontWeight="500"
                   color="teal.500"
                 >
-                  {trimUrl(user.website.url)}
+                  {trimUrl(profile.website.url)}
                 </Link>
               </Box>
             )}
 
             {state.hasSocialLinks && (
               <Box id="user-social-links" mr={5} my={1}>
-                <SocialLinks links={user.socials} />
+                <SocialLinks links={profile.socials} />
               </Box>
             )}
 
@@ -283,7 +283,7 @@ function UserProfileContent({ user, state, actions }) {
         {state.hasProjects && (
           <Stack id="org-projects">
             <HeadingStack>Projects</HeadingStack>
-            {user.projects.map((projectId, index) => {
+            {profile.projects.map((projectId, index) => {
               const project = dataProjects.find(
                 (project) => project.id === projectId
               )
@@ -304,15 +304,15 @@ function UserProfileContent({ user, state, actions }) {
   )
 }
 
-export function UserNameHandle({ user }) {
+export function UserNameHandle({ profile }) {
   return (
     <Box id="user-name-handle" textAlign="center">
       <Flex id="user-name-verified" justify="center">
         <Heading id="user-name" as="h1" size="lg">
-          {user.name}
+          {profile.name}
         </Heading>
 
-        {user?.is_verified && (
+        {profile?.is_verified && (
           <Tooltip
             hasArrow
             label="Verified user"
@@ -341,15 +341,15 @@ export function UserNameHandle({ user }) {
           fontFamily="body"
           fontWeight="400"
         >
-          {user.handle ? `@${user.handle}` : '@username'}
+          {profile.handle ? `@${profile.handle}` : '@username'}
         </Heading>
         <HStack>
-          {user.role && user.role !== 'Member' && (
-            <Badge variant="solid">{user.role}</Badge>
+          {profile.role && profile.role !== 'Member' && (
+            <Badge variant="solid">{profile.role}</Badge>
           )}
-          {user.mode && <Badge variant="solid">{user.mode}</Badge>}
-          {user.plan && user.plan !== 'Basic' && (
-            <Badge variant="solid">{user.plan}</Badge>
+          {profile.mode && <Badge variant="solid">{profile.mode}</Badge>}
+          {profile.plan && profile.plan !== 'Basic' && (
+            <Badge variant="solid">{profile.plan}</Badge>
           )}
         </HStack>
       </VStack>

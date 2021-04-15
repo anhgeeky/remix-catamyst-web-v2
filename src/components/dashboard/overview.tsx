@@ -91,7 +91,7 @@ export function DashboardOverview({ state }) {
                   />
                 </Box>
 
-                <UserNameHandle user={state.profile} />
+                <UserNameHandle profile={state.profile} />
 
                 <ButtonGroup size="sm" colorScheme="teal">
                   {state.profile.handle && (

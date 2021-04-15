@@ -133,7 +133,7 @@ export function HandleUserProfile({ profile }) {
           {profile.name} (@{profile.handle}) · Catamyst
         </title>
       </NextHead>
-      <UserProfile user={profile} />
+      <UserProfile profile={profile} />
     </>
   )
 }

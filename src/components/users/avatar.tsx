@@ -1,20 +1,20 @@
 import NextImage from 'next/image'
 import { Avatar, Box, useColorModeValue } from '@chakra-ui/react'
 
-export function UserAvatar({ user, size = 100 }) {
+export function UserAvatar({ profile, size = 100 }) {
   return (
     <>
-      {!user.avatar_url && (
+      {!profile.avatar_url && (
         <Avatar
-          name={user.name}
-          src={user.avatar_url}
+          name={profile.name}
+          src={profile.avatar_url}
           width={size}
           height={size}
           size="2xl"
           rounded="full"
         />
       )}
-      {user.avatar_url && (
+      {profile.avatar_url && (
         <Box
           className="next-image-container user-avatar"
           rounded="full"
@@ -22,7 +22,7 @@ export function UserAvatar({ user, size = 100 }) {
         >
           <NextImage
             className="next-image-avatar"
-            src={user.avatar_url}
+            src={profile.avatar_url}
             width={size}
             height={size}
             layout="fixed"
