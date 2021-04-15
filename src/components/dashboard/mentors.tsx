@@ -33,7 +33,7 @@ export function DashboardMentors({ state }) {
         <Stack spacing={5} width="100%">
           <Stack spacing={5} width="100%">
             <Stack>
-              <HeadingStack>Assigned mentors:</HeadingStack>
+              <HeadingStack>Assigned</HeadingStack>
               <Card>
                 <CardPlaceholder>
                   <Box>
@@ -57,7 +57,7 @@ export function DashboardMentors({ state }) {
             </Stack>
 
             <Stack>
-              <HeadingStack>Available mentors:</HeadingStack>
+              <HeadingStack>Available</HeadingStack>
               <Card>
                 <CardPlaceholder>
                   <Text>

@@ -7,7 +7,9 @@ export function ForumHero({ section, children }) {
       py={5}
       justify="center"
       color={contrast(section.color) === 'light' ? 'black' : 'white'}
-      bg={section.color}
+      bg={
+        section.color || contrast(section.color) === 'light' ? 'white' : 'black'
+      }
       bgGradient={section.gradient}
     >
       <Box px={5} width="1200px">

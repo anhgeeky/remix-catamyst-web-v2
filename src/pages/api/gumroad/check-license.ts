@@ -23,13 +23,13 @@ export default async function checkLicense(
         ...data,
       })
     } catch (error) {
-      res.status(400).json({
+      res.status(401).json({
         message: 'license_key is invalid.',
         success: false,
         error: error.stack ? error.message : error,
       })
     }
   } else {
-    res.status(400).json({ message: 'Not allowed' })
+    res.status(403).json({ message: 'Not allowed' })
   }
 }

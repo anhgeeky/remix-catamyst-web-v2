@@ -80,23 +80,24 @@ export default async function gumroadPing(
       } else if (req.body.permalink === 'catamyst-super') {
         await upgradeSuper(req, res, profile)
       } else {
-        res.status(400).json({ message: 'Not allowed' })
+        res.status(403).json({ message: 'Not allowed' })
       }
 
       // TODO: Ping could handle cancellation event here
       // But only check after the next billing cycle
+      // Compare purchase date with the current date
     } catch (error) {
       const response = {
-        message: 'Failed to upgrade because of mixed problems.',
+        message: 'Failed to upgrade because of few problems.',
         via: 'ping',
         success: false,
         profile: profile,
         error: error.stack ? error.message : error,
       }
       console.error(response)
-      res.status(400).json(response)
+      res.status(401).json(response)
     }
   } else {
-    res.status(400).json({ message: 'Not allowed' })
+    res.status(403).json({ message: 'Not allowed' })
   }
 }

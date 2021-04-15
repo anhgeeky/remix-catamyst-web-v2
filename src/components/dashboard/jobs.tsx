@@ -31,29 +31,57 @@ export function DashboardJobs({ state }) {
 
       <Content>
         <Stack spacing={5} width="100%">
-          <Stack>
-            <HeadingStack>Jobs you've applied to:</HeadingStack>
-            <Card>
-              <CardPlaceholder>
-                <Box>
-                  <NextImage
-                    className="invertable next-image"
-                    src={`https://storage.catamyst.com/illustrations/dashboard-jobs-none.png`}
-                    alt="No Jobs"
-                    width={200}
-                    height={200}
-                  />
-                </Box>
-                <Text>
-                  Hey {getName(state.profile)}, you haven't applied to a job
-                  yet.
-                </Text>
-                <LinkButton colorScheme="teal" href="/jobs">
-                  Search for a job
-                </LinkButton>
-              </CardPlaceholder>
-            </Card>
-          </Stack>
+          {state?.profile?.mode === 'Learner' && (
+            <Stack>
+              <HeadingStack>Applied</HeadingStack>
+              <Card>
+                <CardPlaceholder>
+                  <Box>
+                    <NextImage
+                      className="invertable next-image"
+                      src={`https://storage.catamyst.com/illustrations/dashboard-jobs-none.png`}
+                      alt="No Jobs"
+                      width={200}
+                      height={200}
+                    />
+                  </Box>
+                  <Text>
+                    Hey {getName(state.profile)}, you haven't applied to a job
+                    yet.
+                  </Text>
+                  <LinkButton colorScheme="teal" href="/jobs">
+                    Search for a job
+                  </LinkButton>
+                </CardPlaceholder>
+              </Card>
+            </Stack>
+          )}
+
+          {state?.profile?.mode !== 'Learner' && (
+            <Stack>
+              <HeadingStack>Posted</HeadingStack>
+              <Card>
+                <CardPlaceholder>
+                  <Box>
+                    <NextImage
+                      className="invertable next-image"
+                      src={`https://storage.catamyst.com/illustrations/dashboard-jobs-none.png`}
+                      alt="No Jobs"
+                      width={200}
+                      height={200}
+                    />
+                  </Box>
+                  <Text>
+                    Hey {getName(state.profile)}, you haven't applied to a job
+                    yet.
+                  </Text>
+                  <LinkButton colorScheme="teal" href="/jobs">
+                    Search for a job
+                  </LinkButton>
+                </CardPlaceholder>
+              </Card>
+            </Stack>
+          )}
         </Stack>
       </Content>
     </>

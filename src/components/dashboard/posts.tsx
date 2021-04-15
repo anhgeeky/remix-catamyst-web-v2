@@ -56,7 +56,7 @@ export function DashboardPosts({ state }) {
           </Stack>
 
           <Stack>
-            <HeadingStack>Drafted:</HeadingStack>
+            <HeadingStack>Drafted</HeadingStack>
             <Card>
               <CardPlaceholder>
                 <Text>

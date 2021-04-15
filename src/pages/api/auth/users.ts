@@ -15,13 +15,13 @@ export default async function users(req: NextApiRequest, res: NextApiResponse) {
         users: data,
       })
     } catch (error) {
-      res.status(500).json({
+      res.status(401).json({
         message: 'Failed to get all users',
         error,
       })
     }
   } else {
-    res.status(400).json({
+    res.status(403).json({
       message: 'Not allowed',
     })
   }

@@ -54,6 +54,6 @@ export const upgradePro = async (
       newProfileError: newProfileError,
     }
     console.error('>>>', { response })
-    res.status(500).json(response)
+    res.status(401).json(response)
   }
 }

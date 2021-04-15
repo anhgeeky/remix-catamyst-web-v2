@@ -34,7 +34,7 @@ export function DashboardProjects({ state }) {
       <Content>
         <Stack spacing={5} width="100%">
           <Stack>
-            <HeadingStack>Published Projects:</HeadingStack>
+            <HeadingStack>Published</HeadingStack>
             <Card>
               <CardPlaceholder>
                 <Box>
@@ -60,7 +60,7 @@ export function DashboardProjects({ state }) {
           </Stack>
 
           <Stack>
-            <HeadingStack>Draft Projects:</HeadingStack>
+            <HeadingStack>Draft</HeadingStack>
             <Card>
               <CardPlaceholder>
                 <Text>

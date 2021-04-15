@@ -13,7 +13,7 @@ export default async function lessons(
       lessons: dataLessons,
     })
   } catch (error) {
-    res.status(500).json({
+    res.status(401).json({
       message: 'Failed to get all lessons',
     })
   }
