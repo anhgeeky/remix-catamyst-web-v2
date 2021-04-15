@@ -1,5 +1,5 @@
 [
-  { "slug": "overview", "text": "Overview", "href": "/cms/overview" },
+  { "slug": "overview", "text": "CMS", "href": "/cms/overview" },
   { "slug": "tracks", "text": "Tracks", "href": "/cms/tracks" },
   { "slug": "topics", "text": "Topics", "href": "/cms/topics" },
   { "slug": "lessons", "text": "Lessons", "href": "/cms/lessons" },

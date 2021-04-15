@@ -38,7 +38,7 @@ export default async function handleProfile(
         .select(
           `handle, name, role, mode, plan, is_public, is_verified, avatar_url, cover_url, headline, bio_html, country, location, website_url, work, socials, created_at, updated_at`
         )
-        .eq('handle', handle)
+        .ilike('handle', `%${handle}%`)
         .single()
 
       if (profile) {

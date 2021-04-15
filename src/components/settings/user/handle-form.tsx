@@ -19,6 +19,7 @@ import { Card, Icon } from '@components'
 import { supabase } from '@lib'
 import { HandleSchema } from '@utils/yup'
 import { useToast } from '@hooks'
+import { isDev } from '@utils'
 
 type Inputs = { handle: string }
 
@@ -26,7 +27,7 @@ export function UserHandleForm({ state }) {
   const toast = useToast()
   const [isTooSmall] = useMediaQuery('(max-width: 62em)')
   const [loading, setLoading] = useState(false)
-  const { register, handleSubmit, watch, errors } = useForm<Inputs>({
+  const { register, handleSubmit, watch, setError, errors } = useForm<Inputs>({
     resolver: yupResolver(HandleSchema),
   })
 
@@ -43,7 +44,19 @@ export function UserHandleForm({ state }) {
       toast({ status: 'success', title: 'Your username is changed' })
       setLoading(false)
     } catch (error) {
-      toast({ status: 'error', title: 'Failed to save username' })
+      if (isDev) console.error(error)
+      if (error.code === '23505') {
+        setError('handle', { message: 'Username is already taken' })
+        toast({ status: 'error', title: 'Username is already taken.' })
+      } else {
+        setError('handle', {
+          message: 'Failed to save username. Please try again',
+        })
+        toast({
+          status: 'error',
+          title: 'Failed to save username. Please try again',
+        })
+      }
       setLoading(false)
     }
   }

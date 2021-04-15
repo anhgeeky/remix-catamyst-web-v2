@@ -42,8 +42,7 @@ export function useUserSession() {
       const { data: supabaseAuthListener } = supabase.auth.onAuthStateChange(
         async (event: string, session: SupabaseAuthSession | null) => {
           if (isDev) {
-            console.info('>>> Auth state has changed.')
-            console.info({ event })
+            console.info('>>> Auth state has changed with event.', { event })
           }
 
           setSession(globalSession)

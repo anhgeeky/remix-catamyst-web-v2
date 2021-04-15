@@ -1,5 +1,5 @@
 [
-  { "slug": "overview", "text": "Overview", "href": "/settings/overview" },
+  { "slug": "overview", "text": "Settings", "href": "/settings/overview" },
   { "slug": "profile", "text": "Profile", "href": "/settings/profile" },
   { "slug": "email", "text": "Email", "href": "/settings/email" },
   { "slug": "password", "text": "Password", "href": "/settings/password" },

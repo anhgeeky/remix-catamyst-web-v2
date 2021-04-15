@@ -1,9 +1,9 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.234",
+  "version": "0.1.235",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8000",
+    "dev": "NODE_OPTIONS=\"--max_old_space_size=4096\" next dev -p 8000",
     "dev:lan": "next dev -p 8000 -H 192.168.100.18",
     "build": "next build",
     "start": "next start -p 8000",
