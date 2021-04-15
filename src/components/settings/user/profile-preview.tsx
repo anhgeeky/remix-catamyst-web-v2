@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Card, Country, Icon, SocialLinks } from '@components'
+import { Card, Country, Icon, SocialLinks, LinkButton } from '@components'
 import { supabase } from '@lib'
 import { Profile } from '@types'
 import { isDev, trimUrl, getCompleteDateTime } from '@utils'
@@ -47,7 +47,7 @@ export function UserProfilePreview({ profile }) {
   )
 
   useEffect(() => {
-    if (isDev) console.log('SET_INITIAL_PROFILE', 'preview')
+    // if (isDev) console.log('SET_INITIAL_PROFILE', 'preview')
     try {
       localDispatch({ type: 'SET_INITIAL_PROFILE', payload: profile })
     } catch (error) {
@@ -56,7 +56,7 @@ export function UserProfilePreview({ profile }) {
   }, [profile])
 
   useEffect(() => {
-    if (isDev) console.log('UPDATE_PROFILE', 'preview')
+    // if (isDev) console.log('UPDATE_PROFILE', 'preview')
     try {
       const subscription = supabase
         .from(`profiles:id=eq.${profile.id}`)
@@ -86,7 +86,7 @@ export default function ProfileCard({ profile }) {
   }
 
   return (
-    <Box className={!isTooSmall && 'sticky'}>
+    <Stack className={!isTooSmall && 'sticky'} spacing={5}>
       <Card
         className="profile-preview"
         maxW={{ md: '400px' }}
@@ -117,7 +117,7 @@ export default function ProfileCard({ profile }) {
           </Flex>
 
           <Stack p={5}>
-            <VStack spacing={1} mt="-75px">
+            <VStack spacing={2} mt="-75px">
               <Box
                 rounded="full"
                 p={1}
@@ -147,7 +147,7 @@ export default function ProfileCard({ profile }) {
               </Heading>
             </VStack>
 
-            <Stack spacing={1} py={3} width="100%">
+            <Stack spacing={2} py={3} width="100%">
               {profile.headline && (
                 <Heading as="h4" size="sm" color="gray.500">
                   {profile.headline}
@@ -156,53 +156,51 @@ export default function ProfileCard({ profile }) {
               <Box>{ReactHtmlParser(profile.bio_html)}</Box>
             </Stack>
 
-            <HStack spacing={1}>
-              <Icon name="organization" />
-              <span>
-                {profile.work?.title || (
-                  <chakra.span fontStyle="italic" color="gray.500">
-                    Title
-                  </chakra.span>
-                )}
-                {', '}
-              </span>
-              {profile.work?.handle ? (
-                <NextLink href={`/${profile.work?.handle}`} passHref>
-                  <Link color="teal.500">
-                    {profile.work?.name || (
+            <Flex>
+              <HStack spacing={2}>
+                <Icon name="organization" />
+                <Text>
+                  <span>
+                    {profile.work?.title || (
                       <chakra.span fontStyle="italic" color="gray.500">
-                        Organization
+                        Title
                       </chakra.span>
                     )}
-                  </Link>
-                </NextLink>
-              ) : profile.work?.url ? (
-                <Link isExternal href={profile.work?.url} color="teal.500">
-                  {profile.work?.name || (
-                    <chakra.span fontStyle="italic" color="gray.500">
-                      Organization
-                    </chakra.span>
+                    {', '}
+                  </span>
+                  {profile.work?.handle ? (
+                    <NextLink href={`/${profile.work?.handle}`} passHref>
+                      <Link color="teal.500">
+                        {profile.work?.name || (
+                          <chakra.span fontStyle="italic" color="gray.500">
+                            Organization
+                          </chakra.span>
+                        )}
+                      </Link>
+                    </NextLink>
+                  ) : profile.work?.url ? (
+                    <Link isExternal href={profile.work?.url} color="teal.500">
+                      {profile.work?.name || (
+                        <chakra.span fontStyle="italic" color="gray.500">
+                          Organization
+                        </chakra.span>
+                      )}
+                    </Link>
+                  ) : (
+                    <span>
+                      {profile.work?.name || (
+                        <chakra.span fontStyle="italic" color="gray.500">
+                          Organization
+                        </chakra.span>
+                      )}
+                    </span>
                   )}
-                </Link>
-              ) : (
-                <span>
-                  {profile.work?.name || (
-                    <chakra.span fontStyle="italic" color="gray.500">
-                      Organization
-                    </chakra.span>
-                  )}
-                </span>
-              )}
-            </HStack>
+                </Text>
+              </HStack>
+            </Flex>
 
             <Flex>
-              {profile.country && (
-                <Box mr={5}>
-                  <Country code={profile.country} />
-                </Box>
-              )}
-
-              <HStack mr={5}>
+              <HStack mr={5} spacing={2}>
                 <Icon name="location" />
                 <Text>
                   {profile.location || (
@@ -212,41 +210,60 @@ export default function ProfileCard({ profile }) {
                   )}
                 </Text>
               </HStack>
+
+              {profile.country && (
+                <Box mr={5}>
+                  <Country code={profile.country} />
+                </Box>
+              )}
             </Flex>
 
             <Flex>
-              <HStack mr={5} spacing={1}>
+              <HStack mr={5} spacing={2}>
                 <Icon name="link" />
-                {!profile.website_url && (
-                  <chakra.span fontStyle="italic" color="gray.500">
-                    example.com
-                  </chakra.span>
-                )}
-                {profile.website_url && (
-                  <Link
-                    isExternal
-                    href={profile.website_url}
-                    fontWeight="500"
-                    color="teal.500"
-                  >
-                    {trimUrl(profile.website_url)}
-                  </Link>
-                )}
+                <Text>
+                  {!profile.website_url && (
+                    <chakra.span fontStyle="italic" color="gray.500">
+                      example.com
+                    </chakra.span>
+                  )}
+                  {profile.website_url && (
+                    <Link
+                      isExternal
+                      href={profile.website_url}
+                      fontWeight="500"
+                      color="teal.500"
+                    >
+                      {trimUrl(profile.website_url)}
+                    </Link>
+                  )}
+                </Text>
               </HStack>
 
               {profile.socials && <SocialLinks links={profile.socials} />}
             </Flex>
 
-            <Box>
+            <Flex>
               <Text fontSize="xs">
                 Last updated {getCompleteDateTime(profile.updated_at)}
               </Text>
-            </Box>
+            </Flex>
           </Stack>
         </Box>
 
-        {isDev && <Text as="pre">{JSON.stringify(profile, null, 2)}</Text>}
+        {/* {isDev && <Text as="pre">{JSON.stringify(profile, null, 2)}</Text>} */}
       </Card>
-    </Box>
+
+      {profile?.handle && (
+        <LinkButton
+          size="sm"
+          href={`/${profile.handle}`}
+          colorScheme="teal"
+          leftIcon={<Icon name="profile" />}
+        >
+          Check my profile
+        </LinkButton>
+      )}
+    </Stack>
   )
 }

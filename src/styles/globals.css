@@ -112,7 +112,7 @@ a {
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 75px;
+  top: 80px;
 }
 
 /**

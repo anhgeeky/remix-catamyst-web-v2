@@ -16,15 +16,15 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 import { Card, Icon } from '@components'
-import { useToast } from '@hooks'
 import { supabase } from '@lib'
 import { HandleSchema } from '@utils/yup'
+import { useToast } from '@hooks'
 
 type Inputs = { handle: string }
 
 export function UserHandleForm({ state }) {
-  const [isTooSmall] = useMediaQuery('(max-width: 62em)')
   const toast = useToast()
+  const [isTooSmall] = useMediaQuery('(max-width: 62em)')
   const [loading, setLoading] = useState(false)
   const { register, handleSubmit, watch, errors } = useForm<Inputs>({
     resolver: yupResolver(HandleSchema),
@@ -43,7 +43,7 @@ export function UserHandleForm({ state }) {
       toast({ status: 'success', title: 'Your username is changed' })
       setLoading(false)
     } catch (error) {
-      toast({ status: 'error', title: 'Failed to change username' })
+      toast({ status: 'error', title: 'Failed to save username' })
       setLoading(false)
     }
   }

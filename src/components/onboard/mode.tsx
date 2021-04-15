@@ -34,7 +34,6 @@ export function OnboardMode({ state }) {
           {
             id: state.user!.id,
             mode: selectedMode,
-            updated_at: new Date(),
           },
           { returning: 'minimal' }
         )

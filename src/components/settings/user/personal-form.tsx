@@ -17,6 +17,7 @@ import { dataAppCountries } from '@data'
 import { Card, Icon } from '@components'
 import { supabase } from '@lib'
 import { checkUrl } from '@utils'
+import { useToast } from '@hooks'
 
 type Inputs = {
   headline?: string
@@ -27,6 +28,7 @@ type Inputs = {
 }
 
 export function UserPersonalForm({ state }) {
+  const toast = useToast()
   const { profile } = state
   const [loading, setLoading] = useState<boolean>(false)
   const { handleSubmit, register } = useForm<Inputs>({ mode: 'onSubmit' })
@@ -41,16 +43,19 @@ export function UserPersonalForm({ state }) {
           {
             id: state.user!.id,
             ...form,
-            updated_at: new Date(),
             website_url: form.website_url ? checkUrl(form.website_url) : '',
+            // TODO: Can change to profile.url but needs database migration.
+            // url: form.url ? checkUrl(form.url) : '',
           },
           { returning: 'minimal' }
         )
         .single()
       if (error) throw error
+      toast({ status: 'success', title: 'Your personal details are changed' })
       setLoading(false)
     } catch (error) {
       setLoading(false)
+      toast({ status: 'success', title: 'Failed to save personal details' })
       console.error({ error })
     }
   }

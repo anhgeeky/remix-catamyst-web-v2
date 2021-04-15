@@ -7,8 +7,8 @@
 // }
 
 export type Profile = {
-  id: string
   handle?: string
+  id: string
   name?: string
   nickname?: string
   mode: string

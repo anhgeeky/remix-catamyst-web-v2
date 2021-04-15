@@ -15,6 +15,7 @@ import { useForm } from 'react-hook-form'
 import { Card, Icon } from '@components'
 import { supabase } from '@lib'
 import { checkUrl } from '@utils'
+import { useToast } from '@hooks'
 
 type Inputs = {
   title?: string
@@ -24,6 +25,7 @@ type Inputs = {
 }
 
 export function UserWorkForm({ state }) {
+  const toast = useToast()
   const [isTooSmall] = useMediaQuery('(max-width: 62em)')
   const { profile } = state
   const [loading, setLoading] = useState<boolean>(false)
@@ -33,8 +35,7 @@ export function UserWorkForm({ state }) {
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
-
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('profiles')
         .upsert(
           {
@@ -42,15 +43,18 @@ export function UserWorkForm({ state }) {
             work: {
               ...form,
               url: form.url ? checkUrl(form.url) : '',
+              // profile.work.url
             },
           },
           { returning: 'minimal' }
         )
         .single()
       if (error) throw error
+      toast({ status: 'success', title: 'Your work details are changed' })
       setLoading(false)
     } catch (error) {
       setLoading(false)
+      toast({ status: 'success', title: 'Failed to save work details' })
       console.error({ error })
     }
   }

@@ -56,9 +56,9 @@ export function OnboardWelcome({ state }) {
       setLoading(false)
       console.error({ error })
       if (error.code === '23505') {
-        setError('handle', { message: 'Username is already used by someone.' })
+        setError('handle', { message: 'Username is already used by someone' })
       } else {
-        setError('handle', { message: 'Something wrong. Please try again.' })
+        setError('handle', { message: 'Something wrong. Please try again' })
       }
     }
   }
