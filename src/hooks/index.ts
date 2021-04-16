@@ -15,10 +15,12 @@ export { useUserSession } from '@hooks/use-user-session'
  * Name convention for all SWR-relate to easily identify.
  */
 export {
-  useSWR,
-  useProfileHandleSWR,
-  useAuthProfileSWR,
   fetcherSWR,
   fetcherWithTokenSWR,
   mutateSWR,
+  useAuthProfileSWR,
+  useProfileHandleSWR,
+  useSWR,
+  useTrackById,
+  useTrackBySlug,
 } from '@hooks/use-swr'

@@ -227,6 +227,8 @@ export function Icon({ name }) {
       return <CrossIcon />
     case 'divider':
       return <DividerIcon />
+    case 'up':
+      return <UpIcon />
     case 'down':
       return <DownIcon />
     case 'generate':
@@ -263,8 +265,6 @@ export function Icon({ name }) {
       return <TextsIcon />
     case 'title':
       return <TitleIcon />
-    case 'up':
-      return <UpIcon />
     case 'onboard':
       return <OnboardIcon />
     case 'dashboard':

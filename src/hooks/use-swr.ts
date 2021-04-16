@@ -1,8 +1,8 @@
 import useSWR, { mutate as mutateSWR } from 'swr'
 import { useDispatch } from 'react-redux'
 
-import { supabase } from '@lib'
-import { signOut } from '@features/auth/actions'
+// import { supabase } from '@lib'
+// import { signOut } from '@features/auth/actions'
 
 /**
  * Named exports
@@ -11,9 +11,11 @@ import { signOut } from '@features/auth/actions'
 export { useSWR, mutateSWR }
 
 /**
- * Fetchers
+ * Fetchers for SWR with fetch/axios.
  * @param url
  * @param token
+ *
+ * No need for try catch, should be returned when { data, error } is called.
  */
 
 export const fetcherSWR = async (url) => {
@@ -50,7 +52,7 @@ export const fetcherWithTokenSWR = async (url, token) => {
 }
 
 /**
- * Hooks
+ * Hooks for profile-related data.
  */
 
 export const useProfileHandleSWR = (handle) => {
@@ -93,4 +95,18 @@ export const useAuthProfileSWR = (token) => {
     isError: Boolean(!data),
     error: error,
   }
+}
+
+/**
+ * Hooks for content-related data.
+ */
+
+export const useTrackById = (id) => {
+  const { data, error } = useSWR(`/api/tracks/id/${id}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
+export const useTrackBySlug = (slug) => {
+  const { data, error } = useSWR(`/api/tracks/slug/${slug}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
 }

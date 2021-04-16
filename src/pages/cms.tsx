@@ -1,6 +1,7 @@
 import { Layout } from '@layouts'
 import { useRedirectHome } from '@hooks'
 import { supabase } from '@lib'
+import { isDev } from '@utils'
 
 /**
  * The CMS has different pattern with regular dashboard.
@@ -21,9 +22,11 @@ export default function cmsPage({ user }) {
 
 export async function getServerSideProps({ req }) {
   const { user } = await supabase.auth.api.getUserByCookie(req)
+  if (isDev) console.log({ user })
+
   if (user?.user_metadata.access === 'cms') {
     return { props: { user } }
   } else {
-    return { props: {}, redirect: { destination: '/about', permanent: false } }
+    return { props: {}, redirect: { destination: '/', permanent: false } }
   }
 }
