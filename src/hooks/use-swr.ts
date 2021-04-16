@@ -110,3 +110,23 @@ export const useTrackBySlug = (slug) => {
   const { data, error } = useSWR(`/api/tracks/slug/${slug}`, fetcherSWR)
   return { data: data, isLoading: !error && !data, isError: error }
 }
+
+export const useTopicById = (id) => {
+  const { data, error } = useSWR(`/api/topics/id/${id}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
+export const useTopicBySlug = (slug) => {
+  const { data, error } = useSWR(`/api/topics/slug/${slug}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
+export const useLessonById = (id) => {
+  const { data, error } = useSWR(`/api/lessons/id/${id}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
+export const useLessonBySlug = (slug) => {
+  const { data, error } = useSWR(`/api/lessons/slug/${slug}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}

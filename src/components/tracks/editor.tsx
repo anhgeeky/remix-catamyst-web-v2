@@ -31,13 +31,13 @@ import {
   useToast,
 } from '@components'
 import { CMSViewJSON } from '@components/cms'
-import { useRedirectHome, useTrackById } from '@hooks'
 import { slugify } from '@utils'
+import { useRedirectHome, useTrackById } from '@hooks'
 
 export function TrackEditor({ trackId }) {
+  const globalState = useRedirectHome()
   const toast = useToast({ duration: 1000 })
   const [viewMode, setViewMode] = useState('result')
-  const globalState = useRedirectHome()
   const { data, isLoading, isError } = useTrackById(trackId)
 
   const handleSave = () => {
@@ -68,6 +68,7 @@ export function TrackEditor({ trackId }) {
           <Text>Sorry, track with id #{trackId} is not found.</Text>
         </>
       )}
+
       {!isLoading && data.track && data.topics && (
         <>
           <NextHead>
@@ -93,14 +94,16 @@ export function TrackEditor({ trackId }) {
             <CMSViewJSON name="Track and Topics" codeString={data} />
           )}
 
-          {viewMode === 'result' && <ViewResult toast={toast} data={data} />}
+          {viewMode === 'result' && (
+            <CMSViewResultTrack toast={toast} data={data} />
+          )}
         </>
       )}
     </>
   )
 }
 
-function ViewResult({ toast, data }) {
+function CMSViewResultTrack({ toast, data }) {
   return (
     <>
       <Hero>

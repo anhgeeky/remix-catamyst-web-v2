@@ -1,18 +1,15 @@
-import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
-import { useProfile } from '@hooks'
+import { Layout } from '@layouts'
+// import { TopicEditor } from '@components/topics'
 
-export default function topicIdPage() {
-  const { router, isAuthorized } = useProfile()
+export default function trackIdPage() {
+  const router = useRouter()
   const { topicId } = router.query
 
-  useEffect(() => {
-    if (!isAuthorized) router.replace('/dashboard/overview')
-  }, [isAuthorized])
-
   return (
-    <div>
-      <h1>Edit track #{topicId}</h1>
-    </div>
+    <Layout title="Loading topic editor in CMS... · Catamyst">
+      {/* {topicId && <TopicEditor topicId={topicId} />} */}
+    </Layout>
   )
 }

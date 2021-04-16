@@ -8,7 +8,7 @@ export default function trackIdPage() {
   const { trackId } = router.query
 
   return (
-    <Layout title="Loading track in CMS... · Catamyst">
+    <Layout title="Loading track editor in CMS... · Catamyst">
       {trackId && <TrackEditor trackId={trackId} />}
     </Layout>
   )

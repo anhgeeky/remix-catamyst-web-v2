@@ -23,4 +23,8 @@ export {
   useSWR,
   useTrackById,
   useTrackBySlug,
+  useTopicById,
+  useTopicBySlug,
+  useLessonById,
+  useLessonBySlug,
 } from '@hooks/use-swr'

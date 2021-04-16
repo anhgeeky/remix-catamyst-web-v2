@@ -20,37 +20,20 @@ import { Icon, LearningTag, HeaderEditor, Hero, useToast } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
 import { slugify, initBlock } from '@utils'
-import { useSWR, fetcherSWR } from '@hooks'
+import { useRedirectHome, useLessonById } from '@hooks'
 
 /**-----------------------------------------------------------------------------
  * CMS Lesson editor, with UI and logic
  -----------------------------------------------------------------------------*/
-export function LessonEditor({ router, lessonId }) {
-  const { data: initialData, error } = useSWR(
-    `/api/cms/lessons/${lessonId}`,
-    fetcherSWR
-  )
-  const toast = useToast({ duration: 300 })
-
-  /**
-   * State to change UI view mode.
-   * Might not work well yet with RHF.
-   */
+export function LessonEditor({ lessonId }) {
+  const globalState = useRedirectHome()
+  const { data: data, isLoading, isError } = useLessonById(lessonId)
+  const toast = useToast()
   const [viewMode, setViewMode] = useState('result')
 
   /**
-   * Data from API. Used once to populate the initial state data.
-   * But need to wait until lesson data is ready to be used in UI.
-   */
-  useEffect(() => {
-    if (initialData) {
-      // setValue('lesson', initialData)
-      reset({ ...initialData })
-    }
-  }, [initialData])
-
-  /**
-   * RHF (React Hook Form)
+   * All local state change is handled by RHF (React Hook Form).
+   * API call is only used when necessary via handle functions.
    */
   const {
     control,
@@ -65,43 +48,53 @@ export function LessonEditor({ router, lessonId }) {
     mode: 'onSubmit',
   })
 
-  const handleSave = (data) => {
+  useEffect(() => {
+    if (!isLoading && data) {
+      reset({ ...data.lesson })
+    }
+  }, [isLoading, data])
+
+  const handleSave = (localData) => {
+    // PATCH /api/lessons/id/{lessonId}
     toast({ status: 'success', title: 'Saved lesson data!' })
-    console.info(
-      JSON.stringify({ type: 'SAVE_LESSON', payload: data }, null, 2)
-    )
+    console.info(JSON.stringify(localData, null, 2))
   }
 
   const handleDelete = () => {
+    // DELETE /api/lessons/id/{lessonId}
     toast({ status: 'error', title: 'Deleted lesson data!' })
   }
 
   const handleReset = () => {
+    // No request, just local change.
     toast({ title: 'Resetted lesson data!', status: 'warning' })
-    reset({ ...initialData })
+    reset({ ...data })
   }
 
   const handleBack = () => {
-    router.push('/cms/lessons')
+    globalState.router.push('/cms/lessons')
   }
 
-  const togglePublishLesson = (event) => {
+  const handleTogglePublishLesson = (event) => {
+    // No request, just local change.
     try {
       if (event.target.checked) {
-        // Change lesson.is_published here
+        // lesson.is_published = true
         toast({ title: 'Published lesson', status: 'success' })
       } else {
+        // lesson.is_published = false
         toast({ title: 'Unpublished lesson', status: 'warning' })
       }
     } catch (error) {
       toast({
+        title: 'Failed to toggle lesson published status!',
         status: 'error',
-        title: 'Failed to toggle lesson published status',
       })
     }
   }
 
   const handleGenerateSlug = () => {
+    // No request, just local change.
     try {
       const values = getValues()
       const generatedSlug = slugify(values.title)
@@ -118,29 +111,36 @@ export function LessonEditor({ router, lessonId }) {
     }
   }
 
-  /**
-   * UI for the whole lesson.
-   * Handlers should be grouped into actions later.
-   */
-  if (error) {
-    return <p>Lesson by id #{lessonId} not found.</p>
-  }
-  if (!initialData) {
-    return <p>Loading lesson...</p>
-  }
   return (
     <>
-      {getValues() && (
+      {isError && (
+        <>
+          <Text>Failed to get lesson with id #{lessonId}</Text>
+        </>
+      )}
+      {isLoading && (
+        <>
+          <Text>Loading lesson with id #{lessonId}...</Text>
+        </>
+      )}
+      {!isLoading && !data && (
+        <>
+          <Text>Sorry, lesson with id #{lessonId} is not found.</Text>
+        </>
+      )}
+
+      {!isLoading && data && getValues() && (
         <>
           <NextHead>
-            <title>Lesson #{initialData.id} · Catamyst</title>
+            <title>Lesson #{data.lesson.id} · Catamyst</title>
           </NextHead>
+
           <HeaderEditor
             name="lesson"
-            item={initialData}
+            item={data}
             register={register}
             actions={{
-              togglePublishLesson,
+              handleTogglePublishLesson,
               handleBack,
               handleDelete,
               handleReset,
@@ -150,6 +150,11 @@ export function LessonEditor({ router, lessonId }) {
               handleViewJSON: () => setViewMode('json'),
             }}
           />
+
+          {viewMode === 'json' && (
+            <CMSViewJSON name="Lesson" codeString={getValues()} />
+          )}
+
           {viewMode === 'result' && (
             <CMSViewResultLesson
               control={control}
@@ -157,10 +162,9 @@ export function LessonEditor({ router, lessonId }) {
               actions={{
                 handleGenerateSlug,
               }}
-              initialData={initialData}
+              data={data}
             />
           )}
-          {viewMode === 'json' && <CMSViewJSON codeString={getValues()} />}
         </>
       )}
     </>
@@ -170,8 +174,8 @@ export function LessonEditor({ router, lessonId }) {
 /**-----------------------------------------------------------------------------
  * The actual lesson content that utilize RHF field array helpers.
  -----------------------------------------------------------------------------*/
-function CMSViewResultLesson({ initialData, control, register, actions }) {
-  const toast = useToast({ duration: 300 })
+function CMSViewResultLesson({ data, control, register, actions }) {
+  const toast = useToast()
 
   /**
    * RHF (React Hook Form) field array with helpers.
@@ -188,9 +192,10 @@ function CMSViewResultLesson({ initialData, control, register, actions }) {
   const togglePublishBlock = (event) => {
     try {
       if (event.target.checked) {
-        // Change block.is_published here
+        // Change block.is_published = true inside RHF field array
         toast({ title: 'Published block', status: 'success' })
       } else {
+        // Change block.is_published = false inside RHF field array
         toast({ title: 'Unpublished block', status: 'warning' })
       }
     } catch (error) {
@@ -283,11 +288,7 @@ function CMSViewResultLesson({ initialData, control, register, actions }) {
    */
   return (
     <>
-      <CMSLessonHero
-        register={register}
-        initialData={initialData}
-        actions={actions}
-      />
+      <CMSLessonHero register={register} data={data} actions={actions} />
 
       <Container width="100%" maxW="1500px" pt={5} px={0}>
         <Stack id="form-lesson-blocks" align="center" spacing={5}>
@@ -300,6 +301,7 @@ function CMSViewResultLesson({ initialData, control, register, actions }) {
           {fields.map((block, index) => {
             return (
               <Fragment key={block.id}>
+                {/* This is the important core of the lesson editor */}
                 {/* Each CMSBlock type contains CMSBlockModifierButtons */}
                 <CMSBlock
                   index={index}
@@ -335,12 +337,13 @@ function CMSViewResultLesson({ initialData, control, register, actions }) {
  * UI for lesson meta only, placed inside hero.
  * Contains slug, title, category, level.
  -----------------------------------------------------------------------------*/
-function CMSLessonHero({ register, initialData, actions }) {
+function CMSLessonHero({ register, data, actions }) {
   return (
     <Hero>
       <Box align="center" pb={5}>
         <Stack maxW={760}>
           <InputGroup size="sm" variant="unstyled">
+            {/* track/topic/ because lesson can be used anywhere */}
             <InputLeftAddon
               opacity={0.5}
               children={`catamyst.com/learn/track/topic/`}
@@ -384,7 +387,7 @@ function CMSLessonHero({ register, initialData, actions }) {
                 ref={register}
                 name="category"
                 value="Fundamental"
-                defaultChecked={initialData.category === 'Fundamental'}
+                defaultChecked={data.lesson.category === 'Fundamental'}
               >
                 <LearningTag category="Fundamental" />
               </Radio>
@@ -392,7 +395,7 @@ function CMSLessonHero({ register, initialData, actions }) {
                 ref={register}
                 name="category"
                 value="Specific"
-                defaultChecked={initialData.category === 'Specific'}
+                defaultChecked={data.lesson.category === 'Specific'}
               >
                 <LearningTag category="Specific" />
               </Radio>
@@ -400,7 +403,7 @@ function CMSLessonHero({ register, initialData, actions }) {
                 ref={register}
                 name="category"
                 value="Project"
-                defaultChecked={initialData.category === 'Project'}
+                defaultChecked={data.lesson.category === 'Project'}
               >
                 <LearningTag category="Project" />
               </Radio>
@@ -414,7 +417,7 @@ function CMSLessonHero({ register, initialData, actions }) {
                 ref={register}
                 name="level"
                 value="Newbie"
-                defaultChecked={initialData.level === 'Newbie'}
+                defaultChecked={data.lesson.level === 'Newbie'}
               >
                 Newbie
               </Radio>
@@ -422,7 +425,7 @@ function CMSLessonHero({ register, initialData, actions }) {
                 ref={register}
                 name="level"
                 value="Beginner"
-                defaultChecked={initialData.level === 'Beginner'}
+                defaultChecked={data.lesson.level === 'Beginner'}
               >
                 Beginner
               </Radio>
@@ -430,7 +433,7 @@ function CMSLessonHero({ register, initialData, actions }) {
                 ref={register}
                 name="level"
                 value="Intermediate"
-                defaultChecked={initialData.level === 'Intermediate'}
+                defaultChecked={data.lesson.level === 'Intermediate'}
               >
                 Intermediate
               </Radio>
@@ -438,7 +441,7 @@ function CMSLessonHero({ register, initialData, actions }) {
                 ref={register}
                 name="level"
                 value="Advanced"
-                defaultChecked={initialData.level === 'Advanced'}
+                defaultChecked={data.lesson.level === 'Advanced'}
               >
                 Advanced
               </Radio>
