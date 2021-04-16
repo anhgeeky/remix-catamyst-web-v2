@@ -158,11 +158,11 @@ export function PricingPlans() {
 
             {!isAuthenticated && (
               <LinkButton
-                href={`/signin`}
+                href={`/signup?plan=business`}
                 colorScheme="teal"
                 leftIcon={<Icon name="business" />}
               >
-                Sign up for businss
+                Sign up for Business
               </LinkButton>
             )}
             {isAuthenticated && (
