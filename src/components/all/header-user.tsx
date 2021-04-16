@@ -40,20 +40,29 @@ export const profileEventReducer = (state: State, action: Action) => {
 
 export function HeaderUser() {
   /**
-   * Already handle the check authentication for global use.
+   * Already handle the check authentication for global use
+   * for the entire app.
    */
   const globalState = useProfile()
 
   /**
    * When authenticated but existing session is invalid.
    */
-  if (globalState.isAuthenticated && globalState.isError) {
+  if (
+    !globalState.isLoading &&
+    globalState.isAuthenticated &&
+    globalState.isError
+  ) {
     return <UserAuthErrorButtons />
   }
   /**
    * When authenticated and session is valid.
    */
-  if (globalState.isAuthenticated && globalState.profile) {
+  if (
+    !globalState.isLoading &&
+    globalState.isAuthenticated &&
+    globalState.profile
+  ) {
     return <UserRealtimeBridge state={globalState} />
   }
   /**
