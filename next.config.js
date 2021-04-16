@@ -13,12 +13,12 @@ process.env.SENTRY_DSN = SENTRY_DSN
 const basePath = ''
 
 module.exports = {
-  // poweredByHeader: false,
+  poweredByHeader: false,
   // reactStrictMode: true,
-  // future: {
-  //   webpack5: true,
-  //   strictPostcssConfiguration: true,
-  // },
+  future: {
+    webpack5: true,
+    // strictPostcssConfiguration: true,
+  },
   images: {
     domains: [
       'a.storyblok.com',

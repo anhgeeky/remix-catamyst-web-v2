@@ -5,9 +5,10 @@ import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 import {
   Avatar,
-  HStack,
-  Flex,
   Box,
+  Button,
+  Flex,
+  HStack,
   Menu,
   MenuButton,
   MenuDivider,
@@ -41,11 +42,23 @@ export function HeaderUser() {
   /**
    * Already handle the check authentication for global use.
    */
-  const state = useProfile()
+  const globalState = useProfile()
 
-  if (state.isAuthenticated && state.profile) {
-    return <UserRealtimeBridge state={state} />
+  /**
+   * When authenticated but existing session is invalid.
+   */
+  if (globalState.isAuthenticated && globalState.isError) {
+    return <UserAuthErrorButtons />
   }
+  /**
+   * When authenticated and session is valid.
+   */
+  if (globalState.isAuthenticated && globalState.profile) {
+    return <UserRealtimeBridge state={globalState} />
+  }
+  /**
+   * When not authenticated and no session.
+   */
   return <UserAuthButtons />
 }
 
@@ -201,7 +214,7 @@ function UserMenuButton({ profile }) {
   )
 }
 
-function UserAuthButtons() {
+export function UserAuthButtons() {
   const [isTooSmallSignUp] = useMediaQuery('(max-width: 425px)')
   const [isTooSmallSignIn] = useMediaQuery('(max-width: 350px)')
 
@@ -216,6 +229,21 @@ function UserAuthButtons() {
         <LinkButton href="/signin" colorScheme="teal" size="sm">
           Sign in
         </LinkButton>
+      </Box>
+    </>
+  )
+}
+
+export function UserAuthErrorButtons() {
+  const [isTooSmall] = useMediaQuery('(max-width: 350px)')
+  const dispatch = useDispatch()
+
+  return (
+    <>
+      <Box display={isTooSmall ? 'none' : 'block'}>
+        <Button onClick={() => dispatch(signOut())} colorScheme="red" size="sm">
+          Sign out
+        </Button>
       </Box>
     </>
   )
