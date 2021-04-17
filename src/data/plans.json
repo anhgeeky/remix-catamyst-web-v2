@@ -72,7 +72,7 @@
         "text": "Sign up for Super"
       },
       "isAuthenticated": {
-        "href": "/settings/pro",
+        "href": "/settings/super",
         "text": "Upgrade to Super"
       }
     }
