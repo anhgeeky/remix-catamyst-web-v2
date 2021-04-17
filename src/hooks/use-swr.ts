@@ -101,6 +101,16 @@ export const useAuthProfileSWR = (token) => {
  * Hooks for content-related data.
  */
 
+export const useUsers = () => {
+  const { data, error } = useSWR('/api/users', fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
+export const useProfiles = () => {
+  const { data, error } = useSWR('/api/profiles', fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
 export const useTrackById = (id) => {
   const { data, error } = useSWR(`/api/tracks/id/${id}`, fetcherSWR)
   return { data: data, isLoading: !error && !data, isError: error }

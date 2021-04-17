@@ -1,14 +1,32 @@
 import NextHead from 'next/head'
-import { Box, useColorModeValue } from '@chakra-ui/react'
+import Image from 'next/image'
+import { Code, Box, VStack, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
+import { MDXProvider } from '@mdx-js/react'
 
-import { Header, Footer } from '@components'
+import {
+  Header,
+  Content,
+  Footer,
+  HeadingOne,
+  HeadingTwo,
+  HeadingThree,
+  Paragraph,
+  Divider,
+} from '@components'
 import dataSite from '@data/site.json'
 
-/**
- * Re-render everytime pages are changed.
- */
-export function LayoutDefault({
+const mdxComponents = {
+  img: Image,
+  h1: HeadingOne,
+  h2: HeadingTwo,
+  h3: HeadingThree,
+  p: Paragraph,
+  inlineCode: Code,
+  hr: Divider,
+}
+
+export function LayoutGuide({
   title = 'Catamyst',
   description = 'All-in-one platform to learn web and software development',
   children = null,
@@ -17,7 +35,17 @@ export function LayoutDefault({
     <Box bg={useColorModeValue('gray.50', 'gray.900')}>
       <Meta meta={{ title, description }} />
       <Header />
-      <Main>{children}</Main>
+      <MDXProvider components={mdxComponents}>
+        <Main>
+          <Content>
+            <VStack>
+              <Box width="100%" maxW={760} px={5}>
+                {children}
+              </Box>
+            </VStack>
+          </Content>
+        </Main>
+      </MDXProvider>
       <Footer />
     </Box>
   )

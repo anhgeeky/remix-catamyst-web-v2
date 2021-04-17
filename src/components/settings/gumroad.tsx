@@ -29,7 +29,6 @@ export function GumroadButton({
         href={`https://gum.co/${productId}?email=${encoded_email}`}
         data-display-style="overlay"
         leftIcon={leftIcon}
-        size="lg"
       >
         {children}
       </Button>

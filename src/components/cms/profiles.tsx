@@ -96,8 +96,9 @@ export function CMSProfiles({ state }) {
                   >
                     <Code flex={1}>{user.id}</Code>
                     <Text flex={1}>{user.avatar_url}</Text>
-                    <Text flex={1}>{JSON.stringify(user.name)}</Text>
-                    <Text flex={1}>{getCompleteDateTime(user.handle)}</Text>
+                    <Text flex={1}>{user.handle}</Text>
+                    <Text flex={1}>{user.name}</Text>
+                    <Text flex={1}>{user.nickname}</Text>
                     <Text flex={1}>
                       {getCompleteDateTime(user.created_at) || '-'}
                     </Text>

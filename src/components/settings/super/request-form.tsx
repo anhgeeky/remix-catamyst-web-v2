@@ -15,14 +15,21 @@ export function SuperPlanRequestForm({ state }) {
         help you achieve your goals. You can also read the guide on benefits ,
         terms, and conditions below.
       </Text>
-      <ButtonGroup>
+      <ButtonGroup size="sm">
         <LinkButton
           href="/guide/super"
-          size="sm"
           colorScheme="green"
           leftIcon={<Icon name="learn" />}
         >
-          Read the guide
+          Read Catamyst Super guide
+        </LinkButton>
+        <LinkButton
+          href="/settings/super/form"
+          colorScheme="green"
+          variant="outline"
+          leftIcon={<Icon name="super" />}
+        >
+          Fill request form
         </LinkButton>
       </ButtonGroup>
       <Text>

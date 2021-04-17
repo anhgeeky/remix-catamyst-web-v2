@@ -35,12 +35,13 @@ export const upgradeSuper = async (
         plan: 'Super',
         super: currentProfile?.super
           ? {
+              ...currentProfile?.super,
               email: req.body.email || '',
               license_key: req.body.license_key || '',
               sale_timestamp: req.body.sale_timestamp || '',
               variants: req.body['variants[Hours]'] || '',
               sessions_quota:
-                currentProfile.super.sessions_quota + newQuota || 0,
+                currentProfile?.super?.sessions_quota + newQuota || 0,
             }
           : {
               email: req.body.email || '',

@@ -6,14 +6,13 @@ export default function guidePage() {
   return (
     <Layout title="Guide · Catamyst">
       <Heading as="h1" size="lg">
-        Catamyst Business
+        Catamyst Super
       </Heading>
       <Heading as="h2" size="md">
-        Service plan for custom training, mentorship, scholarship, or
-        recruitment.
+        Plan for learning with mentorship
       </Heading>
-      <Button isExternal as={Link} href="https://a.catamyst.com/business">
-        Read the guide
+      <Button isExternal as={Link} href="https://a.catamyst.com/learn">
+        Read Catamyst Super guide
       </Button>
     </Layout>
   )

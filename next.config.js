@@ -1,4 +1,13 @@
-// Use the SentryWebpack plugin to upload the source maps during build step
+/**
+ * Use Markdown/MDX.
+ * https://nextjs.org/blog/markdown
+ * https://github.com/vercel/next.js/blob/canary/examples/with-mdx
+ */
+const withMDX = require('@next/mdx')({ extension: /\.mdx?$/ })
+
+/**
+ * Use the SentryWebpack plugin to upload the source maps during build step.
+ */
 const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 const {
   NEXT_PUBLIC_SENTRY_DSN: SENTRY_DSN,
@@ -12,13 +21,14 @@ const {
 process.env.SENTRY_DSN = SENTRY_DSN
 const basePath = ''
 
-module.exports = {
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   poweredByHeader: false,
-  // reactStrictMode: true,
   future: {
     webpack5: true,
     // strictPostcssConfiguration: true,
   },
+  // reactStrictMode: true,
   images: {
     domains: [
       'a.storyblok.com',
@@ -119,7 +129,7 @@ module.exports = {
   //   ]
   // },
   basePath,
-}
+})
 
 // const sites = `*.google.com *.youtube.com *.twitter.com`
 // const supabase = `supabase.io supabase.co *.supabase.io *.supabase.co`

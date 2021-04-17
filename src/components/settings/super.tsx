@@ -49,14 +49,13 @@ export function SettingsSuper({ state }) {
                 money (partially deducted from the processing fee). But if the
                 mentorship is already scheduled or ongoing, there is no refund.
               </Text>
-              <ButtonGroup>
+              <ButtonGroup size="sm">
                 <LinkButton
                   href="/guide/super"
-                  size="sm"
                   colorScheme="green"
                   leftIcon={<Icon name="learn" />}
                 >
-                  Read the guide
+                  Read Catamyst Super guide
                 </LinkButton>
               </ButtonGroup>
             </Card>
