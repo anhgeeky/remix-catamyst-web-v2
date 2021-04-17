@@ -51,7 +51,7 @@ export function SettingsSuper({ state }) {
               </Text>
               <ButtonGroup size="sm">
                 <LinkButton
-                  href="/guide/super"
+                  href="/super"
                   colorScheme="green"
                   leftIcon={<Icon name="learn" />}
                 >

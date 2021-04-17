@@ -65,6 +65,7 @@ import {
   FaCog as SettingsIcon,
   FaUser as ProfileIcon,
   FaReceipt as InvoicesIcon,
+  FaFileSignature as FormIcon,
   // Dashboard icons
   FaChild as OnboardIcon,
   FaBinoculars as OverviewIcon,
@@ -271,6 +272,10 @@ export function Icon({ name }) {
       return <DashboardIcon />
     case 'profile':
       return <ProfileIcon />
+    case 'invoices':
+      return <InvoicesIcon />
+    case 'form':
+      return <FormIcon />
     case 'settings':
       return <SettingsIcon />
     case 'search':

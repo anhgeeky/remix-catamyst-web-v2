@@ -26,6 +26,7 @@ export { Hero } from '@components/all/hero'
 export { Icon } from '@components/all/icon'
 export { LearningTag } from '@components/all/learning-tag'
 export { LessonIcon } from '@components/all/lesson-icon'
+export { List, UnorderedList, OrderedList } from '@components/all/list'
 export { Paragraph } from '@components/all/paragraph'
 export {
   LinkButton,

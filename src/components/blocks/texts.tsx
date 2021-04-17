@@ -1,6 +1,5 @@
 import NextLink from 'next/link'
 import {
-  chakra,
   Box,
   Code,
   Heading,
@@ -15,6 +14,8 @@ import {
 import { FaAngleRight } from 'react-icons/fa'
 import ReactHtmlParser from 'react-html-parser'
 import slugify from 'slugify'
+
+const fontSizes = ['md', 'lg']
 
 /**
  * The actual block is very simple.
@@ -42,8 +43,6 @@ export function BlockTexts({ block }) {
 export const transformOptions = {
   decodeEntities: true,
   transform: function transform(node, index) {
-    const fontSizes = ['md', 'lg']
-
     /**
      * HTML inline elements such as: a, span, b, strong, i, em, code, kbd.
      */
@@ -137,7 +136,7 @@ export const transformOptions = {
     }
     if (node.type === 'tag' && node.name === 'p') {
       return (
-        <Text key={index} fontSize={fontSizes} pt={2} pb={2}>
+        <Text key={index} fontSize={fontSizes} py={2}>
           {node.children.map((node, index) => {
             if (node.type === 'tag') {
               return transform(node, index)
@@ -151,7 +150,7 @@ export const transformOptions = {
     }
     if (node.type === 'tag' && node.name === 'ul') {
       return (
-        <List key={index} fontSize={fontSizes} spacing={1} pt={2} pb={2}>
+        <List key={index} fontSize={fontSizes} spacing={1} py={2}>
           {node.children.map((item, index) => {
             return (
               <ListItem key={index}>
@@ -174,7 +173,7 @@ export const transformOptions = {
     }
     if (node.type === 'tag' && node.name === 'ol') {
       return (
-        <OrderedList key={index} fontSize={fontSizes} spacing={1} pt={2} pb={2}>
+        <OrderedList key={index} fontSize={fontSizes} spacing={1} py={2}>
           {node.children.map((item, index) => {
             return (
               <ListItem key={index}>

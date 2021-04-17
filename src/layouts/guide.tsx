@@ -13,6 +13,9 @@ import {
   HeadingThree,
   Paragraph,
   Divider,
+  List,
+  UnorderedList,
+  OrderedList,
 } from '@components'
 import dataSite from '@data/site.json'
 
@@ -24,6 +27,8 @@ const mdxComponents = {
   p: Paragraph,
   inlineCode: Code,
   hr: Divider,
+  ul: UnorderedList,
+  ol: OrderedList,
 }
 
 export function LayoutGuide({
@@ -39,7 +44,7 @@ export function LayoutGuide({
         <Main>
           <Content>
             <VStack>
-              <Box width="100%" maxW={760} px={5}>
+              <Box width="100%" maxW={760} px={5} className="mdx-document">
                 {children}
               </Box>
             </VStack>

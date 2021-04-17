@@ -1,5 +1,5 @@
 import { LayoutGuide } from '@layouts'
-import { Icon } from '@components'
+import { LinkButton, Icon } from '@components'
 
 # Catamyst Business service guide
 
@@ -7,42 +7,52 @@ Hi there, this is Catamyst Business.
 
 Your business might need a developer. Or need more developers. Or upgrading the existing developers. Or maintaining an existing system. Or even building new software.
 
-If you're interested — this is for you.
+If you're interested to do so with our help — this is for you.
 
 Catamyst is empowering businesses to become better at software development, publishing web apps, and working with developers. All in one.
 
-This is for you, the employer (organizations, companies, or individuals) who want to partner or collaborate on:
+This is for you, the employer in form of organization, company, or individual, who want to partner or collaborate on:
 
 - Mentorship
 - Training
 - Scholarship
 - Recruitment
 
-To send the inquiry, please read the details then fill out the form below. Before continuing, you should be prepared with a budget of a minimum of USD 1000-2000.
+To send the request, please read the details first then fill out the form below. Before continuing, you should be prepared with a budget of a minimum around USD 1000–2000.
 
-Catamyst (as the vendor) offers you these services:
+## Services
 
-- Helping with the whole process of preparation, work, and release.
-- Promoting your organization/company.
-- Finding, recruiting, and filtering the candidates.
-- Mediating between candidates and you.
-- Mentoring or training the candidates.
-- Contributing to the technical development (design, code, etc).
-- Managing the project/product (if any).
+We (as the vendor) offer you to:
 
-You (as the client) can:
+- Help with the whole process of preparation, work, and release.
+- Promote your organization/company.
+- Find, recruit, and filter the candidates/developers.
+- Mediate between candidates and you.
+- Mentor or train the candidates.
+- Contribute to the technical software development (architecture, design, code, infrastructure, etc).
+- Manage the project/product (if any).
 
-- Informing the identity and expectations (goals, scope, requirements, timeline, budget, etc).
-- Paying Catamyst for the service before and during the program. Giving the stipend (if any) to the candidates/developers.
-- Reviewing the process, progress, and result.
-- Hiring the candidates to work with you (if required).
+You (as the client) just need to:
+
+- Inform your identity and expectations (goals, scope, requirements, timeline, budget, etc).
+- Pay Catamyst for the service before and during the program. Give stipend (if any) to the candidates/developers.
+- Review the process, progress, and result.
+- Hire the candidates to work with you (if required).
+
+## Cost
 
 The base cost:
 
 - USD 1500–2000/person for training, mentorship, or scholarship.
 - USD 500–1000/person for recruitment only without training/mentorship.
 
-Costs are adapted depending on how many people are involved.
+If your currency is not USD, don't worry, we'll help you convert it.
+
+The cost itself is adaptable depending on how many people are required and involved.
+
+---
+
+# Process
 
 The whole process has 3 phase:
 
@@ -50,18 +60,21 @@ The whole process has 3 phase:
 2. Work: The actual activities to be done.
 3. Release: The end of the program and final handover.
 
----
-
-# Preparation
+## Preparation
 
 1. Catamyst and employers (organization/company/individual) know and understand each other from somewhere.
    - Websites, social media, or connections.
 2. The identity or request form is filled by you.
-   - [https://a.catamyst.com/business-form](https://a.catamyst.com/business-form)
-   - Or scroll down to the very bottom to view the form.
-3. The initial discussion is done via email (catamyst@gmail.com / haidar.catamyst@gmail.com) or Telegram (@mhaidarhanif).
-   - If there is more than 1 representative from your side, we'll be using the Telegram group (as we can edit messages). Email or Slack Connect is also possible.
-   - No phone call or video meeting. Most of the initial information should be written in text. It saves a lot of time to think and carefully exchange the initial information.
+   - <LinkButton
+       size="sm"
+       href="/business/form"
+       leftIcon={<Icon name="form" />}
+       colorScheme="green"
+     >
+       Fill the Business form
+     </LinkButton>
+3. The initial discussion can be done via email.
+   - No phone call or video meeting yet. Most of the initial information should be written in text. It saves a lot of time to think and carefully exchange the initial information.
 4. The ongoing discussion is taken further about more internal details and the business deal.
    - After enough information, a video meeting can be done.
    - Either Catamyst or you can schedule and invite for a live meeting session.
@@ -81,9 +94,7 @@ The whole process has 3 phase:
 7. The 1st payment is sent to Catamyst.
 8. The initial **Work** phase can begin.
 
----
-
-# Work
+## Work
 
 There are two different timelines or milestones, with each could correspond for business-side or technical-side.
 
@@ -102,7 +113,7 @@ There are two different timelines or milestones, with each could correspond for 
 
 Both timelines can have the progress presented and reviewed. Preferably once every 2 to 4 weeks, so-called sprints (a set period of time during which specific tasks must be completed, but not strict like in Scrum).
 
-## Business-side
+### Business-side
 
 1. The agreement for the candidates is prepared.
 2. The promotional campaign is prepared.
@@ -125,7 +136,7 @@ Both timelines can have the progress presented and reviewed. Preferably once eve
 6. (For scholarship) The candidates are offered and signed the agreement.
 7. The candidates are accepted as students, mentees, developers, designers, or team members.
 
-## Technical-side
+### Technical-side
 
 1. The complete business process and technical requirements are gathered and decided.
    - Data flow, structure, schema, table.
@@ -153,9 +164,7 @@ Both timelines can have the progress presented and reviewed. Preferably once eve
 
 Keep in mind that currently, we're not focusing outside of websites and web applications. Things like mobile (Android/iOS), AI, ML, blockchain, and data science are not our expertise yet. But we could connect you to collaborate with other partners.
 
----
-
-# Release
+## Release
 
 1. The result is being reviewed and matched with the initial expectations.
 2. The handover for:
@@ -170,7 +179,20 @@ Keep in mind that currently, we're not focusing outside of websites and web appl
 
 # Request Form
 
-(Request Form Component)
+If you are interested, please submit the request:
+
+<LinkButton
+  size="sm"
+  href="/business/form"
+  leftIcon={<Icon name="form" />}
+  colorScheme="green"
+>
+  Fill the Business form
+</LinkButton>
+
+Then we'll be in touch soon. Thank you!
+
+---
 
 export default ({ children }) => (
   <LayoutGuide title="Catamyst Business service guide">{children}</LayoutGuide>

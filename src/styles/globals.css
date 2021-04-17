@@ -266,3 +266,11 @@ a {
   width: 0;
   height: 0;
 }
+
+/**
+ * Markdown/MDX document.
+ */
+
+.mdx-document ul ul {
+  list-style-type: circle;
+}

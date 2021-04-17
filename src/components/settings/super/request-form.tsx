@@ -10,21 +10,21 @@ export function SuperPlanRequestForm({ state }) {
         Request for discussion
       </Heading>
       <Text>
-        Before you pay for a <b>Super</b> plan, you can send a request to have a
-        discussion first, to see whether this mentorship is suitable for you and
-        help you achieve your goals. You can also read the guide on benefits ,
-        terms, and conditions below.
+        Before you get into <b>Super</b> plan, you can read the guide on
+        benefits, terms, and conditions. Also send a request to have a
+        discussion first, to see whether this is suitable for you and match with
+        your expectations.
       </Text>
       <ButtonGroup size="sm">
         <LinkButton
-          href="/guide/super"
+          href="/super"
           colorScheme="green"
           leftIcon={<Icon name="learn" />}
         >
           Read Catamyst Super guide
         </LinkButton>
         <LinkButton
-          href="/settings/super/form"
+          href="/super/form"
           colorScheme="green"
           variant="outline"
           leftIcon={<Icon name="super" />}

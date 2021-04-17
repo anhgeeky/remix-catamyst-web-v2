@@ -167,7 +167,7 @@ export function PricingPlans() {
             )}
             {isAuthenticated && (
               <LinkButton
-                href={`/guide/business`}
+                href={`/business`}
                 colorScheme="teal"
                 leftIcon={<Icon name="business" />}
               >

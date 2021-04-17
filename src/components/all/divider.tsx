@@ -2,7 +2,7 @@ import { Box, Stack, Divider as ChakraDivider } from '@chakra-ui/react'
 
 export function Divider() {
   return (
-    <Stack pt={5}>
+    <Stack py={10}>
       <ChakraDivider opacity={1} />
     </Stack>
   )
