@@ -6,10 +6,10 @@ export function ForumHero({ section, children }) {
     <Flex
       py={5}
       justify="center"
-      color={contrast(section.color) === 'light' ? 'black' : 'white'}
-      bg={
-        section.color || contrast(section.color) === 'light' ? 'white' : 'black'
+      color={
+        section.color && contrast(section.color) === 'light' ? 'black' : 'white'
       }
+      bg={section.color ? section.color : 'gray.500'}
       bgGradient={section.gradient}
     >
       <Box px={5} width="1200px">
