@@ -136,6 +136,10 @@ export function PricingPlans() {
               </ListItem>
               <ListItem>
                 <ListIcon as={FaCheckCircle} color="teal.500" />
+                Custom webiste or web application development.
+              </ListItem>
+              <ListItem>
+                <ListIcon as={FaCheckCircle} color="teal.500" />
                 Campaign for a scholarship program
               </ListItem>
               <ListItem>

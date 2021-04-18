@@ -19,9 +19,7 @@ SentryInit()
 export default function App({ Component, pageProps }: AppProps) {
   // if (isDev) console.info(`🐈 Let's have some debugging!`)
   // if (isProd && !isVercel) console.info(`🐈 Hello, fellow developers!`)
-  if (isProd && isVercel) {
-    splitbee.init()
-  }
+  splitbee.init()
 
   return (
     <>

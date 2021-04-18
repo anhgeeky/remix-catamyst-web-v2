@@ -52,9 +52,12 @@ module.exports = withMDX({
       { source: '/join', destination: '/signup', permanent: true },
       { source: '/login', destination: '/signin', permanent: true },
       { source: '/pro', destination: '/settings/pro', permanent: true },
-      { source: '/super', destination: '/settings/super', permanent: true },
     ]
   },
+
+  /**
+   * Sentry configuration.
+   */
   productionBrowserSourceMaps: true,
   env: {
     // Make the COMMIT_SHA available to the client so that Sentry events can be
