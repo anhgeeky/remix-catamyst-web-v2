@@ -1,9 +1,12 @@
+import NextLink from 'next/link'
+import { Link } from '@chakra-ui/react'
+
 import { LayoutGuide } from '@layouts'
 import { LinkButton, Icon } from '@components'
 
 # Catamyst Super guide for learners
 
-Hi there, this is Catamyst Super.
+Hi there!
 
 If you are interested in learning more about technology, design, code, and programming — with mentorship — this is for you.
 
@@ -27,6 +30,17 @@ You just need to have:
 - Good attitude
 
 Yes, you don't need a previous technical background. This is perfect for beginners.
+
+To send the request, please read the details first then fill out the form below.
+
+<LinkButton
+  size="sm"
+  href="/super/form"
+  leftIcon={<Icon name="form" />}
+  colorScheme="green"
+>
+  Fill the Super form
+</LinkButton>
 
 ## Activities
 
@@ -52,6 +66,14 @@ You're going to do these by:
 - Building your personal brand and updating your resume (if needed).
 - Applying for a job, or accepting freelance offers (if needed).
 - Paying the tuition before the program starts.
+
+## Lessons
+
+What can you learn?
+
+A lot! And depends on your interest.
+
+You can already see in the <NextLink href="/learn" passHref><Link color="teal.500">Learn page</Link></NextLink> for the choice of tracks and lessons.
 
 ## Cost
 
@@ -84,6 +106,7 @@ If your currency is not USD, don't worry, we'll help you convert it.
 If you are interested, please submit the request:
 
 <LinkButton
+  size="sm"
   href="/super/form"
   leftIcon={<Icon name="form" />}
   colorScheme="green"

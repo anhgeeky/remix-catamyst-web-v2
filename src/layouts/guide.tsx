@@ -42,9 +42,9 @@ export function LayoutGuide({
       <Header />
       <MDXProvider components={mdxComponents}>
         <Main>
-          <Content>
+          <Content pt={0}>
             <VStack>
-              <Box width="100%" maxW={760} px={5} className="mdx-document">
+              <Box width="100%" maxW={760} className="mdx-document">
                 {children}
               </Box>
             </VStack>

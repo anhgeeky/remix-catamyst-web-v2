@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.248",
+  "version": "0.1.249",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS=\"--max_old_space_size=4096\" next dev -p 8000",
@@ -50,6 +50,7 @@
     "react-hook-form": "6.15.5",
     "react-html-parser": "2.0.2",
     "react-icons": "4.2.0",
+    "react-iframe": "^1.8.0",
     "react-redux": "7.2.3",
     "react-remove-scroll": "2.4.1",
     "react-syntax-highlighter": "15.4.3",

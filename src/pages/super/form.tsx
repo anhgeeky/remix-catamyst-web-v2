@@ -9,12 +9,8 @@ export default function superFormPage() {
     <Layout title="Catamyst Super request form">
       <Hero>
         <Heading as="h1" size="xl">
-          Catamyst Super request form
+          Catamyst Super form
         </Heading>
-        <Text>
-          Fill and submit to request for discussion before getting Catamyst
-          Super plan.
-        </Text>
       </Hero>
       <Content>{/* <AuthSuperForm/> */}</Content>
     </Layout>

@@ -21,15 +21,15 @@ export function SuperPlanRequestForm({ state }) {
           colorScheme="green"
           leftIcon={<Icon name="learn" />}
         >
-          Read Catamyst Super guide
+          Read the guide
         </LinkButton>
         <LinkButton
           href="/super/form"
           colorScheme="green"
           variant="outline"
-          leftIcon={<Icon name="super" />}
+          leftIcon={<Icon name="form" />}
         >
-          Fill request form
+          Fill the form
         </LinkButton>
       </ButtonGroup>
       <Text>

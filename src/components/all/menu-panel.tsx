@@ -61,6 +61,7 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
                 <Flex justify="space-between">
                   <ColorModeToggle />
                   <IconButton
+                    size="sm"
                     aria-label="Toggle menu"
                     variant="ghost"
                     onClick={closeMenu}
