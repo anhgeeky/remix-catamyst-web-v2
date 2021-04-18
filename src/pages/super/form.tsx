@@ -2,7 +2,7 @@ import { Heading, Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'
 import { Hero, Content } from '@components'
-// import { AuthSuperForm } from '@components/auth'
+import { AuthSuperForm } from '@components/auth'
 
 export default function superFormPage() {
   return (
@@ -12,7 +12,9 @@ export default function superFormPage() {
           Catamyst Super form
         </Heading>
       </Hero>
-      <Content>{/* <AuthSuperForm/> */}</Content>
+      <Content>
+        <AuthSuperForm />
+      </Content>
     </Layout>
   )
 }

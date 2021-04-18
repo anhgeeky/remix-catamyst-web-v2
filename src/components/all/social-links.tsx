@@ -10,27 +10,26 @@ export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
         const linkName = String(link.name)
 
         return (
-          // <Tooltip
-          //   key={index}
-          //   label={link.name}
-          //   aria-label={link.name}
-          //   placement="top"
-          //   fontSize="md"
-          //   my={1}
-          //   hasArrow
-          // >
-          <Link
-            isExternal
+          <Tooltip
+            key={index}
+            label={link.name}
             aria-label={link.name}
-            key={link.name}
-            href={link.url}
-            color="gray.500"
-            fontSize={size}
-            _hover={{ color: useColorModeValue('gray.900', 'gray.100') }}
+            placement="top"
+            fontSize="md"
+            hasArrow
           >
-            <Icon name={linkName.toLowerCase()} />
-          </Link>
-          // </Tooltip>
+            <Link
+              isExternal
+              aria-label={link.name}
+              key={link.name}
+              href={link.url}
+              color="gray.500"
+              fontSize={size}
+              _hover={{ color: useColorModeValue('gray.900', 'gray.100') }}
+            >
+              <Icon name={linkName.toLowerCase()} />
+            </Link>
+          </Tooltip>
         )
       })}
     </HStack>
