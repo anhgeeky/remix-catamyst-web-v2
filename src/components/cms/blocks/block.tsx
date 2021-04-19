@@ -10,21 +10,22 @@ import {
 } from '@components/cms/blocks'
 
 /**
- * CMS Block to choose which block to be displayed for CMS lesson blocks editor.
+ * CMSBlock to choose which block to be displayed for CMS lesson blocks editor.
+ * Each of them also contains CMSBlockModifierButtons.
  * props contains index, block, actions (fieldArrayHelpers).
  */
 export function CMSBlock(props) {
   if (props.block.type === 'Image' && props.block.url) {
-    return <CMSBlockImage {...props} />
+    return <CMSBlockImage name="Image" {...props} />
   }
   if (props.block.type === 'Texts' && props.block.html) {
-    return <CMSBlockTexts {...props} />
+    return <CMSBlockTexts name="Texts" {...props} />
   }
   if (props.block.type === 'Links' && props.block.links) {
-    return <CMSBlockLinks {...props} />
+    return <CMSBlockLinks name="Links" {...props} />
   }
   if (props.block.type === 'Divider') {
-    return <CMSBlockDivider {...props} />
+    return <CMSBlockDivider name="Divider" {...props} />
   }
   return (
     <CardArea>

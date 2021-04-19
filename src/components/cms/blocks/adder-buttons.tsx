@@ -20,9 +20,6 @@ export function CMSBlockAdderButtons({ index, name, actions }) {
       py={2}
       width="100%"
       maxW={800}
-      // opacity={0.1}
-      // _hover={{ opacity: 1 }}
-      // _focus={{ opacity: 1 }}
     >
       {/* CMS Block name */}
       <Badge>{name}</Badge>

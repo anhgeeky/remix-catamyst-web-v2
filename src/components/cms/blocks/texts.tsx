@@ -22,18 +22,14 @@ import { RichTextEditor } from '@components/editor'
 import { BlockTexts } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
-export function CMSBlockTexts({ index, block, actions }) {
+export function CMSBlockTexts(props) {
+  const { index, block, actions } = props
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
       <CardArea>
-        <CMSBlockModifierButtons
-          index={index}
-          name="Texts"
-          block={block}
-          actions={actions}
-        >
+        <CMSBlockModifierButtons {...props}>
           <Button size="xs" leftIcon={<Icon name="edit" />} onClick={onOpen}>
             Open Editor
           </Button>

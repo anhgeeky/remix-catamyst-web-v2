@@ -24,94 +24,89 @@ import { CMSBlockModifierButtons } from '@components/cms/blocks'
  * it needs to specify the renderer with regular Image so it won't break
  * when changing the image URL.
  */
-export function CMSBlockImage({ index, block, actions }) {
-  const { register, handleSubmit, watch, errors } = useForm({
-    defaultValues: block,
-  })
-
-  const onSubmit = (data) => {
-    console.info(data)
-  }
+export function CMSBlockImage(props) {
+  const {
+    index,
+    block,
+    actions: { register },
+  } = props
+  // const { register } = actions
 
   if (!block) {
     return <p>Loading image...</p>
   }
-  if (block) {
-    return (
-      <CardArea>
-        <CMSBlockModifierButtons
-          name="Image"
-          index={index}
-          block={block}
-          actions={actions}
-        />
+  return (
+    <CardArea>
+      <CMSBlockModifierButtons {...props} />
 
-        <BlockImage block={block} renderer="Image" />
+      <BlockImage block={block} renderer="Image" />
 
-        <Flex
-          bg={useColorModeValue('white', 'gray.800')}
-          align="stretch"
-          boxShadow="base"
-          flexWrap="wrap"
-          maxW="800px"
-          rounded="sm"
-          width="100%"
-        >
-          <Stack spacing={1} p={2} width="100%">
-            <HStack>
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>URL:</FormLabel>
-                </VisuallyHidden>
-                <Icon name="link" />
-                <Input
-                  name="link"
-                  size="sm"
-                  type="text"
-                  variant="flushed"
-                  resize="none"
-                  placeholder="https://example.com"
-                  defaultValue={block.url}
-                  ref={register}
-                />
-              </FormControl>
-            </HStack>
+      <Flex
+        bg={useColorModeValue('white', 'gray.800')}
+        align="stretch"
+        boxShadow="base"
+        flexWrap="wrap"
+        maxW="800px"
+        rounded="sm"
+        width="100%"
+      >
+        <Stack spacing={1} p={2} width="100%">
+          <HStack>
+            <FormControl as={HStack}>
+              <VisuallyHidden>
+                <FormLabel>URL:</FormLabel>
+              </VisuallyHidden>
+              <Icon name="url" />
+              <Input
+                name={`blocks[${index}].url`}
+                ref={register}
+                size="sm"
+                type="text"
+                variant="flushed"
+                resize="none"
+                placeholder="https://example.com"
+                defaultValue={block.url}
+              />
+            </FormControl>
+          </HStack>
 
-            <HStack spacing={3}>
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Title:</FormLabel>
-                </VisuallyHidden>
-                <Icon name="title" />
-                <Input
-                  name="title"
-                  size="sm"
-                  type="text"
-                  variant="flushed"
-                  fontWeight="700"
-                  defaultValue={block.title}
-                  placeholder="Image Title"
-                />
-              </FormControl>
+          <HStack spacing={3}>
+            <FormControl as={HStack}>
+              <VisuallyHidden>
+                <FormLabel>Title:</FormLabel>
+              </VisuallyHidden>
+              <Icon name="title" />
+              <Input
+                name={`blocks[${index}].title`}
+                ref={register}
+                size="sm"
+                type="text"
+                variant="flushed"
+                fontWeight="700"
+                defaultValue={block.title}
+                placeholder="Image Title"
+              />
+            </FormControl>
 
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Alt Text:</FormLabel>
-                </VisuallyHidden>
-                <Icon name="alt" />
-                <Input
-                  name="alt"
-                  size="sm"
-                  type="text"
-                  variant="flushed"
-                  defaultValue={block.alt}
-                  placeholder="Alt Text"
-                />
-              </FormControl>
-            </HStack>
+            <FormControl as={HStack}>
+              <VisuallyHidden>
+                <FormLabel>Alt Text:</FormLabel>
+              </VisuallyHidden>
+              <Icon name="alt" />
+              <Input
+                name={`blocks[${index}].alt`}
+                ref={register}
+                size="sm"
+                type="text"
+                variant="flushed"
+                defaultValue={block.alt}
+                placeholder="Alt Text"
+              />
+            </FormControl>
+          </HStack>
 
-            <HStack spacing={3}>
-              {/* <FormControl as={HStack}>
+          <HStack spacing={3}>
+            {/* <FormControl as={HStack}>
                 <VisuallyHidden>
                   <FormLabel>Author:</FormLabel>
                 </VisuallyHidden>
@@ -141,36 +136,36 @@ export function CMSBlockImage({ index, block, actions }) {
                 />
               </FormControl> */}
 
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Size:</FormLabel>
-                </VisuallyHidden>
-                <Icon name="size" />
-                <Select
-                  name="size"
-                  size="sm"
-                  variant="flushed"
-                  defaultValue={block.size || 'Small'}
-                  placeholder="Select size"
-                >
-                  <option value="Tiny">Tiny</option>
-                  <option value="Small">Small</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Large">Large</option>
-                  <option value="Huge">Huge</option>
-                </Select>
-              </FormControl>
+            <FormControl as={HStack}>
+              <VisuallyHidden>
+                <FormLabel>Size:</FormLabel>
+              </VisuallyHidden>
+              <Icon name="size" />
+              <Select
+                name="size"
+                size="sm"
+                variant="flushed"
+                defaultValue={block.size || 'Small'}
+                placeholder="Select size"
+              >
+                <option value="Tiny">Tiny</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Huge">Huge</option>
+              </Select>
+            </FormControl>
 
-              {/* <FormControl as={HStack}>
+            {/* <FormControl as={HStack}>
                 <VisuallyHidden>
                   <FormLabel>Meta</FormLabel>
                 </VisuallyHidden>
                 <Icon name="meta" />
                 <Switch name="show_meta" defaultValue={block.show_meta} />
               </FormControl> */}
-            </HStack>
+          </HStack>
 
-            {/* <FormControl as={HStack}>
+          {/* <FormControl as={HStack}>
               <VisuallyHidden>
                 <FormLabel>Source:</FormLabel>
               </VisuallyHidden>
@@ -184,9 +179,8 @@ export function CMSBlockImage({ index, block, actions }) {
                 placeholder="Source name or URL"
               />
             </FormControl> */}
-          </Stack>
-        </Flex>
-      </CardArea>
-    )
-  }
+        </Stack>
+      </Flex>
+    </CardArea>
+  )
 }

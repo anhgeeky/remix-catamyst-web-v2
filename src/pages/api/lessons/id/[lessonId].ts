@@ -14,42 +14,36 @@ export default async function lessonId(
 
   /**
    * Only GET, PATCH, DELETE
-   * The POST is in /api/lessons.ts
+   * The POST is in /api/lessons
    */
-  switch (method) {
-    case 'GET':
-      getLesson({ req, res, lessonId })
-      break
-    case 'PATCH':
-      updateLesson({ req, res, lessonId })
-      break
-    case 'DELETE':
-      deleteLesson({ req, res, lessonId })
-      break
-    default:
-      res.setHeader('Allow', ['GET', 'PATCH', 'DELETE'])
-      res.status(405).end(`Method ${method} is not allowed`)
+  if (method === 'GET') {
+    getLesson({ req, res, lessonId })
+  } else if (method === 'PATCH') {
+    updateLesson({ req, res, lessonId })
+  } else if (method === 'DELETE') {
+    deleteLesson({ req, res, lessonId })
+  } else {
+    res.setHeader('Allow', ['GET', 'PATCH', 'DELETE'])
+    res.status(405).end(`${method} is not allowed`)
   }
 }
 
 export const getLesson = async ({ req, res, lessonId }) => {
   try {
-    // const lesson = dataLessons.find((lesson) => lesson.id === Number(lessonId))
-
     const { data, error } = await supabase
-      .from('profiles')
+      .from('lessons')
       .select('*')
       .eq('id', lessonId)
       .single()
     if (error) throw error
 
-    res.status(200).json({
-      message: 'Lesson by id',
-      id: lessonId,
-      lesson: data,
-    })
+    res.status(200).json(data)
   } catch (error) {
-    res.status(404).json({ message: 'Lesson not found', error })
+    res.status(404).json({
+      message: 'Lesson not found',
+      id: lessonId,
+      error,
+    })
   }
 }
 

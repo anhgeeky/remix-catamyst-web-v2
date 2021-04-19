@@ -13,12 +13,13 @@ import {
 } from 'react-icons/fa'
 
 import { Icon } from '@components'
+import { getCompleteDateTime } from '@utils'
 
 /**
  * This editor should work with generic data.
- * Item could be a track, topic, or lesson.
+ * Data could be a track, topic, or lesson.
  */
-export function HeaderEditor({ name, item, register, actions }) {
+export function HeaderEditor({ name, data, register, actions }) {
   return (
     <Flex justify={{ base: 'flex-start', md: 'center' }} py={2} pt={3}>
       <Flex width="1200px" justify="space-between" px={5}>
@@ -47,15 +48,9 @@ export function HeaderEditor({ name, item, register, actions }) {
           >
             Save changes
           </Button>
-          <HStack>
-            <Switch
-              defaultChecked={item.is_published}
-              name="is_published"
-              ref={register}
-              onChange={actions.togglePublishLesson}
-            />
-            <Text>{item.is_published ? 'Published' : 'Unpublished'}</Text>
-          </HStack>
+          <Button onClick={actions.togglePublishLesson}>
+            {data.is_published ? 'Publish' : 'Unpublish'}
+          </Button>
         </ButtonGroup>
 
         <ButtonGroup
@@ -65,9 +60,11 @@ export function HeaderEditor({ name, item, register, actions }) {
           variant="outline"
           display={{ base: 'none', md: 'flex' }}
         >
-          {item.id && (
-            <Text>
-              Editing {name} #{item.id}
+          {data.id && (
+            <Text fontSize="xs">
+              {data.id}
+              <span> / Created {getCompleteDateTime(data.created_at)}</span>
+              <span> / Updated {getCompleteDateTime(data.updated_at)}</span>
             </Text>
           )}
           <Box display="none">

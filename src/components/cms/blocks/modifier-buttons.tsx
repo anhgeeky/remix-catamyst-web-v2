@@ -14,6 +14,7 @@ import { Card, Icon } from '@components'
  * CMS Modifier Buttons for naming, moving, and deleting block
  */
 export function CMSBlockModifierButtons({
+  length,
   index,
   name,
   block,
@@ -21,12 +22,7 @@ export function CMSBlockModifierButtons({
   children = null,
 }) {
   return (
-    <HStack
-      justify="space-between"
-      // opacity={0.1}
-      // _hover={{ opacity: 1 }}
-      // _focus={{ opacity: 1 }}
-    >
+    <HStack justify="space-between">
       <HStack>
         <Tag colorScheme="teal">{name}</Tag>
         {/* <Switch
@@ -42,22 +38,26 @@ export function CMSBlockModifierButtons({
       </HStack>
 
       <ButtonGroup size="xs">
-        <IconButton
-          aria-label="Move block up"
-          icon={<Icon name="up" />}
-          onClick={() => actions.moveBlock(index, 'up')}
-        />
-        <IconButton
-          aria-label="Move block down"
-          icon={<Icon name="down" />}
-          onClick={() => actions.moveBlock(index, 'down')}
-        />
+        {index !== 0 && (
+          <IconButton
+            aria-label="Move block up"
+            icon={<Icon name="up" />}
+            onClick={() => actions.moveBlock(index, 'up')}
+          />
+        )}
+        {length - 1 !== index && (
+          <IconButton
+            aria-label="Move block down"
+            icon={<Icon name="down" />}
+            onClick={() => actions.moveBlock(index, 'down')}
+          />
+        )}
         <Button
           colorScheme="blue"
           leftIcon={<Icon name="save" />}
           onClick={() => actions.saveBlock(index)}
         >
-          Save
+          Save Block
         </Button>
         <IconButton
           aria-label="Delete block"

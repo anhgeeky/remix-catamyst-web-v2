@@ -15,8 +15,8 @@ import { CMSHero, CMSToolbar } from '@components/cms'
 import { useLessons } from '@hooks'
 
 export function CMSLessons({ state }) {
-  const { data, isLoading, isError } = useLessons()
   const toast = useToast()
+  const { data, isLoading, isError } = useLessons()
 
   const handleCreateItem = () => {
     toast({ status: 'success', title: 'Created new lesson!' })
@@ -36,7 +36,17 @@ export function CMSLessons({ state }) {
       </CMSHero>
     )
   }
-  if (isError) {
+  if (!isLoading && isError) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Lessons error
+        </Heading>
+        <Text>Failed to get all lessons.</Text>
+      </CMSHero>
+    )
+  }
+  if (!isLoading && !data) {
     return (
       <CMSHero>
         <Heading as="h1" size="xl">
@@ -78,10 +88,10 @@ export function CMSLessons({ state }) {
             />
           }
         >
-          <HStack p={3} fontWeight="700">
+          <HStack spacing={3} p={3} fontWeight="700">
             <Text flex={1}>ID</Text>
+            <Text flex={4}>Slug</Text>
             <Text flex={5}>Title</Text>
-            <Text flex={3}>Slug</Text>
             <Text flex={2}>Category</Text>
             <Text flex={2}>Level</Text>
             <Text flex={1} textAlign="center">
@@ -98,15 +108,23 @@ export function CMSLessons({ state }) {
               >
                 <a>
                   <HStack
+                    spacing={3}
                     p={3}
                     rounded="md"
                     _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
                   >
-                    <Text flex={1}>{lesson.id}</Text>
-                    <Text flex={5}>{lesson.title}</Text>
-                    <Text flex={3} as="code" fontSize="xs">
+                    <Text
+                      flex={1}
+                      as="code"
+                      fontSize="xs"
+                      wordBreak="break-all"
+                    >
+                      {lesson.id}
+                    </Text>
+                    <Text flex={4} as="code" fontSize="xs">
                       {lesson.slug}
                     </Text>
+                    <Text flex={5}>{lesson.title}</Text>
                     <Text flex={2}>
                       <LearningTag category={lesson.category} />
                     </Text>

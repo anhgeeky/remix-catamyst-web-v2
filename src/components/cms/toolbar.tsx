@@ -5,6 +5,7 @@ import {
   Input,
   InputGroup,
   Stack,
+  ButtonGroup,
   InputLeftElement,
   VisuallyHidden,
 } from '@chakra-ui/react'
@@ -15,15 +16,14 @@ export function CMSToolbar({ labels, actions }) {
   return (
     <Stack direction="row" mb={5}>
       {labels.create && (
-        <Box>
+        <ButtonGroup size="sm" colorScheme="teal">
           <Button
-            colorScheme="teal"
             leftIcon={<Icon name="add" />}
             onClick={actions.handleCreateItem}
           >
             {labels.create}
           </Button>
-        </Box>
+        </ButtonGroup>
       )}
 
       {labels.search && (
@@ -31,7 +31,7 @@ export function CMSToolbar({ labels, actions }) {
           <VisuallyHidden>
             <FormLabel>{labels.search}</FormLabel>
           </VisuallyHidden>
-          <InputGroup>
+          <InputGroup size="sm">
             <InputLeftElement
               pointerEvents="none"
               children={<Icon name="search" />}

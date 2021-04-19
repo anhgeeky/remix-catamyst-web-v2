@@ -1,8 +1,8 @@
 import {
   AddIcon,
   ArrowBackIcon as BackIcon,
-  ChevronDownIcon as DownIcon,
-  ChevronUpIcon as UpIcon,
+  ArrowDownIcon as DownIcon,
+  ArrowUpIcon as UpIcon,
   DeleteIcon,
   PhoneIcon,
   RepeatIcon as GenerateIcon,

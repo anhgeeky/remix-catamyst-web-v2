@@ -20,16 +20,13 @@ import { CMSBlockModifierButtons } from '@components/cms/blocks'
 /**
  * Block only can be used for CMS
  */
-export function CMSBlockLinks({ index, block, actions }) {
+export function CMSBlockLinks(props) {
+  const { index, block, actions } = props
+
   return (
     <CardArea>
       {block.isReferences && 'hello'}
-      <CMSBlockModifierButtons
-        name="Links"
-        index={index}
-        block={block}
-        actions={actions}
-      >
+      <CMSBlockModifierButtons {...props}>
         <Button
           size="xs"
           leftIcon={<Icon name="add" />}

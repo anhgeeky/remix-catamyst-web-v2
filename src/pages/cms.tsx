@@ -22,7 +22,7 @@ export default function cmsPage({ user }) {
 
 export async function getServerSideProps({ req }) {
   const { user } = await supabase.auth.api.getUserByCookie(req)
-  if (isDev) console.log({ user })
+  if (isDev) console.info({ user })
 
   if (user?.user_metadata.access === 'cms') {
     return { props: { user } }
