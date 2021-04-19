@@ -17,11 +17,11 @@ export default async function lessonId(
    * The POST is in /api/lessons
    */
   if (method === 'GET') {
-    getLesson({ req, res, lessonId })
+    await getLesson({ req, res, lessonId })
   } else if (method === 'PATCH') {
-    updateLesson({ req, res, lessonId })
+    await updateLesson({ req, res, lessonId })
   } else if (method === 'DELETE') {
-    deleteLesson({ req, res, lessonId })
+    await deleteLesson({ req, res, lessonId })
   } else {
     res.setHeader('Allow', ['GET', 'PATCH', 'DELETE'])
     res.status(405).end(`${method} is not allowed`)

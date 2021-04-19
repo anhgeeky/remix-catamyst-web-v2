@@ -77,7 +77,7 @@ export function TrackEditor({ trackId }) {
 
           <HeaderEditor
             name="track"
-            item={data.track.id}
+            data={data.track}
             register={() => {}}
             actions={{
               handleBack,
