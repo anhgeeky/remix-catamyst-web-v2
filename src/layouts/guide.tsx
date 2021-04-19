@@ -42,7 +42,7 @@ export function LayoutGuide({
       <Header />
       <MDXProvider components={mdxComponents}>
         <Main>
-          <Content pt={0}>
+          <Content>
             <VStack>
               <Box width="100%" maxW={760} className="mdx-document">
                 {children}
@@ -58,7 +58,7 @@ export function LayoutGuide({
 
 export function Main({ children }) {
   return (
-    <Box as="main" pt={{ base: '42px', lg: '52px' }} minH="80vh">
+    <Box as="main" pt={{ base: '42px', lg: '55px' }} minH="80vh">
       <SkipNavContent>{children}</SkipNavContent>
     </Box>
   )

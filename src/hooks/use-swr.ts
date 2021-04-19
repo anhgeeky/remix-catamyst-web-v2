@@ -121,6 +121,10 @@ export const useTrackBySlug = (slug) => {
   return { data: data, isLoading: !error && !data, isError: error }
 }
 
+/**
+ * Topics
+ */
+
 export const useTopicById = (id) => {
   const { data, error } = useSWR(`/api/topics/id/${id}`, fetcherSWR)
   return { data: data, isLoading: !error && !data, isError: error }
@@ -128,6 +132,15 @@ export const useTopicById = (id) => {
 
 export const useTopicBySlug = (slug) => {
   const { data, error } = useSWR(`/api/topics/slug/${slug}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
+/**
+ * Lessons
+ */
+
+export const useLessons = () => {
+  const { data, error } = useSWR(`/api/lessons`, fetcherSWR)
   return { data: data, isLoading: !error && !data, isError: error }
 }
 

@@ -12,10 +12,10 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-import { useSWR, fetcherSWR } from '@hooks'
+import { useLessons } from '@hooks'
 
 export function CMSLessons({ state }) {
-  const { data, error } = useSWR('/api/lessons', fetcherSWR)
+  const { data, isLoading, isError } = useLessons()
   const toast = useToast()
 
   const handleCreateItem = () => {
@@ -26,23 +26,23 @@ export function CMSLessons({ state }) {
     /* Handle function */
   }
 
-  if (error) {
-    return (
-      <CMSHero>
-        <Heading as="h1" size="xl">
-          Lessons not found
-        </Heading>
-        <Text>Lessons are empty.</Text>
-      </CMSHero>
-    )
-  }
-  if (!data) {
+  if (isLoading) {
     return (
       <CMSHero>
         <Heading as="h1" size="xl">
           Lessons CMS
         </Heading>
         <Text>Loading all lessons...</Text>
+      </CMSHero>
+    )
+  }
+  if (isError) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Lessons not found
+        </Heading>
+        <Text>Lessons are empty.</Text>
       </CMSHero>
     )
   }

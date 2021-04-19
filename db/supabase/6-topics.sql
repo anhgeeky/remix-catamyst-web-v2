@@ -24,5 +24,11 @@ alter table public.topics enable row level security;
 create policy "Topics are viewable by everyone." on topics for
 select using (true);
 --
-create policy "Only super users can create a topic." on topics for
+create policy "Only authorized users can insert a topic." on tracks for
 insert with check (auth.is_super_admin() = true);
+--
+create policy "Only authorized users can update a topic." on tracks for
+update with check (auth.is_super_admin() = true);
+--
+create policy "Only authorized users can delete a topic." on tracks for delete with check (auth.is_super_admin() = true);
+--

@@ -1,0 +1,25 @@
+[
+  {
+    "slug": "blank",
+    "title": "Blank",
+    "level": "Newbie",
+    "category": "Fundamental",
+    "is_published": true,
+    "blocks": [
+      {
+        "type": "Image",
+        "is_published": true,
+        "is_invertable": true,
+        "url": "https://storage.catamyst.com/illustrations/hero-last-mobile.png",
+        "size": "Small",
+        "alt": "Cats are celebrating",
+        "show_meta": false
+      },
+      {
+        "type": "Texts",
+        "is_published": true,
+        "html": "<p>This is blank</p>"
+      }
+    ]
+  }
+]

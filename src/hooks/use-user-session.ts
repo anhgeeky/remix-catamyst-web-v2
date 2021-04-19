@@ -41,9 +41,7 @@ export function useUserSession() {
        */
       const { data: supabaseAuthListener } = supabase.auth.onAuthStateChange(
         async (event: string, newGlobalSession: SupabaseAuthSession | null) => {
-          if (isDev) {
-            console.info('>>>', { event })
-          }
+          if (isDev) console.info('>>>', { event })
 
           setSession(newGlobalSession)
           setUser(newGlobalSession?.user ?? null)

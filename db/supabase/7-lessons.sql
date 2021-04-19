@@ -19,5 +19,11 @@ alter table public.lessons enable row level security;
 create policy "Lessons are viewable by everyone." on lessons for
 select using (true);
 --
-create policy "Only super users can create a lesson." on lessons for
+create policy "Only super users can insert a lesson." on lessons for
 insert with check (auth.is_super_admin() = true);
+--
+create policy "Only authorized users can update a lesson." on tracks for
+update with check (auth.is_super_admin() = true);
+--
+create policy "Only authorized users can delete a lesson." on tracks for delete with check (auth.is_super_admin() = true);
+--

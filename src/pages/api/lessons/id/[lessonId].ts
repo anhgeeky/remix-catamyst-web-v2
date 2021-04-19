@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-// import { supabase } from '@lib'
+import { supabase } from '@lib'
 import dataLessons from '@data/lessons.json'
 
 export default async function lessonId(
@@ -32,17 +32,24 @@ export default async function lessonId(
   }
 }
 
-export const getLesson = ({ req, res, lessonId }) => {
+export const getLesson = async ({ req, res, lessonId }) => {
   try {
-    const lesson = dataLessons.find((lesson) => lesson.id === Number(lessonId))
+    // const lesson = dataLessons.find((lesson) => lesson.id === Number(lessonId))
+
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', lessonId)
+      .single()
+    if (error) throw error
 
     res.status(200).json({
       message: 'Lesson by id',
-      lessonId,
-      lesson,
+      id: lessonId,
+      lesson: data,
     })
   } catch (error) {
-    res.status(404).json({ message: 'Lesson not found' })
+    res.status(404).json({ message: 'Lesson not found', error })
   }
 }
 

@@ -25,6 +25,7 @@ export {
   useTrackBySlug,
   useTopicById,
   useTopicBySlug,
+  useLessons,
   useLessonById,
   useLessonBySlug,
 } from '@hooks/use-swr'

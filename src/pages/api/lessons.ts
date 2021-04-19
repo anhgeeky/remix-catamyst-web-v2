@@ -1,20 +1,23 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
-import dataLessons from '@data/lessons.json'
 
 export default async function lessons(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
+    const { data, error } = await supabase.from('lessons').select('*')
+    if (error) throw error
+
     res.status(200).json({
       message: 'Get all lessons',
-      lessons: dataLessons,
+      lessons: data,
     })
   } catch (error) {
     res.status(401).json({
       message: 'Failed to get all lessons',
+      error,
     })
   }
 }

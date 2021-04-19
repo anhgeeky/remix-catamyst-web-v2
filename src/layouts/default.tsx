@@ -25,7 +25,7 @@ export function LayoutDefault({
 
 export function Main({ children }) {
   return (
-    <Box as="main" pt={{ base: '42px', lg: '52px' }} minH="80vh">
+    <Box as="main" pt={{ base: '42px', lg: '55px' }} minH="80vh">
       <SkipNavContent>{children}</SkipNavContent>
     </Box>
   )

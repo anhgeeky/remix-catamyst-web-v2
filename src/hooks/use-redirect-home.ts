@@ -15,10 +15,10 @@ export function useRedirectHome() {
   } = useProfile()
 
   useEffect(() => {
-    if (user?.role && user?.role === 'Member') {
-      router.replace('/')
+    if (!isLoading && !isAuthorized) {
+      router.replace('/signin')
     }
-  }, [user])
+  }, [profile])
 
   return {
     router,
