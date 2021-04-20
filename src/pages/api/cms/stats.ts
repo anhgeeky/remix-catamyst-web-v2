@@ -1,9 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import dataUsers from '@data/users.json'
-import dataTracks from '@data/tracks.json'
-import dataTopics from '@data/topics.json'
-import dataLessons from '@data/lessons.json'
+import { dataUsers, dataTracks, dataTopics, dataLessons } from '@data'
 
 export default async function lessons(
   req: NextApiRequest,

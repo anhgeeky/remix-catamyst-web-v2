@@ -8,8 +8,8 @@ create table lessons (
   is_published boolean default false,
   slug text not null unique,
   title text,
-  level text,
-  category text,
+  category lesson_category,
+  level level,
   blocks jsonb,
   -- Timestamps
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,

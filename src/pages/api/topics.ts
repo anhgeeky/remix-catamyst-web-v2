@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
-import dataTopics from '@data/topics.json'
+import { dataTopics } from '@data'
 
 export default async function topics(
   req: NextApiRequest,

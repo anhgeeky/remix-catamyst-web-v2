@@ -1,8 +1,6 @@
 import slugify from 'slugify'
 
-import dataTracks from '@data/tracks.json'
-import dataTopics from '@data/topics.json'
-import dataLessons from '@data/lessons.json'
+import { dataTracks, dataTopics, dataLessons } from '@data'
 
 export function usePaginationLessons({ trackSlug, topicSlug, lessonSlug }) {
   try {

@@ -9,8 +9,7 @@ import {
   CMSTopics,
   CMSLessons,
 } from '@components/cms'
-
-import dataCMSLinks from '@data/cms-links.json'
+import { dataCMSLinks } from '@data'
 
 export function CMSAll({ cmsSlug, state }) {
   return (

@@ -17,8 +17,7 @@ import { HeadingStack, SocialLinks } from '@components'
 import { JobSkillsTags } from '@components/jobs'
 import { trimUrl } from '@utils'
 
-import dataProjects from '@data/projects.json'
-import dataUsers from '@data/users.json'
+import { dataProjects, dataUsers } from '@data'
 
 export function ProjectDetails({ projectSlug }) {
   const [isTooSmall] = useMediaQuery('(max-width: 600px)')

@@ -3,7 +3,7 @@ import { Box, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
 
 import { Header, Footer } from '@components'
-import dataSite from '@data/site.json'
+import { dataSite } from '@data'
 
 /**
  * Re-render everytime pages are changed.

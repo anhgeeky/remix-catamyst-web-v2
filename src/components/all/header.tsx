@@ -17,7 +17,7 @@ import {
   MenuPanel,
   HeaderUser,
 } from '@components'
-import dataNavLinks from '@data/nav-links.json'
+import { dataNavLinks } from '@data'
 
 /**
  * Should only used inside of the actual app Component, not _app.tsx

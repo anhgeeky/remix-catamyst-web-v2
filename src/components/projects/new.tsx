@@ -17,8 +17,7 @@ import {
 import { CUIAutoComplete as SelectAutoComplete } from 'chakra-ui-autocomplete'
 
 import { LinkButton, Icon, useToast } from '@components'
-import dataProjectCategories from '@data/project-categories.json'
-import dataProjectSpecifics from '@data/project-specifics.json'
+import { dataProjectCategories, dataProjectSpecifics } from '@data'
 
 export function ProjectNew() {
   const toast = useToast()

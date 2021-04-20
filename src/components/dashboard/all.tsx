@@ -13,7 +13,7 @@ import {
   DashboardTracks,
 } from '@components/dashboard'
 
-import dataDashboardLinks from '@data/dashboard-links.json'
+import { dataDashboardLinks } from '@data'
 
 export function DashboardAll({ dashboardSlug, state }) {
   /**

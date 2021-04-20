@@ -17,7 +17,7 @@ import {
   UnorderedList,
   OrderedList,
 } from '@components'
-import dataSite from '@data/site.json'
+import { dataSite } from '@data'
 
 const mdxComponents = {
   img: Image,

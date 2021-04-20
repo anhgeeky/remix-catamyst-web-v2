@@ -1,7 +1,7 @@
 import { Link, HStack, Tooltip, useColorModeValue } from '@chakra-ui/react'
-import { Icon } from '@components'
 
-import dataSocialLinks from '@data/social-links.json'
+import { Icon } from '@components'
+import { dataSocialLinks } from '@data'
 
 export function SocialLinks({ links = dataSocialLinks, size = 'xl' }) {
   return (

@@ -10,7 +10,8 @@ create table tracks (
   total_lessons int2 default 2,
   total_hours int2 default 10,
   total_months text default '1-2',
-  levels text [],
+  category track_category,
+  levels level [],
   topics uuid [],
   -- Timestamps
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,

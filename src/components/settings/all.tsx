@@ -10,8 +10,7 @@ import {
   SettingsPro,
   SettingsSuper,
 } from '@components/settings'
-
-import dataSettingsLinks from '@data/settings-links.json'
+import { dataSettingsLinks } from '@data'
 
 export function SettingsAll({ settingsSlug, state }) {
   /**

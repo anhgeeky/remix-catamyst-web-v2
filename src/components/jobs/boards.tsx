@@ -33,7 +33,7 @@ import {
   getRelativePublishedDate,
   formatNumberCurrency,
 } from '@utils'
-import dataJobs from '@data/jobs.json'
+import { dataJobs } from '@data'
 
 /**
  * As this is not a Collection component, the data is retrived directly

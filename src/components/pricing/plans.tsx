@@ -16,8 +16,7 @@ import { FaCheckCircle } from 'react-icons/fa'
 
 import { Card, LinkButton, Icon } from '@components'
 import { useAuth } from '@hooks'
-
-import dataPlans from '@data/plans.json'
+import { dataPlans } from '@data'
 
 export function PricingPlans() {
   const { isAuthenticated } = useAuth()

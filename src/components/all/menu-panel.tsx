@@ -17,8 +17,7 @@ import { FaTimes } from 'react-icons/fa'
 
 import { ColorModeToggle, Icon, SocialLinks } from '@components'
 import { useAuth, useRouteChanged } from '@hooks'
-
-import dataMenuLinks from '@data/menu-links.json'
+import { dataMenuLinks } from '@data'
 
 /**
  * menu-link needs CSS to retain accessibility on focus.

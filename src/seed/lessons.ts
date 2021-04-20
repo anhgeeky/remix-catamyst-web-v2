@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import seed from './seed.json'
+import { dataLessons } from '@data'
 
 import { supabase } from '@lib'
 
@@ -12,7 +12,7 @@ export default async function seedLessons(
       // Delete lessons
       await supabase.from('lessons').delete()
       // Insert lessons
-      const { data, error } = await supabase.from('lessons').insert(seed)
+      const { data, error } = await supabase.from('lessons').insert(dataLessons)
       if (error) throw error
 
       res.status(200).json({

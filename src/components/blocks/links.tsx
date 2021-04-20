@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react'
 
 import { ReferenceIcon } from '@components'
-import dataTheme from '@theme/theme.json'
 
 /**
  * Block only can be used for actual content
@@ -20,7 +19,7 @@ export function BlockLinks({ block }) {
   const bg = useColorModeValue('white', 'gray.800')
 
   return (
-    <Box maxW={dataTheme.maxContentWidth} width="100%" px={5}>
+    <Box maxW={760} width="100%" px={5}>
       <Stack spacing={2}>
         {block.isReferences && (
           <Heading

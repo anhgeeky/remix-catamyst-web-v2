@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
-import dataLessons from '@data/lessons.json'
 
 /**
  * /api/lessons/id/{lessonId}

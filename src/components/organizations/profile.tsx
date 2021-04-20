@@ -28,8 +28,7 @@ import { OrganizationAvatar } from '@components/organizations'
 import { transformOptions } from '@components/blocks'
 import { trimUrl, getJoinedDate } from '@utils'
 import { useAuth } from '@hooks'
-
-import dataProjects from '@data/projects.json'
+import { dataProjects } from '@data'
 
 /**
  * Organization profile.

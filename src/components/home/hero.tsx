@@ -11,7 +11,7 @@ import { FaCheckCircle as CheckIcon } from 'react-icons/fa'
 
 import { NextImage } from '@components'
 import { HomeHeroCTA } from '@components/home'
-import dataHeroHome from '@data/hero-home.json'
+import { dataHeroHome } from '@data'
 
 export function HomeHero() {
   return (

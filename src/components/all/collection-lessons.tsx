@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 
 import { AlertSoon, LessonIcon } from '@components'
-import dataLessons from '@data/lessons.json'
+import { dataLessons } from '@data'
 
 export function CollectionLessons({ trackSlug, topicSlug, sections }) {
   const bg = useColorModeValue('white', 'gray.800')

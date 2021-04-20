@@ -2,9 +2,8 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
 
-import { dataAppRestrictedHandles } from '@data'
-import dataUsers from '@data/users.json'
-import dataOrganizations from '@data/organizations.json'
+import { dataRestrictedHandles } from '@data'
+import { dataUsers, dataOrganizations } from '@data'
 
 export type ResponseProfile = {
   message: string
@@ -17,7 +16,7 @@ export default async function handleProfile(
   res: NextApiResponse
 ) {
   const handle = String(req.query.handle)
-  const isRestricted = dataAppRestrictedHandles.find((restrictedHandle) => {
+  const isRestricted = dataRestrictedHandles.find((restrictedHandle) => {
     if (handle.toLowerCase() === restrictedHandle) return true
   })
 

@@ -18,7 +18,7 @@ import { Card, Country, SocialLinks, Icon } from '@components'
 import { UserAvatar } from '@components/users'
 import { transformOptions } from '@components/blocks'
 import { trimUrl } from '@utils'
-import dataFeaturedReviews from '@data/reviews-featured.json'
+import { dataReviewsFeatured } from '@data'
 
 export function HomeReviews() {
   return (
@@ -43,7 +43,7 @@ export function HomeReviews() {
           width="100%"
           minChildWidth={{ base: 280, sm: 400 }}
         >
-          <UserReviews reviews={dataFeaturedReviews} />
+          <UserReviews reviews={dataReviewsFeatured} />
         </SimpleGrid>
       </VStack>
     </VStack>

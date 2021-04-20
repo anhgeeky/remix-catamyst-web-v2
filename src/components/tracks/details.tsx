@@ -22,9 +22,7 @@ import {
 } from '@components'
 import { LearnHero } from '@components/learn'
 import { useAuth, useToast } from '@hooks'
-
-import dataTracks from '@data/tracks.json'
-import dataTopics from '@data/topics.json'
+import { dataTracks, dataTopics } from '@data'
 
 export function TrackDetails({ trackSlug }) {
   const [topics, setTopics] = useState([])

@@ -28,8 +28,7 @@ import { UserAvatar } from '@components/users'
 import { transformOptions } from '@components/blocks'
 import { isDev, trimUrl, getJoinedDate } from '@utils'
 import { useProfile } from '@hooks'
-
-import dataProjects from '@data/projects.json'
+import { dataProjects } from '@data'
 
 /**
  * User profile details.

@@ -14,10 +14,7 @@ import {
   CollectionUsers,
   CollectionOrganizations,
 } from '@components'
-
-import dataProjects from '@data/projects.json'
-import dataUsers from '@data/users.json'
-import dataOrganizations from '@data/organizations.json'
+import { dataProjects, dataUsers, dataOrganizations } from '@data'
 
 export function DiscoverFeatured() {
   return (

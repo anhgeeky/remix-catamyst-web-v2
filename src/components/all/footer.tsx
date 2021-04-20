@@ -13,9 +13,8 @@ import {
   Flex,
 } from '@chakra-ui/react'
 
-import dataPackage from '../../../package.json'
 import { SocialLinks } from '@components'
-import { dataAppSitemap } from '@data'
+import { dataPackage, dataSitemap } from '@data'
 import { useAuth } from '@hooks'
 import { getYear, getDayNamePeriod, isDev, isProd, isVercel } from '@utils'
 
@@ -43,7 +42,7 @@ export function FooterSitemap() {
 
   return (
     <Flex flexWrap="wrap">
-      {dataAppSitemap.map((column, index) => {
+      {dataSitemap.map((column, index) => {
         return (
           <Stack key={column.text} align="flex-start" minW="120px" mb={5}>
             <Heading as="h4" size="md">

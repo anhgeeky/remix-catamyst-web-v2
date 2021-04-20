@@ -15,8 +15,6 @@ import {
   ArrowBackIcon as PreviousIcon,
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
-import dataTheme from '@theme/theme.json'
-import React from 'react'
 
 export function PaginationLessons({
   mode,
@@ -74,7 +72,7 @@ function PaginationLessonsMinimal({ track, topic, prev, next, children }) {
       aria-label="Pagination lesson"
       width="100%"
       justify="space-between"
-      maxW={dataTheme.maxContentWidth}
+      maxW={760}
     >
       {prev?.slug ? (
         <PaginationLinkMinimal

@@ -34,8 +34,7 @@ import {
   JobSalaryRate,
 } from '@components/jobs'
 import { useAuth, useToast } from '@hooks'
-
-import dataJobs from '@data/jobs.json'
+import { dataJobs } from '@data'
 
 export function JobDetails({ jobParams }) {
   const toast = useToast()

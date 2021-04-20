@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
-import dataTracks from '@data/tracks.json'
+import { dataTracks } from '@data'
 
 export default async function tracks(
   req: NextApiRequest,

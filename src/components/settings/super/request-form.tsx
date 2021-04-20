@@ -1,7 +1,7 @@
 import { ButtonGroup, Button, Heading, Stack, Text } from '@chakra-ui/react'
 
 import { Card, Icon, LinkButton } from '@components'
-import { dataApp } from '@data'
+import { dataSuper } from '@data'
 
 export function SuperPlanRequestForm({ state }) {
   return (
@@ -33,8 +33,8 @@ export function SuperPlanRequestForm({ state }) {
         </LinkButton>
       </ButtonGroup>
       <Text>
-        Currently we're available for <b>{dataApp.superQuotaLeft}</b> learners
-        out of <b>{dataApp.superQuotaTotal}</b> total learners quota.
+        Currently we're available for <b>{dataSuper.quota_left}</b> learners out
+        of <b>{dataSuper.quota_total}</b> total learners quota.
       </Text>
     </Card>
   )

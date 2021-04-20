@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
-import { dataAppCountries } from '@data'
+import { dataCountries } from '@data'
 import { Card, Icon } from '@components'
 import { supabase } from '@lib'
 import { checkUrl } from '@utils'
@@ -159,7 +159,7 @@ export function SelectCountries({ name, register, profile }) {
       name="country"
       ref={register}
     >
-      {dataAppCountries.map((country, index) => {
+      {dataCountries.map((country, index) => {
         return (
           <option key={index} value={country.code}>
             {country.name}

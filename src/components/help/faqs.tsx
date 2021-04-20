@@ -17,8 +17,7 @@ import ReactHtmlParser from 'react-html-parser'
 import { HeadingStack } from '@components'
 import { transformOptions } from '@components/blocks'
 
-import dataFaqsLearners from '@data/faqs-learners.json'
-import dataFaqsEmployers from '@data/faqs-employers.json'
+import { dataFAQLearners, dataFAQEmployers } from '@data'
 
 export function HelpFaqs() {
   const [isTooSmall] = useMediaQuery('(max-width: 1000px)')
@@ -43,12 +42,12 @@ export function HelpFaqs() {
         <FaqAccordion
           id="learners"
           title="FAQ for Learners"
-          items={dataFaqsLearners}
+          items={dataFAQLearners}
         />
         <FaqAccordion
           id="employers"
           title="FAQ for Employers"
-          items={dataFaqsEmployers}
+          items={dataFAQEmployers}
         />
       </Stack>
     </Stack>

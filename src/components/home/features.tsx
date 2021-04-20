@@ -11,7 +11,7 @@ import {
 
 import { NextImage, LinkButton, Icon } from '@components'
 import { useAuth } from '@hooks'
-import dataFeatures from '@data/features.json'
+import { dataFeatures } from '@data'
 
 export function HomeFeatures() {
   const { isAuthenticated } = useAuth()

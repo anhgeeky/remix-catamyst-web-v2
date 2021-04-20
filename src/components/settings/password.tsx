@@ -3,7 +3,7 @@ import { Stack, Heading, HStack, Text } from '@chakra-ui/react'
 
 import { Content } from '@components'
 import { SettingsHero, UserPasswordForm } from '@components/settings'
-import dataUsers from '@data/users.json'
+import { dataUsers } from '@data'
 
 export function SettingsPassword({ state }) {
   return (
