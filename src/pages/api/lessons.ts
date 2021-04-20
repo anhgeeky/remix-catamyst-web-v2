@@ -9,9 +9,7 @@ export default async function lessons(
   try {
     const { data, error } = await supabase
       .from('lessons')
-      .select(
-        'id,slug,title,level,category,blocks,is_published,created_at,updated_at'
-      )
+      .select('id,slug,title,level,category,is_published,created_at,updated_at')
     if (error) throw error
 
     res.status(200).json({

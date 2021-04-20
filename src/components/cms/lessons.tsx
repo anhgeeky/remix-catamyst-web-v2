@@ -13,6 +13,7 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
 import { useLessons } from '@hooks'
+import { trimId } from '@utils'
 
 export function CMSLessons({ state }) {
   const toast = useToast()
@@ -66,7 +67,7 @@ export function CMSLessons({ state }) {
         <Heading as="h1" size="xl">
           Lessons CMS
         </Heading>
-        <Text>All {data.lessons?.length} (300+) lessons.</Text>
+        <Text>All {data.lessons?.length} lessons in a table.</Text>
       </CMSHero>
 
       <Content>
@@ -119,7 +120,7 @@ export function CMSLessons({ state }) {
                       fontSize="xs"
                       wordBreak="break-all"
                     >
-                      {lesson.id}
+                      {trimId(lesson.id)}
                     </Text>
                     <Text flex={4} as="code" fontSize="xs">
                       {lesson.slug}

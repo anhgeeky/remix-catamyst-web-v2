@@ -14,3 +14,11 @@ export function getName(profile): string {
     return 'You'
   }
 }
+
+export function trimId(id): string {
+  try {
+    return id.substring(0, 8)
+  } catch (error) {
+    return id
+  }
+}
