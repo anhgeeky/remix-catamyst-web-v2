@@ -24,8 +24,6 @@ import dataNavLinks from '@data/nav-links.json'
  * Because it needs to trigger the useProfile/useProfile every app re-render.
  */
 export function Header() {
-  const bg = useColorModeValue('white', 'gray.900')
-  const borderBg = useColorModeValue('white', 'gray.700')
   const [isMenuOpen, setMenuOpen] = useState(false)
   const [isTooSmall] = useMediaQuery('(max-width: 991px)') // Not 1024px
 
@@ -41,7 +39,6 @@ export function Header() {
     <>
       <Flex
         as="header"
-        bg={bg}
         boxShadow="md"
         justify="center"
         pos="fixed"
@@ -50,7 +47,8 @@ export function Header() {
         width="100%"
         zIndex="3"
         borderBottom="1px"
-        borderBottomColor={borderBg}
+        borderBottomColor={useColorModeValue('white', 'gray.700')}
+        bg={useColorModeValue('white', 'gray.900')}
       >
         <SkipNavLink>Skip to content</SkipNavLink>
 

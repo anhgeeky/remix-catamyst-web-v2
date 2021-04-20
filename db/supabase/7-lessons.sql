@@ -1,3 +1,7 @@
+/**
+ * LESSONS
+ * auth.role() = 'authenticated' should be changed later.
+ */
 -- Create a table for Lessons
 create table lessons (
   id uuid default extensions.uuid_generate_v4() not null primary key,
@@ -19,11 +23,11 @@ alter table public.lessons enable row level security;
 create policy "Lessons are viewable by everyone." on lessons for
 select using (true);
 --
-create policy "Only super users can insert a lesson." on lessons for
-insert with check (auth.is_super_admin() = true);
+create policy "Only authorized users can insert a lesson." on lessons for
+insert with check (auth.role() = 'authenticated');
 --
-create policy "Only authorized users can update a lesson." on tracks for
-update with check (auth.is_super_admin() = true);
+create policy "Only authorized users can update a lesson." on lessons for
+update using (auth.role() = 'authenticated');
 --
-create policy "Only authorized users can delete a lesson." on tracks for delete with check (auth.is_super_admin() = true);
+create policy "Only authorized users can delete a lesson." on lessons for delete using (auth.role() = 'authenticated');
 --

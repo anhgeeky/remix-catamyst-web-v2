@@ -11,7 +11,6 @@ import {
   VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { useForm } from 'react-hook-form'
 
 import { Icon, CardArea } from '@components'
 import { BlockImage } from '@components/blocks'
@@ -30,7 +29,6 @@ export function CMSBlockImage(props) {
     block,
     actions: { register },
   } = props
-  // const { register } = actions
 
   if (!block) {
     return <p>Loading image...</p>
@@ -58,14 +56,15 @@ export function CMSBlockImage(props) {
               </VisuallyHidden>
               <Icon name="url" />
               <Input
+                key={block.id}
+                ref={register()}
                 name={`blocks[${index}].url`}
-                ref={register}
+                defaultValue={block.url}
+                placeholder="https://example.com"
                 size="sm"
                 type="text"
                 variant="flushed"
                 resize="none"
-                placeholder="https://example.com"
-                defaultValue={block.url}
               />
             </FormControl>
           </HStack>
@@ -77,14 +76,15 @@ export function CMSBlockImage(props) {
               </VisuallyHidden>
               <Icon name="title" />
               <Input
+                key={block.id}
+                ref={register()}
                 name={`blocks[${index}].title`}
-                ref={register}
+                defaultValue={block.title}
+                placeholder="Image Title"
                 size="sm"
                 type="text"
                 variant="flushed"
                 fontWeight="700"
-                defaultValue={block.title}
-                placeholder="Image Title"
               />
             </FormControl>
 
@@ -94,47 +94,52 @@ export function CMSBlockImage(props) {
               </VisuallyHidden>
               <Icon name="alt" />
               <Input
+                key={block.id}
+                ref={register()}
                 name={`blocks[${index}].alt`}
-                ref={register}
+                defaultValue={block.alt}
+                placeholder="Alt Text"
                 size="sm"
                 type="text"
                 variant="flushed"
-                defaultValue={block.alt}
-                placeholder="Alt Text"
               />
             </FormControl>
           </HStack>
 
           <HStack spacing={3}>
-            {/* <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Author:</FormLabel>
-                </VisuallyHidden>
-                <Icon name="author" />
-                <Input
-                  name="author"
-                  size="sm"
-                  type="text"
-                  variant="flushed"
-                  defaultValue={block.author}
-                  placeholder="Author Name"
-                />
-              </FormControl>
+            <FormControl as={HStack}>
+              <VisuallyHidden>
+                <FormLabel>Author:</FormLabel>
+              </VisuallyHidden>
+              <Icon name="author" />
+              <Input
+                key={block.id}
+                ref={register()}
+                name={`blocks[${index}].author`}
+                defaultValue={block.author}
+                placeholder="Author Name"
+                size="sm"
+                type="text"
+                variant="flushed"
+              />
+            </FormControl>
 
-              <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Copyright:</FormLabel>
-                </VisuallyHidden>
-                <Icon name="copyright" />
-                <Input
-                  name="copyright"
-                  size="sm"
-                  type="text"
-                  variant="flushed"
-                  defaultValue={block.copyright}
-                  placeholder="Copyright"
-                />
-              </FormControl> */}
+            <FormControl as={HStack}>
+              <VisuallyHidden>
+                <FormLabel>Copyright:</FormLabel>
+              </VisuallyHidden>
+              <Icon name="copyright" />
+              <Input
+                key={block.id}
+                ref={register()}
+                name={`blocks[${index}].copyright`}
+                defaultValue={block.copyright}
+                placeholder="Copyright"
+                size="sm"
+                type="text"
+                variant="flushed"
+              />
+            </FormControl>
 
             <FormControl as={HStack}>
               <VisuallyHidden>
@@ -142,10 +147,12 @@ export function CMSBlockImage(props) {
               </VisuallyHidden>
               <Icon name="size" />
               <Select
-                name="size"
+                key={block.id}
+                ref={register()}
+                name={`blocks[${index}].size`}
+                defaultValue={block.size || 'Small'}
                 size="sm"
                 variant="flushed"
-                defaultValue={block.size || 'Small'}
                 placeholder="Select size"
               >
                 <option value="Tiny">Tiny</option>
@@ -156,29 +163,46 @@ export function CMSBlockImage(props) {
               </Select>
             </FormControl>
 
-            {/* <FormControl as={HStack}>
-                <VisuallyHidden>
-                  <FormLabel>Meta</FormLabel>
-                </VisuallyHidden>
-                <Icon name="meta" />
-                <Switch name="show_meta" defaultValue={block.show_meta} />
-              </FormControl> */}
+            <FormControl as={HStack}>
+              <Icon name="meta" />
+              <FormLabel fontSize="sm">Meta</FormLabel>
+              <Switch
+                size="sm"
+                key={block.id}
+                ref={register()}
+                name={`blocks[${index}].show_meta`}
+                defaultChecked={block.show_meta || false}
+              />
+            </FormControl>
+
+            <FormControl as={HStack}>
+              <Icon name="invert" />
+              <FormLabel fontSize="sm">Invertable</FormLabel>
+              <Switch
+                size="sm"
+                key={block.id}
+                ref={register()}
+                name={`blocks[${index}].is_invertable`}
+                defaultChecked={block.is_invertable || false}
+              />
+            </FormControl>
           </HStack>
 
-          {/* <FormControl as={HStack}>
-              <VisuallyHidden>
-                <FormLabel>Source:</FormLabel>
-              </VisuallyHidden>
-              <Icon name="link" />
-              <Input
-                name="source"
-                size="sm"
-                type="text"
-                variant="flushed"
-                defaultValue={block.source}
-                placeholder="Source name or URL"
-              />
-            </FormControl> */}
+          <FormControl as={HStack}>
+            <VisuallyHidden>
+              <FormLabel>Source:</FormLabel>
+            </VisuallyHidden>
+            <Icon name="source" />
+            <Input
+              name={`blocks[${index}].source`}
+              ref={register()}
+              size="sm"
+              type="text"
+              variant="flushed"
+              defaultValue={block.source}
+              placeholder="Source name or URL"
+            />
+          </FormControl>
         </Stack>
       </Flex>
     </CardArea>

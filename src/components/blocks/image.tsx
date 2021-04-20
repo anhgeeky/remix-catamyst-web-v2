@@ -1,13 +1,17 @@
 import NextImage from 'next/image'
 import {
+  chakra,
   Flex,
   Image,
   Box,
   Text,
   Link,
+  Stack,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { v4 as uuidv4 } from 'uuid'
+
+import { isUrl } from '@utils'
 
 /**
  * Block that can be used both for actual content and CMS
@@ -47,6 +51,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
             className={`${block.is_invertable && 'invertable'}`}
             src={block.url || `https://example.com`}
             alt={block.alt || block.title || 'Unknown'}
+            title={block.title || block.alt || 'Unknown'}
             width={block.width || autoWidth}
             height={block.height || autoHeight}
             objectFit="contain"
@@ -66,6 +71,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
             className={`next-image${block.is_invertable ? ' invertable' : ''}`}
             src={block.url || `https://example.com`}
             alt={block.alt || block.title || 'Unknown'}
+            title={block.title || block.alt || 'Unknown'}
             width={block.width || autoWidth}
             height={block.height || autoHeight}
             layout="intrinsic"
@@ -75,14 +81,16 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       )}
 
       {block.show_meta !== false && block.title && (
-        <Box opacity={0.5} align="center" mt={2}>
-          <Text fontSize="sm">{block.title}</Text>
-          {block.source && (
-            <Link fontSize="xs" href={block.source}>
-              {block.source}
-            </Link>
-          )}
-        </Box>
+        <Stack opacity={0.5} align="center" mt={2} spacing={1}>
+          <Text>{block.title}</Text>
+          <Text fontSize="xs">
+            {block.source && isUrl(block.source) ? (
+              <Link href={block.source}>{block.source}</Link>
+            ) : (
+              <chakra.span>{block.source}</chakra.span>
+            )}
+          </Text>
+        </Stack>
       )}
     </Box>
   )

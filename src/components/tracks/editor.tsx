@@ -40,7 +40,7 @@ export function TrackEditor({ trackId }) {
   const [viewMode, setViewMode] = useState('result')
   const { data, isLoading, isError } = useTrackById(trackId)
 
-  const handleSave = () => {
+  const handleSaveChanges = () => {
     // POST to /api/tracks/id/{trackId}
     toast({ title: 'Saved track!', status: 'success' })
   }
@@ -83,8 +83,8 @@ export function TrackEditor({ trackId }) {
               handleBack,
               handleDelete,
               handleReset: () => {},
-              handleSave,
               handleSubmit: () => {},
+              handleSaveChanges,
               handleViewResult: () => setViewMode('result'),
               handleViewJSON: () => setViewMode('json'),
             }}

@@ -3,7 +3,10 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { supabase } from '@lib'
 import { getUser } from '@lib/api'
 
-export default async function authProfile(
+/**
+ * /api/auth/profile
+ */
+export default async function getAuthProfile(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

@@ -3,9 +3,11 @@ import {
   ButtonGroup,
   HStack,
   IconButton,
+  Input,
   Switch,
   Tag,
   Text,
+  VisuallyHidden,
 } from '@chakra-ui/react'
 import { Card, Icon } from '@components'
 
@@ -25,6 +27,14 @@ export function CMSBlockModifierButtons({
     <HStack justify="space-between">
       <HStack>
         <Tag colorScheme="teal">{name}</Tag>
+        <VisuallyHidden>
+          <Input
+            key={block.id}
+            name={`blocks.${index}.type`}
+            ref={actions.register()}
+            defaultValue="Image"
+          />
+        </VisuallyHidden>
         {/* <Switch
           size="sm"
           name={`blocks[${block.index}].is_published`}
@@ -52,13 +62,13 @@ export function CMSBlockModifierButtons({
             onClick={() => actions.moveBlock(index, 'down')}
           />
         )}
-        <Button
+        {/* <Button
           colorScheme="blue"
           leftIcon={<Icon name="save" />}
           onClick={() => actions.saveBlock(index)}
         >
           Save Block
-        </Button>
+        </Button> */}
         <IconButton
           aria-label="Delete block"
           colorScheme="red"

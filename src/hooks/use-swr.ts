@@ -34,13 +34,19 @@ export const fetcherSWR = async (url) => {
   return res.json()
 }
 
-export const fetcherWithTokenSWR = async (url, token) => {
+/**
+ * Using req.headers.authorization
+ * @param url
+ * @param token
+ * @returns
+ */
+export const fetcherWithTokenSWR = async (url, access_token) => {
   const res = await fetch(url, {
-    headers: { Authorization: `${token}` },
+    headers: { Authorization: access_token },
   })
 
   if (!res.ok) {
-    const error = new Error('Fetch with token error.')
+    const error = new Error('Fetch with access_token error.')
     // @ts-ignore
     error.info = await res.json()
     // @ts-ignore
@@ -65,9 +71,6 @@ export const useProfileHandleSWR = (handle) => {
 }
 
 export const useAuthProfileSWR = (token) => {
-  const dispatch = useDispatch()
-  // console.warn({ token })
-
   /**
    * Attempt to request with session.access_token.
    */
@@ -75,19 +78,6 @@ export const useAuthProfileSWR = (token) => {
     token ? ['/api/auth/me', token] : null,
     fetcherWithTokenSWR
   )
-  // console.warn({ data, error })
-
-  /**
-   * When user might have been deleted or signed out somewhere else.
-   * FIXME: Could cause early signout when session is still revalidating.
-   * This could happen when switching between development and production.
-   */
-  // if (error || data?.error === 401) {
-  //   console.warn('Signing out because of expired session...')
-  //   console.warn({ data, error })
-  //   dispatch(signOut(false))
-  //   supabase.auth.signOut()
-  // }
 
   return {
     profile: data?.profile,

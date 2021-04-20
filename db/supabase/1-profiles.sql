@@ -51,10 +51,15 @@ comment on table public.profiles is 'User profile attached to a user.';
 comment on column public.profiles.id is 'References to auth.users id.';
 -- Policies
 alter table public.profiles enable row level security;
+--
 create policy "Profiles are viewable by everyone." on profiles for
 select using (true);
+--
 create policy "Users can create a profile." on profiles for
 insert with check (auth.uid() = id);
+--
 create policy "Users can update their own profile." on profiles for
 update using (auth.uid() = id);
+--
 create policy "Users can delete their own profile." on profiles for delete using (auth.uid() = id);
+--

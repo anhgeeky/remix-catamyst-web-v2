@@ -20,7 +20,9 @@ import { Icon, LearningTag, HeaderEditor, Hero, useToast } from '@components'
 import { CMSViewJSON } from '@components/cms'
 import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
 import { slugify, initBlock } from '@utils'
-import { useRedirectHome, useLessonById } from '@hooks'
+import { useRedirectHome, useLessonById, mutateSWR } from '@hooks'
+import { supabase } from '@lib'
+import { updateLesson } from '@mutations'
 
 /**-----------------------------------------------------------------------------
  * CMS Lesson editor, with UI and logic
@@ -49,58 +51,80 @@ export function LessonEditor({ lessonId }) {
   })
 
   useEffect(() => {
-    if (!isLoading && !isError && data) {
+    if (!isLoading && data) {
       reset({
-        ...data.lesson,
-        blocks: data.lesson?.blocks || [],
+        ...data,
+        is_published: data.is_published || true,
+        blocks: data.blocks || [],
       })
     }
   }, [isLoading, data])
-
-  const handleSave = (localData) => {
-    // PATCH /api/lessons/id/{lessonId}
-    toast({ status: 'success', title: 'Saved lesson data!' })
-    const values = getValues()
-
-    console.info(JSON.stringify({ values }, null, 2))
-    console.info(JSON.stringify({ localData }, null, 2))
-  }
-
-  const handleDelete = () => {
-    // DELETE /api/lessons/id/{lessonId}
-    toast({ status: 'error', title: 'Deleted lesson data!' })
-  }
-
-  const handleReset = () => {
-    // No request, just local change.
-    toast({ title: 'Resetted lesson data!', status: 'warning' })
-    reset({ ...data })
-  }
 
   const handleBack = () => {
     globalState.router.push('/cms/lessons')
   }
 
-  const handleTogglePublishLesson = (event) => {
-    // No request, just local change.
+  /**
+   * No request, just local change.
+   */
+  const handleReset = () => {
+    toast({ title: 'Resetted lesson data!', status: 'warning' })
+    reset(data)
+  }
+
+  /**
+   * @mutations/lesson
+   * PATCH /api/lessons/id/{lessonId}
+   */
+  const handleSaveChanges = async (body) => {
     try {
-      if (event.target.checked) {
-        // lesson.is_published = true
-        toast({ title: 'Published lesson', status: 'success' })
-      } else {
-        // lesson.is_published = false
-        toast({ title: 'Unpublished lesson', status: 'warning' })
-      }
+      const { data, error } = await supabase
+        .from('lessons')
+        .update({
+          ...body,
+          blocks: body?.blocks || [],
+        })
+        .eq('id', lessonId)
+        .single()
+      if (error) throw error
+
+      toast({ status: 'success', title: 'Saved lesson data!' })
+      mutateSWR(`/api/lessons/id/${lessonId}`, data)
     } catch (error) {
-      toast({
-        title: 'Failed to toggle lesson published status!',
-        status: 'error',
-      })
+      console.warn(error)
+      toast({ status: 'error', title: 'Failed to save lesson data!' })
     }
   }
 
+  /**
+   * @mutations/lesson
+   * DELETE /api/lessons/id/{lessonId}
+   */
+  const handleDelete = () => {
+    // DELETE /api/lessons/id/{lessonId}
+    toast({ status: 'error', title: 'Deleted lesson data!' })
+  }
+
+  /**
+   * @mutations/lesson
+   * PATCH /api/lessons/id/{lessonId}
+   */
+  const handleTogglePublish = async () => {
+    try {
+      const localData = getValues()
+      toast({
+        title: localData.is_published ? 'Unpublished!' : 'Published',
+        status: localData.is_published ? 'warning' : 'success',
+      })
+    } catch (error) {
+      toast({ title: 'Failed to publish lesson!', status: 'error' })
+    }
+  }
+
+  /**
+   * No request, just local change.
+   */
   const handleGenerateSlug = () => {
-    // No request, just local change.
     try {
       const values = getValues()
       const generatedSlug = slugify(values.title)
@@ -146,12 +170,12 @@ export function LessonEditor({ lessonId }) {
             data={data}
             register={register}
             actions={{
-              handleTogglePublishLesson,
               handleBack,
               handleDelete,
               handleReset,
-              handleSave,
               handleSubmit,
+              handleSaveChanges,
+              handleTogglePublish,
               handleViewResult: () => setViewMode('result'),
               handleViewJSON: () => setViewMode('json'),
             }}
@@ -193,27 +217,26 @@ function CMSViewResultLesson(props) {
     name: 'blocks',
   })
 
-  // console.log({ fields })
-
   /**
    * Toggle block by index to change is_published true or false.
+   * Should implement later.
    */
-  const togglePublishBlock = (event) => {
-    try {
-      if (event.target.checked) {
-        // Change block.is_published = true inside RHF field array
-        toast({ title: 'Published block', status: 'success' })
-      } else {
-        // Change block.is_published = false inside RHF field array
-        toast({ title: 'Unpublished block', status: 'warning' })
-      }
-    } catch (error) {
-      toast({
-        status: 'error',
-        title: 'Failed to toggle block published status',
-      })
-    }
-  }
+  // const togglePublishBlock = (event) => {
+  //   try {
+  //     if (event.target.checked) {
+  //       // Change block.is_published = true inside RHF field array
+  //       toast({ title: 'Published block', status: 'success' })
+  //     } else {
+  //       // Change block.is_published = false inside RHF field array
+  //       toast({ title: 'Unpublished block', status: 'warning' })
+  //     }
+  //   } catch (error) {
+  //     toast({
+  //       status: 'error',
+  //       title: 'Failed to toggle block published status',
+  //     })
+  //   }
+  // }
 
   /**
    * Add block to the first index.
@@ -283,14 +306,15 @@ function CMSViewResultLesson(props) {
 
   /**
    * Save block by index that passed down into each CMS Block.
+   * Looks like no need for this yet.
    */
-  const saveBlock = (index) => {
-    try {
-      toast({ title: 'Saved block' })
-    } catch (error) {
-      toast({ status: 'error', title: 'Failed to save block' })
-    }
-  }
+  // const saveBlock = (index) => {
+  //   try {
+  //     toast({ title: 'Saved block' })
+  //   } catch (error) {
+  //     toast({ status: 'error', title: 'Failed to save block' })
+  //   }
+  // }
 
   /**
    * UI for lesson meta and blocks.
@@ -315,15 +339,16 @@ function CMSViewResultLesson(props) {
                 {/* This is the important core of the lesson editor */}
                 {/* Each CMSBlock type contains CMSBlockModifierButtons */}
                 <CMSBlock
-                  length={fields.length}
+                  key={block.id}
                   index={index}
                   block={block}
+                  length={fields.length}
                   actions={{
                     register,
-                    togglePublishBlock,
                     moveBlock,
                     removeBlock,
-                    saveBlock,
+                    // togglePublishBlock,
+                    // saveBlock,
                   }}
                 />
                 {fields.length - 1 !== index && (

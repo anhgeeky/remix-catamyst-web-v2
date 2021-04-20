@@ -4,15 +4,15 @@ import { supabase } from '@lib'
 import { getUser } from '@lib/api'
 
 /**
- * Similar with authProfile (/api/auth/profile)
+ * /api/auth/me
+ * Similar with /api/auth/profile
  * But very simple, just for HeaderUser
  */
-export default async function authMe(
+export default async function getAuthMe(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
-    // console.warn({ token: req.headers.authorization })
     const user = await getUser(req.headers.authorization)
     // console.warn({ user })
 

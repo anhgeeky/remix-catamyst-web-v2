@@ -30,5 +30,5 @@ insert with check (auth.is_super_admin() = true);
 create policy "Only authorized users can update a track." on tracks for
 update with check (auth.is_super_admin() = true);
 --
-create policy "Only authorized users can delete a track." on tracks for delete with check (auth.is_super_admin() = true);
+create policy "Only authorized users can delete a track." on tracks for delete using (auth.is_super_admin() = true);
 --

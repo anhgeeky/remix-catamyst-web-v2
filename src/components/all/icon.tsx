@@ -25,6 +25,8 @@ import {
   FaDownload as ExportIcon,
   FaExternalLinkAlt as ExternalIcon,
   FaEye as MetaIcon,
+  FaMagic as InvertIcon,
+  FaRoute as SourceIcon,
   FaFont as TextsIcon,
   FaGenderless as CategoryIcon,
   FaHeading as TitleIcon,
@@ -238,14 +240,20 @@ export function Icon({ name }) {
       return <ImageIcon />
     case 'external':
       return <ExternalIcon />
+    case 'url':
+      return <LinkIcon />
     case 'link':
       return <LinkIcon />
     case 'links':
       return <LinksIcon />
     case 'list':
       return <ListIcon />
+    case 'source':
+      return <SourceIcon />
     case 'meta':
       return <MetaIcon />
+    case 'invert':
+      return <InvertIcon />
     case 'phone':
       return <PhoneIcon />
     case 'quote':

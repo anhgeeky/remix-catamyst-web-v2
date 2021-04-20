@@ -35,12 +35,14 @@ export function UserHandleForm({ state }) {
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
+
       const { error } = await supabase
         .from('profiles')
         .update({ handle: form.handle }, { returning: 'minimal' })
         .eq('id', state.user!.id)
         .single()
       if (error) throw error
+
       toast({ status: 'success', title: 'Your username is changed' })
       setLoading(false)
     } catch (error) {

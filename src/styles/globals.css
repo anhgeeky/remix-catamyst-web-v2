@@ -156,7 +156,7 @@ a {
   box-shadow: var(--chakra-shadows-lg);
 }
 
-.chakra-ui-dark .next-image.invertable {
+.chakra-ui-dark .invertable {
   filter: invert(1);
 }
 

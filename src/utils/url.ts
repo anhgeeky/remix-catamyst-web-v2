@@ -15,3 +15,11 @@ export function checkUrl(text) {
     return 'https://' + text
   }
 }
+
+export function isUrl(text) {
+  if (text.includes('http://') || text.includes('https://')) {
+    return true
+  } else {
+    return false
+  }
+}
