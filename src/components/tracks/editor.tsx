@@ -30,6 +30,7 @@ import {
   Icon,
   useToast,
 } from '@components'
+import { TopicIconTitleHeadingThree } from '@components/topics'
 import { CMSViewJSON } from '@components/cms'
 import { slugify } from '@utils'
 import { useRedirectHome, useTrackById } from '@hooks'
@@ -265,9 +266,7 @@ function CMSViewResultTrack({ toast, data }) {
                         aria-label={`Move down ${topic.title}`}
                       />
                     </ButtonGroup>
-                    <Heading as="h3" size="md">
-                      {topic.iconEmoji} {topic.title}
-                    </Heading>
+                    <TopicIconTitleHeadingThree topic={topic} />
                   </HStack>
 
                   <HStack spacing={1}>

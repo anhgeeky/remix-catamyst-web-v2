@@ -32,7 +32,7 @@ export function CMSBlockModifierButtons({
             key={block.id}
             name={`blocks.${index}.type`}
             ref={actions.register()}
-            defaultValue="Image"
+            defaultValue={name || 'Unknown'}
           />
         </VisuallyHidden>
         {/* <Switch

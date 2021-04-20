@@ -1,15 +1,9 @@
 import NextLink from 'next/link'
-import {
-  Box,
-  Heading,
-  Stack,
-  Link,
-  HStack,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Box, Stack, Link, HStack, useColorModeValue } from '@chakra-ui/react'
 import slugify from 'slugify'
 
 import { AlertSoon, LearningTag } from '@components'
+import { TopicIconTitleHeadingThree } from '@components/topics'
 
 export function CollectionTopics({ trackSlug, topics }) {
   if (!topics || topics?.length === 0) {
@@ -19,8 +13,9 @@ export function CollectionTopics({ trackSlug, topics }) {
       </AlertSoon>
     )
   }
+
   return (
-    <Stack spacing={5} width="100%">
+    <Stack spacing={3} width="100%">
       {topics &&
         topics.map((topic, index) => {
           const topicSlug =
@@ -43,9 +38,7 @@ export function CollectionTopics({ trackSlug, topics }) {
                   textDecoration: 'none',
                 }}
               >
-                <Heading as="h3" size="md">
-                  {topic.iconEmoji || '🐈'} {topic.title}
-                </Heading>
+                <TopicIconTitleHeadingThree topic={topic} />
                 <Box>
                   <LearningTag category={topic.category} />
                 </Box>

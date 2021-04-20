@@ -15,6 +15,9 @@ import {
  * props contains index, block, actions (fieldArrayHelpers).
  */
 export function CMSBlock(props) {
+  if (props.block.type === 'Divider') {
+    return <CMSBlockDivider name="Divider" {...props} />
+  }
   if (props.block.type === 'Image' && props.block.url) {
     return <CMSBlockImage name="Image" {...props} />
   }
@@ -23,9 +26,6 @@ export function CMSBlock(props) {
   }
   if (props.block.type === 'Links' && props.block.links) {
     return <CMSBlockLinks name="Links" {...props} />
-  }
-  if (props.block.type === 'Divider') {
-    return <CMSBlockDivider name="Divider" {...props} />
   }
   return (
     <CardArea>

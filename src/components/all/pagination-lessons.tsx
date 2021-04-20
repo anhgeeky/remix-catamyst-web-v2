@@ -16,6 +16,8 @@ import {
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
 
+import { TopicIconTitleSpan } from '@components/topics'
+
 export function PaginationLessons({
   mode,
   track,
@@ -142,7 +144,7 @@ function PaginationLessonsFull({ track, topic, prev, next }) {
           textAlign="left"
           href={`/learn/${track.slug}/${topic.slug}`}
         >
-          <UpIcon /> {topic.iconEmoji} {topic.title}
+          <UpIcon /> <TopicIconTitleSpan topic={topic} />
         </PaginationLinkFull>
       )}
 
@@ -160,7 +162,7 @@ function PaginationLessonsFull({ track, topic, prev, next }) {
           textAlign="right"
           href={`/learn/${track.slug}/${topic.slug}`}
         >
-          {topic.iconEmoji} {topic.title} <UpIcon />
+          <TopicIconTitleSpan topic={topic} /> <UpIcon />
         </PaginationLinkFull>
       )}
     </SimpleGrid>

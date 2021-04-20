@@ -1,1 +1,6 @@
 export { TopicDetails } from '@components/topics/details'
+export {
+  TopicIconTitleSpan,
+  TopicIconTitleHeadingOne,
+  TopicIconTitleHeadingThree,
+} from '@components/topics/icon-title'

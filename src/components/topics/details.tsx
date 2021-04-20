@@ -9,6 +9,7 @@ import {
   PaginationTopics,
 } from '@components'
 import { LearnHero } from '@components/learn'
+import { TopicIconTitleHeadingOne } from '@components/topics'
 import { usePaginationTopics } from '@hooks'
 
 export function TopicDetails({ trackSlug, topicSlug }) {
@@ -27,6 +28,7 @@ export function TopicDetails({ trackSlug, topicSlug }) {
           <Text>Sorry, topic is not found.</Text>
         </>
       )}
+
       {track && topic && (
         <>
           <NextHead>
@@ -63,9 +65,8 @@ export function TopicHero({ track, topic }) {
           { href: `/learn/web`, title: 'Web' },
         ]}
       />
-      <Heading as="h1" size="xl">
-        {topic.iconEmoji} {topic.title}
-      </Heading>
+
+      <TopicIconTitleHeadingOne topic={topic} />
       <Text>{topic.description || 'No topic description yet.'}</Text>
     </LearnHero>
   )

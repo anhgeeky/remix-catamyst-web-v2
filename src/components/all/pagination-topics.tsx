@@ -21,7 +21,7 @@ export function PaginationTopics({ track, prev, next }) {
           textAlign="left"
           href={`/learn/${track.slug}/${prev.slug}`}
         >
-          <PreviousIcon /> {prev.iconEmoji} {prev.title}
+          <PreviousIcon /> {prev.icon_emoji} {prev.title}
         </PaginationLink>
       ) : (
         <PaginationLink
@@ -39,7 +39,7 @@ export function PaginationTopics({ track, prev, next }) {
           textAlign="right"
           href={`/learn/${track.slug}/${next.slug}`}
         >
-          {next.iconEmoji} {next.title} <NextIcon />
+          {next.icon_emoji} {next.title} <NextIcon />
         </PaginationLink>
       ) : (
         <PaginationLink

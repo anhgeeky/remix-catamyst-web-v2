@@ -111,7 +111,7 @@ export function CMSTopics({ state }) {
                     _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
                   >
                     <Text flex={1}>{topic.id}</Text>
-                    <Text flex={1}>{topic.iconEmoji || '🐈'}</Text>
+                    <Text flex={1}>{topic.icon_emoji || '🐈'}</Text>
                     <Box flex={1} className="next-image-container">
                       <NextImage
                         src="/assets/logos/catamyst-avatar.svg"
