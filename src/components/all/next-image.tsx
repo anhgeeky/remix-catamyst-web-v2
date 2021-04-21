@@ -4,10 +4,10 @@ const customLoader = ({ src }) => {
   return `${src}`
 }
 
-const cloudinaryLoader = ({ src }) => {
+const imagekitLoader = ({ src }) => {
   return `${src}`
 }
 
 export function NextImage(props) {
-  return <DefaultNextImage loader={customLoader} {...props} />
+  return <DefaultNextImage {...props} />
 }

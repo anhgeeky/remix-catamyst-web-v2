@@ -41,6 +41,8 @@ module.exports = withMDX({
       'datocms-assets.com',
       'example.com',
       'google.com',
+      'ik.imagekit.io',
+      'imagekit.io',
       'localhost',
       'placekitten.com',
       'res.cloudinary.com',

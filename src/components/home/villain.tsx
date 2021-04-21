@@ -19,8 +19,7 @@ export function HomeVillain() {
         </Heading>
         <NextImage
           className="invertable next-image"
-          priority
-          src={`https://res.cloudinary.com/catamyst/image/upload/v1618336282/villain-home.png`}
+          src="https://ik.imagekit.io/catamyst/images/villain-home_HdPsdQmskBp.png"
           alt="Cats doing high five"
           objectFit="contain"
           width={500}
