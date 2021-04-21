@@ -107,7 +107,7 @@ export function TrackSideBar({ track }) {
         toast({ status: 'info', title: 'Unfavorited track' })
       } else {
         setFavorited(true)
-        toast({ status: 'success', title: 'Favorited to this track!' })
+        toast({ status: 'success', title: 'Favorited track' })
       }
     } else {
       router.push('/signin')

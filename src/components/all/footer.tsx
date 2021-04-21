@@ -86,11 +86,10 @@ export function FooterExtra() {
   return (
     <Box textAlign="center">
       <Text>
-        Copyright{' '}
         <NextLink href="/cms/overview">
           <a>©</a>
         </NextLink>{' '}
-        {year} Catamyst.
+        <span>{year} Catamyst</span>
       </Text>
       <VStack opacity={0.5} fontSize={15} spacing={0}>
         <Text>Enjoy your {dayNamePeriod}!</Text>

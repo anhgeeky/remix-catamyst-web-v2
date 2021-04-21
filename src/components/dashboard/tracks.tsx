@@ -38,15 +38,15 @@ export function DashboardTracks({ state }) {
                 <Box>
                   <NextImage
                     className="invertable next-image"
-                    src={`https://storage.catamyst.com/illustrations/dashboard-tracks-none.png`}
+                    src="https://storage.catamyst.com/illustrations/dashboard-tracks-none.png"
                     alt="No Tracks"
                     width={200}
                     height={200}
                   />
                 </Box>
                 <Text>
-                  Hey {getName(state.profile)}, you haven't favorited in any
-                  track yet.
+                  Hey {getName(state.profile)}, you haven't favorited any track
+                  yet.
                 </Text>
                 <LinkButton href="/learn" colorScheme="teal">
                   Learn with track

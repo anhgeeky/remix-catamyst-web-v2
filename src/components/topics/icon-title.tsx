@@ -1,12 +1,19 @@
-import { Image, Heading, HStack } from '@chakra-ui/react'
+import { chakra, Image, Heading, Flex, HStack } from '@chakra-ui/react'
 
 export function TopicIconTitleSpan({ topic }) {
   return (
-    <HStack>
-      {topic.icon_url && <Image src={topic.icon_url} height={15} width={15} />}
+    <chakra.span>
+      {topic.icon_url && (
+        <Image
+          display="inline-block"
+          src={topic.icon_url}
+          height={15}
+          width={15}
+        />
+      )}
       {!topic.icon_url && <span>{topic.icon_emoji || '🐈'}</span>}
-      <span>{topic.title}</span>
-    </HStack>
+      <chakra.span pl={1}>{topic.title}</chakra.span>
+    </chakra.span>
   )
 }
 

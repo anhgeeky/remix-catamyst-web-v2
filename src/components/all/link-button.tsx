@@ -26,7 +26,7 @@ export function BreadcrumbLinkButtons({ breadcrumbs }) {
     <Breadcrumb>
       {breadcrumbs.map((link, index) => {
         return (
-          <BreadcrumbItem>
+          <BreadcrumbItem key={index}>
             <BreadcrumbLinkButton href={link.href}>
               {link.title}
             </BreadcrumbLinkButton>

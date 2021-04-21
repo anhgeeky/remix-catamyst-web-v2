@@ -6,6 +6,8 @@ import {
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
 
+import { TopicIconTitleSpan } from '@components/topics'
+
 export function PaginationTopics({ track, prev, next }) {
   return (
     <Stack
@@ -21,7 +23,7 @@ export function PaginationTopics({ track, prev, next }) {
           textAlign="left"
           href={`/learn/${track.slug}/${prev.slug}`}
         >
-          <PreviousIcon /> {prev.icon_emoji} {prev.title}
+          <PreviousIcon /> <TopicIconTitleSpan topic={prev} />
         </PaginationLink>
       ) : (
         <PaginationLink
@@ -39,7 +41,7 @@ export function PaginationTopics({ track, prev, next }) {
           textAlign="right"
           href={`/learn/${track.slug}/${next.slug}`}
         >
-          {next.icon_emoji} {next.title} <NextIcon />
+          <TopicIconTitleSpan topic={next} /> <NextIcon />
         </PaginationLink>
       ) : (
         <PaginationLink
