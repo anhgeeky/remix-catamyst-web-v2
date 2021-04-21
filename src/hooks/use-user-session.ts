@@ -9,7 +9,7 @@ import { isDev, isVercel } from '@utils'
 
 export function useUserSession() {
   const dispatch = useDispatch()
-  const { auth } = useAuth()
+  const { auth, isAuthenticated, router } = useAuth()
   const [session, setSession] = useState<SupabaseAuthSession | null>(null)
   const [user, setUser] = useState(null)
 
@@ -41,18 +41,18 @@ export function useUserSession() {
        */
       const { data: supabaseAuthListener } = supabase.auth.onAuthStateChange(
         async (event: string, newGlobalSession: SupabaseAuthSession | null) => {
-          if (isDev) console.info('>>>', { event })
+          // if (isDev) console.info('>>>', { event })
 
           setSession(newGlobalSession)
           setUser(newGlobalSession?.user ?? null)
 
           if (newGlobalSession) dispatch(signInMagic())
           if (event === 'SIGNED_IN') {
-            if (isDev) console.info('SIGNED_IN')
+            // if (isDev) console.info('SIGNED_IN')
             dispatch(signInMagic())
           }
           if (event === 'PASSWORD_RECOVERY') {
-            if (isDev) console.info('PASSWORD_RECOVERY')
+            // if (isDev) console.info('PASSWORD_RECOVERY')
           }
           if (event === 'USER_UPDATED')
             setTimeout(() => {

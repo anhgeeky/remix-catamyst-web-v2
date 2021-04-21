@@ -4,7 +4,7 @@ export function Logo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={150}
-      height={25}
+      height={34}
       viewBox="0 0 610 110"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
