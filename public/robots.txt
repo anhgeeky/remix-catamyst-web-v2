@@ -16,7 +16,6 @@ Disallow: /members/*
 Disallow: /members/top
 Disallow: /onboard
 Disallow: /onboard/*
-Disallow: /projects
 Disallow: /register
 Disallow: /reset
 Disallow: /secret
