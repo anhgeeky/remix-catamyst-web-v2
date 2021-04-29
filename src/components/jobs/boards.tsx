@@ -314,11 +314,7 @@ export function JobSkillsTags({
         })
         .map((skill, index) => {
           return (
-            <Link
-              key={index}
-              href="#"
-              onClick={() => actions.handlePickSkill(skill)}
-            >
+            <Link key={index} onClick={() => actions.handlePickSkill(skill)}>
               <TagSkill skill={skill} />
             </Link>
           )

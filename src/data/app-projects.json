@@ -5,6 +5,7 @@
     "slug": "catamyst",
     "title": "Catamyst",
     "description": "All-in-one platform to learn web development, UI/UX design, and software engineering.",
+    "cover_url": "https://ik.imagekit.io/catamyst/screenshots/catamyst-web.png",
     "url": "https://catamyst.com",
     "contributors": [
       { "userId": 3, "role": "Founder, Developer" },
@@ -18,18 +19,24 @@
     ],
     "skills": [
       "Linux",
+      "HTML",
+      "CSS",
       "JavaScript",
       "TypeScript",
       "Node.js",
       "React.js",
-      "Redux",
       "Chakra UI",
+      "Redux",
+      "Redux Thunk",
       "GraphQL API",
       "Prisma ORM",
       "PostgreSQL",
+      "Supabase",
       "Vercel",
       "Railway.app",
-      "Google Cloud Platform"
+      "Google Cloud Platform",
+      "Cloudflare",
+      "Uniregistry"
     ]
   },
   {
@@ -38,7 +45,7 @@
     "slug": "nawaart",
     "title": "Nawaart",
     "description": "Discover authentic and valuable contemporary artworks from various artists in Myanmar, the Land of the Golden Pagodas.",
-    "cover_url": "https://storage.catamyst.com/projects/nawaart.jpg",
+    "cover_url": "https://ik.imagekit.io/catamyst/screenshots/nawaart.jpg",
     "url": "https://nawaart.com",
     "contributors": [
       { "userId": 8, "role": "Ideator, Developer" },
@@ -73,7 +80,7 @@
     "slug": "saikou",
     "title": "Saikou",
     "description": "Find out the recommended anime and manga for your leisure entertainment variants originated from Japan, the Land of the Rising Sun.",
-    "cover_url": "https://storage.catamyst.com/projects/saikou.jpg",
+    "cover_url": "https://ik.imagekit.io/catamyst/screenshots/saikou.jpg",
     "url": "https://saikou.ahmadmarzuki.com",
     "contributors": [
       { "userId": 7, "role": "Ideator, Developer" },
@@ -103,7 +110,7 @@
     "slug": "zidence",
     "title": "Zidence",
     "description": "Simple residential property listing and comparison. Discover your next suitable home in Asia.",
-    "cover_url": "https://storage.catamyst.com/projects/zidence.jpg",
+    "cover_url": "https://ik.imagekit.io/catamyst/screenshots/zidence.jpg",
     "url": "https://zidence.com",
     "contributors": [
       { "userId": 9, "role": "Ideator, Developer" },
@@ -150,6 +157,7 @@
     "slug": "sneakergram",
     "title": "Sneakergram",
     "description": "Instagram-clone for sneakerheads.",
+    "cover_url": "https://ik.imagekit.io/catamyst/screenshots/sneakergram.jpg",
     "url": "https://sneakergram.jonathannicolas.dev",
     "contributors": [
       { "userId": 8, "role": "Ideator, Developer" },

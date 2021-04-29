@@ -16,6 +16,7 @@ export default function discoverPage() {
           Catamyst.
         </Text>
       </Hero>
+
       <Content>
         <DiscoverFeatured />
       </Content>

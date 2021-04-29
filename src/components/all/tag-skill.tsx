@@ -23,6 +23,12 @@ export function TagSkill({ skill }) {
           {skill}
         </Tag>
       )
+    case 'linux':
+      return (
+        <Tag color="yellow" bg="black">
+          {skill}
+        </Tag>
+      )
     case 'git':
       return <Tag colorScheme="orange">{skill}</Tag>
     case 'github':
@@ -69,6 +75,10 @@ export function TagSkill({ skill }) {
       return <Tag colorScheme="green">{skill}</Tag>
     case 'redux':
       return <Tag colorScheme="purple">{skill}</Tag>
+    case 'redux-thunk':
+      return <Tag colorScheme="purple">{skill}</Tag>
+    case 'redux-saga':
+      return <Tag colorScheme="green">{skill}</Tag>
     case 'chakra-ui':
       return <Tag colorScheme="teal">{skill}</Tag>
     case 'mongodb':
@@ -85,6 +95,12 @@ export function TagSkill({ skill }) {
           {skill}
         </Tag>
       )
+    case 'supabase':
+      return (
+        <Tag color="green.300" bg="black">
+          {skill}
+        </Tag>
+      )
     case 'netlify':
       return (
         <Tag colorScheme="teal" variant="solid">
@@ -97,9 +113,27 @@ export function TagSkill({ skill }) {
           {skill}
         </Tag>
       )
+    case 'railwayapp':
+      return (
+        <Tag color="purple.300" bg="black">
+          {skill}
+        </Tag>
+      )
     case 'heroku':
       return (
         <Tag color="white" bg="purple.500">
+          {skill}
+        </Tag>
+      )
+    case 'cloudflare':
+      return (
+        <Tag color="white" bg="orange">
+          {skill}
+        </Tag>
+      )
+    case 'uniregistry':
+      return (
+        <Tag color="white" bg="green">
           {skill}
         </Tag>
       )

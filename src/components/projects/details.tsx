@@ -3,6 +3,7 @@ import NextLink from 'next/link'
 import NextHead from 'next/head'
 import {
   Avatar,
+  Box,
   Flex,
   Heading,
   Tooltip,
@@ -54,21 +55,26 @@ export function ProjectDetails({ projectSlug }) {
             )}
 
             {project.cover_url && (
-              <Flex justify="center">
-                <Flex
+              <Flex
+                justify="center"
+                bg={useColorModeValue('gray.100', 'gray.800')}
+                overflow="scroll"
+                p={10}
+              >
+                <Box
                   className="next-image-container"
-                  justify="center"
-                  bg={useColorModeValue('gray.200', 'gray.500')}
+                  boxShadow="dark-lg"
+                  maxW="700px"
                 >
                   <NextImage
                     src={project.cover_url}
                     alt={project.title}
-                    width={1440}
-                    height={400}
-                    layout="fixed"
-                    objectFit={isTooSmall ? 'contain' : 'scale-down'}
+                    layout="intrinsic"
+                    width={520}
+                    height={320}
+                    objectFit="cover"
                   />
-                </Flex>
+                </Box>
               </Flex>
             )}
 
@@ -83,7 +89,6 @@ export function ProjectDetails({ projectSlug }) {
                       <Link
                         isExternal
                         href={project.url}
-                        wordWrap="break-word"
                         wordBreak="break-word"
                       >
                         {trimUrl(project.url)}
