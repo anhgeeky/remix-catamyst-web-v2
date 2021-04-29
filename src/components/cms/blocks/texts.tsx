@@ -71,13 +71,12 @@ function CMSBlockModal({ block, isOpen, onClose }) {
           <HStack>
             <Badge colorScheme="teal">Rich Text Editor</Badge>
             <ButtonGroup size="xs">
-              <ColorModeToggle />
               <Button
                 colorScheme="teal"
                 leftIcon={<Icon name="save" />}
                 onClick={handleSave}
               >
-                Save to HTML
+                Save Texts
               </Button>
             </ButtonGroup>
           </HStack>

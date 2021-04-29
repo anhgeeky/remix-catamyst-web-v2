@@ -2,7 +2,7 @@ import { useState } from 'react'
 import NextLink from 'next/link'
 import {
   useColorModeValue,
-  Box,
+  ButtonGroup,
   Flex,
   HStack,
   useMediaQuery,
@@ -57,7 +57,7 @@ export function Header() {
           align="center"
           width="100%"
           maxW={1200}
-          px={{ base: 2, sm: 4 }}
+          px={{ base: 2, sm: 3 }}
           py={{ base: 1, sm: 2 }}
         >
           <Flex flex={1}>
@@ -67,9 +67,9 @@ export function Header() {
                   <Logo />
                 </a>
               </NextLink>
-              <Box>
+              <ButtonGroup size="sm">
                 <ColorModeToggle />
-              </Box>
+              </ButtonGroup>
             </HStack>
           </Flex>
 

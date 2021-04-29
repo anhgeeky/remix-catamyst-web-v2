@@ -15,7 +15,7 @@ import {
 import { RemoveScroll } from 'react-remove-scroll'
 import { FaTimes } from 'react-icons/fa'
 
-import { ColorModeToggle, Icon, SocialLinks } from '@components'
+import { Icon, SocialLinks } from '@components'
 import { useAuth, useRouteChanged } from '@hooks'
 import { dataMenuLinks } from '@data'
 
@@ -53,12 +53,10 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
               justify="space-between"
               maxW={1200}
               spacing={2}
-              px={{ base: 2, sm: 4 }}
-              py={{ base: 1, sm: 2 }}
+              p={{ base: 2, sm: 3 }}
             >
               <Stack>
-                <Flex justify="space-between">
-                  <ColorModeToggle />
+                <Flex justify="flex-end">
                   <IconButton
                     size="sm"
                     aria-label="Toggle menu"

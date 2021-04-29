@@ -1,23 +1,20 @@
+import React, { useCallback, useMemo, useState } from 'react'
 import {
   chakra,
+  Box,
   Button,
   ButtonGroup,
   Code,
   Heading,
   Link,
   List,
-  ListIcon,
   ListItem,
   OrderedList,
   Text,
   Tooltip,
   useColorModeValue,
+  useMediaQuery,
 } from '@chakra-ui/react'
-
-import React, { useCallback, useMemo, useState } from 'react'
-import isUrl from 'is-url'
-import isHotkey from 'is-hotkey'
-import { Editable, withReact, useSlate, Slate } from 'slate-react'
 import {
   createEditor,
   Descendant,
@@ -27,9 +24,16 @@ import {
   Range,
   Transforms,
 } from 'slate'
+import { Editable, withReact, useSlate, Slate } from 'slate-react'
 import { withHistory } from 'slate-history'
-import { Icon } from '@components'
+import isHotkey from 'is-hotkey'
+import isUrl from 'is-url'
 
+import { Icon, ColorModeToggle } from '@components'
+
+/**
+ * Slate constants.
+ */
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
 const HOTKEYS = {
   'mod+b': 'bold',
@@ -42,10 +46,13 @@ const HOTKEYS = {
 }
 
 /**
+ * The real Slate configuration.
  * Initialize SlateElements from input that already deserialized from HTML.
  * Using default export because will be used with dynamic import.
  */
 export default function EditorSlate({ slateElements, handleSave }) {
+  const [isTooSmall] = useMediaQuery('(max-width: 768px)')
+
   // const [value, setValue] = useState<Descendant[]>(initialValue)
   const [value, setValue] = useState<Descendant[]>(slateElements)
 
@@ -57,32 +64,39 @@ export default function EditorSlate({ slateElements, handleSave }) {
   )
 
   /**
-   * Try to prevent focus error when fast refresh
+   * Try to prevent focus error when fast refresh in development.
+   * Might be related to SSR.
+   * https://github.com/ianstormtaylor/slate/issues/3858
    */
-  // editor.selection = {
+  // Transforms.select(editor, {
   //   anchor: { path: [0, 0], offset: 0 },
   //   focus: { path: [0, 0], offset: 0 },
-  // }
+  // })
 
   /**
-   * Only render when value is present
+   * Only render when value is present.
    */
-  if (value) {
-    return (
-      <Slate
-        editor={editor}
-        value={value}
-        onChange={(value) => {
-          setValue(value)
-        }}
+  if (!value) {
+    return null
+  }
+
+  return (
+    <Slate
+      editor={editor}
+      value={value}
+      onChange={(value) => {
+        setValue(value)
+      }}
+    >
+      <Box
+        bg={useColorModeValue('white', 'gray.900')}
+        className="no-select hidden-scrollbar"
+        position="sticky"
+        top={0}
+        overflow="scroll"
+        p={1}
       >
-        <ButtonGroup
-          className="hidden-scrollbar"
-          size="sm"
-          overflow="scroll"
-          flexWrap="wrap"
-          spacing={0}
-        >
+        <ButtonGroup size={isTooSmall ? 'xs' : 'sm'} spacing={0}>
           <BlockButton format="heading-one" icon="heading-one" />
           <BlockButton format="heading-two" icon="heading-two" />
           <BlockButton format="heading-three" icon="heading-three" />
@@ -94,8 +108,11 @@ export default function EditorSlate({ slateElements, handleSave }) {
           <MarkButton format="underline" icon="underlined" />
           <MarkButton format="code" icon="code" />
           <HyperlinkButton />
+          <ColorModeToggle />
         </ButtonGroup>
+      </Box>
 
+      <Box px={3}>
         <Editable
           renderElement={renderElement}
           renderLeaf={renderLeaf}
@@ -112,10 +129,9 @@ export default function EditorSlate({ slateElements, handleSave }) {
             }
           }}
         />
-      </Slate>
-    )
-  }
-  return null
+      </Box>
+    </Slate>
+  )
 }
 
 const toggleBlock = (editor, format) => {

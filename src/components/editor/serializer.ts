@@ -43,6 +43,12 @@ export function deserializeHTMLtoSlate(el) {
       return jsx('element', { type: 'heading-six' }, children)
     case 'P':
       return jsx('element', { type: 'paragraph' }, children)
+    case 'UL':
+      return jsx('element', { type: 'bulleted-list' }, children)
+    case 'OL':
+      return jsx('element', { type: 'numbered-list' }, children)
+    case 'LI':
+      return jsx('element', { type: 'list-item' }, children)
     case 'A':
       return jsx(
         'element',
