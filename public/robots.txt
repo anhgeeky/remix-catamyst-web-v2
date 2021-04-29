@@ -5,6 +5,8 @@ Disallow: /404
 Disallow: /500
 Disallow: /cms
 Disallow: /dashboard
+Disallow: /dashboard/posts/new
+Disallow: /dashboard/projects/new
 Disallow: /debug
 Disallow: /join
 Disallow: /login
