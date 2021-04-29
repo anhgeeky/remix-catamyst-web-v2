@@ -81,8 +81,15 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       )}
 
       {block.show_meta !== false && block.title && (
-        <Stack opacity={0.5} align="center" mt={2} spacing={1}>
-          <Text>{block.title}</Text>
+        <Stack
+          opacity={0.5}
+          mt={2}
+          px={3}
+          spacing={1}
+          align="center"
+          textAlign="center"
+        >
+          <Text fontSize="sm">{block.title}</Text>
           <Text fontSize="xs">
             {block.source && isUrl(block.source) ? (
               <Link href={block.source}>{block.source}</Link>

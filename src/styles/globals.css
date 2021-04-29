@@ -167,10 +167,6 @@ a {
   box-shadow: var(--chakra-shadows-lg);
 }
 
-.chakra-ui-dark .invertable {
-  filter: invert(1);
-}
-
 /**
  * Chakra UI components.
  * Because the export components with theme defaultProps doesn't work.
@@ -192,14 +188,25 @@ a {
   border-radius: 0.375rem;
 }
 
-/** Quick fix for Chakra UI AutoComplete */
+/**
+ * Chakra dark color mode.
+ */
+
+.chakra-ui-dark .invertable {
+  filter: invert(1);
+}
+
+/**
+ * Chakra UI AutoComplete quick fix.
+ */
+
 .hide-last-div > div div:last-of-type {
   margin: 0;
   padding: 0;
 }
 
 /**
- * Gumroad
+ * Gumroad button and iframe.
  */
 
 .gumroad-button,

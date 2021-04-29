@@ -3,6 +3,8 @@ const excludes = [
   '/500',
   '/cms',
   '/dashboard',
+  '/dashboard/posts/new',
+  '/dashboard/projects/new',
   '/debug',
   '/join',
   '/login',

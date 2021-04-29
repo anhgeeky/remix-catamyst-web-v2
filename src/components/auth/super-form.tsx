@@ -7,7 +7,9 @@ export function AuthSuperForm() {
     <VStack>
       <Box width="100%" maxW={760}>
         <Iframe
-          title="Catamyst Super"
+          id="super-form"
+          className="iframe"
+          title="Catamyst Super form"
           url="https://tally.so/embed/m6LaNw?hideTitle=1&alignLeft=1&transparentBackground=1"
           width="100%"
           height="720px"
