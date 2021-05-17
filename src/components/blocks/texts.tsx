@@ -29,6 +29,17 @@ export function BlockTexts({ block }) {
 }
 
 /**
+ * Just for a quick preview after Save Texts.
+ */
+export function BlockTextsPreview({ htmlString }) {
+  return (
+    <Box className="block-texts" width="100%" maxW={760} px={5}>
+      {ReactHtmlParser(htmlString, transformOptions)}
+    </Box>
+  )
+}
+
+/**
  * The options are the complex part.
  *
  * Because it needs to transform these:
@@ -116,21 +127,21 @@ export const transformOptions = {
     if (node.type === 'tag' && node.name === 'h1') {
       return (
         <CustomHeading key={index} as="h1" size="xl" pt={6} pb={4}>
-          {node.children[0].data}
+          {node.children[0]?.data || ''}
         </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'h2') {
       return (
         <CustomHeading key={index} as="h2" size="lg" pt={5} pb={3}>
-          {node.children[0].data}
+          {node.children[0]?.data || ''}
         </CustomHeading>
       )
     }
     if (node.type === 'tag' && node.name === 'h3') {
       return (
         <CustomHeading key={index} as="h3" size="md" pt={4} pb={2}>
-          {node.children[0].data}
+          {node.children[0]?.data || ''}
         </CustomHeading>
       )
     }

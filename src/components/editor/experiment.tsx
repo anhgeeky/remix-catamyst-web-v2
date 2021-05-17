@@ -1,22 +1,21 @@
-import { RichTextEditor } from '@components/editor'
+import { useState } from 'react'
 
+import { RichTextEditor } from '@components/editor'
 import { dataLessons } from '@data'
 
 /**
- * Only to test Slate in /editor page.
+ * Experiment only to test Slate in /editor page.
+ * Similar with @components/cms/blocks/texts
  */
 export function EditorExperiment() {
-  // TODO
   // @ts-ignore
-  const htmlString = dataLessons[0].blocks[1].html
+  const htmlStringSample = dataLessons[0].blocks[1].html
+  const [htmlString, setHtmlString] = useState(htmlStringSample)
 
-  const handleSave = (processedData) => {
-    console.info('>>> Handle save for debugging.')
-    console.log(processedData)
-  }
-
-  if (!htmlString) {
+  if (!htmlStringSample) {
     return null
   }
-  return <RichTextEditor handleSave={handleSave} htmlString={htmlString} />
+  return (
+    <RichTextEditor htmlString={htmlString} setHtmlString={setHtmlString} />
+  )
 }

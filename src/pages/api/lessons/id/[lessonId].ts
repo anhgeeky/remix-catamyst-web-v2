@@ -9,10 +9,7 @@ export default async function lessonId(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const {
-    query: { lessonId: id },
-    method,
-  } = req
+  const { method } = req
 
   if (method === 'GET') {
     await getLesson(req, res)

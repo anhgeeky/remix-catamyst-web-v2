@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Box,
   Flex,
@@ -15,8 +16,9 @@ import { Icon, LinkButton } from '@components'
 import { RichTextEditor } from '@components/editor'
 
 export function PostNew() {
-  const htmlString =
+  const [htmlString, setHtmlString] = useState(
     '<p>Hey! Write your post content here.</p><p>You can write it as a blog post, notes, tutorial, publication, announcement, news, or a changelog.</p><p>Feel free to delete this help text.</p>'
+  )
 
   const handleSave = () => {
     console.info('>>> Handle save for debugging.')
@@ -71,7 +73,10 @@ export function PostNew() {
         </Stack>
 
         <FormControl as={Stack}>
-          <RichTextEditor handleSave={handleSave} htmlString={htmlString} />
+          <RichTextEditor
+            htmlString={htmlString}
+            setHtmlString={setHtmlString}
+          />
         </FormControl>
       </VStack>
     </Flex>

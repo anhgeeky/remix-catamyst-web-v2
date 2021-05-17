@@ -27,6 +27,7 @@ export function CMSBlockModifierButtons({
     <HStack justify="space-between">
       <HStack>
         <Tag colorScheme="teal">{name}</Tag>
+
         <VisuallyHidden>
           <Input
             key={block.id}
@@ -35,6 +36,7 @@ export function CMSBlockModifierButtons({
             defaultValue={name || 'Unknown'}
           />
         </VisuallyHidden>
+
         {/* <Switch
           size="sm"
           name={`blocks[${block.index}].is_published`}
@@ -44,6 +46,7 @@ export function CMSBlockModifierButtons({
         <Text fontSize="xs">
           {block.is_published ? 'Published' : 'Unpublished'}
         </Text> */}
+
         {children}
       </HStack>
 

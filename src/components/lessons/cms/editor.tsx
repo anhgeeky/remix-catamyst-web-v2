@@ -191,6 +191,7 @@ export function LessonEditor({ lessonId }) {
               register={register}
               actions={{
                 handleGenerateSlug,
+                setValue,
               }}
               data={data}
             />
@@ -205,8 +206,12 @@ export function LessonEditor({ lessonId }) {
  * The actual lesson content that utilize RHF field array helpers.
  -----------------------------------------------------------------------------*/
 function CMSViewResultLesson(props) {
-  const { data, control, register, actions } = props
   const toast = useToast()
+
+  /**
+   * RHF (React Hook Form) useForm control and register
+   */
+  const { data, control, register, actions } = props
 
   /**
    * RHF (React Hook Form) field array with helpers.
@@ -306,7 +311,7 @@ function CMSViewResultLesson(props) {
 
   /**
    * Save block by index that passed down into each CMS Block.
-   * Looks like no need for this yet.
+   * But looks like no need for this yet.
    */
   // const saveBlock = (index) => {
   //   try {
@@ -333,6 +338,7 @@ function CMSViewResultLesson(props) {
               actions={{ addBlock: prependBlock }}
             />
           )}
+
           {fields.map((block, index) => {
             return (
               <Fragment key={block.id}>
@@ -344,6 +350,7 @@ function CMSViewResultLesson(props) {
                   block={block}
                   length={fields.length}
                   actions={{
+                    ...actions,
                     register,
                     moveBlock,
                     removeBlock,
@@ -361,6 +368,7 @@ function CMSViewResultLesson(props) {
               </Fragment>
             )
           })}
+
           <CMSBlockAdderButtons
             name="append"
             index={fields?.length}

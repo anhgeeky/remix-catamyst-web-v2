@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import {
-  Box,
   Badge,
+  Box,
   Button,
   ButtonGroup,
   HStack,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -12,18 +13,30 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
+  VisuallyHidden,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
 
 import { CardArea, Icon, useToast } from '@components'
 import { RichTextEditor } from '@components/editor'
-import { BlockTexts } from '@components/blocks'
+import { BlockTextsPreview } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
+import blocks from '@data/blocks'
 
 export function CMSBlockTexts(props) {
-  const { index, block, actions } = props
+  const {
+    index,
+    block,
+    actions: { register, setValue },
+  } = props
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  /**
+   * This state should be higher enough to be used for both
+   * BlockTextsPreview and CMSBlockTextsModal/RichTextEditor
+   */
+  const [htmlString, setHtmlString] = useState(block.html)
 
   return (
     <>
@@ -34,26 +47,53 @@ export function CMSBlockTexts(props) {
           </Button>
         </CMSBlockModifierButtons>
 
-        {!block.html && <Text opacity={0.25}>No content yet.</Text>}
-        {block.html && <BlockTexts block={block} />}
+        {/* This is a quick solution to have name="blocks[index].html" */}
+        <VisuallyHidden>
+          <Input
+            key={block.id}
+            ref={register()}
+            name={`blocks[${index}].html`}
+            defaultValue={block.html || ''}
+            type="text"
+          />
+        </VisuallyHidden>
+
+        {!htmlString && <Text opacity={0.25}>No content yet.</Text>}
+        {htmlString && <BlockTextsPreview htmlString={htmlString} />}
       </CardArea>
 
-      <CMSBlockModal block={block} isOpen={isOpen} onClose={onClose} />
+      <CMSBlockTextsModal
+        index={index}
+        block={block}
+        isOpen={isOpen}
+        onClose={onClose}
+        setValue={setValue}
+        htmlString={htmlString}
+        setHtmlString={setHtmlString}
+      />
     </>
   )
 }
 
 /**
- * The CMS Texts that can handle save
+ * The CMS Texts that can handle save.
+ * Similar with @components/editor/experiment
  */
-function CMSBlockModal({ block, isOpen, onClose }) {
+function CMSBlockTextsModal({
+  index,
+  block,
+  isOpen,
+  onClose,
+  setValue,
+  htmlString,
+  setHtmlString,
+}) {
   const toast = useToast()
 
-  const handleSave = () => {
-    toast({
-      title: 'Saved texts!',
-      status: 'success',
-    })
+  const handleSave = async () => {
+    // Update in RHF field array
+    setValue(`blocks[${index}].html`, htmlString)
+    toast({ title: 'Saved texts!', status: 'success' })
   }
 
   return (
@@ -71,25 +111,28 @@ function CMSBlockModal({ block, isOpen, onClose }) {
         maxH="100%"
         bg={useColorModeValue('white', 'gray.900')}
       >
-        <ModalHeader pt={1} px={2} pb={2}>
-          <HStack>
-            <Badge colorScheme="teal">Rich Text Editor</Badge>
-            <ButtonGroup size="xs">
-              <Button
-                colorScheme="teal"
-                leftIcon={<Icon name="save" />}
-                onClick={handleSave}
-              >
-                Save Texts
-              </Button>
-            </ButtonGroup>
-          </HStack>
+        <HStack pt={2} pb={2} pl={3} pr={12} justify="space-between">
+          <Badge colorScheme="teal">Rich Text Editor</Badge>
+
+          <Button
+            size="sm"
+            colorScheme="teal"
+            leftIcon={<Icon name="save" />}
+            onClick={handleSave}
+          >
+            Save Texts
+          </Button>
+
+          {/* Close button position is fixed */}
           <ModalCloseButton />
-        </ModalHeader>
+        </HStack>
 
         <ModalBody align="center" p={0}>
           <Box maxW={760} width="100%">
-            <RichTextEditor htmlString={block.html} handleSave={handleSave} />
+            <RichTextEditor
+              htmlString={htmlString || '<p>Insert content here.</p>'}
+              setHtmlString={setHtmlString}
+            />
           </Box>
         </ModalBody>
       </ModalContent>

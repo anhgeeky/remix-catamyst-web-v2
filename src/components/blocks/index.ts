@@ -4,4 +4,8 @@ export { BlockDivider } from '@components/blocks/divider'
 export { BlockImage } from '@components/blocks/image'
 export { BlockLinks } from '@components/blocks/links'
 export { BlockQuote } from '@components/blocks/quote'
-export { BlockTexts, transformOptions } from '@components/blocks/texts'
+export {
+  BlockTexts,
+  BlockTextsPreview,
+  transformOptions,
+} from '@components/blocks/texts'

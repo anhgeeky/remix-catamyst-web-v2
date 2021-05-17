@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { Box } from '@chakra-ui/react'
 
@@ -14,19 +13,21 @@ import {
 /**
  * Only to load Slate without SSR.
  */
-export function RichTextEditor({ htmlString, handleSave }) {
-  const [stringValue, setStringValue] = useState('')
-
+export function RichTextEditor({ htmlString, setHtmlString }) {
   /**
-   * Deserialize from HTMl to SlateElements
+   * Deserialize from HTMl to SlateElements.
+   * Need to differentiate the html object to avoid clash with upper state.
    */
-  const html = htmlString
-  const document = new DOMParser().parseFromString(html, 'text/html')
+  const document = new DOMParser().parseFromString(htmlString, 'text/html')
   const slateElements = deserializeHTMLtoSlate(document.body)
 
+  /**
+   * Change value for parent component on changes in Slate editor.
+   */
   const handleChange = (slateValue) => {
-    const htmlString = serializeSlateToHTML(slateValue)
-    console.info(htmlString)
+    const newHtmlString = serializeSlateToHTML(slateValue)
+    setHtmlString(newHtmlString)
+    // console.log(newHtmlString)
   }
 
   return (
