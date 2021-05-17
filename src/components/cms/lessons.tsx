@@ -12,7 +12,7 @@ import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-import { useLessons } from '@hooks'
+import { mutateSWR, useLessons, fetcherSWR } from '@hooks'
 import { trimId } from '@utils'
 
 export function CMSLessons({ state }) {
@@ -23,8 +23,9 @@ export function CMSLessons({ state }) {
     toast({ status: 'success', title: 'Created new lesson!' })
   }
 
-  const handleSearchItems = () => {
-    /* Handle function */
+  const handleSearchItems = async (query) => {
+    const newData = await fetcherSWR(`/api/lessons?q=${query}`)
+    mutateSWR('/api/lessons', newData, false)
   }
 
   if (isLoading) {
@@ -100,50 +101,51 @@ export function CMSLessons({ state }) {
             </Text>
           </HStack>
 
-          {data.lessons.map((lesson, index) => {
-            return (
-              <NextLink
-                key={lesson.slug}
-                href={`/cms/lessons/${lesson.id}`}
-                passHref
-              >
-                <a>
-                  <HStack
-                    spacing={3}
-                    p={3}
-                    rounded="md"
-                    _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
-                  >
-                    <Text
-                      flex={1}
-                      as="code"
-                      fontSize="xs"
-                      wordBreak="break-all"
+          {data.lessons &&
+            data.lessons.map((lesson, index) => {
+              return (
+                <NextLink
+                  key={lesson.slug}
+                  href={`/cms/lessons/${lesson.id}`}
+                  passHref
+                >
+                  <a>
+                    <HStack
+                      spacing={3}
+                      p={3}
+                      rounded="md"
+                      _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
                     >
-                      {trimId(lesson.id)}
-                    </Text>
-                    <Text flex={4} as="code" fontSize="xs">
-                      {lesson.slug}
-                    </Text>
-                    <Text flex={5}>{lesson.title}</Text>
-                    <Text flex={2}>
-                      <LearningTag category={lesson.category} />
-                    </Text>
-                    <Text flex={2}>
-                      <LearningTag category={lesson.level} />
-                    </Text>
-                    <Text flex={1} textAlign="center">
-                      {lesson.is_published ? (
-                        <ViewIcon color="green.500" />
-                      ) : (
-                        <ViewOffIcon color="red.500" />
-                      )}
-                    </Text>
-                  </HStack>
-                </a>
-              </NextLink>
-            )
-          })}
+                      <Text
+                        flex={1}
+                        as="code"
+                        fontSize="xs"
+                        wordBreak="break-all"
+                      >
+                        {trimId(lesson.id)}
+                      </Text>
+                      <Text flex={4} as="code" fontSize="xs">
+                        {lesson.slug}
+                      </Text>
+                      <Text flex={5}>{lesson.title}</Text>
+                      <Text flex={2}>
+                        <LearningTag category={lesson.category} />
+                      </Text>
+                      <Text flex={2}>
+                        <LearningTag category={lesson.level} />
+                      </Text>
+                      <Text flex={1} textAlign="center">
+                        {lesson.is_published ? (
+                          <ViewIcon color="green.500" />
+                        ) : (
+                          <ViewOffIcon color="red.500" />
+                        )}
+                      </Text>
+                    </HStack>
+                  </a>
+                </NextLink>
+              )
+            })}
         </Stack>
       </Content>
     </>

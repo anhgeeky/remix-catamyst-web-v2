@@ -143,3 +143,8 @@ export const useLessonBySlug = (slug) => {
   const { data, error } = useSWR(`/api/lessons/slug/${slug}`, fetcherSWR)
   return { data: data, isLoading: !error && !data, isError: error }
 }
+
+export const useLessonsByQuery = (query) => {
+  const { data, error } = useSWR(`/api/lessons?q=${query}`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}

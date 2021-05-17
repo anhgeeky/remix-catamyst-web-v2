@@ -22,13 +22,13 @@ process.env.SENTRY_DSN = SENTRY_DSN
 const basePath = ''
 
 module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  poweredByHeader: false,
+  // reactStrictMode: true,
   future: {
     webpack5: true,
     // strictPostcssConfiguration: true,
   },
-  // reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+  poweredByHeader: false,
   images: {
     domains: [
       'a.storyblok.com',

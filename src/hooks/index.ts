@@ -28,4 +28,5 @@ export {
   useLessons,
   useLessonById,
   useLessonBySlug,
+  useLessonsByQuery,
 } from '@hooks/use-swr'

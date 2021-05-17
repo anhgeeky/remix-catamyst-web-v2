@@ -43,7 +43,7 @@ export function CMSBlockTexts(props) {
 }
 
 function CMSBlockModal({ block, isOpen, onClose }) {
-  const toast = useToast({ duration: 300 })
+  const toast = useToast()
 
   const handleSave = () => {
     toast({

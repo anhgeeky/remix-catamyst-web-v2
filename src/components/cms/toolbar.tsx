@@ -9,10 +9,16 @@ import {
   InputLeftElement,
   VisuallyHidden,
 } from '@chakra-ui/react'
+import { useForm } from 'react-hook-form'
 
 import { Icon } from '@components'
 
 export function CMSToolbar({ labels, actions }) {
+  const { register, handleSubmit } = useForm()
+  const onSubmit = (data) => {
+    actions.handleSearchItems(data.query)
+  }
+
   return (
     <Stack direction="row" mb={5}>
       {labels.create && (
@@ -27,7 +33,7 @@ export function CMSToolbar({ labels, actions }) {
       )}
 
       {labels.search && (
-        <Box width="100%">
+        <Box as="form" width="100%" onSubmit={handleSubmit(onSubmit)}>
           <VisuallyHidden>
             <FormLabel>{labels.search}</FormLabel>
           </VisuallyHidden>
@@ -37,9 +43,10 @@ export function CMSToolbar({ labels, actions }) {
               children={<Icon name="search" />}
             />
             <Input
+              name="query"
+              ref={register}
               type="text"
               placeholder={`${labels.search}...`}
-              onChange={actions.handleSearchItems}
             />
           </InputGroup>
         </Box>
