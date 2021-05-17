@@ -18,13 +18,13 @@ export function CMSBlock(props) {
   if (props.block.type === 'Divider') {
     return <CMSBlockDivider name="Divider" {...props} />
   }
-  if (props.block.type === 'Image' && props.block.url) {
+  if (props.block.type === 'Image') {
     return <CMSBlockImage name="Image" {...props} />
   }
-  if (props.block.type === 'Texts' && props.block.html) {
+  if (props.block.type === 'Texts') {
     return <CMSBlockTexts name="Texts" {...props} />
   }
-  if (props.block.type === 'Links' && props.block.links) {
+  if (props.block.type === 'Links') {
     return <CMSBlockLinks name="Links" {...props} />
   }
   return (

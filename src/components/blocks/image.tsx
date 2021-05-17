@@ -80,7 +80,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
         </Box>
       )}
 
-      {block.show_meta !== false && block.title && (
+      {block.show_meta !== false && (
         <Stack
           opacity={0.5}
           mt={2}
@@ -89,14 +89,16 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
           align="center"
           textAlign="center"
         >
-          <Text fontSize="sm">{block.title}</Text>
-          <Text fontSize="xs">
-            {block.source && isUrl(block.source) ? (
-              <Link href={block.source}>{block.source}</Link>
-            ) : (
-              <chakra.span>{block.source}</chakra.span>
-            )}
-          </Text>
+          {block.title && <Text fontSize="sm">{block.title}</Text>}
+          {block.source && (
+            <Text fontSize="xs">
+              {isUrl(block.source) ? (
+                <Link href={block.source}>{block.source}</Link>
+              ) : (
+                <chakra.span>{block.source}</chakra.span>
+              )}
+            </Text>
+          )}
         </Stack>
       )}
     </Box>

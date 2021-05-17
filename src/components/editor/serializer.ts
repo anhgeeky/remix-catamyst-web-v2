@@ -1,10 +1,63 @@
 import { jsx } from 'slate-hyperscript'
+import escapeHtml from 'escape-html'
+import { Text } from 'slate'
 
 /**
- * Convert from SlateElements into HTML.
+ * Convert from SlateElements into HTML string
+ * @param nodes
+ * @returns string
  */
-export function serializeSlateToHTML() {
-  return null
+export function serializeSlateToHTML(nodes) {
+  return nodes.map((node) => serialize(node)).join('\n')
+}
+
+/**
+ * Serialize each Slate nodes/elements
+ * @param node
+ * @returns string
+ */
+const serialize = (node) => {
+  if (Text.isText(node)) {
+    let string = escapeHtml(node.text)
+    if (node.bold) {
+      string = `<b>${string}</b>`
+    }
+    if (node.italic) {
+      string = `<i>${string}</i>`
+    }
+    if (node.underline) {
+      string = `<u>${string}</u>`
+    }
+    if (node.code) {
+      string = `<code>${string}</code>`
+    }
+    return string
+  }
+
+  const children = node.children.map((n) => serialize(n)).join('')
+
+  switch (node.type) {
+    case 'heading-one':
+      return `<h1>${children}</h1>`
+    case 'heading-two':
+      return `<h2>${children}</h2>`
+    case 'heading-three':
+      return `<h3>${children}</h3>`
+    case 'quote':
+      return `<blockquote>${children}</blockquote>`
+    case 'paragraph':
+      return `<p>${children}</p>`
+    case 'numbered-list':
+      return `<ol>${children}</ol>`
+    case 'bulleted-list':
+      return `<ul>${children}</ul>`
+    case 'list-item':
+      return `<li>${children}</li>`
+    case 'link':
+      return `<a href="${escapeHtml(node.url)}">${children}</a>`
+    default:
+      return children
+  }
 }
 
 /**

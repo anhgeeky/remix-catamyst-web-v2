@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Box,
   Badge,
@@ -8,16 +9,14 @@ import {
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Switch,
   Text,
   useColorModeValue,
   useDisclosure,
 } from '@chakra-ui/react'
 
-import { ColorModeToggle, CardArea, Icon, useToast } from '@components'
+import { CardArea, Icon, useToast } from '@components'
 import { RichTextEditor } from '@components/editor'
 import { BlockTexts } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
@@ -34,7 +33,9 @@ export function CMSBlockTexts(props) {
             Open Editor
           </Button>
         </CMSBlockModifierButtons>
-        <BlockTexts block={block} />
+
+        {!block.html && <Text opacity={0.25}>No content yet.</Text>}
+        {block.html && <BlockTexts block={block} />}
       </CardArea>
 
       <CMSBlockModal block={block} isOpen={isOpen} onClose={onClose} />
@@ -42,6 +43,9 @@ export function CMSBlockTexts(props) {
   )
 }
 
+/**
+ * The CMS Texts that can handle save
+ */
 function CMSBlockModal({ block, isOpen, onClose }) {
   const toast = useToast()
 
@@ -85,7 +89,7 @@ function CMSBlockModal({ block, isOpen, onClose }) {
 
         <ModalBody align="center" p={0}>
           <Box maxW={760} width="100%">
-            <RichTextEditor handleSave={handleSave} htmlString={block.html} />
+            <RichTextEditor htmlString={block.html} handleSave={handleSave} />
           </Box>
         </ModalBody>
       </ModalContent>

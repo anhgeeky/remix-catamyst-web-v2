@@ -50,10 +50,9 @@ const HOTKEYS = {
  * Initialize SlateElements from input that already deserialized from HTML.
  * Using default export because will be used with dynamic import.
  */
-export default function EditorSlate({ slateElements, handleSave }) {
+export default function EditorSlate({ slateElements, handleChange }) {
   const [isTooSmall] = useMediaQuery('(max-width: 768px)')
 
-  // const [value, setValue] = useState<Descendant[]>(initialValue)
   const [value, setValue] = useState<Descendant[]>(slateElements)
 
   const renderElement = useCallback((props) => <Element {...props} />, [])
@@ -85,9 +84,8 @@ export default function EditorSlate({ slateElements, handleSave }) {
       editor={editor}
       value={value}
       onChange={(value) => {
-        console.log(value)
-
         setValue(value)
+        handleChange(value)
       }}
     >
       <Box

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import dynamic from 'next/dynamic'
 import { Box } from '@chakra-ui/react'
 
@@ -13,7 +14,9 @@ import {
 /**
  * Only to load Slate without SSR.
  */
-export function RichTextEditor({ handleSave, htmlString }) {
+export function RichTextEditor({ htmlString, handleSave }) {
+  const [stringValue, setStringValue] = useState('')
+
   /**
    * Deserialize from HTMl to SlateElements
    */
@@ -21,13 +24,18 @@ export function RichTextEditor({ handleSave, htmlString }) {
   const document = new DOMParser().parseFromString(html, 'text/html')
   const slateElements = deserializeHTMLtoSlate(document.body)
 
+  const handleChange = (slateValue) => {
+    const htmlString = serializeSlateToHTML(slateValue)
+    console.info(htmlString)
+  }
+
   return (
     <Box textAlign="left" maxW="720px" width="100%" pb="100px">
       <Box>
         {slateElements && (
           <DynamicEditorSlate
             slateElements={slateElements}
-            handleSave={handleSave}
+            handleChange={handleChange}
           />
         )}
       </Box>
