@@ -18,7 +18,7 @@ export function useRedirectHome() {
     if (!isLoading && !isAuthorized) {
       router.replace('/signin')
     }
-  }, [profile])
+  }, [])
 
   return {
     router,

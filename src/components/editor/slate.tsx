@@ -85,6 +85,8 @@ export default function EditorSlate({ slateElements, handleSave }) {
       editor={editor}
       value={value}
       onChange={(value) => {
+        console.log(value)
+
         setValue(value)
       }}
     >
@@ -263,18 +265,6 @@ export type LinkElement = {
 }
 
 const Leaf = ({ attributes, children, leaf }) => {
-  if (leaf.code) {
-    children = (
-      <Text
-        as="code"
-        size="sm"
-        p={1}
-        bg={useColorModeValue('gray.200', 'black')}
-      >
-        {children}
-      </Text>
-    )
-  }
   if (leaf.bold) {
     children = <strong>{children}</strong>
   }
@@ -286,6 +276,13 @@ const Leaf = ({ attributes, children, leaf }) => {
   }
   if (leaf.link) {
     children = <a>{children}</a>
+  }
+  if (leaf.code) {
+    children = (
+      <chakra.code p={1} bg={useColorModeValue('gray.200', 'black')}>
+        {children}
+      </chakra.code>
+    )
   }
   return <span {...attributes}>{children}</span>
 }
