@@ -84,12 +84,13 @@ export function FooterExtra() {
   const dayNamePeriod = getDayNamePeriod()
 
   return (
-    <Box textAlign="center">
+    <Box textAlign="center" pb={10}>
       <Text>
+        <span>{year} </span>
         <NextLink href="/cms/overview">
           <a>©</a>
-        </NextLink>{' '}
-        <span>{year} Catamyst</span>
+        </NextLink>
+        <span> Catamyst</span>
       </Text>
       <VStack opacity={0.5} fontSize={15} spacing={0}>
         <Text>Enjoy your {dayNamePeriod}!</Text>

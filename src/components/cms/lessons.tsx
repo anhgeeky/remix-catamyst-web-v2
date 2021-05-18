@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
 import NextHead from 'next/head'
+import { useRouter } from 'next/router'
 import {
   Heading,
   HStack,
@@ -9,20 +10,38 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
+import axios from 'axios'
 
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
 import { mutateSWR, useLessons, fetcherSWR } from '@hooks'
 import { trimId } from '@utils'
+import { supabase } from '@lib'
 
 export function CMSLessons({ state }) {
+  const router = useRouter()
   const toast = useToast()
   const { data, isLoading, isError } = useLessons()
 
-  const handleCreateItem = () => {
-    toast({ status: 'success', title: 'Created new lesson!' })
+  /**
+   * Request to Supabase because need authorization.
+   */
+  const handleCreateItem = async () => {
+    try {
+      const { data, error } = await supabase.from('lessons').insert({}).single()
+      if (error) throw error
+      router.push(`/cms/lessons/${data.id}`)
+      toast({ status: 'success', title: 'Created new lesson!' })
+    } catch (error) {
+      console.error(error)
+      toast({ status: 'error', title: 'Failed to create new lesson!' })
+    }
   }
 
+  /**
+   * Request to API because no authorization.
+   * Also mutate data via SWR.
+   */
   const handleSearchItems = async (query) => {
     const newData = await fetcherSWR(`/api/lessons?q=${query}`)
     mutateSWR('/api/lessons', newData, false)

@@ -1,7 +1,7 @@
 -- Create a table for Tracks
 create table tracks (
   id uuid default extensions.uuid_generate_v4() not null primary key,
-  is_published boolean default false,
+  is_published boolean default true,
   slug text not null unique,
   title text not null,
   description text,

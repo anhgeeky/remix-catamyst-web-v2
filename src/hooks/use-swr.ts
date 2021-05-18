@@ -1,6 +1,5 @@
 import useSWR, { mutate as mutateSWR } from 'swr'
-import { useDispatch } from 'react-redux'
-
+// import { useDispatch } from 'react-redux'
 // import { supabase } from '@lib'
 // import { signOut } from '@features/auth/actions'
 

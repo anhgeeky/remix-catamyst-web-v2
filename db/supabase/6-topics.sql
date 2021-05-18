@@ -1,7 +1,7 @@
 -- Create a table for Topics
 create table topics (
   id uuid default extensions.uuid_generate_v4() not null primary key,
-  is_published boolean default false,
+  is_published boolean default true,
   slug text not null unique,
   title text,
   description text,

@@ -22,7 +22,7 @@ import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
 import { slugify, initBlock } from '@utils'
 import { useRedirectHome, useLessonById, mutateSWR } from '@hooks'
 import { supabase } from '@lib'
-import { updateLesson } from '@mutations'
+// import { updateLesson } from '@mutations'
 
 /**-----------------------------------------------------------------------------
  * CMS Lesson editor, with UI and logic
@@ -92,7 +92,15 @@ export function LessonEditor({ lessonId }) {
       mutateSWR(`/api/lessons/id/${lessonId}`, data)
     } catch (error) {
       console.warn(error)
-      toast({ status: 'error', title: 'Failed to save lesson data!' })
+      let errorText = 'Unknown problem.'
+      if (error.code === '23505') {
+        errorText = 'Slug is already exist.'
+      }
+      toast({
+        status: 'error',
+        title: 'Failed to save lesson data!',
+        description: errorText,
+      })
     }
   }
 

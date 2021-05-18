@@ -1,15 +1,14 @@
-import { HStack, Tag } from '@chakra-ui/react'
+import { chakra, Tag } from '@chakra-ui/react'
 import {
   FaLightbulb as FundamentalIcon,
   FaCog as SpecificIcon,
   FaPencilAlt as ProjectIcon,
+  FaStar as StarIcon,
 } from 'react-icons/fa'
 
 export function LearningTag({ category }) {
   return (
     <Tag
-      as={HStack}
-      // spacing={2}
       variant="solid"
       color="white"
       bg={
@@ -36,8 +35,10 @@ export function LearningTag({ category }) {
         <SpecificIcon />
       ) : category === 'Project' ? (
         <ProjectIcon />
-      ) : null}
-      <span>{category}</span>
+      ) : (
+        <StarIcon />
+      )}
+      <chakra.span ml={1}>{category}</chakra.span>
     </Tag>
   )
 }

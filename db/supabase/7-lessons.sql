@@ -5,11 +5,11 @@
 -- Create a table for Lessons
 create table lessons (
   id uuid default extensions.uuid_generate_v4() not null primary key,
-  is_published boolean default false,
-  slug text not null unique,
+  is_published boolean default true,
+  slug text unique,
   title text,
-  category lesson_category,
-  level level,
+  category lesson_category default 'Fundamental'::lesson_category,
+  level level default 'Newbie'::level,
   blocks jsonb,
   -- Timestamps
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
