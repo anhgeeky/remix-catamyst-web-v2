@@ -33,6 +33,7 @@ yarn-error.log*
 .env.production.local
 .env.catamyst.local
 .env.*.local
+.env.*.production
 
 # vercel
 .vercel

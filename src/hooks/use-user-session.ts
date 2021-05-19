@@ -17,9 +17,9 @@ export function useUserSession() {
     handleUserSessionChange()
   }, [])
 
-  const handleUserSessionChange = () => {
+  const handleUserSessionChange = async () => {
     try {
-      const globalSession = supabase.auth.session()
+      const globalSession = await supabase.auth.session()
 
       /**
        * Set data from database to be used for the entire app.
@@ -28,13 +28,13 @@ export function useUserSession() {
       setUser(globalSession?.user ?? null)
 
       /**
-       * Auto signout expired session when isAuthenticated is still true/
+       * Auto signout expired session when isAuthenticated is still true
        */
-      // if (auth.isAuthenticated && !globalSession) {
-      //   if (isDev) console.info('>>> Indicates actually not authenticated')
-      //   dispatch(signOut(false))
-      //   throw new Error('User not authenticated')
-      // }
+      if (auth.isAuthenticated && !globalSession) {
+        if (isDev) console.info('>>> Indicates actually not authenticated')
+        dispatch(signOut(false))
+        throw new Error('User not authenticated')
+      }
 
       /**
        * Handle when auth state has changed.
@@ -66,8 +66,8 @@ export function useUserSession() {
       }
     } catch (error) {
       if (isDev) console.info('>>> Error on handleUserSessionChange')
-      // dispatch(signOut(false))
-      // supabase.auth.signOut()
+      dispatch(signOut(false))
+      supabase.auth.signOut()
       setUser(null)
       setSession(null)
     }

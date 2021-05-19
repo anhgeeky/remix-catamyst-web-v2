@@ -27,7 +27,6 @@ export function RichTextEditor({ htmlString, setHtmlString }) {
   const handleChange = (slateValue) => {
     const newHtmlString = serializeSlateToHTML(slateValue)
     setHtmlString(newHtmlString)
-    // console.log(newHtmlString)
   }
 
   return (

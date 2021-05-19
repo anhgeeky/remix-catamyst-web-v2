@@ -183,76 +183,91 @@ const isMarkActive = (editor, format) => {
 }
 
 const Element = ({ attributes, children, element }) => {
-  switch (element.type) {
-    case 'heading-one':
-      return (
-        <Heading as="h1" size="xl" fontFamily="body" mt={3} {...attributes}>
-          {children}
-        </Heading>
-      )
-    case 'heading-two':
-      return (
-        <Heading as="h2" size="lg" fontFamily="body" mt={3} {...attributes}>
-          {children}
-        </Heading>
-      )
-    case 'heading-three':
-      return (
-        <Heading as="h3" size="md" fontFamily="body" mt={3} {...attributes}>
-          {children}
-        </Heading>
-      )
-    case 'numbered-list':
-      return (
-        <OrderedList mt={3} paddingInlineStart={5} {...attributes}>
-          {children}
-        </OrderedList>
-      )
-    case 'bulleted-list':
-      return (
-        <List
-          mt={3}
-          listStyleType="initial"
-          paddingInlineStart={5}
-          {...attributes}
-        >
-          {children}
-        </List>
-      )
-    case 'list-item':
-      return (
-        <ListItem mt={1} {...attributes}>
-          {children}
-        </ListItem>
-      )
-    case 'block-quote':
-      return (
-        <Text
-          as="blockquote"
-          mt={3}
-          pl={3}
-          borderLeftWidth={3}
-          borderStyle="solid"
-          borderColor="teal.500"
-          {...attributes}
-        >
-          {children}
-        </Text>
-      )
-    case 'link':
-      return (
-        <Tooltip hasArrow placement="top" aria-label="Link" label={element.url}>
-          <Link isExternal color="teal.500" href={element.url} {...attributes}>
+  if (element?.type && children) {
+    switch (element.type) {
+      case 'heading-one':
+        return (
+          <Heading as="h1" size="xl" fontFamily="body" mt={3} {...attributes}>
             {children}
-          </Link>
-        </Tooltip>
-      )
-    default:
-      return (
-        <Text mt={3} {...attributes}>
-          {children}
-        </Text>
-      )
+          </Heading>
+        )
+      case 'heading-two':
+        return (
+          <Heading as="h2" size="lg" fontFamily="body" mt={3} {...attributes}>
+            {children}
+          </Heading>
+        )
+      case 'heading-three':
+        return (
+          <Heading as="h3" size="md" fontFamily="body" mt={3} {...attributes}>
+            {children}
+          </Heading>
+        )
+      case 'numbered-list':
+        return (
+          <OrderedList mt={3} paddingInlineStart={5} {...attributes}>
+            {children}
+          </OrderedList>
+        )
+      case 'bulleted-list':
+        return (
+          <List
+            mt={3}
+            listStyleType="initial"
+            paddingInlineStart={5}
+            {...attributes}
+          >
+            {children}
+          </List>
+        )
+      case 'list-item':
+        return (
+          <ListItem mt={1} {...attributes}>
+            {children}
+          </ListItem>
+        )
+      case 'block-quote':
+        return (
+          <Text
+            as="blockquote"
+            mt={3}
+            pl={3}
+            borderLeftWidth={3}
+            borderStyle="solid"
+            borderColor="teal.500"
+            {...attributes}
+          >
+            {children}
+          </Text>
+        )
+      case 'link':
+        return (
+          <Tooltip
+            hasArrow
+            placement="top"
+            aria-label="Link"
+            label={element.url}
+          >
+            <Link
+              isExternal
+              color="teal.500"
+              href={element.url}
+              {...attributes}
+            >
+              {children}
+            </Link>
+          </Tooltip>
+        )
+      default:
+        return (
+          <Text mt={3} {...attributes}>
+            {children}
+          </Text>
+        )
+    }
+  } else {
+    // If no children node is found
+    return null
   }
 }
 
@@ -417,9 +432,9 @@ const wrapLink = (editor, url) => {
 }
 
 /**
- * Initial SlateElements as placeholder value.
+ * Initial SlateElements as example value.
  */
-const initialValue: SlateElement[] = [
+const slateValueExample: SlateElement[] = [
   {
     type: 'paragraph',
     children: [

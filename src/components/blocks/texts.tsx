@@ -153,7 +153,7 @@ export const transformOptions = {
               return transform(node, index)
             }
             if (node.type === 'text') {
-              return node.data
+              return node?.data || ''
             }
           })}
         </Text>
