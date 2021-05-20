@@ -15,6 +15,7 @@ import {
   MenuItem,
   MenuList,
   Text,
+  Spinner,
   useMediaQuery,
 } from '@chakra-ui/react'
 
@@ -46,6 +47,13 @@ export function HeaderUser() {
   const globalState = useProfile()
 
   /**
+   * When still loading but isAuthenticated.
+   */
+  if (globalState.isLoading && globalState.isAuthenticated) {
+    return <Spinner color="cyan.500" />
+  }
+
+  /**
    * When authenticated but existing session is invalid.
    */
   if (
@@ -55,6 +63,7 @@ export function HeaderUser() {
   ) {
     return <UserAuthErrorButtons />
   }
+
   /**
    * When authenticated and session is valid.
    */
@@ -65,6 +74,7 @@ export function HeaderUser() {
   ) {
     return <UserRealtimeBridge state={globalState} />
   }
+
   /**
    * When not authenticated and no session.
    */
