@@ -1,6 +1,7 @@
 {
   "type": "Links",
   "is_published": true,
+  "is_references": false,
   "links": [
     {
       "title": "",

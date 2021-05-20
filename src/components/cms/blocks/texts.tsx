@@ -22,7 +22,7 @@ import { CardArea, Icon, useToast } from '@components'
 import { RichTextEditor } from '@components/editor'
 import { BlockTextsPreview } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
-import blocks from '@data/blocks'
+// import blocks from '@data/blocks'
 
 export function CMSBlockTexts(props) {
   const {

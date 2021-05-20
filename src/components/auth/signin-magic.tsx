@@ -17,7 +17,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useDispatch } from 'react-redux'
 
 import { SignInMagicSchema } from '@utils/yup'
-import { signInMagic } from '@features/auth/actions'
+// import { signInMagic } from '@features/auth/actions'
 
 export function AuthSignInMagic({ router }) {
   const dispatch = useDispatch()

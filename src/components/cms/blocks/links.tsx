@@ -1,51 +1,104 @@
 import {
   Box,
+  Button,
+  ButtonGroup,
   Flex,
   FormControl,
   FormLabel,
+  Heading,
   HStack,
-  Button,
   Input,
   Select,
+  Switch,
   Stack,
-  VisuallyHidden,
+  Text,
   useColorModeValue,
-  Heading,
+  VisuallyHidden,
 } from '@chakra-ui/react'
+import { Controller, useForm, useFieldArray } from 'react-hook-form'
 
-import { Icon, CardArea, ReferenceIcon } from '@components'
+import { Icon, CardArea, ReferenceIcon, useToast } from '@components'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
 /**
  * Block only can be used for CMS.
  */
 export function CMSBlockLinks(props) {
-  const { index, block, actions } = props
+  /**
+   * Use the actions/control from parent component.
+   * https://codesandbox.io/s/react-hook-form-usefieldarray-nested-arrays-x7btr
+   */
+  const { index: blockIndex, block, actions } = props
+  const { fields, append, prepend, remove } = useFieldArray({
+    control: actions.control,
+    name: `blocks[${blockIndex}].links`,
+  })
 
   return (
     <CardArea>
-      {block.isReferences && <Heading as="h1">References</Heading>}
-      <Heading as="h1">References</Heading>
+      {block.is_references && <Heading as="h1">References</Heading>}
 
       <CMSBlockModifierButtons {...props}>
-        <Button
-          size="xs"
-          leftIcon={<Icon name="add" />}
-          onClick={() => console.info('>>> Added new link')}
-        >
-          Add new link
-        </Button>
+        <ButtonGroup size="xs">
+          <Button
+            leftIcon={<Icon name="add" />}
+            onClick={() =>
+              append({
+                title: '',
+                category: 'Article',
+                url: 'https://',
+                color: '',
+                source: '',
+                author: '',
+              })
+            }
+          >
+            Add new link
+          </Button>
+        </ButtonGroup>
+
+        <HStack>
+          <FormControl as={HStack}>
+            <Switch
+              key={block.id}
+              ref={actions.register()}
+              name={`blocks[${blockIndex}].is_published`}
+              defaultChecked={block.is_published || true}
+            />
+            <FormLabel fontSize="sm">Published?</FormLabel>
+          </FormControl>
+          <FormControl as={HStack}>
+            <Switch
+              key={block.id}
+              ref={actions.register()}
+              name={`blocks[${blockIndex}].is_references`}
+              defaultChecked={block.is_references || false}
+            />
+            <FormLabel fontSize="sm">References?</FormLabel>
+          </FormControl>
+        </HStack>
       </CMSBlockModifierButtons>
 
-      {block?.links &&
-        block?.links?.map((link, index) => {
-          return <LinkItem key={index} link={link} />
-        })}
+      {fields && (
+        <Stack>
+          {fields.map((item, itemIndex) => {
+            return (
+              <LinksItem
+                key={itemIndex}
+                actions={actions}
+                blockIndex={blockIndex}
+                item={item}
+                itemIndex={itemIndex}
+              />
+            )
+          })}
+        </Stack>
+      )}
     </CardArea>
   )
 }
 
-export function LinkItem({ link }) {
+export function LinksItem({ actions, blockIndex, item, itemIndex }) {
   return (
     <Flex
       align="stretch"
@@ -56,28 +109,27 @@ export function LinkItem({ link }) {
       bg={useColorModeValue('white', 'gray.800')}
     >
       <Box
-        bg={link.color || useColorModeValue('gray.100', 'gray.700')}
+        bg={item.color || useColorModeValue('gray.100', 'gray.700')}
         width="5px"
         borderTopLeftRadius="md"
         borderBottomLeftRadius="md"
       />
 
       <Stack spacing={1} p={2} width="99%">
-        {/* Need Link-specific modifer buttons without is_published */}
-        {/* <CMSBlockModifierButtons block={link} name="Link" /> */}
-
         <FormControl as={HStack}>
           <VisuallyHidden>
             <FormLabel>URL:</FormLabel>
           </VisuallyHidden>
           <Icon name="link" />
           <Input
-            name="external"
             size="sm"
             type="text"
             variant="flushed"
             resize="none"
-            defaultValue={link.url}
+            key={item.id}
+            ref={actions.register()}
+            name={`blocks[${blockIndex}].links[${itemIndex}].url`}
+            defaultValue={item.url}
             placeholder="https://example.com"
           />
         </FormControl>
@@ -88,13 +140,15 @@ export function LinkItem({ link }) {
           </VisuallyHidden>
           <Icon name="title" />
           <Input
-            name="title"
             size="sm"
             type="text"
             variant="flushed"
             fontWeight="700"
-            defaultValue={link.title}
-            placeholder="Link Title"
+            key={item.id}
+            ref={actions.register()}
+            name={`blocks[${blockIndex}].links[${itemIndex}].title`}
+            defaultValue={item.title}
+            placeholder="Link title"
           />
         </FormControl>
 
@@ -103,13 +157,15 @@ export function LinkItem({ link }) {
             <VisuallyHidden>
               <FormLabel>Category:</FormLabel>
             </VisuallyHidden>
-            <ReferenceIcon name={link.category} />
+            <ReferenceIcon name={item.category} />
             <Select
-              name="category"
               size="sm"
               variant="flushed"
+              key={item.id}
+              ref={actions.register()}
+              name={`blocks[${blockIndex}].links[${itemIndex}].category`}
+              defaultValue={item.category}
               placeholder="Select category"
-              defaultValue={link.category}
             >
               <option value="App">App</option>
               <option value="Article">Article</option>
@@ -127,11 +183,13 @@ export function LinkItem({ link }) {
             </VisuallyHidden>
             <Icon name="external" />
             <Input
-              name="source"
               size="sm"
               type="text"
               variant="flushed"
-              defaultValue={link.source}
+              key={item.id}
+              ref={actions.register()}
+              name={`blocks[${blockIndex}].links[${itemIndex}].source`}
+              defaultValue={item.source}
               placeholder="Source Name"
             />
           </FormControl>
@@ -142,11 +200,13 @@ export function LinkItem({ link }) {
             </VisuallyHidden>
             <Icon name="author" />
             <Input
-              name="author"
               size="sm"
               type="text"
               variant="flushed"
-              defaultValue={link.author}
+              key={item.id}
+              ref={actions.register()}
+              name={`blocks[${blockIndex}].links[${itemIndex}].author`}
+              defaultValue={item.author}
               placeholder="Author Name"
             />
           </FormControl>
@@ -157,11 +217,13 @@ export function LinkItem({ link }) {
             </VisuallyHidden>
             <Icon name="color" />
             <Input
-              name="title"
               size="sm"
               type="text"
               variant="flushed"
-              defaultValue={link.color}
+              key={item.id}
+              ref={actions.register()}
+              name={`blocks[${blockIndex}].links[${itemIndex}].color`}
+              defaultValue={item.color}
               placeholder="color.500"
             />
           </FormControl>

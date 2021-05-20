@@ -109,7 +109,7 @@ export function LessonEditor({ lessonId }) {
    * DELETE /api/lessons/id/{lessonId}
    */
   const handleDelete = () => {
-    // DELETE /api/lessons/id/{lessonId}
+    // Delete via Supabase
     toast({ status: 'error', title: 'Deleted lesson data!' })
   }
 
@@ -359,6 +359,7 @@ function CMSViewResultLesson(props) {
                   length={fields.length}
                   actions={{
                     ...actions,
+                    control,
                     register,
                     moveBlock,
                     removeBlock,
