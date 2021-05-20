@@ -81,6 +81,15 @@ export function HeaderEditor(props) {
             Back
           </Button>
           <Button
+            onClick={() => {
+              actions.handleView(`/${name}s/${data.slug}`)
+            }}
+            colorScheme="blue"
+            leftIcon={<Icon name="view" />}
+          >
+            View
+          </Button>
+          <Button
             onClick={actions.handleDelete}
             colorScheme="red"
             leftIcon={<Icon name="delete" />}

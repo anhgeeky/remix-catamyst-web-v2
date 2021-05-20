@@ -46,8 +46,15 @@ export function BlockLinks({ block }) {
             </Link>
           </Heading>
         )}
+
         {Array.isArray(block.links) &&
           block.links.map((link, index) => {
+            /**
+             * Only render link item if it has a title.
+             */
+            if (!link?.title) {
+              return null
+            }
             return (
               <Flex
                 isExternal

@@ -65,6 +65,13 @@ export function LessonEditor({ lessonId }) {
   }
 
   /**
+   * Open page in
+   */
+  const handleView = (url) => {
+    globalState.router.push(url)
+  }
+
+  /**
    * No request, just local change.
    */
   const handleReset = () => {
@@ -179,6 +186,7 @@ export function LessonEditor({ lessonId }) {
             register={register}
             actions={{
               handleBack,
+              handleView,
               handleDelete,
               handleReset,
               handleSubmit,

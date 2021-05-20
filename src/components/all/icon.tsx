@@ -3,6 +3,7 @@ import {
   ArrowBackIcon as BackIcon,
   ArrowDownIcon as DownIcon,
   ArrowUpIcon as UpIcon,
+  ViewIcon,
   DeleteIcon,
   PhoneIcon,
   RepeatIcon as GenerateIcon,
@@ -218,6 +219,8 @@ export function Icon({ name }) {
       return <CopyrightIcon />
     case 'export':
       return <ExportIcon />
+    case 'view':
+      return <ViewIcon />
     case 'delete':
       return <DeleteIcon />
     case 'edit':

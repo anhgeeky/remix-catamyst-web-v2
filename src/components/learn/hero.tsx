@@ -6,7 +6,7 @@ export function LearnHero(props) {
   const bg = useColorModeValue(`${color}.100`, `${color}.900`)
 
   return (
-    <Flex py={10} pb={16} color={textColor} bg={bg} justify="center">
+    <Flex py={10} color={textColor} bg={bg} justify="center">
       <Stack px={5} width="1200px" {...props}>
         {props.children}
       </Stack>
