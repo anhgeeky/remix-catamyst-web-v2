@@ -8,7 +8,7 @@ import { Text } from 'slate'
  * @returns string
  */
 export function serializeSlateToHTML(nodes) {
-  return nodes.map((node) => serialize(node)).join('\n')
+  return nodes.map((node) => serialize(node)).join('')
 }
 
 /**

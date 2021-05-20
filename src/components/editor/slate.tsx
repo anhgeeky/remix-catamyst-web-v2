@@ -75,10 +75,7 @@ export default function EditorSlate({ slateElements, handleChange }) {
   /**
    * Only render when value is present.
    */
-  if (!value) {
-    return null
-  }
-
+  if (!value) return null
   return (
     <Slate
       editor={editor}
