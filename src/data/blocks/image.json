@@ -8,5 +8,6 @@
   "author": "",
   "copyright": "",
   "source": "",
-  "show_meta": true
+  "show_meta": false,
+  "is_invertable": true
 }

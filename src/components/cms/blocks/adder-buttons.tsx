@@ -32,13 +32,7 @@ export function CMSBlockAdderButtons({ index, name, actions }) {
             onClick={() => actions.addBlock(index, 'Texts')}
           />
         </Tooltip>
-        <Tooltip hasArrow label="Add Image">
-          <IconButton
-            aria-label="Add image block"
-            icon={<Icon name="image" />}
-            onClick={() => actions.addBlock(index, 'Image')}
-          />
-        </Tooltip>
+
         <Tooltip hasArrow label="Add Links">
           <IconButton
             aria-label="Add links block"
@@ -53,6 +47,15 @@ export function CMSBlockAdderButtons({ index, name, actions }) {
             onClick={() => actions.addBlock(index, 'Divider')}
           />
         </Tooltip>
+
+        <Tooltip hasArrow label="Add Image">
+          <IconButton
+            aria-label="Add image block"
+            icon={<Icon name="image" />}
+            onClick={() => actions.addBlock(index, 'Image')}
+          />
+        </Tooltip>
+
         <Tooltip hasArrow label="Add Quote">
           <IconButton
             aria-label="Add quote block"
@@ -60,6 +63,7 @@ export function CMSBlockAdderButtons({ index, name, actions }) {
             onClick={() => actions.addBlock(index, 'Quote')}
           />
         </Tooltip>
+
         <Tooltip hasArrow label="Add Code">
           <IconButton
             aria-label="Add code block"

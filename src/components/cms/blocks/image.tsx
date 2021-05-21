@@ -182,7 +182,7 @@ export function CMSBlockImage(props) {
                 key={block.id}
                 ref={register()}
                 name={`blocks[${index}].is_invertable`}
-                defaultChecked={block.is_invertable || false}
+                defaultChecked={block.is_invertable || true}
               />
             </FormControl>
           </HStack>

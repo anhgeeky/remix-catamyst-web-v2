@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import {
   Box,
   Button,
@@ -15,9 +16,9 @@ import {
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react'
-import { Controller, useForm, useFieldArray } from 'react-hook-form'
+import { useFieldArray } from 'react-hook-form'
 
-import { Icon, CardArea, ReferenceIcon, useToast } from '@components'
+import { Icon, CardArea, ReferenceIcon } from '@components'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
 
 /**
@@ -34,6 +35,22 @@ export function CMSBlockLinks(props) {
     name: `blocks[${blockIndex}].links`,
   })
 
+  /**
+   * Auto append link item into fields if empty.
+   */
+  useEffect(() => {
+    if (fields?.length < 1) {
+      append({ category: 'App' })
+    }
+  })
+
+  /**
+   * Links
+   * + Add new link
+   * block.is_published
+   * block.is_references
+   * block.links
+   */
   return (
     <CardArea>
       {block.is_references && (
@@ -54,16 +71,7 @@ export function CMSBlockLinks(props) {
         <ButtonGroup size="xs">
           <Button
             leftIcon={<Icon name="add" />}
-            onClick={() =>
-              append({
-                title: '',
-                category: 'Article',
-                url: 'https://',
-                color: '',
-                source: '',
-                author: '',
-              })
-            }
+            onClick={() => append({ category: 'App' })}
           >
             Add new link
           </Button>
