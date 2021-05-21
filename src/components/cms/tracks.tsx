@@ -125,10 +125,10 @@ export function CMSTracks({ state }) {
                       {track.topics?.length}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {track.totalLessons || '-'}
+                      {track.total_lessons || '-'}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {track.totalHours || '-'}
+                      {track.total_hours || '-'}
                     </Text>
                   </HStack>
                 </a>

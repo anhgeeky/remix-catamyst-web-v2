@@ -92,16 +92,17 @@ export function TopicSidebar({ topic }) {
       </HStack>
       <HStack>
         <Icon name="lessons" />
-        <span>{topic.totalLessons || 0} lessons</span>
+        <span>{topic.total_lessons || 0} lessons</span>
       </HStack>
       <HStack>
         <Icon name="hours" />
-        <span>{topic.totalHours || 0} hours of content</span>
+        <span>{topic.total_hours || 0} hours of content</span>
       </HStack>
       <HStack>
         <Icon name="months" />
         <span>
-          {topic.totalDays || 0} day{topic.totalDays !== '1' && 's'} to complete
+          {topic.total_days || 0} day{topic.total_days !== '1' && 's'} to
+          complete
         </span>
       </HStack>
     </Stack>

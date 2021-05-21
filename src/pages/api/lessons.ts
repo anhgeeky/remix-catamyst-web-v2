@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { supabase } from '@lib'
 
-export default async function lessons(
+export default async function apiLessons(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -37,7 +37,7 @@ export const searchLessons = async (req, res) => {
   if (error) throw error
 
   res.status(200).json({
-    message: 'Get lessons by query',
+    message: 'Search lessons by query',
     query: query,
     lessons: data,
   })
@@ -76,8 +76,14 @@ export const createLesson = async (req, res) => {
     const { data, error } = await supabase.from('lessons').insert({}).single()
     if (error) throw error
 
-    res.status(200).json({ message: 'Created new lesson', lesson: data })
+    res.status(200).json({
+      message: 'Created new lesson',
+      lesson: data,
+    })
   } catch (error) {
-    res.status(401).json({ message: 'Failed to create new lesson', error })
+    res.status(401).json({
+      message: 'Failed to create new lesson',
+      error,
+    })
   }
 }

@@ -8,8 +8,25 @@ export const seedTracks = async () => {
 }
 
 export const seedTopics = async () => {
+  const topics = dataTopics.map((topic) => {
+    return {
+      is_published: true,
+      slug: topic.slug,
+      title: topic.title,
+      description: topic.description,
+      category: topic.category,
+      icon_url: topic.icon_url,
+      icon_emoji: topic.icon_emoji,
+      total_lessons: topic.total_lessons,
+      total_hours: topic.total_hours,
+      total_days: topic.total_days,
+      levels: topic.levels,
+      sections: [],
+    }
+  })
+
   await supabaseAdmin.from('topics').delete()
-  const { data, error } = await supabaseAdmin.from('topics').insert(dataTopics)
+  const { data, error } = await supabaseAdmin.from('topics').insert(topics)
   return { data, error }
 }
 

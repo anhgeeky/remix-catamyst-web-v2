@@ -10,7 +10,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
-import axios from 'axios'
 
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
@@ -19,8 +18,8 @@ import { trimId } from '@utils'
 import { supabase } from '@lib'
 
 export function CMSLessons({ state }) {
-  const router = useRouter()
   const toast = useToast()
+  const router = useRouter()
   const { data, isLoading, isError } = useLessons()
 
   /**
@@ -30,6 +29,7 @@ export function CMSLessons({ state }) {
     try {
       const { data, error } = await supabase.from('lessons').insert({}).single()
       if (error) throw error
+
       router.push(`/cms/lessons/${data.id}`)
       toast({ status: 'success', title: 'Created new lesson!' })
     } catch (error) {

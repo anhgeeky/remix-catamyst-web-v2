@@ -8,7 +8,7 @@ export default function trackSlugPage() {
   const { trackSlug } = router.query
 
   return (
-    <Layout title={`Loading track... · Catamyst`}>
+    <Layout title="Loading track... · Catamyst">
       {trackSlug && <TrackDetails trackSlug={trackSlug} />}
     </Layout>
   )

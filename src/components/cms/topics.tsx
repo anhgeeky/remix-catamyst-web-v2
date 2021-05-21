@@ -1,6 +1,7 @@
 import NextHead from 'next/head'
 import NextImage from 'next/image'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
 import {
   Box,
   Heading,
@@ -10,40 +11,71 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react'
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
 import { Content, LearningTag, useToast } from '@components'
 import { CMSHero, CMSToolbar } from '@components/cms'
-import { useSWR, fetcherSWR } from '@hooks'
+import { mutateSWR, useTopics, fetcherSWR } from '@hooks'
+import { trimId } from '@utils'
+import { supabase } from '@lib'
 
 export function CMSTopics({ state }) {
-  const { data, error } = useSWR('/api/topics', fetcherSWR)
   const toast = useToast()
+  const router = useRouter()
+  const { data, isLoading, isError } = useTopics()
 
-  const handleCreateItem = () => {
-    toast({ status: 'success', title: 'Created new topic!' })
+  /**
+   * Request to Supabase because need authorization.
+   */
+  const handleCreateItem = async () => {
+    try {
+      const { data, error } = await supabase.from('topics').insert({}).single()
+      if (error) throw error
+
+      router.push(`/cms/topics/${data.id}`)
+      toast({ status: 'success', title: 'Created new topic!' })
+    } catch (error) {
+      console.error(error)
+      toast({ status: 'error', title: 'Failed to create new topic!' })
+    }
   }
 
-  const handleSearchItems = () => {
-    /* Handle function */
+  /**
+   * Request to API because no authorization.
+   * Also mutate data via SWR.
+   */
+  const handleSearchItems = async (query) => {
+    const newData = await fetcherSWR(`/api/topics?q=${query}`)
+    mutateSWR('/api/topics', newData, false)
   }
 
-  if (error) {
-    return (
-      <CMSHero>
-        <Heading as="h1" size="xl">
-          Topics not found
-        </Heading>
-        <Text>Topics are empty.</Text>
-      </CMSHero>
-    )
-  }
-  if (!data) {
+  if (isLoading) {
     return (
       <CMSHero>
         <Heading as="h1" size="xl">
           Topics CMS
         </Heading>
         <Text>Loading all topics...</Text>
+      </CMSHero>
+    )
+  }
+  if (!isLoading && isError) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Topics error
+        </Heading>
+        <Text>Failed to get all topics.</Text>
+      </CMSHero>
+    )
+  }
+  if (!isLoading && !data) {
+    return (
+      <CMSHero>
+        <Heading as="h1" size="xl">
+          Topics not found
+        </Heading>
+        <Text>Topics are empty.</Text>
       </CMSHero>
     )
   }
@@ -95,6 +127,9 @@ export function CMSTopics({ state }) {
             <Text flex={1} textAlign="right">
               Hours
             </Text>
+            <Text flex={1} textAlign="center">
+              Pub?
+            </Text>
           </HStack>
 
           {data.topics.map((topic, index) => {
@@ -110,17 +145,26 @@ export function CMSTopics({ state }) {
                     rounded="md"
                     _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
                   >
-                    <Text flex={1}>{topic.id}</Text>
+                    <Text
+                      flex={1}
+                      as="code"
+                      fontSize="xs"
+                      wordBreak="break-all"
+                    >
+                      {trimId(topic.id)}
+                    </Text>
                     <Text flex={1}>{topic.icon_emoji || '🐈'}</Text>
                     <Box flex={1} className="next-image-container">
-                      <NextImage
-                        src="/assets/logos/catamyst-avatar.svg"
-                        alt="Icon"
-                        aria-label={`Icon of ${topic.title}`}
-                        width={30}
-                        height={30}
-                        layout="fixed"
-                      />
+                      {topic.icon_url && (
+                        <NextImage
+                          src={topic.icon_url}
+                          alt={`Icon of ${topic.title}`}
+                          aria-label={`Icon of ${topic.title}`}
+                          width={30}
+                          height={30}
+                          layout="fixed"
+                        />
+                      )}
                     </Box>
                     <Text flex={5}>{topic.title}</Text>
                     <Text flex={3} as="code" fontSize="xs">
@@ -133,10 +177,17 @@ export function CMSTopics({ state }) {
                       {topic.sections?.length || '-'}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {topic.totalLessons || '-'}
+                      {topic.total_lessons || '-'}
                     </Text>
                     <Text flex={1} textAlign="right">
-                      {topic.totalHours || '-'}
+                      {topic.total_hours || '-'}
+                    </Text>
+                    <Text flex={1} textAlign="center">
+                      {topic.is_published ? (
+                        <ViewIcon color="green.500" />
+                      ) : (
+                        <ViewOffIcon color="red.500" />
+                      )}
                     </Text>
                   </HStack>
                 </a>

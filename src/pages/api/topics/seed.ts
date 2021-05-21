@@ -1,26 +1,27 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { seedLessons } from '@lib/api'
+import { seedTopics } from '@lib/api'
 
 /**
- * Seed lessons from JSON into database.
+ * Seed topics from JSON into database.
  * Also purge existing data first.
  */
-export default async function apiLessonsSeed(
+export default async function apiTopicsSeed(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === 'POST' && req.query.token === process.env.SEED_TOKEN) {
     try {
-      const { data, error } = await seedLessons()
+      const { data, error } = await seedTopics()
       if (error) throw error
+
       res.status(200).json({
-        message: 'Seeded all lessons',
+        message: 'Seeded all topics',
         length: data.length,
       })
     } catch (error) {
       res.status(500).json({
-        message: 'Failed to seed lessons',
+        message: 'Failed to seed topics',
         error,
       })
     }

@@ -113,7 +113,7 @@ export default function EditorSlate({ slateElements, handleChange }) {
         <Editable
           renderElement={renderElement}
           renderLeaf={renderLeaf}
-          placeholder="Enter some rich text…"
+          placeholder="Enter some texts..."
           spellCheck
           autoFocus
           onKeyDown={(event) => {

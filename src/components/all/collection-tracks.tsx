@@ -99,11 +99,11 @@ export function TrackStats({ track }) {
       </HStack>
       <HStack mr={3} mb={1}>
         <Icon name="lessons" />
-        <span>{track.totalLessons || 0} lessons</span>
+        <span>{track.total_lessons || 0} lessons</span>
       </HStack>
       <HStack mr={3} mb={1}>
         <Icon name="hours" />
-        <span>{track.totalHours || 0} hours of content</span>
+        <span>{track.total_hours || 0} hours of content</span>
       </HStack>
       <HStack mr={3} mb={1}>
         <Icon name="months" />

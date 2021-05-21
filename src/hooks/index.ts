@@ -21,6 +21,7 @@ export {
   useAuthProfileSWR,
   useProfileHandleSWR,
   useSWR,
+  useTopics,
   useTrackById,
   useTrackBySlug,
   useTopicById,

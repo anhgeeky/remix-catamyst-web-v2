@@ -5,12 +5,12 @@ create table topics (
   slug text not null unique,
   title text,
   description text,
+  category topic_category,
   icon_url text,
   icon_emoji text,
   total_lessons int2 default 5,
   total_hours int2 default 5,
   total_days text default '1-2',
-  category topic_category,
   levels level [],
   sections jsonb,
   -- timestamps

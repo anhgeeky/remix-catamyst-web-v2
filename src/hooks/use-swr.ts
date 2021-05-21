@@ -114,6 +114,11 @@ export const useTrackBySlug = (slug) => {
  * Topics
  */
 
+export const useTopics = () => {
+  const { data, error } = useSWR(`/api/topics`, fetcherSWR)
+  return { data: data, isLoading: !error && !data, isError: error }
+}
+
 export const useTopicById = (id) => {
   const { data, error } = useSWR(`/api/topics/id/${id}`, fetcherSWR)
   return { data: data, isLoading: !error && !data, isError: error }

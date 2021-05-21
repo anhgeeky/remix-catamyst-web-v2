@@ -191,10 +191,10 @@ function CMSViewResultTrack({ toast, data }) {
           </HStack>
           <HStack>
             <NumberInput
-              name="totalLessons"
+              name="total_lessons"
               maxW={20}
               min={2}
-              defaultValue={data.track.totalLessons}
+              defaultValue={data.track.total_lessons}
               isDisabled
             >
               <NumberInputField />
@@ -203,10 +203,10 @@ function CMSViewResultTrack({ toast, data }) {
           </HStack>
           <HStack>
             <NumberInput
-              name="totalHours"
+              name="total_hours"
               maxW={20}
               min={10}
-              defaultValue={data.track.totalHours}
+              defaultValue={data.track.total_hours}
               isDisabled
             >
               <NumberInputField />
