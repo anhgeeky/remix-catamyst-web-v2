@@ -80,7 +80,11 @@ export function HeaderEditor(props) {
           <Button leftIcon={<Icon name="back" />} onClick={actions.handleBack}>
             Back
           </Button>
-          <LinkButton colorScheme="blue" leftIcon={<Icon name="view" />}>
+          <LinkButton
+            colorScheme="blue"
+            leftIcon={<Icon name="view" />}
+            href={`/${name}s/${data.slug}`}
+          >
             View
           </LinkButton>
           <Button
