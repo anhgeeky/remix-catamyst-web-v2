@@ -115,9 +115,20 @@ export function LessonEditor({ lessonId }) {
    * @mutations/lesson
    * DELETE /api/lessons/id/{lessonId}
    */
-  const handleDelete = () => {
-    // Delete via Supabase
-    toast({ status: 'error', title: 'Deleted lesson data!' })
+  const handleDelete = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('lessons')
+        .delete()
+        .eq('id', lessonId)
+      if (error) throw error
+
+      globalState.router.replace('/cms/lessons')
+      toast({ status: 'error', title: 'Deleted lesson!' })
+    } catch (error) {
+      console.error(error)
+      toast({ status: 'error', title: 'Failed to delete lesson!' })
+    }
   }
 
   /**

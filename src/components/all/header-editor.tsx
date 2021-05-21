@@ -110,6 +110,7 @@ export function HeaderEditor(props) {
           >
             Save changes
           </Button>
+
           <VisuallyHidden>
             <Button
               name="is_published"
