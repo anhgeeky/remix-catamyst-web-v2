@@ -25,21 +25,7 @@ export function CollectionTracks({ tracks = dataTracks }) {
 
   return (
     <VStack spacing={5}>
-      <NextImage
-        className="invertable next-image"
-        key={isTooSmall ? 'mobile' : 'desktop'}
-        src={`https://storage.catamyst.com/illustrations/tracks-${
-          isTooSmall ? 'mobile' : 'desktop'
-        }.png`}
-        alt="Cat reading book with floating shapes"
-        width={isTooSmall ? 170 : 200}
-        height={isTooSmall ? 200 : 190}
-      />
-      <SimpleGrid
-        // width="100%"
-        spacing={5}
-        minChildWidth={{ base: 280, sm: 420 }}
-      >
+      <SimpleGrid spacing={5} minChildWidth={{ base: 280, sm: 420 }}>
         {tracks.map((track, index) => {
           return <TrackCard key={track.id} track={track} />
         })}

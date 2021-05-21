@@ -1,18 +1,21 @@
 import NextHead from 'next/head'
 import {
-  Heading,
+  Box,
   Flex,
-  Stack,
+  Heading,
   HStack,
-  Text,
+  Stack,
   Stat,
+  StatArrow,
+  StatHelpText,
   StatLabel,
   StatNumber,
-  StatHelpText,
-  StatArrow,
+  Text,
+  SimpleGrid,
+  VStack,
 } from '@chakra-ui/react'
 
-import { Content, LinkButton, Card } from '@components'
+import { Content, LinkButton, Card, Icon } from '@components'
 import { CMSHero } from '@components/cms'
 import { useSWR, fetcherSWR } from '@hooks'
 import { getDayNamePeriod } from '@utils'
@@ -56,29 +59,33 @@ export function CMSOverview({ state }) {
       </CMSHero>
 
       <Content>
-        <Stack as={Flex} spacing={5} direction={{ base: 'column', sm: 'row' }}>
+        <SimpleGrid spacing={5} minChildWidth={200}>
           {data.stats.map((stat, index) => {
             return (
-              <Stat
-                as={Card}
-                key={stat.label}
-                width={{ base: '100%', sm: '200px' }}
-              >
-                <StatLabel>{stat.label}</StatLabel>
+              <Stat as={Card} key={stat.label}>
+                <StatLabel pb={2}>{stat.label}</StatLabel>
                 <StatNumber>
-                  <Heading>{stat.total}</Heading>
+                  <Heading as="h1" size="2xl">
+                    {stat.total}
+                  </Heading>
                 </StatNumber>
                 <StatHelpText>
                   <StatArrow type="increase" />
-                  3%
+                  <span>10%</span>
                 </StatHelpText>
-                <LinkButton href={stat.href} size="sm" colorScheme="teal">
-                  Edit
+                <LinkButton
+                  leftIcon={<Icon name="edit" />}
+                  href={stat.href}
+                  size="sm"
+                  width="100%"
+                  colorScheme="blue"
+                >
+                  Edit {stat.label}
                 </LinkButton>
               </Stat>
             )
           })}
-        </Stack>
+        </SimpleGrid>
       </Content>
     </>
   )
