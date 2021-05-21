@@ -46,10 +46,11 @@ export function CMSBlockLinks(props) {
 
   /**
    * Links
-   * + Add new link
+   * Add new link
    * block.is_published
    * block.is_references
    * block.links
+   * Add new link if fields.length > 1
    */
   return (
     <CardArea>
@@ -113,6 +114,17 @@ export function CMSBlockLinks(props) {
             )
           })}
         </Stack>
+      )}
+
+      {fields.length > 1 && (
+        <ButtonGroup size="xs">
+          <Button
+            leftIcon={<Icon name="add" />}
+            onClick={() => append({ category: 'App' })}
+          >
+            Add new link
+          </Button>
+        </ButtonGroup>
       )}
     </CardArea>
   )
