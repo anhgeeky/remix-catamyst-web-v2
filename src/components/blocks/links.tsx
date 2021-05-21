@@ -89,7 +89,8 @@ export function BlockLinks({ block }) {
                   </HStack>
                   <Text fontSize="sm">
                     {link.source && <Text as="span">{link.source}</Text>}
-                    {link.author && <Text as="span"> · {link.author}</Text>}
+                    {link.source && link.author && <span> · </span>}
+                    {link.author && <Text as="span">{link.author}</Text>}
                   </Text>
                   {link.url && (
                     <Text

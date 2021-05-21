@@ -14,7 +14,7 @@ import {
   FaWindowMaximize as ResultIcon,
 } from 'react-icons/fa'
 
-import { Icon } from '@components'
+import { LinkButton, Icon } from '@components'
 import { getCompleteDateTime } from '@utils'
 
 /**
@@ -80,15 +80,9 @@ export function HeaderEditor(props) {
           <Button leftIcon={<Icon name="back" />} onClick={actions.handleBack}>
             Back
           </Button>
-          <Button
-            onClick={() => {
-              actions.handleView(`/${name}s/${data.slug}`)
-            }}
-            colorScheme="blue"
-            leftIcon={<Icon name="view" />}
-          >
+          <LinkButton colorScheme="blue" leftIcon={<Icon name="view" />}>
             View
-          </Button>
+          </LinkButton>
           <Button
             onClick={actions.handleDelete}
             colorScheme="red"
