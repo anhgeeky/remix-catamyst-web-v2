@@ -50,7 +50,7 @@ export function HeaderUser() {
    * When still loading but isAuthenticated.
    */
   if (globalState.isLoading && globalState.isAuthenticated) {
-    return <Spinner color="cyan.500" />
+    return <Spinner color="teal.500" />
   }
 
   /**

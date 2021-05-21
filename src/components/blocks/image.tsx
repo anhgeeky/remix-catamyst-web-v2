@@ -35,7 +35,7 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
       : block.size === 'Large'
       ? 600
       : block.size === 'Medium'
-      ? 300
+      ? 420
       : block.size === 'Small'
       ? 300
       : 150 // Tiny
@@ -50,8 +50,8 @@ export function BlockImage({ block, renderer = 'NextImage' }) {
           <Image
             className={`${block.is_invertable && 'invertable'}`}
             src={block.url || `https://example.com`}
-            alt={block.alt || block.title || 'Unknown'}
-            title={block.title || block.alt || 'Unknown'}
+            alt={block.alt || ''}
+            title={block.title || ''}
             width={block.width || autoWidth}
             height={block.height || autoHeight}
             objectFit="contain"

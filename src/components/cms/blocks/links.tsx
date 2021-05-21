@@ -36,7 +36,19 @@ export function CMSBlockLinks(props) {
 
   return (
     <CardArea>
-      {block.is_references && <Heading as="h1">References</Heading>}
+      {block.is_references && (
+        <Heading
+          as="h1"
+          color="gray.500"
+          fontFamily="body"
+          fontSize="xl"
+          letterSpacing={0.5}
+          textAlign="center"
+          textTransform="uppercase"
+        >
+          References
+        </Heading>
+      )}
 
       <CMSBlockModifierButtons {...props}>
         <ButtonGroup size="xs">

@@ -21,7 +21,7 @@ export function BlockLinks({ block }) {
   return (
     <Box maxW={760} width="100%" px={5}>
       <Stack spacing={2}>
-        {block.isReferences && (
+        {block.is_references && (
           <Heading
             className="heading-with-anchor"
             as="h1"
