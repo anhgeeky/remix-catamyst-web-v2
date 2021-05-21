@@ -26,10 +26,13 @@ export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
     lessonSlug,
   })
 
+  if (!lesson) {
+    return null
+  }
   return (
     <>
       <NextHead>
-        <title>{lesson.title} · Lesson · Catamyst</title>
+        <title>{lesson?.title} · Lesson · Catamyst</title>
       </NextHead>
 
       <LearnHero>

@@ -1,4 +1,8 @@
 {
   "type": "Quote",
-  "is_published": true
+  "is_published": true,
+  "text": "",
+  "author": "",
+  "cite_url": "",
+  "cite": ""
 }

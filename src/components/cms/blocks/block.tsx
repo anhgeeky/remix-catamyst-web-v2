@@ -3,9 +3,10 @@ import { Alert } from '@chakra-ui/react'
 import { CardArea } from '@components'
 import {
   CMSBlockModifierButtons,
-  CMSBlockImage,
   CMSBlockTexts,
   CMSBlockLinks,
+  CMSBlockImage,
+  CMSBlockQuote,
   CMSBlockDivider,
 } from '@components/cms/blocks'
 
@@ -26,6 +27,9 @@ export function CMSBlock(props) {
   }
   if (props.block.type === 'Links') {
     return <CMSBlockLinks name="Links" {...props} />
+  }
+  if (props.block.type === 'Quote') {
+    return <CMSBlockQuote name="Quote" {...props} />
   }
   return (
     <CardArea>

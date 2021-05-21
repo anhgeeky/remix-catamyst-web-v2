@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 
 import { ReferenceIcon } from '@components'
+import { checkUrl } from '@utils'
 
 /**
  * Block only can be used for actual content
@@ -64,7 +65,7 @@ export function BlockLinks({ block }) {
                 boxShadow="base"
                 cursor="pointer"
                 flexWrap="wrap"
-                href={link.url}
+                href={checkUrl(link.url)}
                 key={index}
                 rounded="md"
                 spacing={0}

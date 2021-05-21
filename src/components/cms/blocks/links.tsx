@@ -84,7 +84,7 @@ export function CMSBlockLinks(props) {
               key={block.id}
               ref={actions.register()}
               name={`blocks[${blockIndex}].is_published`}
-              defaultChecked={block.is_published || true}
+              defaultChecked={block.is_published}
             />
             <FormLabel fontSize="sm">Published?</FormLabel>
           </FormControl>
@@ -93,7 +93,7 @@ export function CMSBlockLinks(props) {
               key={block.id}
               ref={actions.register()}
               name={`blocks[${blockIndex}].is_references`}
-              defaultChecked={block.is_references || false}
+              defaultChecked={block.is_references}
             />
             <FormLabel fontSize="sm">References?</FormLabel>
           </FormControl>
