@@ -112,7 +112,7 @@ function CMSViewResultTrack({ toast, data }) {
           <WrapItem>
             <NextImage
               alt={`Icon of ${data.track.title}`}
-              src={data.track.iconUrl}
+              src={data.track.icon_url}
               width={100}
               height={100}
               layout="fixed"

@@ -27,7 +27,7 @@ export function CollectionTracks({ tracks = dataTracks }) {
     <VStack spacing={5}>
       <SimpleGrid spacing={5} minChildWidth={{ base: 280, sm: 420 }}>
         {tracks.map((track, index) => {
-          return <TrackCard key={track.id} track={track} />
+          return <TrackCard key={track.slug} track={track} />
         })}
       </SimpleGrid>
     </VStack>
@@ -35,6 +35,13 @@ export function CollectionTracks({ tracks = dataTracks }) {
 }
 
 export function TrackCard({ track }) {
+  const isWebApp = track.slug === 'web-app'
+  const trackIcon = `https://ik.imagekit.io/catamyst/tracks/${track.slug}.png`
+  const trackIconWebApp = useColorModeValue(
+    `https://ik.imagekit.io/catamyst/tracks/${track.slug}.png`,
+    `https://ik.imagekit.io/catamyst/tracks/${track.slug}-dark.png`
+  )
+
   return (
     <NextLink href={`/learn/${track.slug}`} passHref>
       <Link
@@ -48,29 +55,27 @@ export function TrackCard({ track }) {
           textDecoration: 'none',
         }}
       >
-        <Wrap spacing={5} direction={{ base: 'column', lg: 'row' }}>
-          <WrapItem>
+        <Stack spacing={5}>
+          <Flex justify="center">
             <NextImage
               alt={`Icon of ${track.title}`}
-              src={track.iconUrl}
-              width={100}
-              height={100}
+              src={isWebApp ? trackIconWebApp : trackIcon}
+              width={200}
+              height={200}
               layout="fixed"
             />
-          </WrapItem>
-          <WrapItem>
-            <Stack spacing={3}>
-              <Heading as="h2" size="lg">
-                {track.title}
-              </Heading>
-              <Text>{track.description}</Text>
-              {track.is_published && <TrackStats track={track} />}
-              {!track.is_published && (
-                <AlertSoon>This track is still in progress.</AlertSoon>
-              )}
-            </Stack>
-          </WrapItem>
-        </Wrap>
+          </Flex>
+          <Stack spacing={3}>
+            <Heading as="h2" size="lg" textAlign="center">
+              {track.title}
+            </Heading>
+            <Text>{track.description}</Text>
+            {track.is_published && <TrackStats track={track} />}
+            {!track.is_published && (
+              <AlertSoon>This track is still in progress.</AlertSoon>
+            )}
+          </Stack>
+        </Stack>
       </Link>
     </NextLink>
   )

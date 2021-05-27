@@ -77,9 +77,9 @@ export function TrackHero({ track }) {
         <WrapItem>
           <NextImage
             alt={`Icon of ${track.title}`}
-            src={track.iconUrl}
-            width={100}
-            height={100}
+            src={track.icon_url}
+            width={200}
+            height={200}
             layout="fixed"
           />
         </WrapItem>
