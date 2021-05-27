@@ -58,8 +58,8 @@ export function TrackCard({ track }) {
         <Stack spacing={5}>
           <Flex justify="center">
             <NextImage
-              alt={`Icon of ${track.title}`}
               src={isWebApp ? trackIconWebApp : trackIcon}
+              alt={`Icon of ${track.title}`}
               width={200}
               height={200}
               layout="fixed"

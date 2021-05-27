@@ -12,6 +12,7 @@ import {
   Text,
   Wrap,
   WrapItem,
+  useColorModeValue,
 } from '@chakra-ui/react'
 
 import {
@@ -68,6 +69,13 @@ export function TrackDetails({ trackSlug }) {
 }
 
 export function TrackHero({ track }) {
+  const isWebApp = track.slug === 'web-app'
+  const trackIcon = `https://ik.imagekit.io/catamyst/tracks/${track.slug}.png`
+  const trackIconWebApp = useColorModeValue(
+    `https://ik.imagekit.io/catamyst/tracks/${track.slug}.png`,
+    `https://ik.imagekit.io/catamyst/tracks/${track.slug}-dark.png`
+  )
+
   return (
     <LearnHero>
       <BreadcrumbLinkButtons
@@ -76,8 +84,8 @@ export function TrackHero({ track }) {
       <Wrap as={Flex} spacing={5}>
         <WrapItem>
           <NextImage
+            src={isWebApp ? trackIconWebApp : trackIcon}
             alt={`Icon of ${track.title}`}
-            src={track.icon_url}
             width={200}
             height={200}
             layout="fixed"
