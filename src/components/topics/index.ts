@@ -4,3 +4,4 @@ export {
   TopicIconTitleHeadingOne,
   TopicIconTitleHeadingThree,
 } from '@components/topics/icon-title'
+export { TopicEditor } from '@components/topics/editor'
