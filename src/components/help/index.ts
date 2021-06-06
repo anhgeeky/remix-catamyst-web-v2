@@ -1,1 +1,1 @@
-export { HelpFaqs } from '@components/help/faqs'
+export * from '@components/help/faqs'

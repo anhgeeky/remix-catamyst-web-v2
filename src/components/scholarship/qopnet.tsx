@@ -13,14 +13,22 @@ import {
 } from '@chakra-ui/react'
 import Iframe from 'react-iframe'
 
-import { Icon, NextImage } from '@components'
+import {
+  Icon,
+  NextImage,
+  ListItemNumber,
+  List,
+  ListItemIcon,
+} from '@components'
 import { ScholarshipHero } from '@components/scholarship'
+import { FaqAccordionSimple } from '@components/help'
+import { dataFAQScholarshipQopnet } from '@data'
 
 export function ScholarshipQopnet() {
   const [isTooSmall] = useMediaQuery('(max-width: 920px)')
 
   return (
-    <>
+    <Stack id="scholarship-page" spacing={40} px={5}>
       <NextHead>
         <title>
           Software Engineering Scholarship · Sponsored by Qopnet · Catamyst
@@ -29,13 +37,17 @@ export function ScholarshipQopnet() {
 
       <ScholarshipHero>
         <Stack
-          id="hero-texts-image"
+          id="scholarship-hero-texts-image"
           direction={isTooSmall ? 'column' : 'row'}
           spacing={20}
         >
           <Stack id="hero-texts" spacing={5}>
-            <Heading as="h1" size={isTooSmall ? '3xl' : '4xl'}>
-              <Stack justify={['center', 'flex-start']}>
+            <Heading
+              as="h1"
+              size={isTooSmall ? '3xl' : '4xl'}
+              textAlign={isTooSmall ? 'center' : 'left'}
+            >
+              <Stack>
                 <chakra.span>Software</chakra.span>
                 <chakra.span>Engineering</chakra.span>
                 <chakra.span color="#00aaaa">Scholarship</chakra.span>
@@ -44,8 +56,8 @@ export function ScholarshipQopnet() {
 
             <Heading as="h2" size="lg">
               <Stack
-                align={isTooSmall ? 'flex-start' : 'center'}
                 direction={isTooSmall ? 'column' : 'row'}
+                align="center"
                 spacing={3}
               >
                 <chakra.span>Sponsored by</chakra.span>
@@ -63,7 +75,7 @@ export function ScholarshipQopnet() {
               </Stack>
             </Heading>
 
-            <Stack mt={10}>
+            <Stack mt={10} align={isTooSmall ? 'center' : 'flex-start'}>
               <Flex align="center" fontSize="xl">
                 <Icon name="date" />
                 <Text ml={3}>Apply before 1 August 2021</Text>
@@ -86,9 +98,12 @@ export function ScholarshipQopnet() {
             />
             <Box>
               <Button
+                as={Link}
+                href="#apply"
                 leftIcon={<Icon name="form" />}
                 size="lg"
                 colorScheme="orange"
+                rounded="full"
               >
                 Apply Now
               </Button>
@@ -97,7 +112,132 @@ export function ScholarshipQopnet() {
         </Stack>
       </ScholarshipHero>
 
-      <VStack>
+      <VStack spacing={10}>
+        <Stack
+          direction={isTooSmall ? 'column' : 'row'}
+          align="center"
+          spacing={20}
+        >
+          <Box>
+            <NextImage
+              className="invertable next-image"
+              src="https://ik.imagekit.io/catamyst/images/cats-criteria.png"
+              alt="Cats criteria"
+              width={300}
+              height={330}
+            />
+          </Box>
+
+          <Stack id="criteria" maxW={560} spacing={10}>
+            <Stack id="scholarship-requirements">
+              <Heading as="h3" size="lg">
+                Requirements
+              </Heading>
+              <List>
+                <ListItemIcon>
+                  <b>Experience</b> in Software Engineering, UI/UX Design, Web
+                  Development, JavaScript / TypeScript, Node.js, React /
+                  Next.js, PostgreSQL / MongoDB, GCP / AWS
+                </ListItemIcon>
+                <ListItemIcon>
+                  <b>Age</b> 17–40
+                </ListItemIcon>
+                <ListItemIcon>
+                  <b>Level</b> Intermediate–Advanced
+                </ListItemIcon>
+              </List>
+            </Stack>
+
+            <Stack id="scholarship-benefits">
+              <Heading as="h3" size="lg">
+                Benefits
+              </Heading>
+              <List>
+                <ListItemIcon>
+                  <b>100% full</b> scholarship, no fee.
+                </ListItemIcon>
+                <ListItemIcon>
+                  <b>Mentorship</b> with experienced developers.
+                </ListItemIcon>
+                <ListItemIcon>
+                  <b>Stipend</b> per month for lunch and Internet.
+                </ListItemIcon>
+                <ListItemIcon>
+                  <b>Actual</b> project work experience for{' '}
+                  <Link isExternal href="https://qopnet.id">
+                    Qopnet
+                  </Link>{' '}
+                  projects, with scope to build chat app, sales dashboard, POS
+                  (point of sale), and more.
+                </ListItemIcon>
+              </List>
+            </Stack>
+
+            <Stack id="scholarship-timeline">
+              <Heading as="h3" size="lg">
+                Timeline
+              </Heading>
+              <List>
+                <ListItemNumber no={1}>
+                  <b>Registration and screening</b> from 10 June 2021 to 1
+                  August 2021.
+                </ListItemNumber>
+                <ListItemNumber no={2}>
+                  <b>Interview</b> within 7 days after you have registered and
+                  screened.
+                </ListItemNumber>
+                <ListItemNumber no={3}>
+                  <b>Announcement</b> within 7 days after you have been
+                  interviewed.
+                </ListItemNumber>
+              </List>
+            </Stack>
+          </Stack>
+        </Stack>
+
+        <Flex justify="center">
+          <Button
+            as={Link}
+            href="#apply"
+            leftIcon={<Icon name="form" />}
+            size="lg"
+            colorScheme="orange"
+            rounded="full"
+          >
+            Apply Now
+          </Button>
+        </Flex>
+      </VStack>
+
+      <VStack spacing={10}>
+        <Stack
+          direction={isTooSmall ? 'column' : 'row'}
+          align="center"
+          spacing={20}
+        >
+          <Stack maxW={580}>
+            <Heading as="h3" size="lg">
+              FAQ (Frequently Asked Questions)
+            </Heading>
+            <FaqAccordionSimple
+              id="scholarship-faq"
+              items={dataFAQScholarshipQopnet}
+            />
+          </Stack>
+
+          <Box>
+            <NextImage
+              className="invertable next-image"
+              src={`https://storage.catamyst.com/illustrations/help.png`}
+              alt="Cat help"
+              width={140}
+              height={200}
+            />
+          </Box>
+        </Stack>
+      </VStack>
+
+      <VStack id="apply" spacing={5}>
         <Box>
           <Button
             isExternal
@@ -105,6 +245,7 @@ export function ScholarshipQopnet() {
             leftIcon={<Icon name="external" />}
             href="https://airtable.com/shrFUZjGN57bZIKfc"
             colorScheme="orange"
+            rounded="full"
           >
             Open form in new tab
           </Button>
@@ -116,10 +257,10 @@ export function ScholarshipQopnet() {
             className="iframe airtable-embed airtable-dynamic-height"
             url="https://airtable.com/embed/shrFUZjGN57bZIKfc"
             width="100%"
-            height="533px"
+            height={isTooSmall ? '590' : '720'}
           />
         </Box>
       </VStack>
-    </>
+    </Stack>
   )
 }

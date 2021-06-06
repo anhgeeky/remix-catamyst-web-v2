@@ -10,13 +10,12 @@ import {
   AccordionIcon,
   Link,
   useMediaQuery,
-  useColorModeValue,
+  Text,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
 import { HeadingStack } from '@components'
 import { transformOptions } from '@components/blocks'
-
 import { dataFAQLearners, dataFAQEmployers } from '@data'
 
 export function HelpFaqs() {
@@ -54,40 +53,73 @@ export function HelpFaqs() {
   )
 }
 
-function FaqAccordion({ id, title, items }) {
+export function FaqAccordion({ id, title = '', items }) {
   return (
     <Stack id={id} maxW={760} width="100%">
-      <HeadingStack className="heading-with-anchor">
-        <span>{title}</span>
-        <Link
-          href={`#${id}`}
-          aria-label={`Anchor to ${id} FAQ`}
-          color="teal.500"
-          opacity={0}
-          ml={3}
-        >
-          #
-        </Link>
-      </HeadingStack>
-      <Accordion allowMultiple>
-        {items.map((item, index) => {
-          return (
-            <AccordionItem key={index} my={1}>
-              <Heading as="h2" id={item.slug}>
-                <AccordionButton p={3}>
-                  <Box flex="1" textAlign="left">
-                    <span>{item.q}</span>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </Heading>
-              <AccordionPanel pb={4}>
-                {ReactHtmlParser(item.a, transformOptions)}
-              </AccordionPanel>
-            </AccordionItem>
-          )
-        })}
-      </Accordion>
+      {title && (
+        <HeadingStack className="heading-with-anchor">
+          <span>{title}</span>
+          <Link
+            href={`#${id}`}
+            aria-label={`Anchor to ${id} FAQ`}
+            color="teal.500"
+            opacity={0}
+            ml={3}
+          >
+            #
+          </Link>
+        </HeadingStack>
+      )}
+
+      {items?.length && (
+        <Accordion allowMultiple>
+          {items.map((item, index) => {
+            return (
+              <AccordionItem key={index} my={1}>
+                <Heading as="h2" id={item.slug}>
+                  <AccordionButton p={3}>
+                    <Box flex="1" textAlign="left">
+                      <span>{item.q}</span>
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>
+                  {ReactHtmlParser(item.a, transformOptions)}
+                </AccordionPanel>
+              </AccordionItem>
+            )
+          })}
+        </Accordion>
+      )}
+    </Stack>
+  )
+}
+
+export function FaqAccordionSimple({ id, items }) {
+  return (
+    <Stack id={id} maxW={580} width="100%">
+      {items?.length && (
+        <Accordion allowMultiple>
+          {items.map((item, index) => {
+            return (
+              <AccordionItem key={index} my={1}>
+                <Heading as="h2" id={item.slug}>
+                  <AccordionButton p={3}>
+                    <Box flex="1" textAlign="left">
+                      <span>{item.q}</span>
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </Heading>
+                <AccordionPanel pb={4}>
+                  <Text>{item.a}</Text>
+                </AccordionPanel>
+              </AccordionItem>
+            )
+          })}
+        </Accordion>
+      )}
     </Stack>
   )
 }

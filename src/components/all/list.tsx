@@ -1,5 +1,5 @@
 import {
-  Text,
+  chakra,
   List as ChakraList,
   ListItem as ChakraListItem,
   ListIcon as ChakraListIcon,
@@ -10,15 +10,20 @@ import { FaAngleRight } from 'react-icons/fa'
 
 const fontSizes = ['md', 'lg']
 
+/**
+ * UL without bullets.
+ */
 export function List({ children }) {
   return (
-    <ChakraList fontSize={fontSizes} spacing={1} py={2}>
-      <ChakraListIcon as={FaAngleRight} color="teal.500" />
+    <ChakraList fontSize={fontSizes} py={2} spacing={1}>
       {children}
     </ChakraList>
   )
 }
 
+/**
+ * UL with bullets.
+ */
 export function UnorderedList({ children }) {
   return (
     <ChakraUnorderedList fontSize={fontSizes} spacing={1} py={2}>
@@ -27,10 +32,46 @@ export function UnorderedList({ children }) {
   )
 }
 
+/**
+ * OL with numbers.
+ */
 export function OrderedList({ children }) {
   return (
     <ChakraOrderedList fontSize={fontSizes} spacing={1} py={2}>
       {children}
     </ChakraOrderedList>
+  )
+}
+
+/**
+ * LI
+ */
+export function ListItem({ children }) {
+  return <ChakraListItem>{children}</ChakraListItem>
+}
+
+/**
+ * LI with number.
+ */
+export function ListItemNumber({ no = 0, children }) {
+  return (
+    <ChakraListItem>
+      <chakra.span color="teal.500" mr={3}>
+        {no}.
+      </chakra.span>
+      {children}
+    </ChakraListItem>
+  )
+}
+
+/**
+ * LI with icon.
+ */
+export function ListItemIcon({ children }) {
+  return (
+    <ChakraListItem>
+      <ChakraListIcon as={FaAngleRight} color="teal.500" />
+      {children}
+    </ChakraListItem>
   )
 }

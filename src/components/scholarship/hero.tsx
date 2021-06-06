@@ -9,7 +9,7 @@ export function ScholarshipHero({ children }) {
         width="1200px"
         spacing={5}
         px={isTooSmall ? 5 : 20}
-        py={isTooSmall ? 20 : 40}
+        pt={isTooSmall ? 20 : 40}
       >
         {children}
       </VStack>
