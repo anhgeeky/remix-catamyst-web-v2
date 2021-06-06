@@ -21,8 +21,6 @@ import { Icon, AlertSoon } from '@components'
 import { dataTracks } from '@data'
 
 export function CollectionTracks({ tracks = dataTracks }) {
-  const [isTooSmall] = useMediaQuery('(max-width: 767px)')
-
   return (
     <VStack spacing={5}>
       <SimpleGrid spacing={5} minChildWidth={{ base: 280, sm: 420 }}>

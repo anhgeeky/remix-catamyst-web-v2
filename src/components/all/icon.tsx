@@ -72,7 +72,8 @@ import {
   // Dashboard icons
   FaChild as OnboardIcon,
   FaBinoculars as OverviewIcon,
-  FaUser as UsersIcon,
+  FaUser as UserIcon,
+  FaUsers as UsersIcon,
   FaChartLine as StatsIcon,
   FaArrowAltCircleUp as LevelsIcon,
   FaMap as TracksIcon,
@@ -345,6 +346,8 @@ export function Icon({ name }) {
       return <OverviewIcon />
     case 'stats':
       return <StatsIcon />
+    case 'user':
+      return <UserIcon />
     case 'users':
       return <UsersIcon />
     case 'levels':

@@ -127,6 +127,14 @@ a {
 }
 
 /**
+ * iframe
+ */
+
+.iframe {
+  overflow-y: hidden;
+}
+
+/**
  * NextImage container.
  */
 
