@@ -1,0 +1,5 @@
+export * from '@components/scholarship/all'
+export * from '@components/scholarship/hero'
+export * from '@components/scholarship/form'
+export * from '@components/scholarship/haidar'
+export * from '@components/scholarship/qopnet'
