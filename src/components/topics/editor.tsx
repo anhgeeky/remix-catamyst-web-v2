@@ -7,8 +7,6 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightAddon,
-  Radio,
-  RadioGroup,
   Stack,
   Text,
   Tooltip,

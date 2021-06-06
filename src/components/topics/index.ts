@@ -5,3 +5,4 @@ export {
   TopicIconTitleHeadingThree,
 } from '@components/topics/icon-title'
 export { TopicEditor } from '@components/topics/editor'
+export { TopicSingle } from '@components/topics/single'
