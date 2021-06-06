@@ -187,8 +187,12 @@ export function ScholarshipQopnet() {
                   screened.
                 </ListItemNumber>
                 <ListItemNumber no={3}>
-                  <b>Announcement</b> within 7 days after you have been
-                  interviewed.
+                  <b>Acceptance</b> announcement within 7 days after you have
+                  been interviewed.
+                </ListItemNumber>
+                <ListItemNumber no={4}>
+                  <b>Program</b> started as soon as you are accepted until 1
+                  October 2021.
                 </ListItemNumber>
               </List>
             </Stack>
