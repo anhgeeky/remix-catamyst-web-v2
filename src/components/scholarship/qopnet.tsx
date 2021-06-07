@@ -160,6 +160,9 @@ export function ScholarshipQopnet() {
                   <b>Mentorship</b> with experienced developers.
                 </ListItemIcon>
                 <ListItemIcon>
+                  <b>Super</b> membership account forever.
+                </ListItemIcon>
+                <ListItemIcon>
                   <b>Stipend</b> per month for lunch and Internet.
                 </ListItemIcon>
                 <ListItemIcon>
@@ -167,8 +170,8 @@ export function ScholarshipQopnet() {
                   <Link isExternal href="https://qopnet.id">
                     Qopnet
                   </Link>{' '}
-                  projects, with scope to build chat app, sales dashboard, POS
-                  (point of sale), and more.
+                  projects, with scope to build commerce platform, chat app,
+                  sales dashboard, POS (point of sale), and more.
                 </ListItemIcon>
               </List>
             </Stack>
@@ -179,8 +182,8 @@ export function ScholarshipQopnet() {
               </Heading>
               <List>
                 <ListItemNumber no={1}>
-                  <b>Registration and screening</b> from 10 June 2021 to 1
-                  August 2021.
+                  <b>Registration and screening</b> from 7 June 2021 to 1 August
+                  2021.
                 </ListItemNumber>
                 <ListItemNumber no={2}>
                   <b>Interview</b> within 7 days after you have registered and
