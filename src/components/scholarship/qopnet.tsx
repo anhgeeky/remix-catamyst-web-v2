@@ -10,6 +10,7 @@ import {
   Link,
   Text,
   useMediaQuery,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import Iframe from 'react-iframe'
 
@@ -26,6 +27,10 @@ import { dataFAQScholarshipQopnet } from '@data'
 
 export function ScholarshipQopnet() {
   const [isTooSmall] = useMediaQuery('(max-width: 920px)')
+  const qopnetLogo = useColorModeValue(
+    `https://ik.imagekit.io/catamyst/logos/qopnet-logo.png`,
+    `https://ik.imagekit.io/catamyst/logos/qopnet-logo-white.png`
+  )
 
   return (
     <Stack id="scholarship-page" spacing={40} px={5}>
@@ -62,10 +67,10 @@ export function ScholarshipQopnet() {
               >
                 <chakra.span>Sponsored by</chakra.span>
                 <Flex align="center">
-                  <Link isExternal href="https://qopnet.id">
+                  <Link isExternal href="https://qopnet.id" display="inherit">
                     <NextImage
                       className="next-image"
-                      src="https://ik.imagekit.io/catamyst/logos/qopnet-logo.png"
+                      src={qopnetLogo}
                       alt="Qopnet logo"
                       width={192}
                       height={60}
@@ -75,15 +80,22 @@ export function ScholarshipQopnet() {
               </Stack>
             </Heading>
 
-            <Stack mt={10} align={isTooSmall ? 'center' : 'flex-start'}>
-              <Flex align="center" fontSize="xl">
+            <Stack
+              mt={10}
+              align={isTooSmall ? 'center' : 'flex-start'}
+              fontSize="xl"
+            >
+              <Flex align="center">
                 <Icon name="date" />
                 <Text ml={3}>Apply before 1 August 2021</Text>
               </Flex>
-
-              <Flex align="center" fontSize="xl">
+              <Flex align="center">
                 <Icon name="users" />
                 <Text ml={3}>Limited to 2–3 people only</Text>
+              </Flex>
+              <Flex align="center">
+                <Icon name="code" />
+                <Text ml={3}>For intermediate-level developers</Text>
               </Flex>
             </Stack>
           </Stack>
@@ -154,7 +166,8 @@ export function ScholarshipQopnet() {
               </Heading>
               <List>
                 <ListItemIcon>
-                  <b>100% full</b> scholarship, no fee.
+                  <b>100% full</b> scholarship worth USD 2,000 or IDR 28,500,000
+                  per person, no additional hidden fee.
                 </ListItemIcon>
                 <ListItemIcon>
                   <b>Mentorship</b> with experienced developers.

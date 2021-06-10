@@ -210,25 +210,29 @@
     "type": "User",
     "id": 6,
     "handle": "zakintaliban",
-    "name": "K Nukman Zakin",
+    "name": "Khasbullah Nukman Zakin",
     "nickname": "Zakin",
     "avatar_url": "https://storage.catamyst.com/avatars/zakintaliban.jpg",
     "cover_url": "",
     "headline": "Super Software Engineer",
-    "bio_html": "<p>I am Zakin</p>",
+    "bio_html": "<p>I am Zakin. 🇾🇪 + 🇮🇩. MERN, Microservice, Full-stack web developer. 💼 Work at @pesenwebsite and @E-Solution. 👨‍🏫 Teaching at @rumahsiapkerja</p>",
     "country": "ID",
     "location": "Depok",
-    "website": { "url": "https://zakin.com" },
+    "website": { "url": "https://github.com/zakintaliban" },
     "socials": [
-      { "name": "LinkedIn", "url": "https://linkedin.com/in/zakin" },
-      { "name": "GitHub", "url": "https://github.com/zakin" }
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/khasbullah-nukman-zakin-047533191"
+      },
+      { "name": "GitHub", "url": "https://github.com/Zakintaliban" },
+      { "name": "Twitter", "url": "https://twitter.com/zakintaliban" }
     ],
     "work": {
       "title": "Software Engineer",
-      "name": "Freelance",
+      "name": "Pesenwebsite",
       "url": "https://pesenwebsite.com"
     },
-    "role": "Mentor",
+    "role": "Member",
     "mode": "Learner",
     "plan": "Super",
     "created_at": "2021-01-01",
