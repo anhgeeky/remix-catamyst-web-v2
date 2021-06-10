@@ -143,7 +143,7 @@ export function DashboardOverview({ state }) {
                 <Flex display="flex" width="100%" justify="center">
                   <NextImage
                     className="invertable next-image"
-                    src={`https://storage.catamyst.com/illustrations/plan-${planString.toLowerCase()}.png`}
+                    src={`https://ik.imagekit.io/catamyst/images/plan-${planString.toLowerCase()}.png`}
                     alt={state.profile.plan}
                     layout="fixed"
                     objectFit="contain"

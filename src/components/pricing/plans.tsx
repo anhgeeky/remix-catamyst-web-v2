@@ -39,10 +39,10 @@ export function PricingPlans() {
               justify="space-between"
             >
               <VStack>
-                <Flex display="flex" width="100%" justify="center">
+                <Flex width="100%" justify="center">
                   <NextImage
                     className="invertable next-image"
-                    src={`https://storage.catamyst.com/illustrations/plan-${plan.slug}.png`}
+                    src={`https://ik.imagekit.io/catamyst/images/plan-${plan.slug}.png`}
                     alt={plan.name}
                     layout="fixed"
                     objectFit="contain"
@@ -114,18 +114,29 @@ export function PricingPlans() {
           py={10}
         >
           <Stack>
-            <Stack>
-              <Heading
-                as="h3"
-                size="2xl"
-                color="teal.500"
-                textAlign={{ base: 'center', lg: 'left' }}
-                bgClip="text"
-                bgGradient="linear(to-r, yellow.400, yellow.900)"
-              >
-                Business
-              </Heading>
-            </Stack>
+            <Flex justify={{ base: 'center', lg: 'flex-start' }}>
+              <Stack align="center">
+                <NextImage
+                  className="invertable next-image"
+                  src={`https://ik.imagekit.io/catamyst/images/plan-business.png`}
+                  alt="Business"
+                  layout="fixed"
+                  objectFit="contain"
+                  width={200}
+                  height={128}
+                />
+                <Heading
+                  as="h3"
+                  size="2xl"
+                  color="teal.500"
+                  bgClip="text"
+                  bgGradient="linear(to-r, yellow.400, yellow.900)"
+                  textAlign={{ base: 'center', lg: 'left' }}
+                >
+                  Business
+                </Heading>
+              </Stack>
+            </Flex>
 
             <List spacing={1}>
               <ListItem>
@@ -165,7 +176,7 @@ export function PricingPlans() {
                 colorScheme="teal"
                 leftIcon={<Icon name="business" />}
               >
-                Sign up for Business
+                Sign up
               </LinkButton>
             )}
             {isAuthenticated && (

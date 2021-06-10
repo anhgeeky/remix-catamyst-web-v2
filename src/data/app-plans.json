@@ -17,7 +17,7 @@
     "buttons": {
       "isNotAuthenticated": {
         "href": "/signup",
-        "text": "Sign up for Basic"
+        "text": "Sign up"
       },
       "isAuthenticated": {
         "href": "/dashboard/overview",
@@ -44,7 +44,7 @@
     "buttons": {
       "isNotAuthenticated": {
         "href": "/signup?plan=pro",
-        "text": "Sign up for Pro"
+        "text": "Sign up"
       },
       "isAuthenticated": {
         "href": "/settings/pro",
@@ -69,7 +69,7 @@
     "buttons": {
       "isNotAuthenticated": {
         "href": "/signup?plan=super",
-        "text": "Sign up for Super"
+        "text": "Sign up"
       },
       "isAuthenticated": {
         "href": "/settings/super",
