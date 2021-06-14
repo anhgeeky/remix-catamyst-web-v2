@@ -1,8 +1,8 @@
 import { Heading, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
-import { HelpFaqs } from '@components/help'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
+import { HelpFaqs } from '@/components/help'
 
 export default function helpPage() {
   return (

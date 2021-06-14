@@ -1,1 +1,1 @@
-export { AboutHero } from '@components/about/hero'
+export { AboutHero } from '@/components/about/hero'

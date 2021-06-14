@@ -10,8 +10,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon } from '@components'
-import { OrganizationAvatar } from '@components/organizations'
+import { Icon } from '@/components'
+import { OrganizationAvatar } from '@/components/organizations'
 
 /**
  * Because there are a lot of organizations,

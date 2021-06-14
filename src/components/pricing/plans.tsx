@@ -10,9 +10,9 @@ import {
 } from '@chakra-ui/react'
 import { FaCheckCircle } from 'react-icons/fa'
 
-import { Card, LinkButton, Icon } from '@components'
-import { useAuth } from '@hooks'
-import { dataPlans } from '@data'
+import { Card, LinkButton, Icon } from '@/components'
+import { useAuth } from '@/hooks'
+import { dataPlans } from '@/data'
 
 export function PricingPlans() {
   const { isAuthenticated } = useAuth()

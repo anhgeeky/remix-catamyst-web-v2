@@ -8,7 +8,7 @@ import {
   FaVideo as VideoIcon,
 } from 'react-icons/fa'
 
-import { Icon } from '@components'
+import { Icon } from '@/components'
 
 export function ReferenceIcon({ name, size = 4 }) {
   if (name === 'Book') {

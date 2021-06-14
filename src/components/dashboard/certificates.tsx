@@ -1,9 +1,9 @@
 import NextHead from 'next/head'
 import { Heading, Stack, Text } from '@chakra-ui/react'
 
-import { Card, Content, HeadingStack } from '@components'
-import { DashboardHero } from '@components/dashboard'
-import { getName } from '@utils'
+import { Card, Content, HeadingStack } from '@/components'
+import { DashboardHero } from '@/components/dashboard'
+import { getName } from '@/utils'
 
 export function DashboardCertificates({ state }) {
   return (

@@ -1,14 +1,14 @@
 import dynamic from 'next/dynamic'
 import { Box } from '@chakra-ui/react'
 
-const DynamicEditorSlate = dynamic(() => import('@components/editor/slate'), {
+const DynamicEditorSlate = dynamic(() => import('@/components/editor/slate'), {
   ssr: false,
 })
 
 import {
   serializeSlateToHTML,
   deserializeHTMLtoSlate,
-} from '@components/editor/serializer'
+} from '@/components/editor/serializer'
 
 /**
  * Only to load Slate without SSR.

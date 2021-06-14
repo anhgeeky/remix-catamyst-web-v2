@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { TrackEditor } from '@components/tracks'
+import { Layout } from '@/layouts'
+import { TrackEditor } from '@/components/tracks'
 
 export default function trackIdPage() {
   const router = useRouter()

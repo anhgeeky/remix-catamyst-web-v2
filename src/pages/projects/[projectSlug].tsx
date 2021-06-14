@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { ProjectDetails } from '@components/projects'
+import { Layout } from '@/layouts'
+import { ProjectDetails } from '@/components/projects'
 
 export default function projectSlugPage() {
   const router = useRouter()

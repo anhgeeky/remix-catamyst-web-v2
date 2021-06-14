@@ -10,10 +10,10 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-import { LearningTag, AlertSoon } from '@components'
-import { LearnHero } from '@components/learn'
-import { Block } from '@components/blocks'
-import { useLessonBySlug } from '@hooks'
+import { LearningTag, AlertSoon } from '@/components'
+import { LearnHero } from '@/components/learn'
+import { Block } from '@/components/blocks'
+import { useLessonBySlug } from '@/hooks'
 
 export function LessonSingle({ lessonSlug }) {
   const { data: lesson, isLoading, isError } = useLessonBySlug(lessonSlug)

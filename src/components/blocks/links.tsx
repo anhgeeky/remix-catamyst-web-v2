@@ -9,8 +9,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { ReferenceIcon } from '@components'
-import { checkUrl } from '@utils'
+import { ReferenceIcon } from '@/components'
+import { checkUrl } from '@/utils'
 
 /**
  * Block only can be used for actual content

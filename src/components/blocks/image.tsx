@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { v4 as uuidv4 } from 'uuid'
 
-import { isUrl } from '@utils'
+import { isUrl } from '@/utils'
 
 /**
  * Block that can be used both for actual content and CMS

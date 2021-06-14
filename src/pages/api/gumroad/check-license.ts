@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { lowerCase } from 'lower-case'
 
-import { verifyLicenseKey } from '@lib/api'
+import { verifyLicenseKey } from '@/lib/api'
 
 export default async function checkLicense(
   req: NextApiRequest,

@@ -1,6 +1,6 @@
-import { Layout } from '@layouts'
-import { CMSAll } from '@components/cms'
-import { useRedirectHome } from '@hooks'
+import { Layout } from '@/layouts'
+import { CMSAll } from '@/components/cms'
+import { useRedirectHome } from '@/hooks'
 
 export default function cmsSlugPage() {
   const state = useRedirectHome()

@@ -8,9 +8,9 @@ import {
   Content,
   HeadingStack,
   LinkButton,
-} from '@components'
-import { DashboardHero } from '@components/dashboard'
-import { getName } from '@utils'
+} from '@/components'
+import { DashboardHero } from '@/components/dashboard'
+import { getName } from '@/utils'
 
 export function DashboardJobs({ state }) {
   return (

@@ -1,8 +1,8 @@
 import { Text, Heading } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Content, Hero } from '@components'
-import { DiscoverFeatured } from '@components/discover'
+import { Layout } from '@/layouts'
+import { Content, Hero } from '@/components'
+import { DiscoverFeatured } from '@/components/discover'
 
 export default function discoverPage() {
   return (

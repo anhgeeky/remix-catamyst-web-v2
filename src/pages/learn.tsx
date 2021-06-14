@@ -1,7 +1,7 @@
 import { Heading, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content, CollectionTracks } from '@components'
+import { Layout } from '@/layouts'
+import { Hero, Content, CollectionTracks } from '@/components'
 
 export default function learnPage() {
   return (

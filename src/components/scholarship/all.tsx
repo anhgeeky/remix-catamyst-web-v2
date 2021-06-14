@@ -1,4 +1,4 @@
-import { ScholarshipHaidar, ScholarshipQopnet } from '@components/scholarship'
+import { ScholarshipHaidar, ScholarshipQopnet } from '@/components/scholarship'
 
 export function ScholarshipAll({ scholarshipSlug }) {
   return (

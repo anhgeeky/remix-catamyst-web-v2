@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { dataTracks, dataTopics } from '@data'
+import { dataTracks, dataTopics } from '@/data'
 
 export default async function trackId(
   req: NextApiRequest,

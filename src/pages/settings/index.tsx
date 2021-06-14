@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { useAuth } from '@hooks'
+import { Layout } from '@/layouts'
+import { useAuth } from '@/hooks'
 
 export default function settingsPage() {
   const router = useRouter()

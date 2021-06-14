@@ -1,7 +1,7 @@
 import { Heading, Stack, Flex } from '@chakra-ui/react'
 
-import { NextImage } from '@components'
-import { HomeVillainCTA } from '@components/home'
+import { NextImage } from '@/components'
+import { HomeVillainCTA } from '@/components/home'
 
 export function HomeVillain() {
   return (

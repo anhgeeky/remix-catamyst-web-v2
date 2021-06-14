@@ -1,7 +1,7 @@
 import { Stack, Heading, VStack, Button } from '@chakra-ui/react'
 
-import { Icon } from '@components'
-import { useAuth } from '@hooks'
+import { Icon } from '@/components'
+import { useAuth } from '@/hooks'
 
 export function NewQuickPanel() {
   const { router, isAuthenticated } = useAuth()

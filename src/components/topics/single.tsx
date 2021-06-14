@@ -1,10 +1,10 @@
 import NextHead from 'next/head'
 import { Heading, HStack, Stack, Text, Spinner, VStack } from '@chakra-ui/react'
 
-import { Icon, ContentWithSidebar } from '@components'
-import { LearnHero } from '@components/learn'
-import { TopicIconTitleHeadingOne } from '@components/topics'
-import { useTopicBySlug } from '@hooks'
+import { Icon, ContentWithSidebar } from '@/components'
+import { LearnHero } from '@/components/learn'
+import { TopicIconTitleHeadingOne } from '@/components/topics'
+import { useTopicBySlug } from '@/hooks'
 
 export function TopicSingle({ topicSlug }) {
   const { data: topic, isLoading, isError } = useTopicBySlug(topicSlug)

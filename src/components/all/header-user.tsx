@@ -19,11 +19,11 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 
-import { signOut } from '@features/auth/actions'
-import { Icon, LinkButton } from '@components'
-import { useProfile } from '@hooks'
+import { signOut } from '@/features/auth/actions'
+import { Icon, LinkButton } from '@/components'
+import { useProfile } from '@/hooks'
 import { Profile } from '@types'
-import { supabase } from '@lib'
+import { supabase } from '@/lib'
 
 type State = { profile: Profile }
 type Action = { type?: string; payload: any }

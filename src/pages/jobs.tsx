@@ -1,8 +1,8 @@
 import { Heading, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
-import { JobsBoards } from '@components/jobs'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
+import { JobsBoards } from '@/components/jobs'
 
 export default function jobsPage() {
   return (

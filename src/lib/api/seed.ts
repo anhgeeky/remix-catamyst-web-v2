@@ -1,5 +1,5 @@
-import { supabaseAdmin } from '@lib/api'
-import { dataTracks, dataTopics, dataLessons } from '@data'
+import { supabaseAdmin } from '@/lib/api'
+import { dataTracks, dataTopics, dataLessons } from '@/data'
 
 export const seedTracks = async () => {
   await supabaseAdmin.from('tracks').delete()

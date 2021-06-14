@@ -1,13 +1,13 @@
 import { VStack } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
+import { Layout } from '@/layouts'
 import {
   HomeHero,
   HomeScreens,
   HomeFeatures,
   HomeReviews,
   HomeVillain,
-} from '@components/home'
+} from '@/components/home'
 
 export const HomePage = (): JSX.Element => {
   return (

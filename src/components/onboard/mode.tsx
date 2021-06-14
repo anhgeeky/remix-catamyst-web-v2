@@ -14,9 +14,9 @@ import {
   useRadioGroup,
 } from '@chakra-ui/react'
 
-import { Icon, LinkButton } from '@components'
-import { OnboardContainer } from '@components/onboard'
-import { supabase } from '@lib'
+import { Icon, LinkButton } from '@/components'
+import { OnboardContainer } from '@/components/onboard'
+import { supabase } from '@/lib'
 
 export function OnboardMode({ state }) {
   const [loading, setLoading] = useState<boolean>(false)

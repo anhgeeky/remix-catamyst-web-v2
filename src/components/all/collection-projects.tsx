@@ -11,8 +11,8 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react'
 
-import { Card } from '@components'
-import { trimUrl } from '@utils'
+import { Card } from '@/components'
+import { trimUrl } from '@/utils'
 
 /**
  * Because there are a lot of projects,

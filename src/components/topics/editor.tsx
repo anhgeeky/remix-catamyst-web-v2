@@ -14,14 +14,14 @@ import {
 import { Fragment, useState, useEffect } from 'react'
 import { useForm, useFieldArray } from 'react-hook-form'
 
-import { Icon, HeaderEditor, Hero, useToast } from '@components'
-import { CMSViewJSON } from '@components/cms'
-import { CMSTopicSection } from '@components/cms/sections'
+import { Icon, HeaderEditor, Hero, useToast } from '@/components'
+import { CMSViewJSON } from '@/components/cms'
+import { CMSTopicSection } from '@/components/cms/sections'
 
-import { slugify } from '@utils'
-import { useRedirectHome, useTopicById, mutateSWR } from '@hooks'
-import { supabase } from '@lib'
-// import { updateTopic } from '@mutations'
+import { slugify } from '@/utils'
+import { useRedirectHome, useTopicById, mutateSWR } from '@/hooks'
+import { supabase } from '@/lib'
+// import { updateTopic } from '@/mutations'
 
 /**-----------------------------------------------------------------------------
  * CMS Topic editor, with UI and logic
@@ -71,7 +71,7 @@ export function TopicEditor({ topicId }) {
   }
 
   /**
-   * @mutations/topic
+   * @/mutations/topic
    * PATCH /api/topics/id/{topicId}
    */
   const handleSaveChanges = async (body) => {
@@ -103,7 +103,7 @@ export function TopicEditor({ topicId }) {
   }
 
   /**
-   * @mutations/topic
+   * @/mutations/topic
    * DELETE /api/topics/id/{topicId}
    */
   const handleDelete = async () => {
@@ -123,7 +123,7 @@ export function TopicEditor({ topicId }) {
   }
 
   /**
-   * @mutations/topic
+   * @/mutations/topic
    * PATCH /api/topics/id/{topicId}
    */
   const handleTogglePublish = async () => {

@@ -2,8 +2,8 @@ import NextHead from 'next/head'
 import { Box, useColorModeValue } from '@chakra-ui/react'
 import { SkipNavContent } from '@chakra-ui/skip-nav'
 
-import { Header, Footer } from '@components'
-import { dataSite } from '@data'
+import { Header, Footer } from '@/components'
+import { dataSite } from '@/data'
 
 /**
  * Re-render everytime pages are changed.

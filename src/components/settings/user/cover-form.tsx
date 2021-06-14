@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Card, Icon } from '@components'
+import { Card, Icon } from '@/components'
 
 export function UserCoverForm({ state }) {
   const { profile } = state

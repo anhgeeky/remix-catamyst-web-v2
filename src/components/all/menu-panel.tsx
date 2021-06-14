@@ -14,9 +14,9 @@ import {
 import { RemoveScroll } from 'react-remove-scroll'
 import { FaTimes } from 'react-icons/fa'
 
-import { Icon, SocialLinks } from '@components'
-import { useAuth, useRouteChanged } from '@hooks'
-import { dataMenuLinks } from '@data'
+import { Icon, SocialLinks } from '@/components'
+import { useAuth, useRouteChanged } from '@/hooks'
+import { dataMenuLinks } from '@/data'
 
 /**
  * menu-link needs CSS to retain accessibility on focus.

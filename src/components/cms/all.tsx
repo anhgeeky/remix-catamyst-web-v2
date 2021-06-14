@@ -1,6 +1,6 @@
 import { Heading } from '@chakra-ui/react'
 
-import { HeaderTabs } from '@components'
+import { HeaderTabs } from '@/components'
 import {
   CMSHero,
   CMSOverview,
@@ -8,8 +8,8 @@ import {
   CMSTracks,
   CMSTopics,
   CMSLessons,
-} from '@components/cms'
-import { dataCMSLinks } from '@data'
+} from '@/components/cms'
+import { dataCMSLinks } from '@/data'
 
 /**
  * Only these CMS data needs access token:

@@ -11,10 +11,10 @@ import {
   SimpleGrid,
 } from '@chakra-ui/react'
 
-import { Content, LinkButton, Card, Icon } from '@components'
-import { CMSHero } from '@components/cms'
-import { useSWR, fetcherWithTokenSWR } from '@hooks'
-import { getDayNamePeriod } from '@utils'
+import { Content, LinkButton, Card, Icon } from '@/components'
+import { CMSHero } from '@/components/cms'
+import { useSWR, fetcherWithTokenSWR } from '@/hooks'
+import { getDayNamePeriod } from '@/utils'
 
 export function CMSOverview({ state }) {
   const { data, error } = useSWR(

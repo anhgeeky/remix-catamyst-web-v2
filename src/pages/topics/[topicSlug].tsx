@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { TopicSingle } from '@components/topics'
+import { Layout } from '@/layouts'
+import { TopicSingle } from '@/components/topics'
 
 /**
  * Topic content page with sections that contain topics

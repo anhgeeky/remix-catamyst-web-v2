@@ -1,8 +1,8 @@
 import { Heading } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
-import { AuthBusinessForm } from '@components/auth'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
+import { AuthBusinessForm } from '@/components/auth'
 
 export default function businessFormPage() {
   return (

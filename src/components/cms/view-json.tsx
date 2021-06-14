@@ -5,7 +5,7 @@ import {
   solarizedDark as darkStyle,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
-import { Content, HeadingStack } from '@components'
+import { Content, HeadingStack } from '@/components'
 
 /**
  * There is only ViewJSON.

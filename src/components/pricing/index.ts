@@ -1,1 +1,1 @@
-export { PricingPlans } from '@components/pricing/plans'
+export { PricingPlans } from '@/components/pricing/plans'

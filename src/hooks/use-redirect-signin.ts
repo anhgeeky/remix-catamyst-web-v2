@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { useProfile } from '@hooks'
+import { useProfile } from '@/hooks'
 
 /**
  * Using useProfile that request to get profile from API.

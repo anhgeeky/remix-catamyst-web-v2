@@ -5,7 +5,7 @@ import {
   BlockLinks,
   BlockQuote,
   BlockTexts,
-} from '@components/blocks'
+} from '@/components/blocks'
 
 /**
  * Regular block to be displayed on readable lesson

@@ -9,8 +9,8 @@ import {
   Input,
 } from '@chakra-ui/react'
 
-import { Icon, LinkButton } from '@components'
-import { RichTextEditor } from '@components/editor'
+import { Icon, LinkButton } from '@/components'
+import { RichTextEditor } from '@/components/editor'
 
 export function PostNew() {
   const [htmlString, setHtmlString] = useState(

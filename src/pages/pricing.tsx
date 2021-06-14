@@ -1,8 +1,8 @@
 import { Heading, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
-import { PricingPlans } from '@components/pricing'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
+import { PricingPlans } from '@/components/pricing'
 
 export default function pricingPage() {
   return (

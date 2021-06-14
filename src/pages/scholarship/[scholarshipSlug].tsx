@@ -1,5 +1,5 @@
-import { Layout } from '@layouts'
-import { ScholarshipAll } from '@components/scholarship'
+import { Layout } from '@/layouts'
+import { ScholarshipAll } from '@/components/scholarship'
 import { useRouter } from 'next/router'
 
 export default function scholarshipSlugPage() {

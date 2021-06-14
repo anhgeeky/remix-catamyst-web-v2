@@ -1,1 +1,1 @@
-export * from '@features/navigation/types'
+export * from '@/features/navigation/types'

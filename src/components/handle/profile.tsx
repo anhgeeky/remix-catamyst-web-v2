@@ -12,10 +12,10 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon, Content, LinkButton } from '@components'
-import { UserProfile } from '@components/users'
-import { OrganizationProfile } from '@components/organizations'
-import { useProfileHandleSWR } from '@hooks'
+import { Icon, Content, LinkButton } from '@/components'
+import { UserProfile } from '@/components/users'
+import { OrganizationProfile } from '@/components/organizations'
+import { useProfileHandleSWR } from '@/hooks'
 
 /**
  * Fetch sequentially:

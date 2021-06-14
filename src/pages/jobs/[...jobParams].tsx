@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { JobDetails } from '@components/jobs'
+import { Layout } from '@/layouts'
+import { JobDetails } from '@/components/jobs'
 
 export default function jobIdPage() {
   const router = useRouter()

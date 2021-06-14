@@ -20,10 +20,10 @@ import {
   Icon,
   ContentWithSidebar,
   CollectionTopics,
-} from '@components'
-import { LearnHero } from '@components/learn'
-import { useAuth, useToast } from '@hooks'
-import { dataTracks, dataTopics } from '@data'
+} from '@/components'
+import { LearnHero } from '@/components/learn'
+import { useAuth, useToast } from '@/hooks'
+import { dataTracks, dataTopics } from '@/data'
 
 export function TrackDetails({ trackSlug }) {
   const [topics, setTopics] = useState([])

@@ -21,12 +21,18 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
-import { OrganizationAvatar } from '@components/organizations'
-import { transformOptions } from '@components/blocks'
-import { trimUrl } from '@utils'
-import { useAuth } from '@hooks'
-import { dataProjects } from '@data'
+import {
+  Country,
+  Icon,
+  SocialLinks,
+  HeadingStack,
+  useToast,
+} from '@/components'
+import { OrganizationAvatar } from '@/components/organizations'
+import { transformOptions } from '@/components/blocks'
+import { trimUrl } from '@/utils'
+import { useAuth } from '@/hooks'
+import { dataProjects } from '@/data'
 
 /**
  * Organization profile.

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { seedLessons } from '@lib/api'
+import { seedLessons } from '@/lib/api'
 
 /**
  * Seed lessons from JSON into database.

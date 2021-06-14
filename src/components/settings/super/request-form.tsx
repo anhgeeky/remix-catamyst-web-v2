@@ -1,7 +1,7 @@
 import { ButtonGroup, Heading, Stack, Text } from '@chakra-ui/react'
 
-import { Card, Icon, LinkButton } from '@components'
-import { dataSuper } from '@data'
+import { Card, Icon, LinkButton } from '@/components'
+import { dataSuper } from '@/data'
 
 export function SuperPlanRequestForm() {
   return (

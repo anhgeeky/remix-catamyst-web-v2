@@ -11,9 +11,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon, CardArea } from '@components'
-import { BlockImage } from '@components/blocks'
-import { CMSBlockModifierButtons } from '@components/cms/blocks'
+import { Icon, CardArea } from '@/components'
+import { BlockImage } from '@/components/blocks'
+import { CMSBlockModifierButtons } from '@/components/cms/blocks'
 
 /**
  * Block only can be used for CMS.

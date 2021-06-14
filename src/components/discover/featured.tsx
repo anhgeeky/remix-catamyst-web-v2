@@ -6,8 +6,8 @@ import {
   CollectionProjects,
   CollectionUsers,
   CollectionOrganizations,
-} from '@components'
-import { dataProjects, dataUsers, dataOrganizations } from '@data'
+} from '@/components'
+import { dataProjects, dataUsers, dataOrganizations } from '@/data'
 
 export function DiscoverFeatured() {
   return (

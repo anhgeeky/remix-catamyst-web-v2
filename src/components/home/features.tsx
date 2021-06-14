@@ -9,9 +9,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { NextImage, LinkButton, Icon } from '@components'
-import { useAuth } from '@hooks'
-import { dataFeatures } from '@data'
+import { NextImage, LinkButton, Icon } from '@/components'
+import { useAuth } from '@/hooks'
+import { dataFeatures } from '@/data'
 
 export function HomeFeatures() {
   const { isAuthenticated } = useAuth()

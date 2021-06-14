@@ -1,8 +1,8 @@
 import Flag from 'react-flagkit'
 import { HStack } from '@chakra-ui/react'
 
-import { dataCountries } from '@data'
-import { Icon } from '@components'
+import { dataCountries } from '@/data'
+import { Icon } from '@/components'
 
 export function Country({ code }) {
   const country = dataCountries.find((country) => country.code === code)

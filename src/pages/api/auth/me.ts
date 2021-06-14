@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabase } from '@lib'
-import { getUser } from '@lib/api'
+import { supabase } from '@/lib'
+import { getUser } from '@/lib/api'
 
 /**
  * /api/auth/me

@@ -15,11 +15,11 @@ import {
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { Card, Icon } from '@components'
-import { supabase } from '@lib'
-import { HandleSchema } from '@utils/yup'
-import { useToast } from '@hooks'
-import { isDev } from '@utils'
+import { Card, Icon } from '@/components'
+import { supabase } from '@/lib'
+import { HandleSchema } from '@/utils/yup'
+import { useToast } from '@/hooks'
+import { isDev } from '@/utils'
 
 type Inputs = { handle: string }
 

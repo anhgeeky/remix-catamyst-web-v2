@@ -16,13 +16,13 @@ import {
 import { Fragment, useState, useEffect } from 'react'
 import { useForm, useFieldArray } from 'react-hook-form'
 
-import { Icon, LearningTag, HeaderEditor, Hero, useToast } from '@components'
-import { CMSViewJSON } from '@components/cms'
-import { CMSBlock, CMSBlockAdderButtons } from '@components/cms/blocks'
-import { slugify, initBlock } from '@utils'
-import { useRedirectHome, useLessonById, mutateSWR } from '@hooks'
-import { supabase } from '@lib'
-// import { updateLesson } from '@mutations'
+import { Icon, LearningTag, HeaderEditor, Hero, useToast } from '@/components'
+import { CMSViewJSON } from '@/components/cms'
+import { CMSBlock, CMSBlockAdderButtons } from '@/components/cms/blocks'
+import { slugify, initBlock } from '@/utils'
+import { useRedirectHome, useLessonById, mutateSWR } from '@/hooks'
+import { supabase } from '@/lib'
+// import { updateLesson } from '@/mutations'
 
 /**-----------------------------------------------------------------------------
  * CMS Lesson editor, with UI and logic
@@ -72,7 +72,7 @@ export function LessonEditor({ lessonId }) {
   }
 
   /**
-   * @mutations/lesson
+   * @/mutations/lesson
    * PATCH /api/lessons/id/{lessonId}
    */
   const handleSaveChanges = async (body) => {
@@ -104,7 +104,7 @@ export function LessonEditor({ lessonId }) {
   }
 
   /**
-   * @mutations/lesson
+   * @/mutations/lesson
    * DELETE /api/lessons/id/{lessonId}
    */
   const handleDelete = async () => {
@@ -124,7 +124,7 @@ export function LessonEditor({ lessonId }) {
   }
 
   /**
-   * @mutations/lesson
+   * @/mutations/lesson
    * PATCH /api/lessons/id/{lessonId}
    */
   const handleTogglePublish = async () => {

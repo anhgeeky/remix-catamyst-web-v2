@@ -15,8 +15,8 @@ import {
   Divider,
   UnorderedList,
   OrderedList,
-} from '@components'
-import { dataSite } from '@data'
+} from '@/components'
+import { dataSite } from '@/data'
 
 const mdxComponents = {
   img: Image,

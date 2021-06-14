@@ -2,8 +2,8 @@ import NextLink from 'next/link'
 import { Box, Stack, Link, HStack, useColorModeValue } from '@chakra-ui/react'
 import slugify from 'slugify'
 
-import { AlertSoon, LearningTag } from '@components'
-import { TopicIconTitleHeadingThree } from '@components/topics'
+import { AlertSoon, LearningTag } from '@/components'
+import { TopicIconTitleHeadingThree } from '@/components/topics'
 
 export function CollectionTopics({ trackSlug, topics }) {
   if (!topics || topics?.length === 0) {

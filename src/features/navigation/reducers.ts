@@ -6,7 +6,7 @@ import {
   // NAVIGATE_JOBS,
   // NAVIGATE_MENTORS,
   // NAVIGATE_CERTIFICATES,
-} from '@features/navigation/types'
+} from '@/features/navigation/types'
 
 const initialState = {}
 

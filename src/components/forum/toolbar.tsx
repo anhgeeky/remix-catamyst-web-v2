@@ -8,7 +8,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react'
 
-import { Icon } from '@components'
+import { Icon } from '@/components'
 
 export function ForumToolbar({ state, actions }) {
   return (

@@ -1,9 +1,9 @@
 import { Heading, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
-import { AuthSignUp } from '@components/auth'
-import { useRedirectOnboard } from '@hooks'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
+import { AuthSignUp } from '@/components/auth'
+import { useRedirectOnboard } from '@/hooks'
 
 export default function signUpPage() {
   const { auth, isAuthenticated } = useRedirectOnboard()

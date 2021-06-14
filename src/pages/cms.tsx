@@ -1,5 +1,5 @@
-import { Layout } from '@layouts'
-import { useRedirectHome } from '@hooks'
+import { Layout } from '@/layouts'
+import { useRedirectHome } from '@/hooks'
 
 /**
  * The CMS has different pattern with regular dashboard.

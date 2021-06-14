@@ -2,8 +2,8 @@ import NextHead from 'next/head'
 import { useRouter } from 'next/router'
 import { Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { LessonDetails } from '@components/lessons'
+import { Layout } from '@/layouts'
+import { LessonDetails } from '@/components/lessons'
 
 /**
  * The full content page of each lesson

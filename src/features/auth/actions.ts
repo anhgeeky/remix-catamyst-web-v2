@@ -13,9 +13,9 @@ import {
   SIGN_OUT_BEGIN,
   SIGN_OUT_ERROR,
   SIGN_OUT_SUCCESS,
-} from '@features/auth/types'
-import { supabase } from '@lib'
-import { getNickname } from '@utils'
+} from '@/features/auth/types'
+import { supabase } from '@/lib'
+import { getNickname } from '@/utils'
 
 const toast = createStandaloneToast()
 const toastOptions = {

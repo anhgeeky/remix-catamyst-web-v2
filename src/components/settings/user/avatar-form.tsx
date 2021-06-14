@@ -15,9 +15,9 @@ import {
 // import { useForm } from 'react-hook-form'
 // import { useDispatch } from 'react-redux'
 
-import { Card, Icon } from '@components'
-import { useToast } from '@hooks'
-import { supabase } from '@lib'
+import { Card, Icon } from '@/components'
+import { useToast } from '@/hooks'
+import { supabase } from '@/lib'
 
 // type Inputs = { avatar_url?: string }
 

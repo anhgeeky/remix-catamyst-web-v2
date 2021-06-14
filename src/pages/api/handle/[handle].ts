@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabase } from '@lib'
+import { supabase } from '@/lib'
 
-import { dataRestrictedHandles } from '@data'
-import { dataUsers, dataOrganizations } from '@data'
+import { dataRestrictedHandles } from '@/data'
+import { dataUsers, dataOrganizations } from '@/data'
 
 export type ResponseProfile = {
   message: string

@@ -5,14 +5,14 @@ import { persistStore, persistReducer } from 'redux-persist'
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2'
 // import { createLogger } from 'redux-logger'
 
-import storage from '@features/reduxPersist' // custom localStorage for web
+import storage from '@/features/reduxPersist' // custom localStorage for web
 
 /**
  * Import the combined reducer
  */
 
-// import createRootReducer from '@features/reducers'
-import rootReducer from '@features/reducer'
+// import createRootReducer from '@/features/reducers'
+import rootReducer from '@/features/reducer'
 
 /**
  * Setup array of Redux middlewares

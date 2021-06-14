@@ -12,11 +12,11 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Card, Country, SocialLinks, Icon } from '@components'
-import { UserAvatar } from '@components/users'
-import { transformOptions } from '@components/blocks'
-import { trimUrl } from '@utils'
-import { dataReviewsFeatured } from '@data'
+import { Card, Country, SocialLinks, Icon } from '@/components'
+import { UserAvatar } from '@/components/users'
+import { transformOptions } from '@/components/blocks'
+import { trimUrl } from '@/utils'
+import { dataReviewsFeatured } from '@/data'
 
 export function HomeReviews() {
   return (

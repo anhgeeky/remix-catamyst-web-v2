@@ -18,8 +18,8 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useDispatch } from 'react-redux'
 
-import { SignInSchema } from '@utils/yup'
-import { signIn } from '@features/auth/actions'
+import { SignInSchema } from '@/utils/yup'
+import { signIn } from '@/features/auth/actions'
 
 export function AuthSignIn({ auth }) {
   const dispatch = useDispatch()

@@ -16,10 +16,10 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-import { CardArea, Icon, useToast } from '@components'
-import { RichTextEditor } from '@components/editor'
-import { BlockTextsPreview } from '@components/blocks'
-import { CMSBlockModifierButtons } from '@components/cms/blocks'
+import { CardArea, Icon, useToast } from '@/components'
+import { RichTextEditor } from '@/components/editor'
+import { BlockTextsPreview } from '@/components/blocks'
+import { CMSBlockModifierButtons } from '@/components/cms/blocks'
 
 export function CMSBlockTexts(props) {
   const {
@@ -74,7 +74,7 @@ export function CMSBlockTexts(props) {
 
 /**
  * The CMS Texts that can handle save.
- * Similar with @components/editor/experiment
+ * Similar with @/components/editor/experiment
  */
 function CMSBlockTextsModal({
   block,

@@ -12,8 +12,8 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-import { Icon, AlertSoon } from '@components'
-import { dataTracks } from '@data'
+import { Icon, AlertSoon } from '@/components'
+import { dataTracks } from '@/data'
 
 export function CollectionTracks({ tracks = dataTracks }) {
   return (

@@ -11,8 +11,8 @@ import {
   VisuallyHidden,
 } from '@chakra-ui/react'
 
-import { Icon } from '@components'
-import { useToast, useProfile } from '@hooks'
+import { Icon } from '@/components'
+import { useToast, useProfile } from '@/hooks'
 import React from 'react'
 
 export function JobsToolbar() {

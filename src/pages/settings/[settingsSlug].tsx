@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { SettingsAll } from '@components/settings'
-import { useRedirectSignIn } from '@hooks'
+import { Layout } from '@/layouts'
+import { SettingsAll } from '@/components/settings'
+import { useRedirectSignIn } from '@/hooks'
 
 export default function settingsSlugPage() {
   const router = useRouter()

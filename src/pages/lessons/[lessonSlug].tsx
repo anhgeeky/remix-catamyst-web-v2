@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { LessonSingle } from '@components/lessons'
+import { Layout } from '@/layouts'
+import { LessonSingle } from '@/components/lessons'
 
 /**
  * The full content page of each lesson

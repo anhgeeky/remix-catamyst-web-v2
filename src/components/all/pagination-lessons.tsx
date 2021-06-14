@@ -16,7 +16,7 @@ import {
   ArrowForwardIcon as NextIcon,
 } from '@chakra-ui/icons'
 
-import { TopicIconTitleSpan } from '@components/topics'
+import { TopicIconTitleSpan } from '@/components/topics'
 
 export function PaginationLessons({
   mode,

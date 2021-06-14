@@ -14,10 +14,10 @@ import {
   LearningTag,
   PaginationLessons,
   AlertSoon,
-} from '@components'
-import { LearnHero } from '@components/learn'
-import { Block } from '@components/blocks'
-import { usePaginationLessons } from '@hooks'
+} from '@/components'
+import { LearnHero } from '@/components/learn'
+import { Block } from '@/components/blocks'
+import { usePaginationLessons } from '@/hooks'
 
 export function LessonDetails({ trackSlug, topicSlug, lessonSlug }) {
   const { track, topic, lesson, prev, next } = usePaginationLessons({

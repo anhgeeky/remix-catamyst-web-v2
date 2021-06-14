@@ -7,10 +7,10 @@ import {
   ContentWithSidebar,
   CollectionLessons,
   PaginationTopics,
-} from '@components'
-import { LearnHero } from '@components/learn'
-import { TopicIconTitleHeadingOne } from '@components/topics'
-import { usePaginationTopics } from '@hooks'
+} from '@/components'
+import { LearnHero } from '@/components/learn'
+import { TopicIconTitleHeadingOne } from '@/components/topics'
+import { usePaginationTopics } from '@/hooks'
 
 export function TopicDetails({ trackSlug, topicSlug }) {
   const { track, topic, prev, next } = usePaginationTopics({

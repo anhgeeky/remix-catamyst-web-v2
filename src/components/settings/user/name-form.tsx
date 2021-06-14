@@ -12,10 +12,10 @@ import {
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { Card, Icon } from '@components'
-import { NameNickSchema } from '@utils/yup'
-import { useToast } from '@hooks'
-import { supabase } from '@lib'
+import { Card, Icon } from '@/components'
+import { NameNickSchema } from '@/utils/yup'
+import { useToast } from '@/hooks'
+import { supabase } from '@/lib'
 
 type Inputs = { name?: string; nickname?: string }
 

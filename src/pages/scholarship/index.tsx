@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
+import { Layout } from '@/layouts'
 
 export default function scholarshipPage() {
   const router = useRouter()

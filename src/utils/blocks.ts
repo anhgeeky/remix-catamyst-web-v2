@@ -1,4 +1,4 @@
-import dataBlocks from '@data/blocks'
+import dataBlocks from '@/data/blocks'
 
 export function initBlock(type) {
   switch (type) {

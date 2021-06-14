@@ -20,10 +20,10 @@ import {
   ListItemNumber,
   List,
   ListItemIcon,
-} from '@components'
-import { ScholarshipHero } from '@components/scholarship'
-import { FaqAccordionSimple } from '@components/help'
-import { dataFAQScholarshipQopnet } from '@data'
+} from '@/components'
+import { ScholarshipHero } from '@/components/scholarship'
+import { FaqAccordionSimple } from '@/components/help'
+import { dataFAQScholarshipQopnet } from '@/data'
 
 export function ScholarshipQopnet() {
   const [isTooSmall] = useMediaQuery('(max-width: 920px)')

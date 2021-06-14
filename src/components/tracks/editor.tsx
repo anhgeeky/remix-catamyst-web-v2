@@ -29,11 +29,11 @@ import {
   Hero,
   Icon,
   useToast,
-} from '@components'
-import { TopicIconTitleHeadingThree } from '@components/topics'
-import { CMSViewJSON } from '@components/cms'
-import { slugify } from '@utils'
-import { useRedirectHome, useTrackById } from '@hooks'
+} from '@/components'
+import { TopicIconTitleHeadingThree } from '@/components/topics'
+import { CMSViewJSON } from '@/components/cms'
+import { slugify } from '@/utils'
+import { useRedirectHome, useTrackById } from '@/hooks'
 
 export function TrackEditor({ trackId }) {
   const globalState = useRedirectHome()

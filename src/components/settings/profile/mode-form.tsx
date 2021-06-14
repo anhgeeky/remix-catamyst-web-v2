@@ -10,10 +10,10 @@ import {
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { Card, Icon, LinkButton } from '@components'
-import { useToast } from '@hooks'
-import { supabase } from '@lib'
-import { ProfileModeSchema } from '@utils/yup'
+import { Card, Icon, LinkButton } from '@/components'
+import { useToast } from '@/hooks'
+import { supabase } from '@/lib'
+import { ProfileModeSchema } from '@/utils/yup'
 
 type Inputs = { mode: string }
 

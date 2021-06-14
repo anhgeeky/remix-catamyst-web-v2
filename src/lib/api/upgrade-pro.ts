@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabaseAdmin } from '@lib/api'
+import { supabaseAdmin } from '@/lib/api'
 
 /**
  * Toggle Pro-related fields in profile.

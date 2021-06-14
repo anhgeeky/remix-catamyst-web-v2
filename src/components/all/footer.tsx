@@ -14,10 +14,10 @@ import {
   Flex,
 } from '@chakra-ui/react'
 
-import { SocialLinks } from '@components'
-import { dataPackage, dataSitemap } from '@data'
-import { useAuth } from '@hooks'
-import { getYear, getDayNamePeriod, isDev, isProd, isVercel } from '@utils'
+import { SocialLinks } from '@/components'
+import { dataPackage, dataSitemap } from '@/data'
+import { useAuth } from '@/hooks'
+import { getYear, getDayNamePeriod, isDev, isProd, isVercel } from '@/utils'
 
 const NODE_ENV = process.env.NODE_ENV
 const API_URL = process.env.NEXT_PUBLIC_API_URL

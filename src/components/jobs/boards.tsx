@@ -24,15 +24,15 @@ import {
   Country,
   LinkButton,
   HeadingStack,
-} from '@components'
-import { JobsToolbar } from '@components/jobs'
-import { useToast, useAuth } from '@hooks'
+} from '@/components'
+import { JobsToolbar } from '@/components/jobs'
+import { useToast, useAuth } from '@/hooks'
 import {
   getCompleteDate,
   getRelativePublishedDate,
   formatNumberCurrency,
-} from '@utils'
-import { dataJobs } from '@data'
+} from '@/utils'
+import { dataJobs } from '@/data'
 
 /**
  * As this is not a Collection component, the data is retrived directly

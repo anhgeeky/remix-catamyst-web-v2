@@ -13,11 +13,11 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
-import { dataCountries } from '@data'
-import { Card, Icon } from '@components'
-import { supabase } from '@lib'
-import { checkUrl } from '@utils'
-import { useToast } from '@hooks'
+import { dataCountries } from '@/data'
+import { Card, Icon } from '@/components'
+import { supabase } from '@/lib'
+import { checkUrl } from '@/utils'
+import { useToast } from '@/hooks'
 
 type Inputs = {
   headline?: string

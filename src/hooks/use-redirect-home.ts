@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-import { useProfile } from '@hooks'
+import { useProfile } from '@/hooks'
 
 export function useRedirectHome() {
   const {

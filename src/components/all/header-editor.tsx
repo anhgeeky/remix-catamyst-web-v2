@@ -13,8 +13,8 @@ import {
   FaWindowMaximize as ResultIcon,
 } from 'react-icons/fa'
 
-import { LinkButton, Icon } from '@components'
-import { getCompleteDateTime } from '@utils'
+import { LinkButton, Icon } from '@/components'
+import { getCompleteDateTime } from '@/utils'
 
 /**
  * This editor should work with generic data.

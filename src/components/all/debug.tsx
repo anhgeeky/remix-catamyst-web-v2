@@ -1,6 +1,6 @@
 import { Box, Heading, Button, ButtonGroup, Text } from '@chakra-ui/react'
 
-import { Hero, Content } from '@components'
+import { Hero, Content } from '@/components'
 
 export function Debug({ state }) {
   const ENV = {

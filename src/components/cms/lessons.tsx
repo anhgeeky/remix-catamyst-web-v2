@@ -11,11 +11,11 @@ import {
 } from '@chakra-ui/react'
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
 
-import { Content, LearningTag, useToast } from '@components'
-import { CMSHero, CMSToolbar } from '@components/cms'
-import { mutateSWR, useLessons, fetcherSWR } from '@hooks'
-import { trimId } from '@utils'
-import { supabase } from '@lib'
+import { Content, LearningTag, useToast } from '@/components'
+import { CMSHero, CMSToolbar } from '@/components/cms'
+import { mutateSWR, useLessons, fetcherSWR } from '@/hooks'
+import { trimId } from '@/utils'
+import { supabase } from '@/lib'
 
 export function CMSLessons({ state }) {
   const toast = useToast()

@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { LessonEditor } from '@components/lessons'
+import { Layout } from '@/layouts'
+import { LessonEditor } from '@/components/lessons'
 
 export default function trackIdPage() {
   const router = useRouter()

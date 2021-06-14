@@ -15,10 +15,10 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-import { Icon } from '@components'
-import { OnboardContainer } from '@components/onboard'
-import { HandleSchema } from '@utils/yup'
-import { supabase } from '@lib'
+import { Icon } from '@/components'
+import { OnboardContainer } from '@/components/onboard'
+import { HandleSchema } from '@/utils/yup'
+import { supabase } from '@/lib'
 
 type Inputs = { handle: string }
 

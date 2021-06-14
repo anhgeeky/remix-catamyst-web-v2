@@ -11,9 +11,15 @@ import {
   Link,
 } from '@chakra-ui/react'
 
-import { Content, Card, LinkButton, Icon, MembershipButtons } from '@components'
-import { SettingsHero, ProfileModeForm } from '@components/settings'
-import { getCompleteDateTime } from '@utils'
+import {
+  Content,
+  Card,
+  LinkButton,
+  Icon,
+  MembershipButtons,
+} from '@/components'
+import { SettingsHero, ProfileModeForm } from '@/components/settings'
+import { getCompleteDateTime } from '@/utils'
 
 export function SettingsOverview({ state }) {
   return (

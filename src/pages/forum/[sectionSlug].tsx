@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { ForumSection } from '@components/forum'
+import { Layout } from '@/layouts'
+import { ForumSection } from '@/components/forum'
 
 export default function forumSectionSlug() {
   const router = useRouter()

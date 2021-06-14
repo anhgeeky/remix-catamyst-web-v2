@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabase } from '@lib'
+import { supabase } from '@/lib'
 
 /**
  * /api/topics/slug/{topicSlug}

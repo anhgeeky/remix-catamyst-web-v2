@@ -14,9 +14,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon } from '@components'
-import { ForumToolbar } from '@components/forum'
-import { dataForumSections } from '@data'
+import { Icon } from '@/components'
+import { ForumToolbar } from '@/components/forum'
+import { dataForumSections } from '@/data'
 
 export function ForumSections() {
   const sections = dataForumSections.filter((section) => section.is_published)

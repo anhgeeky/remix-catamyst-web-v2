@@ -2,7 +2,7 @@ import NextImage from 'next/image'
 import { motion } from 'framer-motion'
 import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 
-import { AlertSoon } from '@components'
+import { AlertSoon } from '@/components'
 
 export function AboutHero() {
   return (

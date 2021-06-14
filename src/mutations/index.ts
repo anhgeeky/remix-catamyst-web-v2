@@ -1,1 +1,1 @@
-export { updateLesson } from '@mutations/lesson'
+export { updateLesson } from '@/mutations/lesson'

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabaseAdmin } from '@lib/api'
+import { supabaseAdmin } from '@/lib/api'
 
 export default async function testHandler(
   req: NextApiRequest,

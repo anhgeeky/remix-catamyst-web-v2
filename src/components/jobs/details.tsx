@@ -24,16 +24,16 @@ import {
   HeadingStack,
   Country,
   LinkButton,
-} from '@components'
-import { transformOptions } from '@components/blocks'
+} from '@/components'
+import { transformOptions } from '@/components/blocks'
 import {
   JobHero,
   JobOrganizationLogo,
   JobSkillsTags,
   JobSalaryRate,
-} from '@components/jobs'
-import { useAuth, useToast } from '@hooks'
-import { dataJobs } from '@data'
+} from '@/components/jobs'
+import { useAuth, useToast } from '@/hooks'
+import { dataJobs } from '@/data'
 
 export function JobDetails({ jobParams }) {
   const toast = useToast()

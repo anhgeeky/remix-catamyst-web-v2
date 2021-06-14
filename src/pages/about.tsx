@@ -1,5 +1,5 @@
-import { Layout } from '@layouts'
-import { AboutHero } from '@components/about'
+import { Layout } from '@/layouts'
+import { AboutHero } from '@/components/about'
 
 export default function aboutPage() {
   return (

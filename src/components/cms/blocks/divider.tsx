@@ -1,7 +1,7 @@
 import { Divider } from '@chakra-ui/react'
 
-import { CardArea } from '@components/'
-import { CMSBlockModifierButtons } from '@components/cms/blocks'
+import { CardArea } from '@/components/'
+import { CMSBlockModifierButtons } from '@/components/cms/blocks'
 
 export function CMSBlockDivider(props) {
   return (

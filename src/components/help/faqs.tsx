@@ -14,9 +14,9 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { HeadingStack } from '@components'
-import { transformOptions } from '@components/blocks'
-import { dataFAQLearners, dataFAQEmployers } from '@data'
+import { HeadingStack } from '@/components'
+import { transformOptions } from '@/components/blocks'
+import { dataFAQLearners, dataFAQEmployers } from '@/data'
 
 export function HelpFaqs() {
   const [isTooSmall] = useMediaQuery('(max-width: 1000px)')

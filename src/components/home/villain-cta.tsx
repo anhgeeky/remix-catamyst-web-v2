@@ -1,7 +1,7 @@
 import { Stack } from '@chakra-ui/react'
 
-import { LinkButton, Icon } from '@components'
-import { useAuth } from '@hooks'
+import { LinkButton, Icon } from '@/components'
+import { useAuth } from '@/hooks'
 
 export function HomeVillainCTA() {
   const { isAuthenticated } = useAuth()

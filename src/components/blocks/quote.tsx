@@ -1,5 +1,5 @@
 import { chakra, Box, Text } from '@chakra-ui/react'
-import { checkUrl } from '@utils'
+import { checkUrl } from '@/utils'
 
 export function BlockQuote({ block }) {
   return (

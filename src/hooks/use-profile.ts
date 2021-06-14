@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 
-import { useUserSession, useAuthProfileSWR } from '@hooks'
-import type { RootState } from '@features/store'
+import { useUserSession, useAuthProfileSWR } from '@/hooks'
+import type { RootState } from '@/features/store'
 
 /**
  * Similar to useAuth but fetch a profile.

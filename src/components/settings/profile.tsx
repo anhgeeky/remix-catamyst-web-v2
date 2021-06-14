@@ -1,7 +1,7 @@
 import NextHead from 'next/head'
 import { Heading, HStack, Stack, Text } from '@chakra-ui/react'
 
-import { Content } from '@components'
+import { Content } from '@/components'
 import {
   SettingsHero,
   UserProfilePreview,
@@ -11,7 +11,7 @@ import {
   UserPersonalForm,
   UserWorkForm,
   UserSocialsForm,
-} from '@components/settings'
+} from '@/components/settings'
 
 export function SettingsProfile({ state }) {
   return (

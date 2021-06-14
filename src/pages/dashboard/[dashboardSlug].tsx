@@ -1,6 +1,6 @@
-import { Layout } from '@layouts'
-import { DashboardAll } from '@components/dashboard'
-import { useRedirectSignIn } from '@hooks'
+import { Layout } from '@/layouts'
+import { DashboardAll } from '@/components/dashboard'
+import { useRedirectSignIn } from '@/hooks'
 
 export default function dashboardSlugPage() {
   const state = useRedirectSignIn()

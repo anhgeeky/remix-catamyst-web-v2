@@ -1,8 +1,8 @@
 // import Error from 'next/error'
 import { Heading, Link, ButtonGroup, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content, LinkButton } from '@components'
+import { Layout } from '@/layouts'
+import { Hero, Content, LinkButton } from '@/components'
 
 export default function custom404Page() {
   return (

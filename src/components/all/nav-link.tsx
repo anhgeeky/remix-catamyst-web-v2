@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { HStack, Text, chakra } from '@chakra-ui/react'
 
-import { Icon } from '@components'
+import { Icon } from '@/components'
 
 /**
  * nav-link needs CSS to retain accessibility on focus.

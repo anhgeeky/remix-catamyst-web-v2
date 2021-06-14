@@ -24,10 +24,10 @@ import {
   Icon,
   LinkButton,
   MembershipButtons,
-} from '@components'
-import { DashboardHero } from '@components/dashboard'
-import { UserNameHandle } from '@components/users'
-import { dayNamePeriod } from '@utils'
+} from '@/components'
+import { DashboardHero } from '@/components/dashboard'
+import { UserNameHandle } from '@/components/users'
+import { dayNamePeriod } from '@/utils'
 
 /**
  * There are 9 cards

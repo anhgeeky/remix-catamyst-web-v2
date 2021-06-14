@@ -1,9 +1,9 @@
 import { Heading, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
-import { AuthSignIn } from '@components/auth'
-import { useRedirectDashboard } from '@hooks'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
+import { AuthSignIn } from '@/components/auth'
+import { useRedirectDashboard } from '@/hooks'
 
 export default function signInPage() {
   const { auth, isAuthenticated } = useRedirectDashboard()

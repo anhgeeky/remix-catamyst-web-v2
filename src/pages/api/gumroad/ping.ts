@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabase } from '@lib'
-import { supabaseAdmin, upgradePro, upgradeSuper } from '@lib/api'
-import { getPlan, isProd, isVercel } from '@utils'
+import { supabase } from '@/lib'
+import { supabaseAdmin, upgradePro, upgradeSuper } from '@/lib/api'
+import { getPlan, isProd, isVercel } from '@/utils'
 
 /**
  * Handle Gumroad Ping webhook.

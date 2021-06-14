@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { TrackDetails } from '@components/tracks'
+import { Layout } from '@/layouts'
+import { TrackDetails } from '@/components/tracks'
 
 export default function trackSlugPage() {
   const router = useRouter()

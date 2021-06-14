@@ -11,9 +11,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Content, useToast } from '@components'
-import { CMSHero, CMSToolbar } from '@components/cms'
-import { useSWR, fetcherSWR } from '@hooks'
+import { Content, useToast } from '@/components'
+import { CMSHero, CMSToolbar } from '@/components/cms'
+import { useSWR, fetcherSWR } from '@/hooks'
 
 export function CMSTracks() {
   const { data, error } = useSWR('/api/tracks', fetcherSWR)

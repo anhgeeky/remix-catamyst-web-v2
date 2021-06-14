@@ -15,8 +15,8 @@ import {
   UnorderedList,
 } from '@chakra-ui/react'
 
-import { Content, Card, Icon } from '@components'
-import { SettingsHero, GumroadButton } from '@components/settings'
+import { Content, Card, Icon } from '@/components'
+import { SettingsHero, GumroadButton } from '@/components/settings'
 
 export function SettingsPro({ state }) {
   return (

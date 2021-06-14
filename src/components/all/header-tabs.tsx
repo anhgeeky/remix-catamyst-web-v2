@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import NextLink from 'next/link'
 import { Flex, Box, Link, HStack, useColorModeValue } from '@chakra-ui/react'
 
-import { Icon } from '@components'
+import { Icon } from '@/components'
 
 export function HeaderTabs({ links }) {
   const router = useRouter()

@@ -1,1 +1,1 @@
-export { NewQuickPanel } from '@components/new/quick-panel'
+export { NewQuickPanel } from '@/components/new/quick-panel'

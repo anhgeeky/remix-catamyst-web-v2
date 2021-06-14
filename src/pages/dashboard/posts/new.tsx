@@ -1,8 +1,8 @@
 import NextHead from 'next/head'
 
-import { Layout } from '@layouts'
-import { Content } from '@components'
-import { PostNew } from '@components/posts'
+import { Layout } from '@/layouts'
+import { Content } from '@/components'
+import { PostNew } from '@/components/posts'
 
 export default function dashboardPostsNewPage() {
   return (

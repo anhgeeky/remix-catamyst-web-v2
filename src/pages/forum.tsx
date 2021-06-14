@@ -1,8 +1,8 @@
 import { Heading, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
-import { ForumSections } from '@components/forum'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
+import { ForumSections } from '@/components/forum'
 
 export default function forumPage() {
   return (

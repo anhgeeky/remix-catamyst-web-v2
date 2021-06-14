@@ -1,1 +1,1 @@
-export { HandleProfile } from '@components/handle/profile'
+export { HandleProfile } from '@/components/handle/profile'

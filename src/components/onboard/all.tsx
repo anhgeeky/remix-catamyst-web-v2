@@ -5,7 +5,7 @@ import {
   OnboardWelcome,
   OnboardMode,
   OnboardReady,
-} from '@components/onboard'
+} from '@/components/onboard'
 
 export function OnboardAll({ onboardSlug, state }) {
   return (

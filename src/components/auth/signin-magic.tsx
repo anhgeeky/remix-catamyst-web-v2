@@ -14,8 +14,8 @@ import {
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { SignInMagicSchema } from '@utils/yup'
-// import { signInMagic } from '@features/auth/actions'
+import { SignInMagicSchema } from '@/utils/yup'
+// import { signInMagic } from '@/features/auth/actions'
 
 export function AuthSignInMagic() {
   const { errors, handleSubmit, register } = useForm({

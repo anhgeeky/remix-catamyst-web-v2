@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import { NextImage, Icon } from '@components'
+import { NextImage, Icon } from '@/components'
 
 export function HomeScreens() {
   const { colorMode } = useColorMode()

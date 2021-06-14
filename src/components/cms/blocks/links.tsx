@@ -17,8 +17,8 @@ import {
 } from '@chakra-ui/react'
 import { useFieldArray } from 'react-hook-form'
 
-import { Icon, CardArea, ReferenceIcon } from '@components'
-import { CMSBlockModifierButtons } from '@components/cms/blocks'
+import { Icon, CardArea, ReferenceIcon } from '@/components'
+import { CMSBlockModifierButtons } from '@/components/cms/blocks'
 
 /**
  * Block only can be used for CMS.

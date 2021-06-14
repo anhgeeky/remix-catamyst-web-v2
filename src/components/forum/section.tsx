@@ -1,9 +1,9 @@
 import NextHead from 'next/head'
 import { Heading, Text, VStack } from '@chakra-ui/react'
 
-import { Content, Icon, AlertSoon } from '@components'
-import { ForumHero } from '@components/forum'
-import { dataForumSections } from '@data'
+import { Content, Icon, AlertSoon } from '@/components'
+import { ForumHero } from '@/components/forum'
+import { dataForumSections } from '@/data'
 
 export function ForumSection({ sectionSlug }) {
   const section = dataForumSections.find(

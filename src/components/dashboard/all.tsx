@@ -1,6 +1,6 @@
 import { Heading } from '@chakra-ui/react'
 
-import { HeaderTabs } from '@components'
+import { HeaderTabs } from '@/components'
 import {
   DashboardHero,
   DashboardCertificates,
@@ -11,9 +11,9 @@ import {
   DashboardPosts,
   DashboardProjects,
   DashboardTracks,
-} from '@components/dashboard'
+} from '@/components/dashboard'
 
-import { dataDashboardLinks } from '@data'
+import { dataDashboardLinks } from '@/data'
 
 export function DashboardAll({ dashboardSlug, state }) {
   /**

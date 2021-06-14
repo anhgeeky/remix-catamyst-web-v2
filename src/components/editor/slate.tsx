@@ -29,7 +29,7 @@ import { withHistory } from 'slate-history'
 import isHotkey from 'is-hotkey'
 import isUrl from 'is-url'
 
-import { Icon, ColorModeToggle } from '@components'
+import { Icon, ColorModeToggle } from '@/components'
 
 /**
  * Slate constants.

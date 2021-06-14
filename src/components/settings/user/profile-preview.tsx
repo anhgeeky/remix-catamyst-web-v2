@@ -17,10 +17,10 @@ import {
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
-import { Card, Country, Icon, SocialLinks, LinkButton } from '@components'
-import { supabase } from '@lib'
+import { Card, Country, Icon, SocialLinks, LinkButton } from '@/components'
+import { supabase } from '@/lib'
 import { Profile } from '@types'
-import { trimUrl, getCompleteDateTime } from '@utils'
+import { trimUrl, getCompleteDateTime } from '@/utils'
 
 type State = { profile: Profile }
 type Action = { type?: string; payload: any }

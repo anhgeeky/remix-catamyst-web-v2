@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Icon } from '@components'
+import { Icon } from '@/components'
 
 /**
  * Because there are a lot of users, the identification is using className.

@@ -1,6 +1,6 @@
-import { Layout } from '@layouts'
-import { Debug } from '@components'
-import { useProfile } from '@hooks'
+import { Layout } from '@/layouts'
+import { Debug } from '@/components'
+import { useProfile } from '@/hooks'
 
 export default function debugPage() {
   const state = useProfile()

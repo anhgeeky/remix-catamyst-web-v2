@@ -1,1 +1,1 @@
-export { PostNew } from '@components/posts/new'
+export { PostNew } from '@/components/posts/new'

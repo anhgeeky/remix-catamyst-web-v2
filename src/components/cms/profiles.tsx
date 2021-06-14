@@ -10,10 +10,10 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Content } from '@components'
-import { CMSHero } from '@components/cms'
-import { useSWR, fetcherSWR } from '@hooks'
-import { getCompleteDateTime } from '@utils'
+import { Content } from '@/components'
+import { CMSHero } from '@/components/cms'
+import { useSWR, fetcherSWR } from '@/hooks'
+import { getCompleteDateTime } from '@/utils'
 
 export function CMSProfiles() {
   const { data, error } = useSWR(['/api/profiles'], fetcherSWR)

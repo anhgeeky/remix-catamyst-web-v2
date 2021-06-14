@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 
-import { Icon } from '@components'
+import { Icon } from '@/components'
 
 export function CMSToolbar({ labels, actions }) {
   const { register, handleSubmit } = useForm()

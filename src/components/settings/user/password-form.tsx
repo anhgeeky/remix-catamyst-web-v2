@@ -9,7 +9,7 @@ import {
   Link,
 } from '@chakra-ui/react'
 
-import { Card, Icon } from '@components'
+import { Card, Icon } from '@/components'
 
 export function UserPasswordForm({ user }) {
   return (

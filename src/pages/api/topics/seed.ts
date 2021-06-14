@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { seedTopics } from '@lib/api'
+import { seedTopics } from '@/lib/api'
 
 /**
  * Seed topics from JSON into database.

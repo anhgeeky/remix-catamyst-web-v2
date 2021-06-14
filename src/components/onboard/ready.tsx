@@ -1,8 +1,8 @@
 import NextHead from 'next/head'
 import { ButtonGroup, Stack, Heading, Text } from '@chakra-ui/react'
 
-import { Icon, LinkButton } from '@components'
-import { OnboardContainer } from '@components/onboard'
+import { Icon, LinkButton } from '@/components'
+import { OnboardContainer } from '@/components/onboard'
 
 export function OnboardReady({ state }) {
   return (

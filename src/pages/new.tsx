@@ -1,6 +1,6 @@
-import { Layout } from '@layouts'
-import { Content } from '@components'
-import { NewQuickPanel } from '@components/new'
+import { Layout } from '@/layouts'
+import { Content } from '@/components'
+import { NewQuickPanel } from '@/components/new'
 
 export default function newPage() {
   return (

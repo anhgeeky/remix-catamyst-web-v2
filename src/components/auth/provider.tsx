@@ -1,4 +1,4 @@
-import { useUserSession } from '@hooks'
+import { useUserSession } from '@/hooks'
 
 /**
  * Can be used as a component for _app.tsx

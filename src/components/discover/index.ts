@@ -1,1 +1,1 @@
-export { DiscoverFeatured } from '@components/discover/featured'
+export { DiscoverFeatured } from '@/components/discover/featured'

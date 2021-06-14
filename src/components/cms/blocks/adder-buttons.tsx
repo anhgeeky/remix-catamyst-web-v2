@@ -6,7 +6,7 @@ import {
   IconButton,
   Tooltip,
 } from '@chakra-ui/react'
-import { Icon } from '@components'
+import { Icon } from '@/components'
 
 /**
  * CMS Adder Buttons to add more block into CMS lesson editor

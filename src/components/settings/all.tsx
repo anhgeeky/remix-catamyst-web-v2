@@ -1,6 +1,6 @@
 import { Heading } from '@chakra-ui/react'
 
-import { HeaderTabs } from '@components'
+import { HeaderTabs } from '@/components'
 import {
   SettingsHero,
   SettingsOverview,
@@ -9,8 +9,8 @@ import {
   SettingsPassword,
   SettingsPro,
   SettingsSuper,
-} from '@components/settings'
-import { dataSettingsLinks } from '@data'
+} from '@/components/settings'
+import { dataSettingsLinks } from '@/data'
 
 export function SettingsAll({ settingsSlug, state }) {
   /**

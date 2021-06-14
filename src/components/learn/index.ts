@@ -1,1 +1,1 @@
-export { LearnHero } from '@components/learn/hero'
+export { LearnHero } from '@/components/learn/hero'

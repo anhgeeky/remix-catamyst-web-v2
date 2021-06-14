@@ -1,6 +1,6 @@
 import { ButtonGroup } from '@chakra-ui/react'
 
-import { LinkButton, Icon } from '@components'
+import { LinkButton, Icon } from '@/components'
 
 export function MembershipButtons({ plan }) {
   return (

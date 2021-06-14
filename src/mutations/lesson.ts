@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { supabase } from '@lib'
+import { supabase } from '@/lib'
 
 export const updateLesson = async (id, body) => {
   try {

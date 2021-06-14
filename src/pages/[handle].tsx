@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { HandleProfile } from '@components/handle'
+import { Layout } from '@/layouts'
+import { HandleProfile } from '@/components/handle'
 
 /**
  * Handle page can check either for:

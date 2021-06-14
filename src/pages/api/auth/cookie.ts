@@ -1,4 +1,4 @@
-import { supabase } from '@lib'
+import { supabase } from '@/lib'
 
 /**
  * Just to set cookie in server-side, so it works with getServerSideProps.

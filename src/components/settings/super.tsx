@@ -13,12 +13,12 @@ import {
   Text,
 } from '@chakra-ui/react'
 
-import { Content, Card, Icon, LinkButton } from '@components'
+import { Content, Card, Icon, LinkButton } from '@/components'
 import {
   SettingsHero,
   GumroadButton,
   SuperPlanRequestForm,
-} from '@components/settings'
+} from '@/components/settings'
 
 export function SettingsSuper({ state }) {
   return (

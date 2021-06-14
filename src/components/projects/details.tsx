@@ -13,11 +13,11 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { HeadingStack, SocialLinks } from '@components'
-import { JobSkillsTags } from '@components/jobs'
-import { trimUrl } from '@utils'
+import { HeadingStack, SocialLinks } from '@/components'
+import { JobSkillsTags } from '@/components/jobs'
+import { trimUrl } from '@/utils'
 
-import { dataProjects, dataUsers } from '@data'
+import { dataProjects, dataUsers } from '@/data'
 
 export function ProjectDetails({ projectSlug }) {
   const project = dataProjects.find((project) => project.slug === projectSlug)

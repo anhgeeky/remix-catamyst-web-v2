@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 
-import { Layout } from '@layouts'
-import { TopicEditor } from '@components/topics'
+import { Layout } from '@/layouts'
+import { TopicEditor } from '@/components/topics'
 
 export default function trackIdPage() {
   const router = useRouter()

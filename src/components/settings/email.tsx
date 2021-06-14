@@ -1,8 +1,8 @@
 import NextHead from 'next/head'
 import { Heading, HStack, Stack, Text } from '@chakra-ui/react'
 
-import { Content } from '@components'
-import { SettingsHero, UserEmailForm } from '@components/settings'
+import { Content } from '@/components'
+import { SettingsHero, UserEmailForm } from '@/components/settings'
 
 export function SettingsEmail({ state }) {
   return (

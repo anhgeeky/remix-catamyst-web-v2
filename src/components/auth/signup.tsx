@@ -28,9 +28,9 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useDispatch } from 'react-redux'
 
-import { Icon } from '@components'
-import { SignUpSchema } from '@utils/yup'
-import { signUp } from '@features/auth/actions'
+import { Icon } from '@/components'
+import { SignUpSchema } from '@/utils/yup'
+import { signUp } from '@/features/auth/actions'
 
 export function AuthSignUp({ auth }) {
   const dispatch = useDispatch()

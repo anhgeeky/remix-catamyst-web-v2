@@ -1,8 +1,8 @@
 import NextHead from 'next/head'
 import { Stack, Heading, HStack, Text } from '@chakra-ui/react'
 
-import { Content } from '@components'
-import { SettingsHero } from '@components/settings'
+import { Content } from '@/components'
+import { SettingsHero } from '@/components/settings'
 
 export function SettingsBilling() {
   return (

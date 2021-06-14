@@ -8,7 +8,7 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react'
-import { dataDashboardLinks } from '@data'
+import { dataDashboardLinks } from '@/data'
 
 export function DashboardSidebar() {
   const router = useRouter()

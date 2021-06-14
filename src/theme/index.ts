@@ -1,9 +1,9 @@
 import { extendTheme } from '@chakra-ui/react'
 
-import fonts from '@theme/fonts'
-import styles from '@theme/styles'
-import colors from '@theme/colors'
-import config from '@theme/config'
+import fonts from '@/theme/fonts'
+import styles from '@/theme/styles'
+import colors from '@/theme/colors'
+import config from '@/theme/config'
 import {
   Button,
   FormHelperText,
@@ -12,7 +12,7 @@ import {
   NumberInput,
   Select,
   Textarea,
-} from '@theme/components'
+} from '@/theme/components'
 
 const overrides = {
   fonts,

@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import { useAuth } from '@hooks'
+import { useAuth } from '@/hooks'
 
 /**
  * Using useProfile without fetching profile.

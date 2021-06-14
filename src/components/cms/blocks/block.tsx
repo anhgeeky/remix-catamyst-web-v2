@@ -1,6 +1,6 @@
 import { Alert } from '@chakra-ui/react'
 
-import { CardArea } from '@components'
+import { CardArea } from '@/components'
 import {
   CMSBlockModifierButtons,
   CMSBlockTexts,
@@ -8,7 +8,7 @@ import {
   CMSBlockImage,
   CMSBlockQuote,
   CMSBlockDivider,
-} from '@components/cms/blocks'
+} from '@/components/cms/blocks'
 
 /**
  * CMSBlock to choose which block to be displayed for CMS lesson blocks editor.

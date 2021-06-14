@@ -1,8 +1,8 @@
 import NextLink from 'next/link'
 import { Heading, Link, Button, Text } from '@chakra-ui/react'
 
-import { Layout } from '@layouts'
-import { Hero, Content } from '@components'
+import { Layout } from '@/layouts'
+import { Hero, Content } from '@/components'
 
 export default function custom500page() {
   return (

@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-import { RichTextEditor } from '@components/editor'
-import { dataLessons } from '@data'
+import { RichTextEditor } from '@/components/editor'
+import { dataLessons } from '@/data'
 
 /**
  * Experiment only to test Slate in /editor page.
- * Similar with @components/cms/blocks/texts
+ * Similar with @/components/cms/blocks/texts
  */
 export function EditorExperiment() {
   // @ts-ignore

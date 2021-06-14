@@ -1,7 +1,7 @@
 import NextHead from 'next/head'
 import { Flex } from '@chakra-ui/react'
 
-import { EditorExperiment } from '@components/editor'
+import { EditorExperiment } from '@/components/editor'
 
 export default function editorPage() {
   return (

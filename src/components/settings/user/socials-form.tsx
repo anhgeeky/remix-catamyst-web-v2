@@ -10,7 +10,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 
-import { Card, Icon } from '@components'
+import { Card, Icon } from '@/components'
 
 export function UserSocialsForm({ state }) {
   const { profile } = state
