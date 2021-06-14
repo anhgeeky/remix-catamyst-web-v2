@@ -43,3 +43,6 @@ _notes
 
 # misc
 _*.md
+
+# vscode
+.vscode

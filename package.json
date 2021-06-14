@@ -1,13 +1,30 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.296",
+  "version": "0.1.297",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start -p 8000",
-    "export": "next export"
+    "export": "next export",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "test": "jest",
+    "test-all": "yarn lint && yarn type-check && yarn test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
   },
   "dependencies": {
     "@chakra-ui/icons": "1.0.9",
@@ -18,7 +35,7 @@
     "@hookform/resolvers": "2.0.0-beta.3",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@next/mdx": "10.2.0",
+    "@next/mdx": "10.2.3",
     "@sentry/browser": "6.4.0",
     "@sentry/integrations": "6.4.0",
     "@sentry/node": "6.4.0",
@@ -41,8 +58,6 @@
     "is-url": "1.2.4",
     "lower-case": "2.0.2",
     "next": "10.2.0",
-    "next-sitemap": "1.6.57",
-    "npm-check-updates": "11.5.13",
     "qs": "6.10.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -64,12 +79,29 @@
     "slate-react": "0.59.0",
     "slugify": "1.5.3",
     "swr": "0.5.6",
-    "typescript": "4.2.4",
     "uuid": "8.3.2",
     "yup": "0.32.9"
   },
   "devDependencies": {
-    "@hookform/devtools": "2.2.1",
-    "redux-devtools-extension": "2.13.9"
+    "@hookform/devtools": "3.1.0",
+    "@testing-library/react": "^11.2.5",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.25",
+    "@types/react": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-watch-typeahead": "^0.6.1",
+    "lint-staged": "^10.0.10",
+    "next-sitemap": "1.6.57",
+    "prettier": "^2.0.2",
+    "redux-devtools-extension": "2.13.9",
+    "typescript": "4.2.4"
   }
 }
