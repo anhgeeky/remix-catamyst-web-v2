@@ -1,5 +1,10 @@
 [
   {
+    "slug": "condition",
+    "q": "What's the primary condition for the scholarship recipients?",
+    "a": "We have a first come first serve basis. If the quota of recipients is already fulfilled, the registration will be closed."
+  },
+  {
     "slug": "pay",
     "q": "Do I need to pay to join this program?",
     "a": "No, this is a 100% full scholarship, there is no need to pay any fee."

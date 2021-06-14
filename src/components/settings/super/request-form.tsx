@@ -1,9 +1,16 @@
 import { ButtonGroup, Heading, Stack, Text } from '@chakra-ui/react'
 
 import { Card, Icon, LinkButton } from '@/components'
-import { dataSuper } from '@/data'
 
 export function SuperPlanRequestForm() {
+  /**
+   * Should be stored in database.
+   */
+  const dataSuper = {
+    quota_left: 5,
+    quota_total: 7,
+  }
+
   return (
     <Card as={Stack}>
       <Heading as="h3" size="md">
@@ -33,8 +40,8 @@ export function SuperPlanRequestForm() {
         </LinkButton>
       </ButtonGroup>
       <Text>
-        Currently we're available for <b>{dataSuper.quota_left}</b> learners out
-        of <b>{dataSuper.quota_total}</b> total learners quota.
+        Currently we're available for <b>{dataSuper.quota_left}</b> Super
+        members out of <b>{dataSuper.quota_total}</b> total Super members quota.
       </Text>
     </Card>
   )

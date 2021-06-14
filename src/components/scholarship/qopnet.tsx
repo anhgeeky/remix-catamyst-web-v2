@@ -1,5 +1,7 @@
 import NextHead from 'next/head'
+import NextLink from 'next/link'
 import {
+  Avatar,
   chakra,
   Flex,
   Box,
@@ -15,11 +17,12 @@ import {
 import Iframe from 'react-iframe'
 
 import {
+  Card,
   Icon,
-  NextImage,
-  ListItemNumber,
   List,
   ListItemIcon,
+  ListItemNumber,
+  NextImage,
 } from '@/components'
 import { ScholarshipHero } from '@/components/scholarship'
 import { FaqAccordionSimple } from '@/components/help'
@@ -82,20 +85,21 @@ export function ScholarshipQopnet() {
 
             <Stack
               mt={10}
-              align={isTooSmall ? 'center' : 'flex-start'}
               fontSize="xl"
+              textAlign={isTooSmall ? 'center' : 'left'}
+              align={isTooSmall ? 'center' : 'flex-start'}
             >
               <Flex align="center">
                 <Icon name="date" />
                 <Text ml={3}>Apply before 1 August 2021</Text>
               </Flex>
               <Flex align="center">
-                <Icon name="users" />
-                <Text ml={3}>Limited to 2–3 people only</Text>
-              </Flex>
-              <Flex align="center">
                 <Icon name="code" />
                 <Text ml={3}>For intermediate-level developers</Text>
+              </Flex>
+              <Flex align="center">
+                <Icon name="users" />
+                <Text ml={3}>Limited to 3 people, first come first serve</Text>
               </Flex>
             </Stack>
           </Stack>
@@ -125,6 +129,10 @@ export function ScholarshipQopnet() {
       </ScholarshipHero>
 
       <VStack spacing={10}>
+        <RecipientCards />
+      </VStack>
+
+      <VStack spacing={10}>
         <Stack
           direction={isTooSmall ? 'column' : 'row'}
           align="center"
@@ -149,7 +157,7 @@ export function ScholarshipQopnet() {
                 <ListItemIcon>
                   <b>Experience</b> in Software Engineering, UI/UX Design, Web
                   Development, JavaScript / TypeScript, Node.js, React /
-                  Next.js, PostgreSQL / MongoDB, GCP / AWS
+                  Next.js, PostgreSQL / MongoDB, GCP / AWS, and more
                 </ListItemIcon>
                 <ListItemIcon>
                   <b>Age</b> 17–40
@@ -196,19 +204,19 @@ export function ScholarshipQopnet() {
               <List>
                 <ListItemNumber no={1}>
                   <b>Registration and screening</b> from 7 June 2021 to 1 August
-                  2021.
+                  2021. Can be closed as soon as the quota is fulfilled.
                 </ListItemNumber>
                 <ListItemNumber no={2}>
-                  <b>Interview</b> within 7 days after you have registered and
-                  screened.
+                  <b>Interview</b> process within 7 days after you have
+                  registered and screened.
                 </ListItemNumber>
                 <ListItemNumber no={3}>
-                  <b>Acceptance</b> announcement within 7 days after you have
-                  been interviewed.
+                  <b>Acceptance or rejection</b> information within 7 days after
+                  you have been interviewed.
                 </ListItemNumber>
                 <ListItemNumber no={4}>
-                  <b>Program</b> started as soon as you are accepted until 1
-                  October 2021.
+                  <b>Program</b> started as soon as you are accepted and
+                  onboarded, until 1 October 2021.
                 </ListItemNumber>
               </List>
             </Stack>
@@ -282,5 +290,55 @@ export function ScholarshipQopnet() {
         </Box>
       </VStack>
     </Stack>
+  )
+}
+
+export function RecipientCards() {
+  const [isTooSmall] = useMediaQuery('(max-width: 920px)')
+  const recipients = [
+    { name: 'First Person', handle: '' },
+    { name: 'Second Person', handle: '' },
+    { name: 'Third Person', handle: '' },
+  ]
+
+  return (
+    <VStack spacing={5} px={5}>
+      <VStack>
+        <Heading as="h3" size="lg">
+          Scholarship Recipients
+        </Heading>
+        <Text>The chosen 3 people will be shown here.</Text>
+      </VStack>
+      <Stack
+        spacing={5}
+        direction={isTooSmall ? 'column' : 'row'}
+        width={isTooSmall ? '100%' : '720px'}
+      >
+        {recipients.map((recipient, index) => {
+          return (
+            <Card width="100%" key={index}>
+              <NextLink
+                href={
+                  recipient?.handle
+                    ? `/${recipient.name}`
+                    : `/scholarship/qopnet`
+                }
+              >
+                <a>
+                  <Stack align="center" spacing={5}>
+                    <Avatar size="xl" name={recipient.name} />
+                    <Box>
+                      <Heading as="h4" size="md">
+                        {recipient.name}
+                      </Heading>
+                    </Box>
+                  </Stack>
+                </a>
+              </NextLink>
+            </Card>
+          )
+        })}
+      </Stack>
+    </VStack>
   )
 }

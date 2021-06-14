@@ -27,7 +27,6 @@ import dataSettingsLinks from '@/data/app-settings-links.json'
 import dataSite from '@/data/app-site.json'
 import dataSitemap from '@/data/app-sitemap.json'
 import dataSocialLinks from '@/data/app-social-links.json'
-import dataSuper from '@/data/app-super.json'
 import dataTeamMembers from '@/data/app-team-members.json'
 import dataTopics from '@/data/app-topics.json'
 import dataTracks from '@/data/app-tracks.json'
@@ -64,7 +63,6 @@ export {
   dataSite,
   dataSitemap,
   dataSocialLinks,
-  dataSuper,
   dataTeamMembers,
   dataTopics,
   dataTracks,
