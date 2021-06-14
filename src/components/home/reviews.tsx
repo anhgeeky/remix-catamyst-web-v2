@@ -1,7 +1,5 @@
-import NextImage from 'next/image'
 import NextLink from 'next/link'
 import {
-  Avatar,
   Box,
   Heading,
   HStack,
@@ -53,7 +51,7 @@ export function HomeReviews() {
 function UserReviews({ reviews }) {
   return (
     <>
-      {reviews.map((user, index) => {
+      {reviews.map((user) => {
         if (user.is_published !== false) {
           return (
             <Card

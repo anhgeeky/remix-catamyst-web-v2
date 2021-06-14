@@ -2,7 +2,6 @@ import NextLink from 'next/link'
 import {
   chakra,
   HStack,
-  Link,
   Button,
   Flex,
   Text,
@@ -72,8 +71,9 @@ export function MenuPanel({ closeMenu, isMenuOpen }) {
                   divider={<StackDivider borderColor={dividerBorderColor} />}
                   spacing={1}
                 >
-                  {dataMenuLinks.map((page, index) => {
+                  {dataMenuLinks.map((page) => {
                     const isActive = router.asPath === page.href
+
                     return (
                       <NextLink key={page.slug} href={page.href} passHref>
                         <chakra.a color={isActive && 'teal.500'}>

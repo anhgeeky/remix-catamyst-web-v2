@@ -1,4 +1,4 @@
-import { chakra, Image, Heading, Flex, HStack } from '@chakra-ui/react'
+import { chakra, Image, Heading, HStack } from '@chakra-ui/react'
 
 export function TopicIconTitleSpan({ topic }) {
   return (

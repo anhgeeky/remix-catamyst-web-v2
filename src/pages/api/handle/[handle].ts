@@ -8,7 +8,7 @@ import { dataUsers, dataOrganizations } from '@data'
 export type ResponseProfile = {
   message: string
   type: 'user' | 'org'
-  profile: object
+  profile: any
 }
 
 export default async function handleProfile(

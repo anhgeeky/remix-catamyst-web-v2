@@ -8,7 +8,6 @@ import {
   Avatar,
   Stack,
   Box,
-  Heading,
   Text,
   Tooltip,
   HStack,
@@ -302,7 +301,9 @@ export function JobSkillsTags({
   skills,
   isLimited = false,
   actions = {
-    handlePickSkill: (skill) => {},
+    handlePickSkill: (skill) => {
+      console.info(skill)
+    },
   },
 }) {
   return (

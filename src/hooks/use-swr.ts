@@ -39,13 +39,13 @@ export const fetcherSWR = async (url) => {
  * @param token
  * @returns
  */
-export const fetcherWithTokenSWR = async (url, access_token) => {
+export const fetcherWithTokenSWR = async (url, accessToken) => {
   const res = await fetch(url, {
-    headers: { Authorization: access_token },
+    headers: { Authorization: accessToken },
   })
 
   if (!res.ok) {
-    const error = new Error('Fetch with access_token error.')
+    const error = new Error('Fetch with accessToken error.')
     // @ts-ignore
     error.info = await res.json()
     // @ts-ignore
@@ -133,8 +133,12 @@ export const useTopicBySlug = (slug) => {
  * Lessons
  */
 
-export const useLessons = () => {
-  const { data, error } = useSWR(`/api/lessons`, fetcherSWR)
+export const useLessons = (accessToken) => {
+  const { data, error } = useSWR(
+    ['/api/lessons', accessToken],
+    fetcherWithTokenSWR
+  )
+
   return { data: data, isLoading: !error && !data, isError: error }
 }
 

@@ -1,7 +1,7 @@
 /**
  * https://github.com/iamtekeste/gumroad
  */
-;(function () {
+(function () {
   const Gumroad = {
     init: function () {
       /**
@@ -44,7 +44,7 @@
 
       // If it is an overlay, clicking on the overlay should dismiss it.
       if (displayStyle !== 'embed') {
-        iframeWrapper.addEventListener('click', (event) => {
+        iframeWrapper.addEventListener('click', () => {
           iframeWrapper.classList.remove('loaded')
         })
       }

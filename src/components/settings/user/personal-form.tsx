@@ -41,7 +41,7 @@ export function UserPersonalForm({ state }) {
         .from('profiles')
         .upsert(
           {
-            id: state.user!.id,
+            id: state.user?.id,
             ...form,
             website_url: form.website_url ? checkUrl(form.website_url) : '',
             // TODO: Can change to profile.url but needs database migration.
@@ -50,7 +50,7 @@ export function UserPersonalForm({ state }) {
           { returning: 'minimal' }
         )
         .single()
-      if (error) throw error
+      if (!data || error) throw error
       toast({ status: 'success', title: 'Your personal details are changed' })
       setLoading(false)
     } catch (error) {
@@ -154,9 +154,9 @@ export function UserPersonalForm({ state }) {
 export function SelectCountries({ name, register, profile }) {
   return (
     <Select
+      name={name}
       placeholder="Select country"
       defaultValue={profile.country}
-      name="country"
       ref={register}
     >
       {dataCountries.map((country, index) => {

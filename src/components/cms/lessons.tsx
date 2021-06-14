@@ -20,7 +20,7 @@ import { supabase } from '@lib'
 export function CMSLessons({ state }) {
   const toast = useToast()
   const router = useRouter()
-  const { data, isLoading, isError } = useLessons()
+  const { data, isLoading, isError } = useLessons(state.session?.access_token)
 
   /**
    * Request to Supabase because need authorization.
@@ -121,7 +121,7 @@ export function CMSLessons({ state }) {
           </HStack>
 
           {data.lessons &&
-            data.lessons.map((lesson, index) => {
+            data.lessons.map((lesson) => {
               return (
                 <NextLink
                   key={lesson.slug}

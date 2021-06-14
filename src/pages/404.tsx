@@ -1,5 +1,4 @@
 // import Error from 'next/error'
-import NextLink from 'next/link'
 import { Heading, Link, ButtonGroup, Text } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'

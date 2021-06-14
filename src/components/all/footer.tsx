@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 import NextLink from 'next/link'
 import {
   Box,
@@ -42,14 +43,14 @@ export function FooterSitemap() {
 
   return (
     <Flex flexWrap="wrap">
-      {dataSitemap.map((column, index) => {
+      {dataSitemap.map((column) => {
         return (
           <Stack key={column.text} align="flex-start" minW="120px" mb={5}>
             <Heading as="h4" size="md">
               {column.text}
             </Heading>
             <List spacing={1} width="100%">
-              {column.links.map((link, index) => {
+              {column.links.map((link) => {
                 if (link.hasOwnProperty('isAuthenticated')) {
                   if (
                     link.hasOwnProperty('isAuthenticated') &&

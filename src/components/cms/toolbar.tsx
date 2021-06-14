@@ -38,10 +38,9 @@ export function CMSToolbar({ labels, actions }) {
             <FormLabel>{labels.search}</FormLabel>
           </VisuallyHidden>
           <InputGroup size="sm">
-            <InputLeftElement
-              pointerEvents="none"
-              children={<Icon name="search" />}
-            />
+            <InputLeftElement pointerEvents="none">
+              <Icon name="search" />
+            </InputLeftElement>
             <Input
               name="query"
               ref={register}

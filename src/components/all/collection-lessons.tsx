@@ -37,7 +37,7 @@ export function CollectionLessons({ trackSlug, topicSlug, sections }) {
               <Stack spacing={0}>
                 {section.lessons.map((lessonId, index) => {
                   const lesson = dataLessons.find(
-                    (lesson, index) => lesson.id === lessonId
+                    (lesson) => lesson.id === lessonId
                   )
 
                   if (lesson?.is_published === false) {

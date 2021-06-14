@@ -1,5 +1,3 @@
-import useSWR, { mutate as mutateSWR } from 'swr'
-
 export const swrConfig = {
   onErrorRetry: (error, key, config, revalidate, { retryCount }) => {
     // Never retry on 404 error.

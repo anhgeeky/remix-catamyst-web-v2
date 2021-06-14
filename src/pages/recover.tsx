@@ -1,4 +1,3 @@
-import NextLink from 'next/link'
 import { Heading } from '@chakra-ui/react'
 
 import { Layout } from '@layouts'

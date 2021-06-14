@@ -4,29 +4,18 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
 import {
-  Avatar,
-  Box,
   Button,
-  ButtonGroup,
-  Flex,
   FormControl,
   FormErrorMessage,
-  FormHelperText,
-  FormLabel,
   Heading,
-  HStack,
   Input,
   InputGroup,
-  InputLeftAddon,
   InputRightElement,
-  Link,
-  SimpleGrid,
   Stack,
   Text,
-  VStack,
 } from '@chakra-ui/react'
 
-import { Content, Card, Icon } from '@components'
+import { Icon } from '@components'
 import { OnboardContainer } from '@components/onboard'
 import { HandleSchema } from '@utils/yup'
 import { supabase } from '@lib'
@@ -47,9 +36,9 @@ export function OnboardWelcome({ state }) {
       const { data, error } = await supabase
         .from('profiles')
         .update({ handle: form.handle }, { returning: 'minimal' })
-        .eq('id', state.user!.id)
+        .eq('id', state.user?.id)
         .single()
-      if (error) throw error
+      if (!data || error) throw error
       setLoading(false)
       state.router.push('/onboard/mode')
     } catch (error) {
@@ -106,14 +95,13 @@ export function OnboardWelcome({ state }) {
               {(state.profile.handle || errors.handle) && (
                 <InputRightElement
                   color={errors.handle ? 'red.500' : 'green.500'}
-                  children={
-                    errors.handle ? (
-                      <Icon name="cross" />
-                    ) : (
-                      <Icon name="check" />
-                    )
-                  }
-                />
+                >
+                  {errors.handle ? (
+                    <Icon name="cross" />
+                  ) : (
+                    <Icon name="check" />
+                  )}
+                </InputRightElement>
               )}
             </InputGroup>
             {errors.handle && (

@@ -1,12 +1,5 @@
 import NextImage from 'next/image'
-import {
-  LinkBox,
-  LinkOverlay,
-  Stack,
-  Flex,
-  Box,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { Stack, Flex, Box } from '@chakra-ui/react'
 
 import {
   HeadingStack,

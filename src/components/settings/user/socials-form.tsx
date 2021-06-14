@@ -1,8 +1,6 @@
 import { useForm, useFieldArray } from 'react-hook-form'
 import {
   Button,
-  FormControl,
-  FormLabel,
   Heading,
   Input,
   ButtonGroup,
@@ -16,14 +14,7 @@ import { Card, Icon } from '@components'
 
 export function UserSocialsForm({ state }) {
   const { profile } = state
-  const {
-    register,
-    control,
-    handleSubmit,
-    reset,
-    trigger,
-    setError,
-  } = useForm({ defaultValues: profile })
+  const { register, control } = useForm({ defaultValues: profile })
 
   const { fields, append, remove } = useFieldArray({ control, name: 'socials' })
 

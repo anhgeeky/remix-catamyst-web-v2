@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import { HStack, Text, Link, chakra } from '@chakra-ui/react'
+import { HStack, Text, chakra } from '@chakra-ui/react'
 
 import { Icon } from '@components'
 

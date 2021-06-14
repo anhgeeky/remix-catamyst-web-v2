@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Box, Text, Input, Button, Link, Stack, VStack } from '@chakra-ui/react'
+import { Text, Input, Button, Link, Stack, VStack } from '@chakra-ui/react'
 
 export function AuthRecoverPassword() {
   return (

@@ -1,7 +1,5 @@
 import { Layout } from '@layouts'
 import { useRedirectHome } from '@hooks'
-import { supabase } from '@lib'
-import { isDev } from '@utils'
 
 /**
  * The CMS has different pattern with regular dashboard.
@@ -10,7 +8,7 @@ import { isDev } from '@utils'
  * `/cms/topics/[topicId]` to handle editing the topic by id.
  * `/cms/lessons/[trackId]` to handle editing the lesson by id.
  */
-export default function cmsPage({ user }) {
+export default function cmsPage() {
   const { auth } = useRedirectHome()
 
   return (
@@ -18,15 +16,4 @@ export default function cmsPage({ user }) {
       {auth.isLoading && <p>Loading CMS...</p>}
     </Layout>
   )
-}
-
-export async function getServerSideProps({ req }) {
-  const { user } = await supabase.auth.api.getUserByCookie(req)
-  if (isDev) console.info({ user })
-
-  if (user?.user_metadata.access === 'cms') {
-    return { props: { user } }
-  } else {
-    return { props: {}, redirect: { destination: '/', permanent: false } }
-  }
 }

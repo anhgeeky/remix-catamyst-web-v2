@@ -1,13 +1,13 @@
 import DefaultNextImage from 'next/image'
 
-const customLoader = ({ src }) => {
+export const customLoader = ({ src }) => {
   return `${src}`
 }
 
-const imagekitLoader = ({ src }) => {
+export const imagekitLoader = ({ src }) => {
   return `${src}`
 }
 
-export function NextImage(props) {
+export const NextImage = (props) => {
   return <DefaultNextImage {...props} />
 }

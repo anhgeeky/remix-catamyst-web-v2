@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import NextLink from 'next/link'
 import {
-  Box,
   Button,
   Divider,
   FormControl,
   FormErrorMessage,
   FormHelperText,
   FormLabel,
-  Heading,
   HStack,
   Input,
   InputGroup,
@@ -19,7 +17,6 @@ import {
   PopoverBody,
   PopoverCloseButton,
   PopoverContent,
-  PopoverFooter,
   PopoverHeader,
   PopoverTrigger,
   Stack,
@@ -38,16 +35,7 @@ import { signUp } from '@features/auth/actions'
 export function AuthSignUp({ auth }) {
   const dispatch = useDispatch()
   const [showPassword, setShowPassword] = useState(false)
-  const {
-    control,
-    errors,
-    getValues,
-    handleSubmit,
-    register,
-    reset,
-    setValue,
-    watch,
-  } = useForm({
+  const { errors, handleSubmit, register } = useForm({
     mode: 'onSubmit',
     resolver: yupResolver(SignUpSchema),
   })

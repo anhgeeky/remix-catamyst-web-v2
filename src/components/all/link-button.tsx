@@ -1,7 +1,5 @@
 import NextLink from 'next/link'
-import { Stack, Breadcrumb, BreadcrumbItem, Button } from '@chakra-ui/react'
-
-import { Icon } from '@components'
+import { Breadcrumb, BreadcrumbItem, Button } from '@chakra-ui/react'
 
 export function LinkButton(props) {
   if (props.href) {

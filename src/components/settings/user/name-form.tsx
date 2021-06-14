@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useDispatch } from 'react-redux'
 
 import { Card, Icon } from '@components'
 import { NameNickSchema } from '@utils/yup'
@@ -21,10 +20,10 @@ import { supabase } from '@lib'
 type Inputs = { name?: string; nickname?: string }
 
 export function UserNameForm({ state }) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const toast = useToast()
   const [loading, setLoading] = useState(false)
-  const { register, handleSubmit, watch, errors } = useForm<Inputs>({
+  const { register, handleSubmit, errors } = useForm<Inputs>({
     resolver: yupResolver(NameNickSchema),
   })
 
@@ -38,7 +37,7 @@ export function UserNameForm({ state }) {
           { name: form.name, nickname: form.nickname },
           { returning: 'minimal' }
         )
-        .eq('id', state.user!.id)
+        .eq('id', state.user?.id)
       if (error) throw error
       toast({ status: 'success', title: 'Your names are changed' })
       setLoading(false)

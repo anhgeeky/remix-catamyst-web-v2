@@ -27,7 +27,7 @@ export function UserHandleForm({ state }) {
   const toast = useToast()
   const [isTooSmall] = useMediaQuery('(max-width: 62em)')
   const [loading, setLoading] = useState(false)
-  const { register, handleSubmit, watch, setError, errors } = useForm<Inputs>({
+  const { register, handleSubmit, setError, errors } = useForm<Inputs>({
     resolver: yupResolver(HandleSchema),
   })
 
@@ -39,7 +39,7 @@ export function UserHandleForm({ state }) {
       const { error } = await supabase
         .from('profiles')
         .update({ handle: form.handle }, { returning: 'minimal' })
-        .eq('id', state.user!.id)
+        .eq('id', state.user?.id)
         .single()
       if (error) throw error
 
@@ -73,7 +73,7 @@ export function UserHandleForm({ state }) {
         >
           <FormLabel>Username</FormLabel>
           <InputGroup>
-            {!isTooSmall && <InputLeftAddon children="catamyst.com/" />}
+            {!isTooSmall && <InputLeftAddon>catamyst.com/</InputLeftAddon>}
             <Input
               type="text"
               placeholder="username"
@@ -82,12 +82,9 @@ export function UserHandleForm({ state }) {
               ref={register}
               autoFocus={!isTooSmall}
             />
-            <InputRightElement
-              color={errors.handle ? 'red.500' : 'green.500'}
-              children={
-                errors.handle ? <Icon name="cross" /> : <Icon name="check" />
-              }
-            />
+            <InputRightElement color={errors.handle ? 'red.500' : 'green.500'}>
+              errors.handle ? <Icon name="cross" /> : <Icon name="check" />
+            </InputRightElement>
           </InputGroup>
           {errors.handle && (
             <FormErrorMessage>{errors.handle?.message}</FormErrorMessage>

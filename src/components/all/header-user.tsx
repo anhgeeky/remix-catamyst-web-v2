@@ -24,7 +24,6 @@ import { Icon, LinkButton } from '@components'
 import { useProfile } from '@hooks'
 import { Profile } from '@types'
 import { supabase } from '@lib'
-import { isDev } from '@utils'
 
 type State = { profile: Profile }
 type Action = { type?: string; payload: any }

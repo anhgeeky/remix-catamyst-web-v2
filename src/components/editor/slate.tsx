@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react'
 import {
-  chakra,
+  // Code,
   Box,
   Button,
   ButtonGroup,
-  Code,
+  chakra,
   Heading,
   Link,
   List,
@@ -16,11 +16,11 @@ import {
   useMediaQuery,
 } from '@chakra-ui/react'
 import {
+  // Node,
   createEditor,
   Descendant,
   Editor,
   Element as SlateElement,
-  Node,
   Range,
   Transforms,
 } from 'slate'
@@ -431,6 +431,7 @@ const wrapLink = (editor, url) => {
 /**
  * Initial SlateElements as example value.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const slateValueExample: SlateElement[] = [
   {
     type: 'paragraph',

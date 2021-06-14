@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import NextLink from 'next/link'
 import {
   Button,
@@ -14,24 +13,22 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useDispatch } from 'react-redux'
 
 import { SignInMagicSchema } from '@utils/yup'
 // import { signInMagic } from '@features/auth/actions'
 
-export function AuthSignInMagic({ router }) {
-  const dispatch = useDispatch()
+export function AuthSignInMagic() {
   const { errors, handleSubmit, register } = useForm({
     mode: 'onSubmit',
     resolver: yupResolver(SignInMagicSchema),
   })
 
-  const handleSubmitForm = async (data) => {
+  const handleSubmitForm = async () => {
     try {
       // await dispatch(signInMagic())
       // router.push('/dashboard/overview')
     } catch (error) {
-      console.error('Failed to sign in.')
+      console.error('Failed to sign in with magic link.')
     }
   }
 

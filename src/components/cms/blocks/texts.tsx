@@ -3,14 +3,12 @@ import {
   Badge,
   Box,
   Button,
-  ButtonGroup,
   HStack,
   Input,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalHeader,
   ModalOverlay,
   Text,
   VisuallyHidden,
@@ -22,7 +20,6 @@ import { CardArea, Icon, useToast } from '@components'
 import { RichTextEditor } from '@components/editor'
 import { BlockTextsPreview } from '@components/blocks'
 import { CMSBlockModifierButtons } from '@components/cms/blocks'
-// import blocks from '@data/blocks'
 
 export function CMSBlockTexts(props) {
   const {
@@ -80,8 +77,8 @@ export function CMSBlockTexts(props) {
  * Similar with @components/editor/experiment
  */
 function CMSBlockTextsModal({
-  index,
   block,
+  index,
   isOpen,
   onClose,
   setValue,
@@ -91,9 +88,13 @@ function CMSBlockTextsModal({
   const toast = useToast()
 
   const handleSave = async () => {
-    // Update in RHF field array
-    setValue(`blocks[${index}].html`, htmlString)
-    toast({ title: 'Saved texts!', status: 'success' })
+    try {
+      // Update in RHF field array
+      setValue(`blocks[${index}].html`, htmlString)
+      toast({ title: 'Saved texts!', status: 'success' })
+    } catch (error) {
+      console.error(error, block)
+    }
   }
 
   return (

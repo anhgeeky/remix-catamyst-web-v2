@@ -1,16 +1,12 @@
 import NextImage from 'next/image'
 import {
-  chakra,
-  Box,
   Stack,
   Flex,
   Heading,
-  Text,
   VStack,
   List,
   ListItem,
   ListIcon,
-  HStack,
 } from '@chakra-ui/react'
 import { FaCheckCircle } from 'react-icons/fa'
 
@@ -28,7 +24,7 @@ export function PricingPlans() {
         direction={{ base: 'column', lg: 'row' }}
         align={{ base: 'center', lg: 'stretch' }}
       >
-        {dataPlans.map((plan, index) => {
+        {dataPlans.map((plan) => {
           return (
             <Card
               key={plan.slug}

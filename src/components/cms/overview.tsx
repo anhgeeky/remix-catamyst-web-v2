@@ -1,10 +1,7 @@
 import NextHead from 'next/head'
 import {
-  Box,
-  Flex,
   Heading,
   HStack,
-  Stack,
   Stat,
   StatArrow,
   StatHelpText,
@@ -12,16 +9,18 @@ import {
   StatNumber,
   Text,
   SimpleGrid,
-  VStack,
 } from '@chakra-ui/react'
 
 import { Content, LinkButton, Card, Icon } from '@components'
 import { CMSHero } from '@components/cms'
-import { useSWR, fetcherSWR } from '@hooks'
+import { useSWR, fetcherWithTokenSWR } from '@hooks'
 import { getDayNamePeriod } from '@utils'
 
 export function CMSOverview({ state }) {
-  const { data, error } = useSWR('/api/cms/stats', fetcherSWR)
+  const { data, error } = useSWR(
+    ['/api/cms/stats', state.session?.access_token],
+    fetcherWithTokenSWR
+  )
   const dayNamePeriod = getDayNamePeriod()
 
   if (error) {
@@ -60,7 +59,7 @@ export function CMSOverview({ state }) {
 
       <Content>
         <SimpleGrid spacing={5} minChildWidth={200}>
-          {data.stats.map((stat, index) => {
+          {data.stats.map((stat) => {
             return (
               <Stat as={Card} key={stat.label}>
                 <StatLabel pb={2}>{stat.label}</StatLabel>

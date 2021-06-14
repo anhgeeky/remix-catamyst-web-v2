@@ -83,9 +83,7 @@ export function SettingsSuper({ state }) {
             </Card>
           )}
 
-          {state.profile.plan !== 'Super' && (
-            <SuperPlanRequestForm state={state} />
-          )}
+          {state.profile.plan !== 'Super' && <SuperPlanRequestForm />}
 
           <Card as={Stack}>
             <Heading as="h3" size="md">

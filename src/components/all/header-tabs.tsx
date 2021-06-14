@@ -18,7 +18,7 @@ export function HeaderTabs({ links }) {
         py={2}
         overflow="scroll"
       >
-        {links.map((link, index) => {
+        {links.map((link) => {
           if (link.isEnabled === false) {
             return null
           } else {

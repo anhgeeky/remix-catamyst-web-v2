@@ -5,11 +5,11 @@ import { useDispatch } from 'react-redux'
 import { supabase } from '@lib'
 import { signInMagic, signOut } from '@features/auth/actions'
 import { useAuth } from '@hooks'
-import { isDev, isVercel } from '@utils'
+import { isDev } from '@utils'
 
 export function useUserSession() {
   const dispatch = useDispatch()
-  const { auth, isAuthenticated, router } = useAuth()
+  const { auth } = useAuth()
   const [session, setSession] = useState<SupabaseAuthSession | null>(null)
   const [user, setUser] = useState(null)
 

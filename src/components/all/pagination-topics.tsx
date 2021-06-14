@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Flex, Stack, Link, Text, useColorModeValue } from '@chakra-ui/react'
+import { Stack, Link, Text, useColorModeValue } from '@chakra-ui/react'
 import {
   ArrowUpIcon as UpIcon,
   ArrowBackIcon as PreviousIcon,

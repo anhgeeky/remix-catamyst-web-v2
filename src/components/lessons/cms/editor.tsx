@@ -37,18 +37,10 @@ export function LessonEditor({ lessonId }) {
    * All local state change is handled by RHF (React Hook Form).
    * API call is only used when necessary via handle functions.
    */
-  const {
-    control,
-    errors,
-    getValues,
-    handleSubmit,
-    register,
-    reset,
-    setValue,
-    watch,
-  } = useForm({
-    mode: 'onSubmit',
-  })
+  const { control, getValues, handleSubmit, register, reset, setValue } =
+    useForm({
+      mode: 'onSubmit',
+    })
 
   useEffect(() => {
     if (!isLoading && data) {
@@ -121,7 +113,7 @@ export function LessonEditor({ lessonId }) {
         .from('lessons')
         .delete()
         .eq('id', lessonId)
-      if (error) throw error
+      if (!data || error) throw error
 
       globalState.router.replace('/cms/lessons')
       toast({ status: 'error', title: 'Deleted lesson!' })
@@ -421,10 +413,9 @@ function CMSLessonHero(props) {
         <Stack maxW={760}>
           <InputGroup size="sm" variant="unstyled">
             {/* track/topic/ because lesson can be used anywhere */}
-            <InputLeftAddon
-              opacity={0.5}
-              children={`catamyst.com/learn/track/topic/`}
-            />
+            <InputLeftAddon opacity={0.5}>
+              catamyst.com/learn/track/topic/
+            </InputLeftAddon>
             <Input
               name="slug"
               ref={register}

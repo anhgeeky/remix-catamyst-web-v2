@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabase } from '@lib'
 import { dataTracks, dataTopics } from '@data'
 
 export default async function trackId(

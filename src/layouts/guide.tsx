@@ -13,7 +13,6 @@ import {
   HeadingThree,
   Paragraph,
   Divider,
-  List,
   UnorderedList,
   OrderedList,
 } from '@components'

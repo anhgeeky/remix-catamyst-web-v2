@@ -27,7 +27,7 @@ import {
 } from '@components'
 import { DashboardHero } from '@components/dashboard'
 import { UserNameHandle } from '@components/users'
-import { dayNamePeriod, getName } from '@utils'
+import { dayNamePeriod } from '@utils'
 
 /**
  * There are 9 cards

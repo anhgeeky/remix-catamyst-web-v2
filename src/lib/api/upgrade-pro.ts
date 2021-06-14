@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import { supabase } from '@lib'
 import { supabaseAdmin } from '@lib/api'
 
 /**

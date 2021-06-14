@@ -14,7 +14,6 @@ import {
   Stack,
   Tag,
   Text,
-  VStack,
 } from '@chakra-ui/react'
 import ReactHtmlParser from 'react-html-parser'
 
@@ -40,6 +39,7 @@ export function JobDetails({ jobParams }) {
   const toast = useToast()
   const router = useRouter()
   const { isAuthenticated } = useAuth()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [jobId, jobSlug] = jobParams[0]
 
   const job = dataJobs.find((job) => job.id === Number(jobId))
@@ -49,6 +49,7 @@ export function JobDetails({ jobParams }) {
     toast({ title: 'Added skill to filter' })
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleApplyJob = () => {
     if (isAuthenticated) {
       if (isApplied) {

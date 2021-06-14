@@ -11,7 +11,6 @@ import {
   Stack,
   Text,
   useColorModeValue,
-  useMediaQuery,
 } from '@chakra-ui/react'
 
 import { HeadingStack, SocialLinks } from '@components'
@@ -21,7 +20,6 @@ import { trimUrl } from '@utils'
 import { dataProjects, dataUsers } from '@data'
 
 export function ProjectDetails({ projectSlug }) {
-  const [isTooSmall] = useMediaQuery('(max-width: 600px)')
   const project = dataProjects.find((project) => project.slug === projectSlug)
 
   return (

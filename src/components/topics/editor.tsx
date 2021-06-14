@@ -36,18 +36,10 @@ export function TopicEditor({ topicId }) {
    * All local state change is handled by RHF (React Hook Form).
    * API call is only used when necessary via handle functions.
    */
-  const {
-    control,
-    errors,
-    getValues,
-    handleSubmit,
-    register,
-    reset,
-    setValue,
-    watch,
-  } = useForm({
-    mode: 'onSubmit',
-  })
+  const { control, getValues, handleSubmit, register, reset, setValue } =
+    useForm({
+      mode: 'onSubmit',
+    })
 
   useEffect(() => {
     if (!isLoading && data) {
@@ -120,7 +112,7 @@ export function TopicEditor({ topicId }) {
         .from('topics')
         .delete()
         .eq('id', topicId)
-      if (error) throw error
+      if (!data || error) throw error
 
       globalState.router.replace('/cms/topics')
       toast({ status: 'error', title: 'Deleted topic!' })
@@ -243,7 +235,7 @@ function CMSViewResultTopic(props) {
    * RHF (React Hook Form) field array with helpers.
    * Get control from instantiated useForm in parent component.
    */
-  const { append, fields, insert, move, prepend, remove } = useFieldArray({
+  const { append, fields, move, prepend, remove } = useFieldArray({
     control,
     name: 'sections',
   })
@@ -251,6 +243,7 @@ function CMSViewResultTopic(props) {
   /**
    * Add section to the first.
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const prependSection = (index) => {
     try {
       prepend({
@@ -266,6 +259,7 @@ function CMSViewResultTopic(props) {
   /**
    * Add section to the last.
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const appendSection = (index) => {
     try {
       append({
@@ -354,10 +348,9 @@ function CMSTopicHero(props) {
       <Box align="center" pb={5}>
         <Stack maxW={760}>
           <InputGroup size="sm" variant="unstyled">
-            <InputLeftAddon
-              opacity={0.5}
-              children={`catamyst.com/learn/track/`}
-            />
+            <InputLeftAddon opacity={0.5}>
+              catamyst.com/learn/track/
+            </InputLeftAddon>
             <Input
               name="slug"
               ref={register}

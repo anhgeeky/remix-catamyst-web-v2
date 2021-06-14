@@ -62,7 +62,7 @@ export function TopicHero({ track, topic }) {
       <BreadcrumbLinkButtons
         breadcrumbs={[
           { href: `/learn`, title: 'Learn' },
-          { href: `/learn/web`, title: 'Web' },
+          { href: `/learn/${track.slug}`, title: track.title },
         ]}
       />
 

@@ -58,10 +58,9 @@ export function JobsToolbar() {
           <FormLabel>{labels.search}</FormLabel>
         </VisuallyHidden>
         <InputGroup>
-          <InputLeftElement
-            pointerEvents="none"
-            children={<Icon name="search" />}
-          />
+          <InputLeftElement pointerEvents="none">
+            <Icon name="search" />
+          </InputLeftElement>
           <Input type="text" placeholder={labels.search} />
         </InputGroup>
       </Box>

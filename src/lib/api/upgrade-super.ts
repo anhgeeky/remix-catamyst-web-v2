@@ -12,14 +12,13 @@ export const upgradeSuper = async (
   // console.info('>>> Upgrade Super', { profile })
 
   try {
-    const {
-      data: currentProfile,
-      error: currentProfileError,
-    } = await supabaseAdmin
-      .from('profiles')
-      .select('super')
-      .eq('id', profile.id)
-      .single()
+    const { data: currentProfile, error: currentProfileError } =
+      await supabaseAdmin
+        .from('profiles')
+        .select('super')
+        .eq('id', profile.id)
+        .single()
+
     if (currentProfileError) {
       console.error('>>> Error when select profile by profile.id')
       throw currentProfileError

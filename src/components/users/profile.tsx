@@ -4,7 +4,6 @@ import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
   chakra,
-  Avatar,
   Box,
   Button,
   ButtonGroup,
@@ -12,7 +11,6 @@ import {
   Heading,
   HStack,
   IconButton,
-  Image,
   Link,
   Stack,
   Badge,
@@ -26,7 +24,7 @@ import ReactHtmlParser from 'react-html-parser'
 import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
 import { UserAvatar } from '@components/users'
 import { transformOptions } from '@components/blocks'
-import { isDev, trimUrl, getJoinedDate } from '@utils'
+import { trimUrl, getJoinedDate } from '@utils'
 import { useProfile } from '@hooks'
 import { dataProjects } from '@data'
 
@@ -151,15 +149,6 @@ function UserProfileCover({ profile }) {
 }
 
 function UserProfileContent({ profile, state, actions }) {
-  const placeholder = {
-    totalFollowing: 10,
-    totalFollowers: 20,
-    totalPosts: 3,
-    totalProjects: 4,
-    totalFavorites: 50,
-    totalLikes: 60,
-  }
-
   return (
     <Flex justify="center" mt="-90px" px={5}>
       <Stack spacing={10} maxW={700} width="100%">
@@ -399,7 +388,7 @@ export function ProfileActions({ state, actions }) {
   )
 }
 
-export function ProfileInfoStats({ data = {} }) {
+export function ProfileInfoStats() {
   const placeholder = {
     totalFollowing: 10,
     totalFollowers: 20,

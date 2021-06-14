@@ -12,21 +12,25 @@ import {
   useColorModeValue,
   Avatar,
 } from '@chakra-ui/react'
-import { useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+// import { useForm } from 'react-hook-form'
+// import { useDispatch } from 'react-redux'
 
 import { Card, Icon } from '@components'
 import { useToast } from '@hooks'
 import { supabase } from '@lib'
 
-type Inputs = { avatar_url?: string }
+// type Inputs = { avatar_url?: string }
 
 export function UserAvatarForm({ state }) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const toast = useToast()
-  const [loading, setLoading] = useState(false)
-  const { register, handleSubmit, watch, errors } = useForm<Inputs>()
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [loading, setLoading] = useState(false)
+
+  // const { register, handleSubmit, watch, errors } = useForm<Inputs>()
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleSubmitForm = async (form) => {
     try {
       setLoading(true)
@@ -34,7 +38,7 @@ export function UserAvatarForm({ state }) {
       const { error } = await supabase
         .from('profiles')
         .update({ avatar_url: form.avatar_url }, { returning: 'minimal' })
-        .eq('id', state.user!.id)
+        .eq('id', state.user?.id)
       if (error) throw error
       toast({ status: 'success', title: 'Your avatar is changed' })
       setLoading(false)
@@ -67,10 +71,9 @@ export function UserAvatarForm({ state }) {
             defaultValue={state.profile?.avatar_url}
           />
           {state.profile?.avatar_url && (
-            <InputRightElement
-              color="green.500"
-              children={<Icon name="check" />}
-            />
+            <InputRightElement color="green.500">
+              <Icon name="check" />
+            </InputRightElement>
           )}
         </InputGroup>
         <FormHelperText>

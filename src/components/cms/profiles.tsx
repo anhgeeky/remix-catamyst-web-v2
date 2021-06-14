@@ -1,5 +1,4 @@
 import NextHead from 'next/head'
-import NextImage from 'next/image'
 import NextLink from 'next/link'
 import {
   Heading,
@@ -12,16 +11,16 @@ import {
 } from '@chakra-ui/react'
 
 import { Content } from '@components'
-import { CMSHero, CMSToolbar } from '@components/cms'
+import { CMSHero } from '@components/cms'
 import { useSWR, fetcherSWR } from '@hooks'
 import { getCompleteDateTime } from '@utils'
-import { supabase } from '@lib'
 
-export function CMSProfiles({ state }) {
+export function CMSProfiles() {
   const { data, error } = useSWR(['/api/profiles'], fetcherSWR)
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleSearchItems = () => {
-    /* Handle function */
+    /* Handle search function */
   }
 
   if (error) {
@@ -84,7 +83,7 @@ export function CMSProfiles({ state }) {
             <Text flex={1}>Updated</Text>
           </HStack>
 
-          {data.users.map((user, index) => {
+          {data.users.map((user) => {
             return (
               <NextLink key={user.id} href={`/cms/users/${user.id}`} passHref>
                 <a>

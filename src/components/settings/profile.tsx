@@ -8,7 +8,6 @@ import {
   UserNameForm,
   UserHandleForm,
   UserAvatarForm,
-  UserCoverForm,
   UserPersonalForm,
   UserWorkForm,
   UserSocialsForm,

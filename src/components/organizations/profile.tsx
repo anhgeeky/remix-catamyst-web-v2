@@ -4,7 +4,6 @@ import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
   chakra,
-  Avatar,
   Box,
   Button,
   ButtonGroup,
@@ -12,7 +11,6 @@ import {
   Heading,
   HStack,
   IconButton,
-  Image,
   Link,
   Stack,
   Badge,
@@ -26,7 +24,7 @@ import ReactHtmlParser from 'react-html-parser'
 import { Country, Icon, SocialLinks, HeadingStack, useToast } from '@components'
 import { OrganizationAvatar } from '@components/organizations'
 import { transformOptions } from '@components/blocks'
-import { trimUrl, getJoinedDate } from '@utils'
+import { trimUrl } from '@utils'
 import { useAuth } from '@hooks'
 import { dataProjects } from '@data'
 
@@ -336,7 +334,7 @@ export function ProfileActions({ state, actions }) {
   )
 }
 
-export function ProfileInfoStats({ data = {} }) {
+export function ProfileInfoStats() {
   const placeholder = {
     totalFollowing: 10,
     totalFollowers: 20,

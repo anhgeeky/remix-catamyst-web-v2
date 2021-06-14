@@ -5,7 +5,6 @@ import {
   FormLabel,
   Input,
   InputGroup,
-  InputRightElement,
   Stack,
   Link,
 } from '@chakra-ui/react'
@@ -16,7 +15,7 @@ export function UserPasswordForm({ user }) {
   return (
     <Card id="handle" as={Stack}>
       <FormControl as={Stack} align="flex-start">
-        <FormLabel>New password</FormLabel>
+        <FormLabel>New password for {user.email}</FormLabel>
         <InputGroup>
           <Input type="password" autoFocus />
         </InputGroup>

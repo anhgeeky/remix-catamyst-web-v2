@@ -23,10 +23,9 @@ export function UserEmailForm({ user }) {
             defaultValue={user.email || 'name@example.com'}
             autoFocus
           />
-          <InputRightElement
-            color="green.500"
-            children={<Icon name="check" />}
-          />
+          <InputRightElement color="green.500">
+            <Icon name="check" />
+          </InputRightElement>
         </InputGroup>
         <FormHelperText>
           We will email you to confirm the change.

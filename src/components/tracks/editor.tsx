@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import NextHead from 'next/head'
 import NextImage from 'next/image'
 import {
@@ -79,12 +79,18 @@ export function TrackEditor({ trackId }) {
           <HeaderEditor
             name="track"
             data={data.track}
-            register={() => {}}
+            register={() => {
+              console.info('React Hook Form register')
+            }}
             actions={{
               handleBack,
               handleDelete,
-              handleReset: () => {},
-              handleSubmit: () => {},
+              handleReset: () => {
+                console.info('Handle reset')
+              },
+              handleSubmit: () => {
+                console.info('Handle submit')
+              },
               handleSaveChanges,
               handleViewResult: () => setViewMode('result'),
               handleViewJSON: () => setViewMode('json'),
@@ -120,7 +126,7 @@ function CMSViewResultTrack({ toast, data }) {
           </WrapItem>
           <WrapItem as={Stack} width="100%" maxW="600px">
             <InputGroup size="sm">
-              <InputLeftAddon rounded="md" children="catamyst.com/learn/" />
+              <InputLeftAddon rounded="md">catamyst.com/learn/</InputLeftAddon>
               <Input
                 isRequired
                 name="slug"
@@ -251,7 +257,7 @@ function CMSViewResultTrack({ toast, data }) {
 
           {data.topics?.length < 1 && <Text>No topics yet.</Text>}
 
-          {data.topics.map((topic, index) => {
+          {data.topics.map((topic) => {
             return (
               <Card p={2} key={topic.id}>
                 <HStack justify="space-between">

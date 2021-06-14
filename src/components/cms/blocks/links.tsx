@@ -12,7 +12,6 @@ import {
   Select,
   Switch,
   Stack,
-  Text,
   useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react'
@@ -30,7 +29,7 @@ export function CMSBlockLinks(props) {
    * https://codesandbox.io/s/react-hook-form-usefieldarray-nested-arrays-x7btr
    */
   const { index: blockIndex, block, actions } = props
-  const { fields, append, prepend, remove } = useFieldArray({
+  const { fields, append } = useFieldArray({
     control: actions.control,
     name: `blocks[${blockIndex}].links`,
   })

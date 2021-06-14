@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import NextHead from 'next/head'
-import { useForm } from 'react-hook-form'
 import {
   chakra,
   Heading,
@@ -25,6 +24,7 @@ export function OnboardMode({ state }) {
 
   const handleSubmitForm = async (event) => {
     event.preventDefault()
+
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
@@ -32,7 +32,7 @@ export function OnboardMode({ state }) {
         .from('profiles')
         .upsert(
           {
-            id: state.user!.id,
+            id: state.user?.id,
             mode: selectedMode,
           },
           { returning: 'minimal' }
@@ -105,7 +105,7 @@ export function ProfileModeForm({ actions }) {
   return (
     <FormControl as={Stack} align="flex-start" autoFocus>
       <Stack {...group} direction={{ base: 'column', sm: 'row' }} name="mode">
-        {options.map((value, index) => {
+        {options.map((value) => {
           const radio = getRadioProps({ value })
           return (
             <ProfileModeRadio key={value} {...radio}>

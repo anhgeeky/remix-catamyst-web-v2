@@ -1,9 +1,1 @@
-import {
-  NAVIGATE_TRACKS,
-  NAVIGATE_DISCUSSIONS,
-  NAVIGATE_POSTS,
-  NAVIGATE_PROJECTS,
-  NAVIGATE_JOBS,
-  NAVIGATE_MENTORS,
-  NAVIGATE_CERTIFICATES,
-} from '@features/navigation/types'
+export * from '@features/navigation/types'

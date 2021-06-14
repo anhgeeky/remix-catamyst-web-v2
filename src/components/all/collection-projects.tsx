@@ -1,21 +1,14 @@
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 import {
-  chakra,
-  Avatar,
   AspectRatio,
   Box,
   Heading,
   HStack,
-  Flex,
   Link,
-  LinkOverlay,
   Stack,
   Text,
-  StackDivider,
-  VStack,
   SimpleGrid,
-  useColorModeValue,
 } from '@chakra-ui/react'
 
 import { Card } from '@components'
@@ -30,7 +23,7 @@ export function CollectionProjects({ projects }) {
     <SimpleGrid spacing={3} minChildWidth={300}>
       {projects
         .filter((project) => project.is_published)
-        .map((project, index) => {
+        .map((project) => {
           return <ProjectBoard key={project.slug} project={project} />
         })}
     </SimpleGrid>

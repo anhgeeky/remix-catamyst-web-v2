@@ -12,7 +12,7 @@ import { Fonts } from '@components'
 import { AuthProvider } from '@components/auth'
 import { store, persistor } from '@features/store'
 import { swrConfig, splitbee, SentryInit } from '@lib'
-import { env, isDev, isProd, isVercel } from '@utils'
+import { isProd } from '@utils'
 
 SentryInit()
 

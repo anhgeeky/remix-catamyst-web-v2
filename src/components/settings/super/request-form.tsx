@@ -1,9 +1,9 @@
-import { ButtonGroup, Button, Heading, Stack, Text } from '@chakra-ui/react'
+import { ButtonGroup, Heading, Stack, Text } from '@chakra-ui/react'
 
 import { Card, Icon, LinkButton } from '@components'
 import { dataSuper } from '@data'
 
-export function SuperPlanRequestForm({ state }) {
+export function SuperPlanRequestForm() {
   return (
     <Card as={Stack}>
       <Heading as="h3" size="md">

@@ -1,7 +1,5 @@
 import { createStandaloneToast } from '@chakra-ui/react'
 
-import { mutateSWR } from '@hooks'
-
 import {
   SIGN_UP_BEGIN,
   SIGN_UP_ERROR,
@@ -40,7 +38,7 @@ export const signUp = (form) => {
        */
       const userEmail = String(form.email)
       const userPassword = String(form.password)
-      let { user, session, error } = await supabase.auth.signUp({
+      const { user, error } = await supabase.auth.signUp({
         email: userEmail.toLowerCase(),
         password: userPassword,
       })
@@ -49,10 +47,10 @@ export const signUp = (form) => {
         /**
          * Create profile automatically
          */
-        let { data, error } = await supabase
+        const { data, error } = await supabase
           .from('profiles')
           .upsert({
-            id: user!.id,
+            id: user?.id,
             name: form.name,
             nickname: getNickname(form.name),
           })
@@ -92,7 +90,7 @@ export const signIn = (data) => {
   return async (dispatch) => {
     dispatch({ type: SIGN_IN_BEGIN })
     try {
-      let { user, error } = await supabase.auth.signIn({
+      const { user, error } = await supabase.auth.signIn({
         email: data.email.toLowerCase(),
         password: data.password,
       })

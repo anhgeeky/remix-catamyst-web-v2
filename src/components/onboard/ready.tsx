@@ -1,5 +1,4 @@
 import NextHead from 'next/head'
-import NextImage from 'next/image'
 import { ButtonGroup, Stack, Heading, Text } from '@chakra-ui/react'
 
 import { Icon, LinkButton } from '@components'

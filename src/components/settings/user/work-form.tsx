@@ -34,12 +34,14 @@ export function UserWorkForm({ state }) {
   const handleSubmitForm = async (form) => {
     try {
       setLoading(true)
+
       await new Promise((resolve) => setTimeout(resolve, 300))
+
       const { error } = await supabase
         .from('profiles')
         .upsert(
           {
-            id: state.user!.id,
+            id: state.user?.id,
             work: {
               ...form,
               url: form.url ? checkUrl(form.url) : '',
@@ -49,6 +51,7 @@ export function UserWorkForm({ state }) {
           { returning: 'minimal' }
         )
         .single()
+
       if (error) throw error
       toast({ status: 'success', title: 'Your work details are changed' })
       setLoading(false)
@@ -102,7 +105,7 @@ export function UserWorkForm({ state }) {
         <FormControl as={Stack} spacing={1}>
           <FormLabel>Organization Handle</FormLabel>
           <InputGroup>
-            {!isTooSmall && <InputLeftAddon children="catamyst.com/" />}
+            {!isTooSmall && <InputLeftAddon>catamyst.com/</InputLeftAddon>}
             <Input
               type="text"
               placeholder="organization"
@@ -110,10 +113,9 @@ export function UserWorkForm({ state }) {
               name="handle"
               ref={register}
             />
-            {/* <InputRightElement
-              color="green.500"
-              children={<Icon name="check" />}
-            /> */}
+            {/* <InputRightElement color="green.500">
+              <Icon name="check" />
+            </InputRightElement> */}
           </InputGroup>
         </FormControl>
 

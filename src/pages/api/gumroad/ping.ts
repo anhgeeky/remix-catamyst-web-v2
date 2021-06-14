@@ -19,9 +19,7 @@ export default async function gumroadPing(
 
   if (req.method === 'POST' && req.query.token === process.env.PING_TOKEN) {
     try {
-      if (isProd && isVercel) {
-        console.info({ body: req.body })
-      }
+      if (isProd && isVercel) console.info({ body: req.body })
 
       /**
        * 1. Get existing profile.id by email.
@@ -32,6 +30,9 @@ export default async function gumroadPing(
           input: profile.email.toLowerCase(),
         }
       )
+
+      if (userError) console.error(userError)
+
       profile.id = users[0]
       // console.info('>>> Get user by email', { profile })
 
@@ -40,9 +41,11 @@ export default async function gumroadPing(
        */
       if (!profile.id) {
         console.info('>>> Error when getting user by email')
-        let { user, session, error: signUpError } = await supabase.auth.signUp({
+
+        const { user, error: signUpError } = await supabase.auth.signUp({
           email: profile.email.toLowerCase(),
         })
+
         if (signUpError) throw signUpError
         const response = { message: 'Created a new account', user, profile }
         console.info(response)

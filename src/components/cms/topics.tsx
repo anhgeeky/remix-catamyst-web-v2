@@ -18,8 +18,9 @@ import { CMSHero, CMSToolbar } from '@components/cms'
 import { mutateSWR, useTopics, fetcherSWR } from '@hooks'
 import { trimId } from '@utils'
 import { supabase } from '@lib'
+import {} from '@hooks'
 
-export function CMSTopics({ state }) {
+export function CMSTopics() {
   const toast = useToast()
   const router = useRouter()
   const { data, isLoading, isError } = useTopics()
@@ -132,7 +133,7 @@ export function CMSTopics({ state }) {
             </Text>
           </HStack>
 
-          {data.topics.map((topic, index) => {
+          {data.topics.map((topic) => {
             return (
               <NextLink
                 key={topic.slug}

@@ -1,18 +1,11 @@
-import NextImage from 'next/image'
 import NextLink from 'next/link'
 import {
   chakra,
-  Avatar,
-  Box,
   Heading,
   HStack,
   Flex,
   Link,
-  LinkBox,
-  LinkOverlay,
   Stack,
-  StackDivider,
-  VStack,
   SimpleGrid,
   useColorModeValue,
 } from '@chakra-ui/react'
@@ -29,7 +22,7 @@ export function CollectionOrganizations({ organizations }) {
     <SimpleGrid spacing={3} width="100%" minChildWidth={250}>
       {organizations
         .filter((org) => org.is_published)
-        .map((org, index) => {
+        .map((org) => {
           return (
             <NextLink key={org.handle} href={org.handle} passHref>
               <Link

@@ -79,7 +79,7 @@ export function Header() {
             display={{ base: 'none', lg: 'flex' }}
           >
             <HStack spacing={1}>
-              {dataNavLinks.map((page, index) => {
+              {dataNavLinks.map((page) => {
                 return <NavLink key={page.slug} page={page} />
               })}
             </HStack>

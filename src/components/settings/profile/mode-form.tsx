@@ -3,11 +3,9 @@ import {
   Button,
   FormErrorMessage,
   Heading,
-  Input,
   Radio,
   RadioGroup,
   Stack,
-  Text,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -22,7 +20,7 @@ type Inputs = { mode: string }
 export function ProfileModeForm({ state }) {
   const toast = useToast()
   const [loading, setLoading] = useState(false)
-  const { register, handleSubmit, watch, errors } = useForm<Inputs>({
+  const { register, handleSubmit, errors } = useForm<Inputs>({
     resolver: yupResolver(ProfileModeSchema),
   })
 
@@ -33,10 +31,10 @@ export function ProfileModeForm({ state }) {
       const { error } = await supabase
         .from('profiles')
         .update(
-          { mode: form.mode, id: state.user!.id },
+          { mode: form.mode, id: state.user?.id },
           { returning: 'minimal' }
         )
-        .eq('id', state.user!.id)
+        .eq('id', state.user?.id)
         .single()
       if (error) throw error
       toast({

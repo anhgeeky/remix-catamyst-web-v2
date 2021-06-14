@@ -5,7 +5,7 @@ export function useRouteChanged(callback: () => void) {
   const router = useRouter()
 
   useEffect(() => {
-    const handleRouteChange = (url: string) => {
+    const handleRouteChange = () => {
       callback()
     }
 

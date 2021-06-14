@@ -1,20 +1,15 @@
 import NextLink from 'next/link'
 import NextImage from 'next/image'
 import {
+  Flex,
   Heading,
   HStack,
   Link,
-  Text,
-  Stack,
-  VStack,
-  Wrap,
-  Box,
-  chakra,
-  WrapItem,
   SimpleGrid,
-  Flex,
+  Stack,
+  Text,
   useColorModeValue,
-  useMediaQuery,
+  VStack,
 } from '@chakra-ui/react'
 
 import { Icon, AlertSoon } from '@components'
@@ -24,7 +19,7 @@ export function CollectionTracks({ tracks = dataTracks }) {
   return (
     <VStack spacing={5}>
       <SimpleGrid spacing={5} minChildWidth={{ base: 280, sm: 420 }}>
-        {tracks.map((track, index) => {
+        {tracks.map((track) => {
           return <TrackCard key={track.slug} track={track} />
         })}
       </SimpleGrid>

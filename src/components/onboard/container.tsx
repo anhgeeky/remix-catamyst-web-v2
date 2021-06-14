@@ -1,16 +1,4 @@
-import {
-  Flex,
-  Avatar,
-  Box,
-  ButtonGroup,
-  Heading,
-  HStack,
-  Link,
-  SimpleGrid,
-  Stack,
-  Text,
-  VStack,
-} from '@chakra-ui/react'
+import { Stack, VStack } from '@chakra-ui/react'
 
 export function OnboardContainer({ children }) {
   return (

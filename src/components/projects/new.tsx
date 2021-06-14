@@ -1,17 +1,13 @@
 import { useState } from 'react'
 import {
   Flex,
-  Box,
   FormControl,
   FormLabel,
-  FormHelperText,
   Stack,
-  VStack,
   Input,
   Textarea,
   ButtonGroup,
   Button,
-  VisuallyHidden,
   useColorModeValue,
 } from '@chakra-ui/react'
 import { CUIAutoComplete as SelectAutoComplete } from 'chakra-ui-autocomplete'

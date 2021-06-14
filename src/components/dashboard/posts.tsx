@@ -1,6 +1,6 @@
 import NextHead from 'next/head'
 import NextImage from 'next/image'
-import { Box, Heading, Stack, Text, Button } from '@chakra-ui/react'
+import { Box, Heading, Stack, Text } from '@chakra-ui/react'
 
 import {
   Card,

@@ -11,6 +11,13 @@ import {
 } from '@components/cms'
 import { dataCMSLinks } from '@data'
 
+/**
+ * Only these CMS data needs access token:
+ * overview -> /api/cms/stats
+ * users -> /api/users
+ * profiles -> /api/profiles
+ * lessons -> /api/lessons
+ */
 export function CMSAll({ cmsSlug, state }) {
   return (
     <>
@@ -36,8 +43,8 @@ export function CMSAll({ cmsSlug, state }) {
         <>
           {cmsSlug === 'overview' && <CMSOverview state={state} />}
           {cmsSlug === 'users' && <CMSUsers state={state} />}
-          {cmsSlug === 'tracks' && <CMSTracks state={state} />}
-          {cmsSlug === 'topics' && <CMSTopics state={state} />}
+          {cmsSlug === 'tracks' && <CMSTracks />}
+          {cmsSlug === 'topics' && <CMSTopics />}
           {cmsSlug === 'lessons' && <CMSLessons state={state} />}
         </>
       )}

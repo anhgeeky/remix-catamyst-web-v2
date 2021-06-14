@@ -2,17 +2,12 @@ import NextLink from 'next/link'
 import {
   chakra,
   Avatar,
-  Box,
   Heading,
   HStack,
   Flex,
   SimpleGrid,
   Link,
-  LinkBox,
-  LinkOverlay,
   Stack,
-  StackDivider,
-  VStack,
   useColorModeValue,
 } from '@chakra-ui/react'
 
@@ -24,7 +19,7 @@ import { Icon } from '@components'
 export function CollectionUsers({ users }) {
   return (
     <SimpleGrid spacing={3} width="100%" minChildWidth={300}>
-      {users.map((user, index) => {
+      {users.map((user) => {
         return (
           <NextLink key={user.handle} href={user.handle} passHref>
             <Link

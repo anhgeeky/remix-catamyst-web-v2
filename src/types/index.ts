@@ -1,11 +1,3 @@
-// export type Profile = {
-//   id: string
-//   handle: string
-//   name: string
-//   avatar_url: string
-//   website_url: string
-// }
-
 export type Profile = {
   handle?: string
   id: string
@@ -23,15 +15,15 @@ export type Profile = {
   country?: string
   location?: string
   website_url?: string
-  work: object | null
-  socials: object | [] | null
-  pro?: object | null
-  super?: object | null
+  work?: any | null
+  socials?: any | [] | null
+  pro?: any | null
+  super?: any | null
   created_at?: string
-  updated_at: string
+  updated_at?: string
   // discussions: null
   // jobs_applied: null
-  // jobs_vacancies: null
+  // jobs_posted: null
   // mentors: null
   // organizations: null
   // posts: null
