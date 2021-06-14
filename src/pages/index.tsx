@@ -9,7 +9,7 @@ import {
   HomeVillain,
 } from '@components/home'
 
-export default function homePage() {
+export const HomePage = (): JSX.Element => {
   return (
     <Layout title="Catamyst · All-in-one platform to learn software development">
       <VStack spacing={{ base: 25, sm: 50, md: 100 }}>
@@ -22,3 +22,5 @@ export default function homePage() {
     </Layout>
   )
 }
+
+export default HomePage

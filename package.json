@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.1.299",
+  "version": "0.1.300",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
@@ -8,12 +8,13 @@
     "postbuild": "next-sitemap",
     "start": "next start -p 8000",
     "export": "next export",
-    "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "lint-fix": "eslint --fix . --ext ts --ext tsx --ext js",
-    "test": "jest",
-    "test-all": "npm run lint && npm run type-check && npm run test"
+    "type-check": "tsc --pretty --noEmit",
+    "jest": "jest",
+    "test": "npm run format && npm run lint && npm run type-check",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -52,6 +53,7 @@
     "dayjs": "1.10.4",
     "escape-html": "1.0.3",
     "framer-motion": "3.5.2",
+    "husky": "^4.2.3",
     "immutable": "4.0.0-rc.12",
     "is-url": "1.2.4",
     "lower-case": "2.0.2",
@@ -83,24 +85,24 @@
   "devDependencies": {
     "@hookform/devtools": "2.2.1",
     "@testing-library/react": "^11.2.5",
-    "@types/jest": "^26.0.20",
+    "@types/jest": "26.0.23",
     "@types/node": "15.3.0",
-    "@types/react-redux": "7.1.16",
     "@types/react": "17.0.5",
+    "@types/react-redux": "7.1.16",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
     "babel-jest": "^26.6.3",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-react": "^7.19.0",
-    "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^26.6.3",
+    "jest": "26.6.3",
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.0.10",
     "next-sitemap": "1.6.57",
     "prettier": "^2.0.2",
     "redux-devtools-extension": "2.13.9",
+    "ts-jest": "27.0.3",
     "typescript": "4.2.4"
   }
 }
