@@ -83,7 +83,7 @@ export function UserHandleForm({ state }) {
               autoFocus={!isTooSmall}
             />
             <InputRightElement color={errors.handle ? 'red.500' : 'green.500'}>
-              errors.handle ? <Icon name="cross" /> : <Icon name="check" />
+              {errors.handle ? <Icon name="cross" /> : <Icon name="check" />}
             </InputRightElement>
           </InputGroup>
           {errors.handle && (

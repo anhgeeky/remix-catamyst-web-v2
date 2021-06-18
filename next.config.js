@@ -24,7 +24,6 @@ const basePath = ''
 module.exports = withMDX({
   // reactStrictMode: true,
   future: {
-    webpack5: true,
     // strictPostcssConfiguration: true,
   },
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
