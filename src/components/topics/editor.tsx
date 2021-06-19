@@ -108,11 +108,8 @@ export function TopicEditor({ topicId }) {
    */
   const handleDelete = async () => {
     try {
-      const { data, error } = await supabase
-        .from('topics')
-        .delete()
-        .eq('id', topicId)
-      if (!data || error) throw error
+      const { error } = await supabase.from('topics').delete().eq('id', topicId)
+      if (error) throw error
 
       globalState.router.replace('/cms/topics')
       toast({ status: 'error', title: 'Deleted topic!' })

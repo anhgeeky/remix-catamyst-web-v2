@@ -109,11 +109,11 @@ export function LessonEditor({ lessonId }) {
    */
   const handleDelete = async () => {
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('lessons')
         .delete()
         .eq('id', lessonId)
-      if (!data || error) throw error
+      if (error) throw error
 
       globalState.router.replace('/cms/lessons')
       toast({ status: 'error', title: 'Deleted lesson!' })

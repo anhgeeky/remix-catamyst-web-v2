@@ -57,7 +57,7 @@ export function UserWorkForm({ state }) {
       setLoading(false)
     } catch (error) {
       setLoading(false)
-      toast({ status: 'success', title: 'Failed to save work details' })
+      toast({ status: 'error', title: 'Failed to save work details' })
       console.error({ error })
     }
   }

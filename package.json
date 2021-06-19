@@ -1,6 +1,6 @@
 {
   "name": "catamyst-web",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "private": true,
   "scripts": {
     "dev": "next dev -p 8000",
@@ -10,8 +10,7 @@
     "start": "next start -p 8000",
     "export": "next export",
     "format": "prettier --write .",
-    "lint": "eslint . --ext ts --ext tsx --ext js",
-    "lint-fix": "eslint --fix . --ext ts --ext tsx --ext js",
+    "lint": "eslint . --fix --ext ts --ext tsx --ext js",
     "type-check": "tsc --pretty --noEmit",
     "jest": "jest",
     "test": "npm run lint && npm run type-check",

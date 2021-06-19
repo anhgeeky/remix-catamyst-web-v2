@@ -37,7 +37,7 @@ export function UserPersonalForm({ state }) {
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('profiles')
         .upsert(
           {
@@ -50,12 +50,12 @@ export function UserPersonalForm({ state }) {
           { returning: 'minimal' }
         )
         .single()
-      if (!data || error) throw error
+      if (error) throw error
       toast({ status: 'success', title: 'Your personal details are changed' })
       setLoading(false)
     } catch (error) {
       setLoading(false)
-      toast({ status: 'success', title: 'Failed to save personal details' })
+      toast({ status: 'error', title: 'Failed to save personal details' })
       console.error({ error })
     }
   }

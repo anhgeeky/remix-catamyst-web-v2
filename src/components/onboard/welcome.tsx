@@ -33,17 +33,20 @@ export function OnboardWelcome({ state }) {
     try {
       setLoading(true)
       await new Promise((resolve) => setTimeout(resolve, 300))
-      const { data, error } = await supabase
+
+      const { error } = await supabase
         .from('profiles')
         .update({ handle: form.handle }, { returning: 'minimal' })
         .eq('id', state.user?.id)
         .single()
-      if (!data || error) throw error
+      if (error) throw error
+
       setLoading(false)
       state.router.push('/onboard/mode')
     } catch (error) {
       setLoading(false)
       console.error({ error })
+
       if (error.code === '23505') {
         setError('handle', { message: 'Username is already taken' })
       } else {
