@@ -4,7 +4,7 @@ import { HStack } from '@chakra-ui/react'
 import { dataCountries } from '@/data'
 import { Icon } from '@/components'
 
-export function Country({ code }) {
+export function Country({ code, showName = true }) {
   const country = dataCountries.find((country) => country.code === code)
 
   if (country?.code === 'EARTH') {
@@ -16,7 +16,7 @@ export function Country({ code }) {
           width={21}
           height={14}
         />
-        <span>Earth</span>
+        {showName && <span>Earth</span>}
       </HStack>
     )
   }
@@ -24,7 +24,7 @@ export function Country({ code }) {
     return (
       <HStack>
         <Icon name="moon" />
-        <span>Moon</span>
+        {showName && <span>Moon</span>}
       </HStack>
     )
   }
@@ -37,7 +37,7 @@ export function Country({ code }) {
           width={21}
           height={14}
         />
-        <span>Mars</span>
+        {showName && <span>Mars</span>}
       </HStack>
     )
   }
@@ -45,7 +45,7 @@ export function Country({ code }) {
     return (
       <HStack>
         <Flag country={country.code} size={20} alt={country.name} />
-        <span>{country.name}</span>
+        {showName && <span>{country.name}</span>}
       </HStack>
     )
   }

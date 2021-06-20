@@ -1,6 +1,5 @@
 import NextHead from 'next/head'
 import NextLink from 'next/link'
-import NextImage from 'next/image'
 import {
   Box,
   Heading,
@@ -11,8 +10,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 
-import { Content } from '@/components'
+import { Content, Country } from '@/components'
 import { CMSHero } from '@/components/cms'
+import { UserAvatar } from '@/components/users'
 import { useSWR, fetcherSWR } from '@/hooks'
 import { trimId, getCompleteDateTime } from '@/utils'
 
@@ -81,8 +81,11 @@ export function CMSProfiles() {
             <Text flex={1}>Handle</Text>
             <Text flex={2}>Name</Text>
             <Text flex={1}>Nick</Text>
-            <Text flex={2}>Created</Text>
-            <Text flex={2}>Updated</Text>
+            <Text flex={1}>Country</Text>
+            <Text flex={1}>Mode</Text>
+            <Text flex={1}>Plan</Text>
+            <Text flex={1}>Created</Text>
+            <Text flex={1}>Updated</Text>
           </HStack>
 
           {data.profiles.map((profile) => {
@@ -97,17 +100,10 @@ export function CMSProfiles() {
                 <Text flex={1} as="code" fontSize="xs" wordBreak="break-all">
                   {trimId(profile.id)}
                 </Text>
-                <Box flex={1} className="next-image-container">
-                  {profile?.avatar_url && (
-                    <NextImage
-                      src={profile.avatar_url}
-                      alt="Avatar"
-                      aria-label={`Avatar of ${profile.name}`}
-                      width={50}
-                      height={50}
-                      layout="fixed"
-                    />
-                  )}
+                <Box flex={1}>
+                  <Box maxW={50}>
+                    <UserAvatar profile={profile} size={50} textSize="md" />
+                  </Box>
                 </Box>
                 <Text flex={1}>
                   <NextLink href={`/${profile.handle}`} passHref>
@@ -116,10 +112,15 @@ export function CMSProfiles() {
                 </Text>
                 <Text flex={2}>{profile.name}</Text>
                 <Text flex={1}>{profile.nickname}</Text>
-                <Text flex={2}>
+                <Box flex={1}>
+                  <Country code={profile.country} showName={false} />
+                </Box>
+                <Text flex={1}>{profile.mode}</Text>
+                <Text flex={1}>{profile.plan}</Text>
+                <Text flex={1} fontSize="xs">
                   {getCompleteDateTime(profile.created_at) || '-'}
                 </Text>
-                <Text flex={2}>
+                <Text flex={1} fontSize="xs">
                   {getCompleteDateTime(profile.updated_at) || '-'}
                 </Text>
               </HStack>
