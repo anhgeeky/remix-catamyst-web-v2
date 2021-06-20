@@ -31,7 +31,6 @@ import dataTeamMembers from '@/data/app-team-members.json'
 import dataTopics from '@/data/app-topics.json'
 import dataTracks from '@/data/app-tracks.json'
 import dataUsers from '@/data/app-users.json'
-import dataFAQScholarshipQopnet from '@/data/app-scholarship-qopnet.json'
 
 export {
   dataPackage,
@@ -67,5 +66,4 @@ export {
   dataTopics,
   dataTracks,
   dataUsers,
-  dataFAQScholarshipQopnet,
 }

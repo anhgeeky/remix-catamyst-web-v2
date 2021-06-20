@@ -26,7 +26,6 @@ import {
 } from '@/components'
 import { ScholarshipHero } from '@/components/scholarship'
 import { FaqAccordionSimple } from '@/components/help'
-import { dataFAQScholarshipQopnet } from '@/data'
 
 export function ScholarshipQopnet() {
   const [isTooSmall] = useMediaQuery('(max-width: 920px)')
@@ -296,9 +295,21 @@ export function ScholarshipQopnet() {
 export function RecipientCards() {
   const [isTooSmall] = useMediaQuery('(max-width: 920px)')
   const recipients = [
-    { name: 'First Person', handle: '' },
-    { name: 'Second Person', handle: '' },
-    { name: 'Third Person', handle: '' },
+    {
+      name: 'Budianto Istu Pribadi',
+      handle: 'budiantoip',
+      avatar_url: 'https://ik.imagekit.io/catamyst/avatars/budiantoip.jpg',
+    },
+    {
+      name: 'Guntur Kurniawan Heryanto',
+      handle: 'gunturkh',
+      avatar_url: 'https://ik.imagekit.io/catamyst/avatars/gunturkh.jpg',
+    },
+    {
+      name: 'Muhammad Taufiq Hidayah',
+      handle: 'hidayahhtaufik',
+      avatar_url: 'https://ik.imagekit.io/catamyst/avatars/hidayahhtaufik.jpg',
+    },
   ]
 
   return (
@@ -307,10 +318,11 @@ export function RecipientCards() {
         <Heading as="h3" size="lg">
           Scholarship Recipients
         </Heading>
-        <Text>The chosen 3 people will be shown here.</Text>
+        <Text>The chosen 3 people</Text>
       </VStack>
       <Stack
         spacing={5}
+        textAlign="center"
         direction={isTooSmall ? 'column' : 'row'}
         width={isTooSmall ? '100%' : '720px'}
       >
@@ -320,18 +332,20 @@ export function RecipientCards() {
               <NextLink
                 href={
                   recipient?.handle
-                    ? `/${recipient.name}`
+                    ? `/${recipient.handle}`
                     : `/scholarship/qopnet`
                 }
               >
                 <a>
                   <Stack align="center" spacing={5}>
-                    <Avatar size="xl" name={recipient.name} />
-                    <Box>
-                      <Heading as="h4" size="md">
-                        {recipient.name}
-                      </Heading>
-                    </Box>
+                    <Avatar
+                      size="xl"
+                      name={recipient.name}
+                      src={recipient.avatar_url}
+                    />
+                    <Heading as="h4" size="md">
+                      {recipient.name}
+                    </Heading>
                   </Stack>
                 </a>
               </NextLink>
@@ -342,3 +356,61 @@ export function RecipientCards() {
     </VStack>
   )
 }
+
+const dataFAQScholarshipQopnet = [
+  {
+    slug: 'condition',
+    q: "What's the primary condition for the scholarship recipients?",
+    a: 'We have a first come first serve basis. If the quota of recipients is already fulfilled, the registration will be closed.',
+  },
+  {
+    slug: 'pay',
+    q: 'Do I need to pay to join this program?',
+    a: 'No, this is a 100% full scholarship, there is no need to pay any fee.',
+  },
+  {
+    slug: 'experience',
+    q: "I don't have any experience in software engineering, can I apply?",
+    a: 'No, this program requires you to have experience in software engineering, intermediate to advanced level.',
+  },
+  {
+    slug: 'remote',
+    q: 'Is this program done remotely or in a classroom?',
+    a: 'You will learn remotely via video call with the mentors.',
+  },
+  {
+    slug: 'schedule',
+    q: 'How long does it take to complete the program?',
+    a: 'From the day you accepted, until 1 October 2021.',
+  },
+  {
+    slug: 'age',
+    q: 'I am under 17 or above 40, can I still apply?',
+    a: 'Yes, you can still apply, we will consider your acceptance if you have a great qualification.',
+  },
+  {
+    slug: 'age',
+    q: 'I am working in a company/studying in a school right now, can I join this program?',
+    a: 'Yes, we will consider it based on your qualification and commitment guarantee. But keep in mind the scholarship program itself is very packed with lessons and tasks that requires you a lot of time to work on.',
+  },
+  {
+    slug: 'job',
+    q: 'After completing this program, am I guaranteed to get a job?',
+    a: 'No, we cannot guarantee. However, depending on your performance, attitude, and skills, Qopnet might consider you joining the company as an employee. Your actual work portfolio itself in this scholarship will help you to get a better job.',
+  },
+  {
+    slug: 'nationality',
+    q: 'Do you accept candidates from any nationalities?',
+    a: 'Yes.',
+  },
+  {
+    slug: 'another',
+    q: 'I am currently receiving another scholarship, can I still apply?',
+    a: 'Yes, it is not a problem.',
+  },
+  {
+    slug: 'english',
+    q: 'Do I have to be proficient in English?',
+    a: 'Yes, at least in reading and writing.',
+  },
+]
