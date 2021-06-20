@@ -3,5 +3,6 @@
   { "slug": "tracks", "text": "Tracks", "href": "/cms/tracks" },
   { "slug": "topics", "text": "Topics", "href": "/cms/topics" },
   { "slug": "lessons", "text": "Lessons", "href": "/cms/lessons" },
-  { "slug": "users", "text": "Users", "href": "/cms/users" }
+  { "slug": "users", "text": "Users", "href": "/cms/users" },
+  { "slug": "profiles", "text": "Profiles", "href": "/cms/profiles" }
 ]

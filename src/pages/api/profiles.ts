@@ -6,7 +6,7 @@ export default async function allProfiles(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { data } = await supabase
+  const { data: profiles } = await supabase
     .from('profiles')
     .select('id,handle,name,avatar_url,created_at,updated_at', {
       count: 'exact',
@@ -15,6 +15,6 @@ export default async function allProfiles(
 
   res.status(200).json({
     message: 'All profiles',
-    data,
+    profiles,
   })
 }

@@ -1,19 +1,20 @@
 import NextHead from 'next/head'
 import NextLink from 'next/link'
+import NextImage from 'next/image'
 import {
+  Box,
   Heading,
-  Code,
   HStack,
-  Text,
   Stack,
   StackDivider,
+  Text,
   useColorModeValue,
 } from '@chakra-ui/react'
 
 import { Content } from '@/components'
 import { CMSHero } from '@/components/cms'
 import { useSWR, fetcherSWR } from '@/hooks'
-import { getCompleteDateTime } from '@/utils'
+import { trimId, getCompleteDateTime } from '@/utils'
 
 export function CMSProfiles() {
   const { data, error } = useSWR(['/api/profiles'], fetcherSWR)
@@ -59,7 +60,7 @@ export function CMSProfiles() {
       <Content>
         {/* <CMSToolbar
           labels={{
-            invite: 'Invite new user',
+            invite: 'Invite new profile',
             search: 'Search for existing users',
           }}
           actions={{
@@ -77,36 +78,51 @@ export function CMSProfiles() {
           <HStack spacing={3} p={3} fontWeight="700">
             <Text flex={1}>ID</Text>
             <Text flex={1}>Avatar</Text>
-            <Text flex={1}>Name</Text>
-            <Text flex={2}>Handle</Text>
-            <Text flex={1}>Created</Text>
-            <Text flex={1}>Updated</Text>
+            <Text flex={1}>Handle</Text>
+            <Text flex={2}>Name</Text>
+            <Text flex={1}>Nick</Text>
+            <Text flex={2}>Created</Text>
+            <Text flex={2}>Updated</Text>
           </HStack>
 
-          {data.users.map((user) => {
+          {data.profiles.map((profile) => {
             return (
-              <NextLink key={user.id} href={`/cms/users/${user.id}`} passHref>
-                <a>
-                  <HStack
-                    spacing={3}
-                    p={3}
-                    rounded="md"
-                    _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
-                  >
-                    <Code flex={1}>{user.id}</Code>
-                    <Text flex={1}>{user.avatar_url}</Text>
-                    <Text flex={1}>{user.handle}</Text>
-                    <Text flex={1}>{user.name}</Text>
-                    <Text flex={1}>{user.nickname}</Text>
-                    <Text flex={1}>
-                      {getCompleteDateTime(user.created_at) || '-'}
-                    </Text>
-                    <Text flex={1}>
-                      {getCompleteDateTime(user.updated_at) || '-'}
-                    </Text>
-                  </HStack>
-                </a>
-              </NextLink>
+              <HStack
+                key={profile.id}
+                p={1}
+                spacing={3}
+                rounded="md"
+                _hover={{ bg: useColorModeValue('teal.100', 'teal.900') }}
+              >
+                <Text flex={1} as="code" fontSize="xs" wordBreak="break-all">
+                  {trimId(profile.id)}
+                </Text>
+                <Box flex={1} className="next-image-container">
+                  {profile?.avatar_url && (
+                    <NextImage
+                      src={profile.avatar_url}
+                      alt="Avatar"
+                      aria-label={`Avatar of ${profile.name}`}
+                      width={50}
+                      height={50}
+                      layout="fixed"
+                    />
+                  )}
+                </Box>
+                <Text flex={1}>
+                  <NextLink href={`/${profile.handle}`} passHref>
+                    <a>@{profile.handle}</a>
+                  </NextLink>
+                </Text>
+                <Text flex={2}>{profile.name}</Text>
+                <Text flex={1}>{profile.nickname}</Text>
+                <Text flex={2}>
+                  {getCompleteDateTime(profile.created_at) || '-'}
+                </Text>
+                <Text flex={2}>
+                  {getCompleteDateTime(profile.updated_at) || '-'}
+                </Text>
+              </HStack>
             )
           })}
         </Stack>

@@ -74,6 +74,7 @@ import {
   FaBinoculars as OverviewIcon,
   FaUser as UserIcon,
   FaUsers as UsersIcon,
+  FaUsers as ProfilesIcon,
   FaChartLine as StatsIcon,
   FaArrowAltCircleUp as LevelsIcon,
   FaMap as TracksIcon,
@@ -350,6 +351,8 @@ export function Icon({ name }) {
       return <UserIcon />
     case 'users':
       return <UsersIcon />
+    case 'profiles':
+      return <ProfilesIcon />
     case 'levels':
       return <LevelsIcon />
     case 'tracks':
