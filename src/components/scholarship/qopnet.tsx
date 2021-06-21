@@ -14,7 +14,6 @@ import {
   useMediaQuery,
   useColorModeValue,
 } from '@chakra-ui/react'
-import Iframe from 'react-iframe'
 
 import {
   Card,
@@ -90,7 +89,9 @@ export function ScholarshipQopnet() {
             >
               <Flex align="center">
                 <Icon name="date" />
-                <Text ml={3}>Apply before 1 August 2021</Text>
+                <Text ml={3}>
+                  Registration is closed, the recipients already chosen
+                </Text>
               </Flex>
               <Flex align="center">
                 <Icon name="code" />
@@ -113,14 +114,12 @@ export function ScholarshipQopnet() {
             />
             <Box>
               <Button
-                as={Link}
-                href="#apply"
                 leftIcon={<Icon name="form" />}
                 size="lg"
                 colorScheme="orange"
                 rounded="full"
               >
-                Apply Now
+                Registration Closed
               </Button>
             </Box>
           </VStack>
@@ -221,19 +220,6 @@ export function ScholarshipQopnet() {
             </Stack>
           </Stack>
         </Stack>
-
-        <Flex justify="center">
-          <Button
-            as={Link}
-            href="#apply"
-            leftIcon={<Icon name="form" />}
-            size="lg"
-            colorScheme="orange"
-            rounded="full"
-          >
-            Apply Now
-          </Button>
-        </Flex>
       </VStack>
 
       <VStack spacing={10}>
@@ -262,31 +248,6 @@ export function ScholarshipQopnet() {
             />
           </Box>
         </Stack>
-      </VStack>
-
-      <VStack id="apply" spacing={5}>
-        <Box>
-          <Button
-            isExternal
-            as={Link}
-            leftIcon={<Icon name="external" />}
-            href="https://airtable.com/shrFUZjGN57bZIKfc"
-            colorScheme="orange"
-            rounded="full"
-          >
-            Open form in new tab
-          </Button>
-        </Box>
-
-        <Box width="100%" maxW={760} boxShadow="base">
-          <Iframe
-            id="qopnet-form"
-            className="iframe airtable-embed airtable-dynamic-height"
-            url="https://airtable.com/embed/shrFUZjGN57bZIKfc"
-            width="100%"
-            height={isTooSmall ? '590' : '720'}
-          />
-        </Box>
       </VStack>
     </Stack>
   )
