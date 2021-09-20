@@ -26,6 +26,35 @@ import {
 import { ScholarshipHero } from '@/components/scholarship'
 import { FaqAccordionSimple } from '@/components/help'
 
+const recipientsBatch1 = [
+  {
+    name: 'Budianto Istu Pribadi',
+    handle: 'budiantoip',
+    avatar_url: 'https://ik.imagekit.io/catamyst/avatars/budiantoip.jpg',
+  },
+  {
+    name: 'Guntur Kurniawan Heryanto',
+    handle: 'gunturkh',
+    avatar_url: 'https://ik.imagekit.io/catamyst/avatars/gunturkh.jpg',
+  },
+  {
+    name: 'Muhammad Taufiq Hidayah',
+    handle: 'hidayahhtaufik',
+    avatar_url: 'https://ik.imagekit.io/catamyst/avatars/hidayahhtaufik.jpg',
+  },
+]
+
+const recipientsBatch2 = [
+  {
+    name: 'You?',
+    handle: 'you',
+  },
+  {
+    name: 'You?',
+    handle: 'you',
+  },
+]
+
 export function ScholarshipQopnet() {
   const [isTooSmall] = useMediaQuery('(max-width: 920px)')
   const qopnetLogo = useColorModeValue(
@@ -90,7 +119,7 @@ export function ScholarshipQopnet() {
               <Flex align="center">
                 <Icon name="date" />
                 <Text ml={3}>
-                  Registration is closed, the recipients already chosen
+                  Registration is open for Batch 2. Apply before 8 October 2021.
                 </Text>
               </Flex>
               <Flex align="center">
@@ -99,7 +128,7 @@ export function ScholarshipQopnet() {
               </Flex>
               <Flex align="center">
                 <Icon name="users" />
-                <Text ml={3}>Limited to 3 people, first come first serve</Text>
+                <Text ml={3}>Limited to 2 people, first come first serve</Text>
               </Flex>
             </Stack>
           </Stack>
@@ -114,12 +143,14 @@ export function ScholarshipQopnet() {
             />
             <Box>
               <Button
+                as={Link}
+                href="#apply"
                 leftIcon={<Icon name="form" />}
                 size="lg"
                 colorScheme="orange"
                 rounded="full"
               >
-                Registration Closed
+                Apply Now
               </Button>
             </Box>
           </VStack>
@@ -127,7 +158,8 @@ export function ScholarshipQopnet() {
       </ScholarshipHero>
 
       <VStack spacing={10}>
-        <RecipientCards />
+        <RecipientCards title="Batch 2" recipients={recipientsBatch2} />
+        <RecipientCards title="Batch 1" recipients={recipientsBatch1} />
       </VStack>
 
       <VStack spacing={10}>
@@ -155,7 +187,7 @@ export function ScholarshipQopnet() {
                 <ListItemIcon>
                   <b>Experience</b> in Software Engineering, UI/UX Design, Web
                   Development, JavaScript / TypeScript, Node.js, React /
-                  Next.js, PostgreSQL / MongoDB, GCP / AWS, and more
+                  Next.js, PostgreSQL, Heroku / Railway.app / AWS, and more
                 </ListItemIcon>
                 <ListItemIcon>
                   <b>Age</b> 17–40
@@ -172,7 +204,7 @@ export function ScholarshipQopnet() {
               </Heading>
               <List>
                 <ListItemIcon>
-                  <b>100% full</b> scholarship worth USD 2,000 or IDR 28,500,000
+                  <b>100% full</b> scholarship worth USD 2,000 or IDR 29,000,000
                   per person, no additional hidden fee.
                 </ListItemIcon>
                 <ListItemIcon>
@@ -189,8 +221,7 @@ export function ScholarshipQopnet() {
                   <Link isExternal href="https://qopnet.id">
                     Qopnet
                   </Link>{' '}
-                  projects, with scope to build commerce platform, chat app,
-                  sales dashboard, POS (point of sale), and more.
+                  projects, with scope to build commerce platform and more.
                 </ListItemIcon>
               </List>
             </Stack>
@@ -201,8 +232,9 @@ export function ScholarshipQopnet() {
               </Heading>
               <List>
                 <ListItemNumber no={1}>
-                  <b>Registration and screening</b> from 7 June 2021 to 1 August
-                  2021. Can be closed as soon as the quota is fulfilled.
+                  <b>Registration and screening</b> for Batch 2 from 20
+                  September 2021 to 8 October 2021. Can be closed as soon as the
+                  quota is fulfilled.
                 </ListItemNumber>
                 <ListItemNumber no={2}>
                   <b>Interview</b> process within 7 days after you have
@@ -214,7 +246,7 @@ export function ScholarshipQopnet() {
                 </ListItemNumber>
                 <ListItemNumber no={4}>
                   <b>Program</b> started as soon as you are accepted and
-                  onboarded, until 1 October 2021.
+                  onboarded, until 26 November 2021 (for Batch 2).
                 </ListItemNumber>
               </List>
             </Stack>
@@ -253,33 +285,15 @@ export function ScholarshipQopnet() {
   )
 }
 
-export function RecipientCards() {
+export function RecipientCards({ title, recipients }) {
   const [isTooSmall] = useMediaQuery('(max-width: 920px)')
-  const recipients = [
-    {
-      name: 'Budianto Istu Pribadi',
-      handle: 'budiantoip',
-      avatar_url: 'https://ik.imagekit.io/catamyst/avatars/budiantoip.jpg',
-    },
-    {
-      name: 'Guntur Kurniawan Heryanto',
-      handle: 'gunturkh',
-      avatar_url: 'https://ik.imagekit.io/catamyst/avatars/gunturkh.jpg',
-    },
-    {
-      name: 'Muhammad Taufiq Hidayah',
-      handle: 'hidayahhtaufik',
-      avatar_url: 'https://ik.imagekit.io/catamyst/avatars/hidayahhtaufik.jpg',
-    },
-  ]
 
   return (
     <VStack spacing={5} px={5}>
       <VStack>
         <Heading as="h3" size="lg">
-          Scholarship Recipients
+          {title}
         </Heading>
-        <Text>The chosen 3 people</Text>
       </VStack>
       <Stack
         spacing={5}
@@ -289,7 +303,7 @@ export function RecipientCards() {
       >
         {recipients.map((recipient, index) => {
           return (
-            <Card width="100%" key={index}>
+            <Card width="100%" minW="150px" key={index}>
               <NextLink
                 href={
                   recipient?.handle
@@ -342,22 +356,22 @@ const dataFAQScholarshipQopnet = [
   {
     slug: 'schedule',
     q: 'How long does it take to complete the program?',
-    a: 'From the day you accepted, until 1 October 2021.',
+    a: 'From the day you accepted, until 26 November 2021 (for Batch 2).',
   },
   {
     slug: 'age',
     q: 'I am under 17 or above 40, can I still apply?',
-    a: 'Yes, you can still apply, we will consider your acceptance if you have a great qualification.',
+    a: 'Yes, you can still apply, but we still consider your acceptance if you have a great qualification.',
   },
   {
     slug: 'age',
     q: 'I am working in a company/studying in a school right now, can I join this program?',
-    a: 'Yes, we will consider it based on your qualification and commitment guarantee. But keep in mind the scholarship program itself is very packed with lessons and tasks that requires you a lot of time to work on.',
+    a: 'Still possible, we will consider it based on your qualification and commitment guarantee. But keep in mind the scholarship program itself is very packed with lessons and tasks that requires you a lot of time to work on.',
   },
   {
     slug: 'job',
     q: 'After completing this program, am I guaranteed to get a job?',
-    a: 'No, we cannot guarantee. However, depending on your performance, attitude, and skills, Qopnet might consider you joining the company as an employee. Your actual work portfolio itself in this scholarship will help you to get a better job.',
+    a: 'There is no absolute guarantee. However, depending on your performance, attitude, and skills, Qopnet might consider you joining the company as an employee. Your actual work portfolio itself in this scholarship will help you to get a better job.',
   },
   {
     slug: 'nationality',
@@ -367,7 +381,7 @@ const dataFAQScholarshipQopnet = [
   {
     slug: 'another',
     q: 'I am currently receiving another scholarship, can I still apply?',
-    a: 'Yes, it is not a problem.',
+    a: 'Yes, it is not a problem as long as you can still manage the time.',
   },
   {
     slug: 'english',
