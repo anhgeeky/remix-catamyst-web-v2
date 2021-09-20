@@ -13,14 +13,7 @@
     "lint": "eslint . --fix --ext ts --ext tsx --ext js",
     "type-check": "tsc --pretty --noEmit",
     "jest": "jest",
-    "test": "npm run lint && npm run type-check",
-    "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run type-check"
-    }
+    "test": "npm run lint && npm run type-check"
   },
   "lint-staged": {
     "*.@(ts|tsx)": [
@@ -103,8 +96,5 @@
     "typescript": "4.3.4",
     "uuid": "8.3.2",
     "yup": "0.32.9"
-  },
-  "devDependencies": {
-    "husky": "7.0.2"
   }
 }
