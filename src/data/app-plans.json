@@ -59,12 +59,12 @@
       "Everything in Basic and Pro",
       "Lifetime Pro benefits",
       "Exclusive network of Super members",
-      "Dedicated private 1-on-1 mentorship sessions with real dedicated mentor between 50-200 hours, then unlimited direct discussion",
+      "Dedicated private 1-on-1 mentorship sessions with real dedicated mentor based on your chosen time or hours",
       "Suitable for learners who want to get real serious on learning, practicing, getting a professional job, doing a freelance, upgrading your career, or building a tech business"
     ],
     "price": {
-      "cost": 500,
-      "info": "one-time, starts from"
+      "cost": 10,
+      "info": "hourly"
     },
     "buttons": {
       "isNotAuthenticated": {
