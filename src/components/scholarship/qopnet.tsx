@@ -7,14 +7,12 @@ import {
   Box,
   VStack,
   Stack,
-  Button,
   Heading,
   Link,
   Text,
   useMediaQuery,
   useColorModeValue,
 } from '@chakra-ui/react'
-import Iframe from 'react-iframe'
 
 import {
   Card,
@@ -29,14 +27,14 @@ import { FaqAccordionSimple } from '@/components/help'
 
 const recipientsBatch1 = [
   {
-    name: 'Budianto Istu Pribadi',
-    handle: 'budiantoip',
-    avatar_url: 'https://ik.imagekit.io/catamyst/avatars/budiantoip.jpg',
-  },
-  {
     name: 'Guntur Kurniawan Heryanto',
     handle: 'gunturkh',
     avatar_url: 'https://ik.imagekit.io/catamyst/avatars/gunturkh.jpg',
+  },
+  {
+    name: 'Budianto Istu Pribadi',
+    handle: 'budiantoip',
+    avatar_url: 'https://ik.imagekit.io/catamyst/avatars/budiantoip.jpg',
   },
   {
     name: 'Muhammad Taufiq Hidayah',
@@ -47,12 +45,24 @@ const recipientsBatch1 = [
 
 const recipientsBatch2 = [
   {
-    name: 'You?',
-    handle: 'you',
+    name: 'Auliya Michelle Adhana',
+    handle: 'auliya',
   },
   {
-    name: 'You?',
-    handle: 'you',
+    name: 'Dicky Muhamad R',
+    handle: 'dickymr',
+  },
+  {
+    name: 'Krishna Rowter',
+    handle: 'krowter',
+  },
+  {
+    name: 'Muhammad Zaki Sulistya',
+    handle: 'zakisu',
+  },
+  {
+    name: 'Rizky Zhang',
+    handle: 'rizkyzhang',
   },
 ]
 
@@ -118,18 +128,12 @@ export function ScholarshipQopnet() {
               align={isTooSmall ? 'center' : 'flex-start'}
             >
               <Flex align="center">
-                <Icon name="date" />
-                <Text ml={3}>
-                  Registration is open for Batch 2. Apply before 8 October 2021.
-                </Text>
-              </Flex>
-              <Flex align="center">
                 <Icon name="code" />
                 <Text ml={3}>For intermediate-level developers</Text>
               </Flex>
               <Flex align="center">
-                <Icon name="users" />
-                <Text ml={3}>Limited to 2 people, first come first serve</Text>
+                <Icon name="date" />
+                <Text ml={3}>Registration is already closed.</Text>
               </Flex>
             </Stack>
           </Stack>
@@ -142,18 +146,6 @@ export function ScholarshipQopnet() {
               width={330}
               height={275}
             />
-            <Box>
-              <Button
-                as={Link}
-                href="#apply"
-                leftIcon={<Icon name="form" />}
-                size="lg"
-                colorScheme="orange"
-                rounded="full"
-              >
-                Apply Now
-              </Button>
-            </Box>
           </VStack>
         </Stack>
       </ScholarshipHero>
@@ -253,19 +245,6 @@ export function ScholarshipQopnet() {
             </Stack>
           </Stack>
         </Stack>
-
-        <Flex justify="center">
-          <Button
-            as={Link}
-            href="#apply"
-            leftIcon={<Icon name="form" />}
-            size="lg"
-            colorScheme="orange"
-            rounded="full"
-          >
-            Apply Now
-          </Button>
-        </Flex>
       </VStack>
 
       <VStack spacing={10}>
@@ -295,31 +274,6 @@ export function ScholarshipQopnet() {
           </Box>
         </Stack>
       </VStack>
-
-      <VStack id="apply" spacing={5}>
-        <Box>
-          <Button
-            isExternal
-            as={Link}
-            leftIcon={<Icon name="external" />}
-            href="https://airtable.com/shrFUZjGN57bZIKfc"
-            colorScheme="orange"
-            rounded="full"
-          >
-            Open form in new tab
-          </Button>
-        </Box>
-
-        <Box width="100%" maxW={760} boxShadow="base">
-          <Iframe
-            id="qopnet-form"
-            className="iframe airtable-embed airtable-dynamic-height"
-            url="https://airtable.com/embed/shrFUZjGN57bZIKfc"
-            width="100%"
-            height={isTooSmall ? '590' : '720'}
-          />
-        </Box>
-      </VStack>
     </Stack>
   )
 }
@@ -335,14 +289,16 @@ export function RecipientCards({ title, recipients }) {
         </Heading>
       </VStack>
       <Stack
-        spacing={5}
+        spacing={isTooSmall ? 0 : 5}
         textAlign="center"
-        direction={isTooSmall ? 'column' : 'row'}
-        width={isTooSmall ? '100%' : '720px'}
+        justifyContent="center"
+        flexWrap="wrap"
+        direction="row"
+        width="100%"
       >
         {recipients.map((recipient, index) => {
           return (
-            <Card width="100%" minW="150px" key={index}>
+            <Card key={index} width="100%" w="220px" mb={5}>
               <NextLink
                 href={
                   recipient?.handle
