@@ -53,12 +53,12 @@ const recipientsBatch2 = [
     handle: 'dickymr',
   },
   {
-    name: 'Krishna Rowter',
-    handle: 'krowter',
+    name: 'Eci Agustina Limbong',
+    handle: 'ecial',
   },
   {
-    name: 'Muhammad Zaki Sulistya',
-    handle: 'zakisu',
+    name: 'Krishna Rowter',
+    handle: 'krowter',
   },
   {
     name: 'Rizky Zhang',
