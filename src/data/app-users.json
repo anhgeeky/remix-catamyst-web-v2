@@ -264,7 +264,8 @@
     ],
     "work": {
       "title": "Software Engineer",
-      "name": "AutoParts"
+      "name": "ProSpace",
+      "url": "https://prospace.io"
     },
     "role": "Member",
     "mode": "Learner",
@@ -416,13 +417,13 @@
     "avatar_url": "https://storage.catamyst.com/avatars/calvinwong.jpg",
     "cover_url": "",
     "headline": "",
-    "bio_html": "<p>CEO of Plater, Member of Global Shapers and Founder of Mealennials. My team is building Indonesia food supply chain, in association Telesindo Group.</p>",
+    "bio_html": "<p>CEO of Poinswap.</p>",
     "country": "ID",
     "location": "Tangerang",
     "work": {
       "title": "CEO",
-      "name": "Plater",
-      "url": "https://plater.id"
+      "name": "Poinswap",
+      "url": "https://poinswap.com"
     },
     "role": "Member",
     "mode": "Employer",
