@@ -30,6 +30,24 @@
     "type": "Organization",
     "id": 2,
     "is_published": true,
+    "handle": "codepolitan",
+    "name": "CodePolitan",
+    "bio_html": "<p>Kembangkan karirmu sebagai developer profesional dengan keahlian coding yang dibutuhkan di dunia industri melalui kelas online Codepolitan.</p>",
+    "country": "ID",
+    "location": "Bandung",
+    "website": {
+      "url": "https://catamyst.codepolitan.com",
+      "name": "CodePolitan × Catamyst"
+    },
+    "mode": "Team",
+    "created_at": "2022-01-01",
+    "people": [],
+    "projects": []
+  },
+  {
+    "type": "Organization",
+    "id": 3,
+    "is_published": true,
     "handle": "nawaart",
     "name": "Nawaart",
     "bio_html": "<p>Promoting local artists of South East Asia.</p>",
@@ -46,7 +64,7 @@
   },
   {
     "type": "Organization",
-    "id": 3,
+    "id": 4,
     "is_published": true,
     "handle": "saikou",
     "name": "Saikou",
@@ -64,7 +82,7 @@
   },
   {
     "type": "Organization",
-    "id": 4,
+    "id": 5,
     "is_published": true,
     "handle": "zidence",
     "name": "Zidence",
@@ -82,7 +100,7 @@
   },
   {
     "type": "Organization",
-    "id": 5,
+    "id": 6,
     "is_published": false,
     "handle": "github",
     "name": "GitHub",
@@ -99,7 +117,7 @@
   },
   {
     "type": "Organization",
-    "id": 6,
+    "id": 7,
     "is_published": false,
     "handle": "google",
     "name": "Google",
@@ -116,7 +134,7 @@
   },
   {
     "type": "Organization",
-    "id": 7,
+    "id": 8,
     "is_published": false,
     "handle": "facebook",
     "name": "Facebook",
@@ -130,7 +148,7 @@
   },
   {
     "type": "Organization",
-    "id": 8,
+    "id": 9,
     "is_published": false,
     "handle": "spotify",
     "name": "Spotify",
@@ -144,7 +162,7 @@
   },
   {
     "type": "Organization",
-    "id": 9,
+    "id": 10,
     "is_published": false,
     "handle": "impactbyte",
     "name": "Impact Byte",
